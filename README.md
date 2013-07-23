@@ -1,10 +1,6 @@
 Your Priorities is a web based platform that enables groups of people to define their democratic ideas and together discover which are the most important ideas to implement by their instances.  People can add new ideas, add arguments for and against ideas, indicate if they support or oppose an idea, create a personal list of ideas and discuss all ideas. The end results are lists of top ideas in many categories as well as the best arguments for and against each idea. This service enables people to make up their minds about most issues in a short time.
 
-Your Priorities is a merge between:
-
-NationBuilder by Jim Gilliam "http://www.jimgilliam.com/":http://www.jimgilliam.com/ Jim's Nationbuilder has itself evolved into an excellent political campaign website "http://www.nationbuilder.com/":http://www.nationbuilder.com/ and Open Direct Democracy by Róbert Viðar Bjarnason and Gunnar Grimsson "http://github.com/rbjarnason/open-direct-democracy":http://github.com/rbjarnason/open-direct-democracy
-
-It used to be called Open Active Democracy and Social Innovation but now it is called Your Priorities and is being used on the https://www.yrpri.org/ eDemocracy service.
+Your Priorities is being used on the https://www.yrpri.org/ eDemocracy service and the Better Reykjavik website in Iceland amongst other places.
 
 Short new instructions
 ======================
@@ -208,3 +204,7 @@ Then deploy the application:
 ````bash
 $ bundle exec cap deploy
 ````
+
+Your Priorities is a merge between:
+
+NationBuilder by Jim Gilliam http://www.jimgilliam.com/ and Open Direct Democracy by Róbert Viðar Bjarnason and Gunnar Grimsson http://github.com/rbjarnason/open-direct-democracy
