@@ -2,7 +2,7 @@
 begin
   if Rails.env.development? 
     SocialInnovation::Application.config.session_store :cookie_store, key: "_Instance.first.domain_name.gsubstaging_dev"
-  elsif ENV['SOCIAL_INNOVATION_ALL_DOMAIN']
+  elsif ENV['YRPRI_ALL_DOMAIN']
     SocialInnovation::Application.config.session_store :cookie_store, key: "_#{Instance.first.domain_name.gsub(".","_")}_production_all_domain", :domain => ".#{Instance.first.domain_name}"
   else
     SocialInnovation::Application.config.session_store :cookie_store, key: "_#{Instance.first.domain_name.gsub(".","_")}_production"

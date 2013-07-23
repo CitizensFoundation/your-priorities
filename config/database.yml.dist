@@ -1,39 +1,28 @@
 development:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
+  host: localhost
   collation: utf8_general_ci
   git_branch: master
   reconnect: true
-  database: your_db_name
+  database: yrpri_dev
   pool: 5
-  username: your_db_user_name
-  password: your_db_user_password
+  username: puser
+  password: xxxxxxxx
   airbrake_api_key: 00000000000000000000000000
-  secret_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  secret_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
   session_key: _your_app_session
 test:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
+  host: localhost
   collation: utf8_general_ci
   git_branch: master
   reconnect: true
-  database: your_db_test_name
+  database: yrpri_test
   pool: 5
-  username: your_db_user_name
-  password: your_db_user_password
+  username: puser
+  password: xxxxxxxx
   airbrake_api_key: 00000000000000000000000000
-  secret_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  session_key: _your_app_session
-production:
-  adapter: mysql2
-  encoding: utf8
-  collation: utf8_general_ci
-  git_branch: master
-  reconnect: true
-  database: your_db_production_name
-  pool: 5
-  username: your_db_user_name
-  password: your_db_user_password
-  airbrake_api_key: 00000000000000000000000000
-  secret_token: xxxxxxxxxxx
+  secret_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
   session_key: _your_app_session

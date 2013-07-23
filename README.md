@@ -2,19 +2,9 @@ Your Priorities is a web based platform that enables groups of people to define 
 
 Your Priorities is a merge between:
 
-NationBuilder by Jim Gilliam
-"http://www.jimgilliam.com/":http://www.jimgilliam.com/
-
-* Jim's Nationbuilder has itself evolved into an excellent political campaign website
-"http://www.nationbuilder.com/":http://www.nationbuilder.com/
-
-and
-
-Open Direct Democracy by Róbert Viðar Bjarnason and Gunnar Grimsson
-"http://github.com/rbjarnason/open-direct-democracy":http://github.com/rbjarnason/open-direct-democracy
+NationBuilder by Jim Gilliam "http://www.jimgilliam.com/":http://www.jimgilliam.com/ Jim's Nationbuilder has itself evolved into an excellent political campaign website "http://www.nationbuilder.com/":http://www.nationbuilder.com/ and Open Direct Democracy by Róbert Viðar Bjarnason and Gunnar Grimsson "http://github.com/rbjarnason/open-direct-democracy":http://github.com/rbjarnason/open-direct-democracy
 
 It used to be called Open Active Democracy and Social Innovation but now it is called Your Priorities and is being used on the https://www.yrpri.org/ eDemocracy service.
-The master branch of this code base is exactly the live code on the website.
 
 Short new instructions
 ======================
@@ -23,33 +13,69 @@ Your Priorities is now setup to be a Heroku app, using S3 and CloudFront for dep
 Here are the parameters that are used in Heroku config.
 
 Heroku parameters you need to setup yourself:
+````bash
 AWS_ACCESS_KEY_ID:            ----------------------
+````
+````bash
 AWS_SECRET_ACCESS_KEY:        ----------------------
+````
+````bash
 CF_ASSET_HOST:                ----------------------.cloudfront.net
+````
+````bash
 FACEBOOKER2_API_KEY:          ----------------------
+````
+````bash
 FACEBOOKER2_APP_ID:           ----------------------
+````
+````bash
 FOG_DIRECTORY:                ----------------------
+````
+````bash
 S3_BUCKET:                    ----------------------
+````
+````bash
 S3_KEY:                       ----------------------
+````
+````bash
 S3_SECRET:                    ----------------------
-SOCIAL_INNOVATION_ALL_DOMAIN: 1
+````
+````bash
+YRPRI_ALL_DOMAIN: 1
+````
 
-Below config is set by the respected services, you can see from this list what heroku additions are needed to run the app:
+Below config examples set automatically by the respected services, you can see from this list what heroku additions are needed to run the app:
+
+````bash
 ADEPT_SCALE_URL:              ----------------------
+````
+````bash
 DATABASE_URL:                 ----------------------
+````
+````bash
 FLYING_SPHINX_API_KEY:        ----------------------
-FLYING_SPHINX_HOST:           ----------------------
-FLYING_SPHINX_IDENTIFIER:     ----------------------
-FLYING_SPHINX_PORT:           ----------------------
+````
+````bash
 HEROKU_POSTGRESQL_WHITE_URL:  ----------------------
-MEMCACHIER_PASSWORD:          ----------------------
-MEMCACHIER_SERVERS:           ----------------------
+````
+````bash
 MEMCACHIER_USERNAME:          ----------------------
+````
+````bash
 PGBACKUPS_URL:                ----------------------
+````
+````bash
 REDISTOGO_URL:                ----------------------
-SENDGRID_PASSWORD:            ----------------------
+````
+````bash
 SENDGRID_USERNAME:            ----------------------
-
+````
+````bash
+AWS_ACCESS_KEY_ID:            ----------------------
+````
+````bash
+AWS_ACCESS_KEY_ID:            ----------------------
+````
 
 
 Installation (Old instructions below)
