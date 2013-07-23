@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/delete.png", :width => "16"}/
+= raw tr("Now opposing {new_idea_name} because {idea_name} was acquired", "view/activities/_activityoppositionreplacedimplicit_nouser", :idea_name => link_to(activity.idea.name, activity.idea), :new_idea_name => link_to(activity.change.new_idea.name, activity.change.new_idea))

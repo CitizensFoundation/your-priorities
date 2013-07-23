@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Paymill:
+  = @plan.paymill_id
+%p
+  %b Name:
+  = @plan.name
+%p
+  %b Description:
+  = @plan.description
+%p
+  %b Price usd:
+  = @plan.price_usd
+%p
+  %b Currency:
+  = @plan.currency
+%p
+  %b Max users:
+  = @plan.max_users
+
+= link_to 'Edit', edit_plan_path(@plan)
+\|
+= link_to 'Back', plans_path

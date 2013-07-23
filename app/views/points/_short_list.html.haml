@@ -1,0 +1,30 @@
+- points.each_with_index do |point, i|
+  - quality = nil
+  - if @qualities
+    - quality = @qualities.detect { |e| e.point_id == point.id }
+  .point_item{:id=>"point_item_#{point.id}"}
+    = render :partial=>"points/report_content", :locals=>{:point=>point}
+    %h3
+      - numbering = false
+      = numbering ? "#{i+1}. " : ""
+      = link_to_unless_current h(point.name), point
+    %p= tg(point.content)
+    - if point.has_website?
+      .point_source
+        = tr("Source:", "view/points/_show")
+        %a{:href => point.website_link}= truncate(point.website_link, :length=>70)
+    = render :partial=>"points/flagged", :locals=>{:point=>point}
+    .small_text
+      = tr("by {author_sentence}", "view/points/_short_list", :author_sentence => point.author_sentence)
+      = tr("added {time_ago}", "view/points/_short_list", :time_ago => time_ago(point.created_at))
+    .point_qualities.small_text
+      = render :partial => "points/button_small", :locals => {:newest_points=>defined?(newest_points) ? true : false, :point => point, :quality => quality}
+  :javascript
+    $("#point_item_#{point.id}").children("div").hide();
+    $("#point_item_#{point.id}").hover(function(){
+      $(this).children("div").show();
+      $(this).css('border','1px dashed ##{point.value>0 ? '00bb00' : 'b00'}');
+    }, function(){
+      $(this).css('border','1px dashed #fff');
+      $(this).children("div").hide();
+    })

@@ -1,0 +1,7 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/fugue/sticky_note_pin.png", :width => "16"}/
+- if activity.has_point?
+  = raw tr("Posted a bulletin to {discussion_name}", "view/activities/_activitybulletinnew_nouser", :discussion_name => link_to(activity.point.name, activity.point))
+- elsif activity.has_idea?
+  = raw tr("Posted a bulletin to {discussion_name}", "view/activities/_activitybulletinnew_nouser", :discussion_name => link_to(activity.idea.name, activity.idea))
+- else
+  = raw tr("Posted a bulletin", "view/activities/_activitybulletinnew_nouser")

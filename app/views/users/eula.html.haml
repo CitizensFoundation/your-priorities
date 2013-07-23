@@ -1,0 +1,26 @@
+.col-group
+  .col-10.col-offset-1
+    .col-content
+      .about
+        .eula
+          %h1= tr("Our rules", "view/about/rules")
+          %h4= tr("By signing up for {instance_name} website I declare:", "view/about/rules", :instance_name => current_instance.name)
+          %ul
+            %li= tr("Information given about myself is correct and I can receive and read email sent to the email address I supply. ", "view/about/rules")
+            %li= tr("I take full responsibility for content I create and for others not using my account. ", "view/about/rules")
+            %li= tr("I will be  on this website. ", "view/about/rules")
+            %li= tr("Content i add to this website is free for others to use, distribute, change and add to.", "view/about/rules")
+            %li= tr("I will obey the laws of my country.", "view/about/rules")
+            %li= tr("I will not publish advertisements or spam users of this website.", "view/about/rules")
+            %li= tr("I will not use this website to bully others nor in any way threaten or persecute other users or publish misleading or malicious content. ", "view/about/rules")
+            %li= tr("I will inform the administrators if I see content that breaks these rules by clicking the notification icon. ", "view/about/rules")
+            %li= tr("I will only create and use one user on this website. ", "view/about/rules")
+          %h4= tr("We promise to: ", "view/about/rules")
+          %ul
+            %li= tr("Do our best to make this website stay open and fully functional. ", "view/about/rules")
+            %li= tr("We will not divulge to others data about users that is not publicly available on this website without a court order. ", "view/about/rules")
+          %h4= tr("We reserve the right to:", "view/about/rules")
+          %ul
+            %li= tr("Respond to all violations of those rules or local laws in any way needed, including removing content and reporting to the authorities. ", "view/about/rules")
+            %li= tr("Close subscription_accounts of users that repeatedly break these rules. With every violation a user gets sent an email and on the fourth violation the user is banned from the system. ", "view/about/rules")
+            %li= tr("Change these rules without prior notice. We will send an announcement of such changes in email to the email address that you have registered with us. ", "view/about/rules")

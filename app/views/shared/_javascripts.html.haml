@@ -1,0 +1,26 @@
+/[if lt IE 8]
+  = javascript_include_tag "css3-mediaqueries.js"
+/[if lt IE 9]
+  = javascript_include_tag "html5shiv-printshiv"
+- if ['color_schemes'].include?(params[:controller])
+  = javascript_include_tag "colorpicker.js"
+= javascript_include_tag "application"
+- if ["home","feed"].include?(controller_name)
+  = javascript_include_tag "endless_scrolling_activity.js"
+- elsif ["ideas"].include?(controller_name) and action_name.include?("show")
+  = javascript_include_tag "endless_scrolling_activity_idea_show.js"
+:javascript
+  jQuery(document).ready(function() {
+    jQuery("input#q_top").DefaultValue("#{tr("Search", "view/shared/_javascripts")}");
+  	jQuery("input#user_login_search").DefaultValue("#{tr("Find a member", "view/shared/_javascripts")}");
+  	jQuery("input#right_idea_box").DefaultValue("#{tr("Add a idea to your list", "view/shared/_javascripts").html_safe}")
+  	jQuery(".comment_content").truncate({maxLength: 1000,
+  	                                    more: "#{ tr("show full comment","view/shared/_javascripts") }",
+  	                                    less: "#{ tr("hide full comment", "view/shared/_javascripts") }"});
+        #{render :partial => "shared/javascripts_reloadable", formats: [:js]}
+  jQuery('div.ui-widget-content').corner();
+  jQuery('div.userwrap').corner();
+  jQuery('div.endorse-wrap').corner();
+  jQuery('div.oppose-wrap').corner();
+  jQuery('div.comment_box').corner();
+  });

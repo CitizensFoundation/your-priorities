@@ -1,0 +1,5 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/email_open_image.png", :width => "16"}/
+- if activity.other_user
+  = raw tr("Accepted an invitation from {other_user_name} to join {instance_name}", "view/activities/_activityinvitationaccepted_nouser", :user_name => link_to(activity.user.login, activity.user), :other_user_name => link_to(activity.other_user.login, activity.other_user), :instance_name => current_instance.name)
+- else
+  = raw tr("Accepted an invitation to join {instance_name}", "view/activities/_activityinvitationaccepted_nouser", :user_name => link_to(activity.user.login, activity.user), :instance_name => current_instance.name)

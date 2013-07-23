@@ -1,0 +1,11 @@
+#hp_intro
+  = @page_title
+%p
+  - if current_instance.has_logo?
+    = image_tag current_instance.logo.url(:medium), :border => 0
+  = form_for(current_instance, :url => {:action => "picture_save" }, :html => {:multipart => true}) do |f|
+    = f.error_messages
+    = f.file_field :logo
+    %br/
+    %span.small= tr("Must be a gif, jpg or png", "view/admin/picture")
+    %p= submit_tag tr("Upload and save your picture", "view/admin/picture"), :class => "submit_button"

@@ -1,0 +1,32 @@
+= render :partial => "user_contacts/import_nav", :locals => {:user => current_user }
+- if not @users
+  %p= tr("You are not following anyone yet.", "view/user_contacts/following")
+- else
+  %p= tr("These are the people you're following, ranked by their influence on the site. <br/>You can also <a href='/feed/your_network_activities'>follow their updates in the feed section</a>, or <a href='/ideas/network'>see all their ideas in one list</a>.", "view/user_contacts/following")
+- if @users && !@users.empty?
+  %table
+    %thead
+      %tr
+        %th.rank= tr("Rank", "view/network/index")
+        %th.week= tr("Change", "view/network/index")
+    %tbody
+      - @users.each_with_index do |user, rank|
+        %tr
+          %td #{rank+1}
+          %td= render :partial => "ideas/rank_week_month", :locals => {:idea => user }
+          %td= render :partial => "users/pic_48", :locals => {:user => user}
+          %td
+            .col-group
+              .col-content
+                = link_to user.login, user
+                %span.pc
+                  = user.capitals_count
+                  = current_instance.currency_short_name
+                - if user.followers_count > 0
+                  = tr("{count} followers", "view/network/index", :count => user.followers_count)
+              - if user.has_top_idea? and user.top_endorsement.idea
+                .col-content
+                  = tr("#1 idea:", "view/network/index")
+                  - if user.top_endorsement.is_down?
+                    %span.opposed= tr("Opposing", "view/network/index")
+                  = link_to user.top_endorsement.idea.name, user.top_endorsement.idea

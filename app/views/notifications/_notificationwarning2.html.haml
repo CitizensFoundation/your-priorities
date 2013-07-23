@@ -1,0 +1,16 @@
+%img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/assets/icons/error_delete.png"}", :width => "16"}/
+- if notification.notifiable.class == Comment
+  = tr("This is your {warning_number} warning. You violated the <a href='/about/rules'>site rules</a> with <a href='{content_url}'>this {content_type} </a> - #{notification.custom_text}", "view/notifications/_notificationwarning", |
+    :warning_number => tr('second','notifications'),                                                                                                                                                     |
+    :content_url => activity_comments_url(notification.notifiable.activity_id) + "#" + notification.notifiable.id.to_s,                                                                                  |
+    :content_type => tr("comment",'notifications'))                                                                                                                                                      |
+- elsif notification.notifiable.class == Idea
+  = tr("This is your {warning_number} warning. You violated the <a href='/about/rules'>site rules</a> with <a href='{content_url}'> {content_type} </a> - #{notification.custom_text}", "view/notifications/_notificationwarning", |
+    :warning_number => tr('second','notifications'),                                                                                                                                                     |
+    :content_url => idea_url(notification.notifiable.id),                                                                                                                                            |
+    :content_type => tr("{idea_name}",'notifications', :idea_name=>Idea.unscoped.find(notification.notifiable.id).name))                                                                                                                                           |
+- elsif notification.notifiable.class == Point
+  = tr("This is your {warning_number} warning. You violated the <a href='/about/rules'>site rules</a> with <a href='{content_url}'>this {content_type} </a> - #{notification.custom_text}", "view/notifications/_notificationwarning", |
+    :warning_number => tr('second','notifications'),                                                                                                                                                     |
+    :content_url => point_url(notification.notifiable.id),                                                                                                                                               |
+    :content_type => tr("Point",'notifications'))                                                                                                                                                        |

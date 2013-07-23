@@ -1,0 +1,5 @@
+= form_for @comment, :remote=>true, :url => activity_comments_path(@activity) do |f|
+  = f.error_messages
+  = render :partial => "form", :locals => {:f => f}
+  %p
+    = f.submit tr("Post comment", "view/comments/new")

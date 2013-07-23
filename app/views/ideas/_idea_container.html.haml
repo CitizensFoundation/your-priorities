@@ -1,0 +1,22 @@
+#sib_idea_container
+  .col-group
+    .col-1
+      .col-content
+        %ul
+          %li
+            %div.sib_category_logo
+              - if idea.category and idea.category.icon
+                = link_to(image_tag(idea.category.icon.url(:icon_50), :size => "50x50", :border => 0), idea.category.to_url,
+                                                           :alt=>idea.category.name, :title=>idea.category.name)
+          %li
+            %div.sib_position
+              = #render :partial => "ideas/idea_rank", :locals => {:idea => idea }
+    .col-9
+      .col-content
+        %div.sib_idea
+          = render :partial => "ideas/about_idea", :locals => {:idea => idea, :endorsement => endorsement }
+        = render :partial => "ideas/idea_detail" if ["show","top_points"].include?(action_name) and controller_name=="ideas"
+    .col-2
+      .col-content
+        %div.sib_debate_buttons
+          = render :partial => "ideas/debate_buttons", :locals => {:idea => idea, :endorsement => endorsement, :region=>"idea_inline", :force_debate_to_new=>@ideas ? false : true }

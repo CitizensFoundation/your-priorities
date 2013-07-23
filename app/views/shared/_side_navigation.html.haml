@@ -1,0 +1,85 @@
+- if ['ideas','changes','ads','prioritizer'].include?(params[:controller])
+  - nav = 2
+- elsif ['feed','comments'].include?(params[:controller])
+  - nav = 4
+- elsif ['issues'].include?(params[:controller])
+  - nav = 1
+- elsif ['network','users','user_contacts','import','messages','inbox','facebook'].include?(params[:controller]) or (params[:controller] == 'sub_instances' and not user_signed_in?)
+  - nav = 5
+- elsif ['points','revisions'].include?(params[:controller])
+  - nav = 3
+- elsif ['settings','profiles','instances','color_schemes','admin','passwords','pages','sub_instances','tags'].include?(params[:controller])
+  - nav = 6
+- elsif ['about','charts','widgets'].include?(params[:controller])
+  - nav = 7
+- else
+  - nav = 0
+%div#sib_side_nav
+  %ul
+    - if current_instance.domain_name.include?("yrpri") and SubInstance.current and SubInstance.current.iso_country
+      %li
+        = link_to :controller => "home", :action=> "world" do
+          = raw "<div class='sprite_clip #{controller_name=="home" ? "home_pos_selected" : "home_pos"}'></div>"
+          %span.label
+            = tr("World","Menu system")
+      %li
+        = link_to SubInstance.current.show_url do
+          .sprite_clip_flag
+            = image_tag SubInstance.current.iso_country.large_flag_image, :size=>"50x50"
+          %span.label
+            = tr("Home","Menu system")
+    - elsif current_instance.domain_name.include?("yrpri")
+      %li
+        = link_to :controller => "home", :action=> "index" do
+          .sprite_clip_flag
+            = image_tag SubInstance.current.logo.url(:icon_50), :border => 0, :size=>"50x50"
+          %span.label
+            = tr("Home","Menu system")
+    - else
+      %li
+        = link_to :controller => "home", :action=>current_instance.domain_name.include?("yrpri") ? "world" : "index" do
+          = raw "<div class='sprite_clip #{controller_name=="home" ? "home_pos_selected" : "home_pos"}'></div>"
+          %span.label
+            = tr("Home","Menu system")
+
+    %li
+      = link_to :controller => "ideas", :action=>"index" do
+        = raw "<div class='sprite_clip #{(controller_name=="ideas" and action_name!="all_tags") ? "ideas_pos_selected" : "ideas_pos"}'></div>"
+        %span.label
+          = tr("#{IDEA_TOKEN_PLURAL_CAPS}", "view/shared/_menu")
+    %li
+      = link_to :controller => "points" do
+        = raw "<div class='sprite_clip #{controller_name=="points" ? "points_pos_selected" : "points_pos"}'></div>"
+        %span.label
+          = tr("Debate", "view/shared/_menu")
+    %li
+      = link_to :controller => "feed" do
+        = raw "<div class='sprite_clip #{controller_name=="feed" ? "feed_pos_selected" : "feed_pos"}'></div>"
+        %span.label
+          = tr("Feed", "view/shared/_menu")
+    %li
+      = link_to :controller => "issues" do
+        %div.sprite_clipwrapper
+        = raw "<div class='sprite_clip #{controller_name=="issues" ? "categories_pos_selected" : "categories_pos"}'></div>"
+        %span.label.margin_fix
+          = tr("Categories", "view/shared/_menu")
+    - if current_instance.domain_name.include?("yrpri") and not SubInstance.current.iso_country and not SubInstance.current.hide_world_icon==true
+      %li
+        = link_to :controller => "home", :action=>current_instance.domain_name.include?("yrpri") ? "world" : "index" do
+          = raw "<div class='sprite_clip #{controller_name=="home" ? "home_pos_selected" : "home_pos"}'></div>"
+          %span.label
+            = tr("World","Menu system")
+
+- if nav == 1
+- elsif nav == 6
+  - if ['instances','color_schemes','admin','pages','tags'].include?(params[:controller])
+    = #render :partial => "admin/nav"
+  - elsif ['sub_instances'].include?(params[:controller]) and user_signed_in?
+    = #render :partial => "sub_instances/nav"
+  - elsif user_signed_in?
+    = #render :partial => "settings/nav"
+- elsif nav == 7
+  - if ['charts'].include?(params[:controller])
+    = render :partial => "charts/nav"
+  - elsif ['widgets'].include?(params[:controller])
+    = render :partial => "widgets/nav"

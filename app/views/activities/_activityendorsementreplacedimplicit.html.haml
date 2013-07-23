@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/accept.png", :width => "16"}/
+= raw tr("{user_name} is now endorsing {new_idea_name} because {idea_name} was acquired", "view/activities/_activityendorsementreplacedimplicit", :user_name => link_to(activity.user.login, activity.user), :idea_name => link_to(activity.idea.name, activity.idea), :new_idea_name => link_to(activity.change.new_idea.name, activity.change.new_idea))

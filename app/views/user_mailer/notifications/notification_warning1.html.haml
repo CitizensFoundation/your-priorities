@@ -1,0 +1,17 @@
+= render :partial=>"user_mailer/header", formats: [:html]
+%p
+  = tr("Hi", "email")
+  = @recipient.first_name.capitalize
+  ,
+%p= tr("You have violated the site rules. This is your {warning_number} warning out of three. Your content was deleted. \                      |
+    You will be banned from the website if you break the rules more than three times.", "email", :warning_number=>tr('first','notifications')) |
+%p
+  = tr("Here are more details on the rules", "email")
+  \: #{link_to @recipient.root_url+'about/rules',@recipient.root_url+'about/rules'}
+%p
+  = tr("Here is the offending content. If you have any questions, you can contact", "email")
+  = @instance.admin_email
+  \.
+%p
+  "#{@notifiable.content}"
+= render :partial=>"user_mailer/footer", formats: [:html]

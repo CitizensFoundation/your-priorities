@@ -1,0 +1,30 @@
+= render :partial => "ideas/header"
+.col-group
+  .col-1
+    .col-content
+      &nbsp;
+  .col-8
+    .col-content
+      - if @revision.attribute_present?("name_diff") or @revision.attribute_present?("description_diff")
+        %p.notice
+          = tr("This shows the changes from the previous revision. You can also <a href='{clean_url}'>see the clean version</a>", "view/revisions/show", :clean_url => clean_idea_idea_revision_url(@idea,@revision))
+        - if @revision.attribute_present?("name_diff")
+          %h3.idea_name_detail
+            = @revision.name_diff.html_safe
+        - if @revision.attribute_present?("description_diff")
+          %p.idea_description_detail
+            = @revision.description_diff.html_safe
+        - if @revision.attribute_present?("notes_diff")
+          %p.idea_description_detail
+            = @revision.notes_diff.html_safe
+      - else
+        %p
+        .notice
+          = tr("Normally, you would see the changes made here, but there was some kind of processing error, so please check out the <a href='{clean_url}'>clean version</a>", "view/revisions/show", :clean_url => clean_idea_idea_revision_url(@idea,@revision))
+      %p
+      .heading= tr("Recent activity on this idea", "view/revisions/show")
+      - for activity in @revision.activities.active
+        = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_noself" }
+  .col-3
+    .col-content
+      = render partial: "idea_revisions/idea_revisions"

@@ -1,0 +1,9 @@
+#nav_sub
+  %div{:id => "nav_sub_<haml:silent> if ['ideas'].include?(params[:action]) </haml:silent><haml:block>1</haml:block><haml:silent> elsif ['discussions'].include?(params[:action]) </haml:silent><haml:block>2</haml:block><haml:silent> elsif ['points'].include?(params[:action]) </haml:silent><haml:block>3</haml:block>"}
+    %ul#menu_sub
+      %li.tab1
+        %span.tab_header
+          = link_to tr("Idea widgets", "view/widgets/_nav"), :action => "ideas"
+      %li.tab2
+        %span.tab_header
+          = link_to tr("Discussion widgets", "view/widgets/_nav"), :action => "discussions"

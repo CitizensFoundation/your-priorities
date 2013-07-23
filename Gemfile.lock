@@ -1,0 +1,478 @@
+GIT
+  remote: git://github.com/bikeexchange/jquery-rjs.git
+  revision: d30b959e133f4457cad6452885638cc55b2b70f7
+  specs:
+    jquery-rjs (0.1.1)
+      jquery-rails
+      rails (~> 3.2)
+
+GIT
+  remote: git://github.com/dkd/paymill-ruby.git
+  revision: 7cd7ec9e219e23d0f6d2ff0d26cf791fb2856973
+  specs:
+    paymill (0.3.0)
+      json
+
+GIT
+  remote: git://github.com/felipec/soap4r.git
+  revision: 4c8511f0006138f5a64a0abff10dbd1625032945
+  specs:
+    soap4r (1.5.8)
+      httpclient (>= 2.1.1)
+
+GIT
+  remote: git://github.com/hinrik/rails_view_annotator.git
+  revision: 28ebcbffffd1b8fce88efffbc7fc7e97fb52f93c
+  specs:
+    rails_view_annotator (0.0.7)
+
+GIT
+  remote: git://github.com/mmangino/facebooker2.git
+  revision: e776f83706e1e3d182059abf67d9a6a2ba160ef5
+  specs:
+    facebooker2 (0.0.17)
+      mogli (>= 0.0.33)
+      ruby-hmac
+
+GIT
+  remote: git://github.com/mmangino/mogli.git
+  revision: fbc3dd68ae89ee10587abc07b8cc316e24c44e89
+  specs:
+    mogli (0.0.44)
+      hashie (>= 1.1.0)
+      httmultiparty (>= 0.3.6)
+      httparty (>= 0.4.3)
+      multi_json (~> 1.0)
+
+GIT
+  remote: git://github.com/pat/pusher-ruby-client
+  revision: 608cc28d1aa832030386fbd148a3814166591904
+  ref: 608cc28d1a
+  specs:
+    pusher-client (0.2.2)
+      ruby-hmac (~> 0.4.0)
+      websocket (~> 1.0.0)
+
+GIT
+  remote: git://github.com/pat/thinking-sphinx.git
+  revision: 55788f7b963a08965b8adc7970eabe7cd5bac13f
+  ref: 55788f7b96
+  specs:
+    thinking-sphinx (2.0.14)
+      activerecord (>= 3.0.3)
+      builder (>= 2.1.2)
+      innertube (~> 1.0.2)
+      riddle (>= 1.5.3)
+
+GIT
+  remote: git://github.com/rbjarnason/ruby-saml.git
+  revision: 6be3170ba2a5c7eac12d5255e32a62e6fadd1cc2
+  ref: 6be3170ba2a5c7eac12d5255e32a62e6fadd1cc2
+  specs:
+    ruby-saml (0.7.2)
+      canonix (= 0.1.1)
+      nokogiri
+      uuid (~> 2.3)
+
+GIT
+  remote: git://github.com/rbjarnason/tolk
+  revision: 5cf2e5dc96af99233ec2508d7531a61403ff7eca
+  specs:
+    tolk (1.3.9)
+      safe_yaml (~> 0.8)
+      will_paginate
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actionmailer (3.2.13)
+      actionpack (= 3.2.13)
+      mail (~> 2.5.3)
+    actionpack (3.2.13)
+      activemodel (= 3.2.13)
+      activesupport (= 3.2.13)
+      builder (~> 3.0.0)
+      erubis (~> 2.7.0)
+      journey (~> 1.0.4)
+      rack (~> 1.4.5)
+      rack-cache (~> 1.2)
+      rack-test (~> 0.6.1)
+      sprockets (~> 2.2.1)
+    activemodel (3.2.13)
+      activesupport (= 3.2.13)
+      builder (~> 3.0.0)
+    activerecord (3.2.13)
+      activemodel (= 3.2.13)
+      activesupport (= 3.2.13)
+      arel (~> 3.0.2)
+      tzinfo (~> 0.3.29)
+    activeresource (3.2.13)
+      activemodel (= 3.2.13)
+      activesupport (= 3.2.13)
+    activesupport (3.2.13)
+      i18n (= 0.6.1)
+      multi_json (~> 1.0)
+    acts_as_list (0.2.0)
+      activerecord (>= 3.0)
+    airbrake (3.1.8)
+      activesupport
+      builder
+      json
+    ansi (1.4.3)
+    arel (3.0.2)
+    asset_sync (0.5.4)
+      activemodel
+      fog
+    auto_html (1.6.0)
+      redcarpet (~> 2.0)
+      rinku (~> 1.5.0)
+    awesome_print (1.1.0)
+    aws-s3 (0.6.3)
+      builder
+      mime-types
+      xml-simple
+    aws-sdk (1.8.3.1)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
+    bcrypt-ruby (3.0.1)
+    better_errors (0.7.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.1)
+      debug_inspector (>= 0.0.1)
+    builder (3.0.4)
+    canonix (0.1.1)
+    celluloid (0.14.0)
+      timers (>= 1.0.0)
+    childprocess (0.3.9)
+      ffi (~> 1.0, >= 1.0.11)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
+    coderay (1.0.9)
+    coffee-rails (3.2.2)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.2.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.6.2)
+    connection_pool (1.0.0)
+    dalli (2.6.2)
+    debug_inspector (0.0.2)
+    devise (2.2.4)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
+    devise-async (0.7.0)
+      devise (>= 2.2)
+    devise-i18n (0.6.4)
+    devise_invitable (1.1.8)
+      actionmailer (~> 3.0)
+      devise (>= 2.1.2)
+      railties (~> 3.0)
+    erubis (2.7.0)
+    excon (0.20.0)
+    execjs (1.4.0)
+      multi_json (~> 1.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
+    faraday (0.8.6)
+      multipart-post (~> 1.1)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
+    ffi (1.4.0)
+    flying-sphinx (0.8.5)
+      faraday_middleware (~> 0.7)
+      multi_json (>= 1.0.1)
+      rash (~> 0.3.0)
+      riddle (>= 1.5.0)
+      thinking-sphinx
+    fog (1.10.0)
+      builder
+      excon (~> 0.14)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
+    font_assets (0.1.6)
+      rack
+    formatador (0.2.4)
+    geoip (1.2.1)
+    googlecharts (1.6.8)
+    haml (4.0.1.rc.1)
+      tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
+    hashie (1.2.0)
+    headless (1.0.1)
+    hike (1.2.2)
+    html5shiv-rails (0.0.2)
+      railties (>= 3.2.0, < 5.0)
+    htmldiff (0.0.1)
+    htmlentities (4.3.1)
+    httmultiparty (0.3.8)
+      httparty (>= 0.7.3)
+      multipart-post
+    httparty (0.10.2)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
+    httpauth (0.2.0)
+    httpclient (2.3.3)
+    i18n (0.6.1)
+    impressionist (1.2.0)
+      httpclient (~> 2.2)
+      nokogiri (~> 1.5)
+    innertube (1.0.2)
+    journey (1.0.4)
+    jquery-rails (2.1.4)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
+    jquery-ui-rails (2.0.2)
+      jquery-rails
+      railties (>= 3.1.0)
+    json (1.7.7)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    kgio (2.8.0)
+    libv8 (3.11.8.13)
+    macaddr (1.6.1)
+      systemu (~> 2.5.0)
+    mail (2.5.3)
+      i18n (>= 0.4.0)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    memcachier (0.0.2)
+    method_source (0.8.1)
+    mime-types (1.23)
+    multi_json (1.7.3)
+    multi_xml (0.5.3)
+    multipart-post (1.2.0)
+    net-scp (1.1.0)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.6.6)
+    newrelic_rpm (3.5.8.72)
+    nokogiri (1.5.6)
+    oauth2 (0.8.1)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-facebook (1.4.1)
+      omniauth-oauth2 (~> 1.1.0)
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+    orm_adapter (0.4.0)
+    paperclip (3.4.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
+    pg (0.14.1)
+    polyglot (0.3.3)
+    pry (0.9.12)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    pry-rails (0.2.2)
+      pry (>= 0.9.10)
+    rack (1.4.5)
+    rack-cache (1.2)
+      rack (>= 0.4)
+    rack-ssl (1.3.3)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rails (3.2.13)
+      actionmailer (= 3.2.13)
+      actionpack (= 3.2.13)
+      activerecord (= 3.2.13)
+      activeresource (= 3.2.13)
+      activesupport (= 3.2.13)
+      bundler (~> 1.0)
+      railties (= 3.2.13)
+    rails-dev-boost (0.2.1)
+      rails (>= 3.0)
+    rails-i18n (0.7.2)
+      i18n (~> 0.5)
+    railties (3.2.13)
+      actionpack (= 3.2.13)
+      activesupport (= 3.2.13)
+      rack-ssl (~> 1.3.2)
+      rake (>= 0.8.7)
+      rdoc (~> 3.4)
+      thor (>= 0.14.6, < 2.0)
+    raindrops (0.11.0)
+    rake (10.0.4)
+    rash (0.3.2)
+      hashie (~> 1.2.0)
+    rdoc (3.12.2)
+      json (~> 1.4)
+    redcarpet (2.2.2)
+    redis (3.0.4)
+    redis-namespace (1.3.0)
+      redis (~> 3.0.0)
+    ref (1.0.2)
+    riddle (1.5.5)
+    rinku (1.5.1)
+    rmagick (2.13.2)
+    ruby-hmac (0.4.0)
+    ruby-prof (0.12.2)
+    ruby_parser (3.1.3)
+      sexp_processor (~> 4.1)
+    rubyzip (0.9.9)
+    safe_yaml (0.9.3)
+    sass (3.2.6)
+    sass-rails (3.2.6)
+      railties (~> 3.2.0)
+      sass (>= 3.1.10)
+      tilt (~> 1.3)
+    selenium-webdriver (2.31.0)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
+      rubyzip
+      websocket (~> 1.0.4)
+    sexp_processor (4.2.1)
+    sidekiq (2.11.2)
+      celluloid (>= 0.13.0)
+      connection_pool (>= 1.0.0)
+      multi_json
+      redis (>= 3.0)
+      redis-namespace
+    slop (3.4.3)
+    sprockets (2.2.2)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    systemu (2.5.2)
+    therubyracer (0.11.4)
+      libv8 (~> 3.11.8.12)
+      ref
+    thor (0.18.1)
+    tilt (1.4.1)
+    timers (1.1.0)
+    treetop (1.4.12)
+      polyglot
+      polyglot (>= 0.3.1)
+    turbo-sprockets-rails3 (0.3.6)
+      railties (> 3.2.8, < 4.0.0)
+      sprockets (>= 2.0.0)
+    turn (0.9.6)
+      ansi
+    tzinfo (0.3.37)
+    uglifier (1.3.0)
+      execjs (>= 0.3.0)
+      multi_json (~> 1.0, >= 1.0.2)
+    unicorn (4.6.2)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
+    uuid (2.3.7)
+      macaddr (~> 1.0)
+    uuidtools (2.1.3)
+    warden (1.2.1)
+      rack (>= 1.0)
+    watir-webdriver (0.6.2)
+      selenium-webdriver (>= 2.18.0)
+    websocket (1.0.7)
+    will-paginate-i18n (0.1.13)
+    will_paginate (3.0.4)
+    workflow (1.0.0)
+    xml-simple (1.1.2)
+    zurb-foundation (4.0.9)
+      sass (>= 3.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  acts_as_list
+  airbrake
+  asset_sync
+  auto_html
+  awesome_print
+  aws-s3
+  aws-sdk
+  better_errors
+  binding_of_caller
+  coffee-rails
+  dalli
+  devise
+  devise-async
+  devise-i18n
+  devise_invitable
+  execjs
+  facebooker2!
+  factory_girl_rails
+  flying-sphinx
+  font_assets
+  geoip
+  googlecharts
+  haml (>= 3.2.0.rc.1)
+  haml-rails
+  hashie
+  headless
+  html5shiv-rails
+  htmldiff
+  htmlentities
+  impressionist
+  jquery-rails (= 2.1.4)
+  jquery-rjs!
+  jquery-ui-rails (= 2.0.2)
+  kaminari
+  kgio
+  memcachier
+  mogli!
+  newrelic_rpm
+  omniauth-facebook
+  paperclip
+  paymill!
+  pg
+  pry-rails
+  pusher-client!
+  rails (= 3.2.13)
+  rails-dev-boost
+  rails-i18n
+  rails_view_annotator!
+  rmagick
+  ruby-prof
+  ruby-saml!
+  ruby_parser
+  sass
+  sass-rails
+  sidekiq
+  soap4r!
+  therubyracer
+  thinking-sphinx!
+  tolk!
+  turbo-sprockets-rails3
+  turn
+  uglifier
+  unicorn
+  watir-webdriver
+  will-paginate-i18n
+  will_paginate
+  workflow
+  zurb-foundation (~> 4.0.0)

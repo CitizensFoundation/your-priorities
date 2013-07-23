@@ -1,0 +1,20 @@
+idea: It’s easy to add a new idea
+  category: Social Innovation
+  group: nil
+  description: You click the ‘Add a new idea’ button in the header and fill out the required fields. In ‘Explain your idea’ you should strive to make it clear and easily understandable. Try to describe the idea neutrally but in the ‘Explain your point box’ is your chance of convincing others why they should support your idea
+  point title: Add new ideas to make things better
+  point description: As it’s so easy to add new ideas you should not hesitate to put all your good ideas into this website. But don’t forget to support or oppose other peoples ideas because that way you have even more influence over the outcome.
+
+idea: Add points for and against
+  category: Social Innovation
+  group: nil
+  description: A good debate needs good points for and against each idea to make it easy for others to make up their minds about each issue. There is nothing to stop you from adding both points for and against an idea.
+  point_title: Influence other people
+  point_description: If you add good points for your idea it increases the chances of its success. Likewise, if you don’t like an idea, adding a good point against it decreases its chances.
+
+idea: Let other people know about your ideas with ads
+  category: Social Innovation
+  group: nil
+  description: You can “buy” ads for any idea within websites. Ads are bought with Social points which you earn by adding content and also when other people like your input. Those ads are then displayed at the top of each page for other users to decide whether they want to support your idea or not.
+  point_title: Ads are good, use them!
+  point_description: The more social points you earn, the more you can spend on ads. If you pay more then the minimum amount for them your ads will take precedence over other peoples ads.

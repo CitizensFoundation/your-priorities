@@ -1,0 +1,11 @@
+#branding{:style => "height: 85px"}
+  %table
+    %tr
+      %td
+        - if current_sub_instance
+          #sub_instance_logo
+            = render :partial => "sub_instances/logo"
+        - else
+          #main_logo
+            = link_to :controller=>"portal", :host=>request.host do
+              = image_tag "/assets/new/new_logo.png"

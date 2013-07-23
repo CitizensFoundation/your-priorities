@@ -1,0 +1,323 @@
+---
+is:
+  db7fcf41127935e5fee505fe102abf9a: Þínar umræður
+  d4dccb8ca2dac4e53c01bd9954755332: Vista
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Tilkynna
+  0ab8485b04bf31384d9953d35ecaf6e4: ' %{sender_name} gerði athugasemd við %{comment_name} '
+  a00624d47e8dca3b06b23cdcd386cd62: '%{sender_name} setti athugasemd á vegginn þinn'
+  42bd4c0819c498d1c1ab622de74d6f82: studdi
+  83c101ec84ebd1c0e45fa1cd5b9300d6: er á móti
+  37fc5aed92a40b16dafd17cee72e3154: Efstu hugmyndir
+  833c90a077a2beda3b6cd000f3fe5c29: Hugmyndir af handahófi
+  cd267635c8a38e2acba076b0edeeedbe: Umræður í þínum vinahóp
+  07221d868183bab87e41f0ec47440880: Umræður um þínar hugmyndir
+  b38f1c5b8bdb6329e8a4b2e6e456da8b: Umræður um þínar hugmyndir
+  8754f2b7cbd98752793ba8314bded062: Virkar umræður
+  9fd4dc340cdbdabdd25908817052b915: Þín rök
+  2d180c2da693f88fe77a780e31bc07a2: Nýjustu rök
+  ac717bd14c68bc426139b20f01d941ea: '%{user_name} kom með hugmyndina %{idea_name} '
+  fe5c45415c03bb476dc22b730aaf2590: '%{user_name} setti inn  %{count} athugasemdir
+    við %{discussion_name}'
+  777eecd062745916881aff23d68afd46: '%{user_name} setti athugasemd á vegg hjá %{other_user_name}'
+  d533bc81d129968f57a188436d3575ac: '%{user_name} bætti við athugasemd á %{discussion_name}'
+  02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} sendi inn athugasemd'
+  1a13f1069e52ca6118df8501f7a7c755: '%{user_name} bætti %{point_name} við %{idea_name} '
+  0c082c9ad303a70be82598499aaa1f6e: ' %{user_name} breytti %{idea_name} '
+  43e00d10903ec90c9f2c523a901df552: '%{user_name} vann sér inn %{capital}%{currency_short_name}
+    af því bæði stuðningsmönnum og andstæðingum  %{point_name} fannst hún gagnleg'
+  0c0d218418852e444a95f10f2fbe3060: '%{user_name} vann sér inn %{count}%{currency_short_name}
+    fyrir  %{count} nýja fylgjendur'
+  11ee56b3d9c99494994e5e0e4b6ae733: Upprunalega frá
+  6d0a578ca2f2c0e792fc923002fccbe3: síðan
+  c29196003ef3c4f020130aab1c63d4ea: '%{count} rök'
+  c3829f98b9d811ef102006ff00a83881: '%{count} útgáfur'
+  c474f356721291083cc2be1ef39cf658: '%{count} nýjar athugasemdir'
+  162c4677d6d5763bb681548c6fd60499: <b>Tilkynningar:</b><br /> %{sentence}
+  13b5bfe96f3e2fe411c9f66f4a582adf: Í
+  ae7950ddfcef416ea6840228d63eba13: engin ný rök
+  fd43e901068a7802f554bf77ac25c8f2: Eyða aðgangi þínum á %{instance_name}
+  ab1e45da9c565570d4986f268329f2d1: Síðasta virkni í rökum á %{instance_name}
+  ac876a06a03e14d880f4cd06058a34ae: Efsta flæði %{sub_instance_name}
+  cd8251fee54cfb894119ab71fcedde37: Umræður um %{sub_instance_name}
+  400677bf70243014f360f3be283982e9: Aðalatriði
+  6fa73f77103f4bbddb6129bd0bb18de8: Allar umræður
+  b10e67ce0ade1bd465bedfbd005bbb9c: Umræður um hugmyndir sem þú styður
+  709468af25e91284821d1bdbfdded24c: Allt
+  16d39f7e2b0ed1ee441421cc0f86a724: Þessum rökum var eytt
+  1945e5ccc0bd89812560b30f7c48639d: Þín skilaboð
+  83552c749fdd17a0407ce62a9df2c4fc: Virkastir %{tags_name} á %{instance_name}
+  f6d4f577a7d6400fee113c788852a50a: Upplýsingar
+  047fe665bd2cea51e221d371d1e4c698: Breyti stillingum fyrir %{user_name}
+  69711d42de93b7a39c12910b4ed48a54: '%{user_name} umræður á %{instance_name}'
+  e945975666947d8744dbdb80d2e5a750: '%{user_name} rök á %{instance_name}'
+  0c7e91060e8afe22fb824e15473d9089: Endursenda staðfestingarpóst á  %{email}
+  1d10d0c01b3469bcb594ade393639ed0: Þessi notandi eyddi sínum aðgangi
+  af1b98adf7f686b84cd0b443e022b7a0: Flokkar
+  e11d937a5185a2361123ad5222df5f5f: Hugmyndir um %{tag_name} af handahófi
+  ae43f4cff7204d28b83fe67710e9377d: Umræður um %{tag_name}
+  0f471a2597c99d0f4c81db859b0205f3: Hugmyndir sem þú bjóst til á %{sub_instance_name}
+  3687b1daa635064075afa2b6417880d0: Mest lesnar
+  2bd2b8e30995d2dfe1f43a4ea30fc3fc: Mest rætt
+  8de16e7a08998e0e60d27d6b4d441379: Efstu hugmyndir síðustu 24 tíma
+  c6dea8f80479c693b283d99c80dea40c: Efstu hugmyndir síðustu 7 daga
+  6c60eec8c5809428787d3d817d389404: Efstu hugmyndir síðustu 30 daga
+  04742c1a5a675be0659d83d65cb79661: Rísandi hugmyndir
+  233b006364b1fcfc3b6e2928a20e1545: Fallandi hugmyndir
+  e42d894b926c4833956b61471df18351: Umdeildar hugmyndir
+  b16830a31962cfd2628089a8fa4a3090: Hugmyndir í vinnslu
+  0574c44ee9d51a85091b24119d5c2f69: Nýjust hugmyndir
+  35408f2e9ccf595f1765bd8e56a2f571: Bestu rök um %{idea_name}
+  a2d5e7a9d03b49d0639ab0a75a59d2c2: Gagnlegustu rökin
+  c772367d0682d61254cebb1dcfd44c93: Umræður um %{idea_name}
+  49c413c7e9fbe1aee3281a29d2d0dd9c: Síðustu athugasemdir um  %{idea_name}
+  dee5db0dd869d6d2c03539fab2c874ad: Ný hugmynd á %{sub_instance_name}
+  8de56fbeeb825a9f65910ee399469698: Síðast bætt við
+  53127d8c496db03d848a289010087409: Efstu hugmyndir
+  64663f4646781c9c0110838b905daa23: Handahóf
+  e02decaebace93b27ce239a671e77453: Þínar
+  d984e98c3eceb8bc31b8ca398758f248: Nýlega endurskoðuð rök
+  8df9c04d95e71c0bb899ac7a5af8cdfb: Bættu rökum við %{idea_name}
+  0077d575bfc52d2176b427189982b6a6: Vistaði %{point_name}
+  621df26b895998b50fdad2c763f695e3: Umræður um %{point_name}
+  59d7434481f250db2c48858375499a31: Nýjustu Rök
+  0fbcdfe6232142c357542a262ce3ff53: Nýlega lagfært
+  2ed154e6cbb75329947fe1929b784059: Rök um þínar hugmyndir
+  7454f8acc4b83d16a1bdf39b70f25be2: Duglegastir á %{sub_instance_name}
+  162b23a6b1adeab39cb9db221d4bdb08: Boðberar
+  86e570b9bac3edce3c2cdcdf17b8cab0: Kaupa kynningu fyrir %{idea_name}
+  0949432676ffa72ecad1c31d87205b74: Stuðningsmenn
+  e4a7e2abf8165cc2439cbd738602f43a: Síðast uppfært %{time_ago}
+  4f12db96c07d3de9bf8a009f62b864ca: Virkustu %{tags_name}
+  a0d7e042ee84ad945d55f3862369255f: Settu inn mynd
+  0863f095cbdbbe6ce5a8aac979766a83: Hámarkslengd hugmyndar
+  668deb1091498fc9353f5d297fd55877: stafir eftir
+  b5a7adde1af5c87d7fd797b6245c2a39: Lýstu hugmyndinni
+  062bad04a7e077f61b7dcb0ef85dbef9: 'Hér sérðu breytingar frá eldri útgáfu. Þú getur
+    líka <a href=''%{clean_url}''>skoðað hreina útgáfu</a> '
+  021da1b20f73dc252361a54d80497ef3: Röð
+  121180d98b4e249fcc3bcc8e0255acec: '<a href=''%{comment_url}''>%{count} athugasemdir</a> '
+  0f9b5eff8d1d07e6ce3a8fe2697a76f7: Hóf notkun  %{time_ago}
+  16765596b57782e7012aee0ac86ff5ff: '%{count} styðja'
+  da08b4d4be989f5276a7aab9899ab34c: '%{count} á móti'
+  0e7a1834a7b4fba66d0f329cfab14cbb: Síðasta heimsókn var fyrir %{time_ago}
+  1ef76611148ef0524fe1226508ed689b: '%{count}  á móti'
+  18ef3f4348075aca1646941639d610dd: Hugmynd %{position}
+  52f4e192179a8449b77cc149541a5ba0: Engar hugmyndir komnar hingað inn.
+  0658ca53019b54d0ed1a7dff1b0afdde: 'Bætt við fyrir %{time_ago} '
+  290612199861c31d1036b185b4e69b75: Útdráttur
+  09a1e75ab40c7bb5efb09d013aff3a53: Bæta við rökum með
+  42a965482d059f063d4503251a2548b8: Bæta við rökum á móti
+  1959fc2b11821f9f6709816c30425e6d: Ég er á móti þessu og vil útskýra afhverju
+  9f86485bb188bd3e5c78e5f3b86b90d0: '%{count} stuðningsmenn'
+  ff0cfd359a1d96d597133a4341a6a7e4: Settu inn nýja hugmynd
+  201e7310f5fb28133f781fc856003d92: Nafn hugmyndar
+  03368e3c1eb4d2a9048775874301b19f: Veldu málaflokk
+  e4537b95ea9fd770a68bc7ec0a4d8eb3: Útskýrðu hugmyndina þína á hlutlausan hátt. Í
+    hægri dálknum geturðu hvatt aðra til að styðja hana og getur skrifað eins mörg
+    rök og þörf er á.
+  7dd982d0948637b4ae83f2804bd489ca: Afhverju ætti fólk að styðja þína hugmynd?
+  2e6c2d96aaacc8ef06d0ea12237cfc2e: Það þarf að fylla í alla reiti
+  d7241b155164fdbc560602f924393149: Skráðu hugmynd þína og rök
+  586f9d3669a73e12a8caed7a7d76288e: Veldu góðan, lýsandi titil á hugmyndina þína
+  cdd559fd8bda4b2bdf1cdbca181b38b9: Útskýrðu hugmyndina í nokkrum málsgreinum og reyndu
+    að hafa textann hnitmiðaðan.
+  e254a34f3a1001f00adc55aba5552783: Efst
+  e1e583ed208b1fbecec8b65dc272a098: Er þessi hugmynd  frá %{user_name} persónuleg
+    árás eða brot á reglunum?
+  1192d7b5c357203a331761417698b02c: Rökræða
+  c8a9445d2beafa6543b6a100c2991c64: Ný rök
+  0658f6ed5ef5d64d4675bf9d0ab22c29: Meira...
+  6a80ac9068f0e01bc56a00ecdf9e4f9f: RÖKRÆÐA
+  fbaedde498cdead4f2780217646e9ba1: Upp
+  c4e0e4e3118472beeb2ae75827450f1f: NIÐUR
+  ccdb10c3cba3580f0ee5b9e9f81b4c93: '%{idea_name}. Meira á %{instance_name}'
+  cde1d24d4d3427be7222dbe6a518f6da: Engin rök komin.
+  f5359d1dd07def542aa9b0577fb27068: Uppfæra stöðu
+  3b878279a04dc47d60932cb294d96259: Yfirsýn
+  f7c27fe5419c0751885d8a0cc6f0e75a: 'Rökræður (%{count}) '
+  cbc00c310ea3af7dc35edceb12f5601f: Ný rök
+  b4c1d65b09a6dd0d154f9680cda00843: Umræður (%{count})
+  00d9e5c459f14c32aa6d6d1bb7cde76d: 'Útgáfur (%{count}) '
+  a80425472d94ae02c836da5b6f205b7b: Flæði
+  8e1a7d9287a48440106ef0181c5a0181: Kaupa kynningu
+  f2a6c498fb90ee345d997f888fce3b18: Eyða
+  a604e73131bb1a34283a5ebcd349def4: studdu
+  665255de10a45ae3e1c0e81b515b55ca: '%{count} umræður'
+  0b39c5aca15b84b1ad53a94d6b3feb78: Breyta lykilorði
+  198584454b0ce1101ff5b50323325aa8: Netfang
+  da0a4c939d482be3177c8e0e5d630bfb: 'Innskráning:'
+  21bdc5689c12595ae14298354d5550d5: Ertu búinn að skrá þig áður?
+  b357b524e740bc85b9790a0712d84a30: Netfang
+  ade7300e26de3e48a42cc01a4c4d74fa: Útgáfur af þínum rökum
+  2d8b22cca4d0f75b672127d908b747f7: Uppfæra póstskilgreiningar
+  9977ab924c89e6c98b1cf1595354ada3: Síðasta virkni
+  939d09ea0c18215ca9032ef913d82567: Nýjar hugmyndir
+  e2f69ba325c4f8bdc393ffd3cb848a51: Hugmyndir af handahófi
+  7fbd71fc25b275b7d095a29c72b1a821: Hver eru þín rök?
+  8a357512436318208aca51f2db5ebf75: Vista rök
+  02bb5de0c787154b2cfaea82d1cfc40d: Hætta við þessa útgáfu
+  fc0d25fc5ca93bbd8def3aaf54f58f05: Er þessi athugasemd frá %{user_name} persónuleg
+    árás eða brot á reglunum?
+  099af53f601532dbd31e0ea99ffdeb64: eyða
+  8324d056b6c576dc840f4ca7231746a5: Senda
+  2682beed28fc3d3709619dbf2a469dbb: Settu inn mynd
+  8997e52d35c7684ac4a498b9854d4455: 'Engar hugmyndir um %{tag_name} ennþá. '
+  a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} hugmyndir'
+  a7dfaf03c972c351144591b8a6c9b246: Hér finnur þú hugmyndir eftir málaflokkum
+  52d2acef5f9e5e2d6a06c4958f774419: Ekkert fannst
+  b1c94ca2fbc3e78fc30069c8d0f01680: Allt
+  0be8406951cdfda82f00f79328cf4efc: Athugasemd
+  13348442cc6a27032d2b4aa28b75a5d3: Leita
+  e576c23d915755d83e2d1f47bd9f6c22: Engar niðurstður
+  5f8f417f97b33a00c41ad6acd0eaf2e9: Hefja umræðu um þessi rök
+  ed3792969d8e38130c6651dd447509c5: Hefja umræðu
+  1c01ea8ff1eb63e6a59c944653d38909: Senda skilaboð á vegg
+  c44fb24da70dbf47aa6823cffeaecfa4: Vista nýjan umræðuþráð
+  1c3a03e7bf74d0ee69de0311447bb613: 'Hugmyndin %{idea_name}, sem þú styður ,er í %{position}.
+    sæti í %{category} flokknum. '
+  b6d4223e60986fa4c9af77ee5f7149c5: Innskráning
+  8f7f4c1ce7a4f933663d10543562b096: Um
+  8cf04a9734132302f96da8e113e80ce5: Heim
+  d46ef9e7211d041671cdbe6c3d884884: Hugmyndir
+  84b50f39e1878c47edb84bd7ef1b7df9: '%{prompt} %{idea_name}. Meira á %{instance_name}'
+  f1e2a549f8a0a20b572b176455dba9b9: SETTU INN HUGMYND
+  cce99c598cfdb9773ab041d54c3d973a: Stillingar
+  a274f4d4670213a9045ce258c6c56b80: Tilkynningar
+  1747df8919f292530bf55fe439bf159a: '%{count} viðvörun'
+  0323de4f66a1700e2173e9bcdce02715: Útskráning
+  20db0bfeecd8fe60533206a2b5e9891a: 'Fornafn '
+  20b86b18475850202a63d9550071b782: (Aldrei deilt án þíns leyfis)
+  cc83a5678878f2fb8d453b555c037920: Hvernig viltu þekkjast á vefnum?
+  d755860b6f0e4bd38d789657bfe7be0a: (Getur verið rétt nafn eða dulnefni)
+  15bbb9d0bbf25e8d2978de1168c749dc: Vefsíða
+  1a08c8ca9af355a37e4b5d4595434211: Staðfesta lykilorð
+  06591670b8600f71493c779ff6c5e331: '%{position} áhrifamestur '
+  e31e799048673ff7f3699d5b5ddc9fa1: Hóf notkun  %{time_ago}
+  eaeff777ab952f48677e2f5716478921: Þú getur innskráð þig með Facebook eða island.is
+  70d41baa21f0fef4a54de863cd259ace: Innskráning með island.is
+  780f17237b2f99a557c2490dfa9a30a4: Innskráning með Gmail
+  4d0a3fc4c46501d3b4d2257820942a5e: Innskrá með %{provider}
+  d64518ec4a60ae31b2b5e4074646cca1: Reglurnar okkar
+  d9d222130429eb44be0faae283593dd6: 'Með því að skrá mig á  %{instance_name} (BÍ)
+    lýsi ég því yfir að:'
+  a4b522102353672b9f0d5582e8386348: uppgefnar upplýsingar um mig eru réttar og að
+    ég hef einn aðgang að tölvupósti á uppgefnu netfangi og get bæði móttekið og lesið
+    tölvupóst og að BÍ megi senda mér tölvupóst á það netfang
+  2d31841ff75aeb20f2c6d4d96411129f: ég tek fulla ábyrgð á því efni sem ég set á BÍ
+    og því að aðrir geti ekki notað minn aðgang
+  b357a942b0558db7d42891322b9bb729: ég mun sýna kurteisi og halda mig við málefnalega
+    umræðu á BÍ og fara að íslenskum lögum
+  ee710d46f1e36118e1c4aea9cc51305e: ég samþykki að mínar hugmyndir geti farið í formlega
+    vinnslu og framkvæmd hjá öðrum sem lýðsprottin hugmynd
+  1cab6f0a48459aaac4e3116773de5781: ég mun ekki birta auglýsingar eða senda ruslpóst
+    í gegnum BÍ
+  6231033110be3e0b22eeda6b6b336835: ég mun ekki nota BÍ til að leggja aðra í einelti,
+    hóta, móðga, særa eða ofsækja aðra á nokkurn hátt né birta villandi og illkvittið
+    efni og að ég mun ekki setja inn hugmynd eða annað efni á BÍ sem brýtur í bága
+    við mannréttindi fólks, s.s. vegna kynferðis þess, trúarbragða, skoðana,þjóðernisuppruna,
+    kynþáttar, litarháttar, efnahags, ætternis og stöðu að öðru leyti
+  4bb709d8718626d39a5dbf2e2589528e: ég mun tilkynna umsjónarmönnum BÍ um brot á notendaskilmálum
+    þessum með því að smella á viðeigandi hnapp
+  94386c683395a8c1a30a6f405a3a7116: "ég mun aðeins stofna og nota einn notanda á BÍ\r\n"
+  8070ff490b986cbbe5908dba6688b882: 'Sjálfseignarstofnunin Íbúar, sem rekur Betra
+    Ísland lýsir því yfir að:'
+  6c3b5928436080f8aba591af541dd5f0: Hún mun gera sitt besta til þess að BÍ sé alltaf
+    opinn og virki á þann hátt sem ætlast er til
+  388e31e2da00cdad1159f0fecb186fff: Meðferð allra persónuupplýsinga verður í samræmi
+    við ákvæði laga nr. 77/2000.
+  03fa96387303a39d8a63c153bac26958: 'Við áskiljum okkur rétt til að:'
+  5b85b9431a2d9b8db993be62ce6ddaf6: Bregðast við öllum brotum á notendaskilmálum og/eða
+    landslögum á viðeigandi hátt, hvort sem um er að ræða það að fjarlægja efni af
+    vefsíðunni eða að kæra til yfirvalda.
+  ccb170b7563ba9e94e021fabfef45771: "Breyta notendaskilmálum þessum. Öllum skráðum
+    notendum verður tilkynnt um slíkar breytingar með tölvupósti.\r\n"
+  5e45d0479ee365f79d004b2f4ecb1f27: bætti %{point_name} við %{idea_name}
+  64e73aa014f92f7f5d7ca38c24cbf801: Vann sér inn %{capital}%{currency_short_name}
+    af því andstæðingum fannst þetta  %{point_name} gagnlegt
+  a5653af764bc1619a170fcb6c315416a: Eyða af þessari síðu?
+  c826ca2348d9fdb979b6d49b2eea00e1: Finnst ekki lengur %{point_name} gagnlegt
+  5b2b53624bb2f80eb21d312c88655ef3: Sendi athugasemd á %{discussion_name}
+  493443f74e1d01d5f290368b68b22007: '%{user_name} kom með þessa hugmynd'
+  364bcb5c354be3b833c4a83c904ae91f: Merkti %{point_name} gagnslítil
+  d3da97e2d9aee5c8fbe03156ad051c99: Meira
+  ee70f3ca5d66eac5f6fc8616da483f4d: Engin umræða
+  26b2c865adf221f0d43b35cb642e775a: Setti inn %{count} athugasemdir á %{discussion_name}
+  c4b9c0332472140a37c9a86354398a64: Finnst ekki lengur %{point_name} gagnslítið
+  998c23a160d06d4a451780c50ee6a102: Kosið upp
+  0f57d5b441651c57eac9f91efaa5a75a: Hnígandi
+  0f5d49facdd47101ec961e13882f3543: Úps, ekki réttar upplýsingar
+  010818f282f6ca53d86d4f988f83744f: Vista stillingar
+  800e4dd8dfc264160c0b52347f7f9d4c: Eyða þínum aðgangi
+  c37ad8c5cf363431fbaa23a52ef949a4: Eftir %{author_sentence}
+  e7c3b88bf30f862f48fcefde6490b946: bætt við fyrir %{time_ago}
+  7b67f24364e4e88bcd95c3237d3fa318: '%{author_sentence}'
+  a534ed26c1d745e8e15e33c1dad34773: Rökum bætt við %{time_ago}
+  2a8539c576356a45c8ffea55f7f9c6d1: Þetta er ekki lengur gagnlegt
+  214c85ce1555950780114abb91def844: Gagnslítið
+  68e58e8d7902b8d218a96c0e6f22a683: Þetta er ekki lengur gagnslítið
+  5b378488a7da7228e25ac9ad5ec2f248: Er þetta gagnlegt?
+  93cba07454f06a4a960172bbd6e2a435: Já
+  bafd7322c6e97d25b6299b5d6fe8920b: Nei
+  7b2bfb819c88eb92abda770f0ebeacac: Þetta er ekki gagnlegt
+  3ae3bed8c1463fa4161540efac210724: 'Bættu við rökum til stuðnings - '
+  90eb7ee17567db6714ef350fc4b5fcf3: "Bættu við rökum\r\n"
+  ffa99d6b0c14720536fcc647c7197f17: Já, þessi rök styðja þessa hugmynd
+  d81b16748b9d6ff6622694e818deeb18: Nei, þessi rök eru gegn þessari hugmynd
+  99b4622ebe1e9894ede410500cde5915: Hver eru þín rök?
+  0680c0f4acc215c7c75e5dafe9384e7c: Settu slóð á meiri upplýsingar
+  a7761bd5cba69c6727e64f3df1f2d680: Skýr og sterk rök eru gagnlegt tæki til að hafa
+    áhrif á skoðanir annara og hvetja þá til að styðja eða vera á móti hugmyndinni.
+    Útskýrðu afhverju aðrir ættu að kjósa um þessa hugmynd, hvað er það sem gerir
+    hana mikilvæga?
+  81419da2582f8c15ad1e3d2d732e1fb2: Afhverju ætti fólk að styðja þessa hugmynd?
+  28316f611efd0ad924f6a9db26bf884c: Skýr og sterk rök eru gagnlegt tæki til að hafa
+    áhrif á skoðanir annara og hvetja þá til að styðja eða vera á móti hugmyndinni.
+    Útskýrðu afhverju aðrir ættu að kjósa um þessa hugmynd, hvað er það sem gerir
+    hana mikilvæga?
+  40aea558a7a3abc7cd9de2d41093eb53: Eru þessi rök frá %{user_name} persónuleg árás
+    eða brot á reglunum?
+  23f719bbec8794c6dbb09214a244c6da: Engin rök hafa verið endurskoðuð nýlega
+  175fd8a23b58b6b7ce1958698686d284: Gagnlegt?
+  7497114df581c98e29eab1877685bb6f: Gagnslítið?
+  8e3c1c3c8cc3864dd65b7ecd55a229bd: '%{count} stuðningsmanna fannst þetta gagnlegt.'
+  fa28923bc27f10e4b3a892e1e71fd6bb: '%{count} stuðningsmönnum fannst þetta  <i>ekki</i>
+    helpful.'
+  f569261213434b145882360cd8b58459: '%{count} andstæðinga fannst þetta gagnlegt.'
+  4938ac136fbb96f4b7dc5dbc9f22b3d8: '%{count} andstæðingum fannst þetta <i>ekki</i>
+    gagnlegt.'
+  b59b8af25c9a82643008ca5defb21a2f: '%{count} andstæðinga fannst þetta gagnlegt, %{other_count}
+    fannst það ekki.'
+  324fd6f6e45656cac0e9af029e6a2e2c: '%{count} óákveðnum fannst þetta gagnlegt.'
+  12e04993707a599568f6b7641d8e89f0: '%{count} óákveðnum fannst þetta <i>gagnslítið</i>. '
+  c02f1bde8d33b74d66c9440588e83efb: '%{count} fannst þetta gagnlegt'
+  45f57ec68e303d292d5834bc4adc60b8: '%{count} mannst fannst þetta <i>ekki</i> gagnlegt.'
+  5c36be9267b5b5029c87219a31b0b1c1: '%{count} fannst þetta gagnlegt, %{other_count}
+    fannst þetta ekki.'
+  f9aae5fda8d810a29f12d1e61b4ab25f: Notendur
+  6ba1364d96463a5bb5b064ce138e3128: '%{user_name} biður þig að íhuga %{idea_name}'
+  3bc9cc15d02611dc4781a6ce6bf86710: Kjósa upp
+  13af6b983fc9bbd55699881a1023a539: Nei
+  1a8e4f3a313d948ac095a8d24110c1b1: '%{count} studdu'
+  2f80c7ef5f482ef736da54717b3514eb: '%{count} á móti'
+  7dce122004969d56ae2e0245cb754d35: Breyttu
+  77c8b9f38491385d59ddc33d29e751fe: 'Ítarefni:'
+  fa17217f817aabfc79196a3adc390442: Bættu við vefslóð
+  142b38d73ecdd12a19fe53a206e4c734: Allur textinn
+  1aa0d7cede60e59fc6b506bb987a2718: Öll virkni
+  0ef9a6968cfe92f7bde817483fb5d0cf: Á móti
+  dbb6f26a0ccb75b82d641ff87b627ce3: Nýir félagar
+  0cc54e3d557f73d2891235a265b06341: Nýleg virkni um þessi rök
+  5a9d18bb87ff12835dc844883c5c3ebe: breytt
+  79281fb7fd5e0cbea9ca524b779e89ff: Takk fyrir að leggja málinu til rök
+  22af645d1859cb5ca6da0c484f1f37ea: ný
+  1b92838e756182fda710cfd58819f671: Rök með
+  8bf8854bebe108183caeb845c7676ae4: af
+  f4ec5f57bd4d31b803312d873be40da9: Breyting
+  2512081b92507a3e87cdb8ba7cd6c6b7: '#1 hugmynd:'
+  f5a7924e621e84c9280a9a27e1bcb7f6: Heimurinn
+  3c5db2447415c261cf024be85458ce35: Hjálplegt
+  ff44bfccaadd8bdba50e227e3f4e55ba: Laga rök
+  747705a1c07ec5d7613502a7d50bf49a: '%{user_name} breytti %{point_name}'
+  fc2e12b5aff1b388bc309a96bccb3f9b: Takk fyrir að bæta við %{idea_name}
+  fb00406d232c6c2e02cdd9560bd27b68: 'Rök með %{idea_name}:'
+  fbb1f9c2120e361e0e7b520936d57f86: Bætti %{point_name} við þessa hugmynd

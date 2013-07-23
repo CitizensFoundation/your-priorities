@@ -1,0 +1,15 @@
+- if not @near_top.empty?
+  %h4= tr("These are your ideas that have a good chance of being chosen for formal evaluation by the City of Reykjavík at the end of this month. If you want them to succeed or fail you should share them on Facebook and other social media and encourage your friends to support or oppose them!", "email")
+  - @near_top.each do |near_top|
+    %p
+      - if near_top[:endorsement] == 1
+        = tr("The idea {idea_name}, which you support, is in {position}. place in the {category} category.", "email", |
+          idea_name: link_to(near_top[:idea].name, near_top[:idea].show_url),                                     |
+          position: near_top[:position],                                                                                      |
+          category: link_to(tr(near_top[:category].name, "model/category"), near_top[:category].show_url))                    |
+      - else
+        = tr("The idea {idea_name}, which you oppose, is in {position}. place in the {category} category.", "email", |
+          idea_name: link_to(near_top[:idea].name, near_top[:idea].show_url),                                    |
+          position: near_top[:position],                                                                                     |
+          category: link_to(tr(near_top[:category].name, "model/category"), near_top[:category].show_url))                   |
+  %br/

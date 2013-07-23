@@ -1,0 +1,12 @@
+= render :partial=>"user_mailer/header", formats: [:html]
+- Rails.logger.info("WHAT IS IT: #{@notifiable.inspect}")
+%p
+  = tr("Hi", "email")
+  = @recipient.first_name.capitalize
+  ,
+%p= tr("{sender_name} just posted a message to your profile.", "email", :sender_name=>@sender.name)
+%p= @notifiable.first_comment.content
+%p
+  = tr("Reply here", "email")
+  \: #{link_to @notifiable.first_comment.show_url, @notifiable.first_comment.show_url}
+= render :partial=>"user_mailer/footer", formats: [:html]

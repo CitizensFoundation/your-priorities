@@ -1,0 +1,22 @@
+- cache("idea_chart-#{@idea.id.to_s}") do
+  .idea_chart_container
+    = link_to url_for(controller: "ideas", action: "statistics"), remote: true do
+      - @charts = @idea.charts.newest_first
+      - if Rails.env.development? and @charts.length>0 and @charts.length<=2
+        - @charts = [@charts[0],@charts[0],@charts[0]]
+      - if @charts.any? and @charts.length > 2
+        - sorted = @charts.sort_by { |c| c.position }
+        - max_position = sorted.last.position
+        - min_position = 1
+        - max_volume = @charts.sort_by { |c| c.volume_count }.last.volume_count
+        - if false and sorted.first.position == sorted.last.position
+          .idea_chart
+            = tr("Volume","chart")
+            = image_tag Gchart.line(:size => '70x30', :data => [@charts.collect{|c| c.volume_count}.reverse,@charts.collect{|c| c.down_count}.reverse,[0,0]], :bar_colors => "009933,CC0000,EEEEEE",  :chart_background => 'EEEEEE', :min_value => 1, :max_value => max_volume, :custom => "chm=b,009933,0,1,0|b,CC0000,1,2,0&chls=1,1,0|1,1,0|0,1,-1&chg=17,50,1,5"), :size => "70x30"
+        - else
+          .idea_chart
+            = tr("Position","chart")
+            = image_tag Gchart.line(:size => '70x46', :data => @charts.collect{|c| c.position*-1}.reverse, :line_colors => "13499b", :chart_background => 'EEEEEE', :min_value => min_position, :max_value => max_position, :custom => "chg=17,33,1,5"), :size => "70x46"
+          .idea_chart
+            = tr("Volume","chart")
+            = image_tag Gchart.line(:size => '70x30', :data => [@charts.collect{|c| c.volume_count}.reverse,@charts.collect{|c| c.down_count}.reverse,[0,0]], :bar_colors => "009933,CC0000,EEEEEE",  :chart_background => 'EEEEEE', :min_value => 1, :max_value => max_volume, :custom => "chm=b,009933,0,1,0|b,CC0000,1,2,0&chls=1,1,0|1,1,0|0,1,-1&chg=17,50,1,5"), :size => "70x30"

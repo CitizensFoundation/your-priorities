@@ -1,0 +1,2 @@
+%img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/assets/icons/flag_yellow.png"}", :width => "16"}/
+= tr("{sender_name} flagged {idea_name} for review", "view/notifications/_notificationideaflagged", :sender_name => link_to(notification.sender_name, notification.sender), :idea_name => link_to(notification.notifiable_name, notification.notifiable))

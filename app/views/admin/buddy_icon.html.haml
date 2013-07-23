@@ -1,0 +1,16 @@
+#hp_intro
+  = @page_title
+%p
+  - if current_instance.has_buddy_icon?
+    %table{:border => "0", :cellpading => "0", :cellspacing => "0"}
+      %tr
+        %td= image_tag current_instance.buddy_icon.url(:icon_96), :border => 0
+        %td= image_tag current_instance.buddy_icon.url(:icon_48), :border => 0
+        %td= image_tag current_instance.buddy_icon.url(:icon_24), :border => 0
+  = form_for(current_instance, :url => {:action => "buddy_icon_save" }, :html => {:multipart => true}) do |f|
+    = f.error_messages
+    %p
+      = f.file_field :buddy_icon
+      %br/
+      %span.small= tr("Must be a gif, jpg or png", "view/admin/buddy_icon")
+    %p= submit_tag tr("Upload and save your picture", "view/admin/buddy_icon"), :class => "yellow_button"

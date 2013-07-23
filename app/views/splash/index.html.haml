@@ -1,0 +1,17 @@
+- cache("watch-#{session[:locale]}-#{@inline_translations_enabled}", :expires_in => 10.minutes) do
+  #intro= current_instance.prompt
+  #myhtmlticker.tickerstyle
+    - for idea in @ideas
+      .messagediv
+        .messagename
+          = link_to idea.name, idea
+        .messagesub
+          = tr("Idea {position}, endorsed by {count} people, and opposed by {oppose_count}.", "view/splash/index", :position => idea.position, :count => idea.up_endorsements_count, :oppose_count => idea.down_endorsements_count)
+  - if current_instance.has_picture?
+    %div{:style => "float: left; padding-right: 10px;"}
+      %a{:href => "/"}= image_tag current_instance.logo.url(:icon_96), :border => 0
+  #signup
+    %a.nounderline{:href => "/signup"}>= current_instance.mission
+    \.
+    %a.underline{:href => "/"}= tr("Enter site", "view/splash/index")
+    \&rarr;

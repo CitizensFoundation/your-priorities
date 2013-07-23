@@ -1,0 +1,11 @@
+#hp_intro
+  = @page_title
+= tr("The 'fav icon' is the little 16x16 icon in your browser bar. Right now it should look like this:", "view/admin/fav_icon")
+%p
+  = image_tag current_instance.fav_icon.url(:icon_16), :border => 0
+  = form_for(current_instance, :url => {:action => "fav_icon_save" }, :html => {:multipart => true}) do |f|
+    = f.error_messages
+    = f.file_field :fav_icon
+    %br/
+    %span.small= tr("Must be a gif, jpg or png", "view/admin/fav_icon")
+    %p= submit_tag tr("Upload and save your picture", "view/admin/fav_icon"), :class => "submit_button"

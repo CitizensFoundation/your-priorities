@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/sound_none.png", :width => "16"}/
+= raw tr("Stopped following the discussion on {discussion_name}", "view/activities/_activitydiscussionfollowingdelete_noself", :user_name => link_to(activity.user.login, activity.user), :discussion_name => link_to(activity.activity.name, activity_comments_url(activity.activity)))

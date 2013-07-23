@@ -1,0 +1,31 @@
+#hp_intro= @page_title
+%p
+  %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+    %tr
+      %td{:valign => "top", :width => "160"}
+        = render :partial => "nav"
+      %td{:style => "padding-left: 20px;", :valign => "top"}
+        = form_for(@tag) do |f|
+          = f.error_messages :header_message => tr("There was a problem saving {tags_name}", "view/tags/new", :tags_name => current_instance.tags_name.downcase)
+          - if @tag.new_record?
+            .field
+              .field_label= tr("Name", "view/tags/new")
+              .field_box
+                = f.text_field :name, :size => 30, :maxlength => 60
+          - else
+            .field
+              .field_label
+                = tr("Name: {tag_name}", "view/tags/new", :tag_name => @tag.name)
+          .field
+            .field_label= tr("Title (usually the same as name)", "view/tags/new")
+            .field_box
+              = f.text_field :title, :size => 30, :maxlength => 60
+          .field
+            .field_label= tr("Description", "view/tags/new")
+            .field_box
+              = f.text_field :description, :size => 60, :maxlength => 200
+          .field
+            .field_label= tr("Prompt", "view/tags/new")
+            .field_box
+              = f.text_field :prompt, :size => 60, :maxlength => 100
+          = f.submit tr("Save {tags_name}", "view/tags/new", :tags_name => current_instance.tags_name.titleize), :class => "yellow_button"

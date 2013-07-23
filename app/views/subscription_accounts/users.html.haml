@@ -1,0 +1,38 @@
+%table{:width=>"100%"}
+  %tr
+    %th
+      = tr("Login name","here")
+    %th
+      = tr("Email","here")
+    %th
+      = tr("Status","here")
+    %th
+      = tr("Created at","here")
+    %th
+      = tr("Invited at","here")
+    %th
+      = tr("Admin","here")
+    %th
+      = tr("Actions","here")
+  - @users.each do |user|
+    %tr
+      %td
+        = user.login
+      %td
+        = user.email
+      %td
+        = user.status
+      %td
+        = user.created_at.d_m_y
+      %td
+        = user.invitation_sent_at.d_m_y if user.invitation_sent_at
+      %td
+        - admin_word = tr("Remove Admin","here")
+        - user_word = tr("Make Admin","here")
+        = user.is_admin? ? link_to(admin_word,"/users/unmake_admin/#{user.id}") : link_to(user_word,"/users/make_admin/#{user.id}")
+      %td
+        = link_to tr("Delete","here"),"/users/destroy_from_admin/#{user.id}"
+
+= link_to tr("Invite","here"), new_user_invitation_path
+
+= will_paginate(@users)

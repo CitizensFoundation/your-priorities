@@ -1,0 +1,12 @@
+#hp_intro= @page_title
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+  = f.hidden_field :reset_password_token
+  = f.label :password, tr("New password", "view/passwords/edit")
+  %br
+  = f.password_field :password
+  %br
+  = f.label :password_confirmation, tr("Repeat new password", "view/passwords/edit")
+  %br
+  = f.password_field :password_confirmation
+  %br
+  = f.submit tr("Change password", "view/passwords/edit")

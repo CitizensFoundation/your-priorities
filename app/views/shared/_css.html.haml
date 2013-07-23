@@ -1,0 +1,13 @@
+= stylesheet_link_tag "application"
+:css
+  .sprite_clip {background-image: url(#{SubInstance.current.menu_strip_side_url}) !important}
+  /* nav colors */
+
+- if SubInstance.current.custom_css
+  :css
+    #{SubInstance.current.custom_css}
+
+/[if IE]
+  = stylesheet_link_tag "iehacks"
+/[if IE 7]
+  = stylesheet_link_tag "ie7"

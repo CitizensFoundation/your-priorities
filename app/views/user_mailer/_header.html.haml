@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %table
+      %tr
+        %td{:align => "left", :width => "130px"}
+          - if defined?(attachments)
+            = image_tag attachments['logo.png'].url, :alt=>tr("{instance_name}", "email", :instance_name => tr(@instance.name, "Name from database"))

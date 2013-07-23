@@ -1,0 +1,9 @@
+- cache(["language_options_",I18n.locale.to_s,current_user ? current_user.is_admin? : false], :expires_in => 5.minutes) do
+  #sib_language
+    #language_box
+      = get_locale_options
+      %br
+      = tr("Please help us improve and provide more translations","here")
+      %br
+      = link_to tr("Translation tool","here"),"/tolk"
+

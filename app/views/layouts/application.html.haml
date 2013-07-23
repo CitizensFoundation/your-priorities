@@ -1,0 +1,43 @@
+!!!
+%html{:lang => I18n.locale, "xml:lang" => I18n.locale, :xmlns => "http://www.w3.org/1999/xhtml", "xmlns:fb" => "http://www.facebook.com/2008/fbml", prefix: "og: http://ogp.me/ns#"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %title
+      = " | #{@page_title || current_instance.name}"
+    :javascript
+      var PAYMILL_PUBLIC_KEY = '#{ENV['PAYMILL_PUBLIC_KEY']}';
+    = render :partial=>"ideas/fb_og_tags"
+    - if Instance.first.favicon.present?
+      = favicon_link_tag(current_instance.favicon.url(:icon_full))
+    = render :partial => "shared/description"
+    = render :partial => "shared/head"
+    = render :partial => "shared/javascripts"
+    = javascript_include_tag "https://bridge.paymill.com/"
+    = render :partial => "shared/css"
+    - if true or Rails.env.production?
+      = render :partial => "shared/analytics"
+    = #tr8n_scripts_tag
+%body{class: SubInstance.current.short_name }
+  = csrf_meta_tag
+  .page
+    = render :partial => "shared/top_banner"
+    .main
+      .col-group
+        .col-12
+          .col-content.no-margin
+            = render :partial => "sub_instances/message_to_users" if controller_name=="home"
+      .nav.nav-main
+        = render :partial => "shared/side_navigation" unless SubInstance.current.short_name == "default"
+      #content.content
+        .content-wrap.col-group
+          .col-12
+            .col-content.mainbox
+              = flash_div :warning, :notice, :error
+              = render :partial => "ads/pick"
+              - unless (controller_name == "home" && action_name == "world") or @skip_sub_navigation
+                = render :partial => "shared/sub_navigation"
+              = yield :layout
+    = render :partial => "shared/facebook_footer"
+    = render :partial => "shared/google_plus_footer"
+

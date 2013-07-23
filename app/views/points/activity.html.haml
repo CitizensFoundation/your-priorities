@@ -1,0 +1,23 @@
+.col-group
+  .col-1
+    &nbsp;
+  .col-8
+    .col-content
+      = render partial: "points/nav"
+      = render :partial => "points/header"
+      .point_name
+        %p= @point.name
+      .point_content_detail
+        %p= @point.content_html
+      - if user_signed_in? and params[:action] == 'discussions'
+        #new_activities
+        = render :partial => "bulletins/form", :locals => {:activity => Activity.new, :comment => Comment.new }
+      = will_paginate(@activities)
+      #activities
+        - for activity in @activities
+          = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_noself" }
+        = will_paginate(@activities)
+  .col-3
+    .col-content
+      = render :partial => "points/authors", :locals => {:users => @point.authors }
+      = render :partial => "points/left_nav"

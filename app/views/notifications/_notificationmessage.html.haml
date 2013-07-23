@@ -1,0 +1,5 @@
+- if notification.notifiable.unread?
+  %img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/assets/icons/email.png"}", :width => "16"}/
+- else
+  %img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/assets/icons/email_open.png"}", :width => "16"}/
+= tr("{sender_name} sent you a <a href='{message_url}'>private message</a>", "view/notifications/_notificationmessage", :sender_name => link_to(notification.sender_name, notification.sender), :message_url => user_messages_url(notification.sender))

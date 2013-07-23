@@ -1,0 +1,9 @@
+- unless @activities.empty?
+  $('.endless_scroll_inner_wrap').append("
+  %span{:id => "batch_#{@activities.to_a.last.changed_at.to_i}"}>= escape_javascript(render :partial => 'feed/activity_list')
+  ");
+  FB.XFBML.parse(document.getElementById('batch_#{@activities.to_a.last.changed_at.to_i}'));
+  pageTracker._trackPageview('/news/top_feed')
+  $('#endless_scroll_ul').attr('last', '#{@activities.to_a.last.changed_at}');
+- else
+  $('#infinite-scroll').detach();

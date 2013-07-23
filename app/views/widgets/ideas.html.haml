@@ -1,0 +1,39 @@
+#hp_intro= @page_title
+= form_for(@widget) do |f|
+  = f.hidden_field :controller_name
+  %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+    %tr
+      - if current_instance.is_tags?
+        %td{:style => "padding-top: 10px;"}
+          .field
+            .field_box
+              = f.select :tag_id, options_for_select_simple(Tag.with_ideas.alphabetical.all.collect{|t|[t.name, t.id]}), :include_blank => tr("All categories", "view/widgets/ideas")
+      %td{:style => "padding-left:10px; padding-top: 10px;"}
+        .field
+          .field_box
+            = f.select :action_name, options_for_select_simple(@widget.ideas_available.collect{|s|[s[1],s[0]]})
+      %td{:style => "padding-left:10px; padding-top: 10px;"}
+        .field
+          .field_box
+            = f.select :number, 1..50
+:javascript
+  //
+  function sendForm() {
+    jQuery.ajax({type:'post', data: jQuery('form.new_widget').serialize(), url:'#{preview_widgets_url(@idea)}'})
+  }
+  
+  
+  $("#widget_tag_id").change(function(){
+    sendForm();
+  });
+  
+  $("#widget_action_name").change(function(){
+    sendForm();
+  });
+  
+  $("#widget_number").change(function(){
+    sendForm();
+  });
+  //
+#widget_preview
+  = render :file => "widgets/preview.html.erb"

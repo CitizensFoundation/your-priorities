@@ -1,0 +1,58 @@
+%table{:width=>"100%"}
+  %tr
+    %th
+      = "Ideas - #{Idea.count} total"
+    %th
+      = "Points - #{Point.count} total"
+    %th
+      = "Users - #{User.count} total"
+    %th
+      = "Comments - #{Comment.count} total"
+  %tr
+    %td
+      %table{:width=>"100%"}
+        - total = 0
+        - @ideas_counts_per_day.each do |date,ideas_count|
+          %tr
+            %td
+              = date
+            %td{:style=>"align='right';"}
+              = ideas_count
+              - total+=ideas_count
+        = #total
+    %td
+      - total = 0
+      %table{:width=>"100%"}
+        - @points_counts_per_day.each do |date,points_count|
+          %tr
+            %td
+              = date
+            %td
+              = points_count
+              - total+=points_count
+        = #total
+    %td
+      - total = 0
+      %table{:width=>"100%"}
+        - @users_counts_per_day.each do |date,users_count|
+          %tr
+            %td
+              = date
+            %td
+              = users_count
+              - total+=users_count
+        = #total
+    %td
+      - total = 0
+      %table{:width=>"100%"}
+        - @comments_counts_per_day.each do |date,comments_count|
+          %tr
+            %td
+              = date
+            %td
+              = comments_count
+              - total+=comments_count
+        = #total
+
+
+

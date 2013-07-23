@@ -1,0 +1,7 @@
+.idea_listing
+  .idea_name{:id => "idea_#{idea.id}_name"}
+    = official_status(idea).html_safe
+    = link_to_unless_current tg(h(idea.name)), idea, :class => "idea_name_link"
+  = render :partial => "ideas/tag_show", :locals => { :idea => idea }
+  %div{:style => "position: relative; right: 3px;"}
+    = render :partial => "ideas/endorsement_count", :locals => {:idea => idea }

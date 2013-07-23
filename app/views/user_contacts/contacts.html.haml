@@ -1,0 +1,9 @@
+#hp_intro= @page_title
+%p
+  = will_paginate(@contacts)
+  %p
+    - for contact in @contacts
+      = contact.name
+      \&lt;#{contact.email}&gt;
+      %br/
+    = will_paginate(@contacts)

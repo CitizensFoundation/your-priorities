@@ -1,0 +1,13 @@
+- cache(["country_options",locale,SubInstance.current_id,@inline_translations_enabled], :expires_in => 5.seconds) do
+  .all_countries
+    %table
+      %tr
+        - all_countries_in_columns.each do |column|
+          %td{:align => "center"}
+            - column.each do |country|
+              - if sub_instance = SubInstance.find_by_iso_country_id(country.id)
+                .country
+                  = link_to sub_instance.show_url do
+                    = image_tag country.large_flag_image, :size=>"32x32", :border=>0
+                    %br
+                      = country.country_english_name

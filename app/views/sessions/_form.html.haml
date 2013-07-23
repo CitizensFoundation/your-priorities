@@ -1,0 +1,27 @@
+- if session["omniauth_data"]
+  %h2= tr("To add {provider} login to your account, you must provide your password.", "view/sessions/_form", provider: session["omniauth_data"][:provider])
+.col-group
+  .col-8
+    .col-content
+      %h1= tr("First time? Create an account:", "view/sessions/new")
+      = render :partial => "users/form"
+- unless current_instance.disable_email_login
+  .col-4
+    .col-content
+      %h1= tr("Already have an account?", "view/sessions/new")
+      = form_for :user, :url => user_session_path do |f|
+        - if session["omniauth_data"]
+          = f.hidden_field :email, value: session["omniauth_data"][:email]
+        - else
+          .field
+            .field_label
+              = f.label :email, tr("Email address", "view/sessions/_form")
+            .field_box
+              = f.text_field :email
+        .field
+          .field_label
+            = f.label :password, tr("Password", "view/sessions/_form")
+          .field_box
+            = f.password_field :password
+        = f.submit tr("Log in", "view/sessions/_form"), :class => "submit_button"
+      .login_message

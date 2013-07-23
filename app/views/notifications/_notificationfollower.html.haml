@@ -1,0 +1,2 @@
+%img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/assets/icons/user_add.png"}", :width => "16"}/
+= tr("{sender_name} is now following your updates", "view/notifications/_notificationfollower", :sender_name => link_to(notification.sender_name, notification.sender))

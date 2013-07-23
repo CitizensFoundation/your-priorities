@@ -1,0 +1,38 @@
+- if @ideas and @ideas.any?
+  - if ['finished','yours_finished'].include?(params[:action])
+    %ul
+  - elsif ['yours'].include?(params[:action])
+    <ol start=#{@ideas[0].position}>
+  - else
+    %ol
+  - for e in @ideas
+    - if [Endorsement].include?(e.class)
+      - idea = e.idea
+    - else
+      - idea = e
+    - if ['yours','network'].include?(params[:action])
+      %li
+    - else
+      %li{:value => idea.position}
+    %span.nb_idea_name
+      = link_to h(idea.name), idea_url(idea, :only_path => false), :class => "nb_idea_name_link", :id => "nb_idea_name_link_#{idea.id.to_s}"
+    - if idea.status == 'inactive'
+      %span.nb_idea_finished_status= official_status(idea)
+    - if not idea.status == 'inactive'
+      %br/
+      %span.nb_idea_position_status
+        - if idea.position != 0 and params[:action] == 'yours'
+          = tr("Idea {position}", "view/ideas/list_widget_small", :position => idea.position)
+          ,
+        - if idea.is_new?
+          = tr("new this week", "view/ideas/list_widget_small")
+        - elsif idea.position_7days_delta > 0
+          = tr("up {count} spots this week", "view/ideas/list_widget_small", :count => idea.position_7days_delta.abs)
+        - elsif idea.position_7days_delta < 0
+          = tr("down {count} spots this week", "view/ideas/list_widget_small", :count => idea.position_7days_delta.abs)
+        - else
+          = tr("no change this week", "view/ideas/list_widget_small")
+  - if ['yours','finished','yours_finished'].include?(params[:action])
+  - else
+- else
+  No ideas yet.

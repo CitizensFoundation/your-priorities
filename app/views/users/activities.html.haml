@@ -1,0 +1,19 @@
+.col-group
+  .col-1
+    .col-content
+      = render :partial => "users/profile_pic"
+      = render :partial => "users/profile_nav"
+  .col-11
+    .col-content
+      - if @activities.empty? and params[:action] == 'capital'
+        = tr("{user_name} hasn't earned any {currency_name} yet.", "view/users/activities", :user_name => @user.name, :currency_name => current_instance.currency_name.downcase)
+      - else
+        - if @activities.total_pages > 1
+          = will_paginate(@activities)
+        - elsif @activities.empty?
+          = tr("No activity here yet.", "view/users/activities")
+        - for activity in @activities
+          - if params[:action] == 'discussions'
+            = render :partial => "activities/show", :locals => {:activity => activity, :suffix => ""}
+          - else
+            = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_nouser"}

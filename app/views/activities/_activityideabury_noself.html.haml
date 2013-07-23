@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/cancel.png", :width => "16"}/
+= raw tr("{user_name} buried this idea. It will no longer show up in the rankings. It's probably obvious why.", "view/activities/_activityideabury_noself", :user_name => link_to(activity.user.login, activity.user), :idea_name => link_to(activity.idea.name, activity.idea))

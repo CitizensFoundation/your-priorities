@@ -1,0 +1,12 @@
+%p
+  %b SubInstance:
+  = h @signup.sub_instance_id
+%p
+  %b User:
+  = h @signup.user_id
+%p
+  %b Is optin:
+  = h @signup.is_optin
+= link_to 'Edit', edit_signup_path(@signup)
+|
+\#{link_to 'Back', signups_path}

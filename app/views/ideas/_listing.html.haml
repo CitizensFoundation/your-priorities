@@ -1,0 +1,23 @@
+%ul
+  %li.list_left
+    .idea_name{:id => "idea_#{idea.id}_name"}
+      - if value < 0
+        %span.opposed= tr("opposed", "view/ideas/_listing")
+      = link_to_unless_current tg(h(idea.name)), idea.show_url, :class => "idea_name_link"
+      = render :partial=>"ideas/flagged", :locals=>{:idea=>idea}
+      :javascript
+        $(function(){
+        	$('#action_insert').replaceWith($('#idea_flag_#{idea.id.to_s}'));
+        });
+  %li.list_right
+    .category
+      = render :partial=>"ideas/report_content", :locals=>{:idea=>idea}
+.clear
+= render :partial => "ideas/action_show", :locals => {:idea => idea, :endorsement => endorsement, :noaction=> defined?(noaction) ? true : false }
+- if idea.status == 'inactive'
+  .idea_status
+    - if idea.replaced?
+      = tr("This idea was replaced by {idea_name}", "view/ideas/_listing", :idea_name => link_to(idea.change.new_idea.name, idea.change.new_idea))
+= render :partial => "ideas/tag_show", :locals => { :idea => idea }
+- if action_name != "show" and status = idea.idea_status_change_logs.last
+  = render :partial => "ideas/latest_status_update", :locals => { status=> status }

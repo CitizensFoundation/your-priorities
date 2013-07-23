@@ -1,0 +1,19 @@
+- if controller_name == "ideas" and action_name == "show"
+  %meta{:content => @idea.name, :property => "og:title"}/
+  %meta{:content => tr("{idea_name}. Learn more at {instance_name}", "view/shared/_description", :prompt => current_instance.prompt, :instance_name => SubInstance.current.name, :idea_name => @idea.name), :property => "og:description"}/
+  %meta{:content => "website", :property => "og:type"}/
+  - if false and @idea.category and @idea.category.icon
+    %meta{:content => image_tag(@idea.category.icon.url, :size => "200x200", :border => 0), :property => "og:image"}/
+  - else
+    %meta{:content => "#{current_instance.logo.url}", :property => "og:image"}/
+  %meta{:content => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", :property => "og:url"}/
+  %meta{:content => SubInstance.current.name, :property => "og:site_name"}/
+  %meta{:content => Facebooker2.app_id, :property => "fb:app_id"}/
+- else
+  %meta{:content => SubInstance.current.name, :property => "og:title"}/
+  %meta{:content => current_instance.description, :property => "og:description"}/
+  %meta{:content => "website", :property => "og:type"}/
+  %meta{:content => "#{current_instance.logo.url}", :property => "og:image"}/
+  %meta{:content => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", :property => "og:url"}/
+  %meta{:content => current_instance.name, :property => "og:site_name"}/
+  %meta{:content => Facebooker2.app_id, :property => "fb:app_id"}/

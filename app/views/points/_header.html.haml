@@ -1,0 +1,6 @@
+.intro
+  = render :partial => "points/intro", :locals => {:point => @point}
+#hp_intro
+  = h(@point.name)
+  = render :partial=>"points/report_content", :locals=>{:point=>@point}
+  = render :partial=>"points/flagged", :locals=>{:point=>@point}

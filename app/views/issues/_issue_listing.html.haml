@@ -1,0 +1,26 @@
+%ul
+  - for issue in issues
+    %li
+      .idea_listing
+        .col-group
+          .col-2
+            .col-content
+              .sib_category_icon
+                = link_to(image_tag(issue.icon.url(:icon_50), :size => "40x40", :border => 0), issue.to_url, :alt=>tr(issue.name,"from_database"), :title=>tr(issue.name,"from_database"))
+          .col-10
+            .col-content
+              %span.idea_name
+                = issue.name
+              - if issue.attribute_present?("description")
+                = h(issue.description)
+              .idea_action
+                %a{:href => "#{issue.to_url}"}
+                  = tr("{count} ideas", "view/issues/index", :count => issue.ideas.published.count)
+                - if issue.points_count > 0
+                  \&middot;
+                  %a{:href => "#{issue.to_url}/points"}
+                    = tr("{count} points", "view/issues/index", :count => issue.points_count)
+                - if issue.discussions_count > 0
+                  \&middot;
+                  %a{:href => "#{issue.to_url}/discussions"}
+                    = tr("{count} discussions", "view/issues/index", :count => issue.discussions_count)

@@ -1,0 +1,23 @@
+- if Instance.current.message_for_ads and Instance.current.message_for_ads!=""
+  = render :partial=>"/shared/top_message_box", :locals=> {:message_text => Instance.current.message_for_ads.html_safe }
+#hp_intro= @page_title
+%p
+  /
+    <haml:loud>tr(&amp;quot;Ads are bought with Social Points your earn at {instance_name}, not regular money.  You can earn social points &amp;lt;a href=\&amp;quot;/about/faq#pc\&amp;quot;&amp;gt;in many ways.&amp;lt;/a&amp;gt;&amp;quot;,&amp;quot;ads&amp;quot;, :instance_name =&amp;gt; tr(current_instance.name,&amp;quot;Name from database&amp;quot;))</haml:loud><br><br>
+    <haml:loud>tr(&amp;quot;Here you see all the ads and how many members have &amp;lt;span style=\&amp;quot;background-color: #009933;\&amp;quot;&amp;gt;&amp;amp;nbsp; &amp;amp;nbsp; &amp;lt;/span&amp;gt; &amp;amp;nbsp;endorsed, &amp;lt;span style=\&amp;quot;background-color: #bc0000;\&amp;quot;&amp;gt;&amp;amp;nbsp; &amp;amp;nbsp; &amp;lt;/span&amp;gt; &amp;amp;nbsp;opposed, or &amp;lt;span style=\&amp;quot;background-color: #ffcc00;\&amp;quot;&amp;gt;&amp;amp;nbsp; &amp;amp;nbsp; &amp;lt;/span&amp;gt; &amp;amp;nbsp;not responded.&amp;quot;,&amp;quot;ads&amp;quot;)</haml:loud><br>
+  - if @ads.empty?
+    = tr("No ads.","ads")
+  - else
+    - shown_active = false
+    - shown_past = false
+    - for ad in @ads
+      - if ad.status == 'active' and not shown_active
+        - shown_active = true
+        .heading= tr("Running ads","ads")
+      - elsif ad.status != 'active' and not shown_past
+        %p
+          - shown_past = true
+        .heading= tr("Old ads","ads")
+      = render :partial => "ads/show_inline", :locals => {:ad => ad}
+    %p
+      = will_paginate(@ads)

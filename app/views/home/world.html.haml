@@ -1,0 +1,93 @@
+%script{:src => "https://maps.googleapis.com/maps/api/js?sensor=false", :type => "text/javascript"}
+:javascript
+  var kmlLayer = null;
+  var map = null;
+  var infoWindow = new google.maps.InfoWindow(); // InfoWindow
+
+  function openIW(layerEvt) {
+    // infoWindow.setContent(layerEvt.infoWindowHtml);
+    // infoWindow.setPosition(layerEvt.latLng);
+    if (layerEvt.row) {
+      var content = layerEvt.row['admin'].value;
+    } else if (layerEvt.featureData) {
+      var content = layerEvt.featureData.name;
+    }
+    window.location = "/home/goto?country_name="+content;
+    //document.getElementById('info').innerHTML = "you clicked on:"+content;
+  }
+
+  $(document).ready(function() {
+      var barcelona = new google.maps.LatLng(41.3719,2.1808);
+      var myOptions = {
+        zoom: 2,
+        center: barcelona,
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+      }
+
+      map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+      google.maps.event.addListener(map, "click", function() {
+        document.getElementById('info').innerHTML = "";
+      });
+
+      // 0cddff
+      kmlLayer = new google.maps.KmlLayer('https://www.yrpri.org/home/map?keytime=#{rand(99999999)}', {preserveViewport: true, suppressInfoWindows: true} );
+      kmlLayer.setMap(map);
+
+      google.maps.event.addListener(kmlLayer, 'click', openIW);
+  });
+
+#map_canvas{:style => "height:300px; width:100%;"}
+
+%div.home_welcome
+  %h1.home_h1
+    - sub_instance=SubInstance.find_by_iso_country_id(@iso_country.id)
+    - if sub_instance
+      = link_to sub_instance.show_url do
+        %div.countryflag= image_tag @iso_country.large_flag_image, :border=>0
+        %div.country= @iso_country.country_english_name
+- if @country_sub_instance_ideas.any?
+  - @country_sub_instance_ideas.each do |idea|
+    = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+    %div
+      %div{:id => "idea_detail_#{idea.id}"}
+- elsif @iso_country
+  - if sub_instance
+    %br
+    %br
+    = tr("No idea has been created for your country - be the first by clicking here: ","welcome")
+    = link_to sub_instance.show_url, sub_instance.show_url
+
+- if @world_ideas.any?
+  %div.home_welcome{:style=>"margin-top: 10px; padding-top: 10px;"}
+    %h1.home_h1
+      - sub_instance=SubInstance.find_by_short_name("united-nations")
+      = link_to sub_instance.show_url do
+        %div.countryflag= image_tag "flags/64/_united-nations.png", :border=>0
+        %div.country= tr("United Nations Top Priorities","welcome")
+    %h1.home_h1
+    - @world_ideas.each do |idea|
+      = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+      %div
+        %div{:id => "idea_detail_#{idea.id}"}
+- else
+  - if sub_instance
+    = tr("No idea has been created for the World - be the first by clicking here: ","welcome")
+    = link_to sub_instance.show_url, sub_instance.show_url
+- if @eu_eea_ideas.any?
+  %br
+  %br
+  %div.home_welcome
+    %h1.home_h1
+      - sub_instance=SubInstance.find_by_short_name("eu")
+      = link_to sub_instance.show_url do
+        %div.countryflag= image_tag "flags/64/_european-union.png", :border=>0
+        %div.country= tr("European Union and EEA Top Priorities","welcome")
+    - @eu_eea_ideas.each do |idea|
+      = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+      %div
+        %div{:id => "idea_detail_#{idea.id}"}
+- else
+  - if sub_instance
+    %div.country= tr("No idea has been created for the European Union and EEA - be the first by clicking here: ","welcome")
+    %div.country= link_to sub_instance.show_url, sub_instance.show_url

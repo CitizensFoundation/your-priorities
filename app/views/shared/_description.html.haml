@@ -1,0 +1,17 @@
+- if params[:controller] == 'ideas' and @idea
+  %meta{:content => "#{tr("{prompt} {idea_name}. Learn more at {instance_name}", "view/shared/_description", :prompt => current_instance.prompt, :instance_name => current_instance.name, :idea_name => @idea.name)} ", :name => "description"}/
+  %meta{:content => tr("{idea_name}", "view/shared/_description", :idea_name => @idea.name), :itemprop => "name"}/
+  %meta{:content => tr("{prompt} {idea_name}. Learn more at {instance_name}", "view/shared/_description", :prompt => current_instance.prompt, :instance_name => current_instance.name, :idea_name => @idea.name), :itemprop => "description"}/
+  - if @idea.category and @idea.category.icon
+    %meta{:content => image_tag(@idea.category.icon.url(:icon_50), :size => "40x40", :border => 0), :property => "og:image"}/
+  - else
+    %meta{:content => "http://#{request.host_with_port+current_instance.logo.url}", :itemprop => "image"}/
+- elsif params[:controller] == 'users' and @user and @user.has_top_idea?
+  %meta{:content => tr("{user_name} top idea for: {idea_name}", "view/shared/_description", :user_name => @user.name, :idea_name => Idea.unscoped.find(@user.top_endorsement.idea_id).name, :name => "description")}
+- else
+  %meta{:content => current_instance.description, :name => "description"}/
+  %meta{:content => current_instance.name, :itemprop => "name"}/
+  %meta{:content => current_instance.description, :itemprop => "description"}/
+  %meta{:content => "#{current_instance.logo.url(:icon_200)}", :itemprop => "image"}/
+- if current_instance.has_logo?
+  %link{:href => current_instance.logo.url, :rel => "image_src"}/

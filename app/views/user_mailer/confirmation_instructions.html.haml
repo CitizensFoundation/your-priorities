@@ -1,0 +1,22 @@
+= render :partial=>"user_mailer/header", formats: [:html]
+%p
+  = tr("Hi","email")
+  = @user.first_name
+  ,
+%p= tr("Welcome to {instance_name}","email", :instance_name => @instance.name)
+- if @user.needs_activation?
+  %p= tr("Please confirm your account so you can fully take part in {instance_name}. If you do not confirm your account your support for ideas is not included in global idea calculations.","email", :instance_name => @instance.name)
+  %p
+    = tr("Visit this link to confirm your account","email")
+    \: #{link_to nil, confirmation_url(@user, confirmation_token: @user.confirmation_token)}
+%p
+  = tr("Find people you know","email")
+  \: #{link_to @user.root_url+'network/find?utm_source=signup&utm_medium=email',@user.root_url+'network/find?utm_source=signup&utm_medium=email'}
+%p
+  = tr("You earn 5 social points for everyone you invite that register with {instance_name}. Social points are a way to see how socially active \                   |
+    and constructive people are. You earn social points when other people find your points for or against ideas useful. \                                      |
+    You can use your social points to buy \"ads\" for your favorite ideas on the website.","email", :instance_name => @instance.name) |
+  = tr("More here","email")
+  \: #{link_to @user.root_url+'about/faq#pc', @user.root_url+'about/faq#pc'}
+  %p
+    = render :partial=>"footer", formats: [:html]

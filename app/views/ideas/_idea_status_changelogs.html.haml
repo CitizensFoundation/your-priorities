@@ -1,0 +1,12 @@
+- if @idea.status == "inactive" and [-1,-2,2].include?(@idea.official_status)
+  .finished_idea
+    %ul
+      - IdeaStatusChangeLog.where(idea_id: @idea.id).order("created_at desc").each do |changelog|
+        %li
+          .finished_status
+            %span.finished_status_date
+              = changelog.date.strftime("%d.%m.%Y")
+            - if changelog.content
+              = simple_format(changelog.content.html_safe)
+            - elsif changelog.subject
+              = changelog.subject

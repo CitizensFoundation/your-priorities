@@ -1,0 +1,16 @@
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:align => "right", :style => "padding-top: 4px;", :valign => "top", :width => "20"}
+      = form_for(endorsement, :remote=>true, :url => endorsement_path(endorsement, :region => "yours")) do |f|
+        = f.text_field :position, :size => "1", :id => "endorsement_#{endorsement.id.to_s}_row_edit", :class => "endorsement_row_edit"
+    %td{:style => "padding-left: 3px;", :valign => "top", :width => "225"}
+      .if.else{:class => "endorsement_<haml:silent> endorsement.is_up? </haml:silent><haml:block>up</haml:block><haml:silent> </haml:silent><haml:block>down</haml:block>"}
+        = link_to_unless_current h(endorsement.idea.name), endorsement.idea
+    %td{:valign => "top"}
+      .endorsement_x
+        = link_to "x", endorsement_path(endorsement, :region => "your_ideas"), |
+          :remote=>true,                                                            |
+          'data-disable-with' => "",                                                |
+          'data-loader-name' => "circle",                                           |
+          :method => :delete,                                                       |
+          :class => "your_ideas_remove"                                        |

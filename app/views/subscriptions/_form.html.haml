@@ -1,0 +1,25 @@
+= form_for @subscription do |f|
+  - if @subscription.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@subscription.errors.count, "error")} prohibited this subscription from being saved:"
+      %ul
+        - @subscription.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :paymill_id
+    = f.text_field :paymill_id
+  .field
+    = f.label :user_id
+    = f.number_field :user_id
+  .field
+    = f.label :plan_id
+    = f.number_field :plan_id
+  .field
+    = f.label :last_payment_at
+    = f.datetime_select :last_payment_at
+  .field
+    = f.label :active
+    = f.check_box :active
+  .actions
+    = f.submit 'Save'

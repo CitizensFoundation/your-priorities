@@ -1,0 +1,45 @@
+api_key: 69605456129
+activities.en.yml:
+  path: config/locales/activities.en.yml
+  type: yml
+  translations:
+    de: config/locales/activities.de.yml
+    is: config/locales/activities.is.yml
+    fr: config/locales/activities.fr.yml
+processes.en.yml:
+  path: config/locales/processes.en.yml
+  type: yml
+  translations:
+    de: config/locales/processes.de.yml
+    is: config/locales/processes.is.yml
+    fr: config/locales/processes.fr.yml
+menu.en.yml:
+  path: config/locales/menu.en.yml
+  type: yml
+  translations:
+    de: config/locales/menu.de.yml
+    is: config/locales/menu.is.yml
+    fr: config/locales/menu.fr.yml
+notifications.en.yml:
+  path: config/locales/notifications.en.yml
+  type: yml
+  translations:
+    de: config/locales/notifications.de.yml
+    is: config/locales/notifications.is.yml
+    fr: config/locales/notifications.fr.yml
+general.en.yml:
+  path: config/locales/general.en.yml
+  type: yml
+  translations:
+    de: config/locales/general.de.yml
+    is: config/locales/general.is.yml
+    fr: config/locales/general.fr.yml
+rails.en.yml:
+  path: config/locales/rails.en.yml
+  type: yml
+  translations:
+    de: config/locales/rails.de.yml
+    is: config/locales/rails.is.yml
+    fr: config/locales/rails.fr.yml
+    fr: config/locales/rails.nl.yml
+    

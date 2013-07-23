@@ -1,0 +1,10 @@
+#idea_short_url
+  - if idea.attribute_present?("short_url")
+    = tr("Short URL:", "view/ideas/_short_url")
+    %input#short_url{:onfocus => "this.select()", :onmouseup => "return false;", :readonly => "true", :size => "10", :type => "text", :value => idea.short_url}/
+  - else
+    = link_to tr("Make a short URL for Twitter", "view/ideas/_short_url"), create_short_url_idea_path(idea), |
+      :remote=>true,                                                                                                      |
+      'data-disable-with' => escape_t(tr("Creating url","Ajax")),                                                         |
+      'data-loader-name' => "horizontal_small",                                                                           |
+      :method => :put                                                                                                     |

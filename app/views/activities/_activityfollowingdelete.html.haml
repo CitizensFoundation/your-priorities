@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/user_delete.png", :width => "16"}/
+= raw tr("{user_name} stopped following {other_user_name}", "view/activities/_activityfollowingdelete", :user_name => link_to(activity.user.login, activity.user), :other_user_name => link_to(activity.other_user.login, activity.other_user))

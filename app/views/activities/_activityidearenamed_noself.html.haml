@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/comment_edit.png", :width => "16"}/
+= raw tr("{user_name} renamed this idea {idea_name}", "view/activities/_activityidearenamed_noself", :user_name => link_to(activity.user.login, activity.user), :idea_name => link_to(activity.idea.name, activity.idea))

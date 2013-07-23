@@ -1,0 +1,6 @@
+- if activity.capital.amount > 0
+  /%img.icon{:border => "0", :height => "16", :src => "/assets/icons/coins.png", :width => "16"}/
+  = raw tr("{user_name} earned {count}{currency_short_name} for {count} new followers on <a href='http://twitter.com/{twitter_login}'>Twitter</a>", "view/activities/_activitycapitaltwitterfollowers", :user_name => link_to(activity.user.login, activity.user), :count => activity.capital.amount.abs, :currency_short_name => current_instance.currency_short_name, :other_user_name => link_to(activity.other_user.name, activity.other_user), :twitter_login => activity.user.twitter_login)
+- else
+  /%img.icon{:border => "0", :height => "16", :src => "/assets/icons/coins_delete.png", :width => "16"}/
+  = raw tr("{user_name} lost {count}{currency_short_name} for {count} less followers on <a href='http://twitter.com/{twitter_login}'>Twitter</a>", "view/activities/_activitycapitaltwitterfollowers", :user_name => link_to(activity.user.login, activity.user), :count => activity.capital.amount.abs, :currency_short_name => current_instance.currency_short_name, :other_user_name => link_to(activity.other_user.name, activity.other_user), :twitter_login => activity.user.twitter_login)

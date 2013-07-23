@@ -1,0 +1,5 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/coins_delete.png", :width => "16"}/
+- if not activity.ad
+  = raw tr("{user_name} spent {capital}{currency_short_name} on an <a href='{ad_url}'>ad</a> for {idea_name}", "view/activities/_activitycapitaladnew", :user_name => link_to(activity.user.login, activity.user), :capital => activity.capital.amount.abs, :currency_short_name => current_instance.currency_short_name, :idea_name => link_to(activity.idea.name, activity.idea), :ad_url => url_for(activity.idea))
+- else
+  = raw tr("{user_name} spent {capital}{currency_short_name} on an <a href='{ad_url}'>ad</a> for {idea_name}", "view/activities/_activitycapitaladnew", :user_name => link_to(activity.user.login, activity.user), :capital => activity.capital.amount.abs, :currency_short_name => current_instance.currency_short_name, :idea_name => link_to(activity.idea.name, activity.idea), :ad_url => idea_ad_url(activity.idea,activity.ad))

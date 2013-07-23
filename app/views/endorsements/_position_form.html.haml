@@ -1,0 +1,5 @@
+%p
+  = form_for(endorsement, :remote=>true, :url => endorsement_path(endorsement, :region => "idea_left")) do |f|
+    = tr("Your {position} idea.", "view/endorsements/_position_form", :position => f.text_field(:position, :size => "1", :id => "endorsement_#{endorsement.id.to_s}_position_edit", :class => "endorsement_position_edit"))
+    = f.submit tr("save", "view/endorsements/_position_form"), :class => "tag_button"
+  %p/

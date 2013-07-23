@@ -1,0 +1,19 @@
+= render :partial=>"user_mailer/header", formats: [:html]
+%p
+  = tr("Hi","email")
+  = @recipient.first_name.capitalize
+  ,
+%p= tr("Congratulations! You just earned 1 social point because {sender_name} is now following your updates at {instance_name}.","email", :sender_name=>@sender.name, :instance_name => @instance.name)
+%p
+  = tr("Learn more about","email")
+  = @sender.name
+  \:
+  %br/
+  = link_to @sender.profile_url, @sender.profile_url
+%p
+  = tr("What are social points, sp in short? It's a way to track how socially active and constructive people are. \                                            |
+    The more people who find your updates and points useful, the more social points you earn. You can then use those social points to buy ads for ideas \ |
+    you care about, amongst other things.\                                                                                                                     |
+    More details here","email")                                                                                                                                |
+  \: #{link_to @recipient.root_url+'about/faq#pc', @recipient.root_url+'about/faq#pc'}
+= render :partial=>"user_mailer/footer", formats: [:html]

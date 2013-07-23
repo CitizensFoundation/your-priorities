@@ -1,0 +1,52 @@
+.col-group
+  .col-1
+    .col-content
+      = render :partial => "users/profile_pic"
+      = render :partial => "users/profile_nav"
+  .col-11
+    .col-content
+      = form_for(@user) do |f|
+        = f.error_messages
+        %h4= tr("Periodic updates on your ideas", "view/settings/signups")
+        = f.radio_button :report_frequency, 2
+        = tr("Weekly", "view/settings/signups")
+        = f.radio_button :report_frequency, 1
+        = tr("Monthly", "view/settings/signups")
+        = f.radio_button :report_frequency, 0
+        = tr("Never", "view/settings/signups")
+        = f.check_box :is_comments_subscribed
+        = tr("Comments on your discussions", "view/users/signups")
+        %br/
+        = f.check_box :is_point_changes_subscribed
+        = tr("Revisions on your points", "view/users/signups")
+        %br/
+        = f.check_box :is_followers_subscribed
+        = tr("When someone follows you or one of your contacts joins", "view/users/signups")
+        %br/
+        = f.check_box :is_finished_subscribed
+        = tr("When a idea's status is changed", "view/users/signups")
+        %br/
+        = f.check_box :is_idea_changes_subscribed
+        = tr("When an idea is revised", "view/users/signups")
+        %br/
+        = f.check_box :is_messages_subscribed
+        = tr("Private messages and profile bulletins", "view/users/signups")
+        %br/
+        - if current_user.is_admin?
+          = f.check_box :is_admin_subscribed
+          = tr("For administrators", "view/users/signups")
+          %br/
+        = hidden_field_tag "user[sub_instance_ids][]", ""
+        - for sub_instance in @sub_instances
+          = check_box_tag "user[sub_instance_ids][]", sub_instance.id, @user.sub_instances.include?(sub_instance)
+          = sub_instance.optin_text
+          .small{:style => "padding-left:2px;"}
+            from
+            - if sub_instance.has_website?
+              %a{:href => sub_instance.website_link}= sub_instance.name
+            - else
+              = h(sub_instance.name)
+            (
+            %a{:href => sub_instance.privacy_url}>= tr("privacy policy", "view/users/signups")
+            )
+        = submit_tag tr("Save email settings", "view/users/signups"), :class => "yellow_button"

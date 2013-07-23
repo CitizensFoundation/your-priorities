@@ -1,0 +1,12 @@
+.col-group
+  .col-1
+    .col-content
+      = render :partial => "users/profile_pic"
+      = render :partial => "users/profile_nav"
+  .col-11
+    .col-content
+      = will_paginate(@ideas)
+      - if @ideas.any?
+        - @ideas.each do |idea_endorsement|
+          = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea_endorsement.idea, :endorsements=>@endorsements}
+          %div{:id => "idea_detail_#{idea_endorsement.idea.id}"}

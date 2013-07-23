@@ -1,0 +1,5 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/link_edit.png", :width => "16"}/
+- if activity.revision.has_website?
+  = raw tr("{user_name} revised the source link for {point_name}", "view/activities/_activitypointrevisionwebsite_noself", :user_name => link_to(activity.user.login, activity.user), :point_name => link_to(activity.point.name, activity.point))
+- else
+  = raw tr("{user_name} removed the source link from {point_name}", "view/activities/_activitypointrevisionwebsite_noself", :user_name => link_to(activity.user.login, activity.user), :point_name => link_to(activity.point.name, activity.point))

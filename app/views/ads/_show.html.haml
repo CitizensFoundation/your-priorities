@@ -1,0 +1,47 @@
+.col-group
+  .col-1
+    .col-content
+      %div.encouragement_avatar
+        = render :partial => "users/pic", :locals => {:user => ad.user}
+  .col-7
+    .col-content
+      %div.encouragement_content{:valign => "top"}
+        = tr("{user_name} asks you to consider {idea_name}", "view/ads/_show", :user_name => link_to(ad.user.name, ad.user), :idea_name => link_to(ad.idea.name, ad.idea))
+        - if ad.has_content?
+          %p.notification_show_message
+            "#{h(ad.content)}"
+            %span.show_all_encouragements
+  .col-4
+    .col-content
+      %div.encouragement_debate
+        %span{:id => "idea_#{ad.idea.id}_button_small"}
+          .endorse_button_small
+            %span{:id => "idea_add_endorse_#{ad.idea.id}"}
+              = link_to tr("Endorse", "view/ads/_show"), endorse_idea_path(ad.idea, :referral_id => ad.user, :region => "encouragement_top", :value => 1, :ad_id => ad),     |
+                :method => :post,                                                                                                                                         |
+                :remote=>true,                                                                                                                                            |
+                'data-disable-with' => '<span class="encouragement_click idea_add_link idea_add_working"><img src="#{asset_path "/ajax/horizontal_small.gif"}" /></span>', |
+                'data-loader-name' => "no_loader",                                                                                                                        |
+                :class => "idea_add_link_small", :title => tr("I support this, add it to my idea list", "view/ads/_show")                                               |
+          .oppose_button_small
+            %span{:id => "idea_add_oppose_#{ad.idea.id}"}
+              = link_to tr("Oppose", "view/ads/_show"), endorse_idea_path(ad.idea, :referral_id => ad.user, :region => "encouragement_top", :value => -1, :ad_id => ad),     |
+                :method => :post,                                                                                                                                         |
+                :remote=>true,                                                                                                                                            |
+                'data-disable-with' => '<span class="encouragement_click idea_add_link idea_add_working"><img src="#{asset_path "/ajax/horizontal_small.gif"}" /></span>', |
+                'data-loader-name' => "no_loader",                                                                                                                        |
+                :class => "idea_add_link_small", :title => tr("I oppose this, and want to add my opposition to my idea list", "view/ads/_show")                        |
+          - unless ad.new_record?
+            - if current_user
+              .other_button_small
+                %span.tag_button.tag_scale{:id => "notification_show_#{ad.idea.id}_skip"}
+                  = link_to tr("Skip", "view/ads/_show"), skip_idea_ad_path(ad.idea,ad),                                                  |
+                    :method => :post,                                                                                                             |
+                    :remote=>true,                                                                                                                |
+                    'data-disable-with' => '<span class="tag_scale idea_add_working"><img src="#{asset_path "/ajax/horizontal_small.gif"}" /></span>', |
+                    'data-loader-name' => "no_loader",                                                                                                                      |
+                    :class => "idea_add_link_small", :title => tr("Skip this, I'm not interested'", "view/ads/_show")
+    %div.encouragement_counts
+      .notification_show_counts
+        = render :partial => "ideas/endorsement_count", :locals => {:idea => ad.idea }
+

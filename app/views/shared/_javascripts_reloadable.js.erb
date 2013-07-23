@@ -1,0 +1,17 @@
+jQuery(".flash_notice, .flash_error").fadeIn("slow");
+jQuery(".flash_notice a.close_notify").click(function() {
+jQuery(".flash_notice").fadeOut("slow");
+return false;
+});
+jQuery(".flash_error a.close_notify").click(function() {
+jQuery(".flash_error").fadeOut("slow");
+return false;
+});
+
+jQuery('input[type="text"],input[type="password"],textarea').addClass("idleField");
+jQuery('input[type="text"],input[type="password"],textarea').blur(function(object) {
+jQuery(this).removeClass("focusField").addClass("idleField");
+if (object.value == ''){
+this.value = (this.defaultValue ? this.defaultValue : '');
+}
+});

@@ -1,0 +1,77 @@
+= form_for(@subscription_user, :url=>"/askrift") do |f|
+  #content
+    / Entry box
+    #mainContent2
+      / A&amp;eth;al textasv&amp;aelig;&amp;eth;i
+      #content2
+        %h2 Gerast &aacute;skrifandi a&eth; v&ouml;ldum k&ouml;flum
+        %p.subtext
+          H&eacute;r a&eth; ne&eth;an &thorn;&uacute; getur vali&eth; um a&eth; fylgjast me&eth; &aacute;kve&eth;num k&ouml;flum vi&eth;r&aelig;&eth;nanna. &THORN;&uacute; getur vali&eth; hvort &thorn;&uacute; f&aelig;r&eth; &aacute;skriftina &iacute; tölvup&oacute;sti e&eth;a hvort &thorn;&uacute; vilt bara fylgjast me&eth; m&ouml;rgum k&ouml;flum &iacute; einu h&eacute;r &aacute; vefnum. .
+        .Form_askriftar.Askrift
+          %h4
+            Form áskriftar:
+            %span.star *
+          = f.radio_button :reports_enabled, true
+          Fá skýrslur í tölvupósti og fylgjast með mörgum köflum í einu á vefnum
+          %br/
+          = f.radio_button :reports_enabled, false
+          Engan tölvupóst, fylgjast bara með mörgum köflum í einu á vefnum
+          %br/
+        %h4.Askrift
+          Kaflar sem þú vilt fylgjast með:
+          %span.star *
+        .addContent_kaflar
+          %b Utan EES
+          %br/
+          - Tag.find(:all, :conditions=>"tag_type = 3", :order=>"weight").each do |tag|
+            = check_box_tag "user[subscribe_to_tag_id_#{tag.id}]", "yes", subscribed_to_tag?(@subscription_user.id, tag.id)
+            %span.Chapter_name= tag.name
+            %br/
+        .addContent_kaflar.Askrift
+          %b A&eth; mestu leyti &iacute; EES
+          %br/
+          - Tag.find(:all, :conditions=>"tag_type = 2", :order=>"weight").each do |tag|
+            = check_box_tag "user[subscribe_to_tag_id_#{tag.id}]", "yes", subscribed_to_tag?(@subscription_user.id, tag.id)
+            %span.Chapter_name= tag.name
+            %br/
+        .addContent_kaflar.Askrift
+          %b &Iacute; EES
+          %br/
+          - Tag.find(:all, :conditions=>"tag_type = 1", :order=>"weight").each do |tag|
+            = check_box_tag "user[subscribe_to_tag_id_#{tag.id}]", "yes", subscribed_to_tag?(@subscription_user.id, tag.id)
+            %span.Chapter_name= tag.name
+            %br/
+        .addContent_kaflar.annad
+          %b Annað
+          %br/
+          - Tag.find(:all, :conditions=>"tag_type = 4", :order=>"weight").each do |tag|
+            = check_box_tag "user[subscribe_to_tag_id_#{tag.id}]", "yes", subscribed_to_tag?(@subscription_user.id, tag.id)
+            %span.Chapter_name= tag.name
+            %br/
+        .Tegund_Efnis.Askrift
+          %h4
+            Efni sem þú vilt fylgjast með:
+            %span.star *
+          = f.check_box :reports_discussions
+          Umræður
+          %br/
+          = f.check_box :reports_questions
+        .Tidni_Askriftar.Askrift
+          %h4
+            Hversu oft viltu fá tölvupóst?
+            %span.star *
+          = f.radio_button :reports_interval, 1
+          Á hverjum klukkutíma
+          %br/
+          = f.radio_button :reports_interval, 2
+          Daglega
+          %br/
+          = f.radio_button :reports_interval, 3
+          Vikulega
+          %br/
+        .Tegund_Efnis.Askrift
+          %h4 Fá sendan tölvupóst með athugasemdum við umræður sem þú hefur sérstaklega valið að fylgjast með í tölvupósti?:
+          = f.check_box :is_comments_subscribed
+          %br/
+        .Gerast_askrifandi.Askrift
+          = f.submit "Uppfæra áskrift"

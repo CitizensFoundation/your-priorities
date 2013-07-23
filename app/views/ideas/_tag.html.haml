@@ -1,0 +1,3 @@
+= form_for idea, :remote=>true, 'data-disable-with' => escape_t(tr("Tagging","Ajax")), :url => tag_save_idea_path(idea) do |f|
+  = f.text_field :issue_list, :id => 'idea_' + idea.id.to_s + '_issue_list', :size => 70
+  = f.submit tr("save", "view/ideas/_tag"), :class => "tag_button"

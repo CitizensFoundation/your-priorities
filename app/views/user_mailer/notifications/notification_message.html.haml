@@ -1,0 +1,13 @@
+= render :partial=>"user_mailer/header", formats: [:html]
+%p
+  = tr("Hi","email")
+  = @recipient.first_name.capitalize
+  ,
+%p
+  = @sender.name
+  = tr("just sent you a private message.","email")
+%p= @notifiable.content
+%p
+  = tr("You can answer here","email")
+  \: #{link_to @sender.profile_url+'/messages', @sender.profile_url+'/messages'}
+= render :partial=>"user_mailer/footer", formats: [:html]

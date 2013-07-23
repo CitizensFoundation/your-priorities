@@ -1,0 +1,14 @@
+#hp_intro= @page_title
+%p
+  = tr("Your group or organization can join our network too. <a href='/sub_instances'>More details here</a>.", "view/network/sub_instances")
+  %p
+    %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+      - @sub_instances.in_groups_of(4,false) do |row_sub_instances|
+        %tr
+          - for sub_instance in row_sub_instances
+            %td{:align => "center", :valign => "middle"}
+              .sub_instance_logo
+                - if sub_instance.has_website? and sub_instance.has_picture?
+                  %a{:href => sub_instance.website_link}= image_tag sub_instance.logo.url(:icon_140), :border => 0
+                - elsif sub_instance.has_picture? and not sub_instance.has_website?
+                  = image_tag sub_instance.logo.url(:icon_140), :border => 0

@@ -1,0 +1,22 @@
+#idea_nav
+  .idea_menu
+    %ul
+      %li
+        %span.tab_header
+          = link_to tr("Full text", "view/points/_nav"), point_url(@point)
+      %li
+        %span.tab_header
+          = link_to tr("Edit point", "view/points/_nav"), new_point_revision_url(@point) if current_user and (current_user==@point.idea.user or current_user.is_admin?)
+      %li
+        %span.tab_header
+          = link_to tr("{count} revisions", "view/points/_nav", :count => @point.revisions_count), point_revision_url(@point,@point.revision_id)
+      %li
+        %span.tab_header
+          = link_to tr("{count} discussions", "view/points/_nav", :count => @point.discussions_count), discussions_point_url(@point)
+      %li
+        %span.tab_header
+          = link_to tr("All activity", "view/points/_nav"), activity_point_url(@point)
+      - if user_signed_in? and (@point.user_id == current_user.id or current_user.is_admin?)
+        %li
+          %span.tab_header
+            = link_to tr("Delete", "view/points/_nav"), point_path(@point), :method => :delete, :confirm => tr("Are you sure you want to delete this?", "view/points/_nav")

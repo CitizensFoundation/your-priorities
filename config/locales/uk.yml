@@ -1,0 +1,224 @@
+---
+uk:
+  helpers:
+    submit:
+      update: Зберегти %{model}
+      create: Створити %{model}
+      submit: Зберегти %{model}
+    select:
+      prompt: 'Оберіть: '
+  datetime:
+    prompts:
+      minute: Хвилина
+      second: Секунда
+      year: Рік
+      month: Місяць
+      day: День
+      hour: Година
+    distance_in_words:
+      half_a_minute: півхвилини
+      less_than_x_seconds:
+        one: менше %{count} секунди
+        few: менше %{count} секунд
+        many: менше %{count} секунд
+        other: менше %{count} секунди
+      x_seconds:
+        one: '%{count} секунда'
+        few: '%{count} секунди'
+        many: '%{count} секунд'
+        other: '%{count} секунди'
+      less_than_x_minutes:
+        one: менше %{count} хвилини
+        few: менше %{count} хвилин
+        many: менше %{count} хвилин
+        other: менше %{count} хвилини
+      x_minutes:
+        one: '%{count} хвилина'
+        few: '%{count} хвилини'
+        many: '%{count} хвилин'
+        other: '%{count} хвилини'
+      about_x_hours:
+        one: близько %{count} година
+        few: близько %{count} години
+        many: близько %{count} годин
+        other: близько %{count} години
+      x_days:
+        one: '%{count} день'
+        few: '%{count} дні'
+        many: '%{count} днів'
+        other: '%{count} дня'
+      about_x_months:
+        one: близько %{count} місяця
+        few: близько %{count} місяців
+        many: близько %{count} місяців
+        other: близько %{count} місяця
+      x_months:
+        one: '%{count} місяць'
+        few: '%{count} місяці'
+        many: '%{count} місяців'
+        other: '%{count} місяця'
+      about_x_years:
+        one: близько %{count} року
+        few: близько %{count} років
+        many: близько %{count} років
+        other: близько %{count} року
+      over_x_years:
+        one: більше %{count} року
+        few: більше %{count} років
+        many: більше %{count} років
+        other: більше %{count} року
+      almost_x_years:
+        one: майже %{count} роки
+        few: майже %{count} років
+        many: майже %{count} років
+        other: майже %{count} років
+  number:
+    format:
+      separator: ','
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        format: '%n %u'
+        unit: грн.
+        separator: ','
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+    human:
+      format:
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: байт
+            few: байти
+            many: байтів
+            other: байту
+          kb: кБ
+          mb: МБ
+          gb: ГБ
+          tb: ТБ
+      decimal_units:
+        format: '%n %u'
+  errors:
+    format: '%{attribute} %{message}'
+    messages:
+      inclusion: не включено до переліку
+      exclusion: зарезервовано
+      invalid: недійсний
+      confirmation: не збігається з підтвердженням
+      accepted: має бути прийнятий
+      empty: не може бути порожнім
+      blank: не може бути пустим
+      taken: вже зайнятий
+      not_a_number: не число
+      not_an_integer: не э цілим числом
+      greater_than: має бути більше ніж %{count}
+      greater_than_or_equal_to: має бути більше ніж або дорівнювати %{count}
+      equal_to: має дорівнювати %{count}
+      less_than: має бути менше ніж %{count}
+      less_than_or_equal_to: має бути менше ніж або дорівнювати %{count}
+      odd: має бути непарним
+      even: має бути парним
+      record_invalid: 'Виникли помилки: %{errors}'
+  activerecord:
+    errors:
+      template:
+        header:
+          one: '%{model} не збережено через %{count} помилку'
+          few: '%{model} не збережено через %{count} помилки'
+          many: '%{model} не збережено через %{count} помилок'
+          other: '%{model} не збережено через %{count} помилки'
+        body: 'Помилки виявлено в таких полях:'
+      full_messages:
+        format: '%{attribute} %{message}'
+      messages:
+        inclusion: не включено до переліку
+        exclusion: зарезервовано
+        invalid: недійсний
+        confirmation: не збігається з підтвердженням
+        accepted: має бути прийнятий
+        empty: не може бути порожнім
+        blank: не може бути пустим
+        taken: вже зайнятий
+        not_a_number: не число
+        greater_than: має бути більше ніж %{count}
+        greater_than_or_equal_to: має бути більше ніж або дорівнювати %{count}
+        equal_to: має дорівнювати %{count}
+        less_than: має бути менше ніж %{count}
+        less_than_or_equal_to: має бути менше ніж або дорівнювати %{count}
+        odd: має бути непарним
+        even: має бути парним
+        record_invalid: 'Виникли помилки: %{errors}'
+  date:
+    formats:
+      default: '%d.%m.%Y'
+      short: '%d %b'
+      long: '%d %B %Y'
+    day_names:
+    - неділя
+    - понеділок
+    - вівторок
+    - середа
+    - четвер
+    - п'ятниця
+    - субота
+    abbr_day_names:
+    - нд.
+    - пн.
+    - вт.
+    - ср.
+    - чт.
+    - пт.
+    - сб.
+    month_names:
+    - 
+    - Січень
+    - Лютий
+    - Березень
+    - Квітень
+    - Травень
+    - Червень
+    - Липень
+    - Серпень
+    - Вересень
+    - Жовтень
+    - Листопад
+    - Грудень
+    abbr_month_names:
+    - 
+    - січ.
+    - лют.
+    - бер.
+    - квіт.
+    - трав.
+    - черв.
+    - лип.
+    - серп.
+    - вер.
+    - жовт.
+    - лист.
+    - груд.
+    order:
+    - :day
+    - :month
+    - :year
+  time:
+    formats:
+      default: '%a, %d %b %Y, %H:%M:%S %z'
+      short: '%d %b, %H:%M'
+      long: '%d %B %Y, %H:%M'
+    am: до полудня
+    pm: по полудні
+  support:
+    select:
+      prompt: 'Оберіть:'
+    array:
+      words_connector: ', '
+      two_words_connector: ' і '
+      last_word_connector: ' та '

@@ -1,0 +1,29 @@
+.profile_strip
+  .profile_name
+    - if params[:action] == 'show'
+      %span.profile_name= @user.name
+    - else
+      %span.profile_name= @page_title
+  - if @user.has_website? or @user.has_twitter?
+    .profile_website
+      - if @user.has_website?
+        %a{:href => @user.website_link}= @user.website_link
+      - if @user.has_website? and @user.has_twitter?
+        \&middot;
+      - if @user.has_twitter?
+        %a{:href => "http://twitter.com/#{@user.twitter_login}"}
+          http://twitter.com/#{@user.twitter_login}
+  .profile_small
+    - if not (user_signed_in? and current_user == @user)
+      .col-group
+        .col-full
+          .col-content{:id => "user_#{@user.id.to_s}_button"}
+            = #render :partial => "users/button_small", :locals => {:user => @user, :following => @following}
+    - if @user.position > 0
+      = tr("{position} most influential", "view/users/_header", :position => @user.position)
+  %div.user_joined_visit
+    = tr("Joined {time_ago}.", "view/users/_header", :time_ago => time_ago(@user.created_at))
+    - if @user.attribute_present?("last_sign_in_at")
+      #{tr("Last visit {time_ago}.", "view/users/_header", :time_ago => time_ago(@user.last_sign_in_at))}
+- if @user.profile
+  .bio= @user.profile.bio_html

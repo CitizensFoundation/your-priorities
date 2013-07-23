@@ -1,0 +1,72 @@
+body {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 75%;
+}
+
+h3 {
+	font-size: 130%;
+	color: #003A63;
+}
+
+a {
+	color:#000000;
+	font-weight:bolder;
+	text-decoration:none;
+}
+
+.bg {
+	background: url(/assets/main_background.jpg) repeat-x top left;
+	background-color: #c5c5c5;
+	margin-top: 0px;
+}
+
+#horizon {
+	background-color: transparent;
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	width: 100%;
+	margin-top: -200px;
+	text-align: center;
+	min-width: 900px; 
+}
+
+#wrapper {
+	background-color: #fff;
+	position: relative;
+	text-align: left;
+	width: 900px;
+	height: 380px;
+	margin: 0px auto;
+}
+
+#content {
+	width: 900px;
+	height: 380px;
+	padding: 50px 50px 50px 50px;
+}
+
+div.dash-divider {
+	border-left: dotted;
+	border-color: #999;
+	border-width: medium;
+	height: 280px;
+	padding: 0px 5px 0px 0px;
+}
+
+table.website-notice {	
+	width: 800px;
+}
+
+table.website-notice td {	
+}
+
+table.website-notice td.logo {
+	width: 15%;
+	padding: 0px 40px 0px 0px;
+}
+
+table.website-notice td.notice {
+	width: 85%;
+	padding: 0px 0px 0px 50px;
+}

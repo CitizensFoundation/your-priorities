@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/coins.png", :width => "16"}/
+= raw tr("{user_name} earned {capital}{currency_short_name} for founding this nation", "view/activities/_activitycapitalinstancenew_noself", :user_name => link_to(activity.user.login, activity.user), :capital => activity.capital.amount.abs, :currency_short_name => current_instance.currency_short_name)

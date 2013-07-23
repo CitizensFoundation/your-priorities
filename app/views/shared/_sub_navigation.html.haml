@@ -1,0 +1,65 @@
+#sib_sub_nav
+  %div#section_title
+    %span
+      - if controller_name == "points"
+        = tr("Debate","sub_nav") + " :"
+      - elsif controller_name == "ideas"
+        = tr("Tags","sub_nav") + " :"
+      - elsif controller_name == "sub_instances"
+        = current_instance.name
+      - elsif ["pages","subscriptions","subscription_accounts","sub_instances"].include?(controller_name)
+      - else
+        = controller_name.gsub("ideas","#{IDEA_TOKEN_PLURAL}").camelize + " :"
+    %span
+    - if controller_name == "issues"
+      - if action_name == "index"
+        %a.subnav.pulldown_trigger{:href => "#"}
+          %span= tr('All', "view/issues")
+      - else
+        %a.subnav.pulldown_trigger{:href => "#"}
+          %span= @category.name.titleize
+    - elsif @selected_sub_nav_name
+      %a.subnav.pulldown_trigger{:href => "#"}
+        %span
+          = @selected_sub_nav_name
+    -else
+      %a{:href => "#"}
+        %span
+          = @page_title
+  - if @sub_menu_items and not @sub_menu_items.empty?
+    %div#sub_menu.submenu
+      %ul
+      - @sub_menu_items.each do |menu_item_id, menu_item|
+        - if menu_item_id==@selected_sub_nav_item_id
+          %li.pulldown
+            %a{:href => menu_item[1]}
+              = menu_item[0]
+        - else
+          %li.selected
+            %a{:href => menu_item[1]}
+              = menu_item[0]
+
+:javascript
+  $(document).ready(function() {
+    $(".subnav").click(function(e) {
+      e.preventDefault();
+      //var $this = $(this);
+      if ($(this).hasClass('menu-open')) {
+        $(this).removeClass('menu-open');
+        $('#sub_menu').hide();
+      }
+      else {
+        $(this).addClass('menu-open');
+        $('#sub_menu').show();
+      }
+      return false;
+    });
+
+    $(document).click(function(e) {
+      if ($('#sub_menu').is(':visible') && $(e.target).parents('#sub_menu').length === 0) {
+        $('.subnav').removeClass('menu-open');
+        $('#sub_menu').hide();
+        return false;
+      }
+    });
+  });

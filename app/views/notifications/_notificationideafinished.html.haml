@@ -1,0 +1,12 @@
+- if notification.notifiable.idea.is_successful?
+  %img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/fugue/star.png"}", :width => "16"}/
+  = tr("{idea_name} was completed successfully", "view/notifications/_notificationideafinished", :idea_name => link_to(notification.notifiable.idea.name, notification.notifiable.idea))
+- elsif notification.notifiable.idea.is_compromised?
+  %img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/fugue/star_half.png"}", :width => "16"}/
+  = tr("{idea_name} was completed with a compromise", "view/notifications/_notificationideafinished", :idea_name => link_to(notification.notifiable.idea.name, notification.notifiable.idea))
+- elsif notification.notifiable.idea.is_failed?
+  %img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/fugue/star_empty.png"}", :width => "16"}/
+  = tr("{idea_name} failed", "view/notifications/_notificationideafinished", :idea_name => link_to(notification.notifiable.idea.name, notification.notifiable.idea))
+- elsif notification.notifiable.idea.is_intheworks?
+  %img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/fugue/hammer.png"}", :width => "16"}/
+  = tr("{idea_name} is in the works", "view/notifications/_notificationideafinished", :idea_name => link_to(notification.notifiable.idea.name, notification.notifiable.idea))

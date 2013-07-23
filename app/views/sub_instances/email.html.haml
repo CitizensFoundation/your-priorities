@@ -1,0 +1,27 @@
+#hp_intro= @page_title
+%p
+  = form_for(@sub_instance) do |f|
+    = f.error_messages
+    = tr("Turning this on will add a checkbox to all the signup forms on http://{sub_instance_short_name}.{base_url}/ for people to opt-in for your email list. It defaults to checked.", "view/sub_instances/email", :sub_instance_short_name => @sub_instance.short_name, :base_url => current_instance.base_url)
+    %p
+      = f.check_box :is_optin
+      = tr("Request every new member's permission to be added to your email list.", "view/sub_instances/email")
+    %div{:style => "padding-left: 30px;"}
+      %p
+        = tr("What should the opt-in language say?", "view/sub_instances/email")
+        %br/
+        = f.text_field :optin_text
+      %p
+        = tr("URL for your privacy policy", "view/sub_instances/email")
+        %br/
+        = f.text_field :privacy_url
+      %p
+        = tr("URL where people can subscribe", "view/sub_instances/email")
+        %br/
+        = f.text_field :subscribe_url
+      %p
+        = tr("URL where people can <i>un</i>subscribe", "view/sub_instances/email")
+        %br/
+        = f.text_field :unsubscribe_url
+    %p
+      = f.submit tr("Update email list info", "view/sub_instances/email"), :class => "yellow_button"

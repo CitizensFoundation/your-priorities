@@ -1,0 +1,54 @@
+:javascript
+  $(function(){
+  	$('.move_test').replaceWith($('.category'));
+  	$('.replace_fblike').replaceWith($('.fblike'));
+  	$('.replace_report').replaceWith($('.report1'));
+  	$('.replace_notice').replaceWith($('.single .warning_inline2'));
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  });
+- if @new_ideas.any?
+  %div.home_welcome
+    %h1.home_h1
+      = tr("New #{IDEA_TOKEN_PLURAL_CAPS}","home")
+    - @new_ideas.each do |idea|
+      = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+      %div
+        %div{:id => "idea_detail_#{idea.id}"}
+- else
+  .home_welcome
+    %h2
+      = tr("Welcome to your {instance_name}. Please add your first #{IDEA_TOKEN} ", "controller/sub_instances", :instance_name => current_instance.name)
+      = link_to tr("here","here"),"/ideas/new"
+      = "."
+- if @top_ideas and @top_ideas.any?
+  %div.home_welcome{:style=>"margin-top: 10px; padding-top: 10px;"}
+    %h1.home_h2
+      &nbsp;
+    %h1.home_h1
+      = tr("Top #{IDEA_TOKEN_PLURAL} past 7 days", "controller/ideas")
+    - @top_ideas.each do |idea|
+      = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+      %div
+        %div{:id => "idea_detail_#{idea.id}"}
+- if @random_ideas.any?
+  %div.home_welcome
+    %h1.home_h2
+      &nbsp;
+    %h1.home_h1
+      = tr("Random #{IDEA_TOKEN_PLURAL_CAPS}","home")
+    - @random_ideas.each do |idea|
+      = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+      %div
+        %div{:id => "idea_detail_#{idea.id}"}
+- unless @activities.blank?
+  %div.home_welcome
+    %h1.home_h2
+      &nbsp;
+    %h1.home_h1
+      = tr("Latest Activity","home")
+    %ul#endless_scroll_ul.list{:last => @activities.to_a.last.changed_at}
+      = render :template => 'feed/activity_list_simple'
+      #infinite-scroll
+      .endless_scroll_inner_wrap

@@ -1,0 +1,2 @@
+- @comments.each_with_index do |comment,i|
+  = render :partial => "comments/show", :locals => {:comment => comment, :shortentext => 0, :first_comment => i==0 ? true : false}

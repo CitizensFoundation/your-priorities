@@ -1,0 +1,50 @@
+- endorsement = nil
+#hp_intro= current_instance.prompt
+%table{:background => "red", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:valign => "top"}
+      - if @issues.total_pages > 1
+        %p
+          = will_paginate (@issues)
+      - for tag in @issues
+        .home_issue
+          .home_issue_name
+            %a{:href => "/issues/#{tag.slug}"}= tr(tag.title,"model/category")
+          - if tag.top_idea
+            .home_issue_idea{:id => "idea_#{tag.top_idea_id}"}
+              = tr("Top:", "view/ideas/index")
+              %span.home_issue_idea_name= link_to tag.top_idea.name, tag.top_idea
+              %br/
+              = render :partial => "ideas/action_show", :locals => {:idea => tag.top_idea, :endorsement => (@endorsements.detect {|e| e.idea_id == tag.top_idea_id } if @endorsements) }
+          - if tag.controversial_idea
+            .home_issue_idea{:id => "idea_#{tag.controversial_idea_id}"}
+              = tr("Controversial:", "view/ideas/index")
+              %span.home_issue_idea_name= link_to tag.controversial_idea.name, tag.controversial_idea
+              %br/
+              = render :partial => "ideas/action_show", :locals => {:idea => tag.controversial_idea, :endorsement => (@endorsements.detect {|e| e.idea_id == tag.controversial_idea_id } if @endorsements)}
+          - if tag.rising_idea
+            .home_issue_idea{:id => "idea_#{tag.rising_idea_id}"}
+              = tr("Rising:", "view/ideas/index")
+              %span.home_issue_idea_name= link_to tag.rising_idea.name, tag.rising_idea
+              %br/
+              = render :partial => "ideas/action_show", :locals => {:idea => tag.rising_idea, :endorsement => (@endorsements.detect {|e| e.idea_id == tag.rising_idea_id } if @endorsements)}
+      %p
+        = will_paginate (@issues)
+    %td{:style => "padding-left: 20px;", :valign => "top", :width => "160"}
+      %p
+        - #if user_signed_in? and current_user.endorsements_count > 4
+          = #render :partial => "users/index_chart", :locals => {:user => current_user }
+        - @finished = Idea.finished.by_most_recent_status_change.all(:limit => 5)
+        - if @finished.any?
+          %p
+          .heading= tr("Recently finished", "view/ideas/index")
+          - for idea in @finished
+            .idea_finished
+              = link_to_unless_current h(idea.name), idea, :class => "idea_name_link"
+              %br/
+              = official_status(idea)
+              %span.idea_finished_time= time_ago(idea.status_changed_at)
+          = tr("See all <a href='{url}'>finished ideas</a>", "view/ideas/index", :url => finished_ideas_url)
+          \&rarr;
+- if @issues.current_page == 1 and @issues.size > 0
+  = tr("<p>You can also <a href=\"/issues\">browse all {instance.tags_name_plural | downcase}</a>, see the <a href=\"/ideas/top\">top ranked ideas</a>, <a href=\"/ideas/random\">random ideas</a>, or the <a href=\"/ideas/rising\">fastest rising ideas</a>.</p>", "view/ideas/index")

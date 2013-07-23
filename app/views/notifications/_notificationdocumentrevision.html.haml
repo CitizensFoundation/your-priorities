@@ -1,0 +1,2 @@
+%img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/assets/icons/page_white_edit.png"}", :width => "16"}/
+= tr("{sender_name} revised {document_name}", "view/notifications/_notificationdocumentrevision", :sender_name => link_to(notification.sender_name, notification.sender), :document_name => link_to(notification.notifiable.document.name, document_revision_url(notification.notifiable.document,notification.notifiable)))

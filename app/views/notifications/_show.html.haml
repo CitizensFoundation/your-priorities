@@ -1,0 +1,13 @@
+.activity_border
+  .notification{:id => "notification_#{notification.id}"}
+    .col-group
+      .col-1
+        .col-content
+          .comment_x
+      .col-11
+        .col-content
+          - cache("#{notification[:type].downcase}-#{notification.id}-#{session[:locale]}-#{@inline_translations_enabled}") do
+            = render :partial => "notifications/#{notification[:type].downcase}", :locals => {:notification => notification}
+    %span.small= time_ago(notification.created_at)
+    - if notification.unread?
+      %span.new NEW

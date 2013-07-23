@@ -1,0 +1,3 @@
+= text_field_tag input_id, nil, :size => "25x10"
+:javascript
+  $('##{input_id}').autoSuggest("/groups/suggest_user", {neverSubmit: true, preFill: #{pre_fill_data}, as_values_postfix: "#{input_id}" ,minChars: 2, matchCase: false, selectedItemProp: "name", searchObjProps: "name"})

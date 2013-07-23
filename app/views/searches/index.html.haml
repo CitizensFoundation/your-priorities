@@ -1,0 +1,79 @@
+- if @error
+  = @error
+- elsif not @search_results
+  = tr("No search results","_searches")
+- else
+  - form_tag(searches_path, :method => 'get') do
+    %tr
+      %td{:valign => "middle"}
+        .magnifier_wrap
+          %span.magnifier_image
+            %img{:border => "0", :height => "14", :src => "/assets/icons/magnifier.gif", :width => "14"}/
+          %span.magnifier_box
+            = text_field_tag "q", width: "150px", :value=>params[:q]
+  - if false and params[:class]
+    %h3
+      = tr("All","search")
+      = translate_facet_option(params[:class])
+  .col-group
+    .col-2
+      .col-content
+        .search_results
+          - unless @search_results.empty?
+            #left
+              - if params[:category_name] or params[:class]
+                %h3= link_to tr("Everything","search"), "/search?q=#{@query}"
+              - @facets.each do |facet, facet_options|
+                %div
+                  %ul.search_menu
+                    - facet_options.each do |option, count|
+                      - next if option==nil or option==""
+                      - translated_option = translate_facet_option(option)
+                      - if option==params[:class]
+                        %li
+                          %b= link_to "#{translated_option.humanize.gsub("ideas","#{IDEA_TOKEN_PLURAL_CAPS}").gsub("comments","Comments")} (#{count})".html_safe, "/search?q=#{@query}&#{facet}=#{u option}#{params[:global] ? "&global=#{params[:global]}" : ""}"
+                      - elsif translated_option=="No category"
+                        - # DO NOTHING
+                      - else
+                        %li
+                          = link_to "#{tr(translated_option.gsub("ideas","#{IDEA_TOKEN_PLURAL_CAPS}").gsub("comments","Comments"), "model/category")} (#{count})".html_safe, "/search?q=#{@query}&#{facet}=#{u option}#{params[:global] ? "&global=#{params[:global]}" : ""}"
+          - else
+            = tr("No search results","search")
+    .col-10
+      .col-content
+        - unless not @facets or @facets.empty? or @search_results.empty?
+          #search_results
+            - @search_results.each do |result|
+              - if result.class == Idea
+                %div
+                  %h3.test
+                    = tr("#{IDEA_TOKEN_CAPS}","search")
+                    \- #{time_ago(result.excerpts.created_at)}
+                    \ #{link_to tr("Show","search"), result.show_url}
+                  %span
+                    = link_to result.excerpts.name.force_encoding("UTF-8").html_safe, :controller=>"ideas", :action=>"show", :id=>result.id
+                  #search_results_body
+                    = result.excerpts.description.html_safe
+                  %br/
+              - elsif result.class == Point
+                %div
+                  %h3
+                    = tr("Point","search")
+                    \- #{time_ago(result.excerpts.created_at)}
+                    \ #{link_to tr("Show","search"), result.show_url}
+                  %span= link_to result.excerpts.name.force_encoding("UTF-8").html_safe, :controller=>"points", :action=>"show", :id=>result.id
+                  #search_results_body
+                    = result.excerpts.content.force_encoding("UTF-8").html_safe
+                  %br/
+                  / </haml:block><haml:silent></haml:silent><haml:block>
+              - elsif result.class == Comment
+                %div
+                  %h3.test
+                    = tr("Comment","search")
+                    \- #{time_ago(result.excerpts.created_at)}
+                    \ #{link_to tr("Show","search"), result.show_url}
+                  #search_results_body
+                    = result.excerpts.content.force_encoding("UTF-8").html_safe
+                  %br/
+            = will_paginate @search_results
+        - else

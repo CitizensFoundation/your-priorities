@@ -1,0 +1,6 @@
+- if activity.attribute_present?("position")
+  /%img.icon{:border => "0", :height => "16", :src => "/assets/icons/medal_#{activity.position > 100 ? "bronze_3.png" : "gold_3.png"}", :width => "16"}/
+  = raw tr("{idea_name} debuted on the charts at {position}", "view/activities/_activityideadebut", :idea_name => link_to(Idea.unscoped.find(activity.idea_id).name, activity.idea), :position => number_with_delimiter(activity.position))
+- else
+  /%img.icon{:border => "0", :height => "16", :src => "/assets/icons/medal_gold_3.png", :width => "16"}/
+  = raw tr("{idea_name} debuted on the charts", "view/activities/_activityideadebut", :idea_name => link_to(Idea.unscoped.find(activity.idea_id).name, Idea.unscoped.find(activity.idea_id)))

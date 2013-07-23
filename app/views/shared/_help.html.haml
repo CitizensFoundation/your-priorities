@@ -1,0 +1,6 @@
+#sib_help
+  .tab_sublinks
+    %ul
+      - @about_pages.each do |page|
+        %li
+          #{link_to page.title.from_localized_yaml, :controller => "pages", :action => "show", :id=>page.id}

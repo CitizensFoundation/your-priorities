@@ -1,0 +1,13 @@
+#sib_profile
+  #user_info_box
+    #user_info_box_name_and_menu
+    #user_info_box_picture
+      = link_to "/users/additional_information" do
+        = render :partial => "users/pic_48", :locals => {:user => current_user}
+    - if user_signed_in?
+      %span.profile_name
+        = current_user.name
+      %br
+      = render :partial => "shared/user_menu"
+    - if user_signed_in? && !current_user.confirmed?
+      = render partial: "shared/activated"

@@ -1,0 +1,63 @@
+= render :partial => "ideas/header"
+.col-group
+  .col-1
+    .col-content
+      ="&nbsp;".html_safe #render :partial => "ideas/nav"
+  .col-11
+    .col-content
+      = tr("<p><b>Buy an ad for this idea</b>.  You can spend some of your social points and put this idea with your message at the top of all the pages on {instance_name}.  Whichever ad has the most<span class=\"pc\">{currency_short_name}</span> spent per member is shown first until the member responds, the more you spend, the faster it's seen.  Ads are only shown to logged in members who have not already endorsed or opposed the idea, so your<span class=\"pc\">sp</span> is not wasted.</p>", |
+        "view/ads/new",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+        :instance_name => current_instance.name,                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+        :currency_short_name => current_instance.currency_short_name)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+      = tr("<p>You cannot buy<span class=\"pc\">sp</span> with real money, but you can earn it in a variety of ways, like <a href=\"/network/find\">inviting people to join</a>, and writing helpful <a href=\"../points/new\">talking points</a>.  <a href=\"/about/faq#pc\">Details here</a>.</p>", "view/ads/new")
+      %p
+        = form_for(@ad, :url => idea_ads_path(@idea)) do |f|
+          = f.error_messages :header_message => tr("There was a problem creating your ad", "view/ads/new")
+          .field
+            .field_label
+              = tr("Your message to go underneath the link to the #{IDEA_TOKEN}:", "view/ads/new")
+            .field_box
+              = f.text_field :content, :size => 45, :maxlength => 45, :id => "encouragement_text"
+          .field
+            %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+              %tr
+                %td
+                  = tr("Show to", "view/ads/new")
+                %td.left_scale{:valign => "top"}
+                  = f.text_field :show_ads_count, :size => 3
+                %td.left_scale
+                  = tr("members and spend", "view/ads/new")
+                %td.left_scale{:valign => "top"}
+                  = f.text_field :cost, :size => 1
+                %td
+                  = current_instance.currency_short_name
+                %td.per_user_cost{:valign => "top"}
+                  \=
+                  %span#encouragement_per_user_cost= render :partial => "ads/per_user_cost", :locals => {:ad => @ad}
+          .field
+            = tr("At this price, your ad will be", "view/ads/new")
+            %span#encouragement_ranking= render :partial => "ads/ranking", :locals => {:ad => @ad}
+          = f.submit tr("Save and publish your Ad", "view/ads/new"), :id => "submit", :class => "yellow_button"
+        %br/
+        %h2= tr("Ad Preview","ad/new")
+        %br/
+        #encouragement_preview
+        :javascript
+          //
+          function sendForm() {
+            jQuery.ajax({type:'post', data: jQuery('form.new_ad').serialize(), url:'#{preview_idea_ads_url(@idea)}'})
+          }
+
+          $('#encouragement_text').delayedObserver(function() {
+            sendForm();
+          }, 0.5);
+
+          $('#encouragement_show_encouragements_count').delayedObserver(function() {
+            sendForm();
+          }, 0.5);
+
+          $('#encouragement_cost').delayedObserver(function() {
+            sendForm();
+          }, 0.5);
+          //
+        %p

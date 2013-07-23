@@ -1,0 +1,37 @@
+#hp_intro= tr("Find people you know at {instance_name}", "view/user_contacts/not_invited", :instance_name => current_instance.name)
+= render :partial => "import_nav", :locals => {:user => current_user}
+- if @contacts.any?
+  %p
+    = tr("{contacts_count} of your contacts are <i>not</i> {instance_name} members.<br/>Checkbox the people you'd like to invite and click the big yellow button.", "view/user_contacts/not_invited", :contacts_count => @contacts.size, :instance_name => current_instance.name)
+    - form_tag  multiple_user_contacts_url, :method => :put,
+    - :loading => "Element.show('status');",
+    - :remote=>true,
+    - 'data-disable-with' =>  escape_t(tr("Sending","Ajax")) do
+      - if @contacts.size > 1
+        = link_to_function(tr("Check/Uncheck All", "view/user_contacts/not_invited"),"toggleAll('select');return false;")
+      - if @contacts.size > 6
+        #contacts
+      - else
+        #contacts_small
+      - for c in @contacts
+        %div{:id => "contact_#{c.id}"}
+          = check_box_tag "contact_ids[]", c.id, false, :class => "select"
+          = c.name
+          \&lt;#{c.email}&gt;
+      - if current_user.login != current_user.real_name
+        %p
+          = tr("Should I reference your real name, or your site name?", "view/user_contacts/not_invited")
+          %br/
+          = radio_button_tag :is_from_realname, false
+          = current_user.login
+          = radio_button_tag :is_from_realname, true
+          = current_user.real_name
+      %p
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+        %tr
+          %td
+            = submit_tag tr("Invited checked people to join", "view/user_contacts/not_invited", :instance_name => current_instance.name), :class => "yellow_button"
+          %td{:valign => "top"}
+            #status{:style => "display: none;"}
+              = tr("Processing...", "view/user_contacts/not_invited")
+      = render :partial => "preview"

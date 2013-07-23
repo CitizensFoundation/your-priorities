@@ -1,0 +1,7 @@
+- if notification.notifiable.class == Comment
+  = url_for activity_comments_url(notification.notifiable.activity_id)
+  \##{notification.notifiable.id}
+- elsif notification.notifiable.class == Idea
+  = url_for idea_url(notification.notifiable.id)
+- elsif notification.notifiable.class == Point
+  = url_for point_url(notification.notifiable.id)

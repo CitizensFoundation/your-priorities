@@ -1,0 +1,12 @@
+%ul
+  %li.menu_header.menu_margin
+    = tr("Root settings", "view/shared/_menu")
+  %li
+    \&middot;
+    = link_to tr("Configuration", "view/shared/_menu"), edit_instance_url(Instance.current)
+    %br
+    \&middot;
+    = link_to tr("New sub instance", "view/shared/_menu"), new_sub_instance_url
+  %li
+    \&middot;
+    = link_to tr("About pages", "view/shared/_menu"), "/pages"

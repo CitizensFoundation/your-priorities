@@ -1,0 +1,17 @@
+- if following
+  .green_button{:id => "activity_add_#{activity.id.to_s}"}
+    = tr("Following discussion", "view/activities/_button")
+    %span.big_x
+      = link_to "&nbsp;x".html_safe, activity_following_path(activity, following, :region => "activity_show"),                                |
+        :method => :post,                                                                                                                     |
+        :remote=>true,                                                                                                                        |
+        'data-disable-with' => "",                                                                                                            |
+        'data-loader-name' => "circle",                                                                                                       |
+        :method => :delete, :class => "idea_remove_link", :title => tr("Remove this person from your network", "view/activities/_button") |
+- else
+  .yellow_button{:id => "activity_remove_#{activity.id.to_s}"}
+    = link_to tr("Follow this discussion", "view/activities/_button"), activity_followings_path(activity, :region => "activity_show"),         |
+      :method => :post,                                                                                                                        |
+      'data-disable-with' => '<span class="idea_remove_link idea_add_working"><img src="/assets/ajax/horizontal_small.gif" /></span>', |
+      'data-loader-name' => "no_loader",                                                                                                       |
+      :class => "idea_remove_link", :title => tr("I want to follow this person's comments and activity", "view/activities/_button")        |

@@ -1,0 +1,23 @@
+- if current_sub_instance.has_logo?
+  = image_tag current_sub_instance.logo.url(:icon_340_74), :border => 0
+- else
+  - if current_sub_instance.has_website? and current_sub_instance.has_logo?
+    %a{:href => current_sub_instance.website_link}= image_tag current_sub_instance.logo.url(:icon_180), :border => 0
+  - elsif current_sub_instance.has_logo? and not current_sub_instance.has_website?
+    = image_tag current_sub_instance.logo.url(:icon_214_32), :border => 0
+  - elsif user_signed_in? and current_user.sub_instance_id == current_sub_instance.id
+    - if current_sub_instance.has_website?
+      %a{:href => current_sub_instance.website_link}= h(current_sub_instance.name)
+    - else
+      = h(current_sub_instance.name)
+    %p
+      = link_to (image_tag("your_logo.gif", :size => "180x100", :border => 0)), picture_sub_instance_path(current_sub_instance)
+  - else
+    %p
+      Partnered with
+      - if current_sub_instance.has_website?
+        %a{:href => current_sub_instance.website_link}>= h(current_sub_instance.name)
+        \.
+      - else
+        = h(current_sub_instance.name)
+        \.

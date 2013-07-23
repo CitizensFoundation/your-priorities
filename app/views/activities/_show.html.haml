@@ -1,0 +1,49 @@
+- if params[:action] == 'your_discussions' and activity.class == ActivityCommentParticipant
+  = render :partial => "activities/show", :locals => {:activity => activity.activity, :suffix => ""}
+- else
+  .activity_border{:id => "activity_and_comments_#{activity.id}"}
+    - if false and activity.user and activity.user.status == 'removed' and params[:action] != 'unhide'
+      .activity_hidden{:id => "activity_hidden_#{activity.id.to_s}"}
+        Hidden because #{activity.user.name} deleted their account.
+        \#{link_to tr("Show", "view/activities/_show"), unhide_activity_url(activity), :method => :get, 'data-disable-with' => "", 'data-loader-name' => "horizontal_small",		             :remote=>true}
+    - elsif false and activity.user and activity.user.status == 'suspended' and params[:action] != 'unhide'
+      .activity_hidden{:id => "activity_hidden_#{activity.id.to_s}"}
+        Hidden because #{activity.user.name.possessive} account was suspended.
+        \#{link_to tr("Show", "view/activities/_show"), unhide_activity_url(activity), :method => :get, 'data-disable-with' => "", 'data-loader-name' => "horizontal_small",                :remote=>true}
+    - elsif false and user_signed_in? and activity.user and current_ignoring_ids.include?(activity.user_id) and params[:action] != 'unhide'
+      .activity_hidden{:id => "activity_hidden_#{activity.id.to_s}"}
+        Hidden because you are ignoring #{link_to activity.user.name, activity.user}.
+        \#{link_to tr("Show", "view/activities/_show"), unhide_activity_url(activity), :method => :get, 'data-disable-with' => "", 'data-loader-name' => "horizontal_small",                :remote=>true}
+    - else
+      %div.border_feed
+      .activity.single{:id => "activity_#{activity.id}"}
+        .activity_x
+          - if user_signed_in? and current_user.is_admin?
+            = link_to 'x', activity_url(activity.id), :method => :delete, |
+              :remote=>true,                                              |
+              'data-disable-with' => "",                                  |
+              'data-loader-name' => "circle",                             |
+              :confirm => escape_t(tr("Delete from this page?","Ajax"))   |
+        - if activity.user
+          .col-group
+            .col-1
+              .col-content
+                = render :partial => "users/pic_48", :locals => {:user => activity.user}
+            .col-11
+              .col-content
+                .activity_content
+                  - cache("#{activity[:type].downcase}#{suffix}-#{activity.id}-#{session[:locale]}-#{@inline_translations_enabled}-#{current_user and current_user.is_admin?}") do
+                    = render :partial => "activities/#{activity[:type].downcase}#{suffix}", :locals => {:activity => activity}
+                  %span.small= time_ago(activity.created_at)
+                  - if activity.class != ActivityCommentParticipant
+                    - if user_signed_in? and activity.published_comments.count > 0
+                      %span.comment_link{:title => escape_t(tr("Send comment","Ajax"))}
+                        = link_to_unless_current pluralize(activity.published_comments.count, title="#{escape_t(tr("Comment","Ajax"))}"), activity_comments_url(activity)
+                    - elsif false and user_signed_in?
+                      %span.comment_link{:id => "comment_link_#{activity.id.to_s}", :title => escape_t(tr("Send comment","Ajax"))}
+                        = link_to tr("Comment", "view/activities/_show"), new_activity_comment_url(activity), :method => :get, |
+                          'data-disable-with' => "",                                                                           |
+                          'data-loader-name' => "horizontal_small",                                                            |
+                              :remote=>true                                                                                        |
+  - if activity.class != ActivityCommentParticipant and activity.class != ActivityBulletinProfileAuthor
+    = render :partial => "activities/comments", :locals => {:activity => activity}

@@ -1,0 +1,48 @@
+#plans
+  %h1 Subscription Plans
+  - [@private_plans,@public_plans].each_with_index do |plans,i|
+    - if i==0 and not plans.empty?
+      %h2
+        = tr("Private Plans","here")
+      %p
+        = tr("Makes your website private to the world with an invite only registration")
+    - elsif not plans.empty?
+      %br
+      %h2
+        = tr("Open Plans","here")
+      %p
+        = tr("Makes your website open to the world with open registration")
+    %table{:width=>"100%", :align=>"right"}
+      %tr{:width=>"100%", :align=>"right"}
+        %th
+          = tr("Name","here")
+        %th
+          = tr("Private/Open","here")
+        %th
+          = tr("Max users","here")
+        %th
+          = tr("Price","here")
+        %th
+          = tr("Signup","here")
+      - plans.each do |plan|
+        %tr{:width=>"100%", :align=>"right"}
+          %td
+            .plan
+              .name
+                = plan.name.from_localized_yaml
+          %td
+            .price
+              = plan.private_instance ? tr("Private instance","here") : tr("Open instance","here")
+          %td
+            .price
+              = plan.max_users
+          %td
+            .price
+              = number_to_currency plan.price, :unit=>plan.price_unit, :precision=>0
+          %td
+            .signup
+              - if @current_plan and @current_plan.id == plan.id
+                = tr("This is your current plan","here")
+              - else
+                = link_to tr("Sign up here","here"), new_subscription_path(:plan_id => plan.id)
+  .clear

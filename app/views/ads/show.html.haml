@@ -1,0 +1,41 @@
+= render :partial => "ideas/header"
+.col-group
+  .col-1
+    .col-content
+      = render :partial => "ideas/nav"
+  .col-11
+    .col-content
+      = tr("{user_name} spent {capital}{currency_short_name} on an ad for {idea_name}", "view/ads/show", :user_name => link_to(@ad.user.name, @ad.user), :capital => @ad.cost, :currency_short_name => current_instance.currency_short_name, :idea_name => link_to(@ad.idea.name, @ad.idea))
+      - if @ad.attribute_present?("content")
+        "#{@ad.content}"
+        .col-group
+          .col-2
+            .col-content
+              - if @ad.shown_ads_count == 0
+                = image_tag Gchart.pie(:data => [1], :custom => "chco=f0f0f0", :size => "100x100"), :title => "Response to ad", :size => "100x100"
+              - else
+                = image_tag Gchart.pie(:data => [@ad.yes_count,@ad.no_count,@ad.no_response_count], :custom => "chco=009933,bc0000,ffcc00", :size => "100x100"), :title => "Response to ad", :size => "100x100"
+          .col-10
+            .col-group.encouragement_stats
+              .col-2
+                .col-content
+                  %ul
+                    %li
+                      = tr("{count} endorsed", "view/ads/show", :count => @ad.yes_count)
+                    %li
+                      = tr("{count} opposed", "view/ads/show", :count => @ad.no_count)
+                    %li
+                      = tr("{count} no response", "view/ads/show", :count => @ad.no_response_count)
+              .col-10
+                .col-group
+                  .col-content
+                    = render :partial => "ads/progress_bar", :locals => {:ad => @ad}
+                .col-group
+                  .col-content
+                    = tr("Shown to {seen_count} of {total_count} members so far<br />{user_name} spent <span class='pc'>{cost}{currency_short_name}</span> or <span class='pc'>{per_user_cost}{currency_short_name}</span> per member", "view/ads/show", :user_name => link_to(@ad.user.name, @ad.user), :cost => @ad.cost, :seen_count => @ad.shown_ads_count, :total_count => @ad.show_ads_count, :currency_short_name => current_instance.currency_short_name, :per_user_cost => @ad.per_user_cost)
+      - if @ad.status == 'active'
+        = tr("This ad is currently {position}. You can see all the ads running <a href='{ads_url}'>here</a>.", "view/ads/show", :position => @ad.position, :ads_url => ads_ideas_url)
+      #activities
+        - for activity in @activities
+          = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_noself"}
+        = will_paginate(@activities)

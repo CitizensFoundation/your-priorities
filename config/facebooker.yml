@@ -1,0 +1,15 @@
+production:
+  app_id: xxxxxxxxxxx
+  secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+development:
+  app_id: xxxxxxxxxxxxxxxxxxxxx
+  secret: xxxxxxxxxxxxxxxxxxxxxxx
+  api_key: xxxxxxxxxxxxxxxxxxxxxxx
+
+test:
+  app_id: xxxxxxxxxxx
+  secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+

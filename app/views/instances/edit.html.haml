@@ -1,0 +1,179 @@
+#hp_intro
+  = @page_title
+%p
+  = form_for(@instance) do |f|
+    = f.error_messages
+    %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+      %tr
+        %td{:valign => "top"}
+          .field
+            .field_label
+              = tr("Name of instance", "view/instances/edit")
+            .field_box
+              = f.text_field :name, :size => 40, :maxlength => 60
+          .field
+            .field_label
+              = tr("Tagline", "view/instances/edit")
+            .field_box
+              = f.text_field :tagline, :size => 40, :maxlength => 100
+          .field
+            .field_label
+              = tr("Sales email", "view/instances/edit")
+            .field_box
+              = f.text_field :sales_email, :size => 40
+          .field
+            .field_label
+              = tr("Meta Description", "view/instances/edit")
+            .field_box
+              = f.text_field :description, :size => 40
+          .field
+            .field_label
+              = tr("What are you running?", "view/instances/edit")
+            .field_box
+              = f.text_field :target, :size => 40, :maxlength => 30
+            %p
+              %label{:for => "layout_for_subscriptions"}
+                = tr("Layout for subscriptions", "view/sub_instances/_form")
+              %br/
+              = f.text_field :layout_for_subscriptions
+            %p
+              %label{:for => "external_link"}
+                = tr("External Menu Link", "view/sub_instances/_form")
+              %br/
+              = f.text_field :external_link
+          .field
+            %label{:for => "favicon_image"}
+              = tr("Favicon", "view/sub_instances/_form")
+            %br/
+            = f.file_field :favicon
+            %br/
+            %p
+              %label{:for => "external_link_logo"}= tr("External Link Logo", "view/sub_instances/_form")
+              %br/
+              = image_tag Instance.current.external_link_logo(:preview)
+              %br/
+              = f.file_field :external_link_logo
+              %br/
+            %p
+              %label{:for => "logo"}= tr("Logo", "view/sub_instances/_form")
+              %br/
+              = image_tag Instance.current.logo(:preview)
+              %br/
+              = f.file_field :logo
+              %br/
+            %p
+              %label{:for => "top_banner_image"}= tr("Top Banner Image", "view/sub_instances/_form")
+              %br/
+              = image_tag Instance.current.top_banner(:preview)
+              %br/
+              = f.file_field :top_banner
+              %br/
+            %p
+              %label{:for => "menu_strip_side_image"}
+                = tr("Menu Strip Side Image", "view/sub_instances/_form")
+              %br/
+              = image_tag Instance.current.menu_strip_side(:preview)
+              %br/
+              = f.file_field :menu_strip_side
+              %br/
+          .field
+            .field_label
+              = tr("Prompt", "view/instances/edit")
+            .field_box
+              = f.text_field :prompt, :size => 40, :maxlength => 100
+          .field
+            .field_label
+              = tr("Mission statement", "view/instances/edit")
+            .field_box
+              = f.text_field :mission, :size => 40, :maxlength => 100
+          .field
+            .field_label
+              Language:
+              \#{f.select :language_code, [1, 2, 3]}
+          - if @instance.has_email_banner?
+            = image_tag(@instance.email_banner.url(), :border => 0)
+          .field
+            .field_label= tr("Email banner", "view/instances/edit")
+            .field_box= f.file_field :email_banner
+        %td{:style => "padding-left: 20px;", :valign => "top"}
+          .field
+            .field_label
+              = tr("Administrator Name", "view/instances/edit")
+            .field_box
+              = f.text_field :admin_name, :size => 40, :maxlength => 60
+          .field
+            .field_label
+              = tr("Base domain name", "view/instances/edit")
+            .field_box
+              = f.text_field :domain_name, :size => 40, :maxlength => 60
+          .field
+            .field_label
+              = tr("Default tags checkboxes", "view/instances/edit")
+            .field_box
+              = f.text_field :default_tags_checkbox, :size => 60, :maxlength => 220
+          .field
+            .field_label
+              = tr("Administrator's public email address", "view/instances/edit")
+            .field_box
+              = f.text_field :admin_email, :size => 40, :maxlength => 100
+          .field
+            .field_label
+              = tr("Notification 'from' email address", "view/instances/edit")
+            .field_box
+              = f.text_field :email, :size => 40, :maxlength => 100
+          .field
+            .field_label
+              = tr("Name for tags: (singular, like Category or Issue)", "view/instances/edit")
+            .field_box
+              = f.text_field :tags_name, :size => 40, :maxlength => 20
+          .field
+            .field_label
+              = tr("Message to users from the service", "view/instances/edit")
+            .field_box
+              = f.text_area :message_to_users, :rows => 7, :cols=>15
+          .field
+            .field_label
+              = tr("Message for ads", "view/instances/edit")
+            .field_box
+              = f.text_area :message_for_ads, :rows => 7, :cols=>20
+          .field
+            .field_label
+              = tr("Message for issues", "view/instances/edit")
+            .field_box
+              = f.text_area :message_for_issues, :rows => 7, :cols=>20
+          .field
+            .field_label
+              = tr("Message for network", "view/instances/edit")
+            .field_box
+              = f.text_area :message_for_network, :rows => 7, :cols=>20
+          .field
+            .field_label
+              = tr("Message for finished", "view/instances/edit")
+            .field_box
+              = f.text_area :message_for_finished, :rows => 7, :cols=>20
+          .field
+            .field_label
+              = tr("Message for points", "view/instances/edit")
+            .field_box
+              = f.text_area :message_for_points, :rows => 7, :cols=>20
+          .field
+            .field_label
+              = tr("Message for new idea", "view/instances/edit")
+            .field_box
+              = f.text_area :message_for_new_idea, :rows => 7, :cols=>20
+          .field
+            .field_label
+              = tr("Message for new feed", "view/instances/edit")
+            .field_box
+              = f.text_area :message_for_news, :rows => 7, :cols=>20
+          .field
+            .field_box
+              = f.check_box :disable_email_login
+              = tr("Disable email login", "view/instances/edit")
+            .field_box
+              = f.check_box :is_suppress_empty_ideas
+              = tr("Hide ideas with 0 endorsers/opposers", "view/instances/edit")
+            .field_box
+              = f.check_box :is_tags
+              = tr("Enable {tags_name}", "view/instances/edit", :tags_name => current_instance.tags_name.pluralize.downcase)
+    = f.submit tr("Save Instance", "view/instances/edit"), :class => "submit_button"

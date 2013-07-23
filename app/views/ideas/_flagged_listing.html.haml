@@ -1,0 +1,4 @@
+.idea_name{:id => "idea_#{idea.id}_name"}
+  = link_to_unless_current tg(h(idea.name)), idea, :class => "idea_name_link"
+  = render :partial=>"ideas/report_content", :locals=>{:idea=>idea}
+  = render :partial=>"ideas/flagged", :locals=>{:idea=>idea}

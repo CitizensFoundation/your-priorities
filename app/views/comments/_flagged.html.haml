@@ -1,0 +1,21 @@
+- if comment.flags_count > 0 and comment.status == 'published' and user_signed_in? and current_user.is_admin?
+  %div{:id => "comment_flag_#{comment.id}"}
+    .warning_inline2{:id => "comment_flag_#{comment.id.to_s}"}
+      %span.red>= tr("{count} flags", "view/ideas/_flagged", :count => comment.flags_count)
+      \. #{tr("Delete comment and issue warning to {user_name} {warnings_count}?", "view/ideas/_flagged", :user_name => comment.user.login, :warnings_count => comment.user.warnings_count)}
+      %span.tag_button
+        = form_tag abusive_activity_comment_url(comment.activity_id,comment), :remote=>true do
+          %span.warning_reason
+            %br
+            = "Reason?"
+            = text_field_tag "warning_reason", "A comment was removed due to violation of the terms of service.", :size=>70
+            %br
+            %br
+            %span.yes
+              = submit_tag "YES"
+      %span.or= tr("or", "view/ideas/_flagged")
+      %span.tag_button
+        = form_tag not_abusive_activity_comment_url(comment.activity_id,comment), :remote=>true do
+          %span.warning_reason
+            = submit_tag "NO"
+  .clear

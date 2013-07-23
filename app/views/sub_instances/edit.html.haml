@@ -1,0 +1,7 @@
+#hp_intro= @page_title
+%p
+  = form_for(@sub_instance) do |f|
+    = f.error_messages
+    = render :partial => "sub_instances/form", :locals => {:f => f}
+    %p
+      = f.submit tr("Save settings", "view/sub_instances/edit"), :class => "yellow_button"

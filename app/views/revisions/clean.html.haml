@@ -1,0 +1,18 @@
+= render :partial => "points/header"
+= render :partial => "points/nav"
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:valign => "top"}
+      - if @point.revision_id != @revision.id
+        %p
+        .notice
+          = tr("Here's what this point looked like {time_ago}. You can also <a href='{revision_url}'>see the changes</a> in this version from the previous one.", "view/revisions/clean", :revision_url => point_revision_url(@point,@revision), :time_ago => time_ago(@revision.created_at))
+      %p
+      .point_content_detail
+        = @revision.content_html
+      - if @revision.has_website?
+        .point_source
+          = tr("Source:", "view/revisions/clean")
+          %a{:href => @revision.website_link}= truncate(@revision.website_link,:length=>70)
+    %td{:style => "padding-left: 20px;", :valign => "top", :width => "150"}
+      = render :partial => "revisions"

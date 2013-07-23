@@ -1,0 +1,17 @@
+:javascript
+  jQuery("#debate_button_#{idea.id}").click(function () {
+        var slide = jQuery("#idea_detail_#{idea.id}");
+        if (!slide.data("loaded")) {
+            $("#idea_debate_spinner_debate_#{idea.id.to_s}").html('<img src=\"#{asset_path "/assets/ajax/spinner.gif"}\">');
+            slide.load('#{idea_detail_idea_url(idea)}', function() {
+              $("#idea_debate_spinner_debate_#{idea.id.to_s}").html('');
+              $("#idea_debate_text_#{idea.id.to_s}").toggleClass('debate_active');
+            });
+            slide.data("loaded", true);
+            $('.border').css('border-bottom','none');
+        } else {
+            slide.slideToggle("slow");
+            $("#idea_debate_text_#{idea.id.to_s}").toggleClass('debate_active');
+            $('.border').css('border-bottom','none');
+        };
+    });

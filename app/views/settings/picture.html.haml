@@ -1,0 +1,11 @@
+#hp_intro= @page_title
+= image_tag @user.buddy_icon.url(:icon_96), :border => 0
+= form_for(@user, :url => picture_save_settings_path, :html => {:multipart => true, method: :put}) do |f|
+  = f.error_messages
+  %p
+    %label{:for => "picture"}= tr("Upload your picture", "view/settings/picture")
+  %p
+    = f.file_field :buddy_icon
+    %br/
+    %span.small= tr("Must be a gif, jpg or png", "view/settings/picture")
+  = f.submit tr("Upload and save your picture", "view/settings/picture"), :class => "yellow_button"

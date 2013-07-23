@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/comment_delete.png", :width => "16"}/
+= raw tr("{user_name} deleted {point_name}", "view/activities/_activitypointdeleted_noself", :user_name => link_to(activity.user.login, activity.user), :point_name => link_to(activity.point.name, activity.point))

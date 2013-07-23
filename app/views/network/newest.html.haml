@@ -1,0 +1,31 @@
+- if !@users.empty?
+  %table
+    %thead
+      %tr
+        %th.rank= tr("Rank", "view/network/index")
+        %th.week= tr("Change", "view/network/index")
+    %tbody
+      - @users.each_with_index do |user, rank|
+        %tr
+          %td #{rank+1}
+          %td= render :partial => "ideas/rank_week_month", :locals => {:idea => user }
+          %td= render :partial => "users/pic_48", :locals => {:user => user}
+          %td
+            .col-group
+              .col-content
+                = link_to user.login, user
+                %span.pc
+                  = user.capitals_count
+                  = current_instance.currency_short_name
+                = tr("Joined {time_ago}", "view/network/newest", :time_ago => time_ago(user.created_at))
+                \&middot; #{tr("{count} endorsements", "view/network/newest", :count => user.up_endorsements_count)}
+                - if user.down_endorsements_count > 0
+                  \&middot; #{tr("{count} oppositions", "view/network/newest", :count => user.down_endorsements_count)}
+                .col-content
+                  - if user.top_endorsement
+                    = tr("#1 idea:", "view/network/index")
+                    - if user.top_endorsement.is_down?
+                      %span.opposed= tr("Opposing", "view/network/index")
+                    - idea = Idea.unscoped.find(user.top_endorsement.idea_id)
+                    = link_to idea.name, idea
+  = will_paginate(@users)

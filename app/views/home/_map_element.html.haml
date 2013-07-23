@@ -1,0 +1,18 @@
+- if country.map_coordinates
+  - coordinate_array = JSON.parse(country.map_coordinates)
+  :plain
+    <Placemark>
+          <name>#{country.country_english_name}</name>
+          <styleUrl>#{get_placemark_map_style(country)}</styleUrl>
+          <description>
+          </description>
+  - if coordinate_array.length>1
+    :plain
+      <MultiGeometry>
+  - coordinate_array.each do |coordinates|
+    = render :partial=>"map_polygon", :locals=>{:coordinates=>coordinates}
+  - if coordinate_array.length>1
+    :plain
+      </MultiGeometry>
+  :plain
+      </Placemark>

@@ -1,0 +1,5 @@
+= form_for(@sub_instance) do |f|
+  = f.error_messages
+  = render :partial => "form", :locals => {:f => f}
+  %p
+    = f.submit tr("Become a sub_instance", "view/sub_instances/new"), :class => "yellow_button"

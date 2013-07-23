@@ -1,0 +1,378 @@
+.header .col-12
+  position: absolute
+  top: 0
+  left: 0
+
+.nav.nav-user
+  background: inherit
+
+.nav.nav-user ul li
+  float: right
+
+.nav.nav-user div
+  background: inherit
+  float: right
+
+.nav.nav-user a span, .nav.nav-user a div
+  float: right
+  background-color: #222
+  display: block
+  height: 26px
+  padding: 3px 9px 0px 9px
+  margin-left: 1px
+  color: white
+
+.report_flag
+
+.nav.nav-user span a
+  float: right
+  background-color: none
+  display: block
+  padding: 5px 10px 4px 11px
+  margin-left: 1px
+  color: white
+
+.nav.nav-user  div.signedin a
+  float: right
+  background-color: none
+  background: url(asset_path("/assets/buttons/login_background.png", image)) !important
+  display: block
+
+.add
+  position: relative
+  margin-top: 40px
+  z-index: 999
+
+.add a
+  color: #F49D1D
+  size: 14px
+  text-transform: uppercase
+  font-weight: bold
+
+.tab_sublinks li
+  margin: 3px
+  padding-bottom: 3px
+
+.tab_sublinks
+
+.signedin
+  top: 0px
+
+.nav.nav-user div div
+  float:none
+
+#topnav
+  padding: 0
+  position: relative
+  top: 50px
+  right: 15px
+  text-align: right
+
+.profile
+  float:left
+
+.avatar
+  margin-left: 1%
+  margin-right: 5px
+
+
+.avatar img
+  vertical-align: bottom
+  width: 30px
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+  behavior: url(asset_path("/assets/PIE.htc", image))
+
+
+.notify_box div
+  float:left
+  padding-top: 9px
+  background: red !important
+
+#topnav a.menu-open
+  background: #ccc!important
+  color: #666!important
+  outline: none
+
+#small_signup
+  display: inline
+  float: none
+  line-height: 23px
+  margin: 25px 0 0
+  width: 170px
+
+#general_form
+  display: none
+  margin-top: 30px !important
+  color: #778899
+  display: none
+  text-align: left
+  position: absolute
+  background: #222
+  color: white
+  z-index: 1220
+  width: 200px
+  text-align: left
+  padding: 0px
+  margin-left: -8px
+  *margin-left: -15px
+  margin-top: 0px
+  color: #789
+  input
+    &[type=text], &[type=password]
+      display: block
+      -moz-border-radius: 3px
+      -webkit-border-radius: 3px
+      border-radius: 3px
+      behavior: url(asset_path("/assets/PIE.htc", image))
+      border: 1px solid #ACE
+      margin: 0 0 5px
+      padding: 0px
+      width: 203px
+      padding: 0px 0px 0px 5px
+  p
+    margin: 0
+  a
+    color: #66AACC !Important
+  label
+    font-weight: normal
+  p
+    &.remember
+      padding: 10px 0
+    &.forgot, &.complete
+      clear: both
+      margin: 5px 0
+    a
+      color: #27B!important
+
+a.notifications
+  background: #fff
+  color: #454bcc
+
+#sib_notifications
+  @extend #general_form
+  display: none
+  right: 84px
+  top: 0
+  padding: 10px 10px 10px 10px
+  width: 10em
+  height: 9.7em
+
+#sib_login_form
+  @extend #general_form
+  display: none
+  margin-top: 30px !important
+  padding: 10px 10px 10px 10px
+  width: 216px
+  background: #23567b
+  right: 82px
+  a
+    color: #fff !important
+  div
+    color: #fff !important
+  p
+    color: #fff !important
+
+#sib_profile
+  @extend #general_form
+  display: none
+  right: 84px
+  top: 0px
+  li
+    margin: 3px
+    padding-bottom: 3px
+    clear: both
+
+#sib_language
+  @extend #general_form
+  display: none
+  right: 5px
+  top: 0px
+  li
+    margin: 3px
+    padding-bottom: 3px
+    clear: both
+
+#language_box
+  background: none repeat scroll 0 0 transparent
+  background-color: #23567B !important
+  border: 0 solid #DDDDDD
+  margin-bottom: 0
+  padding: 10px 10px 10px 10px
+
+
+#user_info_box
+  background: none repeat scroll 0 0 transparent
+  background-color: #23567B !important
+  border: 0 solid #DDDDDD
+  margin-bottom: 0
+  padding: 10px 10px 10px 10px
+
+#sib_help
+  @extend #general_form
+  display: none
+  right: 42px
+  top: 0
+  padding: 10px 10px 10px 10px
+  width: 10em
+  height: 9.7em
+
+.nav-user
+  float: right
+
+.magnifier_wrap
+  height: 20px
+  float: right
+  //margin-right: -259px
+  position: relative
+
+.magnifier_wrap input
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+  behavior: url(asset_path("/assets/PIE.htc", image))
+
+.magnifier_box
+  float: top
+
+a.signin.menu-open a.notifications.menu-open span
+  background-image: url(asset_path("/assets/top_navigation/toggle_up_dark.png", image))
+  color: #789
+
+//
+  #signin_submit
+    -moz-border-radius: 3px
+    -webkit-border-radius: 3px
+    border-radius: 3px
+    behavior: url(asset_path("/assets/PIE.htc", image))
+    background: #3399dd url(asset_path("/assets/top_navigation/bg-btn-blue.png", image)) repeat-x scroll 0 0
+    border: 1px solid #39D
+    color: #fff
+    text-shadow: 0 -1px 0 #3399dd
+    padding: 4px 10px 5px
+    margin: 0 5px 0 0
+    font-weight: bold
+    &::-moz-focus-inner
+      padding: 0
+      border: 0
+    &:hover, &:focus
+      background-position: 0 -5px
+      cursor: pointer
+
+.tipsy-inner
+  padding: 10px 15px
+  line-height: 1.5em
+  font-weight: bold
+
+.ie6 .tipsy
+  width: 250px
+
+.signup-tip
+  line-height: 18px
+  margin: 30px 0
+  color: #333
+  a
+    font-weight: bold
+
+#user_info_box_picture img
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+  behavior: url(asset_path("/assets/PIE.htc", image))
+
+
+#notification_show
+  margin-bottom: 8px
+  background: white
+  border: 1px solid #DDDDDD
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+  behavior: url(asset_path("/assets/PIE.htc", image))
+  margin-bottom: 13px
+  padding-bottom: 10px
+  padding-top: 15px
+
+.betri-hverfi-laugardalur, .betri-hverfi-vesturbaer, .betri-hverfi-midborg, .betri-hverfi-hlidar, .betri-hverfi-haaleiti, .betri-hverfi-breidholt, .betri-hverfi-arbaer, .betri-hverfi-grafarvogur, .betri-hverfi-grafarholt, .betri-hverfi-kjalarnes
+  .header
+    background-image: url(asset_path("/assets/BH_header_background.png", image))
+    a, a:hover, a:visited
+      color: #fff
+    a.notifications
+      color: #009
+
+#signup_link
+  float: left
+  font-weight: bold
+
+#fb_login_link
+  float: left
+  padding-top: 5px
+  padding-bottom: 5px
+
+.fb_login_button
+  &:hover
+    text-decoration: none
+  background: url(fb_button.png) no-repeat scroll 0 0 #29447e
+  background-position: left -188px
+  font-size: 10px
+  line-height: 14px
+  padding: 0 0 0 1px
+  outline: medium none
+  display: inline-block
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  behavior: url(asset_path("/assets/PIE.htc", image))
+
+.fb_login_text
+  display: block
+  background: url(fb_button.png) repeat scroll 0 0 #5f78ab
+  border-bottom: 1px solid #1a356e
+  border-top: 1px solid #879ac0
+  color: #ffffff
+  margin: 1px 1px 0 21px
+  padding: 2px 6px 3px
+  font-weight: bold
+  text-shadow: none
+
+#sib_login_form
+  form
+    margin-top: 30px
+
+#not_activated
+  p
+    margin-top: 10px
+
+.mainbox
+  padding-left: 10px
+  padding-right: 10px
+
+.headerfix
+  position: absolute
+  z-index: -999
+  margin-left: 4px
+
+.logo_link
+  width: 240px
+  float: left
+  height: 90px
+  position: relative
+  z-index: 1200
+
+a.button
+  background-image: url(asset_path("/assets/buttons/button_right.png", image))
+  background-repeat: no-repeat
+  background-attachment: scroll
+  background-position: right top
+  float: left
+  display: block
+  height: 36px
+  color: white
+  padding-right: 11px
+
+a.button span.left
+  background-image: url(asset_path("/assets/buttons/button_left.png", image))
+  display: block
+  padding: 7px 0 7px 11px

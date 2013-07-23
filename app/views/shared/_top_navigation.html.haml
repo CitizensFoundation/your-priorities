@@ -1,0 +1,160 @@
+.nav.nav-user
+  %div
+    - if current_sub_instance.external_link==nil or current_sub_instance.external_link==""
+      %a{:href => Instance.current.external_link, :target=>"_blank"}
+        %span
+          %img{:border => "0", :src => Instance.current.external_link_logo.url(:icon_full)}/
+    - else
+      %a{:href => current_sub_instance.external_link, :target=>"_blank"}
+        %span
+          %img{:border => "0", :src => current_sub_instance.external_link_logo.url(:icon_full)}/
+
+  %div.language_selection
+    %a.language_selection{:href => "#"}
+      %span
+        = Tolk::Config.mapping[I18n.locale.to_s]
+
+  %div.help
+    %a.help{:href => "#"}
+      %span
+        = tr("About","About")
+
+  - unless user_signed_in?
+    %div.signedin
+      %a.signin{:href => "#"}
+        %div
+          = tr("Sign in", "view/sessions/_form")
+  - else
+    %div.signedin
+      - if current_user.unread_notifications_count > 0
+        %div.notify_box
+          %a.notifications{:href => "#"}
+            %span.report_flag
+              %img{:border => "0", :src => "/assets/flag_icon.png"}
+              = current_user.unread_notifications_count
+      %a.profile{:href => "#"}
+        %div
+          = current_user.login
+  %div{:style=>"padding-top:6px;padding-right:9px;"}
+    = "<div class='fb-like' data-href='#{request.protocol}#{request.host_with_port}#{request.fullpath}' data-send='false' data-layout='button_count' data-width='200' data-show-faces='false'></div>".html_safe
+- if user_signed_in?
+  = render :partial => "shared/user_info"
+  = render :partial => "shared/notifications"
+- else
+  = render :partial => "users/login"
+= render :partial => "shared/language_selection"
+= render :partial => "shared/help"
+&nbsp;
+
+
+:javascript
+  $(document).ready(function() {
+
+      $("a.signin").click(function(e) {
+          e.preventDefault();
+          $("#sib_login_form").toggle();
+          $(".signin").toggleClass("menu-open");
+      });
+
+      $("#sib_login_form").mouseup(function() {
+          return false
+      });
+
+      $(document).mouseup(function(e) {
+          if($(e.target).parent("a.signin").length==0) {
+              $(".signin").removeClass("menu-open");
+              $("#sib_login_form").hide();
+          }
+      });
+
+
+      $("a.eve_universe").click(function(e) {
+          e.preventDefault();
+          $("#sib_eve_universe").toggle();
+          $(".eve_universe").toggleClass("menu-open");
+      });
+
+      $("#sib_eve_universe").mouseup(function() {
+          return false
+      });
+
+      $(document).mouseup(function(e) {
+          if($(e.target).parent("a.eve_universe").length==0) {
+              $(".eve_universe").removeClass("menu-open");
+              $("#sib_eve_universe").hide();
+          }
+      });
+
+
+      $("a.notifications").click(function(e) {
+          e.preventDefault();
+          $("#sib_notifications").toggle();
+          $(".notifications").toggleClass("menu-open");
+      });
+
+      $("#sib_notifications").mouseup(function() {
+          return false
+      });
+      $(document).mouseup(function(e) {
+          if($(e.target).parent("a.notifications").length==0) {
+              $(".notifications").removeClass("menu-open");
+              $("#sib_notifications").hide();
+          }
+      });
+
+      $("a.profile").click(function(e) {
+          e.preventDefault();
+          $("#sib_profile").toggle();
+          $(".profile").toggleClass("menu-open");
+      });
+
+      $("#sib_profile").mouseup(function() {
+          return false
+      });
+      $(document).mouseup(function(e) {
+          if($(e.target).parent("a.profile").length==0) {
+              $(".profile").removeClass("menu-open");
+              $("#sib_profile").hide();
+          }
+      });
+
+
+      $("a.help").click(function(e) {
+          e.preventDefault();
+          $("#sib_help").toggle();
+          $(".help").toggleClass("menu-open");
+      });
+
+      $("#sib_help").mouseup(function() {
+          return false
+      });
+      $(document).mouseup(function(e) {
+          if($(e.target).parent("a.help").length==0) {
+              $(".help").removeClass("menu-open");
+              $("#sib_help").hide();
+          }
+      });
+
+      $("a.language_selection").click(function(e) {
+          e.preventDefault();
+          $("#sib_language").toggle();
+          $(".language_selection").toggleClass("menu-open");
+      });
+
+      $("#sib_language").mouseup(function() {
+          return false
+      });
+      $(document).mouseup(function(e) {
+          if($(e.target).parent("a.language_selection").length==0) {
+              $(".language_selection").removeClass("menu-open");
+              $("#sib_language").hide();
+          }
+      });
+
+
+  });
+:javascript
+  $(function() {
+    $('#forgot_username_link').tipsy({gravity: 'w'});
+  });
+

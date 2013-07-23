@@ -1,0 +1,14 @@
+- if next_idea = User.next_idea(idea)
+  .next_idea_container{:style=>"width:968px;height:34px;padding:9px;background-color:#eee"}
+    .next_idea{:style=>"float:right;"}
+      .next_idea_text{:style=>"padding-top:2px;padding-right:14px;float:left;"}
+        .next_idea_next_image{:style=>"padding-top:7px;padding-right:10px;float:left"}
+          = image_tag("buttons/next_idea.png")
+        .next_idea_next_link_text{:style=>"padding-top:5px;float:left"}
+          = tr("Next:","here")
+          = link_to next_idea.show_url do
+            = next_idea.name
+      .next_idea_image{:style=>"float:right;"}
+        - if idea.category and idea.category.icon
+          = link_to(image_tag(next_idea.category.icon.url(:icon_50), :size => "30x30", :border => 0), next_idea.category.to_url,
+                                                                     :alt=>next_idea.category.name, :title=>next_idea.category.name)

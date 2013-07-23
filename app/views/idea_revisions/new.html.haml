@@ -1,0 +1,36 @@
+= render :partial => "ideas/header"
+.col-group
+  .col-1
+    .col-content
+      &nbsp;
+  .col-6
+    .col-content
+      = form_for(@revision, url: idea_idea_revisions_path(@idea)) do |f|
+        = f.error_messages
+        .field
+          %span.characters
+            %span.form_header
+              = tr("Idea name", "view/ideas/edit")
+            \-
+            %span#ideaNameContentDown
+            = tr("characters left", "view/ideas/_form")
+          %span.idea_name
+            = f.text_area :name, :id => 'ideaNameContent', :button => 'submit', :rows => 2, :class=>"col_text_area", :value=>@idea.name, :maxLength => SubInstance.current.idea_name_max_length
+        .field
+          %span.characters
+            %span.form_header
+              = tr("Description", "view/ideas/form")
+            \-
+            %span#ideaDescriptionContentDown
+            = tr("characters left", "view/ideas/_form")
+          %span.idea_description
+            = f.text_area :description, id: 'ideaDescriptionContent', value: @idea.description, cols: 58, :maxLength => 500
+        %br/
+        = f.submit tr("Save idea", "view/ideas/edit"), :class => "yellow_button"
+  .col-3.col-offset-2
+    .col-content
+      = render partial: "idea_revisions/idea_revisions"
+:javascript
+  jQuery("#ideaNameContent").NobleCount('#ideaNameContentDown',{ on_negative: 'go_red', on_positive: 'go_green', max_chars: #{SubInstance.current.idea_name_max_length} });
+  jQuery("#ideaDescriptionContent").NobleCount('#ideaDescriptionContentDown',{ on_negative: 'go_red', on_positive: 'go_green', max_chars: 500 });
+  jQuery("#ideaNotes").NobleCount('#ideaNotesDown',{ on_negative: 'go_red', on_positive: 'go_green', max_chars: 2000 });

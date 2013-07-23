@@ -1,0 +1,8 @@
+- if idea.replaced?
+  #hp_intro
+    %strike= tg(idea.name)
+- else
+  #hp_intro.ideas
+    = link_to_unless_current tg(idea.name), idea
+    = render :partial=>"ideas/report_content", :locals=>{:idea=>idea}
+= render :partial=>"ideas/flagged", :locals=>{:idea=>idea}

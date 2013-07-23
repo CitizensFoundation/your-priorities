@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/comment_edit.png", :width => "16"}/
+= raw tr("Revised {point_name} to indicate it's neutral on {idea_name}", "view/activities/_activitypointrevisionneutral_nouser", :point_name => link_to(activity.point.name, point_revision_url(activity.point,activity.revision)), :idea_name => link_to(activity.idea.name, activity.idea))

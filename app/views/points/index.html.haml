@@ -1,0 +1,26 @@
+- if Instance.current.message_for_points and Instance.current.message_for_points!=""
+  = render :partial=>"/shared/top_message_box", :locals=> {:message_text => Instance.current.message_for_points.html_safe }
+:javascript
+  $(function(){
+  	$('.rss2_move').replaceWith($('.rss_feed'));
+  	
+  });
+%div{:style => "width:auto;"}
+  %ul
+    %li{:style => "float:left; list-style:none;"}
+      #hp_intro{:style => "border-bottom:none;"}= @page_title
+    %li{:style => "float:right; list-style:none;"}
+      .rss2_move
+  %ul
+.clear
+.white_line
+- if not @points or @points.empty?
+  = tr("No points yet.", "view/points/index")
+- else
+  / <haml:loud> render :partial =&amp;gt; &amp;quot;shared/paginate_with_feed&amp;quot;, :locals =&amp;gt; {:collection =&amp;gt; @points} </haml:loud>
+  - for point in @points
+    - quality = nil
+    - if @qualities
+      - quality = @qualities.detect {|e| e.point_id == point.id }
+    = render :partial => "points/show_full", :locals => {:point => point, :quality => quality, :revision => nil}
+  = will_paginate(@points)

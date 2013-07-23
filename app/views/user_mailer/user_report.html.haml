@@ -1,0 +1,11 @@
+= render :partial=>"user_mailer/header", formats: [:html]
+%p
+  = tr("Hi","email")
+  = @user.first_name
+  ,
+= render :partial=>"user_mailer/reports/near_top_ideas_in_categories", formats: [:html]
+= render :partial=>"user_mailer/reports/top_follower_ideas", formats: [:html]
+= render :partial=>"user_mailer/reports/top_ranked_ideas", formats: [:html]
+%hr/
+%p= tr("Better Reykjavík is a platform that enables citizens to have an effect on the administration of the City of Reykjavik. Let your voice be heard!", "email")
+= render :partial=>"user_mailer/footer", formats: [:html]

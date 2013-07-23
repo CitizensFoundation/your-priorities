@@ -1,0 +1,30 @@
+.heading= tr("{user_name} Agenda", "view/users/_index_chart", :user_name => user.name)
+- cache("user_idea_chart-#{user.id.to_s}-#{user.endorsements_count.to_s}-#{session[:locale]}-#{@inline_translations_enabled}") do
+- cu = user.index_chart_hash
+.idea_chart
+  %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+    %tr
+      %td{:colspan => "3", :rowspan => "3", :valign => "top"}
+        = image_tag Gchart.line(:size => '130x80', :data => cu[:adjusted_percentages], :line_colors => "13499b", :chart_background => 'EEEEEE', :min_value => 0, :max_value => cu[:max_percentage]*2, :custom => "chg=0,50,1,0"), :title => tr("Tracks the movement of {user_name} ideas in the rankings over the last 30 days. The more people who endorse ideas on {user_name} agenda at a high idea, the higher it rises.", "view/users/_index_chart", :user_name => user.name), :class => "qtip_left", :size => "130x80"
+      %td.chart_label_plus{:height => "17", :valign => "top"}
+        +#{number_to_percentage(cu[:max_percentage]*100, :precision => 0)}
+    %tr
+      %td.chart_label{:height => "47", :valign => "middle"} 0
+    %tr
+      %td.chart_label_minus{:height => "15", :valign => "bottom"}= number_to_percentage(cu[:max_percentage]*-100, :precision => 0)
+    %tr
+      %td{:colspan => "3", :style => "padding-top: 5px; padding-bottom: 2px;"}= tr("VOLUME", "view/users/_index_chart")
+      %td
+    %tr
+      %td{:colspan => "3", :rowspan => "3", :valign => "top"}
+        = image_tag Gchart.line(:size => '130x50', :data => [cu[:volume_counts],[0,0]], :bar_colors => "CCCCCC,EEEEEE",  :chart_background => 'EEEEEE', :min_value => 1, :max_value => cu[:max_volume], :custom => "chm=b,CCCCCC,0,1,0|b,CC0000,1,2,0&chls=1,1,0|1,1,0|0,1,-1&chg=17,50,1,5"), :title => tr("The total number of endorsements/oppositions each day", "view/users/_index_chart"), :size => "130x50"
+      %td.chart_label{:height => "17", :valign => "top"}= cu[:max_volume]
+    %tr
+      %td.chart_label{:height => "17", :valign => "middle"}= (cu[:max_volume]*0.5).to_i
+    %tr
+      %td.chart_label{:height => "16", :valign => "bottom"} 1
+  %tr
+    %td{:style => "padding-top: 2px;"}= cu[:charts].last.date_show
+    %td{:align => "center", :style => "padding-top: 2px;"}= cu[:charts][(cu[:charts].size/2).to_i].date_show
+    %td{:align => "right", :style => "padding-top: 2px;"}= cu[:charts].first.date_show
+    %td

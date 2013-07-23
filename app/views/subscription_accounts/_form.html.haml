@@ -1,0 +1,85 @@
+.all
+  .content-box-2.opacityElement-100
+    .offset1.opacityElement-100
+      %h1
+        = tr("Create your own {instance_name} (It's quick...)","here",:instance_name=>Instance.last.name)
+      = form_for @account do |f|
+        - if @account.errors.any?
+          #error_explanation
+            %h2
+              - if @account.errors.count<2
+                = tr("{error_count} error prohibited this account from being saved:","here",:error_count=>@account.errors.count)
+              - else
+                = tr("{error_count} errors prohibited this account from being saved:","here",:error_count=>@account.errors.count)
+            %ul
+              - @account.errors.full_messages.each do |msg|
+                %li
+                  = msg
+        .row
+          .span2
+            %sub_instance_registration
+              %h4
+                %span.step 1
+                = tr("Give it a name and URL","here",:instance_name=>Instance.last.name)
+              .field_container-1
+                .field_input
+                  = # %input#subscription_account_instance_name.idleField{:name => "subscription_account[instance_name]", :placeholder => tr("Name your {instance_name}","here",:instance_name=>Instance.last.name), :size => "30", :type => "text"}
+                  = f.text_field :instance_name, :size=>30, :class=>"idleField", :placeholder => tr("Name your {instance_name}","here",:instance_name=>Instance.last.name)
+                .field_input
+                  = #%input#subscription_account_short_name.idleField{:name => "subscription_account[short_name]", :placeholder => tr("Your URL","here"), :size => "30", :type => "text"}
+                  = f.text_field :short_name, :size=>30, :class=>"idleField", :placeholder =>  tr("Your URL","here")
+                  = "."+Instance.last.domain_name
+                .field_hint
+                  = tr("Example: https://","here")
+                  %b
+                    = tr("yours","here")+"."+Instance.last.domain_name
+          .span2
+            %user_registration
+              %h4
+                %span.step 2
+                = tr("Next... Your personal details","here")
+              .field_container-2
+                .field_input
+                  = tr("Full name","here")
+                  %br
+                  = #%input#subscription_account_user_name.idleField{:name => "subscription_account[user_name]", :placeholder => tr("Full name","here"), :size => "30", :type => "text"}
+                  = f.text_field :user_name, :size=>30, :class=>"idleField", :placeholder => tr("Full name","here")
+                .field_input
+                  %br
+                  = tr("Email","here")
+                  %br
+                  = #%input#subscription_account_email.idleField{:name => "subscription_account[email]", :placeholder => tr("Email","here"), :size => "30", :type => "text"}
+                  = f.text_field :email, :size=>30, :class=>"idleField", :placeholder => tr("Email","here")
+                .field_input
+                  %br
+                  = tr("Password","here")
+                  %br
+                  = #%input#subscription_account_password.idleField{:name => "subscription_account[password]", :placeholder => tr("Password","here"), :size => "30", :type => "password"}
+                  = f.password_field :password, :size=>30, :class=>"idleField", :placeholder => tr("Password","here")
+        = render :partial=>"select_plan", :locals=>{:f=>f}
+        .span1
+          %h4
+            %span.step 4
+            = tr("The final step...","here")
+          .field_container-3
+            .row
+              .span5
+                .field_terms
+                  %input{:name => "subscription_account[terms]", :type => "hidden", :value => "0"}
+                  = #%input#subscription_account_terms{:name => "subscription_account[terms]", :type => "checkbox", :value => "1"}
+                  = f.check_box :terms
+                  = tr("I agree to the","here")
+                  %a{:href => "#"}
+                    = tr("Terms of Service","here")
+                  = tr("and","here")
+                  %a{:href => "#"}
+                    = tr("Privacy Policy","here")
+              .span6
+                .field_submit
+                  %input.btn.btn-primary.btn-large{:name => "commit", :type => "submit", :value => tr("CREATE {instance_name}","here",:instance_name=>Instance.last.name.upcase)}
+
+
+:javascript
+  $("#subscription_account_instance_name").keyup(function(){
+     $('#subscription_account_short_name').val(URLify($(this).val(),60));
+  });

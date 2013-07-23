@@ -1,0 +1,22 @@
+%div{:id => "activity_add_#{activity.id.to_s}"}
+  - if following
+    %span.big_x
+      = link_to image_tag("esb_entry_bookmark_selected.gif", :border => 0, :style=>"float:left;",  |
+        :alt => escape_t( tr("Stopping","Ajax") )), |
+        activity_following_path(activity, following, :region => "activity_show"),                                                           |
+        :method => :delete,                                                                                                                 |
+        'data-disable-with' => "",                                                                                                          |
+        'data-loader-name' => "circle",                                                                                                     |
+        :remote=>true,                                                                                                                      |
+        :class => "idea_remove_link", :title =>"Hætta að fylgjast með umræðu", :alt => escape_t( tr("Stopping","Ajax") )                  |
+  - else
+    %span.big_x
+      = link_to image_tag("esb_entry_bookmark.gif", :border => 0, :style=>"float:left;",  |
+        :title => escape_t( tr("Follow discussion","Ajax") ), :alt => escape_t( tr("Follow discussion","Ajax") )), |
+        activity_followings_path(activity, :region => "activity_show"),                                                                                                                         |
+        :method => :post,                                                                                                                                                                       |
+        'data-disable-with' => "",                                                                                                                                                              |
+        'data-loader-name' => "circle",                                                                                                                                                         |
+        :remote=>true,                                                                                                                                                                          |
+        :class => "idea_add_link", :title => escape_t( tr("Follow discussion","Ajax") ),      |
+        :alt => escape_t( tr("Follow discussion","Ajax") )                                                     |

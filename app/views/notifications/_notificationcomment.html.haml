@@ -1,0 +1,15 @@
+%img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/assets/icons/comment.png"}", :width => "16"}/
+- if notification.notifiable
+  - if notification.notifiable.activity.has_point?
+    = tr("{sender_name} commented on {comment_name}", "view/notifications/_notificationcomment", :sender_name => link_to(notification.sender_name, notification.sender), :comment_name => link_to(notification.notifiable.activity.point.name, activity_comments_url(notification.notifiable.activity) + '#' + notification.notifiable.id.to_s))
+  - elsif notification.notifiable.activity.has_idea?
+    = tr("{sender_name} commented on {comment_name}", "view/notifications/_notificationcomment", :sender_name => link_to(notification.sender_name, notification.sender), :comment_name => link_to(notification.notifiable.activity.idea.name, activity_comments_url(notification.notifiable.activity) + '#' + notification.notifiable.id.to_s))
+  - elsif notification.notifiable.activity.class == ActivityBulletinProfileNew
+    = tr("{sender_name} left a comment on {user_name} profile", "view/notifications/_notificationcomment", :sender_name => link_to(notification.sender_name, notification.sender), :comment_url => activity_comments_url(notification.notifiable.activity) + '#' + notification.notifiable.id.to_s, :user_name => notification.notifiable.activity.user.name)
+  - else
+    - if notification.notifiable.activity.user_id == notification.recipient_id
+      = tr("{sender_name} commented on <a href='{comment_url}'>your activity</a>", "view/notifications/_notificationcomment", :sender_name => link_to(notification.sender_name, notification.sender), :comment_url => activity_comments_url(notification.notifiable.activity) + '#' + notification.notifiable.id.to_s)
+    - else
+      = tr("{sender_name} commented on <a href='{comment_url}'>{user_name} activity</a>", "view/notifications/_notificationcomment", :sender_name => link_to(notification.sender_name, notification.sender), :comment_url => activity_comments_url(notification.notifiable.activity) + '#' + notification.notifiable.id.to_s, :user_name => notification.notifiable.activity.user.name)
+- else
+  = tr("No notifiable for notification: #{notification.id}")

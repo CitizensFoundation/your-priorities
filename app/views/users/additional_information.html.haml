@@ -1,0 +1,25 @@
+.col-group
+  .col-1
+    .col-content
+  .col-6
+    .col-content
+      = form_for(@user, url: "/users/additional_information", html: {:multipart => true, method: :put }) do |f|
+        = f.error_messages
+        .field
+          .field_label= tr("Email address", "view/users/edit")
+          .field_box= f.text_field :email
+          .small= tr("(Never shared without your permission)", "view/users/edit")
+        %br
+        .field
+          .field_label= tr("How should you be identified on the site?", "view/users/edit")
+          .field_box= f.text_field :login, :maxlength => 40, :size => 30
+          .small= tr("(Can be your name,or a pseudonym)", "view/users/edit")
+        .field
+          %br
+          %p
+            %b
+              %label{:for => "picture"}
+                = tr("Upload your picture", "view/settings/picture")
+                %br
+                = f.file_field :buddy_icon
+        = f.submit tr("Save settings", "view/users/edit"), :class => "yellow_button"

@@ -1,0 +1,32 @@
+- if Instance.current.message_for_news and Instance.current.message_for_news!="" and not params[:controller].include?("portal")
+  = render :partial=>"/shared/top_message_box", :locals=> {:message_text => Instance.current.message_for_news.html_safe }
+:javascript
+  $(function(){
+  	$('.rss_move').replaceWith($('.rss_feed'));
+
+  });
+/ Needs RSS here
+/    .rss_move
+.clear
+/
+  <haml:silent> if not user_signed_in? </haml:silent><haml:block>
+  <div class="pre_text">
+  <haml:loud> tr(&amp;quot;If you'd like to participate, &amp;lt;a href='{signup_url}'&amp;gt;please sign up&amp;lt;/a&amp;gt;. Membership is free and you can even use your existing Facebook account.&amp;quot;, &amp;quot;view/feed/activity_list&amp;quot;, :signup_url =&amp;gt; new_user_url)</haml:loud>
+  </div>
+  </haml:block>
+%div
+  - if user_signed_in? and (params[:action].include?("activities") or params[:action].include?("discussions"))
+    #new_activities
+      .col-group
+        .col-11.col-offset-1
+          .col-content
+            = render :partial => "bulletins/form", :locals => {:activity => Activity.new, :comment => Comment.new }
+  - if params[:action].include?("network") and user_signed_in? and current_following_ids.empty?
+    = tr("You can add people to your network by clicking the FOLLOW button on their profile page, then their updates will appear below.  To get started, here's a list of the <a href=\"/network\">most influential</a> people at {instance.name}.", "view/feed/activity_list")
+  - if not @activities
+    = tr("No activity here yet.", "view/feed/activity_list")
+  - else
+    #activities.single
+      = render :partial=>"feed/activity_list"
+    %div
+      = will_paginate(@activities) if @activities.respond_to?('total_pages')

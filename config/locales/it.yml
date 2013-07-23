@@ -1,0 +1,259 @@
+---
+it:
+  number:
+    format:
+      precision: 2
+      significant: false
+      strip_insignificant_zeros: false
+      separator: .
+    currency:
+      format:
+        format: '%n %u'
+        unit: €
+        separator: .
+        delimiter: ','
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+    human:
+      format:
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Byte
+          kb: Kb
+          mb: Mb
+          gb: Gb
+          tb: Tb
+      decimal_units:
+        format: '%n %u'
+        units:
+          thousand: Mila
+          million: Milioni
+          billion: Bilioni
+          trillion: Trilioni
+          quadrillion: Quadrilioni
+  date:
+    formats:
+      default: '%d-%m-%Y'
+      short: '%d %b'
+      long: '%d %B %Y'
+    day_names:
+    - Domenica
+    - Lunedì
+    - Martedì
+    - Mercoledì
+    - Giovedì
+    - Venerdì
+    - Sabato
+    abbr_day_names:
+    - Dom
+    - Lun
+    - Mar
+    - Mer
+    - Gio
+    - Ven
+    - Sab
+    month_names:
+    - 
+    - Gennaio
+    - Febbraio
+    - Marzo
+    - Aprile
+    - Maggio
+    - Giugno
+    - Luglio
+    - Agosto
+    - Settembre
+    - Ottobre
+    - Novembre
+    - Dicembre
+    abbr_month_names:
+    - 
+    - Gen
+    - Feb
+    - Mar
+    - Apr
+    - Mag
+    - Giu
+    - Lug
+    - Ago
+    - Set
+    - Ott
+    - Nov
+    - Dic
+    order:
+    - :day
+    - :month
+    - :year
+  time:
+    formats:
+      default: '%a %d %b %Y, %H:%M:%S %z'
+      short: '%d %b %H:%M'
+      long: '%d %B %Y %H:%M'
+    am: am
+    pm: pm
+  datetime:
+    distance_in_words:
+      half_a_minute: mezzo minuto
+      less_than_x_seconds:
+        one: meno di un secondo
+        other: meno di %{count} secondi
+      x_seconds:
+        one: 1 secondo
+        other: '%{count} secondi'
+      less_than_x_minutes:
+        one: meno di un minuto
+        other: meno di %{count} minuti
+      x_minutes:
+        one: 1 minuto
+        other: '%{count} minuti'
+      about_x_hours:
+        one: circa un'ora
+        other: circa %{count} ore
+      x_days:
+        one: 1 giorno
+        other: '%{count} giorni'
+      about_x_months:
+        one: circa un mese
+        other: circa %{count} mesi
+      x_months:
+        one: 1 mese
+        other: '%{count} mesi'
+      about_x_years:
+        one: circa un anno
+        other: circa %{count} anni
+      over_x_years:
+        one: oltre un anno
+        other: oltre %{count} anni
+      almost_x_years:
+        one: circa 1 anno
+        other: circa %{count} anni
+    prompts:
+      year: Anno
+      month: Mese
+      day: Giorno
+      hour: Ora
+      minute: Minuto
+      second: Secondi
+  support:
+    array:
+      words_connector: ', '
+      two_words_connector: ' e '
+      last_word_connector: ', e '
+    select:
+      prompt: Per favore, seleziona
+  helpers:
+    select:
+      prompt: Per favore, seleziona
+    submit:
+      create: Crea %{model}
+      update: Aggiorna %{model}
+      submit: Invia %{model}
+  errors:
+    format: '%{attribute} %{message}'
+    messages:
+      inclusion: non è incluso nella lista
+      exclusion: è riservato
+      invalid: non è valido
+      confirmation: non coincide con la conferma
+      accepted: deve essere accettata
+      empty: non può essere vuoto
+      blank: non può essere lasciato in bianco
+      not_a_number: non è un numero
+      not_an_integer: non è un intero
+      greater_than: deve essere superiore a %{count}
+      greater_than_or_equal_to: deve essere superiore o uguale a %{count}
+      equal_to: deve essere uguale a %{count}
+      less_than: deve essere meno di %{count}
+      less_than_or_equal_to: deve essere meno o uguale a %{count}
+      odd: deve essere dispari
+      even: deve essere pari
+  activerecord:
+    errors:
+      template:
+        header:
+          one: 'Non posso salvare questo %{model}: 1 errore'
+          other: 'Non posso salvare questo %{model}: %{count} errori.'
+        body: 'Per favore ricontrolla i seguenti campi:'
+      messages:
+        taken: è già in uso
+        record_invalid: 'Validazione fallita: %{errors}'
+        inclusion: non è incluso nella lista
+        exclusion: è riservato
+        invalid: non è valido
+        confirmation: non coincide con la conferma
+        accepted: deve essere accettata
+        empty: non può essere vuoto
+        blank: non può essere lasciato in bianco
+        not_a_number: non è un numero
+        not_an_integer: non è un intero
+        greater_than: deve essere superiore a %{count}
+        greater_than_or_equal_to: deve essere superiore o uguale a %{count}
+        equal_to: deve essere uguale a %{count}
+        less_than: deve essere meno di %{count}
+        less_than_or_equal_to: deve essere meno o uguale a %{count}
+        odd: deve essere dispari
+        even: deve essere pari
+      full_messages:
+        format: '%{attribute}%{message}'
+  5bcae97233d5480140596e6e948ff8b0: La tua foto
+  b651efdb98a5d6bd2b3935d0c3f4a5e2: Obbligatori
+  20db0bfeecd8fe60533206a2b5e9891a: Nome
+  d10403db63bcbde2b3038776452ad8e2: Cognome
+  1eb2eabde83b57255b782f1fc5793e01: (Non visualizzato sul sito)
+  b357b524e740bc85b9790a0712d84a30: Indirizzo email
+  20b86b18475850202a63d9550071b782: (Mai condiviso senza il tuo permesso)
+  cc83a5678878f2fb8d453b555c037920: Come vuoi essere conosciuto su questo sito?
+  ebb061953c0454b2c8ee7b0ac615ebcd: Facoltativi
+  15bbb9d0bbf25e8d2978de1168c749dc: Sito web
+  800e4dd8dfc264160c0b52347f7f9d4c: Cancella questo account
+  2682beed28fc3d3709619dbf2a469dbb: Carica la foto
+  f2fc7490cbdb0db5cd6f1a4e7edb0da1: Il tuo account
+  8ae5811be1a55b9b8447ad2dbdadbf6e: Foto
+  713a01ab419f96cb320352765e8791d4: Biografia
+  a67ce68ccac082ad54a552bdbcb6ecd7: Notifiche email
+  0b39c5aca15b84b1ad53a94d6b3feb78: Cambia password
+  cce99c598cfdb9773ab041d54c3d973a: Profilo
+  7dce122004969d56ae2e0245cb754d35: modifica
+  668deb1091498fc9353f5d297fd55877: caratteri rimanenti
+  8cf04a9734132302f96da8e113e80ce5: Italia
+  af1b98adf7f686b84cd0b443e022b7a0: Categorie
+  d46ef9e7211d041671cdbe6c3d884884: Idee
+  1192d7b5c357203a331761417698b02c: Discussioni
+  a80425472d94ae02c836da5b6f205b7b: Riscontri
+  8e1a7d9287a48440106ef0181c5a0181: Compra una raccomandazione
+  09a1e75ab40c7bb5efb09d013aff3a53: Aggiungi un punto a favore
+  1b92838e756182fda710cfd58819f671: Punti a favore
+  42a965482d059f063d4503251a2548b8: Aggiungi punto contro
+  f9aae5fda8d810a29f12d1e61b4ab25f: Utenti
+  939d09ea0c18215ca9032ef913d82567: Nuove idee
+  6a80ac9068f0e01bc56a00ecdf9e4f9f: DISCUSSIONE
+  9977ab924c89e6c98b1cf1595354ada3: Ultime attività
+  8bf8854bebe108183caeb845c7676ae4: di
+  f5a7924e621e84c9280a9a27e1bcb7f6: Nel mondo
+  3c5db2447415c261cf024be85458ce35: Utile
+  fb85dee77167699087f1d6eec1d2fbb7: Codice postale
+  ee5ebd05906cdf6ae230483207dd4f89: Fascia di età
+  019ec3132cdf8ee0f2e2a75cf5d3e459: Genere
+  6c25e6a6da95b3d583c6ec4c3f82ed4d: Settimanale
+  9030e39f00132d583da4122532e509e9: Mensile
+  6e7b34fa59e1bd229b207892956dc41c: Mai
+  214c85ce1555950780114abb91def844: Inutile
+  8f7f4c1ce7a4f933663d10543562b096: Informazioni
+  fc22ca133fdcde8fb92f5a50a9550ef4: Ha indicato %{point_name} come utile
+  665255de10a45ae3e1c0e81b515b55ca: '%{count} discussioni'
+  c37ad8c5cf363431fbaa23a52ef949a4: '%{author_sentence}'
+  e7c3b88bf30f862f48fcefde6490b946: '%{time_ago}'
+  c02f1bde8d33b74d66c9440588e83efb: '%{count} persone lo considerano utile.'
+  45f57ec68e303d292d5834bc4adc60b8: '%{count} persone lo considerano &lt;i&gt;inutile&lt;/i&gt;.'
+  c29196003ef3c4f020130aab1c63d4ea: '%{count} punti'
+  589e5848316ced1397c514dcd39878d2: '%{user_name} in %{instance_name}'
+  ac717bd14c68bc426139b20f01d941ea: '%{user_name} per primo suggerisce %{idea_name}'
+  4b33282a7eb266c62369d1f27a8c6899: Ultima visita %{time_ago}.
+  c3829f98b9d811ef102006ff00a83881: '%{count} revisioni'

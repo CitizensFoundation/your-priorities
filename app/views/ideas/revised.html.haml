@@ -1,0 +1,9 @@
+- if @ideas.empty?
+  = tr("No ideas have been revised recently", "view/points/revised")
+- else
+  - @ideas.each do |idea|
+    = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+    %div
+      %div{:id => "idea_detail_#{idea.id}"}
+
+    = will_paginate(@revisions)

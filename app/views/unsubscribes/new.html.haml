@@ -1,0 +1,40 @@
+#hp_intro= @page_title
+= tr("Uncheck any of the notifications you'd like to turn off.", "view/unsubscribes/new")
+%p
+  = form_for(@unsubscribe) do |f|
+    = f.error_messages
+    %p
+      Your email address
+      %br/
+      = f.text_field :email
+    %p
+    .option_group{:style => "line-height: 1"}
+      %h4= tr("Periodic updates on your ideas", "view/settings/signups")
+      = f.radio_button :report_frequency, 2
+      = tr("Weekly", "view/settings/signups")
+      = f.radio_button :report_frequency, 1
+      = tr("Monthly", "view/settings/signups")
+      = f.radio_button :report_frequency, 0
+      = tr("Never", "view/settings/signups")
+    %br/
+    = f.check_box :is_comments_subscribed
+    = tr("Comments on your discussions", "view/unsubscribes/new")
+    %br/
+    = f.check_box :is_point_changes_subscribed
+    = tr("Revisions on your points", "view/unsubscribes/new")
+    %br/
+    = f.check_box :is_followers_subscribed
+    = tr("When someone follows you or one of your contacts joins", "view/unsubscribes/new")
+    %br/
+    = f.check_box :is_finished_subscribed
+    = tr("When a idea's status is changed", "view/unsubscribes/new")
+    %br/
+    = f.check_box :is_idea_changes_subscribed
+    = tr("When a idea is revised", "view/unsubscribes/new")
+    %br/
+    = f.check_box :is_messages_subscribed
+    = tr("Private messages and profile bulletins", "view/unsubscribes/new")
+    %br/
+    %p
+    %p
+      = f.submit tr("Update Email Notifications", "view/unsubscribes/new"), :class => "yellow_button"

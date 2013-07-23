@@ -1,0 +1,42 @@
+- if quality
+  - if quality.is_helpful?
+    .helpful_button_container
+      .helpful_button{:id => "idea_add_endorse_#{point.id.to_s}"}
+        = tr("Helpful", "view/points/_button")
+        %span.big_x
+          = link_to "X", unquality_point_path(point, :region => "point_detail"), |
+            :method => :post,                                                    |
+            :remote=>true,                                                       |
+            'data-disable-with' => "",                                           |
+            'data-loader-name' => "circle",                                      |
+            :class => "idea_remove_link",                                    |
+            :title => tr("This is no longer helpful", "view/points/_button")     |
+  - else
+    .helpful_button_container
+      .not_helpful_button{:id => "idea_add_oppose_#{point.id.to_s}"}
+        = tr("NOT HELPFUL", "view/points/_button")
+        %span.big_x
+          = link_to "X", unquality_point_path(point, :region => "point_detail"), |
+            :method => :post,                                                    |
+            :remote=>true,                                                       |
+            'data-disable-with' => "",                                           |
+            'data-loader-name' => "circle",                                      |
+            :class => "idea_remove_link",                                    |
+            :title => tr("This is no longer unhelpful", "view/points/_button")   |
+- else
+  .helpful_button_container
+    .helpful_button{:id => "idea_add_endorse_#{point.id.to_s}"}
+      = link_to tr("Helpful?", "view/points/_button"), quality_point_path(point, :region => "point_detail", :value => true),                 |
+        :method => :post,                                                                                                                    |
+        :remote=>true,                                                                                                                       |
+        'data-disable-with' => '<span class="helpful_button idea_add_working"><img src="#{asset_path "/ajax/horizontal_small.gif"}" /></span>', |
+        'data-loader-name' => "no_loader",                                                                                                   |
+        :class => "helpful_link", :title => tr("This is helpful", "view/points/_button")                                                                 |
+    .endorse_or= tr("or", "view/points/_button")
+    .not_helpful_button{:id => "idea_add_oppose_#{point.id.to_s}"}
+      = link_to tr("Not Helpful?", "view/points/_button"), quality_point_path(point, :region => "point_detail", :value => false),            |
+        :method => :post,                                                                                                                    |
+        :remote=>true,                                                                                                                       |
+        'data-disable-with' => '<span class="helpful_button idea_add_working"><img src="#{asset_path "/ajax/horizontal_small.gif"}" /></span>', |
+        'data-loader-name' => "no_loader",                                                                                                   |
+        :class => "helpful_link", :title => tr("This is not helpful", "view/points/_button")                                                             |

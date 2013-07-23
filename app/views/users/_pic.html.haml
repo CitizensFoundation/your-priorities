@@ -1,0 +1,8 @@
+.border_miss_avatar
+- if user.has_picture?
+  %a{:href => url_for(user)}
+    = image_tag user.buddy_icon.url(:icon_48), :border => 0, :alt => "", :size => "48x48"
+- elsif user.facebook_uid and not request.xhr?
+  = fb_profile_pic user.facebook_uid, :facebook_logo=>false, :linked=>false, :size=>"square", :height=>"50",:width=>"50"
+- else
+  %a{:href => "<haml:silent> if user_signed_in? and current_user.id == user.id </haml:silent><haml:block>#{url_for picture_settings_url}</haml:block><haml:silent> else </haml:silent><haml:block>#{url_for user}</haml:block>"}= image_tag current_instance.buddy_icon.url(:icon_24), :border => 0, :alt => "", :size => "35x35"

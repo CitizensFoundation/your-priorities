@@ -1,0 +1,5 @@
+= form_tag "/home/unlock" do
+  %fieldset
+    %label{:for => "password"} Password:
+    %input{:type => "password", :name => "password", :class => "text"}
+    = submit_tag "LOGIN"

@@ -1,0 +1,12 @@
+#hp_intro= @page_title
+%p
+  - if not @activities
+    = tr("No activity here yet.", "view/feed/changes_activity")
+  - else
+    = will_paginate(@activities)
+    %p
+    #activities
+      - for activity in @activities
+        = render :partial => "activities/show", :locals => {:activity => activity, :suffix => ""}
+    %p
+      = will_paginate(@activities)

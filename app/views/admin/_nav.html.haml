@@ -1,0 +1,33 @@
+#nav_sub
+  %div{:id => "nav_sub_<haml:silent> if ['instances'].include?(params[:controller]) and params[:action] != 'apis' </haml:silent><haml:block>1</haml:block><haml:silent> elsif ['tags'].include?(params[:controller]) </haml:silent><haml:block>2</haml:block><haml:silent> elsif ['picture','picture_save','buddy_icon','buddy_icon_save','fav_icon','fav_icon_save'].include?(params[:action]) </haml:silent><haml:block>4</haml:block><haml:silent> elsif ['color_schemes'].include?(params[:controller]) </haml:silent><haml:block>5</haml:block><haml:silent> elsif ['pages'].include?(params[:controller]) </haml:silent><haml:block>6</haml:block><haml:silent> elsif ['instances'].include?(params[:controller]) and params[:action] == 'apis' </haml:silent><haml:block>9</haml:block>"}
+    %ul#menu_sub
+      %li.tab1
+        %span.tab_header
+          = link_to tr("Nation info", "view/admin/_nav"), edit_instance_url(current_instance)
+      - if current_instance.is_tags?
+        %li.tab2
+          %span.tab_header
+            = link_to current_instance.tags_name.pluralize.titleize, tags_url
+      %li.tab4
+        %span.tab_header
+          = link_to tr("Graphics", "view/admin/_nav"), :controller => "admin", :action => "picture"
+      %li.tab5
+        %span.tab_header
+          = link_to tr("Colors", "view/admin/_nav"), color_schemes_url
+      %li.tab6
+        %span.tab_header
+          = link_to tr("Pages", "view/admin/_nav"), pages_url
+- if ['picture','buddy_icon','fav_icon'].include?(params[:action])
+  #nav_third
+    %div{:id => "nav_third_<haml:silent> if ['picture'].include?(params[:action]) </haml:silent><haml:block>1</haml:block><haml:silent> elsif ['buddy_icon'].include?(params[:action]) </haml:silent><haml:block>2</haml:block><haml:silent> elsif ['fav_icon'].include?(params[:action]) </haml:silent><haml:block>3</haml:block>"}
+      %ul#menu_third
+        %li.tab1
+          %span.tab_header
+            = link_to tr("Logo", "view/admin/_nav"), :controller => "admin", :action => "picture"
+        %li.tab2
+          %span.tab_header
+            = link_to tr("Buddy Icon", "view/admin/_nav"), :controller => "admin", :action => "buddy_icon"
+        %li.tab3
+          %span.tab_header
+            = link_to tr("Fav Icon", "view/admin/_nav"), :controller => "admin", :action => "fav_icon"
+

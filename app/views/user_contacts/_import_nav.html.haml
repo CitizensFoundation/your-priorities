@@ -1,0 +1,36 @@
+#import_nav
+  - if user.followings_count == 0
+    %span.greyed_out
+      = tr("Your network", "view/user_contacts/_import_nav")
+      (
+      %span#followings_count> 0
+      )
+  - else
+    = link_to_unless_current tr("Your network", "view/user_contacts/_import_nav") + " (<span id='followings_count'>#{user.followings_count}</span>)".html_safe, following_user_contacts_path(user)
+  \&middot;
+  - if user.contacts_members_count == 0
+    %span.greyed_out
+      = tr("Already members", "view/user_contacts/_import_nav")
+      (
+      %span#contacts_members_count> 0
+      )
+  - else
+    = link_to_unless_current tr("Already members", "view/user_contacts/_import_nav") + " (<span id='contacts_members_count'>#{user.contacts_members_count}</span>)".html_safe, members_user_contacts_path(user)
+  \&middot;
+  - if user.contacts_not_invited_count == 0
+    %span.greyed_out
+      = tr("Not invited", "view/user_contacts/_import_nav")
+      (
+      %span#contacts_not_invited_count> 0
+      )
+  - else
+    = link_to_unless_current tr("Not invited", "view/user_contacts/_import_nav") + " (<span id='contacts_not_invited_count'>#{user.contacts_not_invited_count}</span>)".html_safe, not_invited_user_contacts_path(user)
+  \&middot;
+  - if user.contacts_invited_count == 0
+    %span.greyed_out
+      = tr("Invited", "view/user_contacts/_import_nav")
+      (
+      %span#contacts_invited_count> 0
+      )
+  - else
+    = link_to_unless_current tr("Invited", "view/user_contacts/_import_nav") + " (<span id='contacts_invited_count'>#{user.contacts_invited_count}</span>)".html_safe, invited_user_contacts_path(user)

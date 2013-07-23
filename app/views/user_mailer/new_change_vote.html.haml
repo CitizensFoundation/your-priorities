@@ -1,0 +1,82 @@
+Hæ #{h(@recipient.real_name)},
+
+\#{@sender.name} lagði til að "#{@change.new_idea.name}" með
+- if @change.is_endorsers?
+  = pluralize(@change.new_idea.up_endorsements_count,"stuðningsmann")
+- if @change.is_endorsers? and @change.is_opposers?
+  og
+- if @change.is_opposers?
+  = pluralize(@change.new_idea.down_endorsements_count,"andstæðing")
+taki yfir
+- if @change.is_active?
+  - if @change.is_endorsers?
+    = pluralize(@change.idea.up_endorsements_count,"stuðningsmann")
+  - if @change.is_endorsers? and @change.is_opposers?
+    og
+  - if @change.is_opposers?
+    = pluralize(@change.idea.down_endorsements_count,"andstæðing")
+- else
+  - if @change.is_endorsers?
+    stuðningsmönnum
+  - if @change.is_endorsers? and @change.is_opposers?
+    og
+  - if @change.is_opposers?
+    andstæðingum
+frá "#{h(@change.idea.name)}"
+- if @change.is_flip?
+  breyti
+  - if @change.is_endorsers?
+    stuðningsmönnum í andstæðinga
+  - if @change.is_endorsers? and @change.is_opposers?
+    og
+  - if @change.is_opposers?
+    andstæðingum í stuðningsmenn
+\.
+- if @change.attribute_present?("content")
+  Þeirra rök eru: #{@change.content}
+Ertu sammála þessu?
+
+JÁ, ég
+- if @vote.is_up?
+  er meðmæltur
+- else
+  er á móti
+nýju hugmyndinni: "#{@change.new_idea.name}."
+Smelltu hér til að samþykkja samrunann: #{@root_url}vote/yes/#{@vote.code}?utm_source=vote&utm_medium=email
+
+NEI, ég vil halda áfram að
+- if (@vote.is_up? and @change.is_flip?) or (@vote.is_down? and not @change.is_flip?)
+  vera á móti
+- else
+  meðmæltur
+upprunalegu hugmyndinni: "#{@change.idea.name}."
+Smelltu hér til að segja nei við samruna þessara hugmynda: #{@root_url}vote/no/#{@vote.code}?utm_source=vote&utm_medium=email
+
+Ef þú vilt ræða þessa tillögu og sjá stöðuna í kosningunni farðu þá á:
+\#{@root_url}vote/maybe/#{@vote.code}?utm_source=vote&utm_medium=email
+
+Þú þarft að kjósa innan #{@change.time_left}.
+
+Ef samrunatillagan fær yfir 70% atkvæða, þá mun
+- if @vote.is_up?
+  þinn stuðningur
+- else
+  þín andstaða
+fylgja nýju hugmyndinni.
+Ef tillagan fær ekki meira en 70%  atkvæða þá mun
+- if @vote.is_up?
+  þinn stuðningur
+- else
+  þín andstaða
+ekki breytast.
+
+Nánari upplýsingar er að finna á: #{@root_url}about/faq#merge
+
+Þakka þér fyrir að taka þátt.
+
+\#{@root_url}?utm_source=vote&utm_medium=email
+
+\----
+Athugasemdir sendist á vefur@skuggathing.is
+Þessi tölvupóstur var sendur til #{@recipient.email}.
+Ef þú vilt ekki fá pósta frá Skuggaborg, farðu þá á: #{@root_url}unsubscribes/new

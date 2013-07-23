@@ -1,0 +1,49 @@
+- if @ideas.any?
+  .ideas-wrapper
+    %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+      %tr
+        %td{:align => "right", :style => "padding-right: 5px;"}
+          %span.nb_table_header= tr("Rank", "view/ideas/list_widget")
+        %td{:style => "padding-left: 3px;"}
+          %span.nb_table_header= tr("Wk", "view/ideas/list_widget")
+        %td{:style => "padding-left: 3px;"}
+          %span.nb_table_header= tr("Mo", "view/ideas/list_widget")
+        %td
+      - for idea in @ideas
+        %tr
+          - if idea.status == 'buried'
+            %td{:align => "center", :colspan => "3", :valign => "top"}
+              .nb_position_nochange= tr("delisted", "view/ideas/list_widget")
+          - elsif idea.status == 'inactive'
+            %td{:align => "right", :colspan => "3", :valign => "top"}
+              .nb_idea_inactive
+                = official_status(idea)
+          - else
+            %td{:align => "right", :style => "padding-right: 5px;", :valign => "top", :width => "30"}
+              - if idea.position != 0
+                .nb_idea_position{:title => tr("This is the {position} highest ranked idea across all {instance_name} members.", "view/ideas/list_widget", :position => idea.position, :instance_name => current_instance.name)}
+                  = idea.position
+            - if idea.is_new?
+              %td{:align => "center", :colspan => "2", :valign => "top"}
+                .nb_idea_position_new= tr("new", "view/ideas/list_widget")
+            - elsif idea.position_7days_delta == 0 and idea.position_30days_delta == 0
+              %td{:align => "center", :colspan => "2", :valign => "top"}
+                .nb_idea_position_nochange{:title => tr("This idea hasn't moved up or down in the rankings at all this month.", "view/ideas/list_widget")}
+                  = #tr("Unch", "view/ideas/list_widget")
+            - else
+              %td{:style => "padding-left: 2px;", :valign => "top"}
+                - if idea.position_7days_delta > 0
+                  .nb_idea_position_up{:title => tr("This idea moved up {count} spots in the rankings this week", "view/ideas/list_widget", :count => idea.position_7days_delta.abs)}= idea.position_7days_delta.abs
+                - elsif idea.position_7days_delta < 0
+                  .nb_idea_position_down{:title => tr("This idea moved down {count} spots in the rankings this week", "view/ideas/list_widget", :count => idea.position_7days_delta.abs)}= idea.position_7days_delta.abs
+              %td{:style => "padding-left: 3px;", :valign => "top"}
+                - if idea.position_30days_delta > 0
+                  .nb_idea_position_up{:title => tr("This idea moved up {count} spots in the rankings this month", "view/ideas/list_widget", :count => idea.position_30days_delta.abs)}= idea.position_30days_delta.abs
+                - elsif idea.position_30days_delta < 0
+                  .nb_idea_position_down{:title => tr("This idea moved down {count} spots in the rankings this month", "view/ideas/list_widget", :count => idea.position_30days_delta.abs)}= idea.position_30days_delta.abs
+          %td.nb_idea_name_cell{:colspan => "3", :valign => "top"}
+            .nb_idea{:id => "nb_idea_#{idea.id}"}
+              .nb_idea_name{:id => "nb_idea_name_#{idea.id}"}
+                = link_to h(idea.name), idea_url(idea, :only_path => false), :class => "nb_idea_name_link", :id => "nb_idea_name_link_#{idea.id.to_s}"
+              #nb_idea_endorsements
+                = render :partial => "ideas/endorsement_count", :locals => {:idea => idea}

@@ -1,0 +1,37 @@
+#hp_intro= @page_title
+%p
+  %p
+    - if current_user.followings_count == 0
+      = tr("You don't have anyone in your network yet because you aren't following anyone.", "view/issues/network", :url => user_contacts_path(current_user), :instance_name => current_instance.name)
+    - else
+      = tr("Here are just your ideas and the <a href='{url}'>{count} people in your network</a>, not all of {instance_name}.", "view/issues/network", :count => current_user.followings_count, :url => following_user_contacts_path(current_user), :instance_name => current_instance.name)
+    = tr("<p>You can add people to your network by clicking their name, and then the <span class=\"idea_add\">follow</span> button on their profile.  A good way to start your network is to <a href=\"/network/find\">import your Google, Yahoo or Facebook contacts</a> to find people you already know.</p>", "view/issues/network")
+    %p
+      - if current_user.followings_count > 0
+        %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+          %tr
+            %td{:align => "right", :style => "padding-right: 5px;"}
+              %span.table_header= tr("Rank", "view/issues/network")
+            %td{:style => "padding-left: 3px;"}
+              %span.table_header= tr("Wk", "view/issues/network")
+            %td{:style => "padding-left: 3px;"}
+              %span.table_header= tr("Mo", "view/issues/network")
+            %td{:style => "padding-left: 7px; padding-bottom: 2px;"}= will_paginate @ideas
+          - for e in @ideas
+            - if @endorsements
+              - endorsement = @endorsements.detect {|p| p.idea_id == e.idea_id }
+            %tr
+              = render :partial => "ideas/rank_week_month", :locals => {:idea => e.idea }
+              %td{:style => "padding-left: 8px;", :valign => "top"}
+                .idea_listing{:id => "idea_#{e.idea_id}"}
+                  .point_name{:id => "idea_#{e.idea_id}_name"}
+                    = link_to_unless_current h(e.idea.name), e.idea, :class => "idea_name_link"
+                  = render :partial => "ideas/tag_show", :locals => { :idea => e.idea }
+                  .idea_actions
+                    = render :partial => "ideas/debate_buttons", :locals => {:idea => e.idea, :endorsement => endorsement, :region => "idea_inline"}
+                    %span.idea_endorsement_count{:id => "network_#{e.idea_id.to_s}_endorsement_count"}
+                      = tr("{count} people in your network", "view/issues/network", :count => e.endorsements_number.to_i)
+                      - if e.idea.discussions_count > 0
+                        \&middot; #{link_to tr("{count} discussions", "view/issues/network", :count => e.idea.discussions_count), discussions_idea_url(e.idea)}
+        %p
+          = will_paginate @ideas

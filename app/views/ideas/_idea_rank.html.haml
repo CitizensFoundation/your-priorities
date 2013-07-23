@@ -1,0 +1,25 @@
+- if idea.status == 'buried'
+  .position_nochange
+    = tr("delisted", "view/ideas/_rank_week_month")
+- elsif idea.status == 'inactive'
+  .idea_inactive
+    = official_status(idea)
+- else
+  - if idea.position != 0
+    -#%span.idea_position{:title => tr("This is the {position} highest ranked idea across all {instance_name} members.", "view/ideas/_rank_week_month", :position => idea.position, :instance_name => current_instance.name)}
+      = idea.position
+  - if idea.is_new?
+    -#%span.position_new
+      = tr("new", "view/ideas/_rank_week_month")
+  - elsif idea.position_7days_delta == 0 and idea.position_30days_delta == 0
+    -#%span.position_nochange{:title => tr("This idea hasn't moved up or down in the rankings at all this month.", "view/ideas/_rank_week_month")}
+    = #tr("Unch", "view/ideas/_rank_week_month")
+  - else
+    - if idea.position_7days_delta > 0
+      -#.position_up{:title => tr("This idea moved up {count} spots in the rankings this week", "view/ideas/_rank_week_month", :count => idea.position_7days_delta.abs)}= idea.position_7days_delta.abs
+    - elsif idea.position_7days_delta < 0
+      -#.position_down{:title => tr("This idea moved down {count} spots in the rankings this week", "view/ideas/_rank_week_month", :count => idea.position_7days_delta.abs)}= idea.position_7days_delta.abs
+    - if false and idea.position_30days_delta > 0
+      .position_up{:title => tr("This idea moved up {count} spots in the rankings this month", "view/ideas/_rank_week_month", :count => idea.position_30days_delta.abs)}= idea.position_30days_delta.abs
+    - elsif false and idea.position_30days_delta < 0
+      .position_down{:title => tr("This idea moved down {count} spots in the rankings this month", "view/ideas/_rank_week_month", :count => idea.position_30days_delta.abs)}= idea.position_30days_delta.abs

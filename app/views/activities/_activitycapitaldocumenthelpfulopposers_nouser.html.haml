@@ -1,0 +1,6 @@
+- if activity.capital.amount > 0
+  /%img.icon{:border => "0", :height => "16", :src => "/assets/icons/coins.png", :width => "16"}/
+  = raw tr("Earned {capital}{currency_short_name} because opposers found {point_name} helpful", "view/activities/_activitycapitaldocumenthelpfulopposers_nouser", :capital => activity.capital.amount.abs, :currency_short_name => current_instance.currency_short_name, :point_name => link_to((activity.document.name), activity.document))
+- else
+  /%img.icon{:border => "0", :height => "16", :src => "/assets/icons/coins_delete.png", :width => "16"}/
+  = raw tr("Lost {capital}{currency_short_name} because opposers found {point_name} unelpful", "view/activities/_activitycapitaldocumenthelpfulopposers_nouser", :capital => activity.capital.amount.abs, :currency_short_name => current_instance.currency_short_name, :point_name => link_to((activity.document.name), activity.document))

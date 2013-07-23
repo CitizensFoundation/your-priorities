@@ -1,0 +1,15 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Vidraedur.is
+  %body
+    %table{:align => "center", :border => "1", :cellpadding => "10", :width => "600"}
+      %tr
+        %td
+          %p
+            %img{:alt => "Vidraedur.is", :src => "http://www.utanrikisraduneyti.is/media/Logo/vidraedur.is-logo.jpg", :width => "600"}/
+          - if @n.include?("warning")
+            = render :partial=>"notification_warning"
+          - elsif @n.include?("comment_flagged")
+            = render :partial=>"notification_comment_flagged"

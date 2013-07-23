@@ -1,0 +1,36 @@
+- if @point or @idea or @user
+  #bulletin_form.bulletin_form
+    .happening_heading
+      - if @point and params[:action].include?("discussions")
+        = tr("Start a discussion on this point", "view/bulletins/_form")
+      - elsif @user and @user != current_user
+        = tr("Post a bulletin to {user_name} profile", "view/bulletins/_form", :user_name => @user.login)
+      - elsif @idea
+        - if params[:action].include?("discussions")
+          = tr("Start a discussion", "view/bulletins/_form")
+        - else
+          = tr("Start a discussion", "view/bulletins/_form")
+      - elsif params[:action].include?("discussions")
+        = tr("Start a discussion", "view/bulletins/_form")
+      - elsif controller_name=="users"
+        = tr("Post a message to wall", "view/bulletins/_form")
+      - else
+        = tr("What's happening?", "view/bulletins/_form")
+    = form_for comment, :remote=>true,                |
+      :url => bulletins_url,                          |
+      "data-disable-with"=>escape_t(tr("Sending","Ajax")),  |
+      'data-loader-name' => "horizontal_small" do |f| |
+      = f.error_messages
+      = f.text_area :content, :id => "bulletin_content"
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+        %tr
+          %td{:valign => "top"}
+            = f.submit tr("New discussion thread", "view/bulletins/_form"), :id => "bulletin-form-submit", :class => "submit_button"
+          %td{:valign => "top"}
+            #bulletin_error.comment_error
+          - if @idea
+            %input{:name => "activity[idea_id]", :type => "hidden", :value => @idea.id}/
+          - if @point
+            %input{:name => "activity[point_id]", :type => "hidden", :value => @point.id}/
+          - if @user and @user != current_user
+            %input{:name => "activity[other_user_id]", :type => "hidden", :value => @user.id}/

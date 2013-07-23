@@ -1,0 +1,29 @@
+#hp_intro= @page_title
+%p
+  - if current_user.contacts_count > 0
+    = render :partial => "import_nav", :locals => {:user => current_user}
+    %p
+  = tr("<p>Find people you know by importing contacts from your online email and social networking subscription_accounts.</p>", "view/user_contacts/index")
+  = tr("<p>You will be taken to the other site to authorize access for {instance_name}, and then once imported, you can see who's already on the site to add them to your network, and then invite anyone who isn't a member to join.</p>", "view/user_contacts/index", :instance_name => current_instance.name)
+  = tr("<p>No one will receive an email unless you explicitly send it yourself.  You will earn<span class=\"pc\">5sp</span> for every new member you refer, increasing your <a href=\"/network\">influence</a> at {instance_name}.</p>", "view/user_contacts/index", :instance_name => current_instance.name)
+  = tr("<p>Click the service you want to import from:</p>", "view/user_contacts/index")
+  %p
+    %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+      %tr
+        %td{:align => "middle", :valign => "middle"}
+          = link_to image_tag("gmail-logo.jpg", :border => 0), :controller => "import", :action => "authenticate_google"
+        - if current_instance.has_yahoo_enabled?
+          %td{:align => "middle", :valign => "middle"}
+            = link_to image_tag("yahoo-mail-logo.jpg", :border => 0), :controller => "import", :action => "yahoo"
+        - if current_instance.has_facebook_enabled?
+          %td{:align => "middle", :valign => "middle"}
+            - if current_instance.has_facebook_enabled?
+              - if current_facebook_user_if_on_facebook
+                = link_to image_tag("facebook-logo.jpg", :border => 0), :controller => "facebook", :action => "invite", :html => {:class => "import_button"}
+              - else
+                %a{:href => "#", :onclick => "FB.login(function() { window.location='#{url_for(:only_path => false, :controller => 'facebook', :action => 'invite')}'; });"}= image_tag("facebook-logo.jpg", :border => 0)
+              %br/
+              %br/
+        - if current_instance.has_windows_enabled?
+          %td{:align => "middle", :valign => "middle"}
+            = link_to image_tag("windows-live-hotmail-logo.gif", :border => 0), :controller => "import", :action => "windows"

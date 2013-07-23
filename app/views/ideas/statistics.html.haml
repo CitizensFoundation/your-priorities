@@ -1,0 +1,69 @@
+- cache("idea_chart_detailed-#{@idea.id.to_s}") do
+  - @charts = @idea.charts.newest_first
+  - if Rails.env.development? and @charts.length>0 and @charts.length<=2
+    - @charts = [@charts[0],@charts[0],@charts[0]]
+  - if @charts.any? and @charts.length > 2
+    - sorted = @charts.sort_by { |c| c.position }
+    - max_position = sorted.last.position
+    - min_position = 1
+    - max_volume = @charts.sort_by { |c| c.volume_count }.last.volume_count
+    - if false and sorted.first.position == sorted.last.position
+      .idea_chart
+        %p= tr("Green is the number of endorsements for this idea each day, and red is the oppositions.", "view/ideas/_left_nav")
+        %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+          %tr
+            %td{:colspan => "3", :style => "padding-top: 5px; padding-bottom: 2px;"}= tr("VOLUME", "view/ideas/_left_nav")
+            %td
+          %tr
+            %td{:colspan => "3", :rowspan => "3", :valign => "top"}
+              = image_tag Gchart.line(:size => '150x50', :data => [@charts.collect{|c| c.volume_count}.reverse,@charts.collect{|c| c.down_count}.reverse,[0,0]], :bar_colors => "009933,CC0000,EEEEEE",  :chart_background => 'EEEEEE', :min_value => 1, :max_value => max_volume, :custom => "chm=b,009933,0,1,0|b,CC0000,1,2,0&chls=1,1,0|1,1,0|0,1,-1&chg=17,50,1,5"), :size => "150x50"
+            %td.chart_label{:height => "17", :valign => "top"}= max_volume
+          %tr
+            %td.chart_label{:height => "17", :valign => "middle"}= (max_volume*0.5).to_i
+          %tr
+            %td.chart_label{:height => "16", :valign => "bottom"} 1
+          %tr
+            %td{:style => "padding-top: 2px;"}= @charts.last.date_show
+            %td{:align => "center", :style => "padding-top: 2px;"}= @charts[(@charts.size/2).to_i].date_show
+            %td{:align => "right", :style => "padding-top: 2px;"}= @charts.first.date_show
+            %td
+    - else
+      .idea_chart
+        %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+          %tr
+            %td{:colspan => "3", :style => "padding-top: 5px; padding-bottom: 2px;"}= tr("MOVEMENTS", "view/ideas/_left_nav")
+            %td
+          %tr
+            %td{:colspan => "3", :rowspan => "4", :valign => "top"}
+              = image_tag Gchart.line(:size => '150x100', :data => @charts.collect{|c| c.position*-1}.reverse, :line_colors => "13499b", :chart_background => 'EEEEEE', :min_value => min_position, :max_value => max_position, :custom => "chg=17,33,1,5"), :size => "150x100"
+            %td.chart_label{:height => "17", :valign => "top"} 1
+          %tr
+            %td.chart_label{:height => "22", :valign => "middle"}
+              - if max_position-min_position > 9
+                = (max_position*0.33).to_i
+          %tr
+            %td.chart_label{:height => "25", :valign => "middle"}
+              - if max_position-min_position > 9
+                = (max_position*0.67).to_i
+          %tr
+            %td.chart_label{:height => "15", :valign => "bottom"}= max_position
+        %p= tr("Tracks the movement of this idea in the rankings. The lower the number, the better. The rankings are influenced by how many people have it in their list and how high a idea they consider it.", "view/ideas/_left_nav")
+      .idea_chart
+        %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+          %tr
+            %td{:colspan => "3", :style => "padding-top: 5px; padding-bottom: 2px;"}= tr("VOLUME", "view/ideas/_left_nav")
+            %td
+          %tr
+            %td{:colspan => "3", :rowspan => "3", :valign => "top"}
+              = image_tag Gchart.line(:size => '150x50', :data => [@charts.collect{|c| c.volume_count}.reverse,@charts.collect{|c| c.down_count}.reverse,[0,0]], :bar_colors => "009933,CC0000,EEEEEE",  :chart_background => 'EEEEEE', :min_value => 1, :max_value => max_volume, :custom => "chm=b,009933,0,1,0|b,CC0000,1,2,0&chls=1,1,0|1,1,0|0,1,-1&chg=17,50,1,5"), :size => "150x50"
+            %td.chart_label{:height => "17", :valign => "top"}= max_volume
+          %tr
+            %td.chart_label{:height => "17", :valign => "middle"}= (max_volume*0.5).to_i
+          %tr
+            %td.chart_label{:height => "16", :valign => "bottom"} 1
+          %tr
+            %td{:style => "padding-top: 2px;"}= @charts.last.date_show
+            %td{:align => "center", :style => "padding-top: 2px;"}= @charts[(@charts.size/2).to_i].date_show
+            %td{:align => "right", :style => "padding-top: 2px;"}= @charts.first.date_show
+            %td
+        %p= tr("Green is the number of endorsements for this idea each day, and red is the oppositions.", "view/ideas/_left_nav")

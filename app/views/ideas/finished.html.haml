@@ -1,0 +1,14 @@
+- if Instance.current.message_for_finished and Instance.current.message_for_finished!=""
+  = render :partial=>"/shared/top_message_box", :locals=> {:message_text => Instance.current.message_for_finished.html_safe }
+%div{:style => "width:auto;"}
+  %ul
+    %li.list_left
+      #hp_intro= @page_title
+    %li.list_right
+      = rss_url(@rss_url)
+  %ul
+.clear
+.white_line
+- for idea in @ideas
+  = render :partial => "ideas/listing_finished", :locals => {:idea => idea }
+= will_paginate @ideas

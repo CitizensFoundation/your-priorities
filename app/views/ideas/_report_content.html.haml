@@ -1,0 +1,9 @@
+- if @idea and user_signed_in? and current_user.id != idea.user_id
+  %span.report1{:id => "idea_report_#{idea.id}"}
+    = link_to image_tag("report.png", :align => "center", :border => 0, :class => "idea_report warn"),                                                         |
+      flag_idea_url(idea.id), :method => :get,                                                                                                             |
+      :remote=>true,                                                                                                                                               |
+      'data-disable-with' => "",                                                                                                                                   |
+      'data-loader-name' => "circle",                                                                                                                              |
+      :confirm => tr("Is this #{IDEA_TOKEN} from {user_name} a personal attack or a violation of the rules?", "view/comments/_show", :user_name => idea.user.name), |
+      :title => tr("Report", "view/comments/_show")                                                                                                                |

@@ -1,0 +1,11 @@
+#hp_intro= @page_title
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+  %tr
+    %td{:valign => "top", :width => "270"}
+      = form_for(@sub_instance) do |f|
+        = f.error_messages
+        = render :partial => "sub_instances/form", :locals => {:f => f}
+        %p
+          = f.submit tr("Become a sub_instance", "view/sub_instances/index"), :class => "yellow_button"
+    %td{:style => "padding-left: 10px;", :valign => "top"}
+      = tr("<p>For our influence to grow, we need your help recruiting, and you probably want some help recruiting too.</p><p>Here's what we can offer. <span class=\"highlight\">It's all free</span>.  In addition to your organization's logo on our <a href=\"/network/sub_instances\">sub_instances page</a>, you can have your own website URL like: <a href=\"http://sub_instance.{instance_base_url}/\">http://sub_instance.{instance_base_url}/</a> with</p> <ol><li>your logo 	<li>a link to your website 	<li>a checkbox when people signup to opt-in for <span class=\"highlight\">your email list or newsletter</span>. </ol>", "view/sub_instances/index", instance_base_url: current_instance.base_url)

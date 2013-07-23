@@ -1,0 +1,45 @@
+- newest = defined?(newest_points) && newest_points == true
+- unless current_user and current_user.id==point.user.id
+  .tag_button_hack{:id => "point_#{point.id}_quality#{"_newest" if newest}"}
+    - if quality
+      - if quality.is_helpful?
+        %span.tag_button.tag_button_hack{:id => "point_helpful_yes_#{point.id.to_s}"}
+          %span.debate_buttons_helpful
+            = tr("Helpful", "view/points/_button_small")
+            = link_to "&nbsp;x".html_safe, unquality_point_path(point, :region => "point_inline"),               |
+              :method=>:post,                                                                                    |
+              :remote=>true,                                                                                     |
+              'data-disable-with' => "",                                                                         |
+              'data-loader-name' => "circle",                                                                    |
+              :class => "quality_remove", :title => tr("This is no longer helpful", "view/points/_button_small") |
+      - else
+        %span.tag_button.tag_button_hack{:id => "point_helpful_no_#{point.id.to_s}"}
+          %span.debate_buttons_nothelpful
+            = tr("Not helpful", "view/points/_button_small")
+            = link_to "&nbsp;x".html_safe, unquality_point_path(point, :region => "point_inline"),                 |
+              :method=>:post,                                                                                      |
+              :remote=>true,                                                                                       |
+              'data-disable-with' => "",                                                                           |
+              'data-loader-name' => "circle",                                                                      |
+              :class => "quality_remove", :title => tr("This is no longer unhelpful", "view/points/_button_small") |
+    = render :partial => "points/helpful_count", :locals => {:point => point}
+    - if not quality and user_signed_in?
+      %div.helpful
+        = tr("Is this helpful?", "view/points/_button_small")
+      %span.tag_button.tag_button_hack.debate_buttons_helpful{:id => "idea_helpful_yes_#{point.id.to_s}"}
+        %span.tag_button.tag_button_hack{:id => "point_helpful_no_#{point.id.to_s}"}
+          = link_to tr("Yes", "view/points/_button_small"), quality_point_path(point, :region => "point_inline", :value => true),                    |
+            :method=>:post,                                                                                                                          |
+            :remote=>true,                                                                                                                           |
+            'data-disable-with' => '<span class="quality_helpful_link idea_add_working"><img src="/assets/ajax/horizontal_small.gif" /></span>', |
+            'data-loader-name' => "no_loader",                                                                                                       |
+            :class => "quality_helpful_link", :title => tr("This is helpful", "view/points/_button_small")
+      %span.tag_button.tag_button_hack.debate_buttons_nothelpful{:id => "point_helpful_no_#{point.id.to_s}"}
+        = link_to tr("No", "view/points/_button_small"), quality_point_path(point, :region => "point_inline", :value => false),                      |
+          :method=>:post,                                                                                                                            |
+          :remote=>true,                                                                                                                             |
+          'data-disable-with' => '<span class="quality_unhelpful_link idea_add_working"><img src="/assets/ajax/horizontal_small.gif" /></span>', |
+          'data-loader-name' => "no_loader",                                                                                                         |
+          :class => "quality_unhelpful_link", :title => tr("This is not helpful", "view/points/_button_small")                                       |
+- else
+  = render :partial => "points/helpful_count", :locals => {:point => point}

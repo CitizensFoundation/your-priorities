@@ -1,0 +1,21 @@
+#hp_intro= @page_title
+%p
+  - form_tag(documents_searches_path, :method => 'get') do
+    %table{:cellpadding => "0", :cellspacing => "0"}
+      %tr
+        %td{:valign => "middle"}= text_field_tag "q", params[:q]
+        %td{:style => "padding-left:5px;", :valign => "middle"}= submit_tag tr("Search", "view/searches/documents"), :class => "yellow_button"
+  %p
+    - if @documents
+      = render :partial => "nav"
+    - if not @documents
+    - elsif @documents.empty?
+      = tr("No results found", "view/searches/documents")
+    - else
+      - if @document_results.total_hits > 15
+        = will_paginate WillPaginate::Collection.new((params[:page]||1),(15),@document_results.total_hits)
+        %p
+      - for document in @documents
+        = render :partial => "documents/show_full", :locals => {:document => document, :quality => nil, :revision => nil}
+      %p
+        = will_paginate WillPaginate::Collection.new((params[:page]||1),(15),@document_results.total_hits)

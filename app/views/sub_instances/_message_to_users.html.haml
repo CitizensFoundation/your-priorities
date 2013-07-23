@@ -1,0 +1,2 @@
+- if SubInstance.current.message_to_users and SubInstance.current.message_to_users!=""
+  = render :partial=>"/shared/top_message_box", :locals=> {:message_text => SubInstance.current.message_to_users.html_safe }

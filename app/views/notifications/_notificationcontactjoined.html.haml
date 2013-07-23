@@ -1,0 +1,2 @@
+%img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/assets/icons/user.png"}", :width => "16"}/
+= tr("{sender_name} just joined", "view/notifications/_notificationcontactjoined", :sender_name => link_to(notification.sender_name, notification.sender))

@@ -1,0 +1,11 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/accept.png", :width => "16"}/
+- if activity.has_ad?
+  - if activity.attribute_present?("position")
+    = raw tr("{user_name} voted up {idea_name} at #{IDEA_TOKEN} {position} due to <a href='{ad_url}'>{ad_user} ad</a>", "view/activities/_activityendorsementnew", :user_name => link_to(activity.user.login, activity.user), :idea_name => link_to(activity.idea.name, activity.idea), :position => activity.position, :ad_url => idea_ad_path(activity.idea,activity.ad), :ad_user => activity.ad.user.name.possessive)
+  - elsif activity.idea
+    = raw tr("{user_name} voted up {idea_name} due to <a href='{ad_url}'>{ad_user} ad</a>", "view/activities/_activityendorsementnew", :user_name => link_to(activity.user.login, activity.user), :idea_name => link_to(activity.idea.name, activity.idea), :ad_url => idea_ad_path(activity.idea,activity.ad), :ad_user => activity.ad.user.name.possessive)
+- else
+  - if activity.attribute_present?("position")
+    = raw tr("{user_name} voted up {idea_name} at #{IDEA_TOKEN} {position}", "view/activities/_activityendorsementnew", :user_name => link_to(activity.user.login, activity.user), :idea_name => link_to(activity.idea.name, activity.idea), :position => activity.position)
+  - elsif activity.idea
+    = raw tr("{user_name} voted up {idea_name}", "view/activities/_activityendorsementnew", :user_name => link_to(activity.user.login, activity.user), :idea_name => link_to(activity.idea.name, activity.idea))

@@ -1,0 +1,18 @@
+= render :partial=>"user_mailer/header", formats: [:html]
+%p
+  = tr("Hi", "email")
+  = @recipient.first_name.capitalize
+  ,
+%p= tr("This is just a quick notification that {notifiable_idea_name}, a idea you {notifiable_value_name}, is completed", "email", |
+    :notifiable_idea_name=>@notifiable.idea.name, :notifiable_value_name=>@notifiable.value_name)                                  |
+%p
+  = tr("For more details and to join the discussion", "email")
+  \:
+  %br/
+  = link_to @notifiable.idea.show_url+'/discussions', @notifiable.idea.show_url+'/discussions'
+%p
+  = tr("This idea has been removed from your list. Now is a good time to update your list (you may need to login)", "email")
+  \:
+  %br/
+  = link_to @recipient.root_url, @recipient.root_url
+= render :partial=>"user_mailer/footer", formats: [:html]

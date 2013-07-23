@@ -1,0 +1,17 @@
+#hp_intro= @page_title
+%p
+  - if @revisions.empty?
+    = tr("No points have been revised recently", "view/points/revised")
+  - else
+    /
+      <haml:silent> if @revisions.total_pages &amp;gt; 1 </haml:silent><haml:block>
+      <haml:loud> will_paginate(@revisions) </haml:loud>
+      <p>
+      </haml:block>
+    - for revision in @revisions
+      - quality = nil
+      - if @qualities
+        - quality = @qualities.detect {|e| e.point_id == revision.point_id }
+      = render :partial => "points/show_full", :locals => {:point => revision.point, :quality => quality, :revision => revision}
+    %p
+      = will_paginate(@revisions)

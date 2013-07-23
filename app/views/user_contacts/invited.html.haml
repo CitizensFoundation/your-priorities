@@ -1,0 +1,20 @@
+#hp_intro= tr("Find people you know at {instance_name}", "view/user_contacts/invited", :instance_name => current_instance.name)
+= render :partial => "import_nav", :locals => {:user => current_user}
+- if @contacts.any?
+  %p
+    = tr("These are people you've invited	who haven't joined yet.", "view/user_contacts/invited")
+  %p
+    = will_paginate (@contacts)
+  %p
+    - for c in @contacts
+      - if c.has_email?
+        = c.name
+        \&lt;#{c.email}&gt;
+      - elsif c.has_facebook?
+        %fb:name{:uid => c.facebook_uid}/
+      %span.small= time_ago c.sent_at if c.sent_at
+      %br/
+  %p
+    = will_paginate (@contacts)
+- else
+  = tr("You haven't invited anyone yet.", "view/user_contacts/invited")

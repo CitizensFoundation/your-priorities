@@ -1,0 +1,13 @@
+%center
+  %h2
+    = tr("Your {instance_name} is being created","here", :instance_name=>Instance.current.name)
+  %br
+  = image_tag("ajax/ajax_loader_large.gif", :size=>"250x250")
+:javascript
+  setInterval(function() {
+     $.ajax({
+             url: "/sub_instances/setup_status",
+             type: 'GET',
+             dataType: 'script'
+         });
+  }, 2000);

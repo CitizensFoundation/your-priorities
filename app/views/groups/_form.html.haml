@@ -1,0 +1,21 @@
+= form_for @group do |f|
+  .label
+    = tr("Name","groups")
+  = f.text_field :name
+  -if @group.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@group.errors.count, "error")} prohibited this group from being saved:"
+      %ul
+        - @group.errors.full_messages.each do |msg|
+          %li= msg
+  - if @group.id
+    .group_admin_users
+      .label
+        = tr("Admin users","groups")
+      = render :partial=>"group_users", :locals=>{:input_id=>"group_admin_users",:pre_fill_data=>@group_admin_users }
+    .group_users
+      .label
+        = tr("Users","groups")
+      = render :partial=>"group_users", :locals=>{:input_id=>"group_users",:pre_fill_data=>@group_users }
+  .actions
+    = f.submit 'Save'

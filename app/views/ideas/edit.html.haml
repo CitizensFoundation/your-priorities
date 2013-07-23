@@ -1,0 +1,38 @@
+= render :partial => "ideas/header"
+.col-group
+  .col-1
+    .col-content
+  .col-11
+    .col-content
+      = form_for(@idea) do |f|
+        = f.error_messages
+        .field
+          .field_label
+            = tr("Idea name", "view/ideas/edit")
+          .field_box
+            = f.text_field :name, :size => 40, :maxlength => 60, :id => "dontautocompletethis"
+        - if current_sub_instance and current_sub_instance.required_tags
+          .field
+            .field_label
+              = tr("Idea type", "views/ideas/form")
+            - current_sub_instance.required_tags.split(',').each do |sub_instance_tag|
+              = f.radio_button :idea_type, sub_instance_tag, checked: @idea.issue_list.include?(sub_instance_tag)
+              %span.Chapter_name= tr(sub_instance_tag, "views/ideas/form")
+        .field
+          .field_label
+            = tr("Group", "views/ideas/form")
+          .field_box
+            - if current_user.is_admin
+              = f.select :group, options_for_select_simple(Group.all.collect {|p| [ p.name, p.id.to_s ] }, @idea.group_id.to_s, tr("Public","views_ideas_form"))
+            - else
+              = f.select :group, options_for_select_simple(current_user.groups.uniq.collect {|p| [ p.name, p.id.to_s ] }, @idea.group_id.to_s, tr("Public","views_ideas_form"))
+        .field
+          .field_label
+            = tr("Category", "view/users/_form_long")
+          .field_box
+            = f.select :category, options_for_select_simple(Category.all.collect{|s|[s.i18n_name,s.id]}, @idea.category.id)
+        .field
+          .field_label= tr("Description", "view/ideas/form")
+          .field_box= f.text_area :description
+        %br/
+        = f.submit tr("Save idea", "view/ideas/edit"), :class => "yellow_button"

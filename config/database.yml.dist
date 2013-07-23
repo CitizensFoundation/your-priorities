@@ -1,0 +1,39 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  collation: utf8_general_ci
+  git_branch: master
+  reconnect: true
+  database: your_db_name
+  pool: 5
+  username: your_db_user_name
+  password: your_db_user_password
+  airbrake_api_key: 00000000000000000000000000
+  secret_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  session_key: _your_app_session
+test:
+  adapter: mysql2
+  encoding: utf8
+  collation: utf8_general_ci
+  git_branch: master
+  reconnect: true
+  database: your_db_test_name
+  pool: 5
+  username: your_db_user_name
+  password: your_db_user_password
+  airbrake_api_key: 00000000000000000000000000
+  secret_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  session_key: _your_app_session
+production:
+  adapter: mysql2
+  encoding: utf8
+  collation: utf8_general_ci
+  git_branch: master
+  reconnect: true
+  database: your_db_production_name
+  pool: 5
+  username: your_db_user_name
+  password: your_db_user_password
+  airbrake_api_key: 00000000000000000000000000
+  secret_token: xxxxxxxxxxx
+  session_key: _your_app_session

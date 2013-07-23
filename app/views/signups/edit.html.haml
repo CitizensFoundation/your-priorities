@@ -1,0 +1,20 @@
+%h1 Editing signup
+= form_for(@signup) do |f|
+  = f.error_messages
+  %p
+    = f.label :sub_instance_id
+    %br/
+    = f.text_field :sub_instance_id
+  %p
+    = f.label :user_id
+    %br/
+    = f.text_field :user_id
+  %p
+    = f.label :is_optin
+    %br/
+    = f.text_field :is_optin
+  %p
+    = f.submit "Update"
+= link_to 'Show', @signup
+|
+\#{link_to 'Back', signups_path}

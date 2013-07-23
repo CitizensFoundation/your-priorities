@@ -1,0 +1,14 @@
+= @instance.admin_name
+%br/
+= @instance.admin_email
+%br/
+http://#{@instance.base_url_w_sub_instance}
+%br/
+%br/
+\---
+%br/
+= tr("This is an automatic email from {instance_name}","email", :instance_name => @instance.name)
+= tr("sent to","email")
+= @user.email
+\.
+\#{tr("If you do not want to receive this sort of email please adjust your email settings here","email")}: #{link_to @user.unsubscribe_url, @user.unsubscribe_url}

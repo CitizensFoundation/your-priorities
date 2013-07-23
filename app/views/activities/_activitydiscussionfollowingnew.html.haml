@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/sound.png", :width => "16"}/
+= raw tr("{user_name} is following the discussion on {discussion_name}", "view/activities/_activitydiscussionfollowingnew", :user_name => link_to(activity.user.login, activity.user), :discussion_name => link_to(activity.activity.name, activity_comments_url(activity.activity)))

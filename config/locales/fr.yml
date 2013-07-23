@@ -1,0 +1,490 @@
+---
+fr:
+  date:
+    formats:
+      default: '%d/%m/%Y'
+      short: '%e %b'
+      long: '%e %B %Y'
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    month_names:
+    - 
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+    abbr_month_names:
+    - 
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    order:
+    - :day
+    - :month
+    - :year
+  time:
+    formats:
+      default: '%d %B %Y %H:%M:%S'
+      short: '%d %b %H:%M'
+      long: '%A %d %B %Y %H:%M'
+    am: am
+    pm: pm
+  datetime:
+    distance_in_words:
+      half_a_minute: une demi-minute
+      less_than_x_seconds:
+        zero: moins d'une seconde
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+      x_seconds:
+        one: 1 seconde
+        other: '%{count} secondes'
+      less_than_x_minutes:
+        zero: moins d'une minute
+        one: moins d'une minute
+        other: moins de %{count} minutes
+      x_minutes:
+        one: 1 minute
+        other: '%{count} minutes'
+      about_x_hours:
+        one: environ une heure
+        other: environ %{count} heures
+      x_days:
+        one: 1 jour
+        other: '%{count} jours'
+      about_x_months:
+        one: environ un mois
+        other: environ %{count} mois
+      x_months:
+        one: 1 mois
+        other: '%{count} mois'
+      about_x_years:
+        one: environ un an
+        other: environ %{count} ans
+      over_x_years:
+        one: plus d'un an
+        other: plus de %{count} ans
+      almost_x_years:
+        one: presqu'un an
+        other: presque %{count} ans
+    prompts:
+      year: Année
+      month: Mois
+      day: Jour
+      hour: Heure
+      minute: Minute
+      second: Seconde
+  number:
+    format:
+      separator: ','
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        format: '%n %u'
+        unit: €
+        separator: ','
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+    human:
+      format:
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: octet
+            other: octets
+          kb: ko
+          mb: Mo
+          gb: Go
+          tb: To
+      decimal_units:
+        format: '%n %u'
+        units:
+          thousand: millier
+          million: million
+          billion: milliard
+          trillion: billion
+          quadrillion: million de milliards
+  support:
+    array:
+      words_connector: ', '
+      two_words_connector: ' et '
+      last_word_connector: ' et '
+    select:
+      prompt: Veuillez sélectionner
+  helpers:
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un %{model}
+      update: Modifier ce %{model}
+      submit: Enregistrer ce %{model}
+  errors:
+    format: Le %{attribute} %{message}
+    messages:
+      inclusion: n'est pas inclus(e) dans la liste
+      exclusion: n'est pas disponible
+      invalid: n'est pas valide
+      confirmation: ne concorde pas avec la confirmation
+      accepted: doit être accepté(e)
+      empty: doit être rempli(e)
+      blank: doit être rempli(e)
+      too_long: est trop long (pas plus de %{count} caractères)
+      too_short: est trop court (au moins %{count} caractères)
+      wrong_length: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      equal_to: doit être égal à %{count}
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      odd: doit être impair
+      even: doit être pair
+    template:
+      header:
+        one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
+        other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
+      body: 'Veuillez vérifier les champs suivants : '
+  activerecord:
+    errors:
+      messages:
+        taken: n'est pas disponible
+        record_invalid: 'La validation a échoué : %{errors}'
+        inclusion: n'est pas inclus(e) dans la liste
+        exclusion: n'est pas disponible
+        invalid: n'est pas valide
+        confirmation: ne concorde pas avec la confirmation
+        accepted: doit être accepté(e)
+        empty: doit être rempli(e)
+        blank: doit être rempli(e)
+        too_long: est trop long (pas plus de %{count} caractères)
+        too_short: est trop court (au moins %{count} caractères)
+        wrong_length: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+        not_a_number: n'est pas un nombre
+        not_an_integer: doit être un nombre entier
+        greater_than: doit être supérieur à %{count}
+        greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+        equal_to: doit être égal à %{count}
+        less_than: doit être inférieur à %{count}
+        less_than_or_equal_to: doit être inférieur ou égal à %{count}
+        odd: doit être impair
+        even: doit être pair
+      template:
+        header:
+          one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
+          other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
+        body: 'Veuillez vérifier les champs suivants : '
+      full_messages:
+        format: '%{attribute} %{message}'
+  9ffd04e5001b2551d685667a380b1660: Ce commentaire a été éffacé
+  8f7613aec3ee49c1b3ccc00de8a305fd: Editer le commentaire.
+  1d052afe05362d164fbe867cddc17f8a: Sauvé commentaire
+  06277ee8d0fd9ef7427ca88315ba493a: Connection de Twitter a échoué.
+  77f446ecf43d90de28fe4fc19c9dccac: Votre compte Twitter est maintenant connecté
+  e13e12a82f9dcac732bb8e342c94c0da: Images téléchargées.
+  931e83ec3137763706201b2981b46b12: Proposition d&#x27;acquisition.
+  0b75a01238f5516c50f167a31155bdd9: Résultats des votes sur les proposition d&#x27;acquisition
+  07cf1f790935949c02c3289638e3ea40: Discussions votre supporteurs participent.
+  5f7b60e82c118f01a103a44de857873f: Mergers&amp;Acquisitions de vos supporteurs.
+  cd267635c8a38e2acba076b0edeeedbe: Discussions dans votre réseaux
+  b8955019e9083c2a87eecbdbbd0042c0: Fusions&amp;Acquisitions dans votre réseaux,
+  99c15641a5a4b07fcdabb57d07550065: Acquisitions ayant besoin de
+  cc523b45cdeb8ad04a22ca63c63db330: Sauvez vos paramètres.
+  0d80cee327875c3740c7ad5ebba57be1: Vos notifications d'emails.
+  5bcae97233d5480140596e6e948ff8b0: Votre photo
+  83bbc53ea4530a89bf63143035d4455f: Votre compte a été éffacé.Au revoir!
+  e17fdb615452f440c793b5ddad90dd5e: Mise en garde
+  ddad25972a81c0d9999c38883188b04f: Comptes en probation
+  33ae5f72db5d1abde26686505230e8a1: Membre non trouvé
+  b6cfac26b1d0049e38433f730c3cebd8: S&#x27;il vous plaît cocher la casse a coté des
+    personnes que vous voulez rencontrer.
+  1945e5ccc0bd89812560b30f7c48639d: Vos notifications.
+  f04696619778b76ed0810c0cc937f40c: Paramètres de la liste d&#x27;email.
+  6b217791ec3e71a71356fb3a03076311: Paramètres sauvés
+  ca41292434aab8ae239ed3953dc1754a: Importés vos contacts
+  2e975f5d734cdb2fe628f44e89d1f15a: Mise à jour des contacts.
+  e02decaebace93b27ce239a671e77453: Vos
+  0ef9a6968cfe92f7bde817483fb5d0cf: Opposant
+  198584454b0ce1101ff5b50323325aa8: Votre adresse email
+  d932a29eed2a96a90348c1cf59bfa1b4: Demamder un nouveau mot secret
+  3544848f820b9d94a3f3871a382cf138: Nouveau mot secret
+  c49e334a836542581aac058b2f9b372f: Réecrire mot secret
+  0b39c5aca15b84b1ad53a94d6b3feb78: Changer mot secret
+  b651efdb98a5d6bd2b3935d0c3f4a5e2: Requis
+  20db0bfeecd8fe60533206a2b5e9891a: Prénom
+  d10403db63bcbde2b3038776452ad8e2: Nom
+  1eb2eabde83b57255b782f1fc5793e01: (Ne figurant pas sur le site)
+  b357b524e740bc85b9790a0712d84a30: Adresse email
+  20b86b18475850202a63d9550071b782: (Jamais partagé sans votre permission)
+  cc83a5678878f2fb8d453b555c037920: Quel identifiant souhaitez vous avoir sur le site?
+  ebb061953c0454b2c8ee7b0ac615ebcd: Optionel
+  15bbb9d0bbf25e8d2978de1168c749dc: Site internet
+  97f371a56a13b63cf413464aa03d754c: Se connecter sur les réseaux sociaux
+  71fde64618d06077f89667047ca380c6: Nous ne posterons jamais rien sur votre Facebook
+    ou Twitter sans votre explicite permission
+  800e4dd8dfc264160c0b52347f7f9d4c: Annuler votre compte
+  2682beed28fc3d3709619dbf2a469dbb: Télécharger votre photo.
+  f2fc7490cbdb0db5cd6f1a4e7edb0da1: Votre compte
+  8ae5811be1a55b9b8447ad2dbdadbf6e: Photo
+  713a01ab419f96cb320352765e8791d4: Bio
+  a67ce68ccac082ad54a552bdbcb6ecd7: Notifications d'email
+  1bd14216408d94261ca743907c692bb1: Pour les administrateurs
+  ca0f9a86ca33f1d6baa9051bd7f4ed21: Politque de confidentialité
+  9b5016f406a56aa10fdc5384de2696b8: Sauvegarder les parmètres de votre email.
+  cce99c598cfdb9773ab041d54c3d973a: Profile
+  6f796b0e6deb4f4c2c0ee0ed5e10e117: Supporteurs
+  dc647eb65e6711e155375218212b3964: Mot de passe
+  c6187aaeb01f4d0fd41f72077df5c9ca: Taper le à nouveau
+  3903aab323863bd2e9b68218a7a65ebd: Supporteur
+  fd038fc7f319e48f3115d92bf5bdbef9: Ignorer
+  5e178542b85fb18ca3c459e9a95f4f2e: Code postale
+  730956af87021c351084317bbc63eea6: VOLUME
+  83c101ec84ebd1c0e45fa1cd5b9300d6: opposé
+  bbf72fb222c775537e056152bf086bac: Commentaire sur vos discussions.
+  281bdea3a5c8ccd3932a66f493952011: Lorsque quelqu'un vous suit ou l'un de vos contacte
+    vous rejoint.
+  44d10c23f0d20ae71ce2ec8881582dbb: Messages privés et bulletins du profile.
+  7dce122004969d56ae2e0245cb754d35: Editer
+  5b378488a7da7228e25ac9ad5ec2f248: Est-ce utile?
+  8f7f4c1ce7a4f933663d10543562b096: Au sujet de
+  4f81a0633715f67573f3acffd54987ea: Influence
+  021da1b20f73dc252361a54d80497ef3: Rangs
+  8cf04a9734132302f96da8e113e80ce5: Maison
+  0be8406951cdfda82f00f79328cf4efc: Commenter
+  6d0a578ca2f2c0e792fc923002fccbe3: il y a
+  0323de4f66a1700e2173e9bcdce02715: Déconnexion
+  13348442cc6a27032d2b4aa28b75a5d3: Recheche
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Reporter
+  8413c683b4b27cc3f4dbd4c90329d8ba: Commentaire
+  49ee3087348e8d44e1feda1917443987: Nom
+  940663fd4428d2c86f9a4780b6574028: 'Message:'
+  b5a7adde1af5c87d7fd797b6245c2a39: Description
+  af1b98adf7f686b84cd0b443e022b7a0: Catégories
+  484d543cff2e8c3a93343e81b7b9ed2c: Unions Européenne et E.E.E Top Priorités
+  d64518ec4a60ae31b2b5e4074646cca1: Nos règles
+  74d06fce126329ec92785f48f3165e95: Opposez vous et connectez vous.
+  c9413dd7682a45da9ecc9efa8cea47d7: En progrès
+  4475404a8e17049853e83d014a833ca1: Montante
+  0f57d5b441651c57eac9f91efaa5a75a: Descendante
+  37fc5aed92a40b16dafd17cee72e3154: Idée au top
+  52f4e192179a8449b77cc149541a5ba0: Pas encore d&#x27;idées
+  7f5fd77650bc35beaaf6fc66255e24f5: Anouter une idée sur votre liste.
+  b6d4223e60986fa4c9af77ee5f7149c5: Se connecter
+  d46ef9e7211d041671cdbe6c3d884884: Idées
+  1192d7b5c357203a331761417698b02c: Débat
+  a80425472d94ae02c836da5b6f205b7b: Mise à jours
+  8c9cfce84c2468d429ede47de426cddf: Votre réseaux
+  aac1a9213d103bbd45fded4daa557c18: Paramètres de subinstance.
+  4b7572b8d7d7881f2e63019e56d40eef: Compte subinstance
+  fc9add24aaa4df29c057fc80031b01e8: Moins de 20 charactères
+  3d35e1c739ae399cc7d6923c1d8103fb: Titre ou nom d&#x27;Organisation
+  086716f54c226a75ccc31834aac1e1ca: Autoriser le géoblocking
+  2130061e02858d68bb78dbbbe921ed12: Message pour une nouvelle idée
+  18c2870396e89027fc397f726f15a9f5: Message pour les utilisateurs
+  a0d7e042ee84ad945d55f3862369255f: Télécharger votre image
+  668deb1091498fc9353f5d297fd55877: lettres
+  03368e3c1eb4d2a9048775874301b19f: Choisir une catégorie
+  0680c0f4acc215c7c75e5dafe9384e7c: Ajouter un lien vers un site externe
+  59d7434481f250db2c48858375499a31: Points les plus récents
+  0fbcdfe6232142c357542a262ce3ff53: Récement corrigé
+  75dd5f1160a3f02b6fae89c54361a1b3: Points
+  709468af25e91284821d1bdbfdded24c: Tout
+  b1c94ca2fbc3e78fc30069c8d0f01680: Tout
+  ea1944643d742bb1ffa3ebccf5162745: Vos idées
+  282adec2b7b3c994dfb7812a3e33280c: Fin
+  8de16e7a08998e0e60d27d6b4d441379: Top idées pour les dernières 24 hres.
+  22af645d1859cb5ca6da0c484f1f37ea: Nouveau
+  a604e73131bb1a34283a5ebcd349def4: supporté
+  3b878279a04dc47d60932cb294d96259: Vue d&#x27;ensemble
+  8e1a7d9287a48440106ef0181c5a0181: Acheter une pub.
+  8a19d047012bae2f9b2e2fa63924095a: Radié
+  1b92838e756182fda710cfd58819f671: Points pour
+  09a1e75ab40c7bb5efb09d013aff3a53: Ajouter un point pour
+  fffb47b03232ded9ecc86fa01eeaa695: Points contre
+  42a965482d059f063d4503251a2548b8: Ajouter un point contre.
+  1959fc2b11821f9f6709816c30425e6d: Je m'oppose a ceci et veut expliquer pourquoi.
+  30f30a2e0cabe6391e31a9f86bcfdbb8: Créer un URL pour Twitter
+  e42d894b926c4833956b61471df18351: Idées les plus controversées.
+  23f719bbec8794c6dbb09214a244c6da: Aucun points n&#x27;ont été révisées récemment.
+  3fcad287a5c60f264836b61b3d475f6d: CLiquer le numéros pour changer sa position sur
+    votre liste.Vous pouvez aussi faire glisser et déposer.
+  de4e9120aa64ffe754f1c6aa8d366aa4: Cliquer le X pour enlever l&#x27;idée de la liste.
+  e3afed0047b08059d0fada10f400c1e5: Admin
+  c1ef19b86849e508f32af9838a93e4c9: Connecter ceci a une autre idée&lt;span class=&#x27;small&#x27;&gt;
+    Commencer a tapé le nom&lt;/span&gt;
+  6a80ac9068f0e01bc56a00ecdf9e4f9f: DEBATTRE
+  a2d5e7a9d03b49d0639ab0a75a59d2c2: Top points
+  f9aae5fda8d810a29f12d1e61b4ab25f: Utilisateurs
+  81a35ec1dc4a194f938b211a86a57826: Description Meta
+  b1776b330fef70de81bdeabff614a776: Que supportez-vous?
+  45d74bdb9de5d4f07a7b7eefac42610a: Inciter
+  e03111ef6f2e55e5960934ac2ed6018c: Déclaration de mission
+  34e8ac1104cce23ef5971ddf76627eee: Nom des administrateurs.
+  41d1ee00b01104c9f4a88fcece14a0a2: Administrateur email adresse
+  b1be1463419ed63d18dbe0d66550a580: Notification &quot;de&quot;l'adresse email.
+  072a47f5e0aa944cef4819332279486f: Message aux utilisateurs du service.
+  dc821bfd60864e4ad32d56c782a6bca8: Message pour pubs.
+  89762873e1b092572e096538b6545de1: Message for questions.
+  48fe3e42c94085d441fa7aa913719b74: Message pour le réseaux
+  d7bb3b47708d952b137a5c2cc19dcc3a: Message pour finis
+  14ebb9f1b4c7c2c610758dee2d1484cd: Message pour les points
+  e1dade28616e41597784b9164af1691b: Message pour nouveaux flux.
+  f05039017b0e60de7dfc2b8a9f95ac68: Cacher idées avec 0 supporteurs ou opposants.
+  d9f28872df1a47136128b81a1a01c237: a un  maximum de 60 charactères
+  ab70cd88a40e7c3247bfce039ad0045d: S.V.P entrer plus de cinq charactères.
+  3b1c28cb85f91bf5118910402e832330: S'il vous plaît indiquer votre nom de famille.
+  dc8139edee3a28f748478bd298501642: S'il vous plaît indiquer votre code postale
+  5ab61f5911f94fe76e81db9b7e64006e: S'il vous plaît indiquer votre age.
+  889bb6dcdac2e269059e0d9755a76071: S'il vous plaît indiquer votre sexe.
+  4607ccb71469675944516398e717479c: S'il vous plaît accepter les termes et conditions.
+  1d508341791ac8861952384d2fd9eb96: devrait etre entre 2 et 50 caractères.
+  38e6af48fcad4cfd847acad90ae913a3: est déja pris
+  1fd87a910601e6833f98489b446c1293: est déja pris
+  939d09ea0c18215ca9032ef913d82567: Nouvelle idées
+  ee710d46f1e36118e1c4aea9cc51305e: Je respecterais les lois de mon pays.
+  8070ff490b986cbbe5908dba6688b882: Nous promettons de
+  03fa96387303a39d8a63c153bac26958: 'Nous nous reservons le droit de:'
+  ccb170b7563ba9e94e021fabfef45771: De changer les régles sans notice préalable.Nous
+    vous préviendrons par email si vous êtes membre
+  9977ab924c89e6c98b1cf1595354ada3: Dernière activitée
+  42bd4c0819c498d1c1ab622de74d6f82: a soutenu
+  833c90a077a2beda3b6cd000f3fe5c29: Idées dues au hazard
+  8bf8854bebe108183caeb845c7676ae4: de
+  d3da97e2d9aee5c8fbe03156ad051c99: Plus
+  3bc9cc15d02611dc4781a6ce6bf86710: Supporte
+  13af6b983fc9bbd55699881a1023a539: Opposé
+  da0a4c939d482be3177c8e0e5d630bfb: Créer un compte
+  21bdc5689c12595ae14298354d5550d5: Avez-vous déja un compte?
+  1ac039df21500af0072a25a2b2859dae: Cette idée n'a pas bougée dans le classement ce
+    mois-ci.
+  93cba07454f06a4a960172bbd6e2a435: Oui
+  bafd7322c6e97d25b6299b5d6fe8920b: Non
+  f4ec5f57bd4d31b803312d873be40da9: Changes
+  f5a7924e621e84c9280a9a27e1bcb7f6: Monde
+  a4b522102353672b9f0d5582e8386348: Les informations me concerant sont correctes et
+    je peux recevoir lire les emails envoyés à l'adresse donnée.
+  2d31841ff75aeb20f2c6d4d96411129f: Je serai responsable des contenus que je crée
+    et personnes d'autres n'utilisera mon compte.
+  b357a942b0558db7d42891322b9bb729: Je serai sur le site.
+  1cab6f0a48459aaac4e3116773de5781: Je ne publierai pas des publicités ou des spams
+    sur le site.
+  6231033110be3e0b22eeda6b6b336835: Je n'utiliserai pas le site pour intimider de
+    quelques façon que ce soit les autres utilisateurs ni publier des contenus mensongés
+    ou calomnieux.
+  4bb709d8718626d39a5dbf2e2589528e: J'informerai les administrateurs si je remarque
+    des contenus ne respectant pas les Régles en cliquant sur l'icon de notification.
+  94386c683395a8c1a30a6f405a3a7116: Je créerai et utiliserai seulement un profile
+    sur le site.
+  6c3b5928436080f8aba591af541dd5f0: Faire de notre mieux afin que le site reste ouvert
+    et functionnel.
+  388e31e2da00cdad1159f0fecb186fff: Nous ne devoilerons pas les données des utilisateurs,qui
+    ne sont pas publiques sur le site,à des tierces sans une injonction de la court.
+  86edce6490342fc40dd2a8d6f5936d31: Nations Unies  Top Prioritées
+  7dd982d0948637b4ae83f2804bd489ca: Pourquoi cette idée devrait être soutenue?
+  99b4622ebe1e9894ede410500cde5915: Expliquer votre point
+  83218ac34c1834c26781fe4bde918ee4: Bienvenue
+  3c5db2447415c261cf024be85458ce35: Utile
+  fb85dee77167699087f1d6eec1d2fbb7: Code postal
+  ee5ebd05906cdf6ae230483207dd4f89: Groupe d'Age
+  019ec3132cdf8ee0f2e2a75cf5d3e459: Sexe
+  15c9367c3506280cfaf98cb065799bf4: Mise a jour de vos idées
+  6c25e6a6da95b3d583c6ec4c3f82ed4d: Périodic
+  9030e39f00132d583da4122532e509e9: Mensuel
+  6e7b34fa59e1bd229b207892956dc41c: Jamais
+  f2a6c498fb90ee345d997f888fce3b18: Effacé
+  ce04585c79301be6c8d925ce8ea62ac2: Vous êtes maintenant connecté en tant que %{user_name}
+  20930e84a74461ad2eb23bb9abae2385: '%{user_name} est déja un membre.'
+  861d4b86ae3872b02e3c94fe57e3386b: Vous avez déja invité %{user_name}
+  8cff2242ab57dfb42f2782bedffb46bb: Invité%{user_name}
+  0f370b47675e86479ae247510cb17107: Vos supporteurs %{currency_name}
+  8b65f7e6ff8c02457a07d0cfb1860c01: '%{currency_name} dans votre réseaux'
+  c9dc159b90491961d253b2d98e3f7a97: Derniers commentaires sur %{user_name} discussions
+  f5684dc597af6b4e21cb599d6d26665a: '%{user_name} révision à %{point_name}'
+  2f1de29583288df67e5b7e8a9d626146: Réviser %{point_name}
+  f5a6180d840015cce9f3dbdcac525e2a: Révisé %{point_name}
+  9c5d7952632390609b7590dcfa19013b: Révision éffacé de %{point_name}
+  39d0ded9dda0a33dc91e2d566613ec1b: Suivant maintenant %{user_name}
+  891cfa670d02125e3b09f536debfbc75: Tout %{tags_name}
+  5174b6261ee0ccaa4423d82794705730: Editer %{tag_name}
+  a672531d6b026cfa1d26e16eefaa16c2: Sauvés %{tag_name}
+  621df26b895998b50fdad2c763f695e3: Discussions sur %{point_name}
+  d533bc81d129968f57a188436d3575ac: '%{user_name} à poster un bulletin %{discussion_name}'
+  e917c9bc049cb92cf6702f88bd91b9ba: '%{count} averstissement'
+  a1c355f2e50925dcdbcb509e445aa6df: Vous pouvez regrouper toutes vos notifications
+    dans un %{rss_url}
+  e4ee317ba569d42f729270dc54c58d25: '%{count} documents'
+  665255de10a45ae3e1c0e81b515b55ca: '%{count} discussions'
+  06591670b8600f71493c779ff6c5e331: '%{position} plus influent'
+  10f657608d446e7b05706b926dc57e99: '%{user_name} n''a pas encore acheté de publicités'
+  c37ad8c5cf363431fbaa23a52ef949a4: par %{author_sentence}
+  e7c3b88bf30f862f48fcefde6490b946: ajouter il y a %{time_ago}
+  c02f1bde8d33b74d66c9440588e83efb: '%{count} personne(s) ont trouvé ceci utile'
+  286d1e51c26ec05771074db8a95adb41: '%{count} suppoteurs'
+  c29196003ef3c4f020130aab1c63d4ea: '%{count} points'
+  2f64c030f4bec3e2c21e78506cc78f63: 25 idées au top %{instance_name}
+  1b67e09d932e395f8a9629cfd89776df: Bienvenue à  %{instance_name}
+  fc2e12b5aff1b388bc309a96bccb3f9b: Merci d'avoir ajouté %{idea_name}
+  9f86485bb188bd3e5c78e5f3b86b90d0: '%{count} supporteurs'
+  a525acf161e094893ee74072c35df616: Votre %{position} idée.
+  fb00406d232c6c2e02cdd9560bd27b68: 'POint supportant %{idea_name}:'
+  92d562cddce4a845439e302189e00192: Changer logo à %{instance_name}
+  8df9c04d95e71c0bb899ac7a5af8cdfb: Ajouter une idée%{idea_name}
+  e171941d65123784391f9a42568f41ca: Activitée pour %{idea_name}
+  ac717bd14c68bc426139b20f01d941ea: '%{user_name} a été le/la premièr(e) %{idea_name}'
+  a9d26e16b2440413a48053b4c357d540: Paramètres %{instance_name}
+  277677b70a55c6704d1273107d6f081e: Paramètres %{instance_name} sauvegarder
+  c772367d0682d61254cebb1dcfd44c93: Discussions sur %{idea_name}
+  50ba276fb21af965a9266b3aaf75c747: S'il-vous plaît confirmer votre compte,ainsi vous
+    pouvez pleinement prendre part dans%{instance_name}. Si vous ne confirmer pas
+    votre compte,vos idées ne seront pas supportées dans les calculations globales
+    des idées.
+  a5998dfe5002eeab05de3cbcc98f9544: Ceci est un email automatique  %{instance_name}
+  e1e583ed208b1fbecec8b65dc272a098: Est-ce que cette idée de  %{user_name} est une
+    attaque personnelle ou une violation des règles.?
+  a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} idées'
+  7b67f24364e4e88bcd95c3237d3fa318: '%{author_sentence}'
+  a534ed26c1d745e8e15e33c1dad34773: Points ajouté %{time_ago}
+  6ba1364d96463a5bb5b064ce138e3128: '%{user_name} vous demande de considérer %{idea_name}'
+  e31e799048673ff7f3699d5b5ddc9fa1: Inscris %{time_ago}.
+  4b33282a7eb266c62369d1f27a8c6899: Dernière visite %{time_ago}.
+  d9d222130429eb44be0faae283593dd6: En devenant membre de %{instance_name}Je déclare
+  f9ace95bf3d68994adde566e7ed46c8c: Vos %{instance_name} paramètres
+  c3829f98b9d811ef102006ff00a83881: '%{count} révisions'

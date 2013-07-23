@@ -1,0 +1,22 @@
+.col-group
+  .col-1
+    .col-content
+      = render :partial => "users/pic_48", :locals => {:user => @user}
+      = render :partial => "users/profile_nav"
+  .col-11
+    .col-content
+      = render :partial => "users/profile_info"
+      - if @ideas.any?
+        - if @user.endorsements_count > 5
+          %h2= tr("{idea_count} #{IDEA_TOKEN_PLURAL}", "view/users/show", :idea_count => @ideas.length)
+        - else
+          %h2= tr("{count} #{IDEA_TOKEN_PLURAL}", "view/users/show", :count => @ideas.length)
+        - @ideas.each do |idea_endorsement|
+          - idea = idea_endorsement
+          = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+          %div{:id => "idea_detail_#{idea.id}"}
+        %h2= tr("Latest Activity","home")
+        - for activity in @activities
+          = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_nouser"}
+        - if @activities.total_pages > 1
+          = will_paginate(@activities, :params => {:action => "activities"} )

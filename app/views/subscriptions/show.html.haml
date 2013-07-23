@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Paymill:
+  = @subscription.paymill_id
+%p
+  %b User:
+  = @subscription.user_id
+%p
+  %b Plan:
+  = @subscription.plan_id
+%p
+  %b Last payment at:
+  = @subscription.last_payment_at
+%p
+  %b Active:
+  = @subscription.active
+
+= link_to 'Edit', edit_subscription_path(@subscription)
+\|
+= link_to 'Back', subscriptions_path

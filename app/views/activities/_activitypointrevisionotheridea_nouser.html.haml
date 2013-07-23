@@ -1,0 +1,8 @@
+- if activity.revision.has_other_idea?
+  /%img.icon{:border => "0", :height => "16", :src => "/assets/icons/comments_add.png", :width => "16"}/
+  = raw tr("Linked {point_name} to {idea_name}", "view/activities/_activitypointrevisionotheridea_nouser", :point_name => link_to(activity.point.name, point_revision_url(activity.point,activity.revision)), :idea_name => link_to(activity.revision.other_idea.name, activity.revision.other_idea))
+  \.
+- else
+  /%img.icon{:border => "0", :height => "16", :src => "/assets/icons/comments_delete.png", :width => "16"}/
+  = raw tr("Removed the idea link from {point_name}", "view/activities/_activitypointrevisionotheridea_nouser", :point_name => link_to(activity.point.name, point_revision_url(activity.point,activity.revision)))
+  \.

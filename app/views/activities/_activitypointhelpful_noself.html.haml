@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/fugue/plus_small.png", :width => "16"}/
+= raw tr("{user_name} marked {point_name} helpful", "view/activities/_activitypointhelpful_noself", :user_name => link_to(activity.user.login, activity.user), :point_name => link_to(activity.point.name, activity.point))

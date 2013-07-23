@@ -1,0 +1,63 @@
+#right_column_ideas
+  - if current_user.endorsements_count > 25
+    %div{:style => "padding-left:30px; padding-bottom: 3px;"}
+      = will_paginate(current_user_endorsements, :renderer => 'RemoteLinkRenderer', :previous_label=>tr("Previous","ajax pagination"), :next_label=>tr("Next","ajax pagination"), :class => "ajax_pagination", :inner_window => 2)
+  #your_ideas
+    - for endorsement in current_user_endorsements
+      .your_idea_endorsement{:id => "endorsement_#{endorsement.id}", :style => "cursor:move;"}
+        %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+          %tr
+            %td{:align => "right", :style => "padding-top: 4px;", :valign => "top", :width => "20"}
+              .endorsement_row{:id => "endorsement_#{endorsement.id}_row"}
+                = link_to "#{endorsement.position}.", edit_endorsement_url(endorsement, :region => "yours"),                                                    |
+                  :method => :get,                                                                                                                              |
+                  'data-disable-with' => "",                                                                                                                    |
+                  'data-loader-name' => "circle",                                                                                                               |
+                  :remote=>true,                                                                                                                                |
+                  :title => tr("Click the number to change its position on your list. You can also drag and drop the names to sort.", "view/ideas/_yours") |
+            /%td{:valign => "top", :width => "220"}
+            /  .if.else{:class => "endorsement_<haml:silent> endorsement.is_up? </haml:silent><haml:block>up</haml:block><haml:silent> </haml:silent><haml:block>down</haml:block>"}
+            /    = link_to_unless_current h(endorsement.idea.name), endorsement.idea
+            %td{:valign => "top"}
+              .endorsement_x
+                = link_to "x", endorsement_path(endorsement, :region => "your_ideas"),                                                        |
+                  :method => :delete,                                                                                                              |
+                  'data-disable-with' => "",                                                                                                       |
+                  'data-loader-name' => "circle",                                                                                                  |
+                  :remote=>true,                                                                                                                   |
+                  :class => "your_ideas_remove", :title => tr("Click the X to remove this idea from your list", "view/ideas/_yours") |
+    :javascript
+      $(function() {
+          $('#your_ideas').sortable(
+                  {
+                      axis: 'y',
+                      items: 'div.your_idea_endorsement',
+                      scroll: true,
+                      update: function(){
+                          order = [];
+                          $("#your_ideas").children("div").each(function(idx, elem) {
+                              order.push(elem.id.split('_')[1])
+                          });
+                          $.ajax({
+                              type: 'post',
+                              dataType: 'script',
+                              data: {"your_ideas": order},
+                              url: '#{url_for :controller => :users, :action => :order}'
+                          })
+                      }
+                  }
+          )
+      });
+        - if current_user.endorsements_count < 5
+    - if current_user.endorsements_count > 0
+      %p
+    %div{:style => "padding: 0px 10px 10px 10px;"}
+      = tr("<p>Click on an <span class=\"idea_add\">endorse</span> or <span class=\"idea_add\">oppose</span> button to add a idea to your list.  Then drag and drop to change the order.</p>", "view/ideas/_yours")
+      = tr("<p>The big numbers you see next to each idea is the overall rank across all members.  The higher your endorsement or opposition is in your list, the more it impacts the rankings.</p>", "view/ideas/_yours")
+      = tr("<p>Need inspiration? Try a few <a href=\"/ideas/random\">random ideas</a>.</p>", "view/ideas/_yours")
+  - if current_user.endorsements_count > 25
+    %div{:style => "padding: 0px 0px 10px 20px;"}
+      = will_paginate(current_user_endorsements, :renderer => 'RemoteLinkRenderer', :previous_label=>tr("Previous","ajax pagination"), :next_label=>tr("Next","ajax pagination"), :class => "ajax_pagination", :inner_window => 2)
+  - if current_user.endorsements_count > 4
+    %div{:style => "padding: 0px 0px 10px 20px;"}
+      = tr("<p>Drag and drop to re-order your list or click the # to change its idea.</p>", "view/ideas/_yours")

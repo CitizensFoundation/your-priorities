@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/flag_yellow.png", :width => "16"}/
+= raw tr("{user_name} flagged this idea for review", "view/activities/_activityideaflag_noself", :user_name => link_to(activity.user.login, activity.user), :idea_name => link_to(activity.idea.name, activity.idea))

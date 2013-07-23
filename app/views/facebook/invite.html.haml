@@ -1,0 +1,48 @@
+- if not current_facebook_user_if_on_facebook
+  #hp_intro= @page_title
+  = tr("Click this button to connect to Facebook and find your friends.", "view/facebook/invite")
+  %p
+    = fb_login_and_redirect url_for, :size => :medium, :background => :white, :length => :long
+- if current_facebook_user_if_on_facebook
+  %fb:serverfbml{:width => "625px"}
+    %script{:type => "text/fbml"}
+      <fb:request-form
+      action="<haml:loud> url_for :controller =&gt; 'facebook', :action =&gt; 'multiple', :only_path =&gt; false </haml:loud>"
+      method="POST"
+      type="<haml:loud> tr(current_instance.name,&quot;Name from database&quot;) </haml:loud>"
+      content="<haml:loud> tr(current_instance.mission,&quot;Name from database&quot;) </haml:loud><fb:req-choice url='<haml:loud> url_for new_user_path(:referral_id =&gt; current_user.id, :only_path =&gt; false) </haml:loud>' label='<haml:loud> tr(&quot;Yes, I want to get involved&quot;, &quot;view/facebook/invite&quot;) </haml:loud>' />"
+      invite="true">
+      <fb:multi-friend-selector
+      exclude_ids = "<haml:loud> current_following_facebook_uids.join(',') </haml:loud>,<haml:loud> @facebook_contacts.join(',') </haml:loud>"
+      actiontext="<haml:loud> tr(&quot;Invite your Facebook friends to join your network at {instance_name}&quot;, &quot;view/facebook/invite&quot;, :instance_name =&gt; tr(current_instance.name,&quot;Name from database&quot;)) </haml:loud>"
+      showborder="true"
+      import_external_friends="false"
+      rows="4"
+      cols="4"
+      bypass="cancel"
+      style="width: 600px;" />
+      <p>
+      </fb:request-form>
+- if @users
+  - if @users.size == 0
+    %br/
+    = tr("None of your Facebook friends are {instance_name} members yet.", "view/facebook/invite", :instance_name => current_instance.name)
+  - else
+    %br/
+    = tr("There are {count} of your Facebook friends members of {instance_name}, and have been added to <a href='{network_url}'>your network</a>.<br/>You can <a href='{news_url}'>follow their updates in the feed section</a>.".html_safe, "view/facebook/invite", :count => @users.size, :instance_name => current_instance.name, :network_url => following_user_contacts_path(current_user), :news_url => url_for(:controller => "feed", :action => "your_network_activities")).html_safe
+    #contacts_small
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+        - for user in @users
+          %tr
+            %td{:style => "padding: 10px 5px 4px 7px;", :valign => "top", :width => "26"}
+              = render :partial => "users/pic", :locals => {:user => user}
+            %td{:style => "padding: 7px 5px 4px 0px;", :valign => "top"}
+              = link_to user.login, user
+              %span.pc= tr("{capital}{currency_short_name}", "view/facebook/invite", :capital => user.capitals_count, :currency_short_name => current_instance.currency_short_name)
+              - if user.has_top_idea?
+                %br/
+                = tr("#1 #{IDEA_TOKEN}:", "view/facebook/invite")
+                - if user.top_endorsement.is_down?
+                  %span.opposed= tr("opposed", "view/facebook/invite")
+                = link_to user.top_endorsement.idea.name, user.top_endorsement.idea
+                \.

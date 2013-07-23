@@ -1,0 +1,12 @@
+.encouragement_show_inline{:id => "encouragement_#{ad.id}"}
+  %span.point_name= link_to Idea.unscoped.find(ad.idea_id).name, idea_ad_url(Idea.unscoped.find(ad.idea_id),ad)
+  - if ad.attribute_present?("content")
+    .encouragement_message
+      "#{h(ad.content)}"
+  %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+    %tr
+      %td.top_scale.right_scale{:valign => "top", :width => "200"}
+        = render :partial => "ads/progress_bar", :locals => {:ad => ad}
+      %td.left_scale8{:valign => "top"}
+        %span.encouragements_text
+          = tr("Shown to {seen_count} of {total_count} members so far<br />{user_name} spent <span class='pc'>{cost}{currency_short_name}</span> or <span class='pc'>{per_user_cost}{currency_short_name}</span> per member", "view/ads/_show_inline", :user_name => link_to(ad.user.name, ad.user), :cost => ad.cost, :seen_count => ad.shown_ads_count, :total_count => ad.show_ads_count, :currency_short_name => current_instance.currency_short_name, :per_user_cost => ad.per_user_cost)

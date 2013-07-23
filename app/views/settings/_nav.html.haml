@@ -1,0 +1,19 @@
+#nav_sub
+  %div.user_menu
+    %ul#menu_sub
+      %li.tab1
+        %span.tab_header
+          = link_to tr("Your account", "view/settings/_nav"), settings_url
+      %li.tab2
+        %span.tab_header
+          = link_to tr("Picture", "view/settings/_nav"), picture_settings_url
+      %li.tab3
+        %span.tab_header
+          = link_to tr("Bio", "view/settings/_nav"), new_user_profile_url(current_user)
+      %li.tab5
+        %span.tab_header
+          = link_to tr("Email notifications", "view/settings/_nav"), signups_settings_url
+      - if not current_user.has_facebook?
+        %li.tab6
+          %span.tab_header
+            = link_to tr("Change password", "view/settings/_nav"), edit_password_url(current_user)

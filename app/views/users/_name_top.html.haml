@@ -1,0 +1,12 @@
+= link_to user.login, user
+= tr("{count} endorsements", "view/users/_name_top", :count => user.up_endorsements_count)
+- if user.down_endorsements_count > 0
+  \&middot; #{tr("{count} oppositions", "view/users/_name_top", :count => user.down_endorsements_count)}
+- if user.has_top_idea?
+  - top_idea = Idea.unscoped.find(user.top_endorsement.idea_id)
+  %br/
+  = tr("#1 #{IDEA_TOKEN}:", "view/users/_name_top")
+  - if user.top_endorsement.is_down?
+    %span.opposed= tr("Opposing", "view/users/_name_top")
+  = link_to top_idea.name, top_idea
+  \.

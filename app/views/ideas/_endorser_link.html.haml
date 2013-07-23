@@ -1,0 +1,2 @@
+%li#endorser_link
+  = link_to tr("{count} endorsers", "view/ideas/_endorser_link", :count => @idea.up_endorsements_count), endorsers_idea_url(@idea)

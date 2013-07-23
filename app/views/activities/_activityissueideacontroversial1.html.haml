@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/medal_gold_1.png", :width => "16"}/
+= raw tr("{idea_name} is the most controversial idea in {tag_name}", "view/activities/_activityissueideacontroversial", :idea_name => link_to(activity.idea.name, activity.idea), :tag_name => '<a href="/issues/' + activity.tag.slug + '">' + tr(activity.tag.title,"model/category") + '</a>')

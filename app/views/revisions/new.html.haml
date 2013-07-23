@@ -1,0 +1,31 @@
+= render :partial => "points/header"
+.col-group
+  .col-1
+    .col-content
+      &nbsp;
+  .col-8
+    .col-content
+      = render :partial => "points/nav"
+      %p= tr("<p>You can help the debate by adding your point.</p>", "view/revisions/new")
+      = form_for :revision, :url => point_revisions_path(@point)  do |f|
+        = f.error_messages :header_message => tr("Please review", "view/revisions/new"), :message => tr("We need a change to your point", "view/revisions/new")
+        %p= tr("Summarize your point in <span class='small'>60 characters</span>", "view/revisions/new")
+        = f.text_field :name, :size => 50, :maxlength => 60
+        %p= tr("Is this point {support_radio} in support or {oppose_radio} in opposition to {idea_name}?", "view/revisions/new", :idea_name => link_to(@idea.name, @idea), :support_radio => f.radio_button(:value, 1), :oppose_radio => f.radio_button(:value, -1), :neutral_radio => f.radio_button(:value, 0))
+        = tr("Explain your point.", "view/revisions/new")
+        %p= tr("characters left", "view/revisions/new")
+        = f.text_area :content, :id => 'revisionContent', :button => 'submit', :rows => 5, :cols => 60, :maxLength => 500
+        %p= tr("Include a website source link", "view/revisions/new")
+        = f.text_field :website, :size => 50
+        %p= tr("Link this to another idea <span class='small'>Just start typing the name</span>", "view/revisions/new")
+        = f.text_field :other_idea_name, :size => 50, :autocomplete => "off"
+        %p= tr("Linking to another idea is optional. If your point is in opposition, you can link to a better idea. OR, if your point is supportive or neutral, you can highlight a more specific or related idea.", "view/revisions/new")
+        %p= tr("Why did you make this change?", "view/revisions/new")
+        = fields_for :comment do |c|
+          = c.text_field :content, :size => 50
+        %br
+        = f.submit tr("Save point", "view/revisions/new"), :id => "submit", :class => "yellow_button"
+      = link_to tr("Cancel this revision", "view/revisions/new"), @point
+  .col-3
+    .col-content
+      = render :partial => "points/authors", :locals => {:users => @point.authors }

@@ -1,0 +1,15 @@
+#hp_intro= @page_title
+%p
+  %p
+    - if @ideas.any?
+      - if params[:action] == 'official'
+        = tr("This is the {official_user_name} agenda for {tag_name} as prioritized by all members", "view/issues/list", :tag_name => tr(@category.name, "model/category").titleize, :official_user_name => current_instance.official_user.name)
+      - elsif params[:action] == 'not_official'
+        = tr("These are our members' {tag_name} ideas NOT on {official_user_name} agenda", "view/issues/list", :tag_name => tr(@category.name, "model/category").titleize, :official_user_name => current_instance.official_user.name)
+      - elsif params[:action] == 'official_opposed'
+        = tr("These are our members' {tag_name} ideas that {official_user_name} opposes", "view/issues/list", :tag_name => tr(@category.name, "model/category").titleize, :official_user_name => current_instance.official_user.name)
+      - @ideas.each do |idea|
+        = render :partial => "ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+      %p= will_paginate @ideas
+    - else
+      = tr("No ideas for {tag_name} yet", "view/issues/list", :tag_name => tr(@category.name, "model/category").titleize)

@@ -1,0 +1,22 @@
+- if not ['inactive', 'buried'].include?(idea.status)
+  %table{:width => "100%"}
+    %tr
+      <td align="left" #{"colspan=\"2\"".html_safe unless defined?(noaction) and noaction == true}>
+  .idea_actions
+    %ul
+      %li.button_small_li
+        = render :partial => "ideas/debate_buttons", :locals => {:idea => idea, :endorsement => endorsement, :region => "idea_inline"}
+        .clear
+        #action_insert
+      %li.list_left
+        .move_test
+      %li.list_report
+      %li.list_right
+        - if Instance.current.has_facebook_enabled?
+          .fblike
+            %fb:like{:action => tr("like", "facebook"), :colorscheme => "light", :href => idea.show_url, :layout => "button_count", :ref => "idea", "show-faces" => "false", :width => "120"}
+  %tr
+    %td
+      .clear
+      %div
+        = render :partial => "ideas/endorsement_count", :locals => {:idea => idea} unless defined?(noaction) and noaction == true

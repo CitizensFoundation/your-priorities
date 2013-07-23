@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @account.name
+%p
+  %b Paymill:
+  = @account.paymill_id
+%p
+  %b User:
+  = @account.user_id
+%p
+  %b Active:
+  = @account.active
+
+= link_to 'Edit', edit_account_path(@account)
+\|
+= link_to 'Back', subscription_accounts_path

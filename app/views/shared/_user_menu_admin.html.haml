@@ -1,0 +1,36 @@
+%ul
+  %li.menu_header.menu_margin
+    = tr("Admin settings", "view/shared/_menu")
+  %li
+    \&middot;
+    = link_to tr("Configuration", "view/shared/_menu"), edit_sub_instance_url(SubInstance.current)
+  %li
+    \&middot;
+    = link_to tr("Subscription plan", "view/shared/_menu"), "/subscription_accounts/select_plan"
+  %li
+    \&middot;
+    = link_to tr("Users", "view/shared/_menu"), "/subscription_accounts/users"
+  %li
+    \&middot;
+    = link_to tr("Categories", "view/shared/_menu"), "/categories"
+  %li
+    \&middot;
+    = link_to tr("Statistics", "view/shared/_menu"), "/admin/statistics"
+  %li.menu_header.menu_margin
+    = tr("Reported content", "view/shared/_menu")
+  %li
+    \&middot;
+    = link_to tr("All current", "view/shared/_menu"), "/admin/all_flagged"
+  %li
+    \&middot;
+    = link_to tr("Warnings", "view/network/_nav"), :controller => "network", :action => "warnings"
+  %li
+    \&middot;
+    = link_to tr("Suspended", "view/network/_nav"), :controller => "network", :action => "suspended"
+  %li
+    \&middot;
+    = link_to tr("Probation", "view/network/_nav"), :controller => "network", :action => "probation"
+  %li
+    \&middot;
+    = link_to tr("Deleted", "view/network/_nav"), :controller => "network", :action => "deleted"
+

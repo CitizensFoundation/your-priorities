@@ -1,0 +1,30 @@
+= render :partial => "points/header"
+.col-group
+  .col-1
+    .col-content
+      &nbsp;
+  .col-8
+    .col-content
+      = render :partial => "points/nav"
+      - if @revision.attribute_present?("content_diff")
+        %p
+        .notice
+          = tr("This shows the changes from the previous revision. You can also <a href='{clean_url}'>see the clean version</a>", "view/revisions/show", :clean_url => clean_point_revision_url(@point,@revision))
+        %p
+        .point_content_detail
+          = @revision.content_diff.html_safe
+        - if @revision.has_website?
+          .point_source
+            = tr("Source:", "view/revisions/show")
+            %a{:href => @revision.website_link}= truncate(@revision.website_link,:length=>70)
+      - else
+        %p
+        .notice
+          = tr("Normally, you would see the changes made here, but there was some kind of processing error, so please check out the <a href='{clean_url}'>clean version</a>", "view/revisions/show", :clean_url => clean_point_revision_url(@point,@revision))
+      %p
+      .heading= tr("Recent activity on this point", "view/revisions/show")
+      - for activity in @revision.activities.active
+        = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_noself" }
+  .col-3
+    .col-content
+      = render :partial => "revisions"

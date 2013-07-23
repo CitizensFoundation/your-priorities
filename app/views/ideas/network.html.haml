@@ -1,0 +1,27 @@
+%div{:style => "width:auto;"}
+  %ul
+    %li{:style => "float:left; list-style:none; border-bottom:none;"}
+      #hp_intro{:style => "border-bottom:none;"}= @page_title
+    /
+      <li style="float:right; list-style:none">
+      <haml:loud> rss_url(@rss_url) </haml:loud>
+      </li>
+  %ul
+.clear
+.white_line
+%p
+  - if current_user.followings_count == 0
+    = tr("You don't have anyone in your network yet because you aren't following anyone.", "view/ideas/network", :url => user_contacts_path(current_user), :instance_name => current_instance.name)
+  - else
+    = tr("Here are just your ideas and the <a href='{url}'>{count} people in your network</a>, not all of {instance_name}.", "view/ideas/network", :count => current_user.followings_count, :url => following_user_contacts_path(current_user), :instance_name => current_instance.name)
+  = tr("<p>You can add people to your network by clicking their name, and then the <span class=\"idea_add\">follow</span> button on their profile.  A good way to start your network is to <a href=\"/network/find\">import your Google, Yahoo or Facebook contacts</a> to find people you already know.</p>", "view/ideas/network")if Instance.current.has_facebook_enabled?
+  - if @ideas and not @ideas.empty?
+    %p
+      - if current_user.followings_count > 0
+        - for idea_endorsement in @ideas
+          - if @endorsements
+            - endorsement = @endorsements.detect {|p| p.idea_id == idea_endorsement.idea_id }
+            = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea_endorsement.idea, :endorsements=>@endorsements}
+            %div
+              %div{:id => "idea_detail_#{idea_endorsement.idea.id}"}
+      = will_paginate @ideas

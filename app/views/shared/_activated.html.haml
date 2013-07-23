@@ -1,0 +1,8 @@
+- if user_signed_in? and not current_user.confirmed?
+  #not_activated
+    %p= tr("Please verify your account", "view/shared/_activated")
+    %p= tr("Check your {user_email} inbox for an email from admin@yrpri.org to verify your account and ensure your ideas count. If that email address is incorrect, please {update} then {click_here} to have a new verification email sent.", "view/shared/_activated", |
+      :update => link_to(tr("update it here", "view/shared/_activated"), settings_path), |
+      :click_here => link_to(tr("click here", "view/shared/_activated"), resend_activation_user_path(current_user)), |
+      :user_email=> "<span class=\"highlight\">#{current_user.email}</span>")
+    %p= tr("This message will go away when verified.", "view/shared/_activated")

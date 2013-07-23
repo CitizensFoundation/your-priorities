@@ -1,0 +1,11 @@
+- if not ['create','new'].include?(params[:action])
+  .grey_button
+    = link_to_unless_current tr("New {tags_name}", "view/tags/_nav", :tags_name => current_instance.tags_name.titleize), new_tag_url
+  %p
+- if @tags.any?
+  .blurb_nav
+    - for tag in @tags
+      = link_to_unless_current tr(tag.title,"model/category"), edit_tag_url(tag)
+      %span.tag_count= tag.ideas_count
+      %span.x= link_to 'X', tag, :confirm => 'Are you sure?', :method => :delete
+      %br/

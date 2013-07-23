@@ -1,0 +1,107 @@
+#new_user_form
+  - if @geoblocked
+    = render :partial=>"shared/geoblocking_info"
+  - else
+    - if current_instance.has_facebook_enabled?
+      = tr("You can register with Facebook or email", "view/users/_form")
+      %br/
+      %div{:style => "margin-bottom: 10px; margin-top: 7px;"}
+        #fb_login_link
+          = link_to user_omniauth_authorize_path(:facebook), class: 'fb_login_button' do
+            %span.fb_login_text= tr('Sign in with {provider}', 'views/_top_navigation', provider: "Facebook")
+      %br/
+      - if ENV['ISLYKILL_ID']
+        = link_to tr("Sign in with island.is", "view/shared/_login"), "https://innskraning.island.is/?id=#{ENV['ISLYKILL_ID']}"
+      %br/
+    - if current_instance.has_twitter_enabled?
+      %div{:style => "margin-bottom: 5px;"}
+        = link_to image_tag("twitter_signin.png", :border => 0, :title=>tr("Sign in with Twitter","_login")), :controller => "twitter", :action => "create"
+    - if current_instance.google_login_enabled
+      %div{:style => "margin-bottom: 5px;margin-top: 5px;"}
+        = link_to image_tag("logos/Gmail_logo.png", :border => 0, :title=>tr("Sign in with Gmail","_login")), :controller => "open_ids", :action => "new"
+        %br/
+    - unless current_instance.disable_email_login
+      = form_for :user, url: registration_path('user') do |f|
+        .field{:style => "width:300px;"}
+          %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+            %tr
+              %td{:valign => "top"}
+                .form_header
+                  = tr("First name", "view/users/_form")
+                .field_box
+                  = f.text_field :first_name, :size => 30
+              %td{:style => "padding-left: 3px;", :valign => "top"}
+                .field_label
+                  = tr("Last name", "view/users/_form")
+                .form_header
+                  = f.text_field :last_name, :size => 30
+          .small{:style => "margin-bottom: 10px;"}= tr("(Not displayed on the site)", "view/users/_form")
+        .field
+          .field_label
+            = tr("Email address", "view/users/_form")
+          .field_box
+            = f.text_field :email, :size => 30
+          .small{:style => "margin-bottom: 10px;"}= tr("(Never shared without your permission)", "view/users/_form")
+        - unless session["omniauth_data"]
+          .field{:style => "width:300px; padding-bottom: 10px;"}
+            %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+              %tr
+                %td{:valign => "top"}
+                  .field_label= tr("Password", "view/users/_form")
+                  .field_box= f.password_field :password, :size => 30
+                %td{:style => "padding-left: 3px;", :valign => "top"}
+                  .field_label= tr("and re-type it", "view/users/_form")
+                  .field_box= f.password_field :password_confirmation, :size => 30
+          .field
+            .field_label= tr("How should you be identified on the site?", "view/users/_form")
+            .field_box= f.text_field :login, :maxlength => 40, :size => 30
+            .small{:style => "margin-bottom: 10px;"}= tr("(Can be your name,or a pseudonym)", "view/users/_form")
+          /.field
+          /  .field_label
+          /    = tr("Post code", "view/users/_form")
+          /  .field_box
+          /    = f.text_field :post_code, :size => 5
+          /.field
+          /  .field_label
+          /    = tr("Age group", "view/users/_form_long")
+          /  .field_box
+          /    = f.select :age_group, options_for_select([tr("Select age group", "model/user"), tr("12 years and younger", "model/user"),tr("13 to 17 years", "model/user"),tr("18 to 25 years", "model/user"),tr("26 to 69 years", "model/user"),tr("70 years and older", "model/user")], tr("Select age group", "model/user"))
+          /.field
+          /  .field_label
+          /    = tr("Gender", "view/users/_form_long")
+          /  .field_box
+          /    = f.select :my_gender, options_for_select([tr("Select gender", "model/user"), tr("Male", "model/user"),tr("Female", "model/user")], tr("Select gender", "model/user"))
+        - if current_sub_instance and current_sub_instance.is_optin?
+          = check_box_tag "user[sub_instance_ids][]", current_sub_instance.id, 1
+          = current_sub_instance.optin_text
+          %span.small{:style => "padding-left:2px;"}
+            from
+            - if current_sub_instance.has_website?
+              %a{:href => current_sub_instance.website_link}= current_sub_instance.name
+            - else
+              = h(current_sub_instance.name)
+            (
+            %a{:href => current_sub_instance.privacy_url}>= tr("privacy policy", "view/users/_form")
+            )
+        :javascript
+          var RecaptchaOptions = { theme : 'clean' };
+        = #recaptcha_tags
+        %br/
+        = check_box("user", "terms")
+        = tr("I agree to the ", "view/users/_form")
+        - if page = Page.find_by_name("Terms of Service")
+          %a{:href => "/pages/#{page.id}", :target => '_new'}
+            = tr("terms of service", "view/users/_form")
+        %br/
+        %br/
+        - if @idea
+          - if @value == 1
+            = submit_tag tr("Endorse and signup", "view/users/_form"), :class => "submit_button"
+          - elsif @value == -1
+            = submit_tag tr("Oppose and signup", "view/users/_form"), :class => "submit_button"
+          - else
+            = submit_tag tr("Signup", "view/users/_form"), :class => "submit_button"
+        - else
+          = submit_tag tr("Signup", "view/users/_form"), :class => "submit_button"
+
+= render :partial => "users/rules_info"

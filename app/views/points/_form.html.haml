@@ -1,0 +1,53 @@
+%span.form_header
+  - if force_point_for
+    = tr("Add a point in support -", "views/ideas/form")
+  - else
+    = tr("Add a point for or against -", "views/ideas/form")
+%span#pointTitleDown
+= tr("characters left", "view/ideas/_form")
+.field
+  .field_box
+    = point_form.text_field :name, :id=>"pointTitle", :size => 56, :maxlength => 70
+- if force_point_for
+  .field
+    .field_label
+      #point_supports
+        = point_form.radio_button :value, 1, :checked=>true, :style=>"display:none;"
+- else
+  .field
+    .field_label
+      #point_supports.field_label
+        = point_form.radio_button(:value, 1, :checked=>(params.has_key?(:support) && params[:support] == "true" ? true : false))
+        = tr("Yes,this point supports this idea","views/ideas/form")
+      #point_opposes.field_label
+        = point_form.radio_button(:value, -1, :checked=>(params.has_key?(:support) && params[:support] == "false" ? true : false))
+        = tr("No,this point is against this idea","views/ideas/form")
+.field
+  %span.characters
+    %span.form_header
+      = tr("Explain your point - ", "view/ideas/_form")
+    %span#pointContentDown
+    = tr("characters left", "view/ideas/_form")
+  .field_box
+    = point_form.text_area :content, :id => 'pointContent', :button => 'submit', :class=>"col_text_area", :rows => 8, :maxLength => 520
+  .field
+  - if false
+    .field
+      .field_label
+        = tr("Add a link to an external website", "views/ideas/form")
+      .field_box
+        = point_form.text_field :website, :size => 50
+  - if force_point_for
+    :javascript
+      pointTitleTxt = "#{tr("Why should people support your #{IDEA_TOKEN}?","points/new")}";
+      pointContentTxt = "#{tr("A strong point is important to convince other people to support or oppose your #{IDEA_TOKEN}. Explain why people should vote on this #{IDEA_TOKEN},what makes it important or not.","points/new")}";
+  - else
+    :javascript
+      pointTitleTxt = "#{tr("Why should people support this #{IDEA_TOKEN}?","points/new")}";
+      pointContentTxt = "#{tr("A strong point is important to convince other people to support or oppose this #{IDEA_TOKEN}. Explain why people should vote on this #{IDEA_TOKEN},what makes it important or not.","points/new")}";
+:javascript
+  jQuery("#pointTitle").DefaultValue(pointTitleTxt);
+  jQuery("#pointContent").DefaultValue(pointContentTxt);
+
+  jQuery("#pointTitle").NobleCount('#pointTitleDown',{ default_txt: pointTitleTxt, on_negative: 'go_red', on_positive: 'go_green', max_chars: 60 });
+  jQuery("#pointContent").NobleCount('#pointContentDown',{ default_txt: pointContentTxt, on_negative: 'go_red', on_positive: 'go_green', max_chars: 500 });

@@ -1,0 +1,10 @@
+- idea = Idea.unscoped.find(point.idea_id)
+- if user_signed_in? and current_user.id != idea.user_id
+  %div{:id => "point_report_#{point.id}", :class => "point_report"}
+    = link_to image_tag("report.png", :align => "center", :border => 0, :class => "point_report"),                                                                  |
+      flag_point_url(point.id), :method => :get,                                                                                                                    |
+        :remote=>true,                                                                                                                                                |
+        'data-disable-with' => "",                                                                                                                                    |
+        'data-loader-name' => "spinner",                                                                                                                              |
+        :confirm => tr("Is this point from {user_name} a personal attack or a violation of the rules?", "view/comments/_show", :user_name => point.last_author.name), |
+        :title => tr("Report", "view/comments/_show")                                                                                                                 |

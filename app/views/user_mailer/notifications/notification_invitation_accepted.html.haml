@@ -1,0 +1,16 @@
+= render :partial=>"user_mailer/header", formats: [:html]
+%p
+  = tr("Hi","email")
+  = @recipient.first_name.capitalize
+  ,
+%p
+  = tr("Thanks for the referral! {sender_name} accepted your invitation to join {instance_name}.\                                                                                             |
+    You've earned 5 social points, and are now following {sender_name} updates in your feed.","email", :sender_name=>@sender.name, :instance_name => @instance.name) |
+  \:
+%p= link_to @recipient.root_url+'feed', @recipient.root_url+'feed'
+%p
+  = tr("You'll also be able to see their ideas here","email")
+  \:
+  %br/
+  = link_to @sender.profile_url, @sender.profile_url
+= render :partial=>"user_mailer/footer", formats: [:html]

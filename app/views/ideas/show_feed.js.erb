@@ -1,0 +1,9 @@
+<% batch_id = @activities.to_a.last ? @activities.to_a.last.changed_at.to_i : rand(5435454) %>
+$('.endless_scroll_inner_wrap').append("<span id='batch_<%=batch_id%>'><%=escape_javascript(render :partial => 'feed/activity_list')%></span>");
+FB.XFBML.parse(document.getElementById('batch_<%=batch_id%>'));
+pageTracker._trackPageview('/ideas/show_feed')
+<% unless @activities.blank? %>
+    $('#endless_scroll_ul_idea_show').attr('last', '<%=@activities.to_a.last.changed_at%>');
+<% else %>
+    $('#infinite-scroll').detach();
+<% end %>

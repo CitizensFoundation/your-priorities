@@ -1,0 +1,2 @@
+%img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/fugue/sticky_note_pin.png"}", :width => "16"}/
+= tr("{sender_name} posted a <a href='{bulletin_url}'>bulletin</a> to your profile", "view/notifications/_notificationprofilebulletin", :sender_name => link_to(notification.sender_name,notification.sender), :bulletin_url => activity_comments_url(notification.notifiable))

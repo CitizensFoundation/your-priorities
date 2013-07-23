@@ -1,0 +1,16 @@
+%h1 Listing signups
+%table
+  %tr
+    %th SubInstance
+    %th User
+    %th Is optin
+  - for signup in @signups
+    %tr
+      %td= h signup.sub_instance_id
+      %td= h signup.user_id
+      %td= h signup.is_optin
+      %td= link_to 'Show', signup
+      %td= link_to 'Edit', edit_signup_path(signup)
+      %td= link_to 'Destroy', signup, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New signup', new_signup_path

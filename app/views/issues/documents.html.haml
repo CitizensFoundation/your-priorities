@@ -1,0 +1,10 @@
+#hp_intro= @page_title
+- if @documents.empty?
+  = tr("No documents yet.", "view/issues/documents")
+- else
+  = will_paginate(@documents)
+  %p
+    - for document in @documents
+      = render :partial => "documents/show_full", :locals => {:document => document, :revision => nil}
+  %p
+    = will_paginate(@documents)

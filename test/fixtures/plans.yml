@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  paymill_id: MyString
+  name: MyText
+  description: MyText
+  price: 1.5
+  currency: MyString
+  max_users: 1
+
+two:
+  paymill_id: MyString
+  name: MyText
+  description: MyText
+  price: 1.5
+  currency: MyString
+  max_users: 1

@@ -1,0 +1,7 @@
+#widget_code
+  = tr("Copy and paste this code into the HTML on your website", "view/widgets/preview")
+  %br/
+  %textarea{:cols => "50", :onfocus => "this.select()", :onmouseup => "return false;", :rows => "2"}= h(@widget.javascript_code)
+%p
+  %h2= tr("It will look like this, except with your site's font and colors:", "view/widgets/preview")
+  %iframe#widget_show{:frameborder => "0", :height => "400", :src => url_for(:action => "preview_iframe"), :url => @widget.javascript_url, :width => "500"}

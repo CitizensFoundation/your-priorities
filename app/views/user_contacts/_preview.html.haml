@@ -1,0 +1,17 @@
+%h2= tr("Here's what the email will look like", "view/user_contacts/_preview")
+%p
+  = tr("From:", "view/user_contacts/_preview")
+  = current_instance.admin_name
+  \&lt;#{current_instance.admin_email}&gt;
+  %br/
+  = tr("To:", "view/user_contacts/_preview")
+  %span.highlight Their Name &lt;theiremail@address.com&gt;
+  %br/
+  = tr("Subject:", "view/user_contacts/_preview")
+  = tr("Invitation from {sender_name} to join {instance_name}","email", :sender_name=>current_user.name, :instance_name => current_instance.name)
+  - @instance = current_instance
+  - @sender_name = tr("Name","views/user_contacts/_preview")
+  - @to_name = tr("Name","views/user_contacts/_preview")
+  - @sender = @recipient = @user = current_user
+  %div{:style => "line-height: 20px;"}
+    = render :partial=>"user_mailer/invitation"

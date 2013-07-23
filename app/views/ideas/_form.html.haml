@@ -1,0 +1,110 @@
+- if current_sub_instance and current_sub_instance.message_for_new_idea and current_sub_instance.message_for_new_idea!=""
+  = render :partial=>"/shared/top_message_box", :locals=> {:message_text => current_sub_instance.message_for_new_idea.html_safe}
+- elsif Instance.current.message_for_new_idea and Instance.current.message_for_new_idea!=""
+  = render :partial=>"/shared/top_message_box", :locals=> {:message_text => Instance.current.message_for_new_idea.html_safe}
+- if params[:notice]
+  = params[:notice]
+= form_for @idea do |f|
+  .col-group
+    .col-12
+      .col-content
+        = f.error_messages
+        - if @tag_names
+          = hidden_field_tag :tag_names, @tag_names
+  .col-group
+    .col-6.col-inset
+      .col-content
+        .col-group
+          %h1
+            = tr("Submit a new #{IDEA_TOKEN}", "views/ideas/form")
+        #your_idea.field_label
+        %span.characters
+          %span.form_header
+            = tr("#{IDEA_TOKEN_CAPS} title", "views/ideas/form")
+          \-
+          %span#ideaNameContentDown
+          = tr("characters left", "view/ideas/_form")
+        %span.idea_name
+          = f.text_area :name, :id => 'ideaNameContent', :button => 'submit', :rows => 2, :class=>"col_text_area", :maxLength => SubInstance.current.idea_name_max_length+30
+        %br
+        %br
+        #idea_category
+          .field_label
+            = tr("Select category", "views/ideas/form")
+          %select#category_id{:name => "[idea][category_id]"}
+            %option{:selected => (@idea.category_id ? false : true)}
+            - Category.default_or_sub_instance.each do |category|
+              %option{:title => category.icon.url(:icon_25,), :value => category.id, :selected=>((@idea.category and @idea.category_id==category.id) or (params[:category_id] and params[:category_id].to_i==category.id)) ? true : false}
+                = category.name
+        - unless SubInstance.current.hide_description
+          .field
+            %em
+              %p= #tr("Please describe your #{IDEA_TOKEN}... You have plenty space to convince others here on your right.", "views/ideas/form")
+            %br/
+            %span.characters
+              %span.form_header
+                = tr("Description", "view/ideas/_form")
+              \-
+              %span#ideaContentDown
+              = tr("characters left", "view/ideas/_form")
+            .field_box
+              = f.text_area :description, :id => 'ideaContent', :button => 'submit', :rows => 8, :class=>"col_text_area", :maxLength => 550
+          %br/
+    .col-6.col-inset
+      .col-content
+        %h1
+          = tr("Why should people support your #{IDEA_TOKEN}?", "views/ideas/form")
+        .field_label
+        = f.fields_for(:points) do |point_form|
+          = render :partial=>"points/form", :locals=>{:point_form=>point_form, :force_point_for=>true}
+  .col-group
+    .col-12
+      .col-content
+        %div{:style=>"text-align: center;"}
+          %p
+            = tr("All fields are required", "views/ideas/form")
+          = submit_tag tr("Submit your #{IDEA_TOKEN} and point", "view/ideas/_form"), :class => "submit_button"
+:javascript
+  ideaNameContentTxt = "#{tr("Make a good and descriptive title for your #{IDEA_TOKEN}","ideas/new")}";
+  ideaContentTxt = "#{tr("Explain your idea in a few paragraphs and try to capture its essence clearly.","ideas/new")}";
+
+  jQuery("#ideaNameContent").DefaultValue(ideaNameContentTxt);
+  jQuery("#ideaContent").DefaultValue(ideaContentTxt);
+
+  jQuery("#ideaNameContent").NobleCount('#ideaNameContentDown',{ default_txt: ideaNameContentTxt, on_negative: 'go_red', on_positive: 'go_green', max_chars: #{SubInstance.current.idea_name_max_length} });
+  jQuery("#ideaContent").NobleCount('#ideaContentDown',{ default_txt: ideaContentTxt, on_negative: 'go_red', on_positive: 'go_green', max_chars: 500 });
+
+  $(document).ready(function(e) {
+    try {
+      $("#category_id").msDropDown({visibleRows:7});
+      } catch(e) {
+        alert(e.message);
+      }
+    try {
+      $("#group_id").msDropDown({visibleRows:7});
+      } catch(e) {
+      alert(e.message);
+    }
+  });
+
+  $('input[type=submit]').click(function() {
+      $(this).attr('disabled', 'disabled');
+      $(this).parents('form').submit()
+  });
+
+  //jQuery("input#ideaNameContent").autocomplete({
+  //        minLength: 10,
+  //        source: "/ideas.js",
+  //        search: function(event, ui) {
+  //            $('#idea_suggestions ul').empty();
+  //        },
+  //        open: function(event, ui) { $('#idea_suggestions').show(); },
+  //        close: function(event, ui) { $('#idea_suggestions').hide(); },
+  //    }).data('autocomplete')._renderItem = function (ul, item) {
+  //        return $('<li/>')
+  //        .data('item.autocomplete', item)
+  //        .append(item.value)
+  //        .appendTo($('#idea_suggestions ul'));
+  //    };
+
+

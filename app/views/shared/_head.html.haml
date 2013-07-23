@@ -1,0 +1,8 @@
+%link{:href => current_instance.fav_icon.url(:icon_16), :rel => "icon"}/
+-# if request.subdomains.any? and request.subdomains[0] != 'www'
+  %link{:href => "http://#{current_instance.base_url}#{url_for}", :rel => "canonical"}/
+- if @rss_url and @page_title
+  %link{:href => @rss_url, :rel => "alternate", :title => @page_title, :type => "application/rss+xml"}/
+%link{:href => url_for(:controller => "ideas", :action => "top", :format => "rss",
+      :only_path => false, :rel => "alternate", :title => tr("Top 25 ideas at {instance_name}","view/shared/_head", :instance_name => current_instance.name),
+      :type => "application/rss+xml")}/

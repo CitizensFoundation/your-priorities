@@ -1,0 +1,42 @@
+.idea_name{:id => "idea_#{idea.id}_name"}
+%div{style: 'float: right;'}= render :partial=>"ideas/report_content", :locals=>{:idea=>idea}
+- if @position_in_idea_name
+  = link_to_unless_current "#{idea.position}. #{tg(idea.name)}", idea.show_url, :class => "idea_name_link"
+- else
+  = link_to tg(idea.name), idea.show_url, :class => "idea_name_link"
+%div.sib_social{:width=>"100px", :height=>"200px"}
+  = render :partial => "ideas/idea_social_buttons", :locals => {:idea => idea, :endorsement => endorsement, :region=>"idea_inline" } if @idea
+= render :partial=>"ideas/flagged", :locals=>{:idea=>idea} if @idea or (current_user and current_user.is_admin?)
+:javascript
+  $(function(){
+      $('#action_insert').replaceWith($('#idea_flag_#{idea.id.to_s}'));
+  });
+.category
+- if @idea
+  - if @idea.occurred_at and @idea.occurred_at!="I don't know"
+    %span.occurred
+      = "This #{IDEA_TOKEN} occurred in #{@idea.occurred_at}"
+  .small_text
+    = tr("It was added {time_ago}", "view/points/_short_list", :time_ago => time_ago(idea.created_at))
+    = render :partial => "ideas/nav", :locals => {:idea => @idea, :endorsement => @endorsement, :noaction=> defined?(noaction) ? true : false }
+%h3
+  = tr("Summary","view/ideas") if @idea
+%div{:id => "idea_#{idea.id}_description"}
+  - if @idea and action_name=="show" and controller_name=="ideas"
+    = simple_format(idea.description)
+  - else
+    = simple_format(truncate(idea.description,:length => 242, :omission => ' ...', :separator => ' '))
+- if @idea and action_name=="show" and controller_name=="ideas"
+  %h3.author_notes
+    = tr("Author notes","view/ideas")
+  %div{:id => "idea_#{idea.id}_author_notes"}
+    = idea.notes_html
+  :javascript
+    $(function() {
+       jQuery("#{"#idea_#{idea.id}_author_notes"}").truncate({maxLength: 900});
+    });
+:javascript
+  $(function() {
+    jQuery("#{"#idea_#{idea.id}_description"}").truncate({maxLength: 900});
+  });
+

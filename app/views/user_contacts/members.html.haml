@@ -1,0 +1,44 @@
+#hp_intro= tr("Find people you know at {instance_name}", "view/user_contacts/members", :instance_name => current_instance.name)
+= render :partial => "import_nav", :locals => {:user => current_user}
+- if @contacts.any?
+  %p
+    = tr("{contacts_count} of your contacts are already {instance_name} members.<br/>Click the big yellow button to add them to your network.", "view/user_contacts/members", :contacts_count => @contacts.size, :instance_name => current_instance.name)
+    - form_tag multiple_user_followings_path(current_user), |
+      :loading => "Element.show('status');", |
+      :remote=>true, |
+      'data-disable-with' =>  escape_t(tr("Sending","Ajax")), |
+      :method => :put, :html => {:id => "multiple_contacts_form"} do
+      - if @contacts.size > 1
+        = link_to_function(tr("Check/Uncheck All", "view/user_contacts/members"),"toggleAll('select');return false;")
+      - if @contacts.size > 6
+        #contacts
+      - else
+        #contacts_small
+      - for c in @contacts
+        %div{:id => "contact_#{c.other_user_id}"}
+          %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+            %tr
+              %td{:style => "padding-top: 2px; padding-right: 2px;", :valign => "top"}= check_box_tag "user_ids[]", c.other_user_id, true, :class => "select"
+              %td{:style => "padding: 7px 5px 4px 0px;", :valign => "top", :width => "26"}
+                = render :partial => "users/pic", :locals => {:user => c.other_user}
+              %td{:style => "padding: 4px 5px 4px 0px;", :valign => "top"}
+                = link_to c.other_user.login, c.other_user
+                %span.pc
+                  = c.other_user.capitals_count
+                  = current_instance.currency_short_name
+                = tr("Joined {time_ago}", "view/user_contacts/members", :time_ago => time_ago(c.other_user.created_at))
+                - if c.other_user.has_top_idea?
+                  %br/
+                  = tr("#1 idea:", "view/user_contacts/members")
+                  - if c.other_user.top_endorsement.is_down?
+                    %span.opposed= tr("Opposing", "view/user_contacts/members")
+                  = link_to Idea.unscoped.find(c.other_user.top_endorsement.idea_id).name, Idea.unscoped.find(c.other_user.top_endorsement.idea_id)
+                  \.
+      %p
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+        %tr
+          %td
+            = submit_tag tr("Add checked members to your network", "view/user_contacts/members"), :class => "yellow_button"
+          %td{:valign => "top"}
+            #status{:style => "display: none;"}
+              = tr("Processing...", "view/user_contacts/members")

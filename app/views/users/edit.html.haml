@@ -1,0 +1,56 @@
+.col-group
+  .col-1
+    .col-content
+      = render :partial => "users/profile_pic"
+      = render :partial => "users/profile_nav"
+  .col-6
+    .col-content
+      = form_for(@user, url: user_registration_path, html: { method: :put }) do |f|
+        = f.error_messages
+        .field
+          .field_label= tr("First name", "view/users/edit")
+          .field_box= f.text_field :first_name, :size => 12
+          .field_label= tr("and Last name", "view/users/edit")
+          .field_box= f.text_field :last_name, :size => 15
+          .small= tr("(Not displayed on the site)", "view/users/edit")
+        .field
+          .field_label= tr("Email address", "view/users/edit")
+          .field_box= f.text_field :email
+          .small= tr("(Never shared without your permission)", "view/users/edit")
+        .field
+          .field_label= tr("How should you be identified on the site?", "view/users/edit")
+          .field_box= f.text_field :login, :maxlength => 40, :size => 30
+          .small= tr("(Can be your name, or a pseudonym)", "view/users/edit")
+        .field
+          .field_box
+            = f.check_box :is_mergeable
+            = tr("Merge your ideas with others meaning the same thing", "view/users/edit")
+          .field_box
+            %h4= tr("Periodic updates on your ideas", "view/settings/signups")
+            = f.radio_button :report_frequency, 2
+            = tr("Weekly", "view/settings/signups")
+            = f.radio_button :report_frequency, 1
+            = tr("Monthly", "view/settings/signups")
+            = f.radio_button :report_frequency, 0
+            = tr("Never", "view/settings/signups")
+        .field
+          .field_label= tr("Zip Code", "view/users/edit")
+          .field_box= f.text_field :zip
+        .field
+          .field_label= tr("Website", "view/users/edit")
+          .field_box= f.text_field :website
+        .field
+          .field_label= tr("Birth date", "view/users/edit")
+          .field_box= f.date_select :birth_date, :include_blank => true, :start_year => 1908, :end_year => 1996,  :order => [:month, :day, :year]
+        = f.submit tr("Save settings", "view/users/edit"), :class => "yellow_button"
+  .col-5
+    .col-content
+      = form_for(@user, url: user_registration_path, html: { method: :put }) do |f|
+        = f.error_messages
+        .field
+          .field_label= tr("New passsword", "view/users/edit")
+          .field_box= f.password_field :password
+        .field
+          .field_label= tr("Password confirmation", "view/users/edit")
+          .field_box= f.password_field :password_confirmation
+        = f.submit tr("Change password", "view/users/edit")

@@ -1,0 +1,18 @@
+- if activity.capital.amount > 0
+  /%img.icon{:border => "0", :height => "16", :src => "/assets/icons/coins.png", :width => "16"}/
+  Earned
+  %span.pc
+    = activity.capital.amount.abs
+    = current_instance.currency_short_name
+  because of #{pluralize(activity.capital.amount.abs,"new follower")} on
+  = succeed "." do
+    %a{:href => "http://twitter.com/#{activity.user.twitter_login}"} Twitter
+- else
+  /%img.icon{:border => "0", :height => "16", :src => "/assets/icons/coins_delete.png", :width => "16"}/
+  Lost
+  %span.pc
+    = activity.capital.amount.abs
+    = current_instance.currency_short_name
+  because #{pluralize(activity.capital.amount.abs,"follower")} on
+  %a{:href => "http://twitter.com/#{activity.user.twitter_login}"} Twitter
+  left.

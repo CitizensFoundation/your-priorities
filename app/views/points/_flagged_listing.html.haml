@@ -1,0 +1,9 @@
+.point{:id => point.id}
+  .point_name
+    - if point.is_down?
+      %span.for_and_against_hacky= tr("Point against:", "view/points/_show")
+    - else
+      %span.for_and_against_hacky= tr("Point for:", "view/points/_show")
+    = link_to_unless_current h(point.name), point
+    = render :partial=>"points/report_content", :locals=>{:point=>point}
+    = render :partial=>"points/flagged", :locals=>{:point=>point}

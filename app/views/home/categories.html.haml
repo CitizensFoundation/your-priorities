@@ -1,0 +1,23 @@
+- if SubInstance.current.message_to_users and SubInstance.current.message_to_users!=""
+  = render :partial=>"/shared/top_message_box", :locals=> {:message_text => SubInstance.current.message_to_users.html_safe }
+- for category in @categories
+  .idea_listing
+    %span
+      %h4
+        = tr("Category:", "model/category") + " "
+        %a{:href => "#{category.to_url}"}
+          = category.name
+          = " (#{category.ideas.count}) -"
+        %span.small_text{:style=>""}
+          = raw "<a href='/ideas/new?category_id=#{category.id}'>"+tr("Add new idea","model/category")+"</a>"
+      - category.ideas.top_three.each do |idea|
+        = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+- unless @activities.blank?
+  %div.home_welcome
+    %br
+    %h1
+      = tr("Latest Activity","home")
+    %ul#endless_scroll_ul.list{:last => @activities.to_a.last.changed_at}
+      = render :template => 'feed/activity_list_simple'
+      #infinite-scroll
+      .endless_scroll_inner_wrap

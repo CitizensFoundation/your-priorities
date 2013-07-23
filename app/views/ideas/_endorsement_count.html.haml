@@ -1,0 +1,10 @@
+%span{:class => "idea_#{idea.id.to_s}_endorsement_count idea_endorsement_count", :id => "idea_#{idea.id.to_s}_endorsement_count"}
+  = link_to (idea.up_endorsements_count.to_s + ' ' + tr("endorsed", "view/ideas/_endorsement_count")).html_safe, idea.show_endorsers_url
+  - if idea.down_endorsements_count > 0
+    \&middot; #{link_to (idea.down_endorsements_count.to_s + ' ' + tr("opposed", "view/ideas/_endorsement_count")).html_safe, idea.show_opposers_url}
+  - if idea.points_count > 0
+    \&middot; #{link_to tr("{count} points", "view/ideas/_endorsement_count", :count => idea.points_count).downcase, idea.show_top_points_url}
+  - else
+    \&middot; #{link_to tr("New point", "view/ideas/_endorsement_count").downcase, idea.new_point_url(support: true) , :title => tr("Can you make a compelling point for or against this idea in less than 500 characters?", "view/ideas/_endorsement_count"), :class => "qtip_left"}
+  - if idea.discussions_count > 0
+    \&middot; #{link_to tr("{count} discussions", "view/ideas/_endorsement_count", :count => idea.discussions_count), idea.show_discussion_url}

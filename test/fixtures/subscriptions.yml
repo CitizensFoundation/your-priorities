@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  paymill_id: MyString
+  user_id: 1
+  plan_id: 1
+  last_payment_at: 2013-05-03 11:10:56
+  active: false
+
+two:
+  paymill_id: MyString
+  user_id: 1
+  plan_id: 1
+  last_payment_at: 2013-05-03 11:10:56
+  active: false

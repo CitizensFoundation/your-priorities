@@ -1,0 +1,83 @@
+.col-group
+  .col-1
+    .col-content
+      =render partial: "settings/nav"
+  .col-11
+    .col-content
+      = form_for(:user, :url => {:action => "update" }) do |f|
+        = f.error_messages
+        %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+          %tr
+            %td{:valign => "top"}
+              %h2= tr("Required", "view/settings/index")
+              %p
+              .field
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+                  %tr
+                    %td{:valign => "top"}
+                      .field_label
+                        = tr("First name", "view/settings/index")
+                      .field_box
+                        = f.text_field :first_name, :size => 12
+                    %td{:style => "padding-left: 3px;", :valign => "top"}
+                      .field_label
+                        = tr("and Last name", "view/settings/index")
+                      .field_box
+                        = f.text_field :last_name, :size => 15
+                .small= tr("(Not displayed on the site)", "view/settings/index")
+              .field
+                .field_label
+                  = tr("Email address", "view/settings/index")
+                .field_box
+                  = f.text_field :email
+                .small= tr("(Never shared without your permission)", "view/settings/index")
+              .field
+                .field_label
+                  = tr("How should you be identified on the site?", "view/settings/index")
+                .field_box
+                  = f.text_field :login, :maxlength => 40, :size => 30
+                .small= tr("(Can be your name,or a pseudonym)", "view/settings/index")
+              .field
+                .field_label
+                  = tr("Post code", "view/users/_form")
+                .field_box
+                  = f.text_field :post_code, :size => 5
+              .field
+                .field_label
+                  = tr("Age group", "view/users/_form_long")
+                .field_box
+                  = f.select :age_group, options_for_select([tr("Select age group", "model/user"), tr("12 years and younger", "model/user"),tr("13 to 17 years", "model/user"),tr("18 to 25 years", "model/user"),tr("26 to 69 years", "model/user"),tr("70 years and older", "model/user")],@user.age_group)
+              .field
+                .field_label
+                  = tr("Gender", "view/users/_form_long")
+                .field_box
+                  = f.select :my_gender, options_for_select([tr("Select gender", "model/user"), tr("Male", "model/user"),tr("Female", "model/user")],@user.my_gender)
+              .field
+                .field_box
+                  %h4= tr("Periodic updates on your ideas", "view/settings/signups")
+                  = f.radio_button :report_frequency, 2
+                  = tr("Weekly", "view/settings/signups")
+                  = f.radio_button :report_frequency, 1
+                  = tr("Monthly", "view/settings/signups")
+                  = f.radio_button :report_frequency, 0
+                  = tr("Never", "view/settings/signups")
+            %td{:style => "padding-left: 20px;", :valign => "top", :width => "300"}
+              %h2= tr("Optional", "view/settings/index")
+              .field
+                .field_label
+                  = tr("Website", "view/settings/index")
+                .field_box
+                  = f.text_field :website
+              - if (current_instance.has_facebook_enabled? and not current_facebook_user_if_on_facebook) or (current_instance.has_twitter_enabled? and not current_user.has_twitter?)
+                %h2= tr("Connect to Social Networks", "view/settings/index")
+                = tr("We will never post to your Facebook or Twitter stream without your explicit permission first.", "view/settings/index")
+                %p
+                  - if current_instance.has_facebook_enabled? and not current_facebook_user_if_on_facebook
+                    = fb_login_and_redirect url_for, :size => :medium, :background => :white, :length => :long
+                  - if current_instance.has_twitter_enabled? and not current_user.has_twitter?
+                    %p
+                      = link_to image_tag("twitter_signin.png", :border => 0), :controller => "twitter", :action => "create"
+        = f.submit tr("Save your settings", "view/settings/index"), :class => "yellow_button"
+      %p
+        %br/
+        = link_to tr("Delete your account", "view/settings/index"), delete_settings_url

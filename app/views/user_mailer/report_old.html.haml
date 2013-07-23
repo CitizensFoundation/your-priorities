@@ -1,0 +1,45 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Vidraedur.is
+  %body
+    %table{:align => "center", :border => "1", :cellpadding => "10", :width => "600"}
+      %tr
+        %td
+          %p
+            %img{:alt => "Vidraedur.is", :src => "http://www.utanrikisraduneyti.is/media/Logo/vidraedur.is-logo.jpg", :width => "600"}/
+          %p Eftirfarandi nýtt efni er komið inn síðan seinast:
+          - unless @ideas.empty?
+            %p
+              Umræðurefni:
+              %br/
+              - @ideas.each do |idea|
+                %a{:href => link_to idea.show_url}= idea.name
+                %br/
+          - unless @questions.empty?
+            %p
+              %b Spurningar og Svör:
+              %br/
+              - @questions.each do |question|
+                %a{:href => link_to question.show_url}= question.name
+                %br/
+          - unless @documents.empty?
+            %p
+              %b Erindi:
+              %br/
+              - @documents.each do |document|
+                %a{:href => link_to document.show_url}= document.name
+                %br/
+          - unless @treaty_documents.empty?
+            %p
+              %b Ný skjöl:
+              %br/
+              - @treaty_documents.each do |document|
+                %a{:href => link_to document.url}= document.title
+                %br/
+          %p
+            \---
+            %br/
+            Póststillingar eru hér:
+            %a{:href => "http://vidraedur.is/askrift"} http://vidraedur.is/askrift

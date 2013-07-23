@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/emoticon_smile.png", :width => "16"}/
+= raw tr("{user_name} joined {instance_name}", "view/activities/_activityusernew", :user_name => link_to(activity.user.name, activity.user), :instance_name => current_instance.name)

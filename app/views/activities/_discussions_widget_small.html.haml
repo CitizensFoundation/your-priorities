@@ -1,0 +1,14 @@
+- if @activities and @activities.any?
+  %ul
+    - for activity in @activities
+      - activity.comments.each do |comment|
+        %li
+          = link_to comment.show_url do
+            = h(comment.user.login)
+            \- #{time_ago(comment.created_at)}
+          %br/
+          = comment.content
+          %br/
+          %br/
+- else
+  = tr("No discussions.", "widget")

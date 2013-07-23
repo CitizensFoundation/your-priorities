@@ -1,0 +1,66 @@
+#hp_intro= @page_title
+%p
+  = form_for(@instance) do |f|
+    = f.error_messages
+    %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+      %tr
+        %td{:valign => "top"}
+          .field
+            .field_label
+              = tr("Facebook API key (<a href='http://www.facebook.com/developers/#/developers/createapp.php'>Get it here</a>)", "view/instances/apis")
+            .field_box
+              = f.text_field :facebook_api_key, :size => 40, :maxlength => 32
+          .field
+            .field_label
+              = tr("Facebook secret key", "view/instances/apis")
+            .field_box
+              = f.text_field :facebook_secret_key, :size => 40, :maxlength => 32
+          .field
+            .field_label
+              = tr("Twitter Consumer Key (<a href='http://twitter.com/oauth_clients'>Get it here</a>)", "view/instances/apis")
+            .field_box
+              = f.text_field :twitter_key, :size => 40, :maxlength => 46
+          .field
+            .field_label
+              = tr("Twitter Consumer Secret", "view/instances/apis")
+            .field_box
+              = f.text_field :twitter_secret_key, :size => 40, :maxlength => 46
+          .field
+            .field_box
+              = f.check_box :is_facebook
+              = tr("Enable Facebook integration", "view/instances/apis")
+            .field_box
+              = f.check_box :is_twitter
+              = tr("Enable Twitter integration", "view/instances/apis")
+          .field
+            .field_label
+              = tr("Google Analytics code (like UA-2839551-1)", "view/instances/apis")
+            .field_box
+              = f.text_field :google_analytics_code, :size => 40, :maxlength => 15
+          .field
+            .field_label
+              = tr("Quantcast code (like p-5ftmjaPECGTTU)", "view/instances/apis")
+            .field_box
+              = f.text_field :quantcast_code, :size => 40, :maxlength => 20
+        %td{:style => "padding-left: 20px;", :valign => "top"}
+          .field
+            .field_label
+              = tr("Yahoo Appid (<a href='https://developer.yahoo.com/wsregapp/'>Get it here</a>)", "view/instances/apis")
+            .field_box
+              = f.text_field :yahoo_appid, :size => 40, :maxlength => 40
+          .field
+            .field_label
+              = tr("Yahoo secret key", "view/instances/apis")
+            .field_box
+              = f.text_field :yahoo_secret_key, :size => 40, :maxlength => 32
+          .field
+            .field_label
+              = tr("Windows Live appid (<a href='http://msdn.microsoft.com/en-us/library/cc287659.aspx'>Get it here</a>)", "view/instances/apis")
+            .field_box
+              = f.text_field :windows_appid, :size => 40, :maxlength => 32
+          .field
+            .field_label
+              = tr("Windows secret key", "view/instances/apis")
+            .field_box
+              = f.text_field :windows_secret_key, :size => 40, :maxlength => 32
+    = f.submit tr("Save API settings", "view/instances/apis"), :class => "yellow_button"

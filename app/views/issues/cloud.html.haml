@@ -1,0 +1,19 @@
+= tr("Here you can find ideas organized by categories.", "view/issues/cloud")
+%p
+  #topics{:align => "center"}
+    - for tag in Tag.find(:all, :conditions => ["up_endorsers_count > ?", (current_instance.users_count/100).to_i], :order => "name asc", :include => :top_idea)
+      %nobr
+        <a href="/issues/#{tag.slug}" style="font-size:
+        - if tag.endorsements_count > (current_instance.users_count/10).to_i+1
+          = 11+(tag.endorsements_count/((current_instance.users_count/28).to_i+1)).to_i
+          px;
+        - else
+          10px; font-weight:normal;
+        padding-left: 3px; padding-right: 3px; line-height: 1.1em;"
+        - if tag.has_top_idea?
+          - if tag.has_top_idea?
+            title="Top #{IDEA_TOKEN}: #{tag.top_idea.name}
+          "
+        >#{h(tr(tag.title,"model/category"))}
+      \&middot;
+  %p

@@ -1,0 +1,9 @@
+#hp_intro= @page_title
+%p
+  - if @notifications.any?
+    = render :partial => "shared/paginate_with_feed", :locals => {:collection => @notifications}
+    #activities
+      - for notification in @notifications
+        = render :partial => "notifications/show", :locals => {:notification => notification}
+    %p
+      = will_paginate(@notifications)

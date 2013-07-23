@@ -1,0 +1,16 @@
+%table{:width => "100%"}
+  %tr
+    %td{:width => "30%"}
+      %b Nafn
+    %td{:width => "20%"}
+      %b Kennitala
+    %td{:width => "20%"}
+      %b Tölvupóstur
+    %td
+  - @users.each do |user|
+    %tr
+      %td= user.login
+      %td= user.national_identity
+      %td= user.email
+      %td= link_to "Taka bann af", "/users/unsuspend/#{user.id}"
+= will_paginate @users

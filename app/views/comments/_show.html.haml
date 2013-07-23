@@ -1,0 +1,52 @@
+- if comment
+  .col-group
+    .col-1
+      .col-content
+        %a{:name => comment.id}
+        .comment_endorses{:id => "comment_#{comment.id.to_s}"}
+          / Comment box
+          = "&nbsp;".html_safe
+          - unless first_comment
+            = render :partial => "users/pic_48", :locals => {:user => comment.user}
+    .col-11
+      .col-content
+        - if comment.status == 'abusive'
+          = tr("Comment deleted. The author received a warning for violating the <a href='/about/rules'>site rules</a>", "view/comments/_show")
+          %br
+          %br
+        - else
+          - unless first_comment
+            = link_to(comment.user.login, comment.user)
+            \- #{time_ago(comment.created_at)}
+          - if user_signed_in? and current_user.id != comment.user_id
+            = link_to image_tag("report.png", :align => "right", :border => 0, :class => "comment_report"),                                                              |
+              flag_activity_comment_url(comment.activity_id,comment),:method => :get,                                                                                    |
+              :remote=>true,                                                                                                                                             |
+              'data-disable-with' => "",                                                                                                                                 |
+              'data-loader-name' => "circle",                                                                                                                            |
+              :confirm => tr("Is this comment from {user_name} a personal attack or a violation of the rules?", "view/comments/_show", :user_name => comment.user.name), |
+              :title => tr("Report", "view/comments/_show")                                                                                                              |
+          - if !defined? shortentext
+            - shortentext="1"
+          - if shortentext == 0
+            .comment_content_2{:id => "comment_content_#{comment.id.to_s}", :class=> first_comment ? :first_comment : ""}
+              = comment.content_html
+          - else
+            .comment_content_2{:id => "comment_content_#{comment.id.to_s}", :class=> first_comment ? :first_comment : ""}
+              = comment.content_html
+          - if user_signed_in? and not comment.removed? and ((@comments and comment == @comments.last and current_user.id == comment.user_id) or current_user.is_admin?)
+            .delete-comment
+              = link_to tr("delete", "view/comments/_show"), activity_comment_url(comment.activity_id,comment),                      |
+                :method => :delete,                                                                                                  |
+                :remote=>true,                                                                                                       |
+                'data-disable-with' => escape_t(tr("Deleting","Ajax")),                                                              |
+                'data-loader-name' => "horizontal_small",                                                                            |
+                :confirm => tr("Remove this comment?", "view/comments/_show"), :title => tr("Delete comment", "view/comments/_show") |
+          - else
+            .delete-comment
+              = "&nbsp;".html_safe
+        = render :partial => "comments/flagged", :locals => {:comment => comment}
+:javascript
+  $(function() {
+     jQuery("#{"#comment_content_#{comment.id}"}").truncate({maxLength: 400});
+  });

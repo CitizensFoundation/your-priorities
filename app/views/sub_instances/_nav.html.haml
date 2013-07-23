@@ -1,0 +1,13 @@
+- if user_signed_in? and current_user.is_sub_instance?
+  #nav_sub
+    %div{:id => "nav_sub_<haml:silent> if ['edit'].include?(params[:action]) </haml:silent><haml:block>1</haml:block><haml:silent> elsif ['picture'].include?(params[:action]) </haml:silent><haml:block>2</haml:block><haml:silent> elsif ['email'].include?(params[:action]) </haml:silent><haml:block>3</haml:block>"}
+      %ul#menu_sub
+        %li.tab1
+          %span.tab_header
+            = link_to tr("SubInstance account", "view/sub_instances/_nav"), edit_sub_instance_url(current_user.sub_instance)
+        %li.tab2
+          %span.tab_header
+            = link_to tr("Logo", "view/sub_instances/_nav"), picture_sub_instance_path(current_user.sub_instance)
+        %li.tab3
+          %span.tab_header
+            = link_to tr("Email list", "view/sub_instances/_nav"), email_sub_instance_path(current_user.sub_instance)

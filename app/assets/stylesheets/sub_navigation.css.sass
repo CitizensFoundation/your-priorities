@@ -1,0 +1,98 @@
+#sib_sub_nav
+  color: #a0a5ad !important
+  font-weight: bold
+
+html>/**/ #sib_sub_nav
+  behavior: url(asset_path("/assets/PIE.htc", image))
+
+  img
+    margin-left: 50px
+    margin-right: 50px
+
+#general_form
+  -moz-border-radius: 3px
+  -webkit-border-top: 3px
+  border-radius: 3px
+  behavior: url(asset_path("/assets/PIE.htc", image))
+  display: none
+  background-color: #fff
+  position: absolute
+  z-index: 100
+  border: 1px solid #ccc
+  text-align: left
+  padding: 0px
+  margin-top: 0px
+  color: #789
+  font-size: 16px
+  p
+    margin: 0
+  a
+  label
+    font-weight: normal
+  p
+    &.remember
+      padding: 10px 0
+    &.forgot, &.complete
+      clear: both
+      margin: 5px 0
+    a
+      color: #27B!important
+
+#sub_menu
+  @extend #general_form
+  background-color: #fff
+  min-width: 203px
+  margin-top: 3px
+  display: none
+  padding: 4px
+  li
+    margin: 7px 5px 7px 5px
+
+#section_title
+  font-size: 16px
+  color: #606060
+  background: #fff
+  padding: 20px 0px 0px 10px
+  a
+    color: #fff !important
+  a.pulldown_trigger
+    padding: 4px 30px 4px 5px
+    margin: 0px 0px 8px 0px
+    z-index: 500
+    background-image: url(asset_path("/assets/mega_down_arrow.gif", image))
+    background-repeat: no-repeat
+    background-position: 95% 55%
+
+#section_title a
+  color: #606060 !important
+
+.flash_notice, .flash_error
+  width: 100%
+  font-size: 16px
+  color: white
+  margin-bottom: 15px
+  margin-top: 15px
+  background: #A0A5AD
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+  behavior: url(asset_path("/assets/PIE.htc", image))
+
+.flash_error
+  background: #ADA5A0
+
+.flash_notice a, .flash_error a
+  padding-right: 8px
+  padding-top: 2px
+  color: white
+
+.flash_notice span, .flash_error span
+  padding-top: 3px
+  padding-bottom: 3px
+  padding-left: 8px
+  display: block
+
+.close_notify
+  float: right
+  font-weight: bold
+

@@ -1,0 +1,35 @@
+%p= tr("Ambassadors are people who recruit others to join {instance_name}", "view/network/ambassadors", :instance_name => current_instance.name)
+- if user_signed_in?
+  %p= tr("You can be an ambassador too and earn<span class='pc'>5{currency_short_name}</span> for each person you recruit. Get started by simply <a href='{import_url}'>importing your Google, Yahoo, Windows Live, or Facebook contacts</a>.", "view/network/ambassadors", :instance_name => current_instance.name, :currency_short_name => current_instance.currency_short_name, :import_url => user_contacts_path(current_user))
+- if !@users.empty?
+  %table
+    %thead
+      %tr
+        %th.rank= tr("Rank", "view/network/index")
+        %th.week= tr("Change", "view/network/index")
+    %tbody
+      - @users.each_with_index do |user, rank|
+        %tr
+          %td #{rank+1}
+          %td= render :partial => "ideas/rank_week_month", :locals => {:idea => user }
+          %td= render :partial => "users/pic_48", :locals => {:user => user}
+          %td
+            .col-group
+              .col-content
+                = link_to user.login, user
+                %span.pc
+                  = user.capitals_count
+                  = current_instance.currency_short_name
+                - if user.referrals_count > 0
+                  = tr("Recruited {count} members", "view/network/ambassadors", :count => user.referrals_count)
+                - if user.referrals_count > 0 and user.contacts_invited_count > 0
+                  \&middot;
+                - if user.contacts_invited_count > 0
+                  = tr("Invited {count} people", "view/network/ambassadors", :count => user.contacts_invited_count)
+              - if user.has_top_idea? and user.top_endorsement.idea
+                .col-content
+                  = tr("#1 idea:", "view/network/index")
+                  - if user.top_endorsement.is_down?
+                    %span.opposed= tr("Opposing", "view/network/index")
+                  = link_to user.top_endorsement.idea.name, user.top_endorsement.idea
+  = will_paginate(@users)

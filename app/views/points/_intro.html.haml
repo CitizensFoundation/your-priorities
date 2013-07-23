@@ -1,0 +1,15 @@
+- if point.is_up?
+  - if false and point.has_other_idea?
+    = tr("Point supporting {idea_name} and {other_idea_name}:", "view/points/_intro", :idea_name => link_to(point.idea.name, top_points_idea_url(point.idea)) )
+  - else
+    = tr("Point supporting {idea_name}:", "view/points/_intro", :idea_name => link_to(point.idea.name, top_points_idea_url(point.idea)))
+- elsif point.is_down?
+  - if false and point.has_other_idea?
+    = tr("Point opposing {idea_name} and supporting {other_idea_name}:", "view/points/_intro", :idea_name => link_to(point.idea.name, top_points_idea_url(point.idea)), :other_idea_name => link_to(point.other_idea.name, top_points_idea_url(point.other_idea)))
+  - else
+    = tr("Point opposing {idea_name}:", "view/points/_intro", :idea_name => link_to(point.idea.name, top_points_idea_url(point.idea)))
+- else
+  - if false and point.has_other_idea?
+    = tr("Point about {idea_name} and {other_idea_name}:", "view/points/_intro", :idea_name => link_to(point.idea.name, top_points_idea_url(point.idea)), :other_idea_name => link_to(point.other_idea.name, top_points_idea_url(point.other_idea)))
+  - else
+    = tr("Point about {idea_name}:", "view/points/_intro", :idea_name => link_to(point.idea.name, top_points_idea_url(point.idea)))

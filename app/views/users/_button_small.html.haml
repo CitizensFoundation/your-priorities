@@ -1,0 +1,35 @@
+%span{:id => "idea_#{user.id.to_s}_button_small"}
+  - if following
+    - if following.is_up?
+      %span.idea_add_follow{:id => "user_add_#{user.id.to_s}"}
+        = tr("Following", "view/users/_button_small")
+        = link_to "&nbsp;x".html_safe, unfollow_user_path(user, :region => "user_left", :value => 1),                         |
+          :method => :post,                                                                                                   |
+          :remote=>true,                                                                                                      |
+          'data-disable-with' => "",                                                                                          |
+          'data-loader-name' => "spinner",                                                                                    |
+          :class => "idea_remove_link1", :title => tr("Remove this person from your network", "view/users/_button_small") |
+    - else
+      %span.idea_add_ignore{:id => "user_add_#{user.id.to_s}"}
+        = tr("Ignoring", "view/users/_button_small")
+        = link_to "&nbsp;x".html_safe, unfollow_user_path(user, :region => "user_left", :value => -1),             |
+          :method => :post,                                                                                        |
+          :remote=>true,                                                                                           |
+          'data-disable-with' => "",                                                                               |
+          'data-loader-name' => "spinner",                                                                         |
+          :class => "idea_remove_link1", :title => tr("Stop ignoring this person", "view/users/_button_small") |
+  - else
+    %span.idea_add_follow{:id => "user_add_#{user.id.to_s}"}
+      = link_to tr("Follow", "view/users/_button_small"), follow_user_path(user, :region => "user_left", :value => 1),                        |
+        :method => :post,                                                                                                                     |
+        :remote=>true,                                                                                                                        |
+        'data-disable-with' => '<span class="idea_add_link idea_add_working"><img src="/assets/ajax/horizontal_small.gif" /></span>', |
+        'data-loader-name' => "no_loader",                                                                                                    |
+        :class => "idea_add_link", :title => tr("I want to follow this person's comments and activity", "view/users/_button_small")       |
+    %span.idea_add_ignore{:id => "user_add_#{user.id.to_s}"}
+      = link_to tr("Ignore", "view/users/_button_small"), follow_user_path(user, :region => "user_left", :value => -1),                       |
+        :method => :post,                                                                                                                     |
+        :remote=>true,                                                                                                                        |
+        'data-disable-with' => '<span class="idea_add_link idea_add_working"><img src="/assets/ajax/horizontal_small.gif" /></span>', |
+        'data-loader-name' => "no_loader",                                                                                                    |
+        :class => "idea_add_link", :title => tr("I want to ignore this person's comments and activity", "view/users/_button_small")       |

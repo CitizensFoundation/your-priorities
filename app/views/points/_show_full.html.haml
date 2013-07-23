@@ -1,0 +1,42 @@
+- idea = Idea.unscoped.find(point.idea_id)
+- other_idea = point.has_other_idea? ? Idea.unscoped.find(point.other_idea_id) : nil
+.point{:id => point.id}
+  .col-group
+    .col-1
+      .col-content
+        .point_avatar
+          = render :partial => "users/pic_48", :locals => {:user => point.user}
+    .col-11
+      .col-content
+        .point_user_name
+          = link_to tr("{author_sentence}", "view/points/_show_full", :author_sentence => point.author_sentence), user_path(point.author_user)
+        .point_other
+          - if point.is_down?
+            %span.opposed= tr("opposed", "view/points/_show_full")
+          - if point.is_up?
+            %span.opposed= tr("supported", "view/points/_show_full")
+          = link_to idea.name, idea
+          = render :partial=>"points/report_content", :locals=>{:point=>point}
+          = render :partial=>"points/flagged", :locals=>{:point=>point}
+          = official_status(idea)
+        .point_content_wrapper
+          .point_name
+            = link_to_unless_current h(point.name), point
+          - if point.has_other_idea?
+            .point_other
+              = tr("Supporting {idea_name}", "view/points/_show_full", :idea_name => link_to(other_idea.name, other_idea))
+          .point_content
+            - if revision && revision.content_diff
+              = tg(revision.content_diff)
+            - else
+              = tg(point.content_html)
+          - if point.has_website?
+            .point_source
+              = tr("Source:", "view/points/_show_full")
+              %a{:href => point.website_link}= truncate(point.website_link,:length=>70)
+        .point_byline
+          #{tr("Point added {time_ago}", "view/points/_show_full", :time_ago => time_ago(point.created_at))}
+        .point_qualities
+          - if defined?(quality)
+            = render :partial => "points/button_small", :locals => {:point => point, :quality => quality}
+          .clear

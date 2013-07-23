@@ -1,0 +1,8 @@
+= tr("Please wait while we import your contacts.<br/>It might take 10 seconds to start, but then you should see the number completed start to rise.", "view/import/status")
+%p
+  = image_tag "bert-loader.gif"
+  %span{:style => "position: relative; bottom: 3px; left: 10px;"}
+    %span#number_completed
+      = current_user.imported_contacts_count
+    = tr("completed so far", "view/import/status")
+  = periodically_call_remote :url => { :action => "import_status"}, :frequency => 5

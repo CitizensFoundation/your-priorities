@@ -1,0 +1,36 @@
+%div{class: "header" + (" hverfi_header" if SubInstance.current.short_name =~ /^betri-hverfi/).to_s}
+  .header-wrap
+    .col-group
+      .col-12
+        .col-content
+          %div
+            = image_tag SubInstance.current.top_banner_url, :size => "1024x100", :class => "headerfix", :border => 0
+          %p.hide
+            %a{:href => "#content"} Skip to content
+
+    .col-group
+      .col-7
+        .col-content
+          %div
+            %a
+            %a{:href => "/"}
+              %div.logo_link
+        - if not @block_new_ideas and not action_name=="world"
+          %div.add
+            %a.button{:href => "/ideas/new"}
+              %span.left
+                = tr("SUBMIT YOUR IDEA", "view/ideas/_nav")
+              %span.icn.icn-add
+        - elsif action_name=="world"
+          %div.add
+            %a.button{:href => "/subscription_accounts/new"}
+              %span.left
+                = tr("GET {instance_name}","view/ideas/_nav", :instance_name=>Instance.current.name)
+              %span.icn.icn-add
+        &nbsp;
+      .col-5
+        .col-content.no-padding
+          = render :partial => "shared/top_navigation"
+          %br
+          %li.search
+            = render :partial => "shared/search"

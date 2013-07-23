@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/fugue/sticky_note_pin.png", :width => "16"}/
+= raw tr("{user_name} posted a bulletin to {other_user_name} profile", "view/activities/_activitybulletinprofilenew_nouser", :user_name => link_to(activity.other_user.login, activity.other_user), :other_user_name => link_to(activity.user.name.possessive, activity.user))

@@ -1,0 +1,3 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/comments_add.png", :width => "16"}/
+= link_to h(activity.user.login), activity.user
+= tr("added {point_name} to {idea_name}", "model/activity", :point_name=> link_to(Point.unscoped.find(activity.point_id).name, Point.unscoped.find(activity.point_id)), :idea_name => link_to(h(Idea.unscoped.find(activity.idea_id).name), Idea.unscoped.find(activity.idea_id)))

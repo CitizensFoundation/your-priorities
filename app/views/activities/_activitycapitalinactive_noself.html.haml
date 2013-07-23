@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/coins_delete.png", :width => "16"}/
+= raw tr("{user_name} lost {capital}{currency_short_name} for not logging in recently", "view/activities/_activitycapitalinactive_noself", :user_name => link_to(activity.user.login, activity.user), :capital => activity.capital.amount.abs, :currency_short_name => current_instance.currency_short_name)

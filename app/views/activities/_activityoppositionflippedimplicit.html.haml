@@ -1,0 +1,2 @@
+/%img.icon{:border => "0", :height => "16", :src => "/assets/icons/delete.png", :width => "16"}/
+= raw tr("{user_name} is now opposing {new_idea_name} because it acquired the opposers of {idea_name}", "view/activities/_activityoppositionflippedimplicit", :user_name => link_to(activity.user.login, activity.user), :idea_name => link_to(activity.idea.name, activity.idea), :new_idea_name => link_to(activity.change.new_idea.name, activity.change.new_idea))

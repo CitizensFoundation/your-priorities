@@ -1,0 +1,6 @@
+%p
+  %div{:id => "point_#{@point.id}_helpful_button"}
+    = render :partial => "points/button", :locals => {:point => @point, :quality => @quality }
+  /%p
+  /  %div{:id => "point_#{@point.id}_helpful_chart"}
+  /    = render :partial => "points/helpful_chart", :locals => {:points => @point }

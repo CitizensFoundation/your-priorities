@@ -1,0 +1,49 @@
+#hp_intro= @page_title
+%p
+  %p= tr("To make it as easy as possible for you to spread the word, I'll actually send an email on your behalf to whomever you want and introduce them to the site.   Don't worry, they will not be added to any email list, and if they are already a member of the site, it will connect you to their profile immediately.", "view/user_contacts/new")
+  %br/
+  %p= tr("You can also send your own email using your regular email program. Feel free to steal from what I wrote below.  Thanks for getting involved. {span_start}- {admin_name}{span_end}", |
+         "view/user_contacts/new",                                                                                                                                                            |
+         admin_name: @current_instance.admin_name,                                                                                                                                            |
+         span_start: '<span align="right" style="margin-left: 5px;"',                                                                                                                         |
+         span_end: '</span>',                                                                                                                                                                 |
+      )                                                                                                                                                                                       |
+  %br/
+  %p= tr("This form will let you send one invitation at a time, but you can also {find_start}import your contacts{find_end} from Google, Yahoo or Windows Live to invite a lot of people at once#{ "or {invite_start}invite your Facebook friends{invite_end}" if @current_instance.is_facebook?}.", |
+         "view/user_contacts/new",                                                                                                                                                                                                                                                                   |
+         find_start: '<a href="/network/find">',                                                                                                                                                                                                                                                     |
+         find_end: '</a>',                                                                                                                                                                                                                                                                           |
+         invite_start: '<a href="/facebook/invite">',                                                                                                                                                                                                                                                |
+         invite_end: '</a>',                                                                                                                                                                                                                                                                         |
+      )                                                                                                                                                                                                                                                                                              |
+  %br/
+  %p
+    = form_for @contact, :remote=>true,                       |
+      'data-disable-with' =>  escape_t(tr("Sending","Ajax")), |
+      :url => user_contacts_path(@user) do |f|                |
+      = f.error_messages
+      - if user_signed_in?
+        - if @user.login != @user.real_name
+          = tr("Should I reference your real name, or your site name?", "view/user_contacts/new")
+          %br/
+          = f.radio_button :is_from_realname, false
+          = @user.login
+          = f.radio_button :is_from_realname, true
+          = @user.real_name
+      %p
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+        %tr
+          %td= tr("Their name", "view/user_contacts/new")
+          %td{:style => "padding-left: 10px;"}= tr("Their email", "view/user_contacts/new")
+          %td
+        %tr
+          %td= f.text_field :name, :size => 17
+          %td{:style => "padding-right: 180px;"}= f.text_field :email, :size => 17
+      %p
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+        %tr
+          %td
+            = f.submit tr("Send email invitation", "view/user_contacts/new"), :class => "yellow_button"
+          %td{:valign => "top"}
+            #status
+    = render :partial=>"preview"

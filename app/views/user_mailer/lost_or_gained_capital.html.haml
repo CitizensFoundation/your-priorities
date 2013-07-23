@@ -1,0 +1,8 @@
+= render :partial=>"header", formats: [:html]
+%p
+  = "#{tr("Hi","email")} #{@user.first_name_detected},"
+%p= tr("The following activity has affected your social points on {instance_name}:","email", instance_name: Instance.last.name)                |
+- User.unscoped do
+  = render :partial=>"activities/#{@activity.type.downcase}_email", formats: [:html], locals: { activity: @activity, current_instance: Instance.last }
+  %p= tr("You now have {points} social point(s).","email", points: @user.capitals_count)
+= render :partial=>"footer", formats: [:html]

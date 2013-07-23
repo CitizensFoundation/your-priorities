@@ -1,0 +1,12 @@
+- if Instance.current.has_facebook_enabled?
+  %ul
+    %li.fb
+      :plain
+        <fb:like href="#{idea.show_url}" layout="button_count" ref="priority" show-faces="false" width="120" action="#{tr("like","facebook")}" colorscheme="light"></fb:like>
+    - unless @ideas
+      %li.gplus
+        .g-plusone{"data-size" => "medium", "data-href" => "#{idea.show_url}"}
+      %li.tweet
+        %a.twitter-share-button{"data-count" => "horizontal", :href => "https://twitter.com/share", :"data-url" => "#{idea.show_url}"} Tweet
+        :javascript
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
