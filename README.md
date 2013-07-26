@@ -19,22 +19,18 @@ sudo apt-get install curl
 bundle install
 ````
 
-3. Install postgres:
+3. Install postgres
 ````bash
 sudo apt-get install postgresql
 ````
 
-4. Then start the psql shell:
+4. Then start the psql shell
 ````bash
 sudo su postgres
 psql
-psql (9.1.9)
-Type "help" for help.
-
-postgres=#
 ````
 
-5. When in psql create a user and the Your Priorities dev database:
+5. When in psql create a user and the Your Priorities dev database
 ````bash
 create user puser password 'xxxxxxxx'
 create database yrpri_dev with encoding 'utf8';
