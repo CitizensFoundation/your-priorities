@@ -6,6 +6,68 @@ Short new instructions
 ======================
 Your Priorities is now setup to be a Heroku app, using S3 and CloudFront for deployment.
 
+Development on Ubuntu
+=====================
+
+1. Install rvm the Ruby version manager
+````bash
+sudo apt-get install curl
+\curl -L https://get.rvm.io | bash -s stable
+````
+
+2. Go into the application and install all gems
+````bash
+bundle install
+````
+
+3. Install postgres:
+````bash
+sudo apt-get install postgresql
+````
+
+4. Then start the psql shell:
+````bash
+sudo su postgres
+psql
+psql (9.1.9)
+Type "help" for help.
+
+postgres=#
+````
+
+5. When in psql create a user and the Your Priorities dev database:
+````bash
+create user puser password 'xxxxxxxx'
+create database yrpri_dev with encoding 'utf8';
+grant all privileges on database yrpri_dev to puser;
+postgres=#
+````
+
+6. Then exit the postgres shell and copy and edit the config/database.yml.dist file
+````bash
+cd config
+cp database.yml.dist database.yml
+````
+
+7. Then edit the database.yml file for your puser password
+
+8. When ready create the database tables and seed the database:
+````bash
+rake db:schema:load
+rake db:seed
+````
+
+9. Start the server
+````bash
+rails s
+````
+
+10. Navigate to http://localhost:3000/
+
+
+Production Deployment on Heroku
+===============================
+
 Here are the parameters that are used in Heroku config.
 
 Heroku parameters you need to setup yourself:
