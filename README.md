@@ -4,7 +4,6 @@ Your Priorities is being used on the https://www.yrpri.org/ eDemocracy service a
 
 Short new instructions
 ======================
-Your Priorities is now setup to be a Heroku app, using S3 and CloudFront for deployment.
 
 Development on Ubuntu
 =====================
@@ -67,6 +66,8 @@ rails s
 
 Production Deployment on Heroku
 ===============================
+
+Your Priorities is now setup to be a Heroku app, using S3 and CloudFront for deployment.
 
 Here are the parameters that are used in Heroku config.
 
