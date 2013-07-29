@@ -66,7 +66,6 @@ psql
 create user puser password 'xxxxxxxx'
 create database yrpri_dev with encoding 'utf8';
 grant all privileges on database yrpri_dev to puser;
-postgres=#
 ````
 
 6. Then exit the postgres shell and copy and edit the config/database.yml.dist file
