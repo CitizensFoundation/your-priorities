@@ -5,6 +5,37 @@ Your Priorities is being used on the https://www.yrpri.org/ eDemocracy service a
 Short new instructions
 ======================
 
+
+Setup the project locally
+=========================
+
+Fork the project from github.com
+````bash
+1. Create a github account if you do not have one
+2. Make sure you are logged in
+3. Click the "Fork" button at the top of the page to create your own fork
+````
+
+Download / clone on your local Ubuntu installation
+````bash
+(replace YOURNAME with your github username)
+git clone git@github.com:YOURNAME/your-priorities.git
+````
+
+Setup git to easily merge from the main branch
+Add the following to the .git/config file
+````bash
+[remote "robert"]
+        url = git@github.com:rbjarnason/your-priorities.git
+        fetch = +refs/heads/*:refs/remotes/robert/*
+````
+
+Merge the latest changes from the master branch
+````bash
+git fetch robert
+git merge robert/master
+````
+
 Development on Ubuntu
 =====================
 
