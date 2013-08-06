@@ -9,7 +9,7 @@ Your Priorities is being used on the [YrPri.org](https://www.yrpri.org/) global 
 ## Setup the project for local development
 
 Fork the project from GitHub
-````bash
+````
 1. Create a GitHub account if you do not have one
 2. Make sure you are logged in
 3. Click the "Fork" button at the top of the page to create your own fork
@@ -20,7 +20,7 @@ Download / clone to your development machine. (Replace YOURNAME with your github
 $ git clone git@github.com:YOURNAME/your-priorities.git
 ````
 Setup git to easily merge from the main branch. Add the following to the .git/config file:
-````bash
+````
 [remote "robert"]
         url = git@github.com:rbjarnason/your-priorities.git
         fetch = +refs/heads/*:refs/remotes/robert/*
@@ -58,7 +58,7 @@ $ psql
 ````
 
 5. When in psql create a user and the Your Priorities dev database
-````bash
+````sql
 create user puser password 'xxxxxxxx';
 create database yrpri_dev with encoding 'utf8';
 grant all privileges on database yrpri_dev to puser;
@@ -159,31 +159,31 @@ The following Heroku addons need to be used and should be configured automatical
 
 * Adept Scale, from [$18/mo](https://addons.heroku.com/adept-scale)
 
-	ADEPT_SCALE_URL:              ----------------------
+        ADEPT_SCALE_URL:              ----------------------
 
 * Flying Sphinx, from [$12/mo](https://addons.heroku.com/flying_sphinx)
 
-    FLYING_SPHINX_API_KEY:        ----------------------
+        FLYING_SPHINX_API_KEY:        ----------------------
 
 * Heroku PostgreSQL, from [free/$9/mo](https://addons.heroku.com/heroku-postgresql)
 
-    HEROKU_POSTGRESQL_WHITE_URL:  ---------------------- 
+        HEROKU_POSTGRESQL_WHITE_URL:  ---------------------- 
 
 * Memcachier, from [free/$15/mo](https://addons.heroku.com/memcachier)
 
-    MEMCACHIER_USERNAME:          ----------------------
+        MEMCACHIER_USERNAME:          ----------------------
 
 * PGBackups, [free](https://addons.heroku.com/pgbackups)
 
-    PGBACKUPS_URL:                ---------------------- 
+        PGBACKUPS_URL:                ---------------------- 
 
 * RedisToGo, from [free/$9/mo](https://addons.heroku.com/redistogo)
 
-    REDISTOGO_URL:                ---------------------- 
+        REDISTOGO_URL:                ---------------------- 
 
 * Sendgrid, from [free/$10/mo](https://addons.heroku.com/sendgrid))
 
-    SENDGRID_USERNAME:            ---------------------- 
+        SENDGRID_USERNAME:            ---------------------- 
 
 # About
 
@@ -191,7 +191,11 @@ Your Priorities originated as a merge between [NationBuilder](https://github.com
 
 # License
 
-TODO: Still AGPL?
+Copyright (C) Róbert Viðar Bjarnason
+
+This program is free software: you can redistribute it and/or modify it under the terms of the [GNU Affero General Public License](/agpl-3.0.txt) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the [GNU Affero General Public License](/agpl-3.0.txt) for more details.
 
 
 
