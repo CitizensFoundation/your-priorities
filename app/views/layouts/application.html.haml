@@ -28,7 +28,7 @@
           .col-content.no-margin
             = render :partial => "sub_instances/message_to_users" if controller_name=="home"
       .nav.nav-main
-        = render :partial => "shared/side_navigation" unless SubInstance.current.short_name == "default"
+        = render :partial => "shared/side_navigation" #unless SubInstance.current.short_name == "default"
       #content.content
         .content-wrap.col-group
           .col-12
