@@ -1,0 +1,69 @@
+.row
+  .large-12.columns
+    .panel
+      %h1
+        = tr("Donate to eDemocracy","here")
+      .panel
+        .row
+          .large-6.columns
+            %p
+              = tr("The Citizens Foundation is a non-profit foundation in Iceland. It's Icelandic name is Íbúar - Samráðslýðræði.","here")
+              = tr("Our Icelandic tax number is 6012101260. Here is a link to the Icelandic company register: ","here")
+              = link_to "http://www.rsk.is/fyrirtaekjaskra/leit/kennitala/6012101260","http://www.rsk.is/fyrirtaekjaskra/leit/kennitala/6012101260", :target=>"_blank"
+            %p
+              = tr("Most of our work is currently done as volunteer work. Your donation is highly appreciated and will help us expand our open source eDemocracy around the world. Thanks :)","here")
+          .large-6.columns
+            %p
+              %h4
+                = tr("Your donation information","here")
+              = form_for @donation do |f|
+                - if @donation.errors.any?
+                  .error_messages
+                    %h2
+                      = pluralize(@donation.errors.count, tr("error","here"))
+                    %ul
+                      - @donation.errors.full_messages.each do |msg|
+                        %li= msg
+                = f.hidden_field :paymill_card_token
+                = f.hidden_field :currency, :value=>@currency_code
+                - if @donation.paymill_card_token.present?
+                  = tr("Credit card has been provided already you can just click on donate.","here")
+                - else
+                  .row
+                    .large-6.columns
+                      .field
+                        = label_tag :amount, tr("Donation amount in {currency}","here",:currency=>@currency_code)
+                        = f.text_field :amount
+                    .large-6.columns
+                      .field
+                        = label_tag :email, tr("Your email (optional)","here",:currency=>@currency_code)
+                        = f.text_field :email
+                  .row
+                    .large-6.columns
+                      .field
+                        = label_tag :card_number, tr("Cardholder name","here")
+                        = text_field_tag :cardholder, nil, name: nil
+                    .large-6.columns
+                      .field
+                        = label_tag :card_number, tr("Credit Card Number","here")
+                        = text_field_tag :card_number, nil, name: nil
+                  .row
+                    .large-5.columns
+                      .field
+                        = label_tag :card_code, tr("Security Code (CVV)","here")
+                        = text_field_tag :card_code, nil, name: nil
+                    .large-4.columns
+                      .field
+                        = label_tag :card_month, tr("Expiry month","here")
+                        = select_month nil, {:add_month_numbers=> true}, {:name=> nil, :id=> "card_month"}
+                    .large-3.columns
+                      .field
+                        = label_tag :card_month, tr("Expiry year","here")
+                        = select_year nil, {:start_year=> Date.today.year, :end_year=> Date.today.year+15}, {:name=> nil, :id=> "card_year"}
+                %h2
+                  #paymill_error{:style=>"color:#F00;"}
+                    %noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
+                %br
+                %center
+                  = f.submit tr("Donate now","here"), :id=>"submit_button", :class=>"button"
+        = link_to tr("Back","here"), :back

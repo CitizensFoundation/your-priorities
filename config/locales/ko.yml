@@ -104,12 +104,12 @@ ko:
     am: 오전
     pm: 오후
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: '와(과) '
-      last_word_connector: ', '
     select:
       prompt: 선택해 주세요
+    array:
+      two_words_connector: 와(과)
+      last_word_connector: ','
+      words_connector: ','
   number:
     format:
       separator: .

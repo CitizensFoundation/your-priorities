@@ -51,9 +51,10 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new(params[:subscription])
     @subscription.account_id = SubInstance.current.account_id
     respond_to do |format|
-      if @subscription.plan.price > 0.0
-        result = @subscription.save_with_payment(current_user)
+      if @subscription.plan.amount > 0.0
+        result = @subscription.save_with_payment(current_user,@current_subscription)
       else
+        @subscription.cancel_current_subscription(@current_subscription) if @current_subscription
         result = @subscription.save
       end
       if result
@@ -63,7 +64,7 @@ class SubscriptionsController < ApplicationController
         sub_instance.reload
         sub_instance.subscription_id = @subscription.id
         sub_instance.save!
-        format.html { redirect_to "/subscription_accounts/users", notice: 'Subscription was successfully created.' }
+        format.html { redirect_to "/subscription_accounts/users", notice: tr("Subscription was successfully created.","here") }
         format.json { render json: @subscription, status: :created, location: @subscription }
       else
         format.html { render action: "new" }
@@ -77,14 +78,17 @@ class SubscriptionsController < ApplicationController
     @plan = Plan.find(params[:plan_id])
     if @subscription.plan.id != @plan.id
       @subscription.plan = @plan
-      if @plan.price>0.0
+      if @plan.amount>0.0
         @subscription.active = false
       else
+        @subscription.cancel_current_subscription(@current_subscription) if @current_subscription
         @subscription.active = true
       end
     end
     respond_to do |format|
-      if @subscription.save
+      if @plan.amount>0.0
+        format.html { redirect_to :action=>"new", :plan_id=>@plan.id }
+      elsif @subscription.save
         format.html { redirect_to SubInstance.current.show_url, :notice=> tr("Subscription was successfully update.","here") }
         format.json { render json: @subscription, status: :created, location: @subscription }
       else

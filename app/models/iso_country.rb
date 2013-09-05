@@ -9,4 +9,8 @@ class IsoCountry < ActiveRecord::Base
   def base_flag_url(size)
     "/assets/flags/#{size}/#{self.code.downcase}.png"
   end
+
+  def name
+    country_english_name
+  end
 end

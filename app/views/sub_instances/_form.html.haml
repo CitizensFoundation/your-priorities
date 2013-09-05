@@ -63,7 +63,7 @@
         %b
           %label{:for => "logo"}= tr("Logo", "view/sub_instances/_form")
         %br/
-        = link_to image_tag(@sub_instance.logo(:preview)), @sub_instance.logo(:icon_full), :target=>"_blank"  
+        = link_to image_tag(@sub_instance.logo_url(:preview)), @sub_instance.logo_url(:icon_full), :target=>"_blank"
         %br/
         = f.file_field :logo
         %br/
@@ -71,7 +71,7 @@
         %b
           %label{:for => "top_banner_image"}= tr("Top Banner Image", "view/sub_instances/_form")
         %br/
-        = link_to image_tag(@sub_instance.top_banner(:preview)), @sub_instance.top_banner(:icon_full), :target=>"_blank" 
+        = link_to image_tag(@sub_instance.top_banner_url(:preview)), @sub_instance.top_banner_url(:icon_full), :target=>"_blank"
         %br/
         = f.file_field :top_banner
         %br/
@@ -80,7 +80,7 @@
           %label{:for => "menu_strip_side_image"}
           = tr("Menu Strip Side Image", "view/sub_instances/_form")
         %br/
-        = link_to image_tag(@sub_instance.menu_strip_side(:preview)), @sub_instance.menu_strip_side(:icon_full), :target=>"_blank" 
+        = link_to image_tag(@sub_instance.menu_strip_side_url(:preview)), @sub_instance.menu_strip_side_url(:icon_full), :target=>"_blank"
         %br/
         = f.file_field :menu_strip_side
         %br/

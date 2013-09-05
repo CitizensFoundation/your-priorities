@@ -1,9 +1,6 @@
 = render :partial=>"user_mailer/header", formats: [:html]
 %p
-  = "#{tr("Hello", "email")},"
-%p
-  = tr("This is an invitation from {sender_name} to join {instance_name}.", "email",      |
-    :sender_name=> @sender_name, :instance_name=>@instance_name) |
+  = tr("This is an invitation from {sender_name} to join {instance_name}.", "email", :sender_name=> @sender_name, :instance_name=>@instance_name)
 %p
   = tr("Click here to accept invitation:","here")
   %br

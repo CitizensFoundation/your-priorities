@@ -8,8 +8,8 @@ class IdeasController < ApplicationController
   before_filter :authenticate_admin!, :only => [:bury, :successful, :compromised, :intheworks, :failed, :abusive, :not_abusive]
   before_filter :load_endorsement, :only => [:show, :show_feed, :activities, :endorsers, :opposers, :opposer_points, :endorser_points, :neutral_points, :everyone_points,
                                              :opposed_top_points, :endorsed_top_points, :idea_detail, :top_points, :discussions, :everyone_points ]
-  before_filter :disable_sub_nav, :only => [:show, :show_feed, :activities, :endorsers, :opposers, :opposer_points, :endorser_points, :neutral_points, :everyone_points,
-                                              :opposed_top_points, :endorsed_top_points, :idea_detail, :top_points, :discussions, :everyone_points ]
+#  before_filter :disable_sub_nav, :only => [:show, :show_feed, :activities, :endorsers, :opposers, :opposer_points, :endorser_points, :neutral_points, :everyone_points,
+#                                              :opposed_top_points, :endorsed_top_points, :idea_detail, :top_points, :discussions, :everyone_points ]
   before_filter :check_for_user, :only => [:yours, :network, :yours_finished, :yours_created]
 
   before_filter :setup_filter_dropdown
@@ -28,8 +28,11 @@ class IdeasController < ApplicationController
   end
 
 
-  # GET /ideas
+  # GET /ideas                                               7
   def index
+    redirect_to :action=>"top"
+    return false
+
     if params[:term] and request.xhr?
       ideas = Idea.published.find(:all, :select => "ideas.name", :conditions => ["name LIKE ?", "%#{params[:term]}%"], :order => "endorsements_count desc")
       idea_links = []
@@ -327,9 +330,9 @@ class IdeasController < ApplicationController
   # GET /ideas/finished
   def finished
     @position_in_idea_name = false
-    @page_title = tr("#{IDEA_TOKEN_PLURAL_CAPS} in progress", "controller/ideas")
+    @page_title = tr("#{IDEA_TOKEN_PLURAL_CAPS} finished", "controller/ideas")
     @rss_url = finished_ideas_url(:format => 'rss')
-    @ideas = Idea.finished.not_removed.by_most_recent_status_change.paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.finished.not_removed.top_rank.paginate :page => params[:page], :per_page => params[:per_page]
     respond_to do |format|
       format.html { render :action => "list" }
       format.rss { render :action => "list" }
@@ -337,8 +340,64 @@ class IdeasController < ApplicationController
       format.xml { render :xml => @ideas.to_xml(:except => NB_CONFIG['api_exclude_fields']) }
       format.json { render :json => @ideas.to_json(:except => NB_CONFIG['api_exclude_fields']) }
     end    
-  end  
-  
+  end
+
+  def finished_successful
+    @position_in_idea_name = false
+    @page_title = tr("#{IDEA_TOKEN_PLURAL_CAPS} finished successfully", "controller/ideas")
+    @rss_url = finished_ideas_url(:format => 'rss')
+    @ideas = Idea.successful.not_removed.top_rank.paginate :page => params[:page], :per_page => params[:per_page]
+    respond_to do |format|
+      format.html { render :action => "list" }
+      format.rss { render :action => "list" }
+      format.js { render :layout => false, :text => "document.write('" + js_help.escape_javascript(render_to_string(:layout => false, :template => 'ideas/list_widget_small')) + "');" }
+      format.xml { render :xml => @ideas.to_xml(:except => NB_CONFIG['api_exclude_fields']) }
+      format.json { render :json => @ideas.to_json(:except => NB_CONFIG['api_exclude_fields']) }
+    end
+  end
+
+  def finished_failed
+    @position_in_idea_name = false
+    @page_title = tr("#{IDEA_TOKEN_PLURAL_CAPS} finished successfully", "controller/ideas")
+    @rss_url = finished_ideas_url(:format => 'rss')
+    @ideas = Idea.failed.not_removed.top_rank.paginate :page => params[:page], :per_page => params[:per_page]
+    respond_to do |format|
+      format.html { render :action => "list" }
+      format.rss { render :action => "list" }
+      format.js { render :layout => false, :text => "document.write('" + js_help.escape_javascript(render_to_string(:layout => false, :template => 'ideas/list_widget_small')) + "');" }
+      format.xml { render :xml => @ideas.to_xml(:except => NB_CONFIG['api_exclude_fields']) }
+      format.json { render :json => @ideas.to_json(:except => NB_CONFIG['api_exclude_fields']) }
+    end
+  end
+
+  def finished_in_progress
+    @position_in_idea_name = false
+    @page_title = tr("#{IDEA_TOKEN_PLURAL_CAPS} finished successfully", "controller/ideas")
+    @rss_url = finished_ideas_url(:format => 'rss')
+    @ideas = Idea.in_progress.not_removed.top_rank.paginate :page => params[:page], :per_page => params[:per_page]
+    respond_to do |format|
+      format.html { render :action => "list" }
+      format.rss { render :action => "list" }
+      format.js { render :layout => false, :text => "document.write('" + js_help.escape_javascript(render_to_string(:layout => false, :template => 'ideas/list_widget_small')) + "');" }
+      format.xml { render :xml => @ideas.to_xml(:except => NB_CONFIG['api_exclude_fields']) }
+      format.json { render :json => @ideas.to_json(:except => NB_CONFIG['api_exclude_fields']) }
+    end
+  end
+
+  def finished_compromised
+    @position_in_idea_name = false
+    @page_title = tr("#{IDEA_TOKEN_PLURAL_CAPS} finished successfully", "controller/ideas")
+    @rss_url = finished_ideas_url(:format => 'rss')
+    @ideas = Idea.compromised.not_removed.top_rank.paginate :page => params[:page], :per_page => params[:per_page]
+    respond_to do |format|
+      format.html { render :action => "list" }
+      format.rss { render :action => "list" }
+      format.js { render :layout => false, :text => "document.write('" + js_help.escape_javascript(render_to_string(:layout => false, :template => 'ideas/list_widget_small')) + "');" }
+      format.xml { render :xml => @ideas.to_xml(:except => NB_CONFIG['api_exclude_fields']) }
+      format.json { render :json => @ideas.to_json(:except => NB_CONFIG['api_exclude_fields']) }
+    end
+  end
+
   # GET /ideas/random
   def random
     @page_title = tr("Random #{IDEA_TOKEN_PLURAL}", "controller/ideas")
@@ -419,6 +478,7 @@ class IdeasController < ApplicationController
       end
       @endorsements = nil
       if user_signed_in? # pull all their endorsements on the ideas shown
+        current_user.have_seen_idea!(@idea)
         @endorsements = Endorsement.find(:all, :conditions => ["idea_id in (?) and user_id = ? and status='active'", @relationships.collect {|other_idea, relationship| other_idea.id},current_user.id])
       end
       respond_to do |format|
@@ -524,6 +584,7 @@ class IdeasController < ApplicationController
 
   def top_points
     @page_title = tr("Top points", "controller/ideas", :idea_name => @idea.name)
+    @activities = @idea.activities.active.top_discussions.for_all_users :include => :user
     setup_top_points(50000)
     respond_to do |format|
       format.html { render :action => "top_points" }
@@ -732,7 +793,7 @@ class IdeasController < ApplicationController
       @endorsement = @idea.oppose(current_user,request,@referral)
     end
     if params[:ad_id]    
-      @ad = Ad.unscoped.find(params[:ad_id])
+      @ad = Ad.find(params[:ad_id])
       @ad.vote(current_user,@value,request) if @ad
     else
       @ad = Ad.unscoped.find_by_idea_id_and_status(@idea.id,'active')
@@ -1131,23 +1192,30 @@ class IdeasController < ApplicationController
     def setup_menu_items
       @items = Hash.new
       item_count = 0
-      if rand(2)==0
-        @items[item_count+=1]=[tr("Last added", "view/ideas"), newest_ideas_url]
-        @items[item_count+=1]=[tr("Top #{IDEA_TOKEN_PLURAL} past 24 hours", "controller/ideas"), top_24hr_ideas_url] unless @block_endorsements
-        @items[item_count+=1]=[tr("Top #{IDEA_TOKEN_PLURAL} past 7 days", "controller/ideas"), top_7days_ideas_url] unless @block_endorsements
-        @items[item_count+=1]=[tr("Top voted", "view/ideas"), top_ideas_url] unless @block_endorsements
+
+      @idea = Idea.find(params[:id]) if not @idea and params[:id]
+
+      if [:show, :show_feed, :update_status, :activities, :endorsers, :opposers, :opposer_points, :endorser_points, :neutral_points, :everyone_points,
+          :opposed_top_points, :endorsed_top_points, :idea_detail, :top_points, :discussions, :everyone_point].include?(action_name.to_sym)
+        setup_main_ideas_menu
       else
-        @items[item_count+=1]=[tr("Top #{IDEA_TOKEN_PLURAL} past 7 days", "controller/ideas"), top_7days_ideas_url] unless @block_endorsements
-        @items[item_count+=1]=[tr("Top #{IDEA_TOKEN_PLURAL} past 24 hours", "controller/ideas"), top_24hr_ideas_url] unless @block_endorsements
+        @items[item_count+=1]=[tr("Last added ({count})", "view/ideas", :count=>Idea.not_removed.count), newest_ideas_url]
         @items[item_count+=1]=[tr("Top voted", "view/ideas"), top_ideas_url] unless @block_endorsements
-        @items[item_count+=1]=[tr("Last added", "view/ideas"), newest_ideas_url]
-      end
-      @items[item_count+=1]=[tr("Top read", "view/ideas"), by_impressions_ideas_url]
-      @items[item_count+=1]=[tr("Most discussed", "view/ideas"), most_discussed_ideas_url]
-      @items[item_count+=1]=[tr("Random", "view/ideas"), random_ideas_url]
-      if user_signed_in? and current_user.ideas.count>0
-        @items[item_count+=1]=[tr("Yours", "view/ideas"), yours_ideas_url]
+        @items[item_count+=1]=[tr("Top #{IDEA_TOKEN_PLURAL} past 24 hours", "controller/ideas"), top_24hr_ideas_url] unless @block_endorsements
+        @items[item_count+=1]=[tr("Top #{IDEA_TOKEN_PLURAL} past 7 days", "controller/ideas"), top_7days_ideas_url] unless @block_endorsements
+        @items[item_count+=1]=[tr("Top read", "view/ideas"), by_impressions_ideas_url]
+        @items[item_count+=1]=[tr("Most discussed", "view/ideas"), most_discussed_ideas_url]
+        @items[item_count+=1]=[tr("Random", "view/ideas"), random_ideas_url]
+        if user_signed_in? and current_user.ideas.count>0
+          @items[item_count+=1]=[tr("Yours", "view/ideas"), yours_ideas_url]
+        end
+        @items[item_count+=1]=[tr("All officially finished ({count})", "view/ideas", :count=>Idea.finished.not_removed.count), finished_ideas_url]
+        @items[item_count+=1]=[tr("Officially successful ({count})", "view/ideas", :count=>Idea.successful.not_removed.count), finished_successful_ideas_url]
+        @items[item_count+=1]=[tr("Officially failed ({count})", "view/ideas",:count=>Idea.failed.not_removed.count), finished_failed_ideas_url]
+        @items[item_count+=1]=[tr("Officially in progress ({count})", "view/ideas", :count=>Idea.in_progress.not_removed.count), finished_in_progress_ideas_url]
       end
       @items
     end
 end
+
+

@@ -1,10 +1,12 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-  %body
-    %table
-      %tr
-        %td{:align => "left", :width => "130px"}
-          - if defined?(attachments)
-            = image_tag attachments['logo.png'].url, :alt=>tr("{instance_name}", "email", :instance_name => tr(@instance.name, "Name from database"))
+:css
+  body {
+      font-family: Helvetica,"Helvetica Neue",Arial,sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      color: #333;
+      background-color: #fff;
+  }
+- if defined?(attachments)
+  = image_tag attachments['logo.png'].url, :alt=>@instance.name
+%p
+  = "#{tr("Hi","email")} #{@recipient.first_name_detected},"

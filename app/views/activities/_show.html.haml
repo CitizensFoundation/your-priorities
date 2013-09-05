@@ -34,16 +34,25 @@
                 .activity_content
                   - cache("#{activity[:type].downcase}#{suffix}-#{activity.id}-#{session[:locale]}-#{@inline_translations_enabled}-#{current_user and current_user.is_admin?}") do
                     = render :partial => "activities/#{activity[:type].downcase}#{suffix}", :locals => {:activity => activity}
-                  %span.small= time_ago(activity.created_at)
-                  - if activity.class != ActivityCommentParticipant
-                    - if user_signed_in? and activity.published_comments.count > 0
-                      %span.comment_link{:title => escape_t(tr("Send comment","Ajax"))}
-                        = link_to_unless_current pluralize(activity.published_comments.count, title="#{escape_t(tr("Comment","Ajax"))}"), activity_comments_url(activity)
-                    - elsif false and user_signed_in?
-                      %span.comment_link{:id => "comment_link_#{activity.id.to_s}", :title => escape_t(tr("Send comment","Ajax"))}
-                        = link_to tr("Comment", "view/activities/_show"), new_activity_comment_url(activity), :method => :get, |
-                          'data-disable-with' => "",                                                                           |
-                          'data-loader-name' => "horizontal_small",                                                            |
-                              :remote=>true                                                                                        |
+                  %br
+                  %span.small{:style=>"font-size:11px;"}
+                    %em
+                      = time_ago(activity.created_at)
+                      - if activity.class != ActivityCommentParticipant
+                        - if user_signed_in? and activity.published_comments.count > 0
+                          = " - "
+                          %span.comment_link{:title => escape_t(tr("Send comment","Ajax"))}
+                            - if (count=activity.published_comments.count) > 1
+                              - text = tr("{comments_count} Comments","Ajax",:comments_count=>count)
+                              = link_to_unless_current count, activity_comments_url(activity)
+                            - else
+                              - text = tr("{comments_count} Comment","Ajax",:comments_count=>count)
+                              = link_to_unless_current count, activity_comments_url(activity)
+                        - elsif false and user_signed_in?
+                          %span.comment_link{:id => "comment_link_#{activity.id.to_s}", :title => escape_t(tr("Send comment","Ajax"))}
+                            = link_to tr("Comment", "view/activities/_show"), new_activity_comment_url(activity), :method => :get, |
+                              'data-disable-with' => "",                                                                           |
+                              'data-loader-name' => "horizontal_small",                                                            |
+                                  :remote=>true                                                                                        |
   - if activity.class != ActivityCommentParticipant and activity.class != ActivityBulletinProfileAuthor
     = render :partial => "activities/comments", :locals => {:activity => activity}

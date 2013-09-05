@@ -32,7 +32,7 @@
       %li
         = link_to :controller => "home", :action=> "index" do
           .sprite_clip_flag
-            = image_tag SubInstance.current.logo.url(:icon_50), :border => 0, :size=>"50x50"
+            = image_tag SubInstance.current.logo_url(:icon_50), :border => 0, :size=>"50x50"
           %span.label
             = tr("Home","Menu system")
     - else
@@ -53,16 +53,16 @@
         %span.label
           = tr("Debate", "view/shared/_menu")
     %li
-      = link_to :controller => "feed" do
-        = raw "<div class='sprite_clip #{controller_name=="feed" ? "feed_pos_selected" : "feed_pos"}'></div>"
-        %span.label
-          = tr("Feed", "view/shared/_menu")
-    %li
       = link_to :controller => "issues" do
         %div.sprite_clipwrapper
         = raw "<div class='sprite_clip #{controller_name=="issues" ? "categories_pos_selected" : "categories_pos"}'></div>"
         %span.label.margin_fix
           = tr("Categories", "view/shared/_menu")
+    %li
+      = link_to :controller => "feed" do
+        = raw "<div class='sprite_clip #{controller_name=="feed" ? "feed_pos_selected" : "feed_pos"}'></div>"
+        %span.label
+          = tr("Feed", "view/shared/_menu")
     - if current_instance.domain_name.include?("yrpri") and not SubInstance.current.iso_country and not SubInstance.current.hide_world_icon==true
       %li
         = link_to :controller => "home", :action=>current_instance.domain_name.include?("yrpri") ? "world" : "index" do

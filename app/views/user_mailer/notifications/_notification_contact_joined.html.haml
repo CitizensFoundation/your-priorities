@@ -1,8 +1,3 @@
-= render :partial=>"user_mailer/header", formats: [:html]
-%p
-  = tr("Hi","email")
-  = @recipient.first_name.capitalize
-  ,
 %p
   = tr("This is an automated message to let you know that {sender_name} just joined {instance_name}","email", :sender_name=>@sender.name, :instance_name => @instance.name)
   = tr("You're receiving it because you have {sender_email} in your contacts.","email", :sender_email=>@sender.email)
@@ -12,4 +7,4 @@
   %br/
   = link_to @sender.profile_url, @sender.profile_url
 %p= tr("Thank you for participating.","email")
-= render :partial=>"user_mailer/footer", formats: [:html]
+

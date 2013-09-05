@@ -9,7 +9,7 @@
             %a{:href => "#content"} Skip to content
 
     .col-group
-      .col-7
+      .col-5
         .col-content
           %div
             %a
@@ -28,9 +28,16 @@
                 = tr("GET {instance_name}","view/ideas/_nav", :instance_name=>Instance.current.name)
               %span.icn.icn-add
         &nbsp;
-      .col-5
+      .col-7
         .col-content.no-padding
           = render :partial => "shared/top_navigation"
-          %br
-          %li.search
-            = render :partial => "shared/search"
+        %table{:width=>"100%", :border=>0}
+          %tr
+            %td{:align=>"left"}
+              - unless SubInstance.current.short_name=="default"
+                %h2
+                  = SubInstance.current.name
+            %td{:align=>"right"}
+              = "<div class='fb-like' data-href='#{Instance.current.homepage_url}' data-send='false' data-layout='button_count' data-width='200' data-show-faces='false'></div>".html_safe
+            %td{:align=>"right", :width=>"190px"}
+              = render :partial => "shared/search"

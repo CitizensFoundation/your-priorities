@@ -3,13 +3,13 @@
     = tr("Admin settings", "view/shared/_menu")
   %li
     \&middot;
-    = link_to tr("Configuration", "view/shared/_menu"), edit_sub_instance_url(SubInstance.current)
+    = link_to tr("Users", "view/shared/_menu"), "/subscription_accounts/users"
   %li
     \&middot;
     = link_to tr("Subscription plan", "view/shared/_menu"), "/subscription_accounts/select_plan"
   %li
     \&middot;
-    = link_to tr("Users", "view/shared/_menu"), "/subscription_accounts/users"
+    = link_to tr("Configuration", "view/shared/_menu"), edit_sub_instance_url(SubInstance.current)
   %li
     \&middot;
     = link_to tr("Categories", "view/shared/_menu"), "/categories"

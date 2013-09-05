@@ -1,4 +1,4 @@
 = render :partial=>"map_header"
 - IsoCountry.all.each do |country|
-  = render :partial=>"map_element", :locals=>{:country=>country}
+  = render :partial=>"map_element", :locals=>{:place=>country}
 = render :partial=>"map_footer"

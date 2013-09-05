@@ -1,0 +1,13 @@
+= render :partial=>"user_mailer/header", formats: [:html]
+%p
+  = tr("Thank you for your payment of {payment} on {instance_name}.", "email", :payment=>@payment, :next_payment=>@next_payment, :instance_name=>@instance_name)
+%p
+  %b
+    = tr("Current subscription plan","here")
+  %br
+  - if @current_plan.private_instance
+    = tr("Private plan with email only registration for up to {number_of_users} users.","here",:number_of_users=>@current_plan.max_users)
+  - else
+    = tr("Public plan with open registration including Facebook for up to {number_of_users} users.","here",:number_of_users=>@current_plan.max_users)
+
+= render :partial=>"user_mailer/footer", formats: [:html]

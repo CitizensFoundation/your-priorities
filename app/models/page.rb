@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-  attr_accessible :content, :title
+  attr_accessible :content, :title, :name
 
   after_initialize :default_values
 

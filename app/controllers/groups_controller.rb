@@ -57,7 +57,7 @@ class GroupsController < ApplicationController
     respond_to do |format|
       if @group.save
         GroupsUser.create(:group_id=>@group.id, :user_id=>current_user.id, :is_admin=>true)
-        format.html { redirect_to :action=>"edit", :id=>@group.id, notice: 'Group was successfully created.' }
+        format.html { redirect_to :action=>"edit", :id=>@group.id, notice: tr("Group was successfully created.","here") }
         format.json { render json: @group, status: :created, location: @group }
       else
         format.html { render action: "new" }

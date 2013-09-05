@@ -61,12 +61,12 @@ nl:
     am: '''s ochtends'
     pm: '''s middags'
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' en '
-      last_word_connector: ' en '
     select:
       prompt: Selecteer
+    array:
+      two_words_connector: en
+      last_word_connector: en
+      words_connector: ','
   number:
     format:
       separator: ','

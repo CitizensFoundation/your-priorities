@@ -1,35 +1,96 @@
-%h1
-  = tr("Signing up for ","here")+@subscription.plan.name.from_localized_yaml
-%p
-  %strong
-  = number_to_currency @subscription.plan.price_usd, unit: "$"
-= form_for @subscription do |f|
-  - if @subscription.errors.any?
-    .error_messages
-      %h2
-        = pluralize(@subscription.errors.count, tr("error","here"))
-        prohibited this subscription from being saved:
-      %ul
-        - @subscription.errors.full_messages.each do |msg|
-          %li= msg
-  = f.hidden_field :plan_id
-  = f.hidden_field :paymill_card_token
-  - if @subscription.plan.price>0.0
-    - if @subscription.paymill_card_token.present?
-      Credit card has been provided.
-    - else
-      .field
-        = label_tag :card_number, tr("Credit Card Number","here")
-        = text_field_tag :card_number, nil, name: nil
-      .field
-        = label_tag :card_code, tr("Security Code on Card (CVV)","here")
-        = text_field_tag :card_code, nil, name: nil
-      .field
-        = label_tag :card_month, tr("Card Expiration","here")
-        = select_month nil, {:add_month_numbers=> true}, {:name=> nil, :id=> "card_month"}
-        = select_year nil, {:start_year=> Date.today.year, :end_year=> Date.today.year+15}, {:name=> nil, :id=> "card_year"}
-  #paymill_error
-    %noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
-  .actions
-    = f.submit tr("Subscribe","here"), :id=>"submit_button"
-= link_to 'Back', "/subscription_accounts/select_plan"
+.row
+  .large-12.columns
+    .panel
+      %h1
+        - if @current_subscription and @current_subscription.active
+          = tr("Updating subscription","here")
+        - else
+          = tr("Creating subscription","here")
+      .panel
+        %p
+          - if @subscription.plan.private_instance
+            = tr("You are subscribing to a private plan with email invites for up to {number_of_users} users.","here",:number_of_users=>@subscription.plan.max_users)
+          - else
+            = tr("You are subscribing to a public plan with open registration including Facebook for up to {number_of_users} users.","here",:number_of_users=>@subscription.plan.max_users)
+        .row
+          .large-5.columns
+            %p
+              %h4
+                = tr("Name of your instance","here")
+              = current_sub_instance.name
+            %p
+              %h4
+                = tr("Domain name","here")
+              = current_sub_instance.show_url
+            %p
+              %h4
+                = tr("Full name","here")
+              = current_user.login
+            %p
+              %h4
+                = tr("Email","here")
+              = current_user.email
+          .large-7.columns
+            %p
+              %h4
+                = tr("Your payment information","here")
+              = form_for @subscription do |f|
+                - if @subscription.errors.any?
+                  .error_messages
+                    %h2
+                      = pluralize(@subscription.errors.count, tr("error","here"))
+                      prohibited this subscription from being saved:
+                    %ul
+                      - @subscription.errors.full_messages.each do |msg|
+                        %li= msg
+                = f.hidden_field :plan_id
+                = f.hidden_field :paymill_card_token
+                = f.hidden_field :currency, :value=>@currency_code
+                = f.hidden_field :amount, :value=>@subscription.plan.amount
+
+                - if @subscription.plan.amount>0.0
+                  - if @subscription.paymill_card_token.present?
+                    = tr("Credit card has been provided already you can just click on subscribe.","here")
+                  - else
+                    .row
+                      .large-12.columns
+                        %p
+                          - if @subscription.plan.vat>0.0
+                            = tr("{amount} per month including vat","here",:amount=>currency_with_unit(@subscription.plan.amount_with_vat, @subscription.plan.currency))
+                          - else
+                            = tr("{amount} per month","here",:amount=>currency_with_unit(@subscription.plan.amount_with_vat, @subscription.plan.currency))
+                    .row
+                      .large-6.columns
+                        .field
+                          = label_tag :card_number, tr("Cardholder name","here")
+                          = text_field_tag :cardholder, nil, name: nil
+                      .large-6.columns
+                        .field
+                          = label_tag :card_number, tr("Credit Card Number","here")
+                          = text_field_tag :card_number, nil, name: nil
+                    .row
+                      .large-5.columns
+                        .field
+                          = label_tag :card_code, tr("Security Code (CVV)","here")
+                          = text_field_tag :card_code, nil, name: nil
+                      .large-4.columns
+                        .field
+                          = label_tag :card_month, tr("Expiry month","here")
+                          = select_month nil, {:add_month_numbers=> true}, {:name=> nil, :id=> "card_month"}
+                      .large-3.columns
+                        .field
+                          = label_tag :card_month, tr("Expiry year","here")
+                          = select_year nil, {:start_year=> Date.today.year, :end_year=> Date.today.year+15}, {:name=> nil, :id=> "card_year"}
+                %h2
+                  #paymill_error{:style=>"color:#F00;"}
+                    %noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
+                %br
+                %center
+                  = f.submit tr("Subscribe now","here"), :id=>"submit_button", :class=>"button"
+        %p
+          %b
+            = tr("Your subscription will be effective immediately.","here")
+            = tr("Your first monthly payment will be {amount} charged now.","here",:amount=>currency_with_unit(@subscription.plan.amount_with_vat, @subscription.plan.currency))
+            = tr("You can cancel your subscription at any time.","here")
+
+        = link_to tr("Select another subscription plan","here"), "/subscription_accounts/select_plan"

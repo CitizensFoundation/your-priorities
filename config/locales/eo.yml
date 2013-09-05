@@ -143,12 +143,12 @@ eo:
           trillion: mil miliardoj
           quadrillion: miliono da miliardoj
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' kaj '
-      last_word_connector: ' kaj '
     select:
       prompt: Bonvolu elekti
+    array:
+      two_words_connector: kaj
+      last_word_connector: kaj
+      words_connector: ','
   helpers:
     select:
       prompt: Bonvolu elekti
@@ -206,6 +206,6 @@ eo:
         header:
           one: 'Ne eblas registri tiun %{model}: 1 eraro'
           other: 'Ne eblas registri tiun %{model}: %{count} eraroj'
-        body: 'Kontrolu la jenajn kampojn: '
+        body: 'Kontrolu la jenajn kampojn:'
       full_messages:
         format: '%{attribute} %{message}'

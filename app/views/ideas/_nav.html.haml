@@ -1,14 +1,12 @@
 .idea_menu
   %ul
-    %li.highlight
+    %li
       = link_to_unless_current tr("Overview", "view/ideas/_nav"), @idea
       - if @idea.points_count > 0
         %li
           = link_to_unless_current tr("Debate ({count})", "view/ideas/_nav", :count => @idea.points_count), top_points_idea_url(@idea)
       %li
         = link_to_unless_current tr("Add point", "view/ideas/_nav"), @idea.new_point_url, :title => tr("Can you make a compelling point for or against this idea in less than 500 characters?", "view/ideas/_nav")
-      %li
-        = link_to_unless_current tr("Discussions ({count})", "view/ideas/_nav", :count => @idea.discussions_count), discussions_idea_url(@idea)
       - if @idea.idea_revisions_count>1
         %li
           = link_to_unless_current tr("Revisions ({count})", "view/ideas/_nav", :count => @idea.idea_revisions_count), idea_idea_revision_url(@idea,@idea.idea_revision_id)
@@ -18,8 +16,6 @@
     - if false and @idea.changes_count > 0 or params[:controller] == 'changes'
       %li
         = link_to_unless_current tr("M&A", "view/ideas/_nav"), idea_changes_url(@idea)
-    %li
-      = link_to_unless_current tr("Feed", "view/ideas/_nav"), activities_idea_url(@idea)
     - if current_user and current_user.capitals_count>0 and @idea.status == 'published'
       %li
         = link_to_unless_current tr("Buy an ad", "view/ideas/_nav"), new_idea_ad_url(@idea), :title => tr("Spend some of your {currency_name} to put this idea at the top of the page for everyone to consider.", "view/ideas/_nav", :currency_name => current_instance.currency_name.downcase), :class => "qtip_left"

@@ -1,12 +1,5 @@
 ---
 es-AR:
-  support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' y '
-      last_word_connector: ' y '
-    select:
-      prompt: Por favor selecciona
   number:
     percentage:
       format:
@@ -113,6 +106,13 @@ es-AR:
       long: '%A, %d de %B de %Y a las %I:%M %p'
     am: am
     pm: pm
+  support:
+    select:
+      prompt: Por favor selecciona
+    array:
+      two_words_connector: y
+      last_word_connector: y
+      words_connector: ','
   datetime:
     distance_in_words:
       half_a_minute: medio minuto

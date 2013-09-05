@@ -7,38 +7,38 @@ class IdeaRanker
     SubInstance.current = SubInstance.first
     Thread.current[:current_user]= User.first
 
-    Instance.current.update_counts
+    #Instance.current.update_counts
 
 
-    if Instance.current.is_tags? and Tag.count > 0
-      # update the # of issues people who've logged in the last two hours have up endorsed
-      users = User.find_by_sql("SELECT users.id, users.up_issues_count, count(distinct taggings.tag_id) as num_issues
-      FROM taggings,endorsements, users
-      where taggings.taggable_id = endorsements.idea_id
-      and taggings.taggable_type = 'Idea'
-      and endorsements.user_id = users.id
-      and endorsements.value > 0
-      and endorsements.status = 'active'
-      and (users.last_sign_in_at > '#{Time.now-2.hours}' or users.created_at > '#{Time.now-2.hours}')
-      group by endorsements.user_id, users.id, users.up_issues_count")
-      for u in users
-        User.update_all("up_issues_count = #{u.num_issues}", "id = #{u.id}") unless u.up_issues_count == u.num_issues        
-      end
-      # update the # of issues they've DOWN endorsed
-      users = User.find_by_sql("SELECT users.id, users.down_issues_count, count(distinct taggings.tag_id) as num_issues
-      FROM taggings,endorsements, users
-      where taggings.taggable_id = endorsements.idea_id
-      and taggings.taggable_type = 'Idea'
-      and endorsements.user_id = users.id
-      and endorsements.value < 0
-      and endorsements.status = 'active'
-      and (users.last_sign_in_at > '#{Time.now-2.hours}' or users.created_at > '#{Time.now-2.hours}')
-      group by endorsements.user_id, users.id, users.down_issues_count")
-      for u in users
-        User.update_all("down_issues_count = #{u.num_issues}", "id = #{u.id}") unless u.down_issues_count == u.num_issues
-      end
-    end
-
+    #if Instance.current.is_tags? and Tag.count > 0
+    #  # update the # of issues people who've logged in the last two hours have up endorsed
+    #  users = User.find_by_sql("SELECT users.id, users.up_issues_count, count(distinct taggings.tag_id) as num_issues
+    #  FROM taggings,endorsements, users
+    #  where taggings.taggable_id = endorsements.idea_id
+    #  and taggings.taggable_type = 'Idea'
+    #  and endorsements.user_id = users.id
+    #  and endorsements.value > 0
+    #  and endorsements.status = 'active'
+    #  and (users.last_sign_in_at > '#{Time.now-2.hours}' or users.created_at > '#{Time.now-2.hours}')
+    #  group by endorsements.user_id, users.id, users.up_issues_count")
+    #  for u in users
+    #    User.update_all("up_issues_count = #{u.num_issues}", "id = #{u.id}") unless u.up_issues_count == u.num_issues
+    #  end
+    #  # update the # of issues they've DOWN endorsed
+    #  users = User.find_by_sql("SELECT users.id, users.down_issues_count, count(distinct taggings.tag_id) as num_issues
+    #  FROM taggings,endorsements, users
+    #  where taggings.taggable_id = endorsements.idea_id
+    #  and taggings.taggable_type = 'Idea'
+    #  and endorsements.user_id = users.id
+    #  and endorsements.value < 0
+    #  and endorsements.status = 'active'
+    #  and (users.last_sign_in_at > '#{Time.now-2.hours}' or users.created_at > '#{Time.now-2.hours}')
+    #  group by endorsements.user_id, users.id, users.down_issues_count")
+    #  for u in users
+    #    User.update_all("down_issues_count = #{u.num_issues}", "id = #{u.id}") unless u.down_issues_count == u.num_issues
+    #  end
+    #end
+    #
     # Delete all endorsements that do not have positions
     #Endorsement.delete_all("position IS NULL")
 
@@ -53,67 +53,67 @@ class IdeaRanker
 
     # determines any changes in the #1 idea for an issue, and updates the # of distinct endorsers and opposers across the entire issue
     
-    if Instance.current.is_tags? and Tag.count > 0
-      keep = []
-      # get the number of endorsers on the issue
-      tags = Tag.find_by_sql("SELECT tags.id, tags.name, tags.top_idea_id, tags.controversial_idea_id, tags.rising_idea_id, tags.official_idea_id, count(distinct endorsements.user_id) as num_endorsers
-      FROM tags,taggings,endorsements
-      where 
-      taggings.taggable_id = endorsements.idea_id
-      and taggable_type = 'Idea'
-      and taggings.tag_id = tags.id
-      and endorsements.status = 'active'
-      and endorsements.value > 0
-      group by tags.id, tags.name, tags.top_idea_id, tags.controversial_idea_id, tags.rising_idea_id, tags.official_idea_id, taggings.tag_id")
-      for tag in tags
-       keep << tag.id
-       ideas = tag.ideas.published.top_rank # figure out the top idea while we're at it
-       if ideas.any?
-         if tag.top_idea_id != ideas[0].id # new top idea
-           ActivityIssueIdea1.create(:tag => tag, :idea_id => ideas[0].id)
-           tag.top_idea_id = ideas[0].id
-         end
-         controversial = tag.ideas.published.controversial
-         if controversial.any? and tag.controversial_idea_id != controversial[0].id
-           ActivityIssueIdeaControversial1.create(:tag => tag, :idea_id => controversial[0].id)
-           tag.controversial_idea_id = controversial[0].id
-         elsif controversial.empty?
-           tag.controversial_idea_id = nil
-         end
-         rising = tag.ideas.published.rising
-         if rising.any? and tag.rising_idea_id != rising[0].id
-           ActivityIssueIdeaRising1.create(:tag => tag, :idea_id => rising[0].id)
-           tag.rising_idea_id = rising[0].id
-         elsif rising.empty?
-           tag.rising_idea_id = nil
-         end 
-       else
-         tag.top_idea_id = nil
-         tag.controversial_idea_id = nil
-         tag.rising_idea_id = nil
-         tag.official_idea_id = nil
-       end
-       tag.up_endorsers_count = tag.num_endorsers
-       tag.save(:validate => false)
-      end
-      # get the number of opposers on the issue
-      tags = Tag.find_by_sql("SELECT tags.id, tags.name, tags.down_endorsers_count, count(distinct endorsements.user_id) as num_opposers
-      FROM tags,taggings,endorsements
-      where 
-      taggings.taggable_id = endorsements.idea_id
-      and taggable_type = 'Idea'
-      and taggings.tag_id = tags.id
-      and endorsements.status = 'active'
-      and endorsements.value < 0
-      group by tags.id, tags.name, tags.down_endorsers_count, taggings.tag_id")    
-      for tag in tags
-       keep << tag.id
-       tag.update_attribute(:down_endorsers_count,tag.num_opposers) unless tag.down_endorsers_count == tag.num_opposers
-      end
-      if keep.any?
-       Tag.connection.execute("update tags set up_endorsers_count = 0, down_endorsers_count = 0 where id not in (#{keep.uniq.compact.join(',')})")
-      end
-    end
+    #if Instance.current.is_tags? and Tag.count > 0
+    #  keep = []
+    #  # get the number of endorsers on the issue
+    #  tags = Tag.find_by_sql("SELECT tags.id, tags.name, tags.top_idea_id, tags.controversial_idea_id, tags.rising_idea_id, tags.official_idea_id, count(distinct endorsements.user_id) as num_endorsers
+    #  FROM tags,taggings,endorsements
+    #  where
+    #  taggings.taggable_id = endorsements.idea_id
+    #  and taggable_type = 'Idea'
+    #  and taggings.tag_id = tags.id
+    #  and endorsements.status = 'active'
+    #  and endorsements.value > 0
+    #  group by tags.id, tags.name, tags.top_idea_id, tags.controversial_idea_id, tags.rising_idea_id, tags.official_idea_id, taggings.tag_id")
+    #  for tag in tags
+    #   keep << tag.id
+    #   ideas = tag.ideas.published.top_rank # figure out the top idea while we're at it
+    #   if ideas.any?
+    #     if tag.top_idea_id != ideas[0].id # new top idea
+    #       ActivityIssueIdea1.create(:tag => tag, :idea_id => ideas[0].id)
+    #       tag.top_idea_id = ideas[0].id
+    #     end
+    #     controversial = tag.ideas.published.controversial
+    #     if controversial.any? and tag.controversial_idea_id != controversial[0].id
+    #       ActivityIssueIdeaControversial1.create(:tag => tag, :idea_id => controversial[0].id)
+    #       tag.controversial_idea_id = controversial[0].id
+    #     elsif controversial.empty?
+    #       tag.controversial_idea_id = nil
+    #     end
+    #     rising = tag.ideas.published.rising
+    #     if rising.any? and tag.rising_idea_id != rising[0].id
+    #       ActivityIssueIdeaRising1.create(:tag => tag, :idea_id => rising[0].id)
+    #       tag.rising_idea_id = rising[0].id
+    #     elsif rising.empty?
+    #       tag.rising_idea_id = nil
+    #     end
+    #   else
+    #     tag.top_idea_id = nil
+    #     tag.controversial_idea_id = nil
+    #     tag.rising_idea_id = nil
+    #     tag.official_idea_id = nil
+    #   end
+    #   tag.up_endorsers_count = tag.num_endorsers
+    #   tag.save(:validate => false)
+    #  end
+    #  # get the number of opposers on the issue
+    #  tags = Tag.find_by_sql("SELECT tags.id, tags.name, tags.down_endorsers_count, count(distinct endorsements.user_id) as num_opposers
+    #  FROM tags,taggings,endorsements
+    #  where
+    #  taggings.taggable_id = endorsements.idea_id
+    #  and taggable_type = 'Idea'
+    #  and taggings.tag_id = tags.id
+    #  and endorsements.status = 'active'
+    #  and endorsements.value < 0
+    #  group by tags.id, tags.name, tags.down_endorsers_count, taggings.tag_id")
+    #  for tag in tags
+    #   keep << tag.id
+    #   tag.update_attribute(:down_endorsers_count,tag.num_opposers) unless tag.down_endorsers_count == tag.num_opposers
+    #  end
+    #  if keep.any?
+    #   Tag.connection.execute("update tags set up_endorsers_count = 0, down_endorsers_count = 0 where id not in (#{keep.uniq.compact.join(',')})")
+    #  end
+    #end
 
     # now, check to see if the charts have been updated in the last day
     
@@ -122,48 +122,48 @@ class IdeaRanker
     start_date = date.year.to_s + "-" + date.month.to_s + "-" + date.day.to_s
     end_date = (date+1.day).year.to_s + "-" + (date+1.day).month.to_s + "-" + (date+1.day).day.to_s
 
-    puts "Before charts"
-    if IdeaChart.count(:conditions => ["date_year = ? and date_month = ? and date_day = ?", date.year, date.month, date.day]) == 0  # check to see if it's already been done for yesterday
-      ideas = Idea.unscoped.published.find(:all)
-      for p in ideas
-        # find the ranking
-        r = p.rankings.find(:all, :conditions => ["rankings.created_at between ? and ?",start_date,end_date], :order => "created_at desc",:limit => 1)
-        #puts "r: #{r}"
-        if r.any?
-          c = p.charts.find_by_date_year_and_date_month_and_date_day(date.year,date.month,date.day)
-          if true or not c
-            c = IdeaChart.new(:idea => p, :date_year => date.year, :date_month => date.month, :date_day => date.day)
-          end
-          c.position = r[0].position
-          c.up_count = p.endorsements.active.endorsing.count(:conditions => ["endorsements.created_at between ? and ?",start_date,end_date])
-          c.down_count = p.endorsements.active.opposing.count(:conditions => ["endorsements.created_at between ? and ?",start_date,end_date])
-          c.volume_count = c.up_count + c.down_count
-          previous = p.charts.find_by_date_year_and_date_month_and_date_day(previous_date.year,previous_date.month,previous_date.day) 
-          if previous
-            c.change = previous.position-c.position
-            c.change_percent = (c.change.to_f/previous.position.to_f)          
-          end
-          c.save
-          if p.created_at+2.days > Time.now # within last two days, check to see if we've given them their priroity debut activity
-            ActivityIdeaDebut.create(:user => p.user, :idea => p, :position => p.position) unless ActivityIdeaDebut.unscoped.find_by_idea_id(p.id)
-          end        
-        end
-        Rails.cache.delete('views/idea_chart-' + p.id.to_s)
-      end
-      Rails.cache.delete('views/total_volume_chart') # reset the daily volume chart
-      for u in User.active.at_least_one_endorsement.all
-        u.index_24hr_delta = u.index_delta_percent(2)
-        u.index_7days_delta = u.index_delta_percent(7)
-        u.index_30days_delta = u.index_delta_percent(30)
-        u.save(:validate => false)
-        u.expire_charts
-      end       
-    end
-
     puts "IdeaRanker.setup_endorsements_counts"
     setup_endorsements_counts
     puts "IdeaRanker.perform before ranged positions... at #{Time.now} total of #{Time.now-start_time}"
     setup_ranged_endorsment_positions
+
+    #puts "Before charts"
+    #if IdeaChart.count(:conditions => ["date_year = ? and date_month = ? and date_day = ?", date.year, date.month, date.day]) == 0  # check to see if it's already been done for yesterday
+    #  ideas = Idea.unscoped.published.find(:all)
+    #  for p in ideas
+    #    # find the ranking
+    #    r = p.rankings.find(:all, :conditions => ["rankings.created_at between ? and ?",start_date,end_date], :order => "created_at desc",:limit => 1)
+    #    #puts "r: #{r}"
+    #    if r.any?
+    #      c = p.charts.find_by_date_year_and_date_month_and_date_day(date.year,date.month,date.day)
+    #      if true or not c
+    #        c = IdeaChart.new(:idea => p, :date_year => date.year, :date_month => date.month, :date_day => date.day)
+    #      end
+    #      c.position = r[0].position
+    #      c.up_count = p.endorsements.active.endorsing.count(:conditions => ["endorsements.created_at between ? and ?",start_date,end_date])
+    #      c.down_count = p.endorsements.active.opposing.count(:conditions => ["endorsements.created_at between ? and ?",start_date,end_date])
+    #      c.volume_count = c.up_count + c.down_count
+    #      previous = p.charts.find_by_date_year_and_date_month_and_date_day(previous_date.year,previous_date.month,previous_date.day)
+    #      if previous
+    #        c.change = previous.position-c.position
+    #        c.change_percent = (c.change.to_f/previous.position.to_f)
+    #      end
+    #      c.save
+    #      if p.created_at+2.days > Time.now # within last two days, check to see if we've given them their priroity debut activity
+    #        ActivityIdeaDebut.create(:user => p.user, :idea => p, :position => p.position) unless ActivityIdeaDebut.unscoped.find_by_idea_id(p.id)
+    #      end
+    #    end
+    #    Rails.cache.delete('views/idea_chart-' + p.id.to_s)
+    #  end
+    #  Rails.cache.delete('views/total_volume_chart') # reset the daily volume chart
+    #  for u in User.active.at_least_one_endorsement.all
+    #    u.index_24hr_delta = u.index_delta_percent(2)
+    #    u.index_7days_delta = u.index_delta_percent(7)
+    #    u.index_30days_delta = u.index_delta_percent(30)
+    #    u.save(:validate => false)
+    #    u.expire_charts
+    #  end
+    #end
 
     puts "IdeaRanker.perform stopping... at #{Time.now} total of #{Time.now-start_time}"
   end
@@ -173,7 +173,7 @@ class IdeaRanker
     sub_instances_with_nil.each do |sub_instance|
       setup_ranged_endorsment_position(sub_instance,Time.now-24.hours,"position_endorsed_24hr")
       setup_ranged_endorsment_position(sub_instance,Time.now-7.days,"position_endorsed_7days")
-      setup_ranged_endorsment_position(sub_instance,Time.now-30.days,"position_endorsed_30days")
+      #setup_ranged_endorsment_position(sub_instance,Time.now-30.days,"position_endorsed_30days")
     end
   end
   

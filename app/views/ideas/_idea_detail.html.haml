@@ -6,11 +6,10 @@
     .col-content
       %br
         %center
-          .debate_header
-            - total_points = @total_up_points+@total_down_points
-            = tr("Debate","points")+" (#{link_to "#{total_points} #{total_points > 1 ? tr("Points","point") : tr("Point","point")}",top_points_idea_url(@idea)})".html_safe
-            = " - "
-            = link_to tr("ADD NEW POINT", "view/ideas/_nav"), @idea.new_point_url
+          %b
+            .debate_header
+              = tr("Debate","points")
+          = link_to tr("ADD NEW POINT", "view/ideas/_nav").downcase.capitalize, @idea.new_point_url
   .col-half
     .col-content.point_for
       %div
@@ -19,6 +18,10 @@
             = render :partial => "points/short_list", :locals => {:newest_points=>true, :id => "pro_new", :points => @points_new_up, :numbering=>false}
         #pro_top
           = render :partial => "points/short_list", :locals => {:id => "pro_top", :points => @points_top_up, :numbering=>false}
+        - points_remaining = @total_up_points-@points_new_up.count-@points_top_up.count
+        - if points_remaining>0
+          %center
+            = "#{link_to "#{points_remaining} #{tr("more","point")}",@idea.top_points_url}".html_safe
   .col-half
     .col-content.point_against
       %div
@@ -27,9 +30,13 @@
             = render :partial => "points/short_list", :locals => {:newest_points=>true, :id => "con_new", :points => @points_new_down, :numbering=>false}
         #con_top
           = render :partial => "points/short_list", :locals => {:id => "con_top", :points => @points_top_down, :numbering=>false}
+        - points_remaining = @total_down_points-@points_new_down.count-@points_top_down.count
+        - if points_remaining>0
+          %center
+            = "#{link_to "#{points_remaining} #{tr("more","point")}",@idea.top_points_url}".html_safe
 - if request.xhr?
   .col-group
     .col-full
       .col-content
         .more_container
-          = link_to tr("More...", "view/ideas/idea_detail"), top_points_idea_url(@idea), class: "idea_detail_more"
+          = link_to(tr("More", "view/ideas/_nav").downcase, @idea.show_url)

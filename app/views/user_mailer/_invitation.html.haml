@@ -2,13 +2,15 @@
 %p
   = tr("Hi", "email")
   = "#{@to_name},"
-%p= tr("This is an invitation from {sender_name} to join {instance_name}.", "email",      |
-    :sender_name=> @sender.name, :instance_name=>@instance.name) |
-%p= tr("You can look at top ideas for {sender_name} here {user_profile_url}.", "email", :sender_name=> @sender.name, :user_profile_url=>link_to(@user.profile_url, @user.profile_url))
+%p
+  = tr("This is an invitation from {sender_name} to join {instance_name}.","email",:sender_name=> @sender_name, :instance_name=>@instance_name)
+%p
+  = tr("You can look at top ideas for {sender_name} here {user_profile_url}.", "email", :sender_name=> @sender_name, :user_profile_url=>link_to(@user.profile_url, @user.profile_url))
 %p
   = tr("You can look at top ideas for everybody here:", "email")
   = link_to @user.root_url+'ideas/top', @user.root_url+'ideas/top'
-%p= tr("The website is free, it only takes a minute to register and it can help you make up our mind about current issues.", "email")
+%p
+  = tr("The website is free, it only takes a minute to register and it can help you make up our mind about current issues.", "email")
 %p
   = tr("Register at", "email")
   = link_to @user.root_url+'signup', @user.root_url+'signup'

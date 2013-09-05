@@ -36,58 +36,199 @@
 
       google.maps.event.addListener(kmlLayer, 'click', openIW);
   });
-
-#map_canvas{:style => "height:300px; width:100%;"}
-
-%div.home_welcome
-  %h1.home_h1
-    - sub_instance=SubInstance.find_by_iso_country_id(@iso_country.id)
-    - if sub_instance
-      = link_to sub_instance.show_url do
-        %div.countryflag= image_tag @iso_country.large_flag_image, :border=>0
-        %div.country= @iso_country.country_english_name
-- if @country_sub_instance_ideas.any?
-  - @country_sub_instance_ideas.each do |idea|
-    = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
-    %div
-      %div{:id => "idea_detail_#{idea.id}"}
-- elsif @iso_country
-  - if sub_instance
-    %br
-    %br
-    = tr("No idea has been created for your country - be the first by clicking here: ","welcome")
-    = link_to sub_instance.show_url, sub_instance.show_url
-
-- if @world_ideas.any?
-  %div.home_welcome{:style=>"margin-top: 10px; padding-top: 10px;"}
-    %h1.home_h1
-      - sub_instance=SubInstance.find_by_short_name("united-nations")
-      = link_to sub_instance.show_url do
-        %div.countryflag= image_tag "flags/64/_united-nations.png", :border=>0
-        %div.country= tr("United Nations Top Priorities","welcome")
-    %h1.home_h1
-    - @world_ideas.each do |idea|
-      = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
-      %div
-        %div{:id => "idea_detail_#{idea.id}"}
-- else
-  - if sub_instance
-    = tr("No idea has been created for the World - be the first by clicking here: ","welcome")
-    = link_to sub_instance.show_url, sub_instance.show_url
-- if @eu_eea_ideas.any?
-  %br
-  %br
-  %div.home_welcome
-    %h1.home_h1
-      - sub_instance=SubInstance.find_by_short_name("eu")
-      = link_to sub_instance.show_url do
-        %div.countryflag= image_tag "flags/64/_european-union.png", :border=>0
-        %div.country= tr("European Union and EEA Top Priorities","welcome")
-    - @eu_eea_ideas.each do |idea|
-      = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
-      %div
-        %div{:id => "idea_detail_#{idea.id}"}
-- else
-  - if sub_instance
-    %div.country= tr("No idea has been created for the European Union and EEA - be the first by clicking here: ","welcome")
-    %div.country= link_to sub_instance.show_url, sub_instance.show_url
+.row
+  .large-12.columns
+    .panel.radius
+      .row
+        .large-8.columns
+          %h1
+            = tr("Start harvesting ideas today...","here")
+        .large-4.columns
+          .right
+            %a.button.radius{:href => "/subscription_accounts/new"}
+              = tr("Create Your Priorities now","here")
+      .row
+        .large-4.columns
+          .fb-like{"data-href" => "https://www.yrpri.org/", "data-send" => "false", "data-layout" => 'button_count', "data-show-faces" => "false", "data-width" => "300"}
+        .large-4.columns
+          .g-plus{"data-action" => "share"}
+        .large-4.columns
+          %a.twitter-share-button{:href => "https://twitter.com/share"} Tweet
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("Why Your Priorities?","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-1
+            .row
+              .large-9.columns
+                %p
+                  = tr("We believe democracy is in trouble. Lack of trust and participation especially by young people is a big problem.","here")
+                  = " "
+                  = tr("Your Priorities is a powerful eDemocracy web application designed by the non profit Citizens Foundation to help groups of people speak with one voice.","here")
+                %p
+                  = tr("We won the European e-Democracy Awards 2011 and have won numerous Icelandic awards for innovation and participation. We are nominated for United Nations WSA awards in 2013.","here")
+              .large-3.columns
+                %img(src="https://s3.amazonaws.com/yrpri-direct-asset/YP_FB_Versions_cropped.png")
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("How does Your Priorities work?","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-2
+            .row
+              .large-3.columns
+                %p
+                  = tr("People submit ideas and debate them in a simple but advanced debate system.","here")
+              .large-6.columns
+                %img(src="https://s3.amazonaws.com/yrpri-direct-assets/front_page/process2.png")
+                %center
+                  %br
+                  %a.button{:href => get_locale_demo_host(".yrpri.org/"), :target=>"_blank"}
+                    = tr("Try the free demo now","here")
+              .large-3.columns
+                %p
+                  = tr("The best ideas with the best points for and against rise to the top.","here")
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("Free eDemocracy website for every country in the world","here")
+      %p
+        = tr("We've created those free websites as examples on how you can use Your Priorities for organizing around ideas.","here")
+      #map_canvas{:style => "height:300px; width:100%;"}
+      .row
+        .large-6.columns
+          - if @iso_country
+            - sub_instance=SubInstance.find_by_iso_country_id(@iso_country.id)
+            = render :partial=>"simple_panel", :locals=>{:ideas=>@country_sub_instance_ideas, :short_name=>sub_instance.short_name, :flag_path=>@iso_country.large_flag_image, :title=>@iso_country.country_english_name}
+        .large-6.columns
+          - if @world_ideas.any?
+            = render :partial=>"simple_panel", :locals=>{:ideas=>@world_ideas, :short_name=>"united-nations", :flag_path=>"flags/64/_united-nations.png", :title=>tr("United Nations top 3 priorities","here")}
+      .row
+        .large-6.columns
+          - if @eu_eea_ideas.any?
+            = render :partial=>"simple_panel", :locals=>{:ideas=>@eu_eea_ideas, :short_name=>"eu", :flag_path=>"flags/64/_european-union.png", :title=>tr("EU/EEA top 3 priorities","here")}
+        .large-6.columns
+          - if @random_sub_instance.iso_country_id
+            - logo_file = IsoCountry.find(@random_sub_instance.iso_country_id).large_flag_image
+          - else
+            - begin
+              - logo_file = @random_sub_instance.logo_url(:icon_50)
+            - rescue
+              - Rails.logger.error("Could not find sub instance logo file")
+              - logo_file= "flags/64/_united-nations.png"
+          = render :partial=>"simple_panel", :locals=>{:ideas=>@random_sub_instance_ideas, :short_name=>@random_sub_instance.short_name, :flag_path=>logo_file, :title=>@random_sub_instance.name}
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("What does Your Priorities do?","here")
+      .panel.radius
+        .row
+          .large-6.columns
+            .panel.radius
+              .flex-video
+                %iframe{:allowfullscreen => "", :frameborder => "0", :height => "215", :src => "https://www.youtube.com/embed/t0lFd1poJfs", :width => "420"}
+          .large-6.columns
+            .panel.radius
+              .flex-video
+                %iframe{:allowfullscreen => "", :frameborder => "0", :height => "215", :src => "https://www.youtube.com/embed/2oLlzPqt_pQ", :width => "420"}
+      %h2
+        = tr("Sign up now","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-3
+            %p
+              = tr("Your Priorities can help your country / city / local community / or any online community wanting to organize with ideas and speak with one voice. Here you can quickly create your own Your Priorities website. You can sign up to a limited trial without a credit card. You can upgrade to a paid plan at any time.","here")
+            %center
+              %a.button.radius{:href => "/subscription_accounts/new"}
+                = tr("Create Your Priorities now","here")
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("Case Study - Better Reykjavik","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-2
+            .row
+              .large-6.columns
+                - tr("Better Reykjavik","here")
+                %p
+                  = tr("The award winning {br_link} website uses the same Open Source software that runs Your Priorities.","here",:br_link=>link_to(tr("Better Reykjavik","here"),"http://www.betrireykjavik.is/",:target=>"_blank"),:cf_link=>link_to("Citizens Foundation","http://www.citizens.is/",:target=>"_blank"))
+                %p
+                  = tr("With record breaking participation the website now connects the citizens of Reykjavik with their representatives which process the top ideas every month.","here")
+                %p
+                  = tr("Everyone can view the best points for and against each idea which helps them to make up their minds on any issue.","here")
+                %p
+                  = tr("The administration gets invaluable information about citizens opinion and priorities with minimum effort.","here")
+              .large-6.columns
+                .flex-video
+                  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "215", :src => "https://www.youtube.com/embed/GoRWG6x9pvc", :width => "420"}
+      %h2
+        = tr("Case Study - EVE Online | True Stories","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-2
+            .row
+              .large-6.columns
+                %img(src="https://s3.amazonaws.com/yrpri-direct-assets/front_page/eve_2.png")
+              .large-6.columns
+                %p
+                  = tr("We used Your Priorities to create a customized solution for the {eve_link} website for {ccp_link}.","here",:ccp_link=>link_to("CCP Games","http://ccpgames.com/",:target=>"_blank"),:eve_link=>link_to("EVE Online True Stories","https://truestories.eveonline.com/",:target=>"_blank"))
+                %p
+                  = tr("To find the best stories from the first decade of the EVE Universe - directly from the players.","here")
+                %p
+                  = tr("The community then voted for the stories - resulting in a list of the best stories that happened over the past 10 years.","here")
+                %p
+                  = tr("Those true stories will inspire books - comics - TV series and films set in the EVE Universe.","here")
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("About us","here")
+      .panel.radius.panel-bg-2
+        .row
+          .large-2.columns
+            %img(src="https://s3.amazonaws.com/yrpri-direct-asset/citizens-logo.png")
+          .large-10.columns
+            %p
+              = tr("The {yrpri_link} software running this website is Open Source and the product of the nonprofit {citizens_foundation_link} which has been working on the software since 2008. You can at any time switch over to running your own Your Priorities for free using the Open Source software. Citizens Foundation has offices in London and Reykjavík.","here",:yrpri_link=>link_to("Your Priorities","https://github.com/rbjarnason/your-priorities",:target=>"_blank"),:citizens_foundation_link=>link_to("Citizens Foundation","http://citizens.is/",:target=>"_blank"))
+        .row
+          .large-4.columns
+            %p
+              %a{:href => "/pages/#{Page.where(:name=>"terms_of_service").first.id}"}
+                = tr("Terms of Service","here")
+              = tr("and","here")
+              %a{:href => "/pages/#{Page.where(:name=>"privacy_policy").first.id}"}
+                = tr("Privacy Policy","here")
+            %p
+          .large-4.columns
+            %p
+            .fb-like-box{"data-header" => "false", "data-href" => "https://www.facebook.com/Citizens.is", "data-show-border" => "true", "data-show-faces" => "false", "data-stream" => "false", "data-width" => "250"}
+          .large-4.columns
+            .right
+              %p
+                = tr("{citizens_link}","here",:citizens_link=>link_to("© Citizens Foundation 2008-2013","http://www.citizens.is/"))
+#fb-root
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=133488890056240";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+:javascript
+  (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+:javascript
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');

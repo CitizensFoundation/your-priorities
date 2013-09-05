@@ -1,0 +1,16 @@
+.panel.radius
+  - sub_instance=SubInstance.find_by_short_name(short_name)
+  .row
+    .large-2.columns
+      - begin
+        = link_to sub_instance.show_url, :title=>title, :alt=>title do
+          = image_tag flag_path, :border=>0
+      - rescue
+        - Rails.logger.error("Could not find sub instance logo file")
+    .large-10.columns
+      - if ideas.any?
+        - ideas.each do |idea|
+          = render :partial=>"ideas/simple", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+      - else
+        = tr("No idea has been created - be the first by clicking here: ","welcome")
+        = link_to sub_instance.show_url, sub_instance.show_url

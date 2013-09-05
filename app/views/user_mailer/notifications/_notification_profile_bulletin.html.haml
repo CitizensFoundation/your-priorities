@@ -1,0 +1,8 @@
+%p
+  = tr("{sender_name} just posted a message to your profile.", "email", :sender_name=>@sender.name)
+%p
+  = @notifiable.first_comment.content
+%p
+  = tr("Reply here", "email")
+  \: #{link_to @notifiable.first_comment.show_url, @notifiable.first_comment.show_url}
+

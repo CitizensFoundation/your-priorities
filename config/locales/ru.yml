@@ -1,5 +1,12 @@
 ---
 ru:
+  helpers:
+    submit:
+      create: Создать %{model}
+      update: Сохранить %{model}
+      submit: Сохранить %{model}
+    select:
+      prompt: 'Выберите:'
   date:
     formats:
       default: '%d.%m.%Y'
@@ -156,13 +163,6 @@ ru:
       hour: Часов
       minute: Минут
       second: Секунд
-  helpers:
-    select:
-      prompt: 'Выберите: '
-    submit:
-      create: Создать %{model}
-      update: Сохранить %{model}
-      submit: Сохранить %{model}
   errors:
     format: '%{attribute} %{message}'
     messages:
@@ -215,8 +215,8 @@ ru:
         format: '%{attribute} %{message}'
   support:
     select:
-      prompt: 'Выберите: '
+      prompt: 'Выберите:'
     array:
-      words_connector: ', '
-      two_words_connector: ' и '
-      last_word_connector: ' и '
+      two_words_connector: и
+      last_word_connector: и
+      words_connector: ','

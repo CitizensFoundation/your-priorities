@@ -1,65 +1,70 @@
-.span1
-  %h4
-    %span.step 3
-    = tr("Now... Select a plan","here")
-  .field_container-3
-    .field_promo
-      = tr("We will soon be offering paid plans - feel free to test out our free plans in the meantime.","here")
-    %select_plan_registration
-      #plans.row
-        - current_plan_is = -1
-        - [@private_plans,@public_plans].each_with_index do |plans,i|
-          - unless plans.empty?
-            %div{:id=>i==0 ? "plan_type_private" : "plan_type_public", :class=>i==0 ? "span3" : "span4", :plan_name=>i==0 ? tr("Private","here") : tr("Public","here")}
-              %table.data_table
-                %tbody
-                  %tr
-                    %td{:colspan => "4"}
-                      %h5
-                        - if i==0
-                          = tr("Private Plan (Email invite only)","here")
+- if @current_plan and @current_subscription and @current_subscription.active
+  %h3
+    = tr("Your current plan","here")
+  %p
+    - if @current_plan.private_instance
+      = tr("Private plan with email only registration for up to {number_of_users} users.","here",:number_of_users=>@current_plan.max_users)
+    - else
+      = tr("Public plan with open registration including Facebook for up to {number_of_users} users.","here",:number_of_users=>@current_plan.max_users)
+    - if @current_plan.amount>0.0 and @current_subscription.paymill_id
+      = tr("To cancel your paid plan select one of the free plans from below","here")
+      = tr("You will next be charged at {next_charge_date}","here", :next_charge_date=>@current_subscription.next_charge_date)
+%h3
+  %span.step 3
+  = tr("Now... Select a plan","here")
+- unless current_instance.domain_name.include?("yrpri")
+  %p
+    = tr("For paid plans please contact us directly at <a href='mailto:{email}'>{email2}</a>. We will soon offer credit card subscriptions.","here",:email=>Instance.last.sales_email,:email2=>Instance.last.sales_email).html_safe
+- current_plan_is = -1
+- [@public_plans,@private_plans].each_with_index do |plans,i|
+  - unless plans.empty?
+    .row.collapse
+      %div{:id=>i==0 ? "plan_type_private" : "plan_type_public", :class=>i==0 ? "span3" : "span4", :plan_name=>i==0 ? tr("Private","here") : tr("Public","here")}
+        %h3
+          - if i==1
+            = tr("Private Plan (Email invite registration)","here")
+          - else
+            = tr("Public Plan (Open registration including Facebook)","here")
+        - plans.each do |plan|
+          - if plan.currency == @currency_code
+            .large-4.columns
+              .panel
+                - current_plan_is = i if @current_plan and @current_plan.id == plan.id
+                %ul.pricing-table
+                  %li.title
+                    = #plan.name.from_localized_yaml
+                    = tr("up to {number_of_users} users","here",:number_of_users=>number_with_delimiter(plan.max_users))
+                  %li.price
+                    - if plan.amount>0.0
+                      -  price = currency_with_unit plan.amount_with_vat, plan.currency
+                      =  tr("{the_price} per month","here",:the_price=>price)
+                    - else
+                      = tr("Free","here")
+                  %li.cta-button
+                    - if defined?(f)
+                      - if plan.amount>0.0 and Instance.current.domain_name!="yrpri.org"
+                        = mail_to Instance.last.sales_email, tr("contact us","here")
+                        = #f.radio_button :plan_id, plan.id, :disabled=>true
+                        %br
+                        %br
+                      - else
+                        = tr("select","here")
+                        - if @current_plan and @current_plan.id == plan.id
+                          = f.radio_button :plan_id, plan.id, :checked=>true
                         - else
-                          = tr("Public Plan (Open to the World)","here")
-                  %tr
-                    %th.left
-                      = tr("Name","here")
-                    %th.left
-                      = tr("Max users","here")
-                    %th.left
-                      = tr("Price/month","here")
-                    %th
-                      = tr("Select","here")
-                  - plans.each do |plan|
-                    - current_plan_is = i if @current_plan and @current_plan.id == plan.id
-                    %tr.private_free
-                      %td
-                        .plan
-                          .name
-                            = plan.name.from_localized_yaml
-                      %td
-                        .price
-                          = number_with_delimiter(plan.max_users)
-                      %td
-                        .price
-                          = number_to_currency plan.price, :unit=>plan.price_unit, :precision=>0
-                      %td
-                        .centered
-                          - if defined?(f)
-                            - if plan.price>0.0
-                              = f.radio_button :plan_id, plan.id, :disabled=>true
-                            - else
-                              - if @current_plan and @current_plan.id == plan.id
-                                = f.radio_button :plan_id, plan.id, :checked=>true
-                              - else
-                                = f.radio_button :plan_id, plan.id
-                          - else
-                            - if @current_plan and @current_plan.id == plan.id
-                              = tr("This is your current plan","here")
-                            - else
-                              = link_to tr("Change plan","here"), :controller=>"subscriptions", :action=>"update_plan", :plan_id => plan.id, :id=>SubInstance.current.subscription.id
-
-    %div
-      = tr("More users? Consulting? Login integration or other customisations? No problem! ","here")
-      %a{:href => "mailto:#{Instance.last.admin_email}"}
-        = tr("Contact us at <a href='mailto:{email}'>{email2}</a>","here",:email=>Instance.last.sales_email,:email2=>Instance.last.sales_email).html_safe
-  .clear
+                          = f.radio_button :plan_id, plan.id
+                        %br
+                        %br
+                    - else
+                      - if @current_plan and @current_plan.id == plan.id and @current_subscription and @current_subscription.active
+                        = tr("Current plan","here")
+                      - else
+                        = link_to tr("Change plan","here"), :controller=>"subscriptions", :action=>"update_plan", :plan_id => plan.id, :id=>SubInstance.current.subscription.id
+                      %br
+                      %br
+%p
+  = tr("More users? Consulting? Login integration or other customisations? ","here")
+  = tr("Contact us at <a href='mailto:{email}'>{email2}</a>","here",:email=>Instance.last.sales_email,:email2=>Instance.last.sales_email).html_safe
+- unless current_instance.domain_name.include?("yrpri") or current_instance.domain_name.include?("betra")
+  %p
+    = tr("If you are a non-profit organization please consider using the {yrpri_link} service run by our partner the non-profit {cf_link} in Iceland.","here",:yrpri_link=>link_to("Your Priorities","https://www.yrpri.org/",:target=>"_blank"),:cf_link=>link_to("Citizens Foundation","http://www.citizens.is/",:target=>"_blank"))

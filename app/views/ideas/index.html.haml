@@ -42,7 +42,7 @@
             .idea_finished
               = link_to_unless_current h(idea.name), idea, :class => "idea_name_link"
               %br/
-              = official_status(idea)
+              = #official_status(idea)
               %span.idea_finished_time= time_ago(idea.status_changed_at)
           = tr("See all <a href='{url}'>finished ideas</a>", "view/ideas/index", :url => finished_ideas_url)
           \&rarr;

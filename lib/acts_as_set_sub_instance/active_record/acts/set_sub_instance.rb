@@ -7,11 +7,13 @@ module ActiveRecord
 
       module ClassMethods
         def default_scope(what=nil)
-          if Thread.current[:skip_default_scope_globally] or not ["activities","comments","tags","groups","ideas","points","ads","r","users","categories"].include?(table_name)
+          if Thread.current[:skip_default_scope_globally] or not ["activities","comments","tags","groups","ads","ideas","points","r","users","categories"].include?(table_name)
             # Do nothing for now
           elsif table_name=="users"
-            if SubInstance.current.respond_to?(:lock_users_to_instance) and SubInstance.current.lock_users_to_instance==true
-              where(SubInstance.current ? ["sub_instance_id = ? OR id = 1", SubInstance.current.id] : nil)
+            if Thread.current[:current_user] and Thread.current[:current_user].id == 1
+              # DO NOTHING
+            elsif SubInstance.current.respond_to?(:lock_users_to_instance) and SubInstance.current.lock_users_to_instance==true
+              where(SubInstance.current ? ["sub_instance_id = ?", SubInstance.current.id] : nil)
             end
           elsif table_name=="categories"
             where(:sub_instance_id=>Category.where(:sub_instance_id=>SubInstance.current.id).count>0 ? SubInstance.current.id : SubInstance.find_by_short_name("default").id)

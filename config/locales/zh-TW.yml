@@ -143,12 +143,12 @@ zh-TW:
           trillion: 兆
           quadrillion: 千兆
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' 和 '
-      last_word_connector: ', 和 '
     select:
       prompt: 請選擇
+    array:
+      words_connector: ','
+      last_word_connector: ', 和'
+      two_words_connector: 和
   activerecord:
     errors:
       template:

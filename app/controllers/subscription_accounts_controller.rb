@@ -1,7 +1,7 @@
 class SubscriptionAccountsController < ApplicationController
 
   before_filter :authenticate_admin!, :only=>[:select_plan, :users]
-  before_filter :authenticate_root!, :except=>[:new,:create,:select_plan, :users]
+  before_filter :authenticate_root!, :except=>[:new,:create,:select_plan, :users, :about]
   before_filter :setup_plans
 
   def get_layout
@@ -48,7 +48,7 @@ class SubscriptionAccountsController < ApplicationController
   # GET /subscription_accounts/new
   # GET /subscription_accounts/new.json
   def new
-    @account = SubscriptionAccount.new(SubInstance.new, User.new, Account.new, Plan.new)
+    @account = SubscriptionAccount.new(SubInstance.new, User.new, Account.new, Plan.new, I18n.locale)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -64,12 +64,16 @@ class SubscriptionAccountsController < ApplicationController
   # POST /subscription_accounts
   # POST /subscription_accounts.json
   def create
-    @account = SubscriptionAccount.new(SubInstance.new, User.new, Account.new, Plan.new)
+    @account = SubscriptionAccount.new(SubInstance.new, User.new, Account.new, Plan.new, I18n.locale)
     @account.attributes = params[:subscription_account]
     respond_to do |format|
       if @account.valid?
         @account.save!
-        format.html { redirect_to @account.sub_instance.show_url_with_auto_auth(AutoAuthentication.create_with_secret!(@account.user)), notice: 'Account was successfully created.' }
+        if @account.sub_instance.subscription.plan.amount>0.0
+          format.html { redirect_to @account.sub_instance.show_url_with_auto_auth(AutoAuthentication.create_with_secret!(@account.user)), notice: tr("Account was successfully created.","here") }
+        else
+          format.html { redirect_to @account.sub_instance.show_users_url_with_auto_auth(AutoAuthentication.create_with_secret!(@account.user)), notice: tr("Account was successfully created.","here") }
+        end
         format.json { render json: @account, status: :created, location: @account }
       else
         format.html { render action: "new" }

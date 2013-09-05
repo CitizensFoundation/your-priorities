@@ -15,7 +15,7 @@ a {
 }
 
 .bg {
-	background: url(/assets/main_background.jpg) repeat-x top left;
+	/*background: url(/assets/main_background.jpg) repeat-x top left;*/
 	background-color: #c5c5c5;
 	margin-top: 0px;
 }

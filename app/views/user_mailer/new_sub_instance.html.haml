@@ -1,0 +1,14 @@
+= render :partial=>"user_mailer/header", formats: [:html]
+%p
+  = tr("Congratulations on your new {instance_name}.", "email", :instance_name=>@instance_name)
+%p
+  %b
+    = tr("Name of your instance","here")
+  %br
+  = @sub_instance.name
+%p
+  %b
+    = tr("Domain name","here")
+  %br
+  = link_to @sub_instance.show_url, @sub_instance.show_url
+= render :partial=>"user_mailer/footer", formats: [:html]

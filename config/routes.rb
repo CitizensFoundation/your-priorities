@@ -1,4 +1,7 @@
 SocialInnovation::Application.routes.draw do
+  match '/donations/thank_you' => 'donations#thank_you'
+  resources :donations
+
 
   resources :subscriptions
   resources :plans
@@ -25,6 +28,7 @@ SocialInnovation::Application.routes.draw do
 
   match '/users/eula' => 'users#eula'
 
+
   match '/ideas/flag/:id' => 'ideas#flag'
   match '/ideas/abusive/:id' => 'ideas#abusive'
   match '/ideas/not_abusive/:id' => 'ideas#not_abusive'
@@ -42,6 +46,7 @@ SocialInnovation::Application.routes.draw do
   resources :subscription_accounts do
     collection do
       get :users
+      get :about
     end
   end
 
@@ -159,6 +164,10 @@ SocialInnovation::Application.routes.draw do
       get :network
       get :consider
       get :finished
+      get :finished_in_progress
+      get :finished_successful
+      get :finished_failed
+      get :finished_compromised
       get :ads
       get :top
       get :by_tag
@@ -294,7 +303,11 @@ SocialInnovation::Application.routes.draw do
 
   resource :open_id
 
-  match '/' => 'home#index'
+  if ENV['YRPRI_SET_HOME_TO_WORLD']
+    match '/' => 'home#world'
+  else
+    match '/' => 'home#index'
+  end
   match '/unsubscribe' => 'unsubscribes#new', :as => :unsubscribe
   match '/yours' => 'ideas#yours'
   match '/hot' => 'ideas#hot'

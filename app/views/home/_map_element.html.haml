@@ -1,9 +1,9 @@
-- if country.map_coordinates
-  - coordinate_array = JSON.parse(country.map_coordinates)
+- if place.map_coordinates
+  - coordinate_array = JSON.parse(place.map_coordinates)
   :plain
     <Placemark>
-          <name>#{country.country_english_name}</name>
-          <styleUrl>#{get_placemark_map_style(country)}</styleUrl>
+          <name>#{place.name}</name>
+          <styleUrl>#{get_placemark_map_style(place)}</styleUrl>
           <description>
           </description>
   - if coordinate_array.length>1

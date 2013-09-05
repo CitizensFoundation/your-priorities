@@ -1,13 +1,14 @@
-<h2><%= t "devise.invitations.new.header" %></h2>
+<h2><%= tr("Invite") %></h2>
 
+<br>
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
   <%= devise_error_messages! %>
 
 <% resource.class.invite_key_fields.each do |field| -%>
-  <p><%= f.label field %><br />
+  <p><%= tr("Email address", "view/sessions/_form") %><br />
   <%= f.text_field field %></p>
 
     <% end -%>
 
-  <p><%= f.submit t("devise.invitations.new.submit_button") %></p>
+  <p><%= f.submit tr("Send invitation","here") %></p>
 <% end %>

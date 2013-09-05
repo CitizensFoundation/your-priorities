@@ -36,7 +36,6 @@
                         - # DO NOTHING
                       - else
                         %li
-                          = link_to "#{tr(translated_option.gsub("ideas","#{IDEA_TOKEN_PLURAL_CAPS}").gsub("comments","Comments"), "model/category")} (#{count})".html_safe, "/search?q=#{@query}&#{facet}=#{u option}#{params[:global] ? "&global=#{params[:global]}" : ""}"
           - else
             = tr("No search results","search")
     .col-10

@@ -506,7 +506,8 @@ class FeedController < ApplicationController
   def setup_menu_items
     @items = Hash.new
     @items[1]=[tr("Key activities", "view/feed/_nav"), url_for(:controller => "feed", :action => "top")]
-    @items[2]=[tr("All discussions", "view/feed/_nav"), url_for(:controller => "feed", :action => "discussions")]
+    @items[2]=[tr("Everything", "view/feed/_nav"), url_for(:controller => "feed", :action => "activities")]
+    #@items[2]=[tr("All discussions", "view/feed/_nav"), url_for(:controller => "feed", :action => "discussions")]
     #@items[4]=[tr("Points", "view/feed/_nav"), url_for(:controller => "feed", :action => "points")]
     if user_signed_in?
       @items[3]=[tr("Your discussions", "view/feed/_nav"), url_for(:controller => "feed", :action => "your_discussions")]
@@ -514,7 +515,6 @@ class FeedController < ApplicationController
       @items[5]=[tr("Discussions on #{IDEA_TOKEN_PLURAL} you created", "view/feed/_nav"), url_for(:controller => "feed", :action => "your_ideas_created_discussions")]
       @items[6]=[tr("Your activities", "view/feed_nav"), url_for(controller: 'feed', action: 'your_activities')]
     end
-    @items[7]=[tr("Everything", "view/feed/_nav"), url_for(:controller => "feed", :action => "activities")]
     @items
   end
 

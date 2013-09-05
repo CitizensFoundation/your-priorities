@@ -1,22 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.core
-//= require jquery.ui.widget
-//= require jquery.ui.mouse
-//= require jquery.ui.position
-//= require jquery.ui.draggable
-//= require jquery.ui.droppable
-//= require jquery.ui.resizable
-//= require jquery.ui.selectable
-//= require jquery.ui.sortable
-//= require jquery.ui.accordion
-//= require jquery.ui.autocomplete
-//= require jquery.ui.button
-//= require jquery.ui.dialog
-//= require jquery.ui.slider
-//= require jquery.ui.tabs
-//= require jquery.ui.progressbar
-//= require jquery.effects.all
 //= require facebox
 //= require jquery.NobleCount
 //= require jquery.timeago
@@ -36,7 +19,6 @@
 //= require jquery.tipsy
 //= require msdropdown
 //= require accounts
-//= require subscriptions
 //= require_self
 
 jQuery(function ($) {
@@ -72,7 +54,7 @@ jQuery(document).ready(function() {
 	//jQuery("#idea_column, #intro, #buzz_box, #content_text, #notification_show, .bulletin_form").corners();
 	//jQuery("#top_right_column, #toolbar").corners("bottom");
 	
-	jQuery("abbr[class*=timeago]").timeago();
+	//jQuery("abbr[class*=timeago]").timeago();
 	jQuery('#bulletin_content, #blurb_content, #message_content, #document_content, #email_template_content, #page_content').autoResize({extraSpace : 20})
 
 	function addMega(){

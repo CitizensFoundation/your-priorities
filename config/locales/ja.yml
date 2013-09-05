@@ -61,65 +61,12 @@ ja:
     am: 午前
     pm: 午後
   support:
-    array:
-      words_connector: と
-      two_words_connector: と
-      last_word_connector: と
     select:
       prompt: 選択してください。
-  errors:
-    format: '%{attribute}%{message}'
-    messages:
-      inclusion: は一覧にありません。
-      exclusion: は予約されています。
-      invalid: は不正な値です。
-      confirmation: が一致しません。
-      accepted: を受諾してください。
-      empty: を入力してください。
-      blank: を入力してください。
-      too_long: は%{count}文字以内で入力してください。
-      too_short: は%{count}文字以上で入力してください。
-      wrong_length: は%{count}文字で入力してください。
-      not_a_number: は数値で入力してください。
-      not_an_integer: は整数で入力してください。
-      greater_than: は%{count}より大きい値にしてください。
-      greater_than_or_equal_to: は%{count}以上の値にしてください。
-      equal_to: は%{count}にしてください。
-      less_than: は%{count}より小さい値にしてください。
-      less_than_or_equal_to: は%{count}以下の値にしてください。
-      odd: は奇数にしてください。
-      even: は偶数にしてください。
-  activerecord:
-    errors:
-      messages:
-        taken: はすでに存在します。
-        record_invalid: バリデーションに失敗しました。 %{errors}
-        accepted: を受諾してください。
-        blank: を入力してください。
-        confirmation: が一致しません。
-        empty: を入力してください。
-        equal_to: は%{count}にしてください。
-        even: は偶数にしてください。
-        exclusion: は予約されています。
-        greater_than: は%{count}より大きい値にしてください。
-        greater_than_or_equal_to: は%{count}以上の値にしてください。
-        inclusion: は一覧にありません。
-        invalid: は不正な値です。
-        less_than: は%{count}より小さい値にしてください。
-        less_than_or_equal_to: は%{count}以下の値にしてください。
-        not_a_number: は数値で入力してください。
-        not_an_integer: は整数で入力してください。
-        odd: は奇数にしてください。
-        too_long: は%{count}文字以内で入力してください。
-        too_short: は%{count}文字以上で入力してください。
-        wrong_length: は%{count}文字で入力してください。
-      template:
-        body: 次の項目を確認してください。
-        header:
-          one: '%{model}にエラーが発生しました。'
-          other: '%{model}に%{count}つのエラーが発生しました。'
-      full_messages:
-        format: '%{attribute}%{message}'
+    array:
+      two_words_connector: と
+      last_word_connector: と
+      words_connector: と
   number:
     format:
       separator: .
@@ -202,3 +149,56 @@ ja:
   helpers:
     select:
       prompt: 選択してください。
+  errors:
+    format: '%{attribute}%{message}'
+    messages:
+      inclusion: は一覧にありません。
+      exclusion: は予約されています。
+      invalid: は不正な値です。
+      confirmation: が一致しません。
+      accepted: を受諾してください。
+      empty: を入力してください。
+      blank: を入力してください。
+      too_long: は%{count}文字以内で入力してください。
+      too_short: は%{count}文字以上で入力してください。
+      wrong_length: は%{count}文字で入力してください。
+      not_a_number: は数値で入力してください。
+      not_an_integer: は整数で入力してください。
+      greater_than: は%{count}より大きい値にしてください。
+      greater_than_or_equal_to: は%{count}以上の値にしてください。
+      equal_to: は%{count}にしてください。
+      less_than: は%{count}より小さい値にしてください。
+      less_than_or_equal_to: は%{count}以下の値にしてください。
+      odd: は奇数にしてください。
+      even: は偶数にしてください。
+  activerecord:
+    errors:
+      template:
+        header:
+          one: '%{model}にエラーが発生しました。'
+          other: '%{model}に%{count}つのエラーが発生しました。'
+        body: 次の項目を確認してください。
+      messages:
+        taken: はすでに存在します。
+        record_invalid: バリデーションに失敗しました。 %{errors}
+        inclusion: は一覧にありません。
+        exclusion: は予約されています。
+        invalid: は不正な値です。
+        confirmation: が一致しません。
+        accepted: を受諾してください。
+        empty: を入力してください。
+        blank: を入力してください。
+        too_long: は%{count}文字以内で入力してください。
+        too_short: は%{count}文字以上で入力してください。
+        wrong_length: は%{count}文字で入力してください。
+        not_a_number: は数値で入力してください。
+        not_an_integer: は整数で入力してください。
+        greater_than: は%{count}より大きい値にしてください。
+        greater_than_or_equal_to: は%{count}以上の値にしてください。
+        equal_to: は%{count}にしてください。
+        less_than: は%{count}より小さい値にしてください。
+        less_than_or_equal_to: は%{count}以下の値にしてください。
+        odd: は奇数にしてください。
+        even: は偶数にしてください。
+      full_messages:
+        format: '%{attribute}%{message}'

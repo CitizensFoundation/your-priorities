@@ -1,12 +1,12 @@
 - if user_signed_in?
   - ad = current_user.pick_ad(current_idea_ids)
-  - if ad
+  - if ad and ad.idea and ad.user
     #encouragements
       #notification_show
         = render :partial => "ads/show", :locals => {:ad => ad }
 - else
   - ad = Ad.active.by_random.first
-  - if ad
+  - if ad and ad.idea and ad.user
     #encouragements
       #notification_show
         = render :partial => "ads/show", :locals => {:ad => ad }

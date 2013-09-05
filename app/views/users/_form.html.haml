@@ -2,7 +2,7 @@
   - if @geoblocked
     = render :partial=>"shared/geoblocking_info"
   - else
-    - if current_instance.has_facebook_enabled?
+    - if current_instance.has_facebook_enabled? and (not SubInstance.current.subscription_enabled or (@current_plan and not @current_plan.private_instance))
       = tr("You can register with Facebook or email", "view/users/_form")
       %br/
       %div{:style => "margin-bottom: 10px; margin-top: 7px;"}
@@ -20,28 +20,30 @@
       %div{:style => "margin-bottom: 5px;margin-top: 5px;"}
         = link_to image_tag("logos/Gmail_logo.png", :border => 0, :title=>tr("Sign in with Gmail","_login")), :controller => "open_ids", :action => "new"
         %br/
-    - unless current_instance.disable_email_login
+    - unless current_instance.disable_email_login or (@current_plan and @current_plan.private_instance)
       = form_for :user, url: registration_path('user') do |f|
-        .field{:style => "width:300px;"}
-          %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
-            %tr
-              %td{:valign => "top"}
-                .form_header
-                  = tr("First name", "view/users/_form")
-                .field_box
-                  = f.text_field :first_name, :size => 30
-              %td{:style => "padding-left: 3px;", :valign => "top"}
-                .field_label
-                  = tr("Last name", "view/users/_form")
-                .form_header
-                  = f.text_field :last_name, :size => 30
-          .small{:style => "margin-bottom: 10px;"}= tr("(Not displayed on the site)", "view/users/_form")
+        - if @user.errors.any?
+          .error_messages
+            %h2
+              = tr("Errors","here")
+            %ul
+              - @user.errors.full_messages.each do |msg|
+                %li
+                  = msg
+        %h2
+          = tr("Email registration","here")
+          %br
+        .field
+          .field_label= tr("Your name", "view/users/_form")
+          .field_box= f.text_field :login, :maxlength => 40, :size => 30
+          .small{:style => "margin-bottom: 5px;font-size:12px;"}
+            = tr("(Can be your name,or a pseudonym)", "view/users/_form")
         .field
           .field_label
             = tr("Email address", "view/users/_form")
           .field_box
             = f.text_field :email, :size => 30
-          .small{:style => "margin-bottom: 10px;"}= tr("(Never shared without your permission)", "view/users/_form")
+          .small{:style => "margin-bottom: 5px;font-size:12px;"}= tr("(Never shared without your permission)", "view/users/_form")
         - unless session["omniauth_data"]
           .field{:style => "width:300px; padding-bottom: 10px;"}
             %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
@@ -49,13 +51,6 @@
                 %td{:valign => "top"}
                   .field_label= tr("Password", "view/users/_form")
                   .field_box= f.password_field :password, :size => 30
-                %td{:style => "padding-left: 3px;", :valign => "top"}
-                  .field_label= tr("and re-type it", "view/users/_form")
-                  .field_box= f.password_field :password_confirmation, :size => 30
-          .field
-            .field_label= tr("How should you be identified on the site?", "view/users/_form")
-            .field_box= f.text_field :login, :maxlength => 40, :size => 30
-            .small{:style => "margin-bottom: 10px;"}= tr("(Can be your name,or a pseudonym)", "view/users/_form")
           /.field
           /  .field_label
           /    = tr("Post code", "view/users/_form")
@@ -89,8 +84,8 @@
         %br/
         = check_box("user", "terms")
         = tr("I agree to the ", "view/users/_form")
-        - if page = Page.find_by_name("Terms of Service")
-          %a{:href => "/pages/#{page.id}", :target => '_new'}
+        - if page = Page.where(:name=>"terms_of_service").first
+          %a{:href => "/pages/#{page.id}", :target => '_blank'}
             = tr("terms of service", "view/users/_form")
         %br/
         %br/
@@ -103,5 +98,4 @@
             = submit_tag tr("Signup", "view/users/_form"), :class => "submit_button"
         - else
           = submit_tag tr("Signup", "view/users/_form"), :class => "submit_button"
-
 = render :partial => "users/rules_info"

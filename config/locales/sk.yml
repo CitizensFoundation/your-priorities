@@ -61,12 +61,12 @@ sk:
     am: dopoludnia
     pm: popoludní
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' a '
-      last_word_connector: ' a '
     select:
       prompt: Prosím vyberte si.
+    array:
+      two_words_connector: a
+      last_word_connector: a
+      words_connector: ','
   number:
     format:
       precision: 3

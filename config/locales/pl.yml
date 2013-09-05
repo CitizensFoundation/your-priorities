@@ -61,12 +61,12 @@ pl:
     am: przed południem
     pm: po południu
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' i '
-      last_word_connector: ' oraz '
     select:
       prompt: Proszę wybrać
+    array:
+      words_connector: ','
+      last_word_connector: oraz
+      two_words_connector: i
   number:
     format:
       separator: ','

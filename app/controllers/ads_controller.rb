@@ -2,7 +2,9 @@ class AdsController < ApplicationController
 
   before_filter :get_idea
   before_filter :authenticate_user!, :only => [:new, :create, :preview, :skip]
-  
+
+  before_filter :setup_filter_dropdown
+
   # GET /ideas/1/ads
   def index
     @ads = @idea.ads.by_recently_created.paginate :page => params[:page], :per_page => params[:per_page]
@@ -93,5 +95,12 @@ class AdsController < ApplicationController
       @endorsement = @idea.endorsements.active.find_by_user_id(current_user.id)
     end    
   end
-  
+
+  def setup_menu_items
+    @items = Hash.new
+    if @idea
+      setup_main_ideas_menu
+    end
+    @items
+  end
 end

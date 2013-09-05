@@ -1,13 +1,8 @@
 .nav.nav-user
   %div
-    - if current_sub_instance.external_link==nil or current_sub_instance.external_link==""
-      %a{:href => Instance.current.external_link, :target=>"_blank"}
-        %span
-          %img{:border => "0", :src => Instance.current.external_link_logo.url(:icon_full)}/
-    - else
-      %a{:href => current_sub_instance.external_link, :target=>"_blank"}
-        %span
-          %img{:border => "0", :src => current_sub_instance.external_link_logo.url(:icon_full)}/
+    %a{:href => SubInstance.current.external_link_url, :target=>"_blank"}
+      %span
+        %img{:border => "0", :src => SubInstance.current.external_link_logo_url}/
 
   %div.language_selection
     %a.language_selection{:href => "#"}
@@ -35,8 +30,21 @@
       %a.profile{:href => "#"}
         %div
           = current_user.login
-  %div{:style=>"padding-top:6px;padding-right:9px;"}
-    = "<div class='fb-like' data-href='#{request.protocol}#{request.host_with_port}#{request.fullpath}' data-send='false' data-layout='button_count' data-width='200' data-show-faces='false'></div>".html_safe
+  - if Plan.count>0 and Instance.current.about_page_name
+    %div.create_instance
+      %a.create_instance{:href => "#{Instance.current.homepage_top_url}home/about"}
+        %span{:style=>"background-color: #cd4400 !important;margin-right: 1px;"}
+          = tr("Get your own","here",:instance_name=>Instance.last.name)
+  - elsif Plan.count>0
+    %div.create_instance
+      %a.create_instance{:href => "#{Instance.current.homepage_top_url}subscription_accounts/new"}
+        %span{:style=>"background-color: #cd4400 !important;margin-right: 1px;"}
+          = tr("Get your own","here",:instance_name=>Instance.last.name)
+  - if Instance.current.domain_name.include?("yrpri")
+    %div.donate
+      %a.donate{:href => "#{Instance.current.homepage_top_url}donations/new"}
+        %span{:style=>"background-color: #cd4400 !important;"}
+          = tr("Donate","here")
 - if user_signed_in?
   = render :partial => "shared/user_info"
   = render :partial => "shared/notifications"

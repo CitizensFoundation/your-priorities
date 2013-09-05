@@ -20,10 +20,10 @@ class SubscriptionAccount
 
   delegate  :short_name, :short_name=, :to => :sub_instance, :prefix => false, :allow_nil => false
 
-  validates_presence_of     :user_name, :message => tr("Please specify your name", "model/user")
+  validates_presence_of     :user_name, :message => tr("Please specify your name", "here")
   validates_length_of       :user_name, :within => 2..60
 
-  validates_presence_of     :instance_name, :message => tr("Please specify your instance name", "model/user")
+  validates_presence_of     :instance_name, :message => tr("Please specify your instance name", "here")
   validates_length_of       :instance_name, :within => 4..80
 
   validates_presence_of     :short_name
@@ -74,11 +74,12 @@ class SubscriptionAccount
     @user.login = name
   end
 
-  def initialize(sub_instance, user, account,plan)
+  def initialize(sub_instance, user, account,plan, locale)
     @sub_instance = sub_instance
     @user = user
     @account = account
     @plan = plan
+    @locale = locale
   end
 
   def attributes=(attributes)
@@ -94,6 +95,7 @@ class SubscriptionAccount
 
       @user.sub_instance_id = @sub_instance.id
       @user.is_admin = true
+      @user.last_locale = @locale
       @user.save!(:validate=>false)
 
       @account.user_id = @user.id
@@ -102,7 +104,7 @@ class SubscriptionAccount
       subscription = Subscription.new
       subscription.account_id = @account.id
       subscription.plan_id = @plan.id
-      if @plan.price>0.0
+      if @plan.amount>0.0
         subscription.active = false
       else
         subscription.active = true
@@ -114,12 +116,11 @@ class SubscriptionAccount
       @sub_instance.lock_users_to_instance = true #TODO: Fix security risk here for people changing this parameter
       @sub_instance.setup_in_progress = true
       @sub_instance.save!
-      SubInstanceSetup.perform_async(@sub_instance.id)
-
       #c=Category.create(:name=>"Test category", :description => "")
       #c.sub_instance_id=@sub_instance.id
       #c.save!
     end
+    SubInstanceSetup.perform_async(@sub_instance.id,@user.id)
   end
 
   def post_user

@@ -146,12 +146,12 @@ gsw-CH:
           trillion: Trilioon
           quadrillion: Quadrilioon
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' und '
-      last_word_connector: ' und '
     select:
       prompt: 'Bitte wääle:'
+    array:
+      two_words_connector: und
+      last_word_connector: und
+      words_connector: ','
   helpers:
     select:
       prompt: Bitte wääle

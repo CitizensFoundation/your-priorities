@@ -8,10 +8,27 @@
     po.src = 'https://apis.google.com/js/plusone.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   });
+- if @finished_ideas.any?
+  %div.home_welcome
+    %h1.home_h1
+      = link_to tr("In official status", "view/ideas", :count=>Idea.finished.not_removed.count), "/ideas/finished"
+    %ul
+      %li.successful{:style=>"display: inline;padding-right:10px;"}
+        %b
+          = link_to tr("Officially successful ({count})", "view/ideas", :count=>Idea.successful.not_removed.count), "/ideas/finished_successful"
+      %li.failed{:style=>"display: inline;padding-right:10px;"}
+        = link_to tr("Officially failed ({count})", "view/ideas",:count=>Idea.failed.not_removed.count), "/ideas/finished_failed"
+      %li.in_progress{:style=>"display: inline;padding-right:10px;"}
+        = link_to tr("Officially in progress ({count})", "view/ideas", :count=>Idea.in_progress.not_removed.count), "/ideas/finished_in_progress"
+    - @finished_ideas.each do |idea|
+      = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+      %div
+        %div{:id => "idea_detail_#{idea.id}"}
+    = "&nbsp;".html_safe
 - if @new_ideas.any?
   %div.home_welcome
     %h1.home_h1
-      = tr("New #{IDEA_TOKEN_PLURAL_CAPS}","home")
+      = link_to tr("New #{IDEA_TOKEN_PLURAL_CAPS}","home"), "ideas/newest"
     - @new_ideas.each do |idea|
       = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
       %div
@@ -19,15 +36,15 @@
 - else
   .home_welcome
     %h2
+      %br
       = tr("Welcome to your {instance_name}. Please add your first #{IDEA_TOKEN} ", "controller/sub_instances", :instance_name => current_instance.name)
-      = link_to tr("here","here"),"/ideas/new"
-      = "."
+      = link_to tr("here.","here"),"/ideas/new"
 - if @top_ideas and @top_ideas.any?
   %div.home_welcome{:style=>"margin-top: 10px; padding-top: 10px;"}
     %h1.home_h2
       &nbsp;
     %h1.home_h1
-      = tr("Top #{IDEA_TOKEN_PLURAL} past 7 days", "controller/ideas")
+      = link_to tr("Top #{IDEA_TOKEN_PLURAL} past 7 days", "controller/ideas"),"/ideas/top_7days"
     - @top_ideas.each do |idea|
       = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
       %div
@@ -37,7 +54,7 @@
     %h1.home_h2
       &nbsp;
     %h1.home_h1
-      = tr("Random #{IDEA_TOKEN_PLURAL_CAPS}","home")
+      = link_to tr("Random #{IDEA_TOKEN_PLURAL_CAPS}","home"),"/ideas/random"
     - @random_ideas.each do |idea|
       = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
       %div

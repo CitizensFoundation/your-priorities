@@ -2,9 +2,9 @@
 fa:
   support:
     array:
-      last_word_connector: '، و '
-      words_connector: '، '
-      two_words_connector: ' و '
+      last_word_connector: ، و
+      words_connector: ،
+      two_words_connector: و
     select:
       prompt: لطفا انتخاب کنید
   date:

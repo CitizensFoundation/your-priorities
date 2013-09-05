@@ -1,9 +1,5 @@
-= render :partial=>"user_mailer/header", formats: [:html]
 %p
-  = tr("Hi","email")
-  = @recipient.first_name.capitalize
-  ,
-%p= tr("Congratulations! You just earned 1 social point because {sender_name} is now following your updates at {instance_name}.","email", :sender_name=>@sender.name, :instance_name => @instance.name)
+  = tr("Congratulations! You just earned 1 social point because {sender_name} is now following your updates at {instance_name}.","email", :sender_name=>@sender.name, :instance_name => @instance.name)
 %p
   = tr("Learn more about","email")
   = @sender.name
@@ -16,4 +12,3 @@
     you care about, amongst other things.\                                                                                                                     |
     More details here","email")                                                                                                                                |
   \: #{link_to @recipient.root_url+'about/faq#pc', @recipient.root_url+'about/faq#pc'}
-= render :partial=>"user_mailer/footer", formats: [:html]

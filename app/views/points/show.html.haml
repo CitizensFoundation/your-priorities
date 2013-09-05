@@ -1,27 +1,28 @@
 - quality = nil
 - if user_signed_in?
   - quality = PointQuality.first(conditions: {user_id: current_user.id, point_id: @point.id})
-.col-group
-  .col-1
-    &nbsp;
-  .col-8
-    .col-content
-      = render partial: "points/nav"
-      = render :partial => "points/header", locals: { quality: quality }
-      = render :partial=>"points/report_content", :locals=>{:point=>@point}
-      = render :partial=>"points/flagged", :locals=>{:point=>@point}
-      .point_name= @point.name
-      .point_content_detail
-        %p= @point.content_html
-      - if @point.has_website?
-        .point_source
-          = tr("Source:", "view/points/show")
-          %a{:href => @point.website_link}= truncate(@point.website_link,:length=>70)
-      .point_feed_header
-        = tr("Recent activity on this point", "view/points/show")
-      - for activity in @point.activities.active.by_recently_created.find(:all, :limit => 10)
-        = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_noself" }
-  .col-3
-    .col-content
-      = render :partial => "points/authors", :locals => {:users => @point.authors }
-      = render :partial => "points/left_nav"
+%table{:width=>"100%"}
+  %tr
+    %td
+      &nbsp;
+    %td
+      .col-content
+        = render partial: "points/nav"
+        = render :partial => "points/header", locals: { quality: quality }
+        = render :partial=>"points/report_content", :locals=>{:point=>@point}
+        = render :partial=>"points/flagged", :locals=>{:point=>@point}
+        .point_name= @point.name
+        .point_content_detail
+          %p= @point.content_html
+        - if @point.has_website?
+          .point_source
+            = tr("Source:", "view/points/show")
+            %a{:href => @point.website_link}= truncate(@point.website_link,:length=>70)
+        .point_feed_header
+          = tr("Recent activity on this point", "view/points/show")
+        - for activity in @point.activities.active.by_recently_created.find(:all, :limit => 10)
+          = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_noself" }
+    %td{:style=>"vertical-align:top"}
+      .col-content
+        = render :partial => "points/authors", :locals => {:users => @point.authors }
+        = render :partial => "points/left_nav"

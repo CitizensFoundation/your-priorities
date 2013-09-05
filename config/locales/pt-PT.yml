@@ -61,12 +61,12 @@ pt-PT:
     am: am
     pm: pm
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' e '
-      last_word_connector: ', e'
     select:
       prompt: Por favor seleccione
+    array:
+      two_words_connector: e
+      last_word_connector: ', e'
+      words_connector: ','
   number:
     format:
       separator: ','

@@ -1,8 +1,4 @@
 = render :partial=>"user_mailer/header", formats: [:html]
-%p
-  = tr("Hi","email")
-  = @user.first_name
-  ,
 %p= tr("Welcome to {instance_name}","email", :instance_name => @instance.name)
 - if @user.needs_activation?
   %p= tr("Please confirm your account so you can fully take part in {instance_name}. If you do not confirm your account your support for ideas is not included in global idea calculations.","email", :instance_name => @instance.name)

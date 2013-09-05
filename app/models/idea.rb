@@ -49,6 +49,11 @@ class Idea < ActiveRecord::Base
   scope :falling_24hr, :conditions => "ideas.position_24hr_delta < 0"
   
   scope :finished, :conditions => "ideas.official_status in (-2,-1,2)"
+  scope :successful, :conditions => "ideas.official_status = 2"
+  scope :compromised, :conditions => "ideas.official_status = -991"
+  scope :failed, :conditions => "ideas.official_status = -2"
+  scope :in_progress, :conditions => "ideas.official_status in (-1,1)"
+
   scope :revised, :conditions => "idea_revisions_count > 1"
   scope :by_recently_revised, :joins => :idea_revisions, :order => "idea_revisions.created_at DESC"
   
@@ -315,7 +320,22 @@ class Idea < ActiveRecord::Base
   def is_finished?
     official_status > 1 or official_status < 0
   end
-  
+
+  def official_status_html_name
+    case official_status
+    when -2
+      "<a class='status failed' href='/ideas/finished_failed'>#{tr("Failed","here")}</a>"
+    when 2
+      "<a class='status successful' href='/ideas/finished_successful'>#{tr("Successful","here")}</a>"
+    when -1
+      "<a class='status in_progress' href='/ideas/finished_in_progress'>#{tr("In progress","here")}</a>"
+    when 1
+      "<a class='status in_progress' href='/ideas/finished_in_progress'>#{tr("In progress","here")}</a>"
+    else
+      ""
+    end
+  end
+
   def is_failed?
     official_status == -2
   end
@@ -696,6 +716,14 @@ class Idea < ActiveRecord::Base
       self.sub_instance.url('ideas/' + to_param)
     else
       Instance.current.homepage_url + 'ideas/' + to_param
+    end
+  end
+
+  def top_points_url(args = {})
+    if self.sub_instance_id
+      self.sub_instance.url('ideas/' + to_param + '/top_points')
+    else
+      Instance.current.homepage_url + 'ideas/top_points' + to_param
     end
   end
 

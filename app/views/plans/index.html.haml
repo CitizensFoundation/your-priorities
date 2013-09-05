@@ -38,7 +38,7 @@
               = plan.max_users
           %td
             .price
-              = number_to_currency plan.price, :unit=>plan.price_unit, :precision=>0
+              = number_to_currency plan.amount, :unit=>plan.currency, :precision=>0
           %td
             .signup
               - if @current_plan and @current_plan.id == plan.id

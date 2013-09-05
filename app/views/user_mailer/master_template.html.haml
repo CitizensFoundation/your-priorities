@@ -1,0 +1,92 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=iso-8859-1", "http-equiv" => "Content-Type"}/
+    %title
+      = subject
+  %body{:alink => "#fff", :bgcolor => "#fff", :link => "#fff", :text => "#333", :vlink => "#fff"}
+    / LAYOUT
+    %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "575"}
+      %tr
+        %td{:bgcolor => "#fff", :colspan => "6", :height => "1"}
+      %tr
+        %td{:bgcolor => "#fff", :height => "100%", :width => "1"}
+          %img{:height => "1", :src => image_tag("/email_notification_images/spacer1.gif"), :width => "1"}/
+        %td{:valign => "top"}  
+        %td
+          %table{:border => "0", :cellspacing => "0", :width => "100%"}
+            %tr
+              %td{:height => "2"}
+            %tr
+              %td{:bgcolor => "#fff", :style => "padding-left:0px; padding-right:0px; padding-top:0px; padding-bottom:0px;"}
+                / HEADER START
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+                  %tr
+                    %td{:height => "100", :width => "25"}  
+                    %td{:width => "471"}
+                      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+                        %tr
+                          %td{:height => "42"}
+                            %font{:color => "#fff", :face => "Arial, Helvetica, sans-serif", :size => "4"}
+                              %a{:href => Instance.current.homepage_url(SubInstance.current), :style => "text-decoration:none;", :target => "_blank"}
+                                = instance_name
+                        %tr
+                          %td{:bgcolor => "#e3e3e3", :height => "1", :width => "100%"}
+                    %td  
+                    %td{:align => "right", :width => "52"}
+                      %a{:href => Instance.current.homepage_url(SubInstance.current)}
+                        - if defined?(attachments)
+                          = image_tag attachments['logo.png'].url, :alt=>tr("{instance_name}", "email", :instance_name => @instance.name)
+                        - else
+                          = @instance.name
+                    %td{:height => "100", :width => "25"}  
+            %tr
+              %td{:bgcolor => "#fff", :height => "10"}
+            %tr
+              %td{:bgcolor => "#fff", :style => "padding-left:0px; padding-right:0px; padding-top:0px; padding-bottom:0px;"}
+            %tr
+              %td{:bgcolor => "#fff", :style => "padding-left:0px; padding-right:0px; padding-top:0px; padding-bottom:0px;"}
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+                  %tr
+                    %td{:width => "25"}  
+                    %td  
+                    %td{:width => "25"}  
+                  %tr
+                    %td{:width => "25"}  
+                    %td{:width => "523"}
+                      %font{:face => "Arial, Helvetica, sans-serif", :size => "2"}
+                        %b
+                          = render :partial=>"header_light"
+                    %td{:width => "25"}  
+                  %tr
+                    %td{:width => "25"}  
+                    %td  
+                    %td{:width => "25"}  
+                  %tr
+                    %td{:width => "25"}  
+                    %td{:width => "523"}
+                      %font{:face => "Arial, Helvetica, sans-serif", :size => "2"}
+                        = render :partial=>partial_name
+                    %td{:width => "25"}  
+                  %tr
+                    %td{:width => "25"}  
+                    %td  
+                    %td{:width => "25"}  
+                  %tr
+                    %td{:width => "25"}  
+                    %td
+                      = render :partial=>"footer"
+                    %td{:width => "25"}  
+                  %tr
+                    %td{:width => "25"}  
+                    %td  
+                    %td{:width => "25"}  
+            %tr
+              %td{:bgcolor => "#fff", :style => "padding-left:0px; padding-right:0px; padding-top:0px; padding-bottom:0px;"}
+            %tr
+              %td{:height => "5"}
+        %td{:valign => "top"}  
+        %td{:bgcolor => "#fff", :height => "100%", :width => "1"}
+          %img{:height => "1", :src =>  image_tag("/email_notification_images/spacer1.gif"), :width => "1"}/
+      %tr
+        %td{:bgcolor => "#fff", :colspan => "6", :height => "1"}

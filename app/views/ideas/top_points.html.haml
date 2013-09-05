@@ -1,1 +1,9 @@
 = render :partial => "header"
+#new_activities
+  - unless @activities.blank?
+    %ul#endless_scroll_ul_idea_show.list{:last => @activities.to_a.last.changed_at, :idea_id => @idea.id}
+      = render :template => 'feed/activity_list_simple'
+    #infinite-scroll.endless_scroll_inner_wrap
+  - else
+    #activities.single
+

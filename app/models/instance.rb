@@ -45,7 +45,7 @@ class Instance < ActiveRecord::Base
   validates_attachment_size :menu_strip_side, :less_than => 5.megabytes
   validates_attachment_content_type :menu_strip_side, :content_type => ['image/jpeg', 'image/png', 'image/gif']
 
-  has_attached_file :logo, :styles => { :preview => "50x50#", :icon_50 => "50x50#", :icon_96 => "96x96#", :icon_140 => "140x140#", :icon_340_74 => "340x74#", :icon_214_32 => "214x32#", :icon_107_16 => "107x16#", :icon_53_8 => "53x8#", :icon_180 => "180x180#", :medium  => "450x" },
+  has_attached_file :logo, :styles => { :icon_full => "200x200#", :preview => "50x50#", :icon_50 => "50x50#", :icon_96 => "96x96#", :icon_140 => "140x140#", :icon_340_74 => "340x74#", :icon_214_32 => "214x32#", :icon_107_16 => "107x16#", :icon_53_8 => "53x8#", :icon_180 => "180x180#", :medium  => "450x" },
                     :storage => PAPERCLIP_STORAGE_MECHANISM,
                     :s3_credentials => S3_CREDENTIALS
 
@@ -139,10 +139,16 @@ class Instance < ActiveRecord::Base
     else
       if (p = sub_instance || (p = SubInstance.current)) && p.short_name != "default"
         'https://' + p.short_name + '.' + base_url + '/'
+      elsif (p = sub_instance || (p = SubInstance.current)) && p.short_name == "default"
+        'https://www.' + base_url + '/'
       else
         'https://' + base_url + '/'
       end
     end
+  end
+
+  def homepage_top_url
+    'https://www.' + base_url + '/'
   end
 
   def name_with_tagline

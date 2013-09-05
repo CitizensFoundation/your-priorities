@@ -18,7 +18,7 @@
           = link_to idea.name, idea
           = render :partial=>"points/report_content", :locals=>{:point=>point}
           = render :partial=>"points/flagged", :locals=>{:point=>point}
-          = official_status(idea)
+          = #official_status(idea)
         .point_content_wrapper
           .point_name
             = link_to_unless_current h(point.name), point
@@ -29,7 +29,10 @@
             - if revision && revision.content_diff
               = tg(revision.content_diff)
             - else
-              = tg(point.content_html)
+              - if point.content_html
+                = tg(point.content_html)
+              - else
+                = tg(point.content)
           - if point.has_website?
             .point_source
               = tr("Source:", "view/points/_show_full")

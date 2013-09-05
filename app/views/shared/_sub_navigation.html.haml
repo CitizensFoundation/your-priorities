@@ -4,12 +4,12 @@
       - if controller_name == "points"
         = tr("Debate","sub_nav") + " :"
       - elsif controller_name == "ideas"
-        = tr("Tags","sub_nav") + " :"
+        = #tr("Tags","sub_nav") + " :"
       - elsif controller_name == "sub_instances"
         = current_instance.name
       - elsif ["pages","subscriptions","subscription_accounts","sub_instances"].include?(controller_name)
       - else
-        = controller_name.gsub("ideas","#{IDEA_TOKEN_PLURAL}").camelize + " :"
+        = #controller_name.gsub("ideas","#{IDEA_TOKEN_PLURAL}").camelize + " :"
     %span
     - if controller_name == "issues"
       - if action_name == "index"
@@ -24,8 +24,8 @@
           = @selected_sub_nav_name
     -else
       %a{:href => "#"}
-        %span
-          = @page_title
+        %h2
+          = @selected_sub_nav_name
   - if @sub_menu_items and not @sub_menu_items.empty?
     %div#sub_menu.submenu
       %ul

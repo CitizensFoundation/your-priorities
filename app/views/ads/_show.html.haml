@@ -22,7 +22,7 @@
                 :remote=>true,                                                                                                                                            |
                 'data-disable-with' => '<span class="encouragement_click idea_add_link idea_add_working"><img src="#{asset_path "/ajax/horizontal_small.gif"}" /></span>', |
                 'data-loader-name' => "no_loader",                                                                                                                        |
-                :class => "idea_add_link_small", :title => tr("I support this, add it to my idea list", "view/ads/_show")                                               |
+                :class => "idea_add_link_small", :title => tr("I support this add it to my idea list", "view/ads/_show")                                               |
           .oppose_button_small
             %span{:id => "idea_add_oppose_#{ad.idea.id}"}
               = link_to tr("Oppose", "view/ads/_show"), endorse_idea_path(ad.idea, :referral_id => ad.user, :region => "encouragement_top", :value => -1, :ad_id => ad),     |
@@ -30,7 +30,7 @@
                 :remote=>true,                                                                                                                                            |
                 'data-disable-with' => '<span class="encouragement_click idea_add_link idea_add_working"><img src="#{asset_path "/ajax/horizontal_small.gif"}" /></span>', |
                 'data-loader-name' => "no_loader",                                                                                                                        |
-                :class => "idea_add_link_small", :title => tr("I oppose this, and want to add my opposition to my idea list", "view/ads/_show")                        |
+                :class => "idea_add_link_small", :title => tr("I oppose this and want to add my opposition to my idea list", "view/ads/_show")                        |
           - unless ad.new_record?
             - if current_user
               .other_button_small
@@ -40,8 +40,5 @@
                     :remote=>true,                                                                                                                |
                     'data-disable-with' => '<span class="tag_scale idea_add_working"><img src="#{asset_path "/ajax/horizontal_small.gif"}" /></span>', |
                     'data-loader-name' => "no_loader",                                                                                                                      |
-                    :class => "idea_add_link_small", :title => tr("Skip this, I'm not interested'", "view/ads/_show")
-    %div.encouragement_counts
-      .notification_show_counts
-        = render :partial => "ideas/endorsement_count", :locals => {:idea => ad.idea }
+                    :class => "idea_add_link_small", :title => tr("Skip this I'm not interested'", "view/ads/_show")
 

@@ -1,5 +1,48 @@
 ---
 hi-IN:
+  datetime:
+    prompts:
+      second: सेकंड
+      year: वर्ष
+      month: माह
+      day: दिन
+      hour: घंटा
+      minute: क्षण
+    distance_in_words:
+      half_a_minute: एक आधा मिनट
+      less_than_x_seconds:
+        one: एक सेकंड से कम
+        other: '%{count}  सेकंड से कम'
+      x_seconds:
+        one: एक सेकंड
+        other: '%{count} सेकंड'
+      less_than_x_minutes:
+        one: एक मिनट से कम
+        other: '%{count} मिनट से कम'
+      x_minutes:
+        one: एक मिनट
+        other: '%{count} मिनट'
+      about_x_hours:
+        one: लग - भग एक घंटा
+        other: लग - भग %{count} घंटा
+      x_days:
+        one: एक दिन
+        other: '%{count} दिन'
+      about_x_months:
+        one: लग - भग 1 महीना
+        other: लग - भग %{count} महीना
+      x_months:
+        one: एक महीना
+        other: '%{count} महीना'
+      about_x_years:
+        one: लग - भग 1 साल
+        other: लग - भग %{count} साल
+      over_x_years:
+        one: एक साल के ऊपर
+        other: '%{count} साल के ऊपर'
+      almost_x_years:
+        one: लग - भग एक साल
+        other: लग - भग %{count} साल
   date:
     formats:
       default: '%d-%m-%Y'
@@ -61,12 +104,12 @@ hi-IN:
     am: am
     pm: pm
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' और '
-      last_word_connector: ', और '
     select:
       prompt: कृपया चुनें
+    array:
+      two_words_connector: और
+      last_word_connector: ', और'
+      words_connector: ','
   number:
     format:
       separator: .
@@ -106,49 +149,6 @@ hi-IN:
           billion: अरब
           trillion: खरब
           quadrillion: करोड़ शंख
-  datetime:
-    distance_in_words:
-      half_a_minute: एक आधा मिनट
-      less_than_x_seconds:
-        one: एक सेकंड से कम
-        other: '%{count}  सेकंड से कम'
-      x_seconds:
-        one: एक सेकंड
-        other: '%{count} सेकंड'
-      less_than_x_minutes:
-        one: एक मिनट से कम
-        other: '%{count} मिनट से कम'
-      x_minutes:
-        one: एक मिनट
-        other: '%{count} मिनट'
-      about_x_hours:
-        one: लग - भग एक घंटा
-        other: लग - भग %{count} घंटा
-      x_days:
-        one: एक दिन
-        other: '%{count} दिन'
-      about_x_months:
-        one: लग - भग 1 महीना
-        other: लग - भग %{count} महीना
-      x_months:
-        one: एक महीना
-        other: '%{count} महीना'
-      about_x_years:
-        one: लग - भग 1 साल
-        other: लग - भग %{count} साल
-      over_x_years:
-        one: एक साल के ऊपर
-        other: '%{count} साल के ऊपर'
-      almost_x_years:
-        one: लग - भग एक साल
-        other: लग - भग %{count} साल
-    prompts:
-      year: वर्ष
-      month: माह
-      day: दिन
-      hour: घंटा
-      minute: क्षण
-      second: सेकंड
   helpers:
     select:
       prompt: कृपया चुनें

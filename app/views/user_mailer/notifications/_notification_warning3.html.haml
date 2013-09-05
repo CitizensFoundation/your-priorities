@@ -1,9 +1,5 @@
-= render :partial=>"user_mailer/header", formats: [:html]
 %p
-  = tr("Hi", "email")
-  = @recipient.first_name.capitalize
-  ,
-%p= tr("You have violated the site rules. This is your {warning_number} warning out of three. Your content was deleted. \                      |
+  = tr("You have violated the site rules. This is your {warning_number} warning out of three. Your content was deleted. \                      |
     You will be banned from the website if you break the rules more than three times.", "email", :warning_number=>tr('third','notifications')) |
 %p
   = tr("This is your final warning! Next time you break the rules you will be banned from posting to the website.", "email")
@@ -17,4 +13,3 @@
       \.
     %p
       "#{@notifiable.content}"
-    = render :partial=>"user_mailer/footer", formats: [:html]

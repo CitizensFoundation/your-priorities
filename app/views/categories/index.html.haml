@@ -7,8 +7,11 @@
     %th
   - @categories.each do |category|
     %tr
-      %td= category.name
-      %td= link_to 'Show', category
-      %td= link_to 'Edit', edit_category_path(category)
+      %td
+        = category.name
+      - unless category.sub_instance.short_name=="default" and not current_user.is_root?
+        %td= link_to 'Edit', edit_category_path(category)
 %br/
+%p
+  = tr("You can not edit default categories - when you create your first custom category all the default categories will disappear.","here")
 = link_to 'New Category', new_category_path

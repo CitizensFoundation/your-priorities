@@ -114,12 +114,12 @@ sw:
     am: am
     pm: pm
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' na '
-      last_word_connector: ', na '
     select:
       prompt: Tafadhali teua
+    array:
+      two_words_connector: na
+      last_word_connector: ', na'
+      words_connector: ','
   number:
     format:
       separator: ','

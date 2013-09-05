@@ -53,11 +53,39 @@ class ApplicationController < ActionController::Base
   before_filter :check_subscription_plan
   before_filter :check_sub_instance_setup_status
 
+  before_filter :setup_currency_code
+
+  before_filter :set_last_locale
+
   #after_filter :sub_instance_cookie_lock_down
 
   layout :get_layout
 
   protect_from_forgery
+
+  def set_last_locale
+    if current_user
+      if (current_user.last_locale and current_user.last_locale!=I18n.locale.to_s) or current_user.last_locale==nil
+        current_user.last_locale = I18n.locale
+        current_user.save(:validate=>false)
+      end
+    end
+  end
+
+  def setup_currency_code
+
+    if ENV['FORCE_CURRENCY']
+      @currency_code = ENV['FORCE_CURRENCY']
+    elsif Plan::GBP_COUNTRIES.include?(@country_code)
+      @currency_code = "GBP"
+    elsif Plan::EUR_COUNTRIES.include?(@country_code)
+      @currency_code = "EUR"
+    elsif Plan::ISK_COUNTRIES.include?(@country_code)
+      @currency_code = "ISK"
+    else
+      @currency_code = "USD"
+    end
+  end
 
   def check_auto_authentication
     if params[:aa_secret]
@@ -112,7 +140,7 @@ class ApplicationController < ActionController::Base
         end
       else
         @current_plan = @current_subscription.plan
-        unless user_signed_in? or request.fullpath.include?("/users/sign_in") or request.fullpath.include?("/users/invitation/accept") or (controller_name=="invitations") or action_name=="setup_status"
+        unless user_signed_in? or request.fullpath.include?("/users/sign_in") or request.fullpath.include?("/users/invitation/accept") or controller_name=="invitations" or controller_name=="passwords" or action_name=="setup_status"
           if @current_plan.private_instance
             flash[:error] = tr("You need to login to access this private website", "controller/application")
             redirect_to "/users/sign_in"
@@ -171,7 +199,7 @@ class ApplicationController < ActionController::Base
   end
 
   def setup_current_user_variable
-    @current_user = current_user
+    @current_user = Thread.current[:current_user] = current_user
   end
 
   def setup_stages
@@ -317,41 +345,50 @@ class ApplicationController < ActionController::Base
 
   # Will either fetch the current sub_instance or return nil if there's no subdomain
   def current_sub_instance
-    unless Rails.env.production?
-      begin
-        if params[:sub_instance_short_name]
-          if params[:sub_instance_short_name].empty?
-            session.delete(:set_sub_instance_id)
-            SubInstance.current = @current_sub_instance = nil
-          else
-            @current_sub_instance = SubInstance.find_by_short_name(params[:sub_instance_short_name])
+    if @current_sub_instance
+      @current_sub_instance
+    else
+      unless Rails.env.production?
+        begin
+          if params[:sub_instance_short_name]
+            if params[:sub_instance_short_name].empty?
+              session.delete(:set_sub_instance_id)
+              SubInstance.current = @current_sub_instance = nil
+            else
+              @current_sub_instance = SubInstance.find_by_short_name(params[:sub_instance_short_name])  unless request.subdomains.first=="default" or request.subdomains.first=="www"
+              SubInstance.current = @current_sub_instance
+              session[:set_sub_instance_id] = @current_sub_instance.id
+            end
+          elsif session[:set_sub_instance_id]
+            @current_sub_instance = SubInstance.find(session[:set_sub_instance_id])
             SubInstance.current = @current_sub_instance
-            session[:set_sub_instance_id] = @current_sub_instance.id
           end
-        elsif session[:set_sub_instance_id]
-          @current_sub_instance = SubInstance.find(session[:set_sub_instance_id])
-          SubInstance.current = @current_sub_instance
         end
       end
+      if @iso_country
+        Rails.logger.info("Setting sub instance to iso country_id #{@iso_country.id}")
+        @current_sub_instance ||= SubInstance.where(:iso_country_id=>@iso_country.id).first
+      end
+      @current_sub_instance ||= SubInstance.find_by_short_name(request.subdomains.first) unless request.subdomains.first=="default"
+      @current_sub_instance ||= SubInstance.find_by_short_name("default") if (request.subdomains.first=="www" or request.subdomains.first==nil) and ["donations","home","subscriptions","subscription_accounts","plan","pages"].include?(controller_name)
+      @current_sub_instance ||= SubInstance.find_by_short_name("default") if Instance.last.domain_name.include?("betri") or Instance.last.domain_name.include?("betra")
+      unless @current_sub_instance
+        Rails.logger.error("Can't find sub instance")
+        redirect_to Instance.current.homepage_top_url
+      end
+      SubInstance.current = @current_sub_instance
     end
-    @current_sub_instance ||= SubInstance.find_by_short_name(request.subdomains.first)
-    @current_sub_instance ||= SubInstance.find_by_short_name("default")
-    if @iso_country
-      Rails.logger.info ("Setting sub instance to iso countr #{@iso_country.id}")
-      @current_sub_instance ||= SubInstance.where(:iso_country_id=>@iso_country.id).first
-    end
-    @current_sub_instance ||= SubInstance.find_by_short_name("united-nations")
-    SubInstance.current = @current_sub_instance
   end
   
   def setup_geoblocking
     if File.exists?(Rails.root.join("lib/geoip/GeoIP.dat"))
-      @country_code = Thread.current[:country_code] = (session[:country_code] ||= GeoIP.new(Rails.root.join("lib/geoip/GeoIP.dat")).country(request.remote_ip)[3]).downcase
+      @country_code = Thread.current[:country_code] = (session[:country_code] ||= GeoIP.new(Rails.root.join("lib/geoip/GeoIP.dat")).country(request.remote_ip)[3])
     else
       Rails.logger.error "No GeoIP.dat file"
+      @country_code = "--"
     end
-    @country_code = "ba" if @country_code == nil or @country_code == "--"
-    @iso_country = IsoCountry.find_by_code(@country_code.upcase)
+    @iso_country = IsoCountry.find_by_code(@country_code)
+    @iso_country = IsoCountry.find_by_code("GB") unless @iso_country
   end
 
   def check_geoblocking
@@ -381,22 +418,23 @@ class ApplicationController < ActionController::Base
     if params[:locale]
       session[:locale] = params[:locale]
       cookies.permanent[:last_selected_language] = session[:locale]
-      Rails.logger.debug("Set language from params")
+      Rails.logger.info("Set language from params")
     elsif not session[:locale]
       if cookies[:last_selected_language]
         session[:locale] = cookies[:last_selected_language]
-        Rails.logger.debug("Set language from cookie")
+        Rails.logger.info("Set language from cookie")
       elsif @iso_country and @iso_country.default_locale
         session[:locale] = @iso_country.default_locale
-        Rails.logger.debug("Set language from geoip")
+        Rails.logger.info("Set language from geoip")
       elsif SubInstance.current and SubInstance.current.default_locale
         session[:locale] = SubInstance.current.default_locale
-        Rails.logger.debug("Set language from sub_instance")
+        Rails.logger.info("Set language from sub_instance")
       else
         session[:locale] = :en
+        Rails.logger.info("Set language to default :en")
       end
     else
-      Rails.logger.debug("Set language from session")
+      Rails.logger.info("Set language from session")
     end
     session_locale = session[:locale]
     I18n.locale = session_locale
@@ -547,27 +585,37 @@ class ApplicationController < ActionController::Base
     include ActionView::Helpers::JavaScriptHelper
   end
 
+  def setup_main_ideas_menu
+    item_count = 0
+    @items[item_count]=[tr("Overview", "view/ideas/_nav"), @idea.show_url]
+    if @idea.points_count > 0
+      @items[item_count+=1]=[tr("Debate ({count})", "view/ideas/_nav", :count => @idea.points_count),top_points_idea_url(@idea)]
+      @items[item_count+=1]=[tr("Add point", "view/ideas/_nav"), @idea.new_point_url]
+    end
+    if @idea.idea_revisions_count>1
+      @items[item_count+=1]=[tr("Revisions ({count})", "view/ideas/_nav", :count => @idea.idea_revisions_count), idea_idea_revision_url(@idea,@idea.idea_revision_id)]
+    end
+    if current_user and current_user.id == @idea.user_id
+      @items[item_count+=1]=[tr("New revision", "view/ideas/_nav"), new_idea_idea_revision_url(@idea)]
+    end
+    if current_user and current_user.capitals_count>0 and @idea.status == 'published'
+      @items[item_count+=1]=[tr("Buy an ad", "view/ideas/_nav"), new_idea_ad_url(@idea)]
+    end
+    if false and current_user and current_user.is_admin?
+      @items[item_count+=1]=[tr("Update status", "view/ideas/_nav"), update_status_idea_url(@idea)]
+      #@items[item_count+=1]=[tr("Delete", "view/ideas/_nav"), destroy@idea]
+    end
+  end
+
   def setup_filter_dropdown
     setup_menu_items
     @sub_menu_items = @items
-    Rails.logger.debug action_name
-
-    if action_name == "index" and @items and not request.xhr? and controller_name != 'issues'
-      Rails.logger.debug "index"
-      selected = nil #DISABLED FEATURE cookies["selected_#{controller_name}_filter_id"].to_i
-      Rails.logger.debug "cookie #{selected}"
-      if selected and @sub_menu_items[selected]
-        Rails.logger.debug "cookie"
-        redirect_to @sub_menu_items[selected][1]
-        return false
-      else
-        Rails.logger.debug "no cookie"
-        redirect_to @sub_menu_items[1][1]
-        return false
-      end
-    end
+    Rails.logger.debug "XXXXXX #{action_name} #{@sub_menu_items}"
 
     selected_sub_menu_item_id, selected_sub_menu_item = find_menu_item_by_url(request.url)
+    selected_sub_menu_item_id, selected_sub_menu_item = find_menu_item_by_url(request.fullpath) unless selected_sub_menu_item_id
+    selected_sub_menu_item_id, selected_sub_menu_item = find_menu_item_by_url(request.url.split('?').first) unless selected_sub_menu_item_id
+
     if selected_sub_menu_item
       @selected_sub_nav_name = selected_sub_menu_item[0]
       Rails.logger.debug "Saved submenu id #{selected_sub_menu_item_id}"
@@ -581,10 +629,12 @@ class ApplicationController < ActionController::Base
   def find_menu_item_by_url(url)
     @items.each do |id,item|
       if url==item[1]
+        Rails.logger.debug("FOUND XXXX YYYY #{url} #{id} #{item[1]}")
         return id,item
         break
       end
     end
+    return nil,nil
   end
   protected
   def authenticate_inviter!

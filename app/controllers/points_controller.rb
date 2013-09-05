@@ -377,10 +377,15 @@ class PointsController < ApplicationController
 
   def setup_menu_items
       @items = Hash.new
-      @items[1]=[tr("Newest Points", "view/points"), newest_points_url]
-      @items[2]=[tr("Recently revised", "view/points"), revised_points_url]
-      if user_signed_in?
-        @items[3]=[tr("Your ideas' points", "view/ideas"), your_ideas_points_url]
+      item_count = 0
+      if ["new"].include?(action_name)
+        load_endorsement
+        setup_main_ideas_menu
+      else
+        @items[1]=[tr("Newest Points", "view/points"), newest_points_url]
+        if user_signed_in?
+          @items[3]=[tr("Your ideas' points", "view/ideas"), your_ideas_points_url]
+        end
       end
       @items
     end

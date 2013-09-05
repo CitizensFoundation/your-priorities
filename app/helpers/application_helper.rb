@@ -2,6 +2,28 @@
 
 module ApplicationHelper
 
+  def currency_with_unit(amount,currency)
+    if currency=="USD"
+      number_to_currency amount, :unit=>"$", :precision=>0, :locale=>"en"
+    elsif currency=="EUR"
+      number_to_currency amount, :unit=>"&euro;", :precision=>0, :locale=>"en"
+    elsif currency=="GBP"
+      number_to_currency amount, :unit=>"&pound;", :precision=>0, :locale=>"en"
+    elsif currency=="ISK"
+      number_to_currency amount, :unit=>"kr.", :precision=>0, format: "%n %u", :locale=>"en"
+    end
+  end
+
+
+  def get_locale_demo_host(domain)
+    locale_host = "https://demo-#{I18n.locale}"
+    if SubInstance.find_by_short_name("demo-#{I18n.locale}")
+      locale_host+domain
+    else
+      "https://demo"+domain
+    end
+  end
+
   def calc_language_completion(count)
     if current_user and current_user.is_root? and count>0
       complete = Tolk::Locale.find_by_name("en").translations.count

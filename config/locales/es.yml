@@ -100,12 +100,12 @@ es:
     am: am
     pm: pm
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' y '
-      last_word_connector: ', y '
     select:
       prompt: Por favor seleccione
+    array:
+      two_words_connector: y
+      last_word_connector: ', y'
+      words_connector: ','
   datetime:
     distance_in_words:
       half_a_minute: medio minuto

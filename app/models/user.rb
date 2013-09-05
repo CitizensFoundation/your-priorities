@@ -130,7 +130,7 @@ class User < ActiveRecord::Base
   validates_length_of       :email, :within => 3..100
   validates :email, :uniqueness => {:scope => :sub_instance_id}
   validates_format_of       :email, :with => /^[-^!$#%&'*+\/=3D?`{|}~.\w]+@[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])*(\.[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])*)+$/x
-  validates_uniqueness_of   :facebook_uid, :allow_nil => true, :allow_blank => true
+  validates_uniqueness_of   :facebook_uid, :allow_nil => true, :allow_blank => true, :scope => :sub_instance_id
 
   #validates_presence_of     :post_code, :message => tr("Please enter your postcode.", "model/user")
   #validates_presence_of     :age_group, :message => tr("Please select your age group.", "model/user")
@@ -697,7 +697,7 @@ class User < ActiveRecord::Base
     capitals_difference = new_capitals_count - self.capitals_count
     self.update_attribute(:capitals_count,new_capitals_count)
 
-    if capitals_difference != 0 and !self.is_admin and self.is_capital_subscribed and self.status == "active"
+    if capitals_difference > 0 and self.is_capital_subscribed and self.status == "active"
       #User.delay.send_capital_email(self.activities.last.id, capitals_difference)
       Rails.logger.info("Sending capital email")
       SendCapitalEmail.perform_in(3.seconds, self.activities.last.id, capitals_difference)
@@ -962,8 +962,10 @@ class User < ActiveRecord::Base
   def first_name_detected
     if self.first_name and self.first_name!=""
       self.first_name
-    else
+    elsif login
       self.login.split(" ")[0]
+    else
+      self.email
     end
   end
 

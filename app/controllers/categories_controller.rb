@@ -49,7 +49,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to(@category, :notice => 'Category was successfully created.') }
+        format.html { redirect_to(@category, :notice => tr("Category was successfully created.","here")) }
         format.xml  { render :xml => @category, :status => :created, :location => @category }
       else
         format.html { render :action => "new" }
@@ -62,6 +62,10 @@ class CategoriesController < ApplicationController
   # PUT /categories/1.xml
   def update
     @category = Category.unscoped.find(params[:id])
+
+    if @category.sub_instance.short_name=="default" and not current_user.is_root?
+      redirect_to :back
+    end
 
     respond_to do |format|
       if @category.update_attributes(params[:category])

@@ -19,7 +19,7 @@
         = f.text_field :website, :size => 50
         %p= tr("Link this to another idea <span class='small'>Just start typing the name</span>", "view/revisions/new")
         = f.text_field :other_idea_name, :size => 50, :autocomplete => "off"
-        %p= tr("Linking to another idea is optional. If your point is in opposition, you can link to a better idea. OR, if your point is supportive or neutral, you can highlight a more specific or related idea.", "view/revisions/new")
+        %p= tr("Linking to another idea is optional. If your point is in opposition - you can link to a better idea. ir if your point is supportive you can highlight a more specific or related idea.", "view/revisions/new")
         %p= tr("Why did you make this change?", "view/revisions/new")
         = fields_for :comment do |c|
           = c.text_field :content, :size => 50

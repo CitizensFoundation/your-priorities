@@ -25,11 +25,9 @@ class Notification < ActiveRecord::Base
   workflow_column :status
   workflow do
     state :unsent do
-      event :send, transitions_to: :sent
-      event :read, transitions_to: :read
-      event :remove, transitions_to: :removed
+      event :send_email, transitions_to: :sent_email
     end
-    state :sent do
+    state :sent_email do
       event :read, transitions_to: :read
       event :remove, transitions_to: :removed
     end
@@ -38,13 +36,14 @@ class Notification < ActiveRecord::Base
     end
     state :removed do
       event :unremove, transitions_to: :read, meta: { validates_presence_of: [:read_at] }
-      event :unremove, transitions_to: :sent, meta: { validates_presence_of: [:sent_at] }
+      event :unremove, transitions_to: :sent_email, meta: { validates_presence_of: [:sent_at] }
       event :unremove, transitions_to: :unsent
     end
   end
 
   after_create :add_counts
-  
+  after_commit :queue_sending
+
   def add_counts
     recipient.increment!(:unread_notifications_count)
     recipient.increment!(:received_notifications_count)
@@ -52,9 +51,30 @@ class Notification < ActiveRecord::Base
   
   def queue_sending
     Rails.logger.debug("In queue_sending")
-    self.send!
+    self.send_email!
   end
-  
+
+  def on_sent_email_entry(new_state, event)
+    Rails.logger.info("In send!")
+    self.removed_at = nil
+    self.processed_at = Time.now
+    Rails.logger.debug("In send! #{is_recipient_subscribed?} #{recipient.has_email?} #{recipient.is_active?}")
+    if (is_recipient_subscribed? and recipient.has_email? and recipient.is_active?) or
+        (is_recipient_subscribed? and recipient.has_email? and self.class == NotificationWarning4)
+      self.sent_at = Time.now
+#      if self.class == NotificationChangeVote
+#        UserMailer.new_change_vote(sender,recipient,notifiable).deliver
+#      else
+      UserMailer.notification(self,sender,recipient,notifiable).deliver
+#      end
+    end
+    #if recipient.has_facebook?
+    #  self.sent_at = Time.now
+    #  Facebooker::Session.create.send_notification([recipient.facebook_uid],fbml)
+    #end
+    save(:validate => false)
+  end
+
   def on_read_entry(new_state, event)
     self.removed_at = nil
     self.read_at = Time.now
@@ -113,26 +133,7 @@ class Notification < ActiveRecord::Base
     self.sender = User.find_by_login(n) unless n.blank?
   end  
   
-  def on_sent_entry(new_state, event)
-    Rails.logger.info("In send!")
-    self.removed_at = nil    
-    self.processed_at = Time.now
-    Rails.logger.debug("In send! #{is_recipient_subscribed?} #{recipient.has_email?} #{recipient.is_active?}")
-    if (is_recipient_subscribed? and recipient.has_email? and recipient.is_active?) or
-       (is_recipient_subscribed? and recipient.has_email? and self.class == NotificationWarning4)
-      self.sent_at = Time.now
-      if self.class == NotificationChangeVote
-        UserMailer.new_change_vote(sender,recipient,notifiable).deliver
-      else
-        UserMailer.notification(self,sender,recipient,notifiable).deliver
-      end
-    end
-    #if recipient.has_facebook?
-    #  self.sent_at = Time.now
-    #  Facebooker::Session.create.send_notification([recipient.facebook_uid],fbml)
-    #end
-    save(:validate => false)
-  end  
+
 
   # you can override this in subclasses to specify a different rule for whether the person is subscribed
   def is_recipient_subscribed?

@@ -29,12 +29,12 @@
             = render :partial => "sub_instances/message_to_users" if controller_name=="home"
       .nav.nav-main
         = render :partial => "shared/side_navigation" #unless SubInstance.current.short_name == "default"
+      = render :partial => "ads/pick"
       #content.content
         .content-wrap.col-group
           .col-12
             .col-content.mainbox
               = flash_div :warning, :notice, :error
-              = render :partial => "ads/pick"
               - unless (controller_name == "home" && action_name == "world") or @skip_sub_navigation
                 = render :partial => "shared/sub_navigation"
               = yield :layout

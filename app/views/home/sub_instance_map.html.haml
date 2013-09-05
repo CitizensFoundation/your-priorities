@@ -1,0 +1,4 @@
+= render :partial=>"map_header"
+- @sub_instances.each do |sub_instance|
+  = render :partial=>"map_element", :locals=>{:place=>sub_instance}
+= render :partial=>"map_footer"

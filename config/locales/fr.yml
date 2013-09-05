@@ -143,12 +143,12 @@ fr:
           trillion: billion
           quadrillion: million de milliards
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' et '
-      last_word_connector: ' et '
     select:
       prompt: Veuillez sélectionner
+    array:
+      two_words_connector: et
+      last_word_connector: et
+      words_connector: ','
   helpers:
     select:
       prompt: Veuillez sélectionner
@@ -182,7 +182,7 @@ fr:
       header:
         one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
         other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
-      body: 'Veuillez vérifier les champs suivants : '
+      body: 'Veuillez vérifier les champs suivants :'
   activerecord:
     errors:
       messages:
@@ -211,7 +211,7 @@ fr:
         header:
           one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
           other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
-        body: 'Veuillez vérifier les champs suivants : '
+        body: 'Veuillez vérifier les champs suivants :'
       full_messages:
         format: '%{attribute} %{message}'
   9ffd04e5001b2551d685667a380b1660: Ce commentaire a été éffacé
@@ -272,7 +272,6 @@ fr:
   cce99c598cfdb9773ab041d54c3d973a: Profile
   6f796b0e6deb4f4c2c0ee0ed5e10e117: Supporteurs
   dc647eb65e6711e155375218212b3964: Mot de passe
-  c6187aaeb01f4d0fd41f72077df5c9ca: Taper le à nouveau
   3903aab323863bd2e9b68218a7a65ebd: Supporteur
   fd038fc7f319e48f3115d92bf5bdbef9: Ignorer
   5e178542b85fb18ca3c459e9a95f4f2e: Code postale
@@ -293,17 +292,13 @@ fr:
   0323de4f66a1700e2173e9bcdce02715: Déconnexion
   13348442cc6a27032d2b4aa28b75a5d3: Recheche
   4b1b4dc8cf38b3c64b1d657da8f5ac8c: Reporter
-  8413c683b4b27cc3f4dbd4c90329d8ba: Commentaire
   49ee3087348e8d44e1feda1917443987: Nom
   940663fd4428d2c86f9a4780b6574028: 'Message:'
   b5a7adde1af5c87d7fd797b6245c2a39: Description
   af1b98adf7f686b84cd0b443e022b7a0: Catégories
-  484d543cff2e8c3a93343e81b7b9ed2c: Unions Européenne et E.E.E Top Priorités
   d64518ec4a60ae31b2b5e4074646cca1: Nos règles
   74d06fce126329ec92785f48f3165e95: Opposez vous et connectez vous.
   c9413dd7682a45da9ecc9efa8cea47d7: En progrès
-  4475404a8e17049853e83d014a833ca1: Montante
-  0f57d5b441651c57eac9f91efaa5a75a: Descendante
   37fc5aed92a40b16dafd17cee72e3154: Idée au top
   52f4e192179a8449b77cc149541a5ba0: Pas encore d&#x27;idées
   7f5fd77650bc35beaaf6fc66255e24f5: Anouter une idée sur votre liste.
@@ -324,7 +319,6 @@ fr:
   03368e3c1eb4d2a9048775874301b19f: Choisir une catégorie
   0680c0f4acc215c7c75e5dafe9384e7c: Ajouter un lien vers un site externe
   59d7434481f250db2c48858375499a31: Points les plus récents
-  0fbcdfe6232142c357542a262ce3ff53: Récement corrigé
   75dd5f1160a3f02b6fae89c54361a1b3: Points
   709468af25e91284821d1bdbfdded24c: Tout
   b1c94ca2fbc3e78fc30069c8d0f01680: Tout
@@ -379,11 +373,9 @@ fr:
   38e6af48fcad4cfd847acad90ae913a3: est déja pris
   1fd87a910601e6833f98489b446c1293: est déja pris
   939d09ea0c18215ca9032ef913d82567: Nouvelle idées
+  e2f69ba325c4f8bdc393ffd3cb848a51: Brainstorming idées
   ee710d46f1e36118e1c4aea9cc51305e: Je respecterais les lois de mon pays.
-  8070ff490b986cbbe5908dba6688b882: Nous promettons de
   03fa96387303a39d8a63c153bac26958: 'Nous nous reservons le droit de:'
-  ccb170b7563ba9e94e021fabfef45771: De changer les régles sans notice préalable.Nous
-    vous préviendrons par email si vous êtes membre
   9977ab924c89e6c98b1cf1595354ada3: Dernière activitée
   42bd4c0819c498d1c1ab622de74d6f82: a soutenu
   833c90a077a2beda3b6cd000f3fe5c29: Idées dues au hazard
@@ -399,27 +391,9 @@ fr:
   bafd7322c6e97d25b6299b5d6fe8920b: Non
   f4ec5f57bd4d31b803312d873be40da9: Changes
   f5a7924e621e84c9280a9a27e1bcb7f6: Monde
-  a4b522102353672b9f0d5582e8386348: Les informations me concerant sont correctes et
-    je peux recevoir lire les emails envoyés à l'adresse donnée.
-  2d31841ff75aeb20f2c6d4d96411129f: Je serai responsable des contenus que je crée
-    et personnes d'autres n'utilisera mon compte.
-  b357a942b0558db7d42891322b9bb729: Je serai sur le site.
   1cab6f0a48459aaac4e3116773de5781: Je ne publierai pas des publicités ou des spams
     sur le site.
-  6231033110be3e0b22eeda6b6b336835: Je n'utiliserai pas le site pour intimider de
-    quelques façon que ce soit les autres utilisateurs ni publier des contenus mensongés
-    ou calomnieux.
-  4bb709d8718626d39a5dbf2e2589528e: J'informerai les administrateurs si je remarque
-    des contenus ne respectant pas les Régles en cliquant sur l'icon de notification.
-  94386c683395a8c1a30a6f405a3a7116: Je créerai et utiliserai seulement un profile
-    sur le site.
-  6c3b5928436080f8aba591af541dd5f0: Faire de notre mieux afin que le site reste ouvert
-    et functionnel.
-  388e31e2da00cdad1159f0fecb186fff: Nous ne devoilerons pas les données des utilisateurs,qui
-    ne sont pas publiques sur le site,à des tierces sans une injonction de la court.
-  86edce6490342fc40dd2a8d6f5936d31: Nations Unies  Top Prioritées
   7dd982d0948637b4ae83f2804bd489ca: Pourquoi cette idée devrait être soutenue?
-  99b4622ebe1e9894ede410500cde5915: Expliquer votre point
   83218ac34c1834c26781fe4bde918ee4: Bienvenue
   3c5db2447415c261cf024be85458ce35: Utile
   fb85dee77167699087f1d6eec1d2fbb7: Code postal
@@ -448,8 +422,6 @@ fr:
   621df26b895998b50fdad2c763f695e3: Discussions sur %{point_name}
   d533bc81d129968f57a188436d3575ac: '%{user_name} à poster un bulletin %{discussion_name}'
   e917c9bc049cb92cf6702f88bd91b9ba: '%{count} averstissement'
-  a1c355f2e50925dcdbcb509e445aa6df: Vous pouvez regrouper toutes vos notifications
-    dans un %{rss_url}
   e4ee317ba569d42f729270dc54c58d25: '%{count} documents'
   665255de10a45ae3e1c0e81b515b55ca: '%{count} discussions'
   06591670b8600f71493c779ff6c5e331: '%{position} plus influent'
@@ -467,6 +439,20 @@ fr:
   fb00406d232c6c2e02cdd9560bd27b68: 'POint supportant %{idea_name}:'
   92d562cddce4a845439e302189e00192: Changer logo à %{instance_name}
   8df9c04d95e71c0bb899ac7a5af8cdfb: Ajouter une idée%{idea_name}
+  2d31841ff75aeb20f2c6d4d96411129f: Je serai responsable des contenus que je crée
+    et personnes d'autres n'utilisera mon compte.
+  b357a942b0558db7d42891322b9bb729: Je serai sur le site.
+  4bb709d8718626d39a5dbf2e2589528e: J'informerai les administrateurs si je remarque
+    des contenus ne respectant pas les Régles en cliquant sur l'icon de notification.
+  94386c683395a8c1a30a6f405a3a7116: Je créerai et utiliserai seulement un profile
+    sur le site.
+  6c3b5928436080f8aba591af541dd5f0: Faire de notre mieux afin que le site reste ouvert
+    et functionnel.
+  388e31e2da00cdad1159f0fecb186fff: Nous ne devoilerons pas les données des utilisateurs,qui
+    ne sont pas publiques sur le site,à des tierces sans une injonction de la court.
+  ccb170b7563ba9e94e021fabfef45771: De changer les régles sans notice préalable.Nous
+    vous préviendrons par email si vous êtes membre
+  99b4622ebe1e9894ede410500cde5915: Expliquer votre point
   e171941d65123784391f9a42568f41ca: Activitée pour %{idea_name}
   ac717bd14c68bc426139b20f01d941ea: '%{user_name} a été le/la premièr(e) %{idea_name}'
   a9d26e16b2440413a48053b4c357d540: Paramètres %{instance_name}
@@ -488,3 +474,9 @@ fr:
   d9d222130429eb44be0faae283593dd6: En devenant membre de %{instance_name}Je déclare
   f9ace95bf3d68994adde566e7ed46c8c: Vos %{instance_name} paramètres
   c3829f98b9d811ef102006ff00a83881: '%{count} révisions'
+  a4b522102353672b9f0d5582e8386348: Les informations me concerant sont correctes et
+    je peux recevoir lire les emails envoyés à l'adresse donnée.
+  6231033110be3e0b22eeda6b6b336835: Je n'utiliserai pas le site pour intimider de
+    quelques façon que ce soit les autres utilisateurs ni publier des contenus mensongés
+    ou calomnieux.
+  8070ff490b986cbbe5908dba6688b882: Nous promettons de

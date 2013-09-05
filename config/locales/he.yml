@@ -61,12 +61,12 @@ he:
     am: am
     pm: pm
   support:
-    array:
-      words_connector: ', '
-      two_words_connector: ' את '
-      last_word_connector: ', את '
     select:
       prompt: נא לבחור
+    array:
+      two_words_connector: את
+      last_word_connector: ', את'
+      words_connector: ','
   number:
     format:
       precision: 3

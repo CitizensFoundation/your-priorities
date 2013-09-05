@@ -15,12 +15,31 @@ class HomeController < ApplicationController
                 :cache_path => proc {|c| c.action_cache_path},
                 :expires_in => 30.seconds
 
+  caches_action :about,
+                :if => proc {|c| c.do_action_cache? },
+                :cache_path => proc {|c| c.action_cache_path},
+                :expires_in => 30.seconds
+
   caches_action :map,
                 :cache_path => proc {|c| c.action_cache_path},
                 :expires_in => 15.seconds
 
   def get_layout
-    return SubInstance.current.home_page_layout
+    if ["world"].include?(action_name)
+      return SubInstance.where(:short_name=>"default").first.home_page_layout
+    elsif ["about"].include?(action_name)
+      return Instance.current.layout_for_subscriptions
+    else
+      return SubInstance.current.home_page_layout
+    end
+  end
+
+  def about
+    if Instance.current.about_page_name
+      render :file=>Instance.current.about_page_name
+    else
+      redirect_to :back
+    end
   end
 
   def categories
@@ -54,11 +73,21 @@ class HomeController < ApplicationController
       @ideas = @new_ideas = Idea.published.newest.limit(3)
       @top_ideas = Idea.published.top_7days.limit(3).reject{|idea| @new_ideas.include?(idea)} unless @block_endorsements
       @random_ideas = Idea.published.by_random.limit(3).reject{|idea| @new_ideas.include?(idea) or (@top_ideas and @top_ideas.include?(idea))}
+      if params[:successful]
+        @finished_ideas = Idea.successful.not_removed.top_rank.limit(3)
+      elsif params[:failed]
+        @finished_ideas = Idea.failed.not_removed.top_rank.limit(3)
+      elsif params[:in_progress]
+        @finished_ideas = Idea.in_progress.not_removed.top_rank.limit(3)
+      else
+        @finished_ideas = Idea.successful.not_removed.top_rank.limit(3)
+      end
 
       all_ideas = []
       all_ideas += @new_ideas if @new_ideas
       all_ideas += @top_ideas if @top_ideas
       all_ideas += @random_ideas if @random_ideas
+      all_ideas += @finished_ideas if @finished_ideas
 
       @endorsements = nil
       if user_signed_in? # pull all their endorsements on the ideas shown
@@ -84,12 +113,19 @@ class HomeController < ApplicationController
       else
         @country_sub_instance_ideas = []
       end
-      #@eu_eea_ideas = @country_sub_instance_ideas = @world_ideas = Idea.published.find(:all, :limit=>3, :order=>"RANDOM()")
+
+      if @country_sub_instance
+        @random_sub_instance = SubInstance.top10.reject {|x| x.id == @country_sub_instance.id or x.short_name.include?("test") or x.short_name.include?("Development") or x.short_name=="eu" or x.short_name=="united-nations"}.sample
+      else
+        @random_sub_instance = SubInstance.top10.reject {|x| x.short_name.include?("test") or x.short_name.include?("Development") or x.short_name=="eu" or x.short_name=="united-nations"}.sample
+      end
+      @random_sub_instance_ideas = Idea.unscoped.where(:sub_instance_id=>@random_sub_instance.id).published.top_rank.limit(3)
 
       all_ideas = []
       all_ideas += @country_sub_instance_ideas if @country_sub_instance_ideas
       all_ideas += @world_ideas if @world_ideas
       all_ideas += @eu_eea_ideas if @eu_eea_ideas
+      all_ideas += @random_sub_instance_ideas if @random_sub_instance_ideas
 
       @endorsements = nil
       if user_signed_in? # pull all their endorsements on the ideas shown
@@ -99,6 +135,11 @@ class HomeController < ApplicationController
   end
 
   def map
+    render :layout=>false, :content_type => 'application/xml'
+  end
+
+  def sub_instance_map
+    @sub_instances = SubInstance.where("map_coordinates IS NOT NULL").all
     render :layout=>false, :content_type => 'application/xml'
   end
 
