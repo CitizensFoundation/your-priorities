@@ -7,7 +7,7 @@
         .next_idea_next_link_text{:style=>"padding-top:5px;float:left"}
           = tr("Next:","here")
           = link_to next_idea.show_url do
-            = next_idea.name
+            = truncate(next_idea.name, length: 60, separator: ' ')
       .next_idea_image{:style=>"float:right;"}
         - if next_idea.category and next_idea.category.icon
           = link_to(image_tag(next_idea.category.icon.url(:icon_50), :size => "30x30", :border => 0), next_idea.category.to_url,

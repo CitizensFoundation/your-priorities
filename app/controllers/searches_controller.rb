@@ -7,9 +7,9 @@ class SearchesController < ApplicationController
       @query = params[:q]
       @page_title = tr("Search for '{query}'", "controller/searches", :instance_name => current_instance.name, :query => @query)
       if params[:global]
-        @facets = ThinkingSphinx.facets @query, :classes => [Idea, Comment, Point], :all_facets => true, :star => true, :page => params[:page]
+    #    @facets = ThinkingSphinx.facets @query, :all_facets => true, :star => true, :page => params[:page]
       else
-        @facets = ThinkingSphinx.facets @query, :classes => [Idea, Comment, Point], :all_facets => true, :with=>{:sub_instance_id=>SubInstance.current.id},  :star => true, :page => params[:page]
+     #   @facets = ThinkingSphinx.facets @query, :all_facets => true, :with=>{:sub_instance_id=>SubInstance.current.id},  :star => true, :page => params[:page]
       end
       if params[:category_name]
         @search_results = @facets.for(:category_name=>params[:category_name])
@@ -17,10 +17,11 @@ class SearchesController < ApplicationController
         @search_results = @facets.for(:class=>params[:class].to_s)
       else
         if params[:global]
-          @search_results = ThinkingSphinx.search @query, :classes => [Idea, Comment, Point], :order => :updated_at, :sort_mode => :desc, :star => true, :retry_stale => true, :page => params[:page]
+          @search_results = ThinkingSphinx.search @query, :order => :updated_at, :sort_mode => :desc, :star => true, :retry_stale => true, :page => params[:page]
         else
-          @search_results = ThinkingSphinx.search @query, :classes => [Idea, Comment, Point], :order => :updated_at, :with=>{:sub_instance_id=>SubInstance.current.id}, :sort_mode => :desc, :star => true, :retry_stale => true, :page => params[:page]
+          @search_results = ThinkingSphinx.search @query, :order => :updated_at, :with=>{:sub_instance_id=>SubInstance.current.id}, :sort_mode => :desc, :star => true, :retry_stale => true, :page => params[:page]
         end
+        @search_results.context[:panes] << ThinkingSphinx::Panes::ExcerptsPane
       end
     end
     respond_to do |format|

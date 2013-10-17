@@ -4,7 +4,10 @@
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     %title
-      = " | #{@page_title || current_instance.name}"
+      - if SubInstance.current and SubInstance.current.short_name!="default"
+        = "#{SubInstance.current.short_name.upcase} | #{@page_title || current_instance.name}"
+      - else
+        = "#{@page_title || current_instance.name}"
     :javascript
       var PAYMILL_PUBLIC_KEY = '#{ENV['PAYMILL_PUBLIC_KEY']}';
     = render :partial=>"ideas/fb_og_tags"

@@ -888,7 +888,9 @@ class IdeasController < ApplicationController
     end
     respond_to do |format|
       params[:idea][:group] = nil if params[:idea][:group]==""
-      if params[:idea][:name] and @idea.update_attributes(params[:idea]) and @previous_name != params[:idea][:name]
+      @idea.attributes = params[:idea]
+      saved_with_attributes = @idea.save(:validate=>false)
+      if params[:idea][:name] and saved_with_attributes and @previous_name != params[:idea][:name]
         # already renamed?
         @activity = ActivityIdeaRenamed.find_by_user_id_and_idea_id(current_user.id,@idea.id)
         if @activity
@@ -912,7 +914,7 @@ class IdeasController < ApplicationController
       else
         format.html {
           if params[:idea][:finished_status_message]
-            flash[:notice] = tr('Status updated with "{status_text}"', "controller/ideas", status_text: params[:idea][:finished_status_subject])
+            flash[:notice] = tr("Status updated with {status_text}", "controller/ideas", status_text: params[:idea][:finished_status_subject])
           end
           redirect_to(@idea)
         }
@@ -933,7 +935,6 @@ class IdeasController < ApplicationController
       end
       if change_log
         @idea.create_status_update(change_log)
-        User.delay.send_status_email(@idea.id, params[:idea][:official_status], params[:idea][:finished_status_date], params[:idea][:finished_status_subject], params[:idea][:finished_status_message])
       end
     end
   end
@@ -961,7 +962,7 @@ class IdeasController < ApplicationController
     @idea.flag_by_user(current_user)
 
     respond_to do |format|
-      format.html { redirect_to(comments_url) }
+      format.html { redirect_to :back }
       format.js {
         render :update do |page|
           if false and current_user.is_admin?

@@ -7,7 +7,7 @@ xml.rss :version => "2.0" do
     for comment in @comments
       xml.item do
         xml.title comment.parent_name
-        xml.description auto_link(simple_format(h(comment.content)))
+        xml.description simple_format(h(comment.content))
         xml.pubDate comment.created_at.to_s(:rfc822)
         xml.author comment.user.login
         xml.link activity_comments_url(comment.activity)

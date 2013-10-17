@@ -1,12 +1,5 @@
 ---
 de:
-  helpers:
-    submit:
-      create: '%{model} erstellen'
-      update: '%{model} aktualisieren'
-      submit: '%{model} speichern'
-    select:
-      prompt: Bitte wählen
   support:
     select:
       prompt: 'Bitte wählen:'
@@ -160,6 +153,13 @@ de:
           one: 'Konnte %{model} nicht speichern: ein Fehler.'
           other: 'Konnte %{model} nicht speichern: %{count} Fehler.'
         body: 'Bitte überprüfen Sie die folgenden Felder:'
+  helpers:
+    select:
+      prompt: Bitte wählen
+    submit:
+      create: '%{model} erstellen'
+      update: '%{model} aktualisieren'
+      submit: '%{model} speichern'
   errors:
     format: '%{attribute} %{message}'
     messages:

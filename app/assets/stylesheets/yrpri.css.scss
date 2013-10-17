@@ -849,7 +849,7 @@ $button-border-color: darken($primary-color, $button-function-factor);
 //
 
 // Background and border styles
-$panel-bg: #e2e2e2;
+$panel-bg: #cfd2d5;
 $panel-border-style: solid;
 $panel-border-size: 0px;
 $panel-bg-1: #FFF;
@@ -1275,10 +1275,10 @@ $panel-bg-4: #fff;
 @import 'foundation';
 
 body {
-  background-image: url(https://s3.amazonaws.com/yrpri-direct-asset/earth_at_night.png);
-  background-repeat: repeat-y;
-  background-position: top center;
-  background-color: #050500
+  //background-image: url(https://s3.amazonaws.com/yrpri-direct-asset/earth_at_night.png);
+  //background-repeat: repeat-y;
+  //background-position: top center;
+  background-color: #fff
 }
 
 h1 {
@@ -1288,6 +1288,10 @@ h1 {
 
 .featured-container {
   color: #000;
+}
+
+.brainstorm img {
+  margin-top: 3px;
 }
 
 .panel-bg-1 {
@@ -1311,3 +1315,7 @@ h1 {
   border: 1px solid red !important;
 }
 
+a {
+  line-height: 25px;
+  margin-bottom: 10px;
+}

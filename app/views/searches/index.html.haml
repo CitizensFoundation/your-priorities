@@ -23,24 +23,26 @@
             #left
               - if params[:category_name] or params[:class]
                 %h3= link_to tr("Everything","search"), "/search?q=#{@query}"
-              - @facets.each do |facet, facet_options|
-                %div
-                  %ul.search_menu
-                    - facet_options.each do |option, count|
-                      - next if option==nil or option==""
-                      - translated_option = translate_facet_option(option)
-                      - if option==params[:class]
-                        %li
-                          %b= link_to "#{translated_option.humanize.gsub("ideas","#{IDEA_TOKEN_PLURAL_CAPS}").gsub("comments","Comments")} (#{count})".html_safe, "/search?q=#{@query}&#{facet}=#{u option}#{params[:global] ? "&global=#{params[:global]}" : ""}"
-                      - elsif translated_option=="No category"
-                        - # DO NOTHING
-                      - else
-                        %li
+              - if @facets
+                - @facets.each do |facet, facet_options|
+                  %div
+                    %ul.search_menu
+                      - facet_options.each do |option, count|
+                        - next if option==nil or option==""
+                        - translated_option = translate_facet_option(option)
+                        - if option==params[:class]
+                          %li
+                            %b= link_to "#{translated_option.humanize.gsub("ideas","#{IDEA_TOKEN_PLURAL_CAPS}").gsub("comments","Comments")} (#{count})".html_safe, "/search?q=#{@query}&#{facet}=#{u option}#{params[:global] ? "&global=#{params[:global]}" : ""}"
+                        - elsif translated_option=="No category"
+                          - # DO NOTHING
+                        - else
+                          %li
           - else
             = tr("No search results","search")
     .col-10
       .col-content
-        - unless not @facets or @facets.empty? or @search_results.empty?
+        - #unless not @facets or @facets.empty? or @search_results.empty?
+        - unless @search_results.empty?
           #search_results
             - @search_results.each do |result|
               - if result.class == Idea

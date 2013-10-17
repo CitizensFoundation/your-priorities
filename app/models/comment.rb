@@ -17,21 +17,14 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :activity
   belongs_to :category
-  
+
+  def activity
+    Activity.unscoped{ super }
+  end
+
   has_many :notifications, :as => :notifiable, :dependent => :destroy
 
   attr_accessor :abusive_reason
-
-  define_index do
-    indexes content
-    #has category_name, :facet=>true, :as=>"category_name"
-    has updated_at
-    has sub_instance_id, :as=>:sub_instance_id, :type => :integer
-    has "1", :as=>:tag_count, :type=>:integer
-
-    set_property :enable_star => true, :min_prefix_len => 2
-    where "comments.status = 'published'"
-  end
 
   validates_presence_of :content
 

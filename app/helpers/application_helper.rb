@@ -2,6 +2,10 @@
 
 module ApplicationHelper
 
+  # HACK TO GET AROUND TOLK GEM NOT CRASHING ON ATOM /tolk/locales#show
+  def tolk_locale_url(something=nil)
+  end
+
   def currency_with_unit(amount,currency)
     if currency=="USD"
       number_to_currency amount, :unit=>"$", :precision=>0, :locale=>"en"

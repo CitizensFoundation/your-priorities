@@ -21,6 +21,10 @@ class Notification < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 30
 
+  def notifiable
+    notifiable_type.constantize.unscoped{ super }
+  end
+
   include Workflow
   workflow_column :status
   workflow do
@@ -62,11 +66,7 @@ class Notification < ActiveRecord::Base
     if (is_recipient_subscribed? and recipient.has_email? and recipient.is_active?) or
         (is_recipient_subscribed? and recipient.has_email? and self.class == NotificationWarning4)
       self.sent_at = Time.now
-#      if self.class == NotificationChangeVote
-#        UserMailer.new_change_vote(sender,recipient,notifiable).deliver
-#      else
       UserMailer.notification(self,sender,recipient,notifiable).deliver
-#      end
     end
     #if recipient.has_facebook?
     #  self.sent_at = Time.now
@@ -157,7 +157,10 @@ end
 class NotificationComment < Notification
   
   def name
-    if notifiable.activity.has_point?
+    if notifiable.activity==nil
+      Rails.logger.error("No activity for #{self.inspect}")
+      "Unknown"
+    elsif notifiable.activity.has_point?
       tr("{sender_name} commented on {comment_name}", "model/notification", :sender_name => sender.name, :comment_name => notifiable.activity.point.name)      
     elsif notifiable.activity.has_idea?
       tr("{sender_name} commented on {comment_name}", "model/notification", :sender_name => sender.name, :comment_name => notifiable.activity.idea.name)

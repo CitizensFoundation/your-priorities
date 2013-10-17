@@ -4,7 +4,13 @@ class UserMailer < Devise::Mailer
 
   # so DelayedJob will know how to make absolute urls
   def default_url_options
-    { host: (@activity and @activity.sub_instance_id) ? "#{SubInstance.find(@activity.sub_instance_id).short_name}.#{Instance.last.domain_name}" : "www.#{Instance.last.domain_name}" , :protocol => 'https'}.merge(super)
+    if @activity and @activity.sub_instance_id
+      { host:  "#{SubInstance.find(@activity.sub_instance_id).short_name}.#{Instance.last.domain_name}", :protocol => 'https'}.merge(super)
+    elsif @user and @user.sub_instance_id
+      { host: "#{SubInstance.find(@user.sub_instance_id).short_name}.#{Instance.last.domain_name}", :protocol => 'https'}.merge(super)
+    else
+      { host: "www.#{Instance.last.domain_name}" , :protocol => 'https'}.merge(super)
+    end
   end
 
   def thank_you_for_payment(user, payment, plan, next_payment, args={})
@@ -139,16 +145,19 @@ class UserMailer < Devise::Mailer
     @date = status_date
     @status_subject = status_subject
     @message = status_message
-    @support_or_endorse_text = position == 1 ? tr("which you support", "email") : tr("which you oppose", "email")
-    attachments.inline['logo.png'] = get_email_banner
-
     @recipient = @user = user
     setup_locale
+    if position == 1
+      @support_or_endorse_text = tr("which you support", "email")
+    else
+      @support_or_endorse_text = tr("which you oppose", "email")
+    end
+    attachments.inline['logo.png'] = get_email_banner
     recipient = "#{user.real_name.titleize} <#{user.email}>"
     mail to:       recipient,
          reply_to: Instance.last.admin_email,
          from:     "#{Instance.last.name} <#{Instance.last.admin_email}>",
-         subject:  tr('The status of the idea "{idea}" has been changed', "email", :idea => idea.name) do |format|
+         subject:  tr("The status of {idea} has been changed","email", :idea => idea.name) do |format|
       format.text { render text: convert_to_text(render_to_string("idea_status_update", formats: [:html])) }
       format.html
     end
@@ -253,15 +262,30 @@ class UserMailer < Devise::Mailer
   
   protected
 
+  def setup_sub_instance_from_current
+    if @activity and @activity.sub_instance_id
+      SubInstance.current = SubInstance.find(@activity.sub_instance_id)
+    elsif @user and @user.sub_instance_id
+      SubInstance.current = SubInstance.find(@user.sub_instance_id)
+    elsif @recipient and @recipient.sub_instance_id
+      SubInstance.current = SubInstance.find(@user.sub_instance_id)
+    else
+      SubInstance.current = SubInstance.where(:short_name=>"default")
+    end
+  end
+
   def setup_locale(locale_user=nil)
-    if locale_user and locale_user.last_locale
+    setup_sub_instance_from_current
+    if locale_user and locale_user.last_locale and locale_user.last_locale!=""
       I18n.locale = locale_user.last_locale
-    elsif @recipient and @recipient.last_locale
+    elsif @recipient and @recipient.last_locale and @recipient.last_locale!=""
       I18n.locale = @recipient.last_locale
+    elsif Instance.current.default_locale
+      I18n.locale = Instance.current.default_locale
     else
       I18n.locale = "en"
     end
-    tr8n_current_locale = I18n.locale #=  "is"
+    tr8n_current_locale = I18n.locale
   end
 
   def setup_notification(user)

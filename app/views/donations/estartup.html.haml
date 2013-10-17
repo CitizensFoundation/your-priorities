@@ -1,0 +1,122 @@
+.row
+  .large-12.columns
+    %p
+      %br
+.row
+  .large-6.columns
+    %img{:style=>"padding:20px;",:src=>"https://s3.amazonaws.com/edemocracy-bootstrap-direct/BalkaneDemocracyStartup.png"}
+  .large-6.columns
+    %div{:style=>"float:right;"}
+      %img{:src=>"https://s3.amazonaws.com/edemocracy-bootstrap-direct/make-a-difference.png", :style=>"padding-top:7px;"}
+.row
+  .large-12.columns
+    .panel
+      %h1
+        = tr("Donate to the Balkan eDemocracy Startup Project","here")
+      .panel
+        .row
+          .large-6.columns
+            %p
+              %h3
+                What you will get
+              %p
+                All donors will be added to our hall of fame list and receive a democracy badge, unless they want to remain anonymous.
+              %p
+                All donors will be able to easily follow the status of all the projects electronically.
+              %p
+                If you donate more than EUR 300 you will receive a super democracy badge and your very own e-democracy website for one year for up to 500 registered users.
+              %p
+                If you represent an NGO or funding entity and are interested in supporting this project with larger amounts, contact us at
+                = mail_to "citizens@citizens.is","citizens@citizens.is"
+                for more information.
+              %p
+                = tr("The Citizens Foundation is a non-profit foundation in Iceland. It's Icelandic name is Íbúar - Samráðslýðræði.","here")
+              %p
+                = tr("Our Icelandic tax number is 6012101260. Here is a link to the Icelandic company register: ","here")
+              %p
+                = link_to "http://www.rsk.is/fyrirtaekjaskra/leit/kennitala/6012101260","http://www.rsk.is/fyrirtaekjaskra/leit/kennitala/6012101260", :target=>"_blank"
+            %p
+              = tr("Most of our work is currently done as volunteer work. Your donation is highly appreciated and will help us expand our open source eDemocracy around the world. Thanks :)","here")
+          .large-6.columns
+            = form_for @donation do |f|
+              %p
+                %h4
+                  = tr("Your donation information (optional)","here")
+                - if @donation.errors.any?
+                  .error_messages
+                    %h2
+                      = pluralize(@donation.errors.count, tr("error","here"))
+                    %ul
+                      - @donation.errors.full_messages.each do |msg|
+                        %li= msg
+                = f.hidden_field :paymill_card_token
+                = f.hidden_field :currency, :value=>@currency_code
+                = f.hidden_field :estartup, :value => true
+                .row
+                  .large-6.columns
+                    .field
+                      = label_tag :display_name, tr("Name to display","here")
+                      = f.text_field :display_name
+                  .large-6.columns
+                    .field
+                      = label_tag :organisation_name, tr("Organisation name","here")
+                      = f.text_field :organisation_name
+              %p
+                %h4
+                  = tr("Your payment information","here")
+                  .row
+                    .large-6.columns
+                      .field
+                        = label_tag :amount, tr("Donation amount in {currency}","here",:currency=>@currency_code)
+                        = f.text_field :amount
+                    .large-6.columns
+                      .field
+                        = label_tag :email, tr("Your email (optional)","here",:currency=>@currency_code)
+                        = f.text_field :email
+                  .row
+                    .large-6.columns
+                      .field
+                        = label_tag :card_number, tr("Cardholder name","here")
+                        = text_field_tag :cardholder, nil, name: nil
+                    .large-6.columns
+                      .field
+                        = label_tag :card_number, tr("Credit Card Number","here")
+                        = text_field_tag :card_number, nil, name: nil
+                  .row
+                    .large-5.columns
+                      .field
+                        = label_tag :card_code, tr("Security Code (CVV)","here")
+                        = text_field_tag :card_code, nil, name: nil
+                    .large-4.columns
+                      .field
+                        = label_tag :card_month, tr("Expiry month","here")
+                        = select_month nil, {:add_month_numbers=> true}, {:name=> nil, :id=> "card_month"}
+                    .large-3.columns
+                      .field
+                        = label_tag :card_month, tr("Expiry year","here")
+                        = select_year nil, {:start_year=> Date.today.year, :end_year=> Date.today.year+15}, {:name=> nil, :id=> "card_year"}
+                %h2
+                  #paymill_error{:style=>"color:#F00;"}
+                    %noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
+                %br
+                %center
+                  = f.submit tr("Donate now","here"), :id=>"submit_button", :class=>"button"
+.row
+  .large-12.columns
+    .panel.panel-bg-darker
+      .row
+        .large-5.columns
+          %h5
+            The Balkan Project
+          %p
+            We belive democracy is under threat globally, especially by the lack of trust and participation by young people.
+          %p
+            We are bootstrapping eDemocracy in the Balkans with 12 local partners that will be reproduce successful projects in Iceland while transferring knowledge to and between the Balkan countries.
+          %p
+            70% of staged funding will be divided equally between the 12 projects and 30% to the non-profit Citizens Foundation for development and support
+        .large-7.columns
+          .hide-for-small.flex-video
+            %iframe{:allowfullscreen => "", :frameborder => "0", :src => "https://www.youtube.com/embed/tJfAysjZ1RY?wmode=transparent"}
+          .show-for-small.flex-video
+            %iframe{:allowfullscreen => "", :frameborder => "0", :src => "https://www.youtube.com/embed/tJfAysjZ1RY?wmode=transparent"}
+

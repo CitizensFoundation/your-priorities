@@ -82,6 +82,11 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1.xml
   def destroy
     @category = Category.unscoped.find(params[:id])
+
+    if @category.sub_instance.short_name=="default" and not current_user.is_root?
+      redirect_to :back
+    end
+
     @category.destroy
 
     respond_to do |format|

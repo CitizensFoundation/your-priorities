@@ -1,6 +1,12 @@
 - if controller_name == "ideas" and action_name == "show"
   %meta{:content => @idea.name, :property => "og:title"}/
-  %meta{:content => tr("{idea_name}. Learn more at {instance_name}", "view/shared/_description", :prompt => current_instance.prompt, :instance_name => SubInstance.current.name, :idea_name => @idea.name), :property => "og:description"}/
+  - if description = @idea.description
+    - # DO NOTHING
+  - elsif @idea.points.first
+    - description =  @idea.points.first.content
+  - else
+    - description = @idea.name
+  %meta{:content => description, :property => "og:description"}/
   %meta{:content => "website", :property => "og:type"}/
   - if false and @idea.category and @idea.category.icon
     %meta{:content => @idea.category.icon.url, :property => "og:image"}/
@@ -11,7 +17,10 @@
   %meta{:content => Facebooker2.app_id, :property => "fb:app_id"}/
 - else
   %meta{:content => SubInstance.current.name, :property => "og:title"}/
-  %meta{:content => current_instance.description, :property => "og:description"}/
+  - if SubInstance.current.description and SubInstance.current.description!=""
+    %meta{:content => SubInstance.current.description, :property => "og:description"}/
+  - else
+    %meta{:content => current_instance.description, :property => "og:description"}/
   %meta{:content => "website", :property => "og:type"}/
   %meta{:content => "#{SubInstance.current.logo_url}", :property => "og:image"}/
   %meta{:content => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", :property => "og:url"}/

@@ -33,17 +33,17 @@
   - if Plan.count>0 and Instance.current.about_page_name
     %div.create_instance
       %a.create_instance{:href => "#{Instance.current.homepage_top_url}home/about"}
-        %span{:style=>"background-color: #cd4400 !important;margin-right: 1px;"}
+        %span{:style=>"background-color: #bbb !important;margin-right: 1px;"}
           = tr("Get your own","here",:instance_name=>Instance.last.name)
   - elsif Plan.count>0
     %div.create_instance
       %a.create_instance{:href => "#{Instance.current.homepage_top_url}subscription_accounts/new"}
-        %span{:style=>"background-color: #cd4400 !important;margin-right: 1px;"}
+        %span{:style=>"background-color: #bbb !important;margin-right: 1px;"}
           = tr("Get your own","here",:instance_name=>Instance.last.name)
   - if Instance.current.domain_name.include?("yrpri")
     %div.donate
       %a.donate{:href => "#{Instance.current.homepage_top_url}donations/new"}
-        %span{:style=>"background-color: #cd4400 !important;"}
+        %span{:style=>"background-color: #bbb !important;"}
           = tr("Donate","here")
 - if user_signed_in?
   = render :partial => "shared/user_info"

@@ -43,17 +43,6 @@ class Point < ActiveRecord::Base
 
   has_many :notifications, :as => :notifiable, :dependent => :destroy
 
-  define_index do
-    indexes name
-    indexes content
-    #has idea.category.name, :facet=>true, :as=>"category_name"
-    has updated_at
-    has sub_instance_id, :as=>:sub_instance_id, :type => :integer
-    has "1", :as=>:tag_count, :type=>:integer
-    set_property :enable_star => true, :min_prefix_len => 2
-    where "points.status = 'published'"
-  end
-
   def author_user
     self.author_users.select("revisions.*, users.*").order("revisions.created_at ASC").first
   end
@@ -354,5 +343,9 @@ class Point < ActiveRecord::Base
 
   def set_importance(user_id, score)
   	PointImportanceScore.update_or_create(self.id, user_id, score)
+  end
+
+  def idea
+    Idea.unscoped.find(idea_id) if idea_id
   end
 end

@@ -4,7 +4,7 @@
       %p
         %table{:border => "0", :cellpading => "0", :cellspacing => "0"}
           %tr
-            %td http://
+            %td https://
             %td= f.text_field :short_name, :size => 10, :maxlength => 20
             %td
               \.#{current_instance.base_url}/
@@ -13,6 +13,11 @@
         %label{:for => "sub_instance_name"}= tr("Title or Organization name", "view/sub_instances/_form")
         %br/
         = f.text_field :name, :size => 30, :maxlength => 50
+        %br/
+      %p
+        %label{:for => "sub_instance_description"}= tr("Description", "view/sub_instances/_form")
+        %br/
+        = f.text_area :description, :rows => 5, :cols=>45
         %br/
       %p
         %label{:for => "sub_instance_website"}

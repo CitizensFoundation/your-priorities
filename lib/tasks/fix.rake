@@ -295,8 +295,8 @@ namespace :fix do
 
   desc 'it2'
   task :it2 => :environment do
-    Tagging.update_all("taggable_type='Idea' where taggable_type='Priority'")
-    Notification.update_all("notifiable_type='Idea' where notifiable_type='Priority'")
+    Tagging.update_all("taggable_type='Idea' where taggable_type='Idea'")
+    Notification.update_all("notifiable_type='Idea' where notifiable_type='Idea'")
     ['General', 'Localization', 'User interface', 'Data sources'].each do |name|
       category = Category.find_by_name(name)
       category.destroy

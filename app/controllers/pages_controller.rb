@@ -62,6 +62,10 @@ class PagesController < ApplicationController
   def update
     @page = Page.find(params[:id])
 
+    if @page.sub_instance.short_name=="default" and not current_user.is_root?
+      redirect_to :back
+    end
+
     respond_to do |format|
       if @page.update_attributes(params[:page])
         format.html { redirect_to @page, notice: 'Page was successfully updated.' }
@@ -77,6 +81,11 @@ class PagesController < ApplicationController
   # DELETE /pages/1.json
   def destroy
     @page = Page.find(params[:id])
+
+    if @page.sub_instance.short_name=="default" and not current_user.is_root?
+      redirect_to :back
+    end
+
     @page.destroy
 
     respond_to do |format|

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130902035506) do
+ActiveRecord::Schema.define(:version => 20131015103346) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -243,8 +243,12 @@ ActiveRecord::Schema.define(:version => 20130902035506) do
     t.string   "paymill_transaction_id"
     t.string   "currency"
     t.float    "amount"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.string   "organisation_name"
+    t.string   "display_name"
+    t.boolean  "anonymous_donor",        :default => true
+    t.integer  "external_project_id"
   end
 
   create_table "endorsements", :force => true do |t|
@@ -560,6 +564,7 @@ ActiveRecord::Schema.define(:version => 20130902035506) do
     t.string   "layout_for_subscriptions",                       :default => "application"
     t.string   "sales_email"
     t.string   "about_page_name"
+    t.string   "default_locale",                                 :default => "en"
   end
 
   add_index "instances", ["domain_name"], :name => "index_instances_on_domain_name"
@@ -890,6 +895,7 @@ ActiveRecord::Schema.define(:version => 20130902035506) do
     t.text     "map_coordinates"
     t.string   "organization_type"
     t.string   "redirect_url"
+    t.text     "description"
   end
 
   add_index "sub_instances", ["short_name"], :name => "short_name"

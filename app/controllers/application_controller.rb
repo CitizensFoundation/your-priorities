@@ -426,9 +426,12 @@ class ApplicationController < ActionController::Base
       elsif @iso_country and @iso_country.default_locale
         session[:locale] = @iso_country.default_locale
         Rails.logger.info("Set language from geoip")
-      elsif SubInstance.current and SubInstance.current.default_locale
+      elsif SubInstance.current and SubInstance.current.default_locale and SubInstance.current.default_locale!=""
         session[:locale] = SubInstance.current.default_locale
         Rails.logger.info("Set language from sub_instance")
+      elsif Instance.current and Instance.current.default_locale
+        session[:locale] = Instance.current.default_locale
+        Rails.logger.info("Set language from instance")
       else
         session[:locale] = :en
         Rails.logger.info("Set language to default :en")
@@ -601,8 +604,9 @@ class ApplicationController < ActionController::Base
     if current_user and current_user.capitals_count>0 and @idea.status == 'published'
       @items[item_count+=1]=[tr("Buy an ad", "view/ideas/_nav"), new_idea_ad_url(@idea)]
     end
-    if false and current_user and current_user.is_admin?
+    if current_user and current_user.is_admin?
       @items[item_count+=1]=[tr("Update status", "view/ideas/_nav"), update_status_idea_url(@idea)]
+      @items[item_count+=1]=[tr("Edit", "view/ideas/_nav"), edit_idea_url(@idea)]
       #@items[item_count+=1]=[tr("Delete", "view/ideas/_nav"), destroy@idea]
     end
   end
@@ -624,6 +628,7 @@ class ApplicationController < ActionController::Base
         cookies["selected_#{controller_name}_filter_id"] = @selected_sub_nav_item_id
       end
     end
+    @selected_sub_nav_name = @items.first[1][0] unless @selected_sub_nav_name
   end
 
   def find_menu_item_by_url(url)
@@ -636,7 +641,9 @@ class ApplicationController < ActionController::Base
     end
     return nil,nil
   end
+
   protected
+
   def authenticate_inviter!
     if @current_plan and @current_plan.private_instance==true
       authenticate_admin!

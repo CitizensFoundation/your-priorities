@@ -160,6 +160,15 @@ class Activity < ActiveRecord::Base
   def last_comment
     comments.published.last
   end
+
+  def idea
+    Idea.unscoped.find(idea_id) if idea_id
+  end
+
+  def point
+    Point.unscoped.find(point_id) if point_id
+  end
+
 end
 
 class ActivityUserNew < Activity

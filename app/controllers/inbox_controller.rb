@@ -13,8 +13,8 @@ class InboxController < ApplicationController
     end
     if request.format == 'html'
       for n in @notifications
-        n.read! if n.class != NotificationMessage and n.unread?
-      end    
+        n.read! if n.class != NotificationMessage and n.unread? and not n.unsent?
+      end
     end
   end  
   

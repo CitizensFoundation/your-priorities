@@ -10,9 +10,9 @@
   - @pages.each do |page|
     %tr
       %td= page.title
-      %td= link_to 'Show', page
-      %td= link_to 'Edit', edit_page_path(page)
-      %td= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - unless page.sub_instance.short_name=="default" and not current_user.is_root?
+        %td= link_to 'Edit', edit_page_path(page)
+        %td= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

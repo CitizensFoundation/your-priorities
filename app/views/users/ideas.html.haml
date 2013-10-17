@@ -8,5 +8,6 @@
       = will_paginate(@ideas)
       - if @ideas.any?
         - @ideas.each do |idea_endorsement|
-          = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea_endorsement.idea, :endorsements=>@endorsements}
-          %div{:id => "idea_detail_#{idea_endorsement.idea.id}"}
+          - idea = Idea.unscoped.find(idea_endorsement.idea_id)
+          = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+          %div{:id => "idea_detail_#{idea.id}"}

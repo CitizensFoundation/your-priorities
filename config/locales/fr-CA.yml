@@ -1,12 +1,5 @@
 ---
 fr-CA:
-  helpers:
-    submit:
-      update: Modifier ce %{model}
-      create: Créer un %{model}
-      submit: Enregistrer ce %{model}
-    select:
-      prompt: Veuillez sélectionner
   number:
     human:
       decimal_units:
@@ -156,6 +149,13 @@ fr-CA:
       words_connector: ','
     select:
       prompt: Veuillez sélectionner
+  helpers:
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un %{model}
+      update: Modifier ce %{model}
+      submit: Enregistrer ce %{model}
   errors:
     format: Le %{attribute} %{message}
     messages:

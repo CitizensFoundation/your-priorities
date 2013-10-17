@@ -1,7 +1,10 @@
 SocialInnovation::Application.routes.draw do
   match '/donations/thank_you' => 'donations#thank_you'
-  resources :donations
+  match '/donations/estartup' => 'donations#estartup'
+  match '/donations/status' => 'donations#status'
+  match '/donations/thank_you_estartup' => 'donations#thank_you_estartup'
 
+  resources :donations
 
   resources :subscriptions
   resources :plans

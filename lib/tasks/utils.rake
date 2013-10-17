@@ -88,6 +88,14 @@ namespace :utils do
     end
   end
 
+  desc "Dump users csv"
+  task :dump_users_csv => :environment do
+    puts "Login,Email"
+    User.unscoped.all.each do |u|
+      puts "#{u.login},#{u.email}"
+    end
+  end
+
   desc "Dump database to tmp"
   task :dump_db => :environment do
     config = Rails.application.config.database_configuration

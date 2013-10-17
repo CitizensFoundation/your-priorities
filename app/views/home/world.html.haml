@@ -12,7 +12,9 @@
     } else if (layerEvt.featureData) {
       var content = layerEvt.featureData.name;
     }
-    window.location = "/home/goto?country_name="+content;
+    if (content && content!='') {
+      window.location = "/home/goto?country_name="+content;
+    }
     //document.getElementById('info').innerHTML = "you clicked on:"+content;
   }
 
@@ -65,41 +67,46 @@
             .row
               .large-9.columns
                 %p
-                  = tr("We believe democracy is in trouble. Lack of trust and participation especially by young people is a big problem.","here")
+                  = tr("We believe that improved democracy is the path to a more equal world. The Internet offers an unique opportunity to reinvent democracy.","here")
                   = " "
                   = tr("Your Priorities is a powerful eDemocracy web application designed by the non profit Citizens Foundation to help groups of people speak with one voice.","here")
                 %p
-                  = tr("We won the European e-Democracy Awards 2011 and have won numerous Icelandic awards for innovation and participation. We are nominated for United Nations WSA awards in 2013.","here")
+                  = tr("We won the European e-Democracy Awards 2011 and have won numerous Icelandic awards for innovation and participation.","here")
               .large-3.columns
                 %img(src="https://s3.amazonaws.com/yrpri-direct-asset/YP_FB_Versions_cropped.png")
 .row
   .large-12.columns
     .panel.radius
       %h2
-        = tr("How does Your Priorities work?","here")
+        = tr("Balkan e-Democracy Startup Project","here")
       .row
         .large-12.columns
           .panel.radius.panel-bg-2
             .row
-              .large-3.columns
-                %p
-                  = tr("People submit ideas and debate them in a simple but advanced debate system.","here")
               .large-6.columns
-                %img(src="https://s3.amazonaws.com/yrpri-direct-assets/front_page/process2.png")
+                .flex-video
+                  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "215", :src => "https://www.youtube.com/embed/tJfAysjZ1RY", :width => "420"}
                 %center
-                  %br
-                  %a.button{:href => get_locale_demo_host(".yrpri.org/"), :target=>"_blank"}
-                    = tr("Try the free demo now","here")
-              .large-3.columns
+                  %h2
+                    = link_to "https://balkan-startup.yrpri.org","https://balkan-startup.yrpri.org"
+              .large-6.columns
                 %p
-                  = tr("The best ideas with the best points for and against rise to the top.","here")
+                  = tr("We have 12 local partners with 12 different projects that will reproduce our successful Better Reykjavík electronic democracy project in Iceland.","here")
+                %p
+                  = tr("There are 4 projects from Serbia - 3 from Kosovo and one each from Albania - Bosnia - Croatia - Montenegro and R.Macedonia.","here")
+                %p
+                  = tr("We will use our open source technology and extensive eDemocracy knowledge for all the projects in the Balkans.","here")
+                %p
+                  = tr("The projects are designed to be easily reproducible at little cost to neighboring communities. The project will therefore not only transfer knowledge to the Balkans but also between the Balkan countries.","here")
+
 .row
   .large-12.columns
-    .panel.radius
+    .panel.radius.panel-bg-2
       %h2
         = tr("Free eDemocracy website for every country in the world","here")
       %p
         = tr("We've created those free websites as examples on how you can use Your Priorities for organizing around ideas.","here")
+        = tr("Countries in blue have at least one idea. Click anywhere on the map.","here")
       #map_canvas{:style => "height:300px; width:100%;"}
       .row
         .large-6.columns
@@ -123,6 +130,27 @@
               - Rails.logger.error("Could not find sub instance logo file")
               - logo_file= "flags/64/_united-nations.png"
           = render :partial=>"simple_panel", :locals=>{:ideas=>@random_sub_instance_ideas, :short_name=>@random_sub_instance.short_name, :flag_path=>logo_file, :title=>@random_sub_instance.name}
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("How does Your Priorities work?","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-2
+            .row
+              .large-3.columns
+                %p
+                  = tr("People submit ideas and debate them in a simple but advanced debate system.","here")
+              .large-6.columns
+                %img(src="https://s3.amazonaws.com/brainstorm-direct-assets/front_page/process2.png")
+                %center
+                  %br
+                  %a.button{:href => get_locale_demo_host(".yrpri.org/"), :target=>"_blank"}
+                    = tr("Try the free demo now","here")
+              .large-3.columns
+                %p
+                  = tr("The best ideas with the best points for and against rise to the top.","here")
 .row
   .large-12.columns
     .panel.radius
@@ -177,7 +205,7 @@
           .panel.radius.panel-bg-2
             .row
               .large-6.columns
-                %img(src="https://s3.amazonaws.com/yrpri-direct-assets/front_page/eve_2.png")
+                %img(src="https://s3.amazonaws.com/brainstorm-direct-assets/front_page/eve_2.png")
               .large-6.columns
                 %p
                   = tr("We used Your Priorities to create a customized solution for the {eve_link} website for {ccp_link}.","here",:ccp_link=>link_to("CCP Games","http://ccpgames.com/",:target=>"_blank"),:eve_link=>link_to("EVE Online True Stories","https://truestories.eveonline.com/",:target=>"_blank"))
@@ -201,13 +229,14 @@
               = tr("The {yrpri_link} software running this website is Open Source and the product of the nonprofit {citizens_foundation_link} which has been working on the software since 2008. You can at any time switch over to running your own Your Priorities for free using the Open Source software. Citizens Foundation has offices in London and Reykjavík.","here",:yrpri_link=>link_to("Your Priorities","https://github.com/rbjarnason/your-priorities",:target=>"_blank"),:citizens_foundation_link=>link_to("Citizens Foundation","http://citizens.is/",:target=>"_blank"))
         .row
           .large-4.columns
-            %p
-              %a{:href => "/pages/#{Page.where(:name=>"terms_of_service").first.id}"}
-                = tr("Terms of Service","here")
-              = tr("and","here")
-              %a{:href => "/pages/#{Page.where(:name=>"privacy_policy").first.id}"}
-                = tr("Privacy Policy","here")
-            %p
+            - if Page.where(:name=>"terms_of_service").first and Page.where(:name=>"privacy_policy").first
+              %p
+                %a{:href => "/pages/#{Page.where(:name=>"terms_of_service").first.id}"}
+                  = tr("Terms of Service","here")
+                = tr("and","here")
+                %a{:href => "/pages/#{Page.where(:name=>"privacy_policy").first.id}"}
+                  = tr("Privacy Policy","here")
+              %p
           .large-4.columns
             %p
             .fb-like-box{"data-header" => "false", "data-href" => "https://www.facebook.com/Citizens.is", "data-show-border" => "true", "data-show-faces" => "false", "data-stream" => "false", "data-width" => "250"}

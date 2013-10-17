@@ -144,8 +144,12 @@ class HomeController < ApplicationController
   end
 
   def goto
-    country = IsoCountry.find_by_country_english_name(params[:country_name])
-    sub_instance = SubInstance.find_by_iso_country_id(country.id)
-    redirect_to sub_instance.show_url
+    if params[:country_name] and params[:country_name]!=""
+      country = IsoCountry.find_by_country_english_name(params[:country_name])
+      sub_instance = SubInstance.find_by_iso_country_id(country.id)
+      redirect_to sub_instance.show_url
+    else
+      redirect_to :back
+    end
   end
 end

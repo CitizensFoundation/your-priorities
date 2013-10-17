@@ -2,6 +2,8 @@ class Idea < ActiveRecord::Base
   include ActionView::Helpers::DateHelper
   include ActionView::Helpers::UrlHelper
 
+  #attr_accessible :category, :group, :issue_list, :description, :name
+
   is_impressionable :counter_cache => true
 
   acts_as_set_sub_instance :table_name=>"ideas"
@@ -14,19 +16,12 @@ class Idea < ActiveRecord::Base
 
   scope :published, :conditions => "ideas.status = 'published'"
   scope :unpublished, :conditions => "ideas.status not in ('published','abusive')"
-
   scope :not_removed, :conditions => "ideas.status <> 'removed'"
-
   scope :flagged, :conditions => "flags_count > 0"
-
   scope :alphabetical, :order => "ideas.name asc"
-
   scope :by_impressions_count, :order => "ideas.impressions_count desc"
-
   scope :by_most_discussed, :order => "points_count + discussions_count desc"
-
   scope :top_rank, :order => "ideas.score desc", :conditions=>"position != 0"
-
   scope :top_three, :order => "ideas.score desc", :limit=>3
 
   scope :top_24hr, :conditions => "ideas.position_endorsed_24hr IS NOT NULL", :order => "ideas.position_endorsed_24hr desc"
@@ -114,18 +109,6 @@ class Idea < ActiveRecord::Base
 
   acts_as_taggable_on :issues
   acts_as_list
-
-  define_index do
-    indexes name
-    indexes description
-    indexes notes
-    #has category.name, :facet=>true, :as=>"category_name"
-    has updated_at
-    has sub_instance_id, :as=>:sub_instance_id, :type => :integer
-    has "1", :as=>:tag_count, :type=>:integer
-    set_property :enable_star => true, :min_prefix_len => 2
-    where "ideas.status in ('published','inactive')"
-  end
 
   auto_html_for(:notes) do
     html_escape
@@ -471,6 +454,8 @@ class Idea < ActiveRecord::Base
   end
 
   def create_status_update(idea_status_change_log)
+    Rails.logger.info("Sending status emails")
+    SendStatusEmail.perform_in(1.second,idea_status_change_log.id)
     return ActivityIdeaStatusUpdate.create(idea: self, idea_status_change_log: idea_status_change_log)
   end
 

@@ -5,7 +5,6 @@ is:
   364bcb5c354be3b833c4a83c904ae91f: Merkti %{point_name} gagnslítil
   5b378488a7da7228e25ac9ad5ec2f248: Er þetta gagnlegt?
   214c85ce1555950780114abb91def844: Gagnslítið
-  324fd6f6e45656cac0e9af029e6a2e2c: '%{count} óákveðnum fannst þetta gagnlegt.'
   010818f282f6ca53d86d4f988f83744f: Vista stillingar
   02bb5de0c787154b2cfaea82d1cfc40d: Hætta við þessa útgáfu
   02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} sendi inn athugasemd'
@@ -14,8 +13,6 @@ is:
   175fd8a23b58b6b7ce1958698686d284: Gagnlegt?
   18ef3f4348075aca1646941639d610dd: Hugmynd %{position}
   1c01ea8ff1eb63e6a59c944653d38909: Senda skilaboð á vegg
-  1c3a03e7bf74d0ee69de0311447bb613: Hugmyndin %{idea_name}, sem þú styður ,er í %{position}.
-    sæti í %{category} flokknum.
   f5359d1dd07def542aa9b0577fb27068: Uppfæra stöðu
   1ef76611148ef0524fe1226508ed689b: '%{count}  á móti'
   1945e5ccc0bd89812560b30f7c48639d: Þín skilaboð
@@ -23,7 +20,6 @@ is:
   198584454b0ce1101ff5b50323325aa8: Netfang
   201e7310f5fb28133f781fc856003d92: Nafn hugmyndar
   20db0bfeecd8fe60533206a2b5e9891a: Fornafn
-  d0d2aef3bbda7f1ae365a9a2a9d5bb10: Nýjast (%{count})
   0680c0f4acc215c7c75e5dafe9384e7c: Settu slóð á meiri upplýsingar
   09a1e75ab40c7bb5efb09d013aff3a53: Bæta við rökum með
   07221d868183bab87e41f0ec47440880: Umræður um þínar hugmyndir
@@ -56,7 +52,7 @@ is:
   0f9b5eff8d1d07e6ce3a8fe2697a76f7: Hóf notkun  %{time_ago}
   00d9e5c459f14c32aa6d6d1bb7cde76d: Útgáfur (%{count})
   121180d98b4e249fcc3bcc8e0255acec: <a href='%{comment_url}'>%{count} athugasemdir</a>
-  12e04993707a599568f6b7641d8e89f0: '%{count} óákveðnum fannst þetta <i>gagnslítið</i>.'
+  324fd6f6e45656cac0e9af029e6a2e2c: '%{count} óákveðnum fannst þetta gagnlegt.'
   8cf04a9734132302f96da8e113e80ce5: Heim
   233b006364b1fcfc3b6e2928a20e1545: Fallandi hugmyndir
   d46ef9e7211d041671cdbe6c3d884884: Hugmyndir
@@ -98,8 +94,6 @@ is:
   1a08c8ca9af355a37e4b5d4595434211: Staðfesta lykilorð
   c37ad8c5cf363431fbaa23a52ef949a4: Eftir %{author_sentence}
   d533bc81d129968f57a188436d3575ac: '%{user_name} bætti við athugasemd á %{discussion_name}'
-  64e73aa014f92f7f5d7ca38c24cbf801: Vann sér inn %{capital}%{currency_short_name}
-    af því andstæðingum fannst þetta  %{point_name} gagnlegt
   68e58e8d7902b8d218a96c0e6f22a683: Þetta er ekki lengur gagnslítið
   7b2bfb819c88eb92abda770f0ebeacac: Þetta er ekki gagnlegt
   6d0a578ca2f2c0e792fc923002fccbe3: síðan
@@ -123,19 +117,12 @@ is:
   1d10d0c01b3469bcb594ade393639ed0: Þessi notandi eyddi sínum aðgangi
   21bdc5689c12595ae14298354d5550d5: Ertu búinn að skrá þig áður?
   26b2c865adf221f0d43b35cb642e775a: Setti inn %{count} athugasemdir á %{discussion_name}
-  45f57ec68e303d292d5834bc4adc60b8: '%{count} mannst fannst þetta <i>ekki</i> gagnlegt.'
-  4938ac136fbb96f4b7dc5dbc9f22b3d8: '%{count} andstæðingum fannst þetta <i>ekki</i>
-    gagnlegt.'
-  5c36be9267b5b5029c87219a31b0b1c1: '%{count} fannst þetta gagnlegt, %{other_count}
-    fannst þetta ekki.'
   a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} hugmyndir'
   b4c1d65b09a6dd0d154f9680cda00843: Umræður (%{count})
   1a8e4f3a313d948ac095a8d24110c1b1: '%{count} studdu'
   1a13f1069e52ca6118df8501f7a7c755: '%{user_name} bætti %{point_name} við %{idea_name}'
-  b59b8af25c9a82643008ca5defb21a2f: '%{count} andstæðinga fannst þetta gagnlegt, %{other_count}
-    fannst það ekki.'
   d64518ec4a60ae31b2b5e4074646cca1: Reglurnar okkar
-  c02f1bde8d33b74d66c9440588e83efb: '%{count} fannst þetta gagnlegt'
+  12e04993707a599568f6b7641d8e89f0: '%{count} óákveðnum fannst þetta <i>gagnslítið</i>.'
   c29196003ef3c4f020130aab1c63d4ea: '%{count} rök'
   c3829f98b9d811ef102006ff00a83881: '%{count} útgáfur'
   da08b4d4be989f5276a7aab9899ab34c: '%{count} á móti'
@@ -163,7 +150,6 @@ is:
   665255de10a45ae3e1c0e81b515b55ca: '%{count} umræður'
   fe5c45415c03bb476dc22b730aaf2590: '%{user_name} setti inn  %{count} athugasemdir
     við %{discussion_name}'
-  8e3c1c3c8cc3864dd65b7ecd55a229bd: '%{count} stuðningsmanna fannst þetta gagnlegt.'
   9f86485bb188bd3e5c78e5f3b86b90d0: '%{count} stuðningsmenn'
   fa28923bc27f10e4b3a892e1e71fd6bb: '%{count} stuðningsmönnum fannst þetta  <i>ekki</i>
     helpful.'
@@ -241,8 +227,6 @@ is:
     opinn og virki á þann hátt sem ætlast er til
   0c0d218418852e444a95f10f2fbe3060: '%{user_name} vann sér inn %{count}%{currency_short_name}
     fyrir  %{count} nýja fylgjendur'
-  43e00d10903ec90c9f2c523a901df552: '%{user_name} vann sér inn %{capital}%{currency_short_name}
-    af því bæði stuðningsmönnum og andstæðingum  %{point_name} fannst hún gagnleg'
   70d41baa21f0fef4a54de863cd259ace: Innskráning með island.is
   780f17237b2f99a557c2490dfa9a30a4: Innskráning með Gmail
   4d0a3fc4c46501d3b4d2257820942a5e: Innskrá með %{provider}
@@ -320,11 +304,22 @@ is:
   fa2ead697d9998cbc65c81384e6533d5: Um friðhelgi
   985f85fc6bb1d160f599f43072500d35: '%{instance_name} nafn og vefslóð'
   cf23ee279844016288ea1c076638f3be: Um okkur
+  db66d94401b8ef7522e85c70829aff5e: Af hverju Brainstorm?
   4c813db78fd60266b023752f65cd1b6b: Prófaðu demó núna
   28818d96a5cfa5141680c4199d301376: Nafn
   f0e0f580898b26d3946589a4ccab7a3f: Vefslóð
   13e7cd666950f7873a5e431fce97b916: 'Dæmi: https://'
   f11b368cddfe37c47af9b9d91c6ba4f0: Fullt nafn
+  8ef12e6f1578309614f981a3348ab04e: Hvað gerir Brainstorm?
+  1a82670cbcfca4b9e1966c553da382ab: Starfsmenn eða viðskiptavinir senda inn hugmyndir
+    og rökræða þær í einföldu en öflugu rökræðukerfi.
+  81d5244ca8c939d48e7c1df78866269b: Brainstorm hvetur til öflugrar rökræðu sem auðveldar
+    lausn vandamála með virkri þátttöku starfsmanna og viðskiptavina.
+  359f9e79e746fa9f684e5cda9e60ca2e: Hvernig virkar Brainstorm?
+  06a63cfb91c4f6c0ceae081d23f58b35: Brainstorm hjálpar þínu fyrirtæki að finna bestu
+    hugmyndirnar í völdum málaflokkum hratt og örugglega.
+  b7a8c7c75ffd0f85931eeda7c079e7e7: Búðu til þitt Brainstorm
+  7b2c1ad22309699c2c8e6d131be0d1ab: Búðu til þitt Brainstorm núna
   ce8ae9da5b7cd6c3df2929543a9af92d: Netfang
   0af762d3701c852a5371fa4ad393f9fa: Gefðu %{instance_name} nafn
   27340dcd104975a8f470cf8956e9496a: Þín vefslóð
@@ -344,8 +339,6 @@ is:
   0038a9e512b4678c583db11009d2c297: Þessi hugmynd rís hraðast
   003e636075eed8d70232cd54e12236db: Verið er að búa til þitt %{instance_name}
   00b177e080ff1c3d340997fb01c3951c: Samþykkja boð
-  00f399f02ac662457af2fa6ce23adbdb: '%{user_name} tapaði %{capital}%{currency_short_name}
-    vegna þess að bæði þeir sem styðja og eru á móti fannst %{point_name} ekki hjálplegt'
   01441c80c744e05983f0681cacfcf047: Kaus upp %{new_idea_name} í stað %{idea_name}
   016e3b623e81108aac0844988d799eff: 'Útgáfa: %{sentence}'
   019ec3132cdf8ee0f2e2a75cf5d3e459: Kyn
@@ -401,7 +394,7 @@ is:
   7b8f95b017fbb7f217c95590de6d20ef: '%{count} fleiri umræður fyrir %{idea_name}'
   703fabf8db15f38533b603fd3e8099af: Fylgist með
   8cf04bccef1829bd7f09a1a7abc43ed6: Tölvupóstsendingar
-  254f642527b45bc260048e30704edb39: Uppsettning
+  254f642527b45bc260048e30704edb39: Uppsetning
   24f62b680c4564b50f1d44416d5b6a46: Áskriftarleið
   c33e404a441c6ba9648f88af3c68a1ca: Notkun
   7cdfb0c074a8155d864d2b591b0d509b: Tilkynnt efni
@@ -431,8 +424,13 @@ is:
   d55f77e2eefbfe2128ce3be88b4a448c: Sleppum þessu - Ég man það núna
   57ccb139c58aa95db2f3533f8dcc4716: Samfélag leikmanna kaus síðan bestu sögurnar,
     úr þessu varð til listi af bestu sögunum sem gerðust inn í leiknum.
-  a39abc0cae4f06f92f6ee2e5601dbf7f: Uppsettning
+  a39abc0cae4f06f92f6ee2e5601dbf7f: Uppsetning
   cedcf6fe65a8f2849fe11e316d6c9923: Skráðu þig núna
+  4c4d785b7e5802ad0ccc25b61eafdbc9: Hérna getur þú búið til þína eigin Brainstorm
+    síðu. Þú getur skráð hana án þess að vera með kreditkort til prufu. Auðvelt er
+    að skipta yfir í útgáfuna sem borgað er fyrir.
+  3ce618de40319d6079cf15484bd98cb7: Verðlaunavefurinn %{br_link} notar sama frjálsa
+    hugbúnað og Brainstorm vefsíðan.
   8e52de0d4b03d5fe87dc88da09616c7f: hér.
   27a84c42208c15f8f2a86182f2ada960: Stjórn borgarinnar fær ómetanlegar upplýsingar
     um skoðanir og forgangsröðun borgaranna með lágmarks fyrirhöfn.
@@ -446,6 +444,8 @@ is:
     hugmynd sem hjálpar þeim að gera upp hug sinn til einstakra hugmynda.
   e9fd438d76861fab5afa6f3b2b693b08: '%{the_price} á mánuði'
   b24ce0cd392a5b0b8dedc66c25213594: Frítt
+  6e47d0058bbde4b036ba626edd8d7c5f: Við notuðum Brainstorm til að búa til sérhæfða
+    lausn fyrir %{eve_link} vef %{ccp_link}.
   6f014bd180caa0bfd9d498a6621f22d2: Skráning með netfangi
   12cc3f3e76f44bf82cfd0a05648f71d3: Ef þitt félag er ekki rekið í hagnaðarskyni bendum
     við á %{yrpri_link} sem er rekin af sjálfeignarstofnunni %{cf_link}.
@@ -508,6 +508,9 @@ is:
   e1b3f8dca1204857a3d28b4910c1abe5: Þú ert að gerast áskrifandi að lokaðri síðu með
     upp að %{number_of_users} notendum.
   e20e2f7a1cb2a5714df03568eee055c0: Opinn áskrift með upp að %{number_of_users} notendum.
+  835cd2b657183317115de6c5a4f571b6: Við unnum Evrópsku lýðræðisverðlaunin 2011 og
+    höfum unnið mörg verðlaun á íslandi.  Við erum tilnefndir til WSA verðlauna Sameinuðu
+    þjóðanna 2013.
   c6a00f137b92ad22c007677fb2113a9f: Bjóða
   ea3e01f57414004a37f4034b92335ede: Þú ert að gerast áskrifandi að opinni síðu með
     tölvupóst og Facebook skráningu með upp að %{number_of_users} notendum.
@@ -518,6 +521,8 @@ is:
   24e0f8f4d4442f2d51f77decfaaa0c32: Til að hætta áskrift sem borgað er fyrir veldu
     þá eina ókeypis áskrift hér að neðan.
   3793d68bfe956d4b8721d605fe3c486e: Næsta greiðsla er %{next_charge_date}
+  bb73e7a168c9158086404aaac16e5de5: Verðlaunavefurinn %{br_link} notar sama frjálsa
+    hugbúnað og Your Priorities vefsíðan.
   8debe773c71b071adbd72ea2bc48186a: Við notuðum Your Priorities til að búa til sérhæfða
     lausn fyrir %{eve_link} vef %{ccp_link}.
   5df2acc8c67fdc6d6dc03791ac5f7a5e: Senda
@@ -528,6 +533,8 @@ is:
   fa529590e5e535db935b0dd7f91f2d9a: Það var vandamál með kort - Reyndu aftur.
   3c6629641f461271b23b6737359a60cd: Þú getur skráð þig með Facebook eða netfangi
   221e705c06e231636fdbccfdd14f4d5c: Nafn
+  c428492f00d9e51ce05abf306d2ff59b: Fólk sendir inn hugmyndir og rökræða þær í einföldu
+    en öflugu rökræðukerfi.
   4607ccb71469675944516398e717479c: Samþykktu skilmála
   026688f148cfe681359ec62731411752: Takk fyrir greiðslu á %{instance_name}
   5ef0c737746fae2ca90e66c39333f8f6: Villur
@@ -545,8 +552,8 @@ is:
   96c3b987a5b5008df9b06d9d95092634: Your Priorities er öflug lýðræðisvefsíða hönnuð
     af non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með
     einni rödd.
-  d7391c69ff4c78e653e46ce0f1004fe7: '%{yrpri_link} forritið er grunnurinn og þetta
-    er frjáls hugbúnaður sem er búinn til í samstarfi af %{citizens_foundation_link}
+  d7391c69ff4c78e653e46ce0f1004fe7: '%{yrpri_link} forritið er grunnurinn að Brainstorm
+    og þetta er frjáls hugbúnaður sem er búinn til í samstarfi af %{citizens_foundation_link}
     sem hefur unnið í hugbúnaðinum síðan 2008. Þú getur hvenær sem er skipt yfir í
     frjálsa hugbúnaðinn til að keyra þinn Your Priorities frítt. Citizens Foundation
     er með skrifstofur í London og Reykjavík.'
@@ -562,12 +569,12 @@ is:
   1e640b7173d9b246f28bbdd1a36bfd3f: 'Kennitalan okkar er 601210-1260. Hér eru upplýsingar
     frá fyrirtækjaskrá:'
   0557fa923dcee4d0f86b1409f5c2167f: Til baka
-  6b4773ffde9668ce5b864386cee01831: The Citizens Foundation heitir Íbúar Samráðslýðræði
-    ses á íslandi og er sjálfseignarstofnun sem er ekki rekinn í hagnaðarskyni.
   3bcbf859ec98a71b00fb909d9e1f7ba4: Prófaðu ókeypis núna
   562c4011e9d9919cdf0c11a882ce0078: Styðja núna
   aade75644a822c68e7878bb98c5291dd: Búðu til þitt Your Priorities
-  d77a0f9cd14e513bb78bccbf59402717: Staða hjá Reykjavíkurborg
+  1436e91bf9b6945ab2e323f2397bbcc1: Við trúum því að lýðræði í heiminum sé í vandræðum.
+    Minni þáttaka og lítið traust sér í lagi hjá ungu fólki er stórt vandamál.
+  d77a0f9cd14e513bb78bccbf59402717: Staða hugmynda
   activerecord:
     errors:
       messages:
@@ -581,37 +588,73 @@ is:
   b6e0b0c90cfbddfe767f137f8066d1df: Í ferli
   30ae8fff8898dc197acd49d9c0797d20: Samþykkt
   d7c8c85bf79bbe1b7188497c32c3b0ca: Hafnað
-  c428492f00d9e51ce05abf306d2ff59b: Fólk sendir inn hugmyndir, metur og færir fyrir
-    þeim rök í einföldu en öflugu rökræðukerfi.
-  bb73e7a168c9158086404aaac16e5de5: Verðlaunavefurinn %{br_link} notar sama frjálsa
-    hugbúnað og Your Priorities vefsíðan.
-  7df1f6368d01f63ab23548af8707a929: Staða hjá Reykjavíkurborg (%{count})
-  1b87a6c3fadc9180743cb5b660b76f2b: Afhverju Betra Ísland?
-  654f0ece8adfb7de29a73d5c27003f9c: Nýr Betra Ísland vefur
-  1436e91bf9b6945ab2e323f2397bbcc1: Lýðræði á undir högg að sækja í dag. Minni þátttaka
-    og lítið traust til undirstaða lýðræðis, sérstaklega hjá ungu fólki er stórt vandamál.
-    Betra Ísland er öflug lýðræðissíða sem er hönnuð og rekin af Íbúum ses til að
-    auðvelda hópum af fólki að finna sín forgangsmál og tala með einni rödd.
-  835cd2b657183317115de6c5a4f571b6: Við unnum Evrópsku lýðræðisverðlaunin 2011 og
-    höfum unnið mörg verðlaun á íslandi. Við erum tilnefndir til WSA verðlauna Sameinuðu
-    þjóðanna 2013.
+  d0d2aef3bbda7f1ae365a9a2a9d5bb10: Nýjast (%{count})
+  7df1f6368d01f63ab23548af8707a929: Staða hugmynda (%{count})
+  9af57be9d30133c2cab31efe582d4ea7: Allt að gerast á %{instance_name}
   07ce9b074bcd189d0b244dc7031283dd: Hvernig virkar Betra Ísland?
-  1a82670cbcfca4b9e1966c553da382ab: Starfsmenn eða viðskiptavinir senda inn hugmyndir
-    og rökræða þær í einföldu en öflugu rökræðukerfi.
-  c7dec3041fa531ded96e45bab1e125d6: Hvað gerir Betra Ísland?
+  1b87a6c3fadc9180743cb5b660b76f2b: Afhverju Betra Ísland?
   42e5fabfe88d4fbdc7f0c4e60d012b25: Betra Ísland getur hjálpað þínum bæ, sveitarfélagi
     eða hvaða hóp sem er sem vill skipuleggja sig í kringum hugmyndir og tala með
     einni rödd. Hérna getur þú búið til þinn eigin Betra Ísland vef. Þú getur skráð
     hana án þess að vera með kreditkort til prufu. Auðvelt er að skipta yfir í öflugri
     útgáfur sem borgað er fyrir.
+  654f0ece8adfb7de29a73d5c27003f9c: Nýr Betra Ísland vefur
   7a8dd7f3470646c08ce4a384ba67f55c: Fáðu þinn eigin lýðræðisvef á Betra Íslandi
-  2e53e81ab59bf9dd913f36bd3ae10489: Vefir á Betra Íslandi
-  a2268dd8cc97d9511d074ad1f70044e5: Hérna sérðu kort þar sem sveitarfélög eru merkt
-    inn.
+  c7dec3041fa531ded96e45bab1e125d6: Hvað gerir Betra Ísland?
   40136f0b052226af395bc48c98a0cdf7: Þetta myndband sýnir hvernig rafræna lýðræðiskerfið
     Your Priorities virkar. Betra Ísland notar Your Priorities.
+  a8c3ea68a9fea02a35891435a9d8419b: Þinn eigin vefur
+  2e53e81ab59bf9dd913f36bd3ae10489: Vefir á Betra Íslandi
   48dade30fc1102998ceb7bab6fd0f78c: Verðlaunavefurinn %{br_link} notar sama frjálsa
     hugbúnað og Betra Ísland.
+  a2268dd8cc97d9511d074ad1f70044e5: Hérna sérðu kort þar sem sveitarfélög eru merkt
+    inn.
+  dcab30df167c93ffafaf59a49789cefa: Betra Ísland er öflugur lýðræðisvefur sem er hannaður
+    og rekin af Íbúum ses til að auðvelda hópum af fólki að finna sín forgangsmál
+    og tala með einni rödd.
   f5a287487be5635d65446104aa57543d: Við notuðum Your Priorities til að búa til sérhæfða
     lausn fyrir %{eve_link} True Stories vef %{ccp_link}.
-  a8c3ea68a9fea02a35891435a9d8419b: Þinn eigin vefur
+  6db48087961bb17e405d2fd451bed920: '%{yrpri_link} hugbúnaðurinn sem keyrir Betra
+    Ísland er opinn hugbúnaður framleiddur af %{citizens_foundation_link} síðan 2008.
+    Þú getur hvenær sem er tekið yfir rekstur á þinni Betra Ísland vefsíðu, ókeypis,
+    með því að nota opna hugbúnaðinn.'
+  1c3a03e7bf74d0ee69de0311447bb613: Hugmyndin %{idea_name}, sem þú styður ,er í %{position}.
+    sæti í %{category} flokknum.
+  c867451892e38db47a8cc5e7b02d5c54: sem þú styður
+  2a9769b98044b4676d831e21bd5fad9e: sem þú ert á móti
+  78649386bcd37757541e2c6d99968afd: Stöðu '%{idea}' hefur verið breytt
+  788606c01d818b7fef5876a6e952c910: Breyttu stöðu á hugmynd %{idea_name}
+  5ebb3db6c8a6613f79191107b296a01c: Stöðu hugmyndar <a href='%{idea_link}'>%{idea_name}</a>
+    %{support_or_endorse_text} hefur verið breytt á %{instance_name}.
+  00f399f02ac662457af2fa6ce23adbdb: '%{user_name} tapaði %{capital}%{currency_short_name}
+    vegna þess að bæði þeir sem styðja og eru á móti fannst %{point_name} ekki hjálplegt'
+  031df46270da6ac98aa87d54760b1be7: '%{yrpri_link} forritið er grunnurinn að Brainstorm
+    og þetta er frjáls hugbúnaður sem er búinn til í samstarfi á milli %{idea_synergy_link}
+    og %{citizens_foundation_link} sem hefur unnið í hugbúnaðinum síðan 2008. Þú getur
+    hvenær sem er skipt yfir í frjálsa hugbúnaðinn til að keyra þitt Brainstorm frítt.
+    IdeaSynergy er með skrifstofur í London og Reykjavík.'
+  0bab708b3a7cf65b4545ae8b8c1ba0f3: Misstir %{capital}%{currency_short_name} vegna
+    andstæðingi fannst %{point_name} ekki hjálplegt
+  112d0772a6283ba7eb021fe34d30bd0f: '%{user_name} missti %{capital}%{currency_short_name}
+    because opposers found %{point_name} unhelpful'
+  43e00d10903ec90c9f2c523a901df552: '%{user_name} vann sér inn %{capital}%{currency_short_name}
+    af því bæði stuðningsmönnum og andstæðingum  %{point_name} fannst hún gagnleg'
+  45f57ec68e303d292d5834bc4adc60b8: '%{count} mannst fannst þetta <i>ekki</i> gagnlegt.'
+  4938ac136fbb96f4b7dc5dbc9f22b3d8: '%{count} andstæðingum fannst þetta <i>ekki</i>
+    gagnlegt.'
+  5c36be9267b5b5029c87219a31b0b1c1: '%{count} fannst þetta gagnlegt, %{other_count}
+    fannst þetta ekki.'
+  64e73aa014f92f7f5d7ca38c24cbf801: Vann sér inn %{capital}%{currency_short_name}
+    af því andstæðingum fannst þetta  %{point_name} gagnlegt
+  6b4773ffde9668ce5b864386cee01831: The Citizens Foundation heitir Íbúar Samráðslýðræði
+    ses á íslandi og er sjálfseignarstofnun sem er ekki rekinn í hagnaðarskyni.
+  8e3c1c3c8cc3864dd65b7ecd55a229bd: '%{count} stuðningsmanna fannst þetta gagnlegt.'
+  b59b8af25c9a82643008ca5defb21a2f: '%{count} andstæðinga fannst þetta gagnlegt, %{other_count}
+    fannst það ekki.'
+  c02f1bde8d33b74d66c9440588e83efb: '%{count} fannst þetta gagnlegt'
+  4b0261782b7f0ac20b5ed68a3c95a478: Nýskráning
+  b05d72142020283dc6812fd3a9bc691c: Gleymt lykilorð
+  99b0a9110ebd2fa6dcd57f7daa5b5d42: reglur
+  1b67e09d932e395f8a9629cfd89776df: "Velkomin á %{instance_name}"
+  907bda36ad5b04dd122805ddf7ae1a62: "Nýskráning:"
+  a84f31d4cca1a5d5dc34d1017ed4005e: "Skráður notandi:"

@@ -14,15 +14,14 @@ gem 'airbrake'
 gem 'memcachier'
 gem 'kaminari'
 gem 'font_assets'
-gem 'pusher-client',
-    :git => 'git://github.com/pat/pusher-ruby-client',
-    :ref => '608cc28d1a'
+gem 'pusher-client'
+gem "mysql2"
 #gem 'foundation_rails_helper', :git=>'git://github.com/rbjarnason/foundation_rails_helper'
 #gem 'omniauth-oauth2'
 #gem 'omniauth', '1.1.3'
 #gem 'omniauth-oauth2'
 #gem 'oauth2'
-gem 'hashie'
+#gem 'hashie'
 #gem 'rails', '3.2.11'
 gem 'rails-i18n'
 #gem 'mysql2', "0.3.12b6"
@@ -51,10 +50,18 @@ gem 'will-paginate-i18n'
 gem 'mogli', github: 'mmangino/mogli'
 gem 'facebooker2', github: 'mmangino/facebooker2'
 gem 'dalli'
-gem 'thinking-sphinx',
-      :git => 'git://github.com/pat/thinking-sphinx.git',
-      :ref => '55788f7b96'
-gem 'flying-sphinx'
+#gem 'thinking-sphinx', '3.0.5'
+##gem 'flying-sphinx',   '1.0.0'
+gem 'flying-sphinx', '~> 1.0.0',
+     git: 'git://github.com/flying-sphinx/flying-sphinx.git',
+     branch: 'master',
+     ref: '707dd60675'
+#gem "flying-sphinx","0.8.5"
+gem 'thinking-sphinx'
+#gem 'thinking-sphinx',
+#      :git => 'git://github.com/pat/thinking-sphinx.git',
+#      :ref => '55788f7b96'
+#gem 'flying-sphinx'
 #gem "thinking-sphinx", "~> 2.0.10"
 #gem 'riddle','1.5.3'
 gem 'jquery-rails','2.1.4'
@@ -67,7 +74,7 @@ gem 'awesome_print', require: false
 gem 'htmldiff'
 gem 'acts_as_list'
 gem 'html5shiv-rails'
-gem 'devise'
+gem 'devise','2.2.4'
 gem 'devise-i18n'
 gem 'devise-async'
 gem 'devise_invitable'
