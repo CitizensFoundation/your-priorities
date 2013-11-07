@@ -11,9 +11,9 @@ class SearchesController < ApplicationController
       else
      #   @facets = ThinkingSphinx.facets @query, :all_facets => true, :with=>{:sub_instance_id=>SubInstance.current.id},  :star => true, :page => params[:page]
       end
-      if params[:category_name]
+      if params[:category_name] and @facets
         @search_results = @facets.for(:category_name=>params[:category_name])
-      elsif params[:class]
+      elsif params[:class] and @facets
         @search_results = @facets.for(:class=>params[:class].to_s)
       else
         if params[:global]

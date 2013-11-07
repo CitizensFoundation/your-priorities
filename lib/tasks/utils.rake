@@ -60,6 +60,69 @@ CODE_TO_SHORTNAME = {"AE"=>"uae", "LY"=>"lybia", "VA"=>"vatican",
                      "PS"=>"ps", "GB"=>"uk", "SY"=>"syria", "RU"=>"russia",
                      "MD"=>"moldova", "LA"=>"lao" }
 namespace :utils do
+  desc "FixBetterNeighborhoodSubInstances"
+  task :fix_bn do
+    SubInstance.all.each do |sub_instance|
+      if sub_instance.short_name.include?("betri-hverfi")
+        sub_instance_2012 = sub_instance.dup
+        sub_instance_2012.short_name = sub_instance_2012.short_name+"-2012"
+        sub_instance_2012.name = sub_instance_2012.name+" 2012"
+        sub_instance_2012.save
+
+        sub_instance_2014 = sub_instance.dup
+        sub_instance_2014.short_name = sub_instance_2014.short_name+"-2014"
+        sub_instance_2014.name = sub_instance_2014.name+" 2014"
+        sub_instance_2014.save
+
+        sub_instance.short_name = sub_instance.short_name+"-2013"
+        sub_instance.name = sub_instance.name+" 2013"
+        sub_instance.save
+
+        Idea.unscoped.where(:sub_instance_id=>sub_instance).each do |x|
+          if x.created_at<DateTime.parse("01/01/2013")
+            x.sub_instance_id = sub_instance_2012.id
+            x.save(:validate=>false)
+          end
+        end
+
+        Point.unscoped.where(:sub_instance_id=>sub_instance).each do |x|
+          if x.created_at<DateTime.parse("01/01/2013")
+            x.sub_instance_id = sub_instance_2012.id
+            x.save(:validate=>false)
+          end
+        end
+
+        Comment.unscoped.where(:sub_instance_id=>sub_instance).each do |x|
+          if x.created_at<DateTime.parse("01/01/2013")
+            x.sub_instance_id = sub_instance_2012.id
+            x.save(:validate=>false)
+          end
+        end
+
+        Endorsement.unscoped.where(:sub_instance_id=>sub_instance).each do |x|
+          if x.created_at<DateTime.parse("01/01/2013")
+            x.sub_instance_id = sub_instance_2012.id
+            x.save(:validate=>false)
+          end
+        end
+
+      end
+    end
+  end
+
+  desc "count_bh_2014"
+  task :count_bh_2014 => :environment do
+    count = 0
+    SubInstance.all.each do |x|
+     if x.short_name.include?("2014")
+       puts x.short_name
+       puts x.ideas.count
+       count+=x.ideas.count
+     end
+    end
+    puts count
+  end
+
   desc "Create BR categories"
   task :delete_all_from_process_documents => :environment do
     ProcessDocumentElement.delete_all

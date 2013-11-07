@@ -8,6 +8,18 @@
     po.src = 'https://apis.google.com/js/plusone.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   });
+- if @blog_posts.any?
+  %div.home_welcome
+    %h1.home_h1
+      = tr("News", "view/ideas")
+      = #link_to tr("News", "view/ideas"),"/blog"
+    %table
+      %tr
+        - @blog_posts.each do |post|
+          %td{:width=>"33%", :valign=>"top"}
+            - post_revision = post.posts_revisions.last
+            = render :partial=>"/home/blog_post", :locals=>{:post=>post_revision}
+    %br
 - if @finished_ideas.any?
   %div.home_welcome
     %h1.home_h1

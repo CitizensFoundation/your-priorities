@@ -1,9 +1,14 @@
 # Methods added to this helper will be available to all templates in the application.
-
 module ApplicationHelper
 
-  # HACK TO GET AROUND TOLK GEM NOT CRASHING ON ATOM /tolk/locales#show
-  def tolk_locale_url(something=nil)
+  def first_image_url_from_text(text)
+    image_url = nil
+    URI.extract(text).each do |url|
+      #TODO: Check if its really an image url
+      url = url.downcase
+      image_url = url if url.include?(".png") or url.include?(".jpg") or url.include?(".jpg")
+    end
+    image_url
   end
 
   def currency_with_unit(amount,currency)

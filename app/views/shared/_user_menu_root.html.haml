@@ -3,10 +3,10 @@
     = tr("Root settings", "view/shared/_menu")
   %li
     \&middot;
-    = link_to tr("Configuration", "view/shared/_menu"), edit_instance_url(Instance.current)
+    = link_to tr("Configuration", "view/shared/_menu"), "/instances/#{Instance.current.id}/edit"
   %li
     \&middot;
     = link_to tr("Buddy icon", "view/shared/_menu"), "/admin/buddy_icon"
   %li
     \&middot;
-    = link_to tr("New sub instance", "view/shared/_menu"), new_sub_instance_url
+    = link_to tr("New sub instance", "view/shared/_menu"), "/sub_instances/new"

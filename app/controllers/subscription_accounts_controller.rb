@@ -13,7 +13,7 @@ class SubscriptionAccountsController < ApplicationController
   end
 
   def users
-    @users = User.active.all.paginate
+    @users = User.active.paginate :page => params[:page], :per_page => params[:per_page]
   end
 
   def select_plan

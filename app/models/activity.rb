@@ -169,6 +169,21 @@ class Activity < ActiveRecord::Base
     Point.unscoped.find(point_id) if point_id
   end
 
+  def activity
+    Activity.unscoped.find(activity_id) if activity_id
+  end
+
+  def tag
+    Tag.unscoped.find(tag_id) if tag_id
+  end
+
+  def user
+    User.unscoped.find(user_id) if user_id
+  end
+
+  def other_user
+    User.unscoped.find(other_user_id) if other_user_id
+  end
 end
 
 class ActivityUserNew < Activity

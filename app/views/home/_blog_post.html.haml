@@ -1,0 +1,11 @@
+%div{:style=>"width:300;padding:5px;"}
+  %div.blog_header
+    %h2
+      = link_to post.title, "/home/blog/#{post.post.id}"
+  %div.blog_image
+    - if image_url = first_image_url_from_text(post.content)
+      = link_to "/home/blog/#{post.post.id}" do
+        %img{:src=>image_url, :width=>"310px", :height=>"221px"}
+  %div.blog_short_descriptions
+    - text = strip_tags(ActionView::Base.full_sanitizer.sanitize(post.content)).html_safe
+    = truncate(text.html_safe, length: 180, omission: '...').html_safe

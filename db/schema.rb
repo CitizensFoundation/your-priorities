@@ -45,13 +45,11 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.integer  "idea_status_change_log_id"
     t.integer  "group_id"
     t.integer  "idea_revision_id"
-    t.integer  "ccp_tag_id"
     t.text     "custom_text"
   end
 
   add_index "activities", ["activity_id"], :name => "activity_activity_id"
   add_index "activities", ["ad_id"], :name => "activities_ad_id_index"
-  add_index "activities", ["ccp_tag_id"], :name => "index_activities_on_ccp_tag_id"
   add_index "activities", ["changed_at"], :name => "index_activities_on_changed_at"
   add_index "activities", ["created_at"], :name => "created_at"
   add_index "activities", ["idea_id"], :name => "activity_idea_id_index"
@@ -123,27 +121,6 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.datetime "icon_updated_at"
     t.text     "description"
     t.string   "sub_tags"
-  end
-
-  create_table "ccp_tags", :force => true do |t|
-    t.string   "name"
-    t.string   "ccp_type"
-    t.string   "ccp_type_id"
-    t.text     "description"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.integer  "tag_count",   :default => 0
-  end
-
-  add_index "ccp_tags", ["ccp_type"], :name => "index_ccp_tags_on_ccp_type"
-  add_index "ccp_tags", ["ccp_type_id"], :name => "index_ccp_tags_on_ccp_type_id"
-  add_index "ccp_tags", ["name"], :name => "index_ccp_tags_on_name"
-  add_index "ccp_tags", ["tag_count"], :name => "index_ccp_tags_on_tag_count"
-
-  create_table "ccp_tags_ideas", :force => true do |t|
-    t.integer "idea_id"
-    t.integer "ccp_tag_id"
-    t.integer "user_id"
   end
 
   create_table "color_schemes", :force => true do |t|
@@ -670,6 +647,7 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.float    "amount"
     t.float    "vat"
     t.string   "paymill_offer_id"
+    t.boolean  "private",          :default => false
   end
 
   create_table "point_qualities", :force => true do |t|
@@ -1117,7 +1095,6 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.integer  "translated_key_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "remote_id"
   end
 
   add_index "tr8n_language_metrics", ["created_at"], :name => "index_tr8n_language_metrics_on_created_at"
@@ -1164,7 +1141,6 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.datetime "updated_at"
     t.string   "google_key"
     t.string   "facebook_key"
-    t.integer  "threshold",            :default => 1
   end
 
   add_index "tr8n_languages", ["locale"], :name => "index_tr8n_languages_on_locale"
@@ -1236,7 +1212,6 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.boolean  "admin"
     t.string   "locale"
     t.integer  "level",             :default => 0
-    t.datetime "synced_at"
   end
 
   add_index "tr8n_translation_keys", ["key"], :name => "index_tr8n_translation_keys_on_key", :unique => true
@@ -1361,9 +1336,6 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.boolean  "manager"
     t.string   "last_ip"
     t.string   "country_code"
-    t.integer  "voting_power",         :default => 1
-    t.integer  "remote_id"
-    t.datetime "synced_at"
   end
 
   add_index "tr8n_translators", ["created_at"], :name => "index_tr8n_translators_on_created_at"
@@ -1551,7 +1523,6 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "ccp_character_id"
     t.boolean  "has_accepted_eula",                                                          :default => false
     t.string   "ssn"
     t.string   "company"

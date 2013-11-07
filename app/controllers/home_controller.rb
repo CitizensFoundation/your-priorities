@@ -34,6 +34,11 @@ class HomeController < ApplicationController
     end
   end
 
+  def blog
+    @post = Monologue::Post.find(params[:id])
+    @post = @post.posts_revisions.last
+  end
+
   def about
     if Instance.current.about_page_name
       render :file=>Instance.current.about_page_name
@@ -81,6 +86,10 @@ class HomeController < ApplicationController
         @finished_ideas = Idea.in_progress.not_removed.top_rank.limit(3)
       else
         @finished_ideas = Idea.successful.not_removed.top_rank.limit(3)
+        if @finished_ideas.empty?
+          @finished_ideas = Idea.in_progress.not_removed.top_rank.limit(3)
+          params[:in_progress]=true unless @finished_ideas.empty?
+        end
       end
 
       all_ideas = []
@@ -96,6 +105,7 @@ class HomeController < ApplicationController
 
       last = params[:last].blank? ? Time.now + 1.second : Time.parse(params[:last])
       @activities = Activity.active.top.feed(last).for_all_users.with_20
+      @blog_posts = Monologue::Post.published.limit(3)
     end
   end
 
@@ -149,7 +159,7 @@ class HomeController < ApplicationController
       sub_instance = SubInstance.find_by_iso_country_id(country.id)
       redirect_to sub_instance.show_url
     else
-      redirect_to :back
+      redirect_to "/"
     end
   end
 end

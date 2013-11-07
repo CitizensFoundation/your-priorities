@@ -16,6 +16,8 @@ gem 'kaminari'
 gem 'font_assets'
 gem 'pusher-client'
 gem "mysql2"
+gem "bcrypt-ruby","3.0.0"
+gem "tinymce-rails"
 #gem 'foundation_rails_helper', :git=>'git://github.com/rbjarnason/foundation_rails_helper'
 #gem 'omniauth-oauth2'
 #gem 'omniauth', '1.1.3'
@@ -39,7 +41,7 @@ gem 'auto_html'
 #gem 'resque', "~> 1.22.0"
 #gem "resque"
 gem 'rmagick', require: false
-#gem 'monologue'
+gem 'monologue'
 gem 'unicorn'
 gem 'sidekiq'
 #gem "thin"

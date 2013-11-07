@@ -23,7 +23,7 @@ SocialInnovation::Application.routes.draw do
 
   #mount WillFilter::Engine => "/will_filter"
   #mount Tr8n::Engine => "/tr8n"
- # mount Monologue::Engine, at: '/blog'
+  mount Monologue::Engine, at: '/blog'
 
   resources :categories
 
@@ -305,6 +305,7 @@ SocialInnovation::Application.routes.draw do
   end
 
   resource :open_id
+  match '/home/blog/:id' => 'home#blog'
 
   if ENV['YRPRI_SET_HOME_TO_WORLD']
     match '/' => 'home#world'

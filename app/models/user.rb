@@ -1107,4 +1107,13 @@ class User < ActiveRecord::Base
       false
     end
   end
+
+  # For Monologue
+  def password_digest(p=nil)
+    self.encrypted_password
+  end
+
+  def name
+    self.login
+  end
 end

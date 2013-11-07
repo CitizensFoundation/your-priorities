@@ -5,7 +5,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     %title
       - if SubInstance.current and SubInstance.current.short_name!="default"
-        = "#{SubInstance.current.short_name.upcase} | #{@page_title || current_instance.name}"
+        = "#{@page_title || current_instance.name}"
       - else
         = "#{@page_title || current_instance.name}"
     :javascript

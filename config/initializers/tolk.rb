@@ -4,6 +4,11 @@
 # See github.com/tolk/tolk for more informations
 
 
+# HACK TO GET AROUND TOLK GEM NOT CRASHING ON ATOM /tolk/locales#show
+def tolk_locale_url(something=nil)
+  "/"
+end
+
 Tolk.config do |config|
 
   # If you need to add a mapping do it like this :

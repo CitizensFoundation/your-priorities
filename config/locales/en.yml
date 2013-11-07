@@ -889,6 +889,7 @@ en:
   2c55cd68468ae4d74e886c4576bbddba: "Name: %{tag_name}"
   d54d66d27b88db29532cc98d0a438c27: "Title (usually the same as name)"
   045516a8debaef245b177474f8ef1b12: "Save %{tags_name}"
+  dd1ba1872df91985ed1ca4cde2dfe669: "News"
   d77a0f9cd14e513bb78bccbf59402717: "In official status"
   939d09ea0c18215ca9032ef913d82567: "New Ideas"
   8ac6e46f207f4d2a928523d417663553: "Welcome to your %{instance_name}. Please add your first idea "
