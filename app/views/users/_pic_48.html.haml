@@ -1,7 +1,0 @@
-.border_miss_avatar48
-  - if user.has_picture?
-    = image_tag user.buddy_icon.url(:icon_48), :size => "48x48", :width=>"48", :border => 0, :alt => ""
-  - elsif user.facebook_uid
-    = fb_profile_pic user.facebook_uid, :facebook_logo=>false, :linked=>false, :size=>"square", :height=>"48",:width=>"48"
-  - else
-    = image_tag current_instance.buddy_icon.url(:icon_48), :size => "48x48", :border => 0, :alt => ""

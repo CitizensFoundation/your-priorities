@@ -211,7 +211,11 @@ class Endorsement < ActiveRecord::Base
     Endorsement.update_all(
       "#{position_column} = (#{position_column} + 1), score = score - value*#{user.score}",  "#{scope_condition}"
     )
-  end  
+  end
+
+  def insert_lowest_at(position)
+    self.insert_at([user.endorsements.count,4].min)
+  end
   
   def insert_at_position(position)
     remove_from_list
@@ -255,6 +259,10 @@ class Endorsement < ActiveRecord::Base
     self.value = -1
   end
 
+  def idea
+    Idea.unscoped.find(idea_id) if idea_id
+  end
+
   private
   
   def delete_update_counts
@@ -296,5 +304,6 @@ class Endorsement < ActiveRecord::Base
       end
     end
   end
-  
+
+
 end

@@ -15,6 +15,6 @@
     = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea.idea, :endorsements=>@endorsements} if idea.idea
     %div
       %div{:id => "idea_detail_#{idea.id}"}
-  = will_paginate @ideas
+  = foundation_paginate @ideas
 - else
   = tr("No ideas here yet.","ideas")

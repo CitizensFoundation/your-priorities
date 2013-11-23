@@ -1,20 +1,7 @@
-- if controller_name=="feed"
-  #activities.single.with_feed
-    - if not @activities.empty?
-      - for activity in @activities
-        - if ['your_activity','your_capital','your_changes'].include?(params[:action])
-          = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_nouser"}
-        - else
-          = render :partial => "activities/show", :locals => {:activity => activity, :suffix => ""}
-    - else
-      %span= #tr("The end","_activites")
-- else
-  #activities.single
-    - if not @activities.empty?
-      - for activity in @activities
-        - if ['your_activity','your_capital','your_changes'].include?(params[:action])
-          = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_nouser"}
-        - else
-          = render :partial => "activities/show", :locals => {:activity => activity, :suffix => ""}
-    - else
-      %span= #tr("The end","_activites")
+#activities.single.with_feed
+  - if not @activities.empty?
+    - for activity in @activities
+      - if ['your_activity','your_capital','your_changes'].include?(params[:action])
+        = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_nouser"}
+      - else
+        = render :partial => "activities/show", :locals => {:activity => activity, :suffix => ""}

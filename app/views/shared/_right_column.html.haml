@@ -1,0 +1,6 @@
+- if user_signed_in?
+  = render :partial => "shared/user_info"
+  = render :partial => "shared/notifications"
+  = render :partial => "shared/your_priorities"
+- else
+  = render :partial => "users/login"

@@ -170,7 +170,6 @@ class NetworkController < ApplicationController
      @items[1]=[tr("Influential", "view/network/_nav"), url_for(:controller => "network", :action => "influential")]
      @items[2]=[tr("Talkative", "view/network/_nav"), url_for(:controller => "network", :action => "talkative")]
      @items[3]=[tr("New members", "view/network/_nav"), url_for(:controller => "network", :action => "newest")]
-     @items[4]=[tr("Ambassadors", "view/network/_nav"), url_for(:controller => "network", :action => "ambassadors")]
      if user_signed_in?
        @items[5]=[tr("Your network", "view/user_contacts/_nav"), url_for(controller: "network", action: "following")]
        if current_instance.has_twitter_enabled?

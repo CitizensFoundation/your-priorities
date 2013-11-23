@@ -22,7 +22,7 @@
                       %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
                         %tr
                           %td{:valign => "top", :width => "24"}
-                            = render :partial => "users/pic_48", :locals => {:user => endorsement.user}
+                            = render :partial => "users/pic_50", :locals => {:user => endorsement.user}
                           %td{:style => "padding-left: 5px;", :valign => "top"}
                             = link_to endorsement.user.name, endorsement.user
                             .small= time_ago(endorsement.created_at)

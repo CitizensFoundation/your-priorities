@@ -1,27 +1,40 @@
-- if !@users.empty?
-  %table
-    %thead
-      %tr
-        %th.rank= tr("Rank", "view/network/index")
-        %th.week= tr("Change", "view/network/index")
-    %tbody
-      - @users.each_with_index do |user, rank|
-        %tr
-          %td #{rank+1}
-          %td= render :partial => "ideas/rank_week_month", :locals => {:idea => user }
-          %td= render :partial => "users/pic_48", :locals => {:user => user}
-          %td
-            .col-group
-              .col-content
-                = link_to user.login, user
-                %span.pc
-                  = user.capitals_count
-                  = current_instance.currency_short_name
-                = tr("<a href='{comment_url}'>{count} comments</a>", "view/network/talkative", :count => user.comments_count, :comment_url => discussions_user_url(user))
-              - if user.has_top_idea? and user.top_endorsement.idea
-                .col-content
-                  = tr("#1 idea:", "view/network/index")
-                  - if user.top_endorsement.is_down?
-                    %span.opposed= tr("Opposing", "view/network/index")
-                  = link_to user.top_endorsement.idea.name, user.top_endorsement.idea
-  = will_paginate(@users)
+- if Instance.current.message_for_network and Instance.current.message_for_network!=""
+  = render :partial=>"/shared/top_message_box", :locals=> {:message_text => Instance.current.message_for_network.html_safe }
+.row
+  .large-12.columns
+    = render :partial=>"/shared/sub_navigation"
+.row
+  .large-12.columns
+    - if !@users.empty?
+      %table
+        %thead
+          %tr
+            %th.rank
+              = tr("Rank", "view/network/index")
+            %th{:colspan=>2}
+              = tr("Users", "view/network/index")
+        %tbody
+          - @users.each_with_index do |user, rank|
+            %tr
+              %td
+                #{rank+1}
+              %td
+                .row
+                  .large-2.columns
+                    = render :partial => "users/pic_50", :locals => {:user => user}
+                  .large-10.columns
+                    = link_to user.login, user
+                    %br
+                    %span.pc
+                      = user.capitals_count
+                      = tr("Social points","here").downcase
+                    - if user.followers_count > 0
+                      = "/"
+                      = tr("{count} followers", "view/network/index", :count => user.followers_count)
+                    - if user.has_top_idea? and user.top_endorsement.idea
+                      %br
+                      = tr("#1 idea:", "view/network/index")
+                      - if user.top_endorsement.is_down?
+                        %span.opposed= tr("Opposing", "view/network/index")
+                      = link_to user.top_endorsement.idea.name, user.top_endorsement.idea
+      = foundation_paginate(@users)

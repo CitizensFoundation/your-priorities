@@ -27,4 +27,4 @@
               %span.opposed= tr("Opposing", "view/network/twitterers")
             = link_to user.top_endorsement.idea.name, user.top_endorsement.idea
   %p
-    = will_paginate(@users)
+    = foundation_paginate(@users)

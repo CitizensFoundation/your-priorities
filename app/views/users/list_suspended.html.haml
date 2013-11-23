@@ -13,4 +13,4 @@
       %td= user.national_identity
       %td= user.email
       %td= link_to "Taka bann af", "/users/unsuspend/#{user.id}"
-= will_paginate @users
+= foundation_paginate @users

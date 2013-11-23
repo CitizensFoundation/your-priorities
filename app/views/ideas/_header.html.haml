@@ -1,14 +1,11 @@
-:javascript
-  $(function(){
-  	$('.move_test').replaceWith($('.category'));
-  	$('.replace_fblike').replaceWith($('.fblike'));
-  	$('.replace_report').replaceWith($('.report1'));
-  	$('.replace_notice').replaceWith($('.single .warning_inline2'));
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  });
 .idea_listing{:id => "idea_#{@idea.id}"}
-  = render :partial => "ideas/idea_next", :locals => {:idea => @idea}
-  = render :partial => "ideas/idea_container", :locals => {:idea => @idea, :endorsement => @endorsement, :value => 0, :noaction=>true}
+  .row
+    .large-6.columns
+      - unless (controller_name == "home" && action_name == "world") or @skip_sub_navigation
+        = render :partial => "shared/sub_navigation"
+    .large-6.columns
+      = render :partial => "ideas/idea_next", :locals => {:idea => @idea}
+  .row
+    .large-12.columns
+      = render :partial => "ideas/idea_container", :locals => {:idea => @idea, :endorsement => @endorsement, :value => 0, :noaction=>true}
 

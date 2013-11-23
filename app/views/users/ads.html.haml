@@ -1,7 +1,7 @@
 .col-group
   .col-1
     .col-content
-      = render :partial => "users/profile_pic"
+      = render :partial => "users/pic_50"
       = render :partial => "users/profile_nav"
   .col-11
     .col-content
@@ -18,4 +18,4 @@
             - shown_past = true
             .heading= tr("Past ads", "view/users/ads")
           = render :partial => "ads/show_inline", :locals => {:ad => ad}
-          = will_paginate(@ads)
+          = foundation_paginate(@ads)

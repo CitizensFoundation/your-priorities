@@ -1,8 +1,8 @@
-%span.form_header
+%span.label
   - if force_point_for
-    = tr("Add a point in support -", "views/ideas/form")
+    = tr("Add a point in support", "views/ideas/form")
   - else
-    = tr("Add a point for or against -", "views/ideas/form")
+    = tr("Add a point for or against", "views/ideas/form")
 %span#pointTitleDown
 = tr("characters left", "view/ideas/_form")
 .field
@@ -24,8 +24,8 @@
         = tr("No,this point is against this idea","views/ideas/form")
 .field
   %span.characters
-    %span.form_header
-      = tr("Explain your point - ", "view/ideas/_form")
+    %span.label
+      = tr("Explain your point", "view/ideas/_form")
     %span#pointContentDown
     = tr("characters left", "view/ideas/_form")
   .field_box

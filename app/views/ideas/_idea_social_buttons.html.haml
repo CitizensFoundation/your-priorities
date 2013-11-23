@@ -1,12 +1,14 @@
 - if Instance.current.has_facebook_enabled?
-  %ul
-    %li.fb
+  %h5{:style=>"padding-top:7px;"}
+    = tr("Share","here")
+  %ul.side-nav{:style=>"padding-top:0px;padding-bottom:0px;margin:0px 0px 0px 0px;"}
+    %li{:style=>"padding-top:0px;padding-bottom:0px;margin:0px 0px 0px 0px;"}
       :plain
         <fb:like href="#{idea.show_url}" layout="button_count" ref="priority" show-faces="false" width="120" action="#{tr("like","facebook")}" colorscheme="light"></fb:like>
     - unless @ideas
-      %li.gplus
+      %li.gplus{:style=>"padding-top:4px;padding-bottom:0px;margin:0px 0px 0px 0px;"}
         .g-plusone{"data-size" => "medium", "data-href" => "#{idea.show_url}"}
-      %li.tweet
+      %li.tweet{:style=>"padding-top:4px;padding-bottom:0px;margin:0px 0px 0px 0px;"}
         %a.twitter-share-button{"data-count" => "horizontal", :href => "https://twitter.com/share", :"data-url" => "#{idea.show_url}"} Tweet
         :javascript
           !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

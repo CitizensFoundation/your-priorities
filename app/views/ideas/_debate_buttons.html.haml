@@ -3,12 +3,6 @@
 - down_endorser_link = (link_to (idea.down_endorsements_count.to_s).html_safe, idea.show_opposers_url).html_safe
 - up_endorser_link = idea.up_endorsements_count.to_s
 - down_endorser_link = idea.down_endorsements_count.to_s
-- points_count = idea.points.where(sub_instance_id: idea.sub_instance_id).count
-- points_up_count = idea.points.where(sub_instance_id: idea.sub_instance_id, :value=>1).count
-- points_down_count = idea.points.where(sub_instance_id: idea.sub_instance_id, :value=>-1).count
-
-- debate_text = @block_endorsements ? tr("DEBATE", "view/ideas") : tr("DEBATE", "view/ideas")
-
 %span{:class => "idea_#{idea.id.to_s}_button_small", :id => "idea_#{idea.id.to_s}_button_small"}
   - if endorsement and endorsement.status == 'active'
     - if endorsement.is_up?
@@ -18,7 +12,7 @@
           .disabled
             .idea_add{:id => "idea_add_oppose_#{idea.id.to_s}"}
               = link_to "#", :title => current_sub_instance.block_endorsements do
-                = tr("UP", "view/ideas")+" #{idea.up_endorsements_count}"
+                = tr("UP", "view/ideas").upcase+" #{idea.up_endorsements_count}"
       - else
         .endorse_button
           .chosen
@@ -31,17 +25,7 @@
                 :class => "idea_add_link",                                                  |
                 :title => tr("Remove vote", "view/ideas") do
                 .idea_debate_spinner.spinner_align{:id => "idea_debate_spinner_endorse_#{idea.id.to_s}"}
-                = tr("UP", "view/ideas")+" #{idea.up_endorsements_count}"
-      .debate_button.chosen{:id=>"debate_button_#{idea.id}"}
-        .idea_add
-          - if not force_debate_to_new
-            %a{:link=>idea.new_point_url, :class => "idea_add_link"}
-              .idea_debate_spinner.spinner_align{:id => "idea_debate_spinner_debate_#{idea.id.to_s}"}
-              %span{:id => "idea_debate_text_#{idea.id.to_s}"}
-                = debate_text+" #{points_up_count}/#{points_down_count}"
-          - else
-            = link_to idea.new_point_url do
-              = debate_text+" (#{idea.points.where(sub_instance_id: idea.sub_instance_id).count})"
+                = tr("UP", "view/ideas").upcase+" #{idea.up_endorsements_count}"
       - if @block_endorsements
         .oppose_button.disabled
           .disabled
@@ -67,7 +51,7 @@
           .disabled
             .idea_add{:id => "idea_add_oppose_#{idea.id.to_s}"}
               = link_to "#", :title => current_sub_instance.block_endorsements do
-                = tr("UP", "view/ideas")+" #{idea.up_endorsements_count}"
+                = tr("UP", "view/ideas").upcase+" #{idea.up_endorsements_count}"
       - else
         .endorse_button
           .idea_add{:id => "idea_add_endorse_#{idea.id.to_s}"}
@@ -79,17 +63,7 @@
               :class => "idea_add_link", |
               :title =>  tr("Vote this up", "view/ideas") do
               .idea_debate_spinner.spinner_align{:id => "idea_debate_spinner_endorse_#{idea.id.to_s}"}
-              = tr("UP", "view/ideas")+" #{idea.up_endorsements_count}"
-      .debate_button{:id=>"debate_button_#{idea.id}"}
-        .idea_add
-          - if not force_debate_to_new
-            %a{:link=>idea.new_point_url, :class => "idea_add_link"}
-              .idea_debate_spinner.spinner_align{:id => "idea_debate_spinner_debate_#{idea.id.to_s}"}
-              %span{:id => "idea_debate_text_#{idea.id.to_s}"}
-                = debate_text+" #{points_up_count}/#{points_down_count}"
-          - else
-            = link_to idea.new_point_url do
-              = debate_text+" #{points_up_count}/#{points_down_count}"
+              = tr("UP", "view/ideas").upcase+" #{idea.up_endorsements_count}"
       - if @block_endorsements
         .oppose_button.disabled
           .disabled
@@ -116,7 +90,7 @@
         .disabled
           .idea_add{:id => "idea_add_oppose_#{idea.id.to_s}"}
             = link_to "#", :title => current_sub_instance.block_endorsements do
-              = tr("UP", "view/ideas")+" #{idea.up_endorsements_count}"
+              = tr("UP", "view/ideas").upcase+" #{idea.up_endorsements_count}"
     - else
       .endorse_button
         .idea_add{:id => "idea_add_endorse_#{idea.id.to_s}"}
@@ -128,17 +102,7 @@
             :class => "idea_add_link",
             :title =>  tr("Vote this up", "view/ideas") do
             .idea_debate_spinner.spinner_align{:id => "idea_debate_spinner_endorse_#{idea.id.to_s}"}
-            = tr("UP", "view/ideas")+" #{idea.up_endorsements_count}"
-    .debate_button{:id=>"debate_button_#{idea.id}"}
-      .idea_add
-        - if not force_debate_to_new
-          %a{:link=>idea.new_point_url, :class => "idea_add_link"}
-            .idea_debate_spinner.spinner_align{:id => "idea_debate_spinner_debate_#{idea.id.to_s}"}
-            %span{:id => "idea_debate_text_#{idea.id.to_s}"}
-              = debate_text+" #{points_up_count}/#{points_down_count}"
-        - else
-          = link_to idea.new_point_url do
-            = debate_text+" #{points_up_count}/#{points_down_count}".html_safe
+            = tr("UP", "view/ideas").upcase+" #{idea.up_endorsements_count}"
     - if @block_endorsements
       .oppose_button.disabled
         .disabled
@@ -157,4 +121,4 @@
             :title =>  tr("Vote this down", "view/ideas") do
             .idea_debate_spinner.spinner_align{:id => "idea_debate_spinner_oppose_#{idea.id.to_s}"}
             = tr("DOWN", "view/ideas")+" #{idea.down_endorsements_count}"
-= render :partial => "ideas/debate_button_javascript", :locals => { :idea => idea } if not force_debate_to_new
+

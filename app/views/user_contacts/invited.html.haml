@@ -4,7 +4,7 @@
   %p
     = tr("These are people you've invited	who haven't joined yet.", "view/user_contacts/invited")
   %p
-    = will_paginate (@contacts)
+    = foundation_paginate (@contacts)
   %p
     - for c in @contacts
       - if c.has_email?
@@ -15,6 +15,6 @@
       %span.small= time_ago c.sent_at if c.sent_at
       %br/
   %p
-    = will_paginate (@contacts)
+    = foundation_paginate (@contacts)
 - else
   = tr("You haven't invited anyone yet.", "view/user_contacts/invited")

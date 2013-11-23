@@ -110,19 +110,6 @@ namespace :utils do
     end
   end
 
-  desc "count_bh_2014"
-  task :count_bh_2014 => :environment do
-    count = 0
-    SubInstance.all.each do |x|
-     if x.short_name.include?("2014")
-       puts x.short_name
-       puts x.ideas.count
-       count+=x.ideas.count
-     end
-    end
-    puts count
-  end
-
   desc "Create BR categories"
   task :delete_all_from_process_documents => :environment do
     ProcessDocumentElement.delete_all

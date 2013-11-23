@@ -29,4 +29,4 @@
     #activities.single
       = render :partial=>"feed/activity_list"
     %div
-      = will_paginate(@activities) if @activities.respond_to?('total_pages')
+      = foundation_paginate(@activities) if @activities.respond_to?('total_pages')

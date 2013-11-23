@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 gem 'paymill', :git=>"git://github.com/dkd/paymill-ruby.git"
-gem 'soap4r', :git => 'git://github.com/felipec/soap4r.git'
+gem 'soap4r-spox'#, :git => 'git://github.com/swalterd/soap4r.git'
 gem 'ruby-saml', :git => 'git://github.com/rbjarnason/ruby-saml.git', :ref => "6be3170ba2a5c7eac12d5255e32a62e6fadd1cc2"
 gem 'tolk'#, :git=>"git://github.com/rbjarnason/tolk"
 gem 'ruby_parser'
@@ -16,8 +16,12 @@ gem 'kaminari'
 gem 'font_assets'
 gem 'pusher-client'
 gem "mysql2"
-gem "bcrypt-ruby","3.0.0"
-gem "tinymce-rails"
+gem 'unf' 
+gem 'test-unit'
+#gem 'brcypt-ruby', '3.0.0'
+gem "tinymce-rails",'<= 3.5.6'
+gem 'foundation-will_paginate'
+#gem "will_paginate-foundation"
 #gem 'foundation_rails_helper', :git=>'git://github.com/rbjarnason/foundation_rails_helper'
 #gem 'omniauth-oauth2'
 #gem 'omniauth', '1.1.3'
@@ -41,7 +45,7 @@ gem 'auto_html'
 #gem 'resque', "~> 1.22.0"
 #gem "resque"
 gem 'rmagick', require: false
-gem 'monologue'
+gem 'monologue','0.2.0'
 gem 'unicorn'
 gem 'sidekiq'
 #gem "thin"
@@ -97,6 +101,8 @@ end
 
 group :test do
   gem 'watir-webdriver'
+  gem 'better_errors'
+  gem 'spork-testunit'
   gem 'ruby-prof'
   gem 'headless'
   gem 'turn', :require => false
@@ -111,5 +117,5 @@ group :assets do
   #gem 'jquery-ui-rails','2.0.2'
   gem 'execjs'
   gem 'turbo-sprockets-rails3'
-  gem 'zurb-foundation', '~> 4.0.0'
+  gem 'zurb-foundation'
 end

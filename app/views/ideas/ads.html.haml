@@ -20,4 +20,4 @@
         .heading= tr("Old ads","ads")
       = render :partial => "ads/show_inline", :locals => {:ad => ad}
     %p
-      = will_paginate(@ads)
+      = foundation_paginate(@ads)

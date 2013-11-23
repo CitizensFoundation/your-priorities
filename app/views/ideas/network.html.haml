@@ -24,4 +24,4 @@
             = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea_endorsement.idea, :endorsements=>@endorsements}
             %div
               %div{:id => "idea_detail_#{idea_endorsement.idea.id}"}
-      = will_paginate @ideas
+      = foundation_paginate @ideas

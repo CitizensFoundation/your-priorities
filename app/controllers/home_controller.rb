@@ -86,10 +86,6 @@ class HomeController < ApplicationController
         @finished_ideas = Idea.in_progress.not_removed.top_rank.limit(3)
       else
         @finished_ideas = Idea.successful.not_removed.top_rank.limit(3)
-        if @finished_ideas.empty?
-          @finished_ideas = Idea.in_progress.not_removed.top_rank.limit(3)
-          params[:in_progress]=true unless @finished_ideas.empty?
-        end
       end
 
       all_ideas = []
@@ -104,7 +100,7 @@ class HomeController < ApplicationController
       end
 
       last = params[:last].blank? ? Time.now + 1.second : Time.parse(params[:last])
-      @activities = Activity.active.top.feed(last).for_all_users.with_20
+      @activities = Activity.active.top.for_all_users.paginate(:page => params[:page])
       @blog_posts = Monologue::Post.published.limit(3)
     end
   end

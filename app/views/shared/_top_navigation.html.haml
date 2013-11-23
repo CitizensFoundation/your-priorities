@@ -1,168 +1,65 @@
-.nav.nav-user
-  %div
-    %a{:href => SubInstance.current.external_link_url, :target=>"_blank"}
-      %span
-        %img{:border => "0", :src => SubInstance.current.external_link_logo_url}/
-
-  %div.language_selection
-    %a.language_selection{:href => "#"}
-      %span
-        = Tolk::Config.mapping[I18n.locale.to_s]
-
-  %div.help
-    %a.help{:href => "#"}
-      %span
-        = tr("About","About")
-
-  - unless user_signed_in?
-    %div.signedin
-      %a.signin{:href => "#"}
-        %div
-          = tr("Sign in", "view/sessions/_form")
-  - else
-    %div.signedin
-      - if current_user.unread_notifications_count > 0
-        %div.notify_box
-          %a.notifications{:href => "#"}
-            %span.report_flag
-              %img{:border => "0", :src => "/assets/flag_icon.png"}
-              = current_user.unread_notifications_count
-      %a.profile{:href => "#"}
-        %div
-          = current_user.login
-  - if Plan.count>0 and Instance.current.about_page_name
-    %div.create_instance
-      %a.create_instance{:href => "#{Instance.current.homepage_top_url}home/about"}
-        %span{:style=>"background-color: #bbb !important;margin-right: 1px;"}
-          = tr("Get your own","here",:instance_name=>Instance.last.name)
-  - elsif Plan.count>0
-    %div.create_instance
-      %a.create_instance{:href => "#{Instance.current.homepage_top_url}subscription_accounts/new"}
-        %span{:style=>"background-color: #bbb !important;margin-right: 1px;"}
-          = tr("Get your own","here",:instance_name=>Instance.last.name)
-  - if Instance.current.domain_name.include?("yrpri")
-    %div.donate
-      %a.donate{:href => "#{Instance.current.homepage_top_url}donations/new"}
-        %span{:style=>"background-color: #bbb !important;"}
-          = tr("Donate","here")
-- if user_signed_in?
-  = render :partial => "shared/user_info"
-  = render :partial => "shared/notifications"
-- else
-  = render :partial => "users/login"
-= render :partial => "shared/language_selection"
-= render :partial => "shared/help"
-&nbsp;
-
-
-:javascript
-  $(document).ready(function() {
-
-      $("a.signin").click(function(e) {
-          e.preventDefault();
-          $("#sib_login_form").toggle();
-          $(".signin").toggleClass("menu-open");
-      });
-
-      $("#sib_login_form").mouseup(function() {
-          return false
-      });
-
-      $(document).mouseup(function(e) {
-          if($(e.target).parent("a.signin").length==0) {
-              $(".signin").removeClass("menu-open");
-              $("#sib_login_form").hide();
-          }
-      });
-
-
-      $("a.eve_universe").click(function(e) {
-          e.preventDefault();
-          $("#sib_eve_universe").toggle();
-          $(".eve_universe").toggleClass("menu-open");
-      });
-
-      $("#sib_eve_universe").mouseup(function() {
-          return false
-      });
-
-      $(document).mouseup(function(e) {
-          if($(e.target).parent("a.eve_universe").length==0) {
-              $(".eve_universe").removeClass("menu-open");
-              $("#sib_eve_universe").hide();
-          }
-      });
-
-
-      $("a.notifications").click(function(e) {
-          e.preventDefault();
-          $("#sib_notifications").toggle();
-          $(".notifications").toggleClass("menu-open");
-      });
-
-      $("#sib_notifications").mouseup(function() {
-          return false
-      });
-      $(document).mouseup(function(e) {
-          if($(e.target).parent("a.notifications").length==0) {
-              $(".notifications").removeClass("menu-open");
-              $("#sib_notifications").hide();
-          }
-      });
-
-      $("a.profile").click(function(e) {
-          e.preventDefault();
-          $("#sib_profile").toggle();
-          $(".profile").toggleClass("menu-open");
-      });
-
-      $("#sib_profile").mouseup(function() {
-          return false
-      });
-      $(document).mouseup(function(e) {
-          if($(e.target).parent("a.profile").length==0) {
-              $(".profile").removeClass("menu-open");
-              $("#sib_profile").hide();
-          }
-      });
-
-
-      $("a.help").click(function(e) {
-          e.preventDefault();
-          $("#sib_help").toggle();
-          $(".help").toggleClass("menu-open");
-      });
-
-      $("#sib_help").mouseup(function() {
-          return false
-      });
-      $(document).mouseup(function(e) {
-          if($(e.target).parent("a.help").length==0) {
-              $(".help").removeClass("menu-open");
-              $("#sib_help").hide();
-          }
-      });
-
-      $("a.language_selection").click(function(e) {
-          e.preventDefault();
-          $("#sib_language").toggle();
-          $(".language_selection").toggleClass("menu-open");
-      });
-
-      $("#sib_language").mouseup(function() {
-          return false
-      });
-      $(document).mouseup(function(e) {
-          if($(e.target).parent("a.language_selection").length==0) {
-              $(".language_selection").removeClass("menu-open");
-              $("#sib_language").hide();
-          }
-      });
-
-
-  });
-:javascript
-  $(function() {
-    $('#forgot_username_link').tipsy({gravity: 'w'});
-  });
-
+%nav.top-bar{'data-options'=>'is_hover: false'}
+  %ul.title-area
+    / Title Area
+    %li.name
+    / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+    %li.toggle-topbar.menu-icon
+      %a{href: "#"}
+        %span
+          = tr("Menu","here")
+  / The Section wrap
+  %section.top-bar-section
+    / Left Nav Section
+    %ul.left
+      - if current_instance.domain_name.include?("yrpri") and SubInstance.current and SubInstance.current.iso_country
+        %li.top-bar-world
+          = link_to :controller => "home", :action=> "world" do
+            = image_tag "icons/globe.png", :size=>"34x34"
+        %li.top-bar-flag{:class=>controller_name=="home" ? "active" : ""}
+          = link_to SubInstance.current.show_url do
+            .sprite_clip_flag
+              = image_tag SubInstance.current.iso_country.large_flag_image, :size=>"45x45"
+      - else
+        %li.top-bar-logo{:class=>controller_name=="home" ? "active" : ""}
+          = link_to :controller => "home", :action=> "index" do
+            .sprite_clip_flag
+              = image_tag SubInstance.current.logo_url(:icon_50), :border => 0, :size=>"34x34"
+      %li{:class=>controller_name=="home" ? "active" : ""}
+        %a{href: "/"}
+          = tr("Home","here")
+      %li{:class=>controller_name=="ideas" ? "active" : ""}
+        %a{href: "/ideas"}
+          = tr("Ideas","here")
+      %li{:class=>["users","network"].include?(controller_name) ? "active" : ""}
+        %a{href: "/network"}
+          = tr("People","here")
+    %ul.right
+      %li.top-bar-new-idea
+        %a.button{:href => "/ideas/new"}
+          = tr("SUBMIT YOUR IDEA", "view/ideas/_nav")
+      %li.top-nav-search
+        = render :partial => "shared/search"
+      - if user_signed_in?
+        %li.has-dropdown
+          %a{:href => "#"}
+            = tr("Account","here")
+          %ul.dropdown
+            %li.has-dropdown
+              %a{:href => "#"}
+                = Tolk::Config.mapping[I18n.locale.to_s]
+              %ul.dropdown
+                = render :partial => "shared/language_selection"
+            = render :partial => "shared/user_menu"
+      - else
+        %li.has-dropdown
+          %a{:href => "#"}
+            = Tolk::Config.mapping[I18n.locale.to_s]
+          %ul.dropdown
+            = render :partial => "shared/language_selection"
+      %li.has-dropdown
+        %a{href: "#"}
+          = tr("About","here")
+        %ul.dropdown
+          - @about_pages.each do |page|
+            %li
+              #{link_to page.title.from_localized_yaml, :controller => "pages", :action => "show", :id=>page.id}

@@ -16,7 +16,7 @@
               %span.table_header= tr("Wk", "view/issues/network")
             %td{:style => "padding-left: 3px;"}
               %span.table_header= tr("Mo", "view/issues/network")
-            %td{:style => "padding-left: 7px; padding-bottom: 2px;"}= will_paginate @ideas
+            %td{:style => "padding-left: 7px; padding-bottom: 2px;"}= foundation_paginate @ideas
           - for e in @ideas
             - if @endorsements
               - endorsement = @endorsements.detect {|p| p.idea_id == e.idea_id }
@@ -34,4 +34,4 @@
                       - if e.idea.discussions_count > 0
                         \&middot; #{link_to tr("{count} discussions", "view/issues/network", :count => e.idea.discussions_count), discussions_idea_url(e.idea)}
         %p
-          = will_paginate @ideas
+          = foundation_paginate @ideas

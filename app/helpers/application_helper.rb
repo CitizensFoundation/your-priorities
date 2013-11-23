@@ -1,4 +1,5 @@
 # Methods added to this helper will be available to all templates in the application.
+
 module ApplicationHelper
 
   def first_image_url_from_text(text)
@@ -56,8 +57,9 @@ module ApplicationHelper
       next if locale.translations.count<130 and locale.name!=SubInstance.current.default_locale
       language_name = Tolk::Config.mapping[locale.name]
       #out += link_to("#{language_name}#{calc_language_completion(locale.translations.count)}", "#{url_for(:locale => locale.name)}")
-      out += link_to("#{language_name}#{calc_language_completion(locale.translations.count)}", "/?locale=#{locale.name}")
-      out += "<br>"
+      out += "<li>"
+      out += link_to language_name,  url_for( :locale => locale.name )
+      out += "</li>"
     end
     out.html_safe
   end
@@ -212,7 +214,7 @@ module ApplicationHelper
       end 
     end     
     return "" if r.empty?
-    tr("<b>Notifications:</b><br /> {sentence}", "notifications", :sentence => r.to_sentence)
+    tr("<h5>Notifications</h5>{sentence}", "notifications", :sentence => r.to_sentence)
   end
   
   def messages_sentence(messages)

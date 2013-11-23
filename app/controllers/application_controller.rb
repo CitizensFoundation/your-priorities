@@ -6,8 +6,6 @@ require 'whitelist'
 
 class ApplicationController < ActionController::Base
 
-  include FaceboxRender
-
   include Facebooker2::Rails::Controller
 
   require_dependency "activity.rb"
@@ -56,12 +54,17 @@ class ApplicationController < ActionController::Base
   before_filter :setup_currency_code
 
   before_filter :set_last_locale
+  before_filter :set_category_filter
 
   #after_filter :sub_instance_cookie_lock_down
 
   layout :get_layout
 
   protect_from_forgery
+
+  def set_category_filter
+    Thread.current[:category_id_filter]=session[:category_id_filter]
+  end
 
   def set_last_locale
     if current_user
@@ -259,8 +262,8 @@ class ApplicationController < ActionController::Base
         sign_in @user, event: :authentication
       end
     end
-    if Rails.env.development?
-      Thread.current[:localhost_override] = "#{request.host}:#{request.port}"
+    if Rails.env.development? or Rails.env.test?
+        Thread.current[:localhost_override] = "#{request.host}:#{request.port}"
     end
   end
 
@@ -451,8 +454,6 @@ class ApplicationController < ActionController::Base
         session[:enable_google_translate] = nil
       end
     end
-    
-    #@google_translate_enabled_for_locale = Tr8n::Config.current_language.google_key
   end
   
   def get_layout
@@ -472,7 +473,7 @@ class ApplicationController < ActionController::Base
   end
   
   def current_user_endorsements
-		@current_user_endorsements ||= current_user.endorsements.active.by_position.paginate(:include => :idea, :page => session[:endorsement_page], :per_page => 25)
+		@current_user_endorsements ||= current_user.endorsements.active.by_position.paginate(:include => :idea, :page => session[:endorsement_page], :per_page => 7)
   end
   
   def current_idea_ids
@@ -592,7 +593,6 @@ class ApplicationController < ActionController::Base
     item_count = 0
     @items[item_count]=[tr("Overview", "view/ideas/_nav"), @idea.show_url]
     if @idea.points_count > 0
-      @items[item_count+=1]=[tr("Debate ({count})", "view/ideas/_nav", :count => @idea.points_count),top_points_idea_url(@idea)]
       @items[item_count+=1]=[tr("Add point", "view/ideas/_nav"), @idea.new_point_url]
     end
     if @idea.idea_revisions_count>1
@@ -604,6 +604,7 @@ class ApplicationController < ActionController::Base
     if current_user and current_user.capitals_count>0 and @idea.status == 'published'
       @items[item_count+=1]=[tr("Buy an ad", "view/ideas/_nav"), new_idea_ad_url(@idea)]
     end
+    @items[item_count+=1]=[tr("Activities", "view/ideas/_nav"), activities_idea_url(@idea)]
     if current_user and current_user.is_admin?
       @items[item_count+=1]=[tr("Update status", "view/ideas/_nav"), update_status_idea_url(@idea)]
       @items[item_count+=1]=[tr("Edit", "view/ideas/_nav"), edit_idea_url(@idea)]

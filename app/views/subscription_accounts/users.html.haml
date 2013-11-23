@@ -32,8 +32,7 @@
         = user.is_admin? ? link_to(admin_word,"/users/unmake_admin/#{user.id}") : link_to(user_word,"/users/make_admin/#{user.id}")
       %td
         = link_to tr("Delete","here"),"/users/destroy_from_admin/#{user.id}"
-%p
-  %br
-  = link_to tr("Invite","here"), new_user_invitation_path
-%p
-  = will_paginate(@users)
+
+= link_to tr("Invite","here"), new_user_invitation_path
+
+= foundation_paginate(@users)

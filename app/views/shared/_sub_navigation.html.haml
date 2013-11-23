@@ -1,17 +1,7 @@
 #sib_sub_nav
   %div#section_title
-    %span
-      - if controller_name == "points"
-        = tr("Debate","sub_nav") + " :"
-      - elsif controller_name == "ideas"
-        = #tr("Tags","sub_nav") + " :"
-      - elsif controller_name == "sub_instances"
-        = current_instance.name
-      - elsif ["pages","subscriptions","subscription_accounts","sub_instances"].include?(controller_name)
-      - else
-        = #controller_name.gsub("ideas","#{IDEA_TOKEN_PLURAL}").camelize + " :"
-    %span
     - if controller_name == "issues"
+      %h4
       - if action_name == "index"
         %a.subnav.pulldown_trigger{:href => "#"}
           %span= tr('All', "view/issues")
@@ -19,25 +9,26 @@
         %a.subnav.pulldown_trigger{:href => "#"}
           %span= @category.name.titleize
     - elsif @selected_sub_nav_name
-      %a.subnav.pulldown_trigger{:href => "#"}
-        %span
-          = @selected_sub_nav_name
+      %h4
+        %a.subnav.pulldown_trigger{:href => "#"}
+          %span
+            = @selected_sub_nav_name
     -else
       %a{:href => "#"}
-        %h2
+        %h4
           = @selected_sub_nav_name
   - if @sub_menu_items and not @sub_menu_items.empty?
     %div#sub_menu.submenu
       %ul
-      - @sub_menu_items.each do |menu_item_id, menu_item|
-        - if menu_item_id==@selected_sub_nav_item_id
-          %li.pulldown
-            %a{:href => menu_item[1]}
-              = menu_item[0]
-        - else
-          %li.selected
-            %a{:href => menu_item[1]}
-              = menu_item[0]
+        - @sub_menu_items.each do |menu_item_id, menu_item|
+          - if menu_item_id==@selected_sub_nav_item_id
+            .active
+              %a{:href => menu_item[1]}
+                = menu_item[0]
+          - else
+            .active
+              %a{:href => menu_item[1]}
+                = menu_item[0]
 
 :javascript
   $(document).ready(function() {

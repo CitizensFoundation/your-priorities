@@ -179,13 +179,12 @@ class UsersController < ApplicationController
     redirect_to '/' and return if check_for_suspension
     @page_title = tr("{user_name} at {instance_name}", "controller/users", :user_name => @user.name, :instance_name => current_instance.name)
     #@ideas = @user.endorsements.active.by_position.find(:all, :include => :idea, :limit => 5)
-    @ideas = Idea.published.where(:user_id=>@user.id).limit(10).paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.unscoped.published.where(:user_id=>@user.id).paginate :page => params[:page], :per_page => params[:per_page]
     @endorsements = nil
     get_following
     if user_signed_in? # pull all their endorsements on the ideas shown
-      @endorsements = Endorsement.find(:all, :conditions => ["idea_id in (?) and user_id = ? and status='active'", @ideas.collect {|c| c.id},current_user.id])
-    end    
-    @activities = @user.activities.active.by_recently_created.paginate :include => :user, :page => params[:page], :per_page => params[:per_page]
+      @endorsements = Endorsement.unscoped.find(:all, :conditions => ["idea_id in (?) and user_id = ? and status='active'", @ideas.collect {|c| c.id},current_user.id])
+    end
     respond_to do |format|
       format.html
       format.xml { render :xml => @user.to_xml(:methods => [:revisions_count], :include => [:top_endorsement, :referral, :sub_instance_referral], :except => NB_CONFIG['api_exclude_fields']) }
@@ -412,7 +411,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.js {
         render :update do |page|
-          #page.replace_html 'your_ideas_container', :partial => "ideas/yours"
+          page.replace_html 'your_ideas_container', :partial => "ideas/yours"
         end
       }
     end
@@ -434,8 +433,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.js {
         render :update do |page|
-          #page.replace_html 'your_ideas_container', :partial => "ideas/yours"
-          #page.replace_html 'your_ideas_container', order.inspect
+          page.replace_html 'your_ideas_container', :partial => "ideas/yours"
         end
       }
     end

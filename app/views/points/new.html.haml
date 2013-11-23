@@ -1,22 +1,18 @@
 = render :partial => "ideas/header"
 %br
-.col-group
-  .col-12
-    .col-content
-.col-group
-  .col-1
-    .col-content
+.row
+  .large-2.columns
+    %div
       &nbsp;
-  .col-8
-    .col-content
-      = form_for :point, :url => idea_points_path(@idea)  do |f|
-        = f.error_messages
-        = render :partial=>"points/form", :locals=>{:point_form=>f, :force_point_for=>false}
-        = f.submit tr("Save point", "view/points/new"), :id => "submit", :class => "submit_button"
-  .col-3
-    .col-content
+  .large-8.columns
+    = form_for :point, :url => idea_points_path(@idea)  do |f|
+      = f.error_messages
+      = render :partial=>"points/form", :locals=>{:point_form=>f, :force_point_for=>false}
+      %center
+        = f.submit tr("Save point", "view/points/new"), :id => "submit", :class => "button"
+  .large-2.columns
+    %div
       &nbsp;
-
 :javascript
   $(":submit").closest("form").submit(function(){
       $(':submit').attr('disabled', 'disabled');

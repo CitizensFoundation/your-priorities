@@ -1,0 +1,5 @@
+$('.endless_scroll_activities').append('#{escape_javascript(render partial: "feed/activity_list_simple", :locals => { :activities => @activities })}');
+$('a.load-more-posts').attr('href', '#{ "/feed/top_feed?page?#{@activities.next_page}"}');
+ 
+- unless @activities.next_page
+  $('a.load-more-posts').remove();

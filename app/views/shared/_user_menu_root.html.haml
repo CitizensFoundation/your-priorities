@@ -1,12 +1,8 @@
-%ul
-  %li.menu_header.menu_margin
-    = tr("Root settings", "view/shared/_menu")
-  %li
-    \&middot;
-    = link_to tr("Configuration", "view/shared/_menu"), "/instances/#{Instance.current.id}/edit"
-  %li
-    \&middot;
-    = link_to tr("Buddy icon", "view/shared/_menu"), "/admin/buddy_icon"
-  %li
-    \&middot;
-    = link_to tr("New sub instance", "view/shared/_menu"), "/sub_instances/new"
+%li{:style=>"padding:5px;"}
+  = tr("Root settings", "view/shared/_menu")
+%li
+  = link_to tr("Configuration", "view/shared/_menu"), "/instances/#{Instance.current.id}/edit"
+%li
+  = link_to tr("Buddy icon", "view/shared/_menu"), "/admin/buddy_icon"
+%li
+  = link_to tr("New sub instance", "view/shared/_menu"), "/sub_instances/new"

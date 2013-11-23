@@ -10,6 +10,18 @@ html>/**/ #sib_sub_nav
     margin-left: 50px
     margin-right: 50px
 
+#cat_sib_sub_nav
+  color: #a0a5ad !important
+  font-weight: bold
+  float: left
+
+html>/**/ #cat_sib_sub_nav
+  behavior: url(asset_path("/assets/PIE.htc", image))
+
+  img
+    margin-left: 50px
+    margin-right: 50px
+
 #general_form
   -moz-border-radius: 3px
   -webkit-border-top: 3px
@@ -24,7 +36,6 @@ html>/**/ #sib_sub_nav
   padding: 0px
   margin-top: 0px
   color: #789
-  font-size: 16px
   p
     margin: 0
   a
@@ -41,8 +52,20 @@ html>/**/ #sib_sub_nav
 
 #sub_menu
   @extend #general_form
-  background-color: #fff
+  background-color: rgba(255,255,255,0.97) !important
   min-width: 203px
+  color: #222 !important
+  margin-top: 3px
+  display: none
+  padding: 4px
+  li
+    margin: 7px 5px 7px 5px
+
+#cat_sub_menu
+  @extend #general_form
+  background-color: rgba(255,255,255,0.97) !important
+  min-width: 203px
+  color: #222 !important
   margin-top: 3px
   display: none
   padding: 4px
@@ -50,10 +73,8 @@ html>/**/ #sib_sub_nav
     margin: 7px 5px 7px 5px
 
 #section_title
-  font-size: 16px
   color: #606060
   background: #fff
-  padding: 20px 0px 0px 10px
   a
     color: #fff !important
   a.pulldown_trigger
@@ -67,12 +88,25 @@ html>/**/ #sib_sub_nav
 #section_title a
   color: #606060 !important
 
+#cat_section_title
+  color: #606060
+  background: #fff
+  a
+    color: #fff !important
+  a.pulldown_trigger
+    padding: 4px 30px 4px 5px
+    margin: 0px 0px 8px 0px
+    z-index: 500
+    background-image: url(asset_path("/assets/mega_down_arrow.gif", image))
+    background-repeat: no-repeat
+    background-position: 95% 55%
+
+#cat_section_title a
+  color: #606060 !important
+
 .flash_notice, .flash_error
   width: 100%
-  font-size: 16px
   color: white
-  margin-bottom: 15px
-  margin-top: 15px
   background: #A0A5AD
   -moz-border-radius: 3px
   -webkit-border-radius: 3px

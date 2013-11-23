@@ -1,0 +1,46 @@
+#cat_sib_sub_nav
+  %div#cat_section_title
+    %h4
+      %a.cat_sub_nav.pulldown_trigger{:href => "#"}
+        %span
+          - if Thread.current[:category_id_filter] and Category.exists?(Thread.current[:category_id_filter])
+            = Category.find(Thread.current[:category_id_filter]).name
+          - else
+            = tr("No category filter","here")
+  - if @sub_menu_items and not @sub_menu_items.empty?
+    %div#cat_sub_menu.submenu
+      %ul
+        %li.active
+          %a{:href => "/categories/set_filter/clear"}
+            = tr("No category filter","here")
+        - Category.unscoped.where(:sub_instance_id=>Category.where(:sub_instance_id=>SubInstance.current.id).count>0 ? SubInstance.current.id : SubInstance.find_by_short_name("default").id).all.each do |category|
+          - next unless category.ideas.count>0
+          %li.active
+            %a{:href => "/categories/set_filter/#{category.id}"}
+              = category.name
+              = "(#{category.ideas.count})"
+
+:javascript
+  $(document).ready(function() {
+    $(".cat_sub_nav").click(function(e) {
+      e.preventDefault();
+      //var $this = $(this);
+      if ($(this).hasClass('menu-open')) {
+        $(this).removeClass('menu-open');
+        $('#cat_sub_menu').hide();
+      }
+      else {
+        $(this).addClass('menu-open');
+        $('#cat_sub_menu').show();
+      }
+      return false;
+    });
+
+    $(document).click(function(e) {
+      if ($('#cat_sub_menu').is(':visible') && $(e.target).parents('#cat_sub_menu').length === 0) {
+        $('.cat_sub_nav').removeClass('menu-open');
+        $('#cat_sub_menu').hide();
+        return false;
+      }
+    });
+  });

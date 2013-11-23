@@ -1,43 +1,24 @@
-%div{class: "header" + (" hverfi_header" if SubInstance.current.short_name =~ /^betri-hverfi/).to_s}
-  .header-wrap
-    .col-group
-      .col-12
-        .col-content
-          %div
-            = image_tag SubInstance.current.top_banner_url, :size => "1024x100", :class => "headerfix", :border => 0
-          %p.hide
-            %a{:href => "#content"} Skip to content
-
-    .col-group
-      .col-5
-        .col-content
-          %div
-            %a
-            %a{:href => "/"}
-              %div.logo_link
-        - if not @block_new_ideas and not action_name=="world"
-          %div.add
-            %a.button{:href => "/ideas/new"}
-              %span.left
-                = tr("SUBMIT YOUR IDEA", "view/ideas/_nav")
-              %span.icn.icn-add
-        - elsif action_name=="world"
-          %div.add
-            %a.button{:href => "/subscription_accounts/new"}
-              %span.left
-                = tr("GET {instance_name}","view/ideas/_nav", :instance_name=>Instance.current.name)
-              %span.icn.icn-add
+%div.top-banner-custom{class: "header" + (" hverfi_header" if SubInstance.current.short_name =~ /^betri-hverfi/).to_s}
+  .row
+    .large-4.columns
+      %div
         &nbsp;
-      .col-7
-        .col-content.no-padding
-          = render :partial => "shared/top_navigation"
-        %table{:width=>"100%", :border=>0}
-          %tr
-            %td{:align=>"left"}
-              - unless SubInstance.current.short_name=="default"
-                %h2
-                  = SubInstance.current.name
-            %td{:align=>"right"}
-              = "<div class='fb-like' data-href='#{Instance.current.homepage_url}' data-send='false' data-layout='button_count' data-width='200' data-show-faces='false'></div>".html_safe
-            %td{:align=>"right", :width=>"190px"}
-              = render :partial => "shared/search"
+    .large-4.columns
+      .panel-mine
+        %center
+          - unless SubInstance.current.short_name=="default"
+            %h2
+              = SubInstance.current.name
+          - if not @block_new_ideas and not action_name=="world"
+            %span.icn.icn-add
+          - elsif false and action_name=="world"
+            %div.add
+              %a.button{:href => "/subscription_accounts/new"}
+                %span.left
+                  = tr("GET {instance_name}","view/ideas/_nav", :instance_name=>Instance.current.name)
+                %span.icn.icn-add
+        %center
+          = "<div class='fb-like' data-href='#{Instance.current.homepage_url}' data-send='false' data-layout='button_count' data-width='200' data-show-faces='false'></div>".html_safe
+    .large-4.columns
+      %div
+        &nbsp;

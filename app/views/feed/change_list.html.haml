@@ -3,7 +3,7 @@
   - if @changes.empty?
     = tr("No acquisition proposals", "view/feed/change_list")
   - else
-    = will_paginate(@changes)
+    = foundation_paginate(@changes)
     %p
       - for change in @changes
         = render :partial => "changes/show", :locals => {:change => change}
@@ -13,4 +13,4 @@
           = render :partial => "changes/chart", :locals => {:change => change}
         %p
     %p
-      = will_paginate(@changes)
+      = foundation_paginate(@changes)

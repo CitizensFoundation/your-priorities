@@ -76,5 +76,5 @@
                   #search_results_body
                     = result.excerpts.content.force_encoding("UTF-8").html_safe
                   %br/
-            = will_paginate @search_results
+            = foundation_paginate @search_results
         - else

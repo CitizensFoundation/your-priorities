@@ -24,4 +24,4 @@
         .heading= tr("Past ads", "view/ideas/yours_ads")
       = render :partial => "ads/show_inline", :locals => {:ad => ad}
     %p
-      = will_paginate(@ads)
+      = foundation_paginate(@ads)

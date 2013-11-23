@@ -41,7 +41,7 @@ class EndorsementsController < ApplicationController
               page.replace_html 'idea_' + @endorsement.idea.id.to_s + "_position",render(:partial => "endorsements/position", :locals => {:endorsement => @endorsement})
             elsif params[:region] == 'yours'
             end
-            #page.replace_html 'your_ideas_container', :partial => "ideas/yours"
+            page.replace_html 'your_ideas_container', :partial => "ideas/yours"
           end
         }
       end
@@ -89,8 +89,8 @@ class EndorsementsController < ApplicationController
             # page.visual_effect :fade, 'endorsement_' + eid.to_s, :duration => 0.5
           elsif params[:region] == 'ad'
           end     
-          #page.replace_html 'your_ideas_container', :partial => "ideas/yours"
-          # page.visual_effect :highlight, 'your_ideas' unless params[:region] == 'your_ideas'
+          page.replace_html 'your_ideas_container', :partial => "ideas/yours"
+          page.visual_effect :highlight, 'your_ideas' unless params[:region] == 'your_ideas'
         end
       }    
     end

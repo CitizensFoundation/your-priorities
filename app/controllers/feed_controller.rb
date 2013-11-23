@@ -88,8 +88,17 @@ class FeedController < ApplicationController
 
   def top_feed
     @page_title = tr("Top Feed at {sub_instance_name}", "controller/feed", :sub_instance_name => current_sub_instance.name)
-    last = params[:last].blank? ? Time.now + 1.second : Time.parse(params[:last])
-    @activities = Activity.active.top.feed(last).for_all_users
+    if params[:idea_id]
+      @idea = Idea.unscoped.find(params[:idea_id])
+      if params[:only_comments]
+        @activities = @idea.activities.active.top_discussions.for_all_users.paginate :page => params[:page]
+      else
+        @activities = @idea.activities.active.top.for_all_users.paginate :page => params[:page]
+      end
+    else
+      @activities = Activity.active.top.for_all_users.paginate(:page => params[:page])
+    end
+
     @rss_url = url_for(:only_path => false, :format => "rss")
     respond_to do |format|
       format.js

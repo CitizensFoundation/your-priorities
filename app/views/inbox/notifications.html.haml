@@ -6,4 +6,4 @@
       - for notification in @notifications
         = render :partial => "notifications/show", :locals => {:notification => notification}
     %p
-      = will_paginate(@notifications)
+      = foundation_paginate(@notifications)

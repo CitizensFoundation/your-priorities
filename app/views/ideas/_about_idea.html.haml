@@ -1,9 +1,11 @@
 .idea_name{:id => "idea_#{idea.id}_name"}
-%div{style: 'float: right;'}= render :partial=>"ideas/report_content", :locals=>{:idea=>idea}
-- if @position_in_idea_name
-  = link_to_unless_current "#{idea.position}. #{tg(idea.name)}", idea.show_url, :class => "idea_name_link"
-- else
-  = link_to tg(idea.name), idea.show_url, :class => "idea_name_link"
+  %div{style: 'float: right;'}
+    = render :partial=>"ideas/report_content", :locals=>{:idea=>idea}
+  %h4
+    - if @position_in_idea_name
+      = link_to_unless_current "#{idea.position}. #{tg(idea.name)}", idea.show_url, :class => "idea_name_link"
+    - else
+      = link_to tg(idea.name), idea.show_url, :class => "idea_name_link"
 = render :partial=>"ideas/flagged", :locals=>{:idea=>idea} if @idea or (current_user and current_user.is_admin?)
 :javascript
   $(function(){
@@ -25,11 +27,11 @@
       = simple_format(idea.description)
     - elsif idea.points.first
       = simple_format(truncate(idea.points.first.content_html,:length => 200, :omission => ' ...', :separator => ' '))
-- if @idea and action_name=="show" and controller_name=="ideas"
-  %h3.author_notes
-    = tr("Author notes","view/ideas")
-  %div{:id => "idea_#{idea.id}_author_notes"}
-    = idea.notes_html
+  - if @idea and action_name=="show" and controller_name=="ideas" and @idea.notes
+    %h3.author_notes
+      = tr("Author notes","view/ideas")
+    %div{:id => "idea_#{idea.id}_author_notes"}
+      = idea.notes_html
   :javascript
     $(function() {
        jQuery("#{"#idea_#{idea.id}_author_notes"}").truncate({maxLength: 900});

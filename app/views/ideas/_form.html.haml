@@ -5,65 +5,55 @@
 - if params[:notice]
   = params[:notice]
 = form_for @idea do |f|
-  .col-group
-    .col-12
-      .col-content
-        = f.error_messages
-        - if @tag_names
-          = hidden_field_tag :tag_names, @tag_names
-  .col-group
-    .col-6.col-inset
-      .col-content
-        .col-group
-          %h1
-            = tr("Submit a new #{IDEA_TOKEN}", "views/ideas/form")
-        #your_idea.field_label
-        %span.characters
-          %span.form_header
-            = tr("#{IDEA_TOKEN_CAPS} title", "views/ideas/form")
-          \-
-          %span#ideaNameContentDown
-          = tr("characters left", "view/ideas/_form")
-        %span.idea_name
-          = f.text_area :name, :id => 'ideaNameContent', :button => 'submit', :rows => 2, :class=>"col_text_area", :maxLength => SubInstance.current.idea_name_max_length+30
-        %br
-        %br
-        #idea_category
-          .field_label
-            = tr("Select category", "views/ideas/form")
-          %select#category_id{:name => "[idea][category_id]"}
-            %option{:selected => (@idea.category_id ? false : true)}
-            - Category.default_or_sub_instance.each do |category|
-              %option{:title => category.icon.url(:icon_25,), :value => category.id, :selected=>((@idea.category and @idea.category_id==category.id) or (params[:category_id] and params[:category_id].to_i==category.id)) ? true : false}
-                = category.name
-        - unless SubInstance.current.hide_description
-          .field
-            %em
-              %p= #tr("Please describe your #{IDEA_TOKEN}... You have plenty space to convince others here on your right.", "views/ideas/form")
-            %br/
-            %span.characters
-              %span.form_header
-                = tr("Description", "view/ideas/_form")
-              \-
-              %span#ideaContentDown
-              = tr("characters left", "view/ideas/_form")
-            .field_box
-              = f.text_area :description, :id => 'ideaContent', :button => 'submit', :rows => 8, :class=>"col_text_area", :maxLength => 550
-          %br/
-    .col-6.col-inset
-      .col-content
-        %h1
-          = tr("Why should people support your #{IDEA_TOKEN}?", "views/ideas/form")
-        .field_label
-        = f.fields_for(:points) do |point_form|
-          = render :partial=>"points/form", :locals=>{:point_form=>point_form, :force_point_for=>true}
-  .col-group
-    .col-12
-      .col-content
-        %div{:style=>"text-align: center;"}
-          %p
-            = tr("All fields are required", "views/ideas/form")
-          = submit_tag tr("Submit your #{IDEA_TOKEN} and point", "view/ideas/_form"), :class => "submit_button"
+  .row
+    .large-12.columns
+      = f.error_messages
+      - if @tag_names
+        = hidden_field_tag :tag_names, @tag_names
+  .row
+    .large-6.columns
+      %h4
+        = tr("Submit a new #{IDEA_TOKEN}", "views/ideas/form")
+      #your_idea.field_label
+      %span.characters
+        %span.label
+          = tr("#{IDEA_TOKEN_CAPS} title", "views/ideas/form")
+        %span#ideaNameContentDown
+        = tr("characters left", "view/ideas/_form")
+      %span.idea_name
+        = f.text_field :name, :id => 'ideaNameContent', :button => 'submit', :rows => 2, :maxLength => SubInstance.current.idea_name_max_length+30
+      #idea_category
+        .label
+          = tr("Select category", "views/ideas/form")
+        %select#category_id{:name => "[idea][category_id]"}
+          %option{:selected => (@idea.category_id ? false : true)}
+          - Category.default_or_sub_instance.each do |category|
+            %option{:title => category.icon.url(:icon_25,), :value => category.id, :selected=>((@idea.category and @idea.category_id==category.id) or (params[:category_id] and params[:category_id].to_i==category.id)) ? true : false}
+              = category.name
+      %br
+      - unless SubInstance.current.hide_description
+        .field
+          %span.characters
+            %span.label
+              = tr("Description", "view/ideas/_form")
+            %span#ideaContentDown
+            = tr("characters left", "view/ideas/_form")
+          .field_box
+            = f.text_area :description, :id => 'ideaContent', :button => 'submit', :rows => 10, :class=>"col_text_area", :maxLength => 550
+    .large-6.columns
+      %h4
+        = tr("Why should people support your #{IDEA_TOKEN}?", "views/ideas/form")
+      .field_label
+      = f.fields_for(:points) do |point_form|
+        = render :partial=>"points/form", :locals=>{:point_form=>point_form, :force_point_for=>true}
+  .row
+    .large-12.columns
+      %div{:style=>"text-align: center;"}
+        %p
+          = "* "
+          = tr("All fields are required", "views/ideas/form")
+          %br
+          = submit_tag tr("Submit your #{IDEA_TOKEN} and point", "view/ideas/_form"), :class => "button"
 :javascript
   ideaNameContentTxt = "#{tr("Make a good and descriptive title for your #{IDEA_TOKEN}","ideas/new")}";
   ideaContentTxt = "#{tr("Explain your idea in a few paragraphs and try to capture its essence clearly.","ideas/new")}";

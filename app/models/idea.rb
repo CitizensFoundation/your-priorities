@@ -33,6 +33,8 @@ class Idea < ActiveRecord::Base
   scope :falling, :conditions => "ideas.trending_score < 0", :order => "ideas.trending_score asc"
   scope :controversial, :conditions => "ideas.is_controversial = true", :order => "ideas.controversial_score desc"
 
+  scope :category_filter, lambda{{:conditions => Thread.current[:category_id_filter] ? "ideas.category_id=#{Thread.current[:category_id_filter]}" : nil }}
+
   scope :rising_7days, :conditions => "ideas.position_7days_delta > 0"
   scope :flat_7days, :conditions => "ideas.position_7days_delta = 0"
   scope :falling_7days, :conditions => "ideas.position_7days_delta < 0"
@@ -222,9 +224,10 @@ class Idea < ActiveRecord::Base
   def endorse(user,request=nil,referral=nil)
     endorsement = self.endorsements.find_by_user_id(user.id)
     if not endorsement
-      endorsement = Endorsement.new(:value => 1, :idea => self, :user => user,:referral => referral)
+      endorsement = Endorsement.new(:value => 1, :idea => self, :sub_instance_id => self.sub_instance_id, :user => user,:referral => referral)
       endorsement.ip_address = request.remote_ip if request
       endorsement.save
+      endorsement.insert_lowest_at(4)
     elsif endorsement.is_down?
       endorsement.flip_up
       endorsement.save
@@ -239,9 +242,10 @@ class Idea < ActiveRecord::Base
     return false if not user
     endorsement = self.endorsements.find_by_user_id(user.id)
     if not endorsement
-      endorsement = Endorsement.new(:value => -1, :idea => self, :user => user, :referral => referral)
+      endorsement = Endorsement.new(:value => -1, :idea => self, :sub_instance_id => self.sub_instance_id, :user => user, :referral => referral)
       endorsement.ip_address = request.remote_ip if request
       endorsement.save
+      endorsement.insert_lowest_at(4)
     elsif endorsement.is_up?
       endorsement.flip_down
       endorsement.save

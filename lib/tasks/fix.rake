@@ -63,8 +63,6 @@ end
 
 namespace :fix do
 
-
-
   desc "FixCat"
   task :fix_cat do
     Category.unscoped.all.each do |c|

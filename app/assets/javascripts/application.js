@@ -10,8 +10,9 @@
 //= require jquery.bgiframe.min
 //= require jquery.corner
 //= require jquery.delayedObserver
-//= require jquery.endless-scroll
+//= require jquery.inview
 //= require jquery.sticky
+//= require jquery.sortable
 //= require jquery.pop
 //= require jquery.dd
 //= require jquery.autoSuggest
@@ -19,6 +20,8 @@
 //= require jquery.tipsy
 //= require msdropdown
 //= require accounts
+//= require foundation
+//= require top_feed
 //= require_self
 
 jQuery(function ($) {
@@ -73,7 +76,7 @@ jQuery(document).ready(function() {
 	};
 	jQuery(".mega").hoverIntent(megaConfig);
 
-
+    $(document).foundation();
 });
 
 function toggleAll(name)

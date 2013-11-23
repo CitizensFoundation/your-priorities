@@ -45,7 +45,6 @@
 
 .add a
   color: #F49D1D
-  size: 14px
   text-transform: uppercase
   font-weight: bold
 
@@ -64,12 +63,7 @@
 #topnav
   padding: 0
   position: relative
-  top: 50px
-  right: 15px
   text-align: right
-
-.profile
-  float:left
 
 .avatar
   margin-left: 1%
@@ -91,7 +85,7 @@
   background: red !important
 
 #topnav a.menu-open
-  background: #ccc!important
+  background: #ccc !important
   color: #666!important
   outline: none
 
@@ -103,21 +97,9 @@
   width: 170px
 
 #general_form
-  display: none
-  margin-top: 30px !important
-  color: #778899
-  display: none
   text-align: left
   position: absolute
   background: #222
-  color: white
-  z-index: 1220
-  width: 200px
-  text-align: left
-  padding: 0px
-  margin-left: -8px
-  *margin-left: -15px
-  margin-top: 0px
   color: #789
   input
     &[type=text], &[type=password]
@@ -128,13 +110,8 @@
       behavior: url(asset_path("/assets/PIE.htc", image))
       border: 1px solid #ACE
       margin: 0 0 5px
-      padding: 0px
-      width: 203px
-      padding: 0px 0px 0px 5px
-  p
-    margin: 0
   a
-    color: #66AACC !Important
+    color: #000
   label
     font-weight: normal
   p
@@ -152,21 +129,10 @@ a.notifications
 
 #sib_notifications
   @extend #general_form
-  display: none
-  right: 84px
-  top: 0
-  padding: 10px 10px 10px 10px
-  width: 10em
-  height: 9.7em
 
 #sib_login_form
   @extend #general_form
-  display: none
-  margin-top: 30px !important
-  padding: 10px 10px 10px 10px
-  width: 216px
   background: #23567b
-  right: 82px
   a
     color: #fff !important
   div
@@ -176,19 +142,11 @@ a.notifications
 
 #sib_profile
   @extend #general_form
-  display: none
-  right: 84px
-  top: 0px
   li
-    margin: 3px
-    padding-bottom: 3px
     clear: both
 
 #sib_language
   @extend #general_form
-  display: none
-  right: 5px
-  top: 0px
   li
     margin: 3px
     padding-bottom: 3px
@@ -211,7 +169,6 @@ a.notifications
 
 #sib_help
   @extend #general_form
-  display: none
   right: 42px
   top: 0
   padding: 10px 10px 10px 10px
@@ -364,7 +321,7 @@ a.signin.menu-open a.notifications.menu-open span
   position: relative
   z-index: 1200
 
-a.button
+a.fancy_button
   background-image: url(asset_path("/assets/buttons/button_right.png", image))
   background-repeat: no-repeat
   background-attachment: scroll
@@ -375,7 +332,7 @@ a.button
   color: white
   padding-right: 11px
 
-a.button span.left
+a.fancy_button span.left
   background-image: url(asset_path("/assets/buttons/button_left.png", image))
   display: block
   padding: 7px 0 7px 11px

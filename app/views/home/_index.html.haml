@@ -22,7 +22,7 @@
     %br
 - if @finished_ideas.any?
   %div.home_welcome
-    %h1.home_h1
+    %h2.home_h1
       = link_to tr("In official status", "view/ideas", :count=>Idea.finished.not_removed.count), "/ideas/finished"
     %ul
       %li.successful{:style=>"display: inline;padding-right:10px;"}
@@ -39,7 +39,7 @@
     = "&nbsp;".html_safe
 - if @new_ideas.any?
   %div.home_welcome
-    %h1.home_h1
+    %h2.home_h1
       = link_to tr("New #{IDEA_TOKEN_PLURAL_CAPS}","home"), "ideas/newest"
     - @new_ideas.each do |idea|
       = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
@@ -53,9 +53,9 @@
       = link_to tr("here.","here"),"/ideas/new"
 - if @top_ideas and @top_ideas.any?
   %div.home_welcome{:style=>"margin-top: 10px; padding-top: 10px;"}
-    %h1.home_h2
+    %h2.home_h2
       &nbsp;
-    %h1.home_h1
+    %h2.home_h1
       = link_to tr("Top #{IDEA_TOKEN_PLURAL} past 7 days", "controller/ideas"),"/ideas/top_7days"
     - @top_ideas.each do |idea|
       = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
@@ -63,9 +63,9 @@
         %div{:id => "idea_detail_#{idea.id}"}
 - if @random_ideas.any?
   %div.home_welcome
-    %h1.home_h2
+    %h2.home_h2
       &nbsp;
-    %h1.home_h1
+    %h2.home_h1
       = link_to tr("Random #{IDEA_TOKEN_PLURAL_CAPS}","home"),"/ideas/random"
     - @random_ideas.each do |idea|
       = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
@@ -73,11 +73,10 @@
         %div{:id => "idea_detail_#{idea.id}"}
 - unless @activities.blank?
   %div.home_welcome
-    %h1.home_h2
+    %h2.home_h2
       &nbsp;
-    %h1.home_h1
+    %h2.home_h1
       = tr("Latest Activity","home")
-    %ul#endless_scroll_ul.list{:last => @activities.to_a.last.changed_at}
-      = render :template => 'feed/activity_list_simple'
-      #infinite-scroll
-      .endless_scroll_inner_wrap
+    .endless_scroll_activities
+      = render :partial => 'feed/activity_list_simple'
+    = link_to tr("More...","here"), "/feed/top_feed?page?#{@activities.next_page}", :class => 'load-more-posts', :remote => true if @activities.next_page

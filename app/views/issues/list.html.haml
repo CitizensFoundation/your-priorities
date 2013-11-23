@@ -10,6 +10,6 @@
         = tr("These are our members' {tag_name} ideas that {official_user_name} opposes", "view/issues/list", :tag_name => tr(@category.name, "model/category").titleize, :official_user_name => current_instance.official_user.name)
       - @ideas.each do |idea|
         = render :partial => "ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
-      %p= will_paginate @ideas
+      %p= foundation_paginate @ideas
     - else
       = tr("No ideas for {tag_name} yet", "view/issues/list", :tag_name => tr(@category.name, "model/category").titleize)

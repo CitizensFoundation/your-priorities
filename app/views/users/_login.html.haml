@@ -1,5 +1,5 @@
 #login
-  #sib_login_form
+  #login_form
     - if current_instance.has_twitter_enabled?
       %div{:style => "margin-bottom: 5px;"}
         = link_to image_tag("twitter_signin.png", :border => 0, :title=>tr("Sign in with Twitter","_login")), :controller => "twitter", :action => "create"
@@ -22,20 +22,39 @@
       - unless @current_plan and @current_plan.private_instance
         %br
         %br
-        #signup_link
-          = link_to tr("New user registration", "view/shared/_login"), "/users/sign_in"
-      = form_for :user, remote: true,                       |
-        'data-disable-with' =>  escape_t(tr("Sending","Ajax")), |
-        :url => user_session_path(region: 'inline') do |f|        |
-        %p= tr("Email address", "view/shared/_login")
-        = f.text_field :email, size: 15, html: { id: :login_email }
-        %p= tr("Password", "view/shared/_login")
-        = f.password_field :password, size: 8, html: { id: :login_password }
-        = f.submit tr("Sign in", "view/shared/_login"), :class => "submit_button"
-        .login_message
-        %br
-        = link_to tr("I forgot my password", "view/shared/_login"), new_user_password_path
+      %a.show_hide{href: "#"}
+        = tr("Sign in with email","here")
+      %br
+      %br
+      .slidingDiv{:style=>"display: none;"}
+        = form_for :user, remote: true,                       |
+          'data-disable-with' =>  escape_t(tr("Sending","Ajax")), |
+          :url => user_session_path(region: 'inline') do |f|        |
+          .label
+            = tr("Email address", "view/shared/_login")
+          = f.text_field :email, size: 15, html: { id: :login_email }
+          .label
+            = tr("Password", "view/shared/_login")
+          = f.password_field :password, size: 8, html: { id: :login_password }
+          = f.submit tr("Sign in", "view/shared/_login"), :class => "button small", :onclick=>"$('.login_message').html('')"
+          .login_message{:style=>"color: #f00;"}
+          %br
+          = tr("Not yet registered?","here")
+          %br
+          %br
+          .button.small
+            = link_to tr("New user registration", "view/shared/_login"), "/users/sign_in"
+          %p
+            = link_to tr("I forgot my password", "view/shared/_login"), new_user_password_path
       = #render :partial => "shared/language_selection_master"
     %br
     - if @geoblocked
       = render :partial=>"shared/geoblocking_info"
+:javascript
+  $(document).ready(function(){
+      $(".show_hide").show();
+      $('.show_hide').click(function(){
+      $(".slidingDiv").slideToggle();
+      });
+
+  });

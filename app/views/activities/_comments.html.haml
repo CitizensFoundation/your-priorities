@@ -6,21 +6,15 @@
     - comments_without_abuse = @comments.reject {|x| x.status == 'abusive'}
     = render :partial => "comments/show", :locals => {:comment => comments_without_abuse.first, :first_comment=>true} if comments_without_abuse.first
     - if comments_without_abuse.length > 10
-      .col-group
-        .col-11.col-offset-1
-          .col-content
-            .comment_more
-            = link_to tr("More", "view/activities/_comments")+" (#{(comments_without_abuse.length-2).to_s})", activity_comments_url(activity), :class => "idea_name_link"
+      .comment_more
+      = link_to tr("More", "view/activities/_comments")+" (#{(comments_without_abuse.length-2).to_s})", activity_comments_url(activity), :class => "idea_name_link"
     - elsif comments_without_abuse.length > 2
-      .col-group
-        .col-11.col-offset-1
-          .col-content
-            .comment_more
-              = link_to tr("More", "view/activities/_comments")+" (#{(comments_without_abuse.length-2).to_s})", more_activity_comments_url(activity), |
-                :method => :get,                                                                                                                      |
-                :remote=>true,                                                                                                                        |
-                'data-disable-with' => "",                                                                                                            |
-                'data-loader-name' => "horizontal_small"                                                                                              |
+      .comment_more
+        = link_to tr("More", "view/activities/_comments")+" (#{(comments_without_abuse.length-2).to_s})", more_activity_comments_url(activity), |
+          :method => :get,                                                                                                                      |
+          :remote=>true,                                                                                                                        |
+          'data-disable-with' => "",                                                                                                            |
+          'data-loader-name' => "horizontal_small"                                                                                              |
     = render :partial => "comments/show", :locals => {:comment => comments_without_abuse.last, :first_comment=>false} if comments_without_abuse.length > 1
     - if @comments.length > 0 and activity.class != ActivityCommentParticipant
       = render :partial => "comments/new_inline", :locals => {:activity => activity, :comment => Comment.new}

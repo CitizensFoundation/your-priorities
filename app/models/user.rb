@@ -62,7 +62,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :groups
 
   belongs_to :picture
-  has_attached_file :buddy_icon, :styles => { :icon_24 => "24x24#", :icon_35 => "35x35#", :icon_48 => "48x48#", :icon_96 => "96x96#" },
+  has_attached_file :buddy_icon, :styles => { :icon_24 => "24x24#", :icon_35 => "35x35#", :icon_48 => "48x48#", :icon_50 => "50x50#",
+                                              :icon_96 => "96x96#" },
                     :storage => PAPERCLIP_STORAGE_MECHANISM,
                     :s3_credentials => S3_CREDENTIALS
   

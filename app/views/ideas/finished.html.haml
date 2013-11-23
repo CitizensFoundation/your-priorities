@@ -11,4 +11,4 @@
 .white_line
 - for idea in @ideas
   = render :partial => "ideas/listing_finished", :locals => {:idea => idea }
-= will_paginate @ideas
+= foundation_paginate @ideas

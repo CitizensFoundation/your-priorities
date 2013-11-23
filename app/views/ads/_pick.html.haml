@@ -1,12 +1,16 @@
-- if user_signed_in?
-  - ad = current_user.pick_ad(current_idea_ids)
-  - if ad and ad.idea and ad.user
-    #encouragements
-      #notification_show
-        = render :partial => "ads/show", :locals => {:ad => ad }
-- else
-  - ad = Ad.active.by_random.first
-  - if ad and ad.idea and ad.user
-    #encouragements
-      #notification_show
-        = render :partial => "ads/show", :locals => {:ad => ad }
+- unless ["users","sessions"].include?(controller_name)
+  - if user_signed_in?
+    - ad = current_user.pick_ad(current_idea_ids)
+    - if ad and ad.idea and ad.user
+      #encouragements
+        #notification_show
+          = render :partial => "ads/show", :locals => {:ad => ad }
+  - else
+    - ad = Ad.active.by_random.first
+    - if ad and ad.idea and ad.user
+      - session[:shown_ads] = [] unless session[:shown_ads]
+      - unless session[:shown_ads].include?(ad.id)
+        - session[:shown_ads]<<ad.id
+        #encouragements
+          #notification_show
+            = render :partial => "ads/show", :locals => {:ad => ad }

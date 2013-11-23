@@ -2,7 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-SocialInnovation::Application.initialize!
+YourPriorities::Application.initialize!
 
 require 'action_dispatch/middleware/session/dalli_store'
 

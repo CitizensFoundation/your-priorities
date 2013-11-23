@@ -18,6 +18,7 @@ i.layout = "application"
 i.admin_name = "Your Admin Name"
 i.admin_email = "admin@yourdomain.com"
 i.email = "admin@yourdomain.com"
+i.layout = "application"
 i.save(:validation=>false)
 
 
@@ -27,6 +28,8 @@ si.name = "Your Default Sub Instance"
 si.save(:validation=>false)
 
 Instance.current = i
+SubInstance.current = si
+sub_instance = si
 
 require 'activity'
 

@@ -1,11 +1,11 @@
 .col-group
   .col-1
     .col-content
-      = render :partial => "users/profile_pic"
+      = render :partial => "users/pic_50"
       = render :partial => "users/profile_nav"
   .col-11
     .col-content
-      = will_paginate(@ideas)
+      = foundation_paginate(@ideas)
       - if @ideas.any?
         - @ideas.each do |idea_endorsement|
           - idea = Idea.unscoped.find(idea_endorsement.idea_id)

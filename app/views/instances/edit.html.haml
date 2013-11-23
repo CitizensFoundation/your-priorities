@@ -48,6 +48,12 @@
             = f.file_field :favicon
             %br/
             %p
+            %label{:for => "buddy_icon"}
+              = tr("Buddy icon", "view/sub_instances/_form")
+            %br/
+            = f.file_field :buddy_icon
+            %br/
+            %p
               %label{:for => "external_link_logo"}= tr("External Link Logo", "view/sub_instances/_form")
               %br/
               = image_tag Instance.current.external_link_logo(:preview)

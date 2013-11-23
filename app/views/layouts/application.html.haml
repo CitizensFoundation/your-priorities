@@ -1,4 +1,3 @@
-!!!
 %html{:lang => I18n.locale, "xml:lang" => I18n.locale, :xmlns => "http://www.w3.org/1999/xhtml", "xmlns:fb" => "http://www.facebook.com/2008/fbml", prefix: "og: http://ogp.me/ns#"}
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
@@ -23,24 +22,26 @@
     = #tr8n_scripts_tag
 %body{class: SubInstance.current.short_name }
   = csrf_meta_tag
-  .page
-    = render :partial => "shared/top_banner"
-    .main
-      .col-group
-        .col-12
-          .col-content.no-margin
-            = render :partial => "sub_instances/message_to_users" if controller_name=="home"
-      .nav.nav-main
-        = render :partial => "shared/side_navigation" #unless SubInstance.current.short_name == "default"
+  .row
+    .large-12.columns
+      = render :partial => "shared/top_banner"
+  .row
+    .large-12.columns
+      .sticky.contain-to-grid
+        = render :partial => "shared/top_navigation"
+  %br
+  .row
+    .large-12.columns
+      = render :partial => "sub_instances/message_to_users" if controller_name=="home"
+  .row
+    .large-12.columns
       = render :partial => "ads/pick"
-      #content.content
-        .content-wrap.col-group
-          .col-12
-            .col-content.mainbox
-              = flash_div :warning, :notice, :error
-              - unless (controller_name == "home" && action_name == "world") or @skip_sub_navigation
-                = render :partial => "shared/sub_navigation"
-              = yield :layout
-    = render :partial => "shared/facebook_footer"
-    = render :partial => "shared/google_plus_footer"
+  .row
+    .large-9.columns
+      = flash_div :warning, :notice, :error
+      = yield :layout
+    .large-3.columns
+      = render :partial=>"shared/right_column"
+  = render :partial => "shared/facebook_footer"
+  = render :partial => "shared/google_plus_footer"
 

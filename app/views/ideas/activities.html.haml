@@ -17,4 +17,4 @@
         - for activity in @activities
           = render :partial => "activities/show", :locals => {:activity => activity, :suffix => "_noself"}
     %p
-      = will_paginate(@activities)
+      = foundation_paginate(@activities)

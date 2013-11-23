@@ -32,7 +32,7 @@
             %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
               %tr
                 %td{:valign => "top", :width => "48"}
-                  = render :partial => "users/pic_48", :locals => {:user => user[0]}
+                  = render :partial => "users/pic_50", :locals => {:user => user[0]}
                 %td.left_scale8{:valign => "top"}
                   - if user[0].status == 'suspended' or user[0].status == 'removed'
                     %strike/

@@ -1,18 +1,17 @@
-%ul
-  %li
-    = link_to tr("Profile","views/shares/_user_info"), "/users/additional_information"
-  %li
-    = link_to tr("Email subscriptions","views/shares/_user_info"), "/settings/signups"
-  %li
-    = link_to tr("Notifications","views/shares/_user_info"), "/inbox/notifications"
-    - if current_user.warnings_count > 0
-      #warning
-        - if current_user.warnings_count > 1
-          = tr("{count} warnings", "view/layouts/basic", :count => current_user.warnings_count)
-        - else
-          = tr("{count} warning", "view/layouts/basic", :count => current_user.warnings_count)
-  %li
-    = link_to tr("Logout", "view/shared/_user_info"), destroy_user_session_path, method: :delete
+%li
+  = link_to tr("Profile","views/shares/_user_info"), "/users/additional_information"
+%li
+  = link_to tr("Email subscriptions","views/shares/_user_info"), "/settings/signups"
+%li
+  = link_to tr("Notifications","views/shares/_user_info"), "/inbox/notifications"
+  - if current_user.warnings_count > 0
+    #warning
+      - if current_user.warnings_count > 1
+        = tr("{count} warnings", "view/layouts/basic", :count => current_user.warnings_count)
+      - else
+        = tr("{count} warning", "view/layouts/basic", :count => current_user.warnings_count)
+%li
+  = link_to tr("Logout", "view/shared/_user_info"), destroy_user_session_path, method: :delete
 - if user_signed_in? && current_user.is_admin?
   = render :partial=>"shared/user_menu_admin"
 - if user_signed_in? && current_user.is_root?

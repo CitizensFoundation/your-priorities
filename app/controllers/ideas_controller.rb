@@ -190,7 +190,7 @@ class IdeasController < ApplicationController
   def by_impressions
     @position_in_idea_name = false
     @page_title = tr("Top read", "controller/ideas")
-    @ideas = Idea.published.by_impressions_count.paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.published.category_filter.by_impressions_count.paginate :page => params[:page], :per_page => params[:per_page]
     get_endorsements
     respond_to do |format|
       format.html { render :action => "list" }
@@ -204,7 +204,7 @@ class IdeasController < ApplicationController
   def most_discussed
     @position_in_idea_name = false
     @page_title = tr("Most discussed", "controller/ideas")
-    @ideas = Idea.published.by_most_discussed.paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.published.category_filter.by_most_discussed.paginate :page => params[:page], :per_page => params[:per_page]
     get_endorsements
     respond_to do |format|
       format.html { render :action => "list" }
@@ -220,7 +220,7 @@ class IdeasController < ApplicationController
     @position_in_idea_name = false
     @page_title = tr("Top #{IDEA_TOKEN_PLURAL}", "controller/ideas")
     @rss_url = top_ideas_url(:format => 'rss')
-    @ideas = Idea.published.top_rank.paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.published.category_filter.top_rank.paginate :page => params[:page], :per_page => params[:per_page]
     get_endorsements
     respond_to do |format|
       format.html { render :action => "list" }
@@ -236,7 +236,7 @@ class IdeasController < ApplicationController
     @position_in_idea_name = false
     @page_title = tr("Top #{IDEA_TOKEN_PLURAL} past 24 hours", "controller/ideas")
     @rss_url = top_ideas_url(:format => 'rss')
-    @ideas = Idea.published.top_24hr.paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.published.category_filter.top_24hr.paginate :page => params[:page], :per_page => params[:per_page]
     get_endorsements
     respond_to do |format|
       format.html { render :action => "list" }
@@ -250,9 +250,9 @@ class IdeasController < ApplicationController
   # GET /ideas/top_7days
   def top_7days
     @position_in_idea_name = false
-    @page_title = tr("Top #{IDEA_TOKEN_PLURAL} past 7 days", "controller/ideas")
+    @page_title = tr("Trending #{IDEA_TOKEN_PLURAL}", "controller/ideas")
     @rss_url = top_ideas_url(:format => 'rss')
-    @ideas = Idea.published.top_7days.paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.published.category_filter.top_7days.paginate :page => params[:page], :per_page => params[:per_page]
     get_endorsements
     respond_to do |format|
       format.html { render :action => "list" }
@@ -268,7 +268,7 @@ class IdeasController < ApplicationController
     @position_in_idea_name = false
     @page_title = tr("Top #{IDEA_TOKEN_PLURAL} past 30 days", "controller/ideas")
     @rss_url = top_ideas_url(:format => 'rss')
-    @ideas = Idea.published.top_30days.paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.published.category_filter.top_30days.paginate :page => params[:page], :per_page => params[:per_page]
     get_endorsements
     respond_to do |format|
       format.html { render :action => "list" }
@@ -284,7 +284,7 @@ class IdeasController < ApplicationController
     @position_in_idea_name = false
     @page_title = tr("#{IDEA_TOKEN_PLURAL_CAPS} rising in the rankings", "controller/ideas")
     @rss_url = rising_ideas_url(:format => 'rss')
-    @ideas = Idea.published.rising.paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.published.category_filter.rising.paginate :page => params[:page], :per_page => params[:per_page]
     get_endorsements
     respond_to do |format|
       format.html { render :action => "list" }
@@ -300,7 +300,7 @@ class IdeasController < ApplicationController
     @position_in_idea_name = false
     @page_title = tr("#{IDEA_TOKEN_PLURAL_CAPS} falling in the rankings", "controller/ideas")
     @rss_url = falling_ideas_url(:format => 'rss')
-    @ideas = Idea.published.falling.paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.published.category_filter.falling.paginate :page => params[:page], :per_page => params[:per_page]
     get_endorsements
     respond_to do |format|
       format.html { render :action => "list" }
@@ -316,7 +316,7 @@ class IdeasController < ApplicationController
     @position_in_idea_name = false
     @page_title = tr("Most controversial #{IDEA_TOKEN_PLURAL}", "controller/ideas")
     @rss_url = controversial_ideas_url(:format => 'rss')
-    @ideas = Idea.published.controversial.paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.published.category_filter.controversial.paginate :page => params[:page], :per_page => params[:per_page]
     get_endorsements
     respond_to do |format|
       format.html { render :action => "list" }
@@ -424,7 +424,7 @@ class IdeasController < ApplicationController
     @ideas = Idea.published.newest.paginate :page => params[:page], :per_page => params[:per_page]
     get_endorsements
     respond_to do |format|
-      format.html
+      format.html { render :action => "list" }
       format.rss { render :action => "list" }
       format.js { render :layout => false, :text => "document.write('" + js_help.escape_javascript(render_to_string(:layout => false, :template => 'ideas/list_widget_small')) + "');" }
       format.xml { render :xml => @ideas.to_xml(:except => NB_CONFIG['api_exclude_fields']) }
@@ -464,9 +464,9 @@ class IdeasController < ApplicationController
     else
       @page_title = @idea.name
       @show_only_last_process = false
-      setup_top_points(2)
+      setup_top_points(500)
 
-      @activities = @idea.activities.active.top_discussions.for_all_users :include => :user
+      @activities = @idea.activities.active.top_discussions.for_all_users.paginate :page => params[:page]
       if user_signed_in? and @endorsement
         if @endorsement.is_up?
           @relationships = @idea.relationships.endorsers_endorsed.by_highest_percentage.find(:all, :include => :other_idea).group_by {|o|o.other_idea}
@@ -835,7 +835,7 @@ class IdeasController < ApplicationController
           else
             page << "alert('error');"
           end
-          #page.replace_html 'your_ideas_container', :partial => "ideas/yours"
+          page.replace_html 'your_ideas_container', :partial => "ideas/yours"
         end
       }
     end
@@ -1202,18 +1202,18 @@ class IdeasController < ApplicationController
       else
         @items[item_count+=1]=[tr("Last added ({count})", "view/ideas", :count=>Idea.not_removed.count), newest_ideas_url]
         @items[item_count+=1]=[tr("Top voted", "view/ideas"), top_ideas_url] unless @block_endorsements
-        @items[item_count+=1]=[tr("Top #{IDEA_TOKEN_PLURAL} past 24 hours", "controller/ideas"), top_24hr_ideas_url] unless @block_endorsements
-        @items[item_count+=1]=[tr("Top #{IDEA_TOKEN_PLURAL} past 7 days", "controller/ideas"), top_7days_ideas_url] unless @block_endorsements
+        @items[item_count+=1]=[tr("Trending", "controller/ideas"), top_7days_ideas_url] unless @block_endorsements
         @items[item_count+=1]=[tr("Top read", "view/ideas"), by_impressions_ideas_url]
         @items[item_count+=1]=[tr("Most discussed", "view/ideas"), most_discussed_ideas_url]
+        @items[item_count+=1]=[tr("Controversial", "view/ideas"), controversial_ideas_url]
         @items[item_count+=1]=[tr("Random", "view/ideas"), random_ideas_url]
-        if user_signed_in? and current_user.ideas.count>0
+        if false and user_signed_in? and current_user.ideas.count>0
           @items[item_count+=1]=[tr("Yours", "view/ideas"), yours_ideas_url]
         end
-        @items[item_count+=1]=[tr("All officially finished ({count})", "view/ideas", :count=>Idea.finished.not_removed.count), finished_ideas_url]
-        @items[item_count+=1]=[tr("Officially successful ({count})", "view/ideas", :count=>Idea.successful.not_removed.count), finished_successful_ideas_url]
-        @items[item_count+=1]=[tr("Officially failed ({count})", "view/ideas",:count=>Idea.failed.not_removed.count), finished_failed_ideas_url]
-        @items[item_count+=1]=[tr("Officially in progress ({count})", "view/ideas", :count=>Idea.in_progress.not_removed.count), finished_in_progress_ideas_url]
+        @items[item_count+=1]=[tr("All officially finished ({count})", "view/ideas", :count=>Idea.finished.not_removed.count), finished_ideas_url] if Idea.finished.not_removed.count>0
+        @items[item_count+=1]=[tr("Officially successful ({count})", "view/ideas", :count=>Idea.successful.not_removed.count), finished_successful_ideas_url] if Idea.successful.not_removed.count>0
+        @items[item_count+=1]=[tr("Officially failed ({count})", "view/ideas",:count=>Idea.failed.not_removed.count), finished_failed_ideas_url] if Idea.failed.not_removed.count>0
+        @items[item_count+=1]=[tr("Officially in progress ({count})", "view/ideas", :count=>Idea.in_progress.not_removed.count), finished_in_progress_ideas_url] if Idea.in_progress.not_removed.count>0
       end
       @items
     end

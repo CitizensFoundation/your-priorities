@@ -1,0 +1,16 @@
+- if current_instance.has_facebook_enabled? and (not SubInstance.current.subscription_enabled or (@current_plan and not @current_plan.private_instance))
+  %div{:style => "margin-bottom: 10px; margin-top: 7px;"}
+    #fb_login_link
+      = link_to user_omniauth_authorize_path(:facebook), class: 'fb_login_button' do
+        %span.fb_login_text= tr('Sign in with {provider}', 'views/_top_navigation', provider: "Facebook")
+  %br/
+  - if ENV['ISLYKILL_ID'] and SubInstance.current and SubInstance.current.short_name=="default"
+    = link_to tr("Sign in with island.is", "view/shared/_login"), "https://innskraning.island.is/?id=#{ENV['ISLYKILL_ID']}"
+  %br/
+- if current_instance.has_twitter_enabled?
+  %div{:style => "margin-bottom: 5px;"}
+    = link_to image_tag("twitter_signin.png", :border => 0, :title=>tr("Sign in with Twitter","_login")), :controller => "twitter", :action => "create"
+- if current_instance.google_login_enabled
+  %div{:style => "margin-bottom: 5px;margin-top: 5px;"}
+    = link_to image_tag("logos/Gmail_logo.png", :border => 0, :title=>tr("Sign in with Gmail","_login")), :controller => "open_ids", :action => "new"
+    %br/

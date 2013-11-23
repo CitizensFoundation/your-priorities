@@ -29,7 +29,7 @@ class Instance < ActiveRecord::Base
                     :storage => PAPERCLIP_STORAGE_MECHANISM,
                     :s3_credentials => S3_CREDENTIALS
   validates_attachment_size :top_banner, :less_than => 5.megabytes
-  validates_attachment_content_type :top_banner, :content_type => ['image/jpeg', 'image/png', 'image/gif']
+  validates_attachment_content_type :top_banner, :content_type => ['image/jpeg', 'image/jpg','image/png', 'image/gif']
 
   has_attached_file :menu_strip, :styles => { :icon_full => "5x50#",
                                               :preview => "5x50#" },
@@ -60,7 +60,7 @@ class Instance < ActiveRecord::Base
   validates_attachment_content_type :email_banner, :content_type => ['image/jpeg', 'image/png', 'image/gif']
     
   belongs_to :buddy_icon_old, :class_name => "Picture"
-  has_attached_file :buddy_icon, :styles => { :icon_24 => "24x24#", :icon_48  => "48x48#", :icon_96 => "96x96#" },
+  has_attached_file :buddy_icon, :styles => { :icon_24 => "24x24#", :icon_48  => "48x48#", :icon_50 => "50x50#", :icon_96 => "96x96#" },
                     :storage => PAPERCLIP_STORAGE_MECHANISM,
                     :s3_credentials => S3_CREDENTIALS
     

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015103346) do
+ActiveRecord::Schema.define(:version => 20131121142601) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -234,7 +234,7 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.integer  "sub_instance_id"
     t.integer  "idea_id"
     t.integer  "user_id"
-    t.string   "ip_address",      :limit => 16
+    t.string   "ip_address"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "referral_id"
@@ -317,7 +317,7 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "ip_address",       :limit => 16
+    t.string   "ip_address"
     t.string   "user_agent",       :limit => 150
     t.text     "name_diff"
     t.text     "description_diff"
@@ -344,7 +344,7 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.text     "description"
     t.integer  "endorsements_count",                      :default => 0,     :null => false
     t.string   "status",                   :limit => 50
-    t.string   "ip_address",               :limit => 16
+    t.string   "ip_address"
     t.datetime "removed_at"
     t.datetime "published_at"
     t.datetime "created_at"
@@ -647,7 +647,6 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.float    "amount"
     t.float    "vat"
     t.string   "paymill_offer_id"
-    t.boolean  "private",          :default => false
   end
 
   create_table "point_qualities", :force => true do |t|
@@ -748,7 +747,7 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "ip_address",    :limit => 16
+    t.string   "ip_address"
     t.string   "user_agent",    :limit => 150
     t.string   "website",       :limit => 100
     t.text     "content_diff"
@@ -765,7 +764,7 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.integer  "ad_id"
     t.integer  "user_id"
     t.integer  "value",                      :default => 0
-    t.string   "ip_address", :limit => 16
+    t.string   "ip_address"
     t.string   "user_agent", :limit => 1000
     t.string   "referrer",   :limit => 1000
     t.datetime "created_at"
@@ -800,7 +799,7 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.integer  "users_count",                                    :default => 0
     t.string   "website"
     t.datetime "removed_at"
-    t.string   "ip_address",                      :limit => 16
+    t.string   "ip_address"
     t.boolean  "is_daily_summary",                               :default => true
     t.string   "unsubscribe_url"
     t.string   "subscribe_url"
@@ -993,6 +992,7 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.string   "country_english_name",                   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "map_coordinates"
     t.string   "default_locale",       :default => "en"
   end
 
@@ -1212,6 +1212,8 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.boolean  "admin"
     t.string   "locale"
     t.integer  "level",             :default => 0
+    t.datetime "synced_at"
+    t.string   "type"
   end
 
   add_index "tr8n_translation_keys", ["key"], :name => "index_tr8n_translation_keys_on_key", :unique => true
@@ -1255,6 +1257,7 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.text     "rules"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "synced_at"
   end
 
   add_index "tr8n_translations", ["created_at"], :name => "tr8n_trans_created_at"
@@ -1336,6 +1339,7 @@ ActiveRecord::Schema.define(:version => 20131015103346) do
     t.boolean  "manager"
     t.string   "last_ip"
     t.string   "country_code"
+    t.integer  "remote_id"
   end
 
   add_index "tr8n_translators", ["created_at"], :name => "index_tr8n_translators_on_created_at"

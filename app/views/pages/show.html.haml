@@ -4,4 +4,4 @@
   }
 
 .about
-  = raw @page.content.from_localized_yaml
+  = simple_format(@page.content.from_localized_yaml)

@@ -1,7 +1,6 @@
-#sib_notifications
-  - if current_user.unread_notifications_count > 0
-    - @unread = current_user.received_notifications.unread.count(:group => [:type], :order => "count_all desc")
-    - if @unread.any?
-      #notification_box
-        %span.notification_sentence
-          = notifications_sentence(@unread)
+- if current_user.unread_notifications_count > 0
+  - @unread = current_user.received_notifications.unread.count(:group => [:type], :order => "count_all desc")
+  - if @unread.any?
+    .row
+      .large-12.columns
+        = notifications_sentence(@unread)

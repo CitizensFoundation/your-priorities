@@ -9,4 +9,4 @@
         - quality = @qualities.detect {|e| e.point_id == point.id }
       = render :partial => "points/show_full", :locals => {:point => point, :quality => quality, :revision => nil}
     %p
-      = will_paginate(@points)
+      = foundation_paginate(@points)

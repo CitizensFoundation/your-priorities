@@ -136,7 +136,7 @@ class SubInstance < ActiveRecord::Base
   end
 
   def url(path = '')
-    if Rails.env.development?
+    if Rails.env.development? or Rails.env.test?
       if path =~ /\?/
         path = path + "&sub_instance_short_name=#{self.short_name}"
       else

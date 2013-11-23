@@ -63,6 +63,11 @@ class PicturesController < ApplicationController
     send_picture
   end
 
+  def icon_50
+    @img = @img.change_geometry("50x50") { |cols, rows, img| img.resize!(cols,rows) }
+    send_picture
+  end
+
   def icon_24
     @img = @img.change_geometry("24x24") { |cols, rows, img| img.resize!(cols,rows) }
     send_picture

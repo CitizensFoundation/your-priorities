@@ -44,7 +44,7 @@
       .row
         .large-8.columns
           %h1
-            = tr("Start harvesting ideas today...","here")
+            = tr("Improving democracy today","here")
         .large-4.columns
           .right
             %a.button.radius{:href => "/subscription_accounts/new"}
@@ -58,7 +58,7 @@
           %a.twitter-share-button{:href => "https://twitter.com/share"} Tweet
 .row
   .large-12.columns
-    .panel.radius
+    .panel.panel-bg-2
       %h2
         = tr("Why Your Priorities?","here")
       .row
@@ -132,7 +132,7 @@
           = render :partial=>"simple_panel", :locals=>{:ideas=>@random_sub_instance_ideas, :short_name=>@random_sub_instance.short_name, :flag_path=>logo_file, :title=>@random_sub_instance.name}
 .row
   .large-12.columns
-    .panel.radius
+    .panel.radius.panel-bg-2
       %h2
         = tr("How does Your Priorities work?","here")
       .row

@@ -5,7 +5,7 @@
     %td{:valign => "top"}
       - if @issues.total_pages > 1
         %p
-          = will_paginate (@issues)
+          = foundation_paginate (@issues)
       - for tag in @issues
         .home_issue
           .home_issue_name
@@ -29,7 +29,7 @@
               %br/
               = render :partial => "ideas/action_show", :locals => {:idea => tag.rising_idea, :endorsement => (@endorsements.detect {|e| e.idea_id == tag.rising_idea_id } if @endorsements)}
       %p
-        = will_paginate (@issues)
+        = foundation_paginate (@issues)
     %td{:style => "padding-left: 20px;", :valign => "top", :width => "160"}
       %p
         - #if user_signed_in? and current_user.endorsements_count > 4

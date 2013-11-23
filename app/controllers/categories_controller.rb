@@ -1,5 +1,16 @@
 class CategoriesController < ApplicationController
-  before_filter :authenticate_admin!
+  before_filter :authenticate_admin!, :except=>[:set_filter]
+
+  def set_filter
+    if params[:id]=="clear"
+      Thread.current[:category_id_filter]=nil
+    else
+      Thread.current[:category_id_filter]=params[:id]
+    end
+    session[:category_id_filter]=Thread.current[:category_id_filter]
+    redirect_to :back
+  end
+
   # GET /categories
   # GET /categories.xml
   def index

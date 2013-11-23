@@ -1,13 +1,13 @@
 .col-group
   .col-1
     .col-content
-      = render :partial => "users/profile_pic"
+      = render :partial => "users/pic_50"
       = render :partial => "users/profile_nav"
   .col-11
     .col-content
       - @followings.in_groups_of(4) do |row_followings|
         - for following in row_followings
           - if following
-            = render :partial => "users/pic_48", :locals => {:user => following.user}
+            = render :partial => "users/pic_50", :locals => {:user => following.user}
             = link_to following.user.name, following.user
             .small= time_ago(following.created_at)

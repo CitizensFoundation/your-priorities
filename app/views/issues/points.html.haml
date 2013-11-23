@@ -2,7 +2,7 @@
 - if @points.empty?
   = tr("No points yet.", "view/issues/points")
 - else
-  = will_paginate(@points)
+  = foundation_paginate(@points)
   %p
     - for point in @points
       - quality = nil
@@ -10,4 +10,4 @@
         - quality = @qualities.detect {|e| e.point_id == point.id }
       = render :partial => "points/show_full", :locals => {:point => point, :quality => quality, :revision => nil}
   %p
-    = will_paginate(@points)
+    = foundation_paginate(@points)
