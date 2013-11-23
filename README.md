@@ -2,7 +2,7 @@ Your Priorities is a web based platform that enables groups of people to define 
 
 Your Priorities is being used on the https://www.yrpri.org/ eDemocracy service and the Better Reykjavik website in Iceland amongst other places.
 
-Short new instructions
+Short instructions
 ======================
 
 
@@ -36,58 +36,76 @@ git fetch robert
 git merge robert/master
 ````
 
-Development on Ubuntu
-=====================
+Development on Linux
+====================
 
-1. Install rvm the Ruby version manager
+* Install rvm the Ruby version manager
 ````bash
 sudo apt-get install curl
 \curl -L https://get.rvm.io | bash -s stable
 ````
 
-2. Go into the application and install all gems
+* Go into the application and install all gems
 ````bash
 bundle install
 ````
 
-3. Install postgres
+* Install postgres
 ````bash
 sudo apt-get install postgresql
 ````
 
-4. Then start the psql shell
+* Then start the psql shell
 ````bash
 sudo su postgres
 psql
 ````
 
-5. When in psql create a user and the Your Priorities dev database
+* When in psql create a user and the Your Priorities dev database
 ````bash
-create user puser password 'xxxxxxxx'
-create database yrpri_dev with encoding 'utf8';
-grant all privileges on database yrpri_dev to puser;
+CREATE USER puser PASSWORD 'xxxxxxxx'
+CREATE DATABASE yrpri_dev WITH ENCODING 'utf8';
+GRANT ALL PRIVILEGES ON DATABASE yrpri_dev TO puser;
+ALTER USER puser CREATEDB;
 ````
 
-6. Then exit the postgres shell and copy and edit the config/database.yml.dist file
+* Then exit the postgres shell and copy and edit the config/database.yml.dist file
 ````bash
 cd config
 cp database.yml.dist database.yml
 ````
 
-7. Then edit the database.yml file for your puser password
+* Then edit the database.yml file for your puser password
 
-8. When ready create the database tables and seed the database:
+* When ready create the database tables and seed the database:
 ````bash
 rake db:schema:load
 rake db:seed
 ````
 
-9. Start the server
+* Start the server
 ````bash
 rails s
 ````
 
-10. Navigate to http://localhost:3000/
+* Navigate to http://localhost:3000/
+
+Running the test
+================
+
+Currently Your Priorities only has one working test, more tests would be appricated. 
+This one test is based on Selenium and tests most of the user facing features. To 
+run the tests you need to open up two terminal windows.  You need to have Firefox 
+installed.
+
+
+* In the first window you start the integration test before running the command in the other window
+````bash
+rake test:integration
+````
+* In the second window when you see the test database being created from the output start the test server.
+If you start it too early then the database cant be dropped for recreation and if you start the server too 
+then Selenium won't have a server to test against.
 
 
 Production Deployment on Heroku
