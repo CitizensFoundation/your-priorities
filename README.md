@@ -103,10 +103,13 @@ installed.
 ````bash
 rake test:integration
 ````
+
 * In the second window when you see the test database being created from the output start the test server.
 If you start it too early then the database cant be dropped for recreation and if you start the server too 
 then Selenium won't have a server to test against.
-
+````bash
+rails s -e test
+````
 
 Production Deployment on Heroku
 ===============================
