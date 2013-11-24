@@ -1,16 +1,17 @@
-.col-group{:id => "activity_#{activity.id.to_s}_comment_form_container"}
-  .col-11.col-offset-1
-    .col-content
-      - if user_signed_in?
-        / Comment box
-        .comment_link_add.answer_box{:id => "activity_#{activity.id.to_s}_comment_form"}
-          = form_for comment, :remote=>true, :url => activity_comments_path(activity), |
-            'data-loader-name' => "horizontal_small" do |f|                            |
-            = f.error_messages
-            = f.text_area :content, :size => "60x1", :class=>"comment_content_display_value comment_content_autoresize_#{activity.id.to_s}", :id => "comment_content_#{activity.id.to_s}"
-            .new_comment_facebook
-              .senda
-                %span{:id => "submit_span_#{activity.id}"}
-                  = f.submit tr("Send comment", "view/comments/_new_inline"), "data-disable-with" => escape_t(tr("Sending","Ajax")), :class => "submit_button"
-                %span{:id => "loading_span_#{activity.id}", :style => "display: none;"}
-                  = image_tag("submit-loader.gif")
+.row{:id => "activity_#{activity.id.to_s}_comment_form_container"}
+  .large-1.columns
+    &nbsp;
+  .large-11.columns
+    - if user_signed_in?
+      / Comment box
+      .comment_link_add.answer_box{:id => "activity_#{activity.id.to_s}_comment_form"}
+        = form_for comment, :remote=>true, :url => activity_comments_path(activity), |
+          'data-loader-name' => "horizontal_small" do |f|                            |
+          = f.error_messages
+          = f.text_area :content, :size => "60x1", :class=>"comment_content_display_value comment_content_autoresize_#{activity.id.to_s}", :id => "comment_content_#{activity.id.to_s}"
+          .new_comment_facebook
+            .senda
+              %span{:id => "submit_span_#{activity.id}"}
+                = f.submit tr("Send comment", "view/comments/_new_inline"), "data-disable-with" => escape_t(tr("Sending","Ajax")), :class => "submit_button"
+              %span{:id => "loading_span_#{activity.id}", :style => "display: none;"}
+                = image_tag("submit-loader.gif")

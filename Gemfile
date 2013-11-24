@@ -93,6 +93,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'therubyracer'
+  gem "awesome_print"
 end
 
 group :production do

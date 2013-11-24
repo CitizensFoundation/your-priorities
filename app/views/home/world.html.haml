@@ -58,7 +58,7 @@
           %a.twitter-share-button{:href => "https://twitter.com/share"} Tweet
 .row
   .large-12.columns
-    .panel.panel-bg-2
+    .panel.panel-bg-2.no-padding-margin-bottom
       %h2
         = tr("Why Your Priorities?","here")
       .row
@@ -76,32 +76,7 @@
                 %img(src="https://s3.amazonaws.com/yrpri-direct-asset/YP_FB_Versions_cropped.png")
 .row
   .large-12.columns
-    .panel.radius
-      %h2
-        = tr("Balkan e-Democracy Startup Project","here")
-      .row
-        .large-12.columns
-          .panel.radius.panel-bg-2
-            .row
-              .large-6.columns
-                .flex-video
-                  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "215", :src => "https://www.youtube.com/embed/tJfAysjZ1RY", :width => "420"}
-                %center
-                  %h2
-                    = link_to "https://balkan-startup.yrpri.org","https://balkan-startup.yrpri.org"
-              .large-6.columns
-                %p
-                  = tr("We have 12 local partners with 12 different projects that will reproduce our successful Better Reykjavík electronic democracy project in Iceland.","here")
-                %p
-                  = tr("There are 4 projects from Serbia - 3 from Kosovo and one each from Albania - Bosnia - Croatia - Montenegro and R.Macedonia.","here")
-                %p
-                  = tr("We will use our open source technology and extensive eDemocracy knowledge for all the projects in the Balkans.","here")
-                %p
-                  = tr("The projects are designed to be easily reproducible at little cost to neighboring communities. The project will therefore not only transfer knowledge to the Balkans but also between the Balkan countries.","here")
-
-.row
-  .large-12.columns
-    .panel.radius.panel-bg-2
+    .panel.radius.panel-bg-1.no-padding-margin-up
       %h2
         = tr("Free eDemocracy website for every country in the world","here")
       %p
@@ -130,6 +105,30 @@
               - Rails.logger.error("Could not find sub instance logo file")
               - logo_file= "flags/64/_united-nations.png"
           = render :partial=>"simple_panel", :locals=>{:ideas=>@random_sub_instance_ideas, :short_name=>@random_sub_instance.short_name, :flag_path=>logo_file, :title=>@random_sub_instance.name}
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("Balkan e-Democracy Startup Project","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-2
+            .row
+              .large-6.columns
+                .flex-video
+                  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "215", :src => "https://www.youtube.com/embed/tJfAysjZ1RY", :width => "420"}
+                %center
+                  %h2
+                    = link_to "https://balkan-startup.yrpri.org","https://balkan-startup.yrpri.org"
+              .large-6.columns
+                %p
+                  = tr("We have 12 local partners with 12 different projects that will reproduce our successful Better Reykjavík electronic democracy project in Iceland.","here")
+                %p
+                  = tr("There are 4 projects from Serbia - 3 from Kosovo and one each from Albania - Bosnia - Croatia - Montenegro and R.Macedonia.","here")
+                %p
+                  = tr("We will use our open source technology and extensive eDemocracy knowledge for all the projects in the Balkans.","here")
+                %p
+                  = tr("The projects are designed to be easily reproducible at little cost to neighboring communities. The project will therefore not only transfer knowledge to the Balkans but also between the Balkan countries.","here")
 .row
   .large-12.columns
     .panel.radius.panel-bg-2

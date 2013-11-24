@@ -29,7 +29,7 @@
                     %span.pc
                       = user.capitals_count
                       = tr("Social points","here").downcase
-                    - if user.followers_count > 0
+                    - if false and user.followers_count > 0
                       = "/"
                       = tr("{count} followers", "view/network/index", :count => user.followers_count)
                     - if user.has_top_idea? and user.top_endorsement.idea
