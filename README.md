@@ -39,29 +39,29 @@ git merge robert/master
 Development on Linux
 ====================
 
-* Install rvm the Ruby version manager
+Install rvm the Ruby version manager
 ````bash
 sudo apt-get install curl
 \curl -L https://get.rvm.io | bash -s stable
 ````
 
-* Go into the application and install all gems
+Go into the application and install all gems
 ````bash
 bundle install
 ````
 
-* Install postgres
+Install postgres
 ````bash
 sudo apt-get install postgresql
 ````
 
-* Then start the psql shell
+Then start the psql shell
 ````bash
 sudo su postgres
 psql
 ````
 
-* When in psql create a user and the Your Priorities dev database
+When in psql create a user and the Your Priorities dev database
 ````bash
 CREATE USER puser PASSWORD 'xxxxxxxx'
 CREATE DATABASE yrpri_dev WITH ENCODING 'utf8';
@@ -69,26 +69,26 @@ GRANT ALL PRIVILEGES ON DATABASE yrpri_dev TO puser;
 ALTER USER puser CREATEDB;
 ````
 
-* Then exit the postgres shell and copy and edit the config/database.yml.dist file
+Then exit the postgres shell and copy and edit the config/database.yml.dist file
 ````bash
 cd config
 cp database.yml.dist database.yml
 ````
 
-* Then edit the database.yml file for your puser password
+Then edit the database.yml file for your puser password
 
-* When ready create the database tables and seed the database:
+When ready create the database tables and seed the database:
 ````bash
 rake db:schema:load
 rake db:seed
 ````
 
-* Start the server
+Start the server
 ````bash
 rails s
 ````
 
-* Navigate to http://localhost:3000/
+Navigate to http://localhost:3000/
 
 Running the test
 ================
@@ -99,12 +99,12 @@ run the tests you need to open up two terminal windows.  You need to have Firefo
 installed.
 
 
-* In the first window you start the integration test before running the command in the other window
+In the first window you start the integration test before running the command in the other window
 ````bash
 rake test:integration
 ````
 
-* In the second window when you see the test database being created from the output start the test server.
+In the second window when you see the test database being created from the output start the test server.
 If you start it too early then the database cant be dropped for recreation and if you start the server too 
 then Selenium won't have a server to test against.
 ````bash
