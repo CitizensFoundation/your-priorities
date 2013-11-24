@@ -28,15 +28,13 @@
               .label
                 = tr("Your name", "view/users/_form")
               = f.text_field :login, :maxlength => 40, :size => 30
-              .small{:style => "padding-bottom: 5px;"}
-                = tr("(Can be your name,or a pseudonym)", "view/users/_form")
             %br
             .field
               .label
                 = tr("Email address", "view/users/_form")
               = f.text_field :email, :size => 30
-              .small{:style => "margin-bottom: 5px;font-size:12px;"}= tr("(Never shared without your permission)", "view/users/_form")
             - unless session["omniauth_data"]
+              %br
               .field
                 .label
                   = tr("Password", "view/users/_form")

@@ -5,6 +5,7 @@ require 'will_paginate/array'
 require 'whitelist'
 
 class ApplicationController < ActionController::Base
+  protect_from_forgery
 
   include Facebooker2::Rails::Controller
 
@@ -60,7 +61,30 @@ class ApplicationController < ActionController::Base
 
   layout :get_layout
 
-  protect_from_forgery
+  before_filter :store_location
+
+  def store_location
+    # store last url - this is needed for post-login redirect to whatever the user last visited.
+    if (request.fullpath != "/users/sign_in" &&
+        request.fullpath != "/users/sign_up" &&
+        !request.fullpath != "/users/sign_up" &&
+        request.fullpath != "/users/password" &&
+        !request.xhr?) # don't store ajax calls
+      session[:previous_url] = request.fullpath
+    end
+  end
+
+  def after_sign_in_path_for(resource)
+    if session["omniauth_data"]
+      if not current_user.facebook_uid and session["omniauth_data"][:facebook_id]
+        current_user.facebook_uid = session["omniauth_data"][:facebook_id]
+        current_user.save(validate: false)
+        flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
+      end
+      session.delete("omniauth_data")
+    end
+    session[:previous_url] || redirect_back_path
+  end
 
   def set_category_filter
     Thread.current[:category_id_filter]=session[:category_id_filter]
@@ -280,18 +304,6 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for(resource_or_scope)
     stored_location_for(resource_or_scope) || '/' 
-  end
-
-  def after_sign_in_path_for(resource)
-    if session["omniauth_data"]
-      if not current_user.facebook_uid and session["omniauth_data"][:facebook_id]
-        current_user.facebook_uid = session["omniauth_data"][:facebook_id]
-        current_user.save(validate: false)
-        flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
-      end
-      session.delete("omniauth_data")
-    end
-    redirect_back_path
   end
 
   # remove omniauth data if omniauth users navigate away from the sign in/up

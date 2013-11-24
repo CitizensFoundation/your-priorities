@@ -1262,8 +1262,8 @@ $topbar-link-bg-active: #c3c6c9;
 // Transitions and breakpoint styles
 
 // $topbar-transition-speed: 300ms;
-$topbar-breakpoint: emCalc(800px); // Change to 9999px for always mobile layout
-$topbar-media-query: "only screen and (min-width: #{$topbar-breakpoint})";
+//$topbar-breakpoint: emCalc(800px); // Change to 9999px for always mobile layout
+//$topbar-media-query: "only screen and (min-width: #{$topbar-breakpoint})";
 
 // Divider Styles
 
@@ -1361,7 +1361,7 @@ a {
 }
 
 .odd-idea-container {
-  background-color: #f9f9f9;
+  background-color: #f7F7F7;
 }
 
 .even-idea-container {
@@ -1447,8 +1447,9 @@ a {
   margin-bottom: 10px;}
 
 .label {
-  background-color: #c3c6c9;
-  color: #fff;
+  border: 1px solid #bbb;
+  background-color: #ddd;//lighten($primary-color, 40%);
+  color: #333;
 }
 
 .next_idea_next_image  {
@@ -1468,7 +1469,27 @@ a {
 }
 
 .panel-mine {
-  background-color:rgba(255,200,200,0.1);
+  background-color:rgba(255,255,255,0.7);
   padding:14px;
   height:100px;
+  h2 {
+    color: #000;
+  }
+  p {
+    color: #000;
+  }
+}
+
+#user_login input {
+  padding-bottom: 0px;
+}
+
+.user_picture_50 {
+  padding: 0px;
+  margin:0 px;
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.sprite_clip_flag {
 }

@@ -9,6 +9,13 @@
           - unless SubInstance.current.short_name=="default"
             %h2
               = SubInstance.current.name
+            - if false
+              %p
+                %b
+                  - if SubInstance.current.description and SubInstance.current.description!=""
+                    = SubInstance.current.description
+                  - else
+                    = Instance.current.description
           - if not @block_new_ideas and not action_name=="world"
             %span.icn.icn-add
           - elsif false and action_name=="world"
