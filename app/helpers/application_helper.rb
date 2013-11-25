@@ -58,7 +58,7 @@ module ApplicationHelper
       language_name = Tolk::Config.mapping[locale.name]
       #out += link_to("#{language_name}#{calc_language_completion(locale.translations.count)}", "#{url_for(:locale => locale.name)}")
       out += "<li>"
-      out += link_to language_name,  url_for( :locale => locale.name )
+      out += link_to language_name, "/?locale=#{locale.name}"
       out += "</li>"
     end
     out.html_safe

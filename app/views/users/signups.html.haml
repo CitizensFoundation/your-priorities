@@ -1,7 +1,7 @@
 .col-group
   .col-1
     .col-content
-      = render :partial => "users/pic_50"
+      = render :partial => "users/pic_50", :locals => {:user => @user}
       = render :partial => "users/profile_nav"
   .col-11
     .col-content

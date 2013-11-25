@@ -21,7 +21,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def failure
     Rails.logger.error request.inspect
-    flash[:error] = tr("Error signing in - please try again","here")
+    #flash[:error] = tr("Error signing in - please try again","here")
     redirect_to "/"
   end
 end

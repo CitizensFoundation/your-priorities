@@ -27,6 +27,8 @@ class ApplicationController < ActionController::Base
   before_filter :check_subdomain
   before_filter :check_geoblocking
 
+  before_filter :set_category_filter
+
   before_filter :authenticate_http_if_locked
 
   before_filter :check_auto_authentication
@@ -55,7 +57,7 @@ class ApplicationController < ActionController::Base
   before_filter :setup_currency_code
 
   before_filter :set_last_locale
-  before_filter :set_category_filter
+
 
   #after_filter :sub_instance_cookie_lock_down
 
@@ -248,7 +250,8 @@ class ApplicationController < ActionController::Base
   def action_cache_path
     params.merge({:geoblocked=>@geoblocked, :host=>request.host, :country_code=>@country_code,
                   :locale=>session[:locale], :google_translate=>session[:enable_google_translate],
-                  :have_shown_welcome=>session[:have_shown_welcome], 
+                  :have_shown_welcome=>session[:have_shown_welcome],
+                  :category_id_filter=>session[:category_id_filter],
                   :last_selected_language=>cookies[:last_selected_language],
                   :flash=>flash.map {|k,v| "#{v}" }.join.parameterize})
   end

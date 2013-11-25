@@ -42,8 +42,8 @@
           = tr("Not yet registered?","here")
           %br
           %br
-          .button.small
-            = link_to tr("New user registration", "view/shared/_login"), "/users/sign_in"
+          %p
+            = link_to tr("Create new email user", "view/shared/_login"), "/users/sign_in"
           %p
             = link_to tr("I forgot my password", "view/shared/_login"), new_user_password_path
       = #render :partial => "shared/language_selection_master"
