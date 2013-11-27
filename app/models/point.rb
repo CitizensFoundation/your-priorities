@@ -151,7 +151,7 @@ class Point < ActiveRecord::Base
       self.user_agent = self.idea.user_agent if not self.user_agent
       self.user_id = self.idea.user_id if not self.user_id
       self.user = self.idea.user if not self.user
-      Rails.logger.debug("SELF PRIORITY: #{pp self.idea.inspect}")
+      Rails.logger.debug("SELF PRIORITY: #{self.idea.inspect}")
     else
       Rails.logger.error("No Idea for point id: #{self.id}")
       puts "No Idea for point id: #{self.id}"
