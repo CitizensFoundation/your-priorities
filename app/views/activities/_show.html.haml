@@ -1,52 +1,54 @@
-- if params[:action] == 'your_discussions' and activity.class == ActivityCommentParticipant
-  = render :partial => "activities/show", :locals => {:activity => activity.activity, :suffix => ""}
-- else
-  - if false and activity.user and activity.user.status == 'removed' and params[:action] != 'unhide'
-    .activity_hidden{:id => "activity_hidden_#{activity.id.to_s}"}
-      Hidden because #{activity.user.name} deleted their account.
-      \#{link_to tr("Show", "view/activities/_show"), unhide_activity_url(activity), :method => :get, 'data-disable-with' => "", 'data-loader-name' => "horizontal_small",		             :remote=>true}
-  - elsif false and activity.user and activity.user.status == 'suspended' and params[:action] != 'unhide'
-    .activity_hidden{:id => "activity_hidden_#{activity.id.to_s}"}
-      Hidden because #{activity.user.name.possessive} account was suspended.
-      \#{link_to tr("Show", "view/activities/_show"), unhide_activity_url(activity), :method => :get, 'data-disable-with' => "", 'data-loader-name' => "horizontal_small",                :remote=>true}
-  - elsif false and user_signed_in? and activity.user and current_ignoring_ids.include?(activity.user_id) and params[:action] != 'unhide'
-    .activity_hidden{:id => "activity_hidden_#{activity.id.to_s}"}
-      Hidden because you are ignoring #{link_to activity.user.name, activity.user}.
-      \#{link_to tr("Show", "view/activities/_show"), unhide_activity_url(activity), :method => :get, 'data-disable-with' => "", 'data-loader-name' => "horizontal_small",                :remote=>true}
+%p
+  - if params[:action] == 'your_discussions' and activity.class == ActivityCommentParticipant
+    = render :partial => "activities/show", :locals => {:activity => activity.activity, :suffix => ""}
   - else
-    .activity.single{:id => "activity_#{activity.id}"}
-      - if user_signed_in? and current_user.is_admin?
-        = link_to 'x', activity_url(activity.id), :method => :delete, |
-          :remote=>true,                                              |
-          'data-disable-with' => "",                                  |
-          'data-loader-name' => "circle",                             |
-          :confirm => escape_t(tr("Delete from this page?","Ajax"))   |
-      - if activity.user
-        .row
-          .large-1.columns
-            = render :partial => "users/pic_50", :locals => {:user => activity.user}
-            %br
-          .large-11.columns
-            - cache("#{activity[:type].downcase}#{suffix}-#{activity.id}-#{session[:locale]}-#{@inline_translations_enabled}-#{current_user and current_user.is_admin?}") do
-              = render :partial => "activities/#{activity[:type].downcase}#{suffix}", :locals => {:activity => activity}
-            %span.small
-              %em
-                = time_ago(activity.created_at)
-                - if activity.class != ActivityCommentParticipant
-                  - if user_signed_in? and activity.published_comments.count > 0
-                    = " - "
-                    %span.comment_link{:title => escape_t(tr("Send comment","Ajax"))}
-                      - if (count=activity.published_comments.count) > 1
-                        - text = tr("{comments_count} Comments","Ajax",:comments_count=>count)
-                        = link_to_unless_current count, activity_comments_url(activity)
-                      - else
-                        - text = tr("{comments_count} Comment","Ajax",:comments_count=>count)
-                        = link_to_unless_current count, activity_comments_url(activity)
-                  - elsif false and user_signed_in?
-                    %span.comment_link{:id => "comment_link_#{activity.id.to_s}", :title => escape_t(tr("Send comment","Ajax"))}
-                      = link_to tr("Comment", "view/activities/_show"), new_activity_comment_url(activity), :method => :get, |
-                        'data-disable-with' => "",                                                                           |
-                        'data-loader-name' => "horizontal_small",                                                            |
-                            :remote=>true                                                                                        |
-  - if activity.class != ActivityCommentParticipant and activity.class != ActivityBulletinProfileAuthor
-    = render :partial => "activities/comments", :locals => {:activity => activity}
+    - if false and activity.user and activity.user.status == 'removed' and params[:action] != 'unhide'
+      .activity_hidden{:id => "activity_hidden_#{activity.id.to_s}"}
+        Hidden because #{activity.user.name} deleted their account.
+        \#{link_to tr("Show", "view/activities/_show"), unhide_activity_url(activity), :method => :get, 'data-disable-with' => "", 'data-loader-name' => "horizontal_small",		             :remote=>true}
+    - elsif false and activity.user and activity.user.status == 'suspended' and params[:action] != 'unhide'
+      .activity_hidden{:id => "activity_hidden_#{activity.id.to_s}"}
+        Hidden because #{activity.user.name.possessive} account was suspended.
+        \#{link_to tr("Show", "view/activities/_show"), unhide_activity_url(activity), :method => :get, 'data-disable-with' => "", 'data-loader-name' => "horizontal_small",                :remote=>true}
+    - elsif false and user_signed_in? and activity.user and current_ignoring_ids.include?(activity.user_id) and params[:action] != 'unhide'
+      .activity_hidden{:id => "activity_hidden_#{activity.id.to_s}"}
+        Hidden because you are ignoring #{link_to activity.user.name, activity.user}.
+        \#{link_to tr("Show", "view/activities/_show"), unhide_activity_url(activity), :method => :get, 'data-disable-with' => "", 'data-loader-name' => "horizontal_small",                :remote=>true}
+    - else
+      .activity.single{:id => "activity_#{activity.id}"}
+        - if user_signed_in? and current_user.is_admin?
+          = link_to 'x', activity_url(activity.id), :method => :delete, |
+            :remote=>true,                                              |
+            'data-disable-with' => "",                                  |
+            'data-loader-name' => "circle",                             |
+            :confirm => escape_t(tr("Delete from this page?","Ajax"))   |
+        - if activity.user
+          .row
+            .large-1.columns
+              = render :partial => "users/pic_50", :locals => {:user => activity.user}
+              %br
+            .large-11.columns
+              %p
+                - cache("#{activity[:type].downcase}#{suffix}-#{activity.id}-#{session[:locale]}-#{@inline_translations_enabled}-#{current_user and current_user.is_admin?}") do
+                  = render :partial => "activities/#{activity[:type].downcase}#{suffix}", :locals => {:activity => activity}
+                %span.small
+                  %em
+                    = time_ago(activity.created_at)
+                    - if activity.class != ActivityCommentParticipant
+                      - if user_signed_in? and activity.published_comments.count > 0
+                        = " - "
+                        %span.comment_link{:title => escape_t(tr("Send comment","Ajax"))}
+                          - if (count=activity.published_comments.count) > 1
+                            - text = tr("{comments_count} Comments","Ajax",:comments_count=>count)
+                            = link_to_unless_current count, activity_comments_url(activity)
+                          - else
+                            - text = tr("{comments_count} Comment","Ajax",:comments_count=>count)
+                            = link_to_unless_current count, activity_comments_url(activity)
+                      - elsif false and user_signed_in?
+                        %span.comment_link{:id => "comment_link_#{activity.id.to_s}", :title => escape_t(tr("Send comment","Ajax"))}
+                          = link_to tr("Comment", "view/activities/_show"), new_activity_comment_url(activity), :method => :get, |
+                            'data-disable-with' => "",                                                                           |
+                            'data-loader-name' => "horizontal_small",                                                            |
+                                :remote=>true                                                                                        |
+    - if activity.class != ActivityCommentParticipant and activity.class != ActivityBulletinProfileAuthor
+      = render :partial => "activities/comments", :locals => {:activity => activity}
