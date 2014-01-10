@@ -51,6 +51,7 @@ sudo apt-get install build-essential
 sudo apt-get install libxslt-dev libxml2-dev
 sudo apt-get install libmysqlclient-dev
 sudo apt-get install libpq-dev
+sudo apt-get install libmagickwand-dev
 bundle install
 ````
 
