@@ -47,12 +47,18 @@ sudo apt-get install curl
 
 Go into the application and install all gems
 ````bash
+sudo apt-get install build-essential
+sudo apt-get install libxslt-dev libxml2-dev
 bundle install
 ````
 
-Install postgres
+Install database dependencies
 ````bash
 sudo apt-get install postgresql
+sudo apt-get install mysql-server
+
+
+
 ````
 
 Then start the psql shell
