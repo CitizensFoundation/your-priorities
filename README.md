@@ -22,6 +22,7 @@ Build docker images
 git clone https://github.com/rbjarnason/docker-base.git
 cd docker-base
 docker build -t yrpri/base .
+cd ..
 
 # Database docker image
 git clone https://github.com/rbjarnason/docker-postgresql.git
