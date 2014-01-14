@@ -8,8 +8,6 @@ Run a development server using docker
 Install docker on your system
 ````bash
 Visit http://docs.docker.io/en/latest/installation
-On my install I had to add my robert user to the docker group
-sudo usermod -a -G docker robert
 ````
 
 Clone Your Priorities locally
@@ -23,29 +21,29 @@ Build docker images
 # Base docker image
 git clone https://github.com/rbjarnason/docker-base.git
 cd docker-base
-docker build -t yrpri/base .
+sudo docker build -t yrpri/base .
 cd ..
 
 # Database docker image
 git clone https://github.com/rbjarnason/docker-postgresql.git
 cd docker-postgresql
-docker build -t yrpri/postgresql .
+sudo docker build -t yrpri/postgresql .
 cd ..
 
 # Rails docker image
 git clone https://github.com/rbjarnason/docker-rails.git
 cd docker-rails
-docker build -t yrpri/rails .
+sudo docker build -t yrpri/rails .
 ````
 
 Start database
 ````bash
-docker run -i -t -d --name postgresql yrpri/postgresql
+sudo docker run -i -t -d --name postgresql yrpri/postgresql
 ````
 
 Start rails docker image pointing to Your Priorities
 ````bash
-docker -D run -d -name rtest86 -link postgresql:db -p 3000:3000 -v /yourpath/your-priorities:/var/www/your-priorities -e APP_NAME=your-priorities yrpri/rails
+sudo docker -D run -d -name rtest86 -link postgresql:db -p 3000:3000 -v /yourpath/your-priorities:/var/www/your-priorities -e APP_NAME=your-priorities yrpri/rails
 ````
 
 Test it
