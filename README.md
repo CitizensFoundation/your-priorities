@@ -8,6 +8,8 @@ Run a development server using docker
 Install docker on your system
 ````bash
 Visit http://docs.docker.io/en/latest/installation
+On my install I had to add my robert user to the docker group
+sudo usermod -a -G docker robert
 ````
 
 Clone Your Priorities locally
