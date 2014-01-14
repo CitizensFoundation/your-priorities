@@ -2,9 +2,6 @@ Your Priorities is a web based platform that enables groups of people to define 
 
 Your Priorities is being used on the https://www.yrpri.org/ eDemocracy service and the Better Reykjavik website in Iceland amongst other places.
 
-Short instructions
-======================
-
 Run a development server using docker
 =====================================
 
