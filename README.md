@@ -5,6 +5,53 @@ Your Priorities is being used on the https://www.yrpri.org/ eDemocracy service a
 Short instructions
 ======================
 
+Run a development server using docker
+=====================================
+
+Install docker on your system
+````bash
+Visit http://docs.docker.io/en/latest/installation
+````
+
+Clone Your Priorities locally
+````bash
+cd /yourpath
+git clone https://github.com/rbjarnason/your-priorities.git
+````
+
+Build docker images
+````bash
+# Base docker image
+git clone https://github.com/rbjarnason/docker-base.git
+cd docker-base
+docker build -t yrpri/base .
+
+# Database docker image
+git clone https://github.com/rbjarnason/docker-postgresql.git
+cd docker-postgresql
+docker build -t yrpri/postgresql .
+cd ..
+
+# Rails docker image
+git clone https://github.com/rbjarnason/docker-rails.git
+cd docker-rails
+docker build -t yrpri/rails .
+````
+
+Start database
+````bash
+docker run -i -t -d --name posgtresql yrpri/postgresql
+````
+
+Start rails docker image pointing to Your Priorities
+````bash
+docker -D run -d -name rtest86 -link posgtresql:db -p 3000:3000 -v /yourpath/your-priorities:/var/www/your-priorities -e APP_NAME=your-priorities yrpri/rails
+````
+
+Test it
+````bash
+Points a browser to your local server at port 3000 for example http://localhost:3000/ or http://your.ip.addr.number:3000
+````
 
 Setup the project locally
 =========================
