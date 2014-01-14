@@ -38,12 +38,12 @@ docker build -t yrpri/rails .
 
 Start database
 ````bash
-docker run -i -t -d --name posgtresql yrpri/postgresql
+docker run -i -t -d --name postgresql yrpri/postgresql
 ````
 
 Start rails docker image pointing to Your Priorities
 ````bash
-docker -D run -d -name rtest86 -link posgtresql:db -p 3000:3000 -v /yourpath/your-priorities:/var/www/your-priorities -e APP_NAME=your-priorities yrpri/rails
+docker -D run -d -name rtest86 -link postgresql:db -p 3000:3000 -v /yourpath/your-priorities:/var/www/your-priorities -e APP_NAME=your-priorities yrpri/rails
 ````
 
 Test it
