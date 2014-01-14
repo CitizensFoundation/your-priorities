@@ -43,7 +43,7 @@ sudo docker run -i -t -d --name postgresql yrpri/postgresql
 
 Start rails docker image pointing to Your Priorities
 ````bash
-sudo docker -D run -d -name rtest86 -link postgresql:db -p 3000:3000 -v /yourpath/your-priorities:/var/www/your-priorities -e APP_NAME=your-priorities yrpri/rails
+sudo docker -D run -d -link postgresql:db -p 3000:3000 -v /yourpath/your-priorities:/var/www/your-priorities -e APP_NAME=your-priorities yrpri/rails
 ````
 
 Test it
