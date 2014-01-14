@@ -58,7 +58,6 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_last_locale
 
-
   #after_filter :sub_instance_cookie_lock_down
 
   layout :get_layout
@@ -390,6 +389,7 @@ class ApplicationController < ActionController::Base
       @current_sub_instance ||= SubInstance.find_by_short_name(request.subdomains.first) unless request.subdomains.first=="default"
       @current_sub_instance ||= SubInstance.find_by_short_name("default") if (request.subdomains.first=="www" or request.subdomains.first==nil) and ["donations","home","subscriptions","subscription_accounts","plan","pages"].include?(controller_name)
       @current_sub_instance ||= SubInstance.find_by_short_name("default") if Instance.last.domain_name.include?("betri") or Instance.last.domain_name.include?("betra")
+      @current_sub_instance ||= SubInstance.find_by_short_name("default") if Rails.env.development?
       unless @current_sub_instance
         Rails.logger.error("Can't find sub instance")
         redirect_to Instance.current.homepage_top_url

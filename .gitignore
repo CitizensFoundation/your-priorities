@@ -13,7 +13,6 @@ tmp/restart.txt
 public/pictures/**/*
 config/*.pem
 config/contacts.yml
-config/database.yml
 db/sphinx/*
 config/development.sphinx.conf
 solr/index
