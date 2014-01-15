@@ -51,6 +51,16 @@ Test it
 Points a browser to your local server at port 3000 for example http://localhost:3000/ or http://your.ip.addr.number:3000
 ````
 
+Debug the docker image
+````bash
+sudo docker ps -notrunc
+sudo lxc-attach --name long_uid_from_docker_ps
+<now you are in the image>
+cd /var/log/supervise
+tail -f *
+````
+
+
 Setup the project locally
 =========================
 
