@@ -16,6 +16,19 @@ cd /yourpath
 git clone https://github.com/rbjarnason/your-priorities.git
 ````
 
+Create your-priorities/config/database.yml with this content:
+````bash
+development:
+  adapter: postgresql
+  database: your_priorities_development
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_PORT_5432_TCP_ADDR'] %>
+  port: <%= ENV['DB_PORT_5432_TCP_PORT'] %>
+  pool: 5
+  timeout: 5000
+````
+
 Build docker images
 ````bash
 # Base docker image
