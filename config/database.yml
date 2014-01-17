@@ -1,9 +1,0 @@
-development:
-  adapter: postgresql
-  database: your_priorities_development
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: <%= ENV['DB_PORT_5432_TCP_ADDR'] %>
-  port: <%= ENV['DB_PORT_5432_TCP_PORT'] %>
-  pool: 5
-  timeout: 5000
