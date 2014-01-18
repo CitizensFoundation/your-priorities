@@ -7,7 +7,7 @@ Run a development server using docker
 
 Install docker on your system
 ````bash
-Visit http://docs.docker.io/en/latest/installation
+Visit http://docs.docker.io/en/latest/
 ````
 
 Clone Your Priorities locally
