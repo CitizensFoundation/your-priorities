@@ -2,12 +2,17 @@ Your Priorities is a web based platform that enables groups of people to define 
 
 Your Priorities is being used on the https://www.yrpri.org/ eDemocracy service and the Better Reykjavik website in Iceland amongst other places.
 
-Run a development server using docker
-=====================================
+Docker on Ubuntu
+================
 
-Install docker on your system
+Install docker
 ````bash
 Visit http://docs.docker.io/en/latest/
+````
+
+Install git
+````bash
+sudo apt-get install git
 ````
 
 Clone Your Priorities locally
@@ -16,21 +21,21 @@ cd /yourpath
 git clone https://github.com/rbjarnason/your-priorities.git
 ````
 
-Build docker images
+Build docker repositories
 ````bash
-# Base docker image
+# Base docker repository
 git clone https://github.com/rbjarnason/docker-base.git
 cd docker-base
 sudo docker build -t yrpri/base .
 cd ..
 
-# Database docker image
+# Database docker repository
 git clone https://github.com/rbjarnason/docker-postgresql.git
 cd docker-postgresql
 sudo docker build -t yrpri/postgresql .
 cd ..
 
-# Rails docker image
+# Rails docker repository
 git clone https://github.com/rbjarnason/docker-rails.git
 cd docker-rails
 sudo docker build -t yrpri/rails .
@@ -41,6 +46,11 @@ Start database
 sudo docker run -i -t -d --name postgresql yrpri/postgresql
 ````
 
+See if it is running
+````bash
+sudo docker ps
+````
+
 Start rails docker image pointing to your local Your Priorities installation
 ````bash
 sudo docker -D run -d -link postgresql:db -p 3000:3000 -v /yourpath/your-priorities:/var/www/your-priorities -e APP_NAME=your-priorities yrpri/rails
@@ -48,7 +58,8 @@ sudo docker -D run -d -link postgresql:db -p 3000:3000 -v /yourpath/your-priorit
 
 Test it
 ````bash
-Points a browser to your local server at port 3000 for example http://localhost:3000/ or http://your.ip.addr.number:3000
+The image will take a little while to start up, it will have to run bundle install each time its started.
+Browser to http://localhost:3000/ or http://your.ip.addr.number:3000
 ````
 
 Debug the docker image
