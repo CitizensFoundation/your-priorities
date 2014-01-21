@@ -80,7 +80,7 @@ Debug the docker image
 sudo docker ps -notrunc
 sudo lxc-attach --name long_uid_from_docker_ps
 <now you are in the image>
-cd /var/log/supervise
+cd /var/log/supervisor
 tail -f *
 ````
 
