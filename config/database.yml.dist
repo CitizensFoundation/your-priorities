@@ -1,28 +1,18 @@
 development:
   adapter: postgresql
-  encoding: utf8
-  host: localhost
-  collation: utf8_general_ci
-  git_branch: master
-  reconnect: true
-  database: yrpri_dev
+  database: your_priorities_development
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_PORT_5432_TCP_ADDR'] %>
+  port: <%= ENV['DB_PORT_5432_TCP_PORT'] %>
   pool: 5
-  username: puser
-  password: xxxxxxxx
-  airbrake_api_key: 00000000000000000000000000
-  secret_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  session_key: _your_app_session
+  timeout: 5000
 test:
   adapter: postgresql
-  encoding: utf8
-  host: localhost
-  collation: utf8_general_ci
-  git_branch: master
-  reconnect: true
-  database: yrpri_test
+  database: your_priorities_test
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_PORT_5432_TCP_ADDR'] %>
+  port: <%= ENV['DB_PORT_5432_TCP_PORT'] %>
   pool: 5
-  username: puser
-  password: xxxxxxxx
-  airbrake_api_key: 00000000000000000000000000
-  secret_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  session_key: _your_app_session
+  timeout: 5000
