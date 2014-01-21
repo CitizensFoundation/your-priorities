@@ -72,7 +72,7 @@ class HomeController < ApplicationController
     if current_instance.domain_name.include?("yrpri") and (not request.subdomains.any? or request.subdomains[0] == 'www' and not params[:sub_instance_short_name]) and not SubInstance.current.lock_users_to_instance==true
       redirect_to :action=>"world"
     elsif SubInstance.current.use_category_home_page and SubInstance.current.use_category_home_page==true
-      redirect_to :action=>"categories"
+      redirect_to :action=>"world"
     else
       @page_title = SubInstance.current.name
       @ideas = @new_ideas = Idea.published.newest.limit(3)

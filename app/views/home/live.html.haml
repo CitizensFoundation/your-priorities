@@ -1,0 +1,12 @@
+.row
+  .large-12.columns
+    = raw "<iframe src='https://kiwiirc.com/client/irc.kiwiirc.com/?nick=robo|?#test_your_priorities' style='border:0; width:100%; height:450px;'></iframe>"
+- unless @activities.blank?
+  %div.home_welcome
+    %h2.home_h2
+      &nbsp;
+    %h2.home_h1
+      = tr("Latest Activity","home")
+    .endless_scroll_activities
+      = render :partial => 'feed/activity_list_simple'
+    = link_to tr("More...","here"), "/feed/top_feed?page?#{@activities.next_page}", :class => 'load-more-posts', :remote => true if @activities.next_page
