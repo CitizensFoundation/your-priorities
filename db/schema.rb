@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131121142601) do
+ActiveRecord::Schema.define(:version => 20140123194748) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -873,6 +873,8 @@ ActiveRecord::Schema.define(:version => 20131121142601) do
     t.string   "organization_type"
     t.string   "redirect_url"
     t.text     "description"
+    t.boolean  "use_live_home_page",                             :default => false
+    t.string   "live_stream_id"
   end
 
   add_index "sub_instances", ["short_name"], :name => "short_name"

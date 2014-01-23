@@ -27,6 +27,8 @@ class HomeController < ApplicationController
   def get_layout
     if ["world"].include?(action_name)
       return SubInstance.where(:short_name=>"default").first.home_page_layout
+    elsif ["live"].include?(action_name)
+      return "application"
     elsif ["about"].include?(action_name)
       return Instance.current.layout_for_subscriptions
     else
@@ -63,7 +65,11 @@ class HomeController < ApplicationController
       @endorsements = current_user.endorsements.active.find(:all, :conditions => ["idea_id in (?)", all_ideas.collect {|c| c.id}])
     end
     last = params[:last].blank? ? Time.now + 1.second : Time.parse(params[:last])
-    @activities = Activity.active.top.feed(last).for_all_users.with_20
+    @activities = Activity.active.top.for_all_users.paginate(:page => params[:page])
+  end
+
+  def live
+    @activities = Activity.active.top.for_all_users.paginate(:page => params[:page])
   end
 
   def index
@@ -71,8 +77,10 @@ class HomeController < ApplicationController
     @skip_sub_navigation = true
     if current_instance.domain_name.include?("yrpri") and (not request.subdomains.any? or request.subdomains[0] == 'www' and not params[:sub_instance_short_name]) and not SubInstance.current.lock_users_to_instance==true
       redirect_to :action=>"world"
+    elsif SubInstance.current.use_live_home_page and SubInstance.current.use_live_home_page==true
+      redirect_to :action=>"live"
     elsif SubInstance.current.use_category_home_page and SubInstance.current.use_category_home_page==true
-      redirect_to :action=>"world"
+      redirect_to :action=>"categories"
     else
       @page_title = SubInstance.current.name
       @ideas = @new_ideas = Idea.published.newest.limit(3)

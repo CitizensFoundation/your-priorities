@@ -53,8 +53,18 @@
       = f.text_field :geoblocking_open_countries
       %br/
     %p
+      %label{:for => "live_stream_id"}
+        = tr("Live stream id", "view/sub_instances/_form")
+      %br/
+      = f.text_field :live_stream_id
+      %br/
+
+    %p
       %label{:for => "default_locale"}= tr("Use category homepage", "view/sub_instances/_form")
       = f.check_box :use_category_home_page
+    %p
+      %label{:for => "default_locale"}= tr("Use live homepage", "view/sub_instances/_form")
+      = f.check_box :use_live_home_page
     %p
       %label{:for => "default_locale"}= tr("Hide idea description", "view/sub_instances/_form")
       = f.check_box :hide_description
