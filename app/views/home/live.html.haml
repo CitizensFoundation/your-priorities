@@ -1,21 +1,21 @@
 .row
-  .large-6.columns.panel-bg-2
+  .large-12.columns.panel-bg-2
     - if SubInstance.current.live_stream_id and SubInstance.current.live_stream_id!=""
+      %h2
+        = tr("Live stream","here")
       = raw "<iframe width='100%' height='315' src='//www.youtube.com/embed/#{SubInstance.current.live_stream_id}' frameborder='0' allowfullscreen></iframe>"
     - else
+      %h2
+        = tr("Welcome","here")
       = raw "<iframe width='100%' height='315' src='//www.youtube.com/embed/t0lFd1poJfs' frameborder='0' allowfullscreen></iframe>"
-
-  .large-6.columns.panel-bg-2
-    %h2
-      = tr("Live Idea Feed","here")
 .row
   .large-12.columns
     - if current_user
-      %h1
-        = tr("chat","here")
-      = raw "<iframe src='http://localhost:7778/?nick=#{current_user.login.split(" ")[0]}?#{"#yrpri_"+SubInstance.current.name.downcase.gsub(" ","_")}' style='border:0; width:100%; height:450px;'></iframe>"
+      %h2
+        = tr("Chat","here")
+      = raw "<iframe src='https://irc.yrpri.org:7778/?nick=#{current_user.login.split(" ")[0]}?#{"#yrpri_"+SubInstance.current.name.downcase.gsub(" ","_")}' style='border:0; width:100%; height:450px;'></iframe>"
     - else
-      %h1
+      %h2
         = tr("Login to enable chat.","here")
 
 - unless @activities.blank?

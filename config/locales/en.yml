@@ -904,8 +904,9 @@ en:
   d7391c69ff4c78e653e46ce0f1004fe7: "The %{yrpri_link} software running this website is Open Source and the product of the nonprofit %{citizens_foundation_link} which has been working on the software since 2008. You can at any time switch over to running your own Your Priorities for free using the Open Source software. Citizens Foundation has offices in London and Reykjavík."
   4fd766ef1dcfe3c579bd1fb1ce28738d: "%{citizens_link}"
   974181ed9d4530663fcad6e11dfe9182: "Add new idea"
-  57f829f63129df2144419f2f78435072: "Live Idea Feed"
-  aa8af3ebe14831a7cd1b6d1383a03755: "chat"
+  14976bbae13dbb217c9d3896929f6cfa: "Live stream"
+  83218ac34c1834c26781fe4bde918ee4: "Welcome"
+  55dcdf017b51fc96f7b5f9d63013b95d: "Chat"
   05ec56e418ae2dd982840d9c2b72ade1: "Login to enable chat."
   63f69f6a7c07440faf6388dfd2059912: "No idea has been created - be the first by clicking here: "
   d0d2bd89e683bcce7b15dc1082867d2b: "Here's what this point looked like %{time_ago}. You can also <a href='%{revision_url}'>see the changes</a> in this version from the previous one."
@@ -1454,7 +1455,6 @@ en:
   859e4d7094ca849fa58d82f261af42af: "%{count} no response"
   12edc441c009acb7c5b5484e32893565: "This ad is currently %{position}. You can see all the ads running <a href='%{ads_url}'>here</a>."
   873d178af8c3ae30d29577b5846695ac: "per user"
-  83218ac34c1834c26781fe4bde918ee4: "Welcome"
   a4d3b161ce1309df1c4e25df28694b7b: "Submit"
   date:
     formats:
