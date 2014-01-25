@@ -1,7 +1,7 @@
 - if user_signed_in?
   = render :partial => "shared/user_info"
   = render :partial => "shared/notifications"
-  = #render :partial => "shared/irc"
+  = render :partial => "shared/irc" if false or action_name!="live"
   = render :partial => "shared/your_priorities"
 - else
   = render :partial => "users/login"
