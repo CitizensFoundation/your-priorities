@@ -31,7 +31,9 @@ Option 1 - Install Your Priorities images from Docker Index
 sudo docker pull yrpri/base
 sudo docker pull yrpri/postgresql
 sudo docker pull yrpri/rails
-
+(optional IRC support)
+sudo docker pull yrpri/ngircd
+sudo docker pull yrpri/kiwiirc
 ````
 
 Option 2 - Build docker repositories from github dockerfiles
@@ -42,16 +44,12 @@ cd docker-base
 sudo docker build -t yrpri/base .
 cd ..
 
-# Database docker repository
-git clone https://github.com/rbjarnason/docker-postgresql.git
-cd docker-postgresql
-sudo docker build -t yrpri/postgresql .
-cd ..
-
-# Rails docker repository
-git clone https://github.com/rbjarnason/docker-rails.git
-cd docker-rails
-sudo docker build -t yrpri/rails .
+And the same for:
+https://github.com/rbjarnason/docker-postgresql.git and yrpri/postgresql
+https://github.com/rbjarnason/docker-rails.git and yrpri/rails
+(optional IRC support)
+https://github.com/rbjarnason/docker-ngircd.git and yrpri/ngircd
+https://github.com/rbjarnason/docker-kiwiirc.git and yrpri/kiwiirc
 ````
 
 Start database
@@ -59,9 +57,10 @@ Start database
 sudo docker run -i -t -d --name postgresql yrpri/postgresql
 ````
 
-See if it is running
+Optional IRC support
 ````bash
-sudo docker ps
+sudo docker -D run -d -p 6667:6667 yrpri/ngircd
+sudo docker -D run -d -p 7778:7778 -v /root/certs:/etc/kiwiirc -e KIWI_IRC_SERVER_HOST=irc.yrpri.org -e KIWI_IRC_SERVER_PORT=6667 yrpri/kiwiirc
 ````
 
 Start rails docker image pointing to your local Your Priorities installation
@@ -69,6 +68,10 @@ Start rails docker image pointing to your local Your Priorities installation
 sudo docker -D run -d -link postgresql:db -p 3000:3000 -v /yourpath/your-priorities:/var/www/your-priorities -e APP_NAME=your-priorities yrpri/rails
 ````
 
+See if it is running
+````bash
+sudo docker ps
+````
 Test it
 ````bash
 The image will take a little while to start up, it will have to run bundle install each time its started.
