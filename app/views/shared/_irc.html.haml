@@ -2,4 +2,4 @@
   .large-12.columns
     %h2
       = tr("chat","here")
-    = raw "<iframe src='https://irc.yrpri.org:7778/?nick=#{current_user.login.gsub(" ","_")}_?#{"#yrpri_"+SubInstance.current.name.downcase.gsub(" ","_")}' style='border:0; width:100%; height:270px;'></iframe>"
+    = raw "<iframe src='https://irc.yrpri.org:7778/?nick=#{current_user.login.gsub(" ","_")}_?#{"#"+SubInstance.current.name.downcase.gsub(" ","_")}' style='border:0; width:100%; height:340px;'></iframe>"
