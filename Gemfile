@@ -19,6 +19,7 @@ gem "mysql2"
 gem 'unf'
 gem 'puma'
 gem 'test-unit'
+gem 'passenger'
 #gem 'brcypt-ruby', '3.0.0'
 gem "tinymce-rails",'<= 3.5.6'
 gem 'foundation-will_paginate'
@@ -47,7 +48,7 @@ gem 'auto_html'
 #gem "resque"
 gem 'rmagick', require: false
 gem 'monologue','0.2.0'
-gem 'unicorn'
+#gem 'unicorn'
 gem 'sidekiq'
 #gem "thin"
 gem 'paperclip'
