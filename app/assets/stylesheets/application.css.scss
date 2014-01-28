@@ -1469,11 +1469,13 @@ a {
 }
 
 .panel-mine {
-  background-color:rgba(255,255,255,0.75);
-  padding-top:2px;
+  background-color:rgba(255,255,255,0.9);
+  padding-top:1px;
   margin-top: 0px;
-  height:40px;
-  h2 {
+  height:28px;
+  h3 {
+    margin-top: 0px;
+    padding-top: 0px;
     color: #000;
   }
   p {
