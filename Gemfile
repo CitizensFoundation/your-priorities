@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.0'
 gem 'paymill', :git=>"git://github.com/dkd/paymill-ruby.git"
 gem 'soap4r-spox'#, :git => 'git://github.com/swalterd/soap4r.git'
 gem 'ruby-saml', :git => 'git://github.com/rbjarnason/ruby-saml.git', :ref => "6be3170ba2a5c7eac12d5255e32a62e6fadd1cc2"
@@ -19,7 +19,7 @@ gem "mysql2"
 gem 'unf'
 gem 'puma'
 gem 'test-unit'
-gem 'passenger'
+#gem 'passenger'
 #gem 'brcypt-ruby', '3.0.0'
 gem "tinymce-rails",'<= 3.5.6'
 gem 'foundation-will_paginate'
@@ -48,7 +48,7 @@ gem 'auto_html'
 #gem "resque"
 gem 'rmagick', require: false
 gem 'monologue','0.2.0'
-#gem 'unicorn'
+gem 'unicorn'
 gem 'sidekiq'
 #gem "thin"
 gem 'paperclip'
