@@ -21,7 +21,7 @@ class Idea < ActiveRecord::Base
   scope :alphabetical, :order => "ideas.name asc"
   scope :by_impressions_count, :order => "ideas.impressions_count desc"
   scope :by_most_discussed, :order => "points_count + discussions_count desc"
-  scope :top_rank, :order => "ideas.score desc", :conditions=>"position != 0"
+  scope :top_rank, :order => "ideas.score desc" # :conditions=>"position != 0"
   scope :top_three, :order => "ideas.score desc", :limit=>3
 
   scope :top_24hr, :conditions => "ideas.position_endorsed_24hr IS NOT NULL", :order => "ideas.position_endorsed_24hr desc"
