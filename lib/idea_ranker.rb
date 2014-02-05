@@ -46,7 +46,7 @@ class IdeaRanker
 
     # ranks all the ideas in the database with any endorsements.
 
-    sub_instances_with_nil = SubInstance.all
+    sub_instances_with_nil = SubInstance.order("created_at DESC").all
     sub_instances_with_nil.each do |sub_instance|
       update_positions_by_sub_instance(sub_instance)
     end
