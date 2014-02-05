@@ -7,6 +7,7 @@ class SessionsController < Devise::SessionsController
   def create
     if request.format == 'js' && params[:region] && params[:region] == 'inline'
       resource = warden.authenticate(auth_options)
+      Rails.logger.debug(auth_options.inspect)
       if warden.authenticated?
         sign_in(resource)
         current_user.remember_me!

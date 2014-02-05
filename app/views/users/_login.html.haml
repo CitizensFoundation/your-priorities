@@ -33,6 +33,7 @@
           .label
             = tr("Email address", "view/shared/_login")
           = f.text_field :email, size: 15, html: { id: :login_email }
+          = f.hidden_field :sub_instance_id, :value=>SubInstance.current.id
           .label
             = tr("Password", "view/shared/_login")
           = f.password_field :password, size: 8, html: { id: :login_password }
