@@ -206,7 +206,11 @@ class FeedController < ApplicationController
     end
     if user_signed_in? and request.format == 'html' and current_user.unread_notifications_count > 0
       for n in current_user.received_notifications.comments.unread.all
-        n.read!
+        begin
+          n.read!
+        rescue
+          Rails.logger.error("Can't set message to read #{n.inspect}")
+        end
       end
     end
   end
