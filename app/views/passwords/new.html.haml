@@ -1,8 +1,17 @@
+- if @user.errors.any?
+  .error_messages
+    %h2
+      = tr("Errors","here")
+    %ul
+      - @user.errors.full_messages.each do |msg|
+        %li
+          = msg
 #hp_intro= @page_title
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   %label{:for => "email"}
     = tr("Your email address", "view/passwords/new")
   = f.text_field :email
+  = f.hidden_field :sub_instance_id, :value => SubInstance.current.id
   %br
   = f.submit tr("Request a new password", "view/passwords/new"), :class => "yellow_button"
 = link_to tr("Never mind - I remember it now","view/passwords/new"), new_user_session_url

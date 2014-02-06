@@ -68,9 +68,12 @@ class ApplicationController < ActionController::Base
     # store last url - this is needed for post-login redirect to whatever the user last visited.
     if (request.fullpath != "/users/sign_in" &&
         request.fullpath != "/users/sign_up" &&
-        !request.fullpath != "/users/sign_up" &&
-        request.fullpath != "/users/password" &&
+        request.fullpath != "/users/sign_out" &&
+        action_name != "idea_detail" &&
+        request.fullpath != "/users" &&
+        !request.fullpath.include?("/users/password") &&
         !request.xhr?) # don't store ajax calls
+      Rails.logger.debug("URL storing: #{request.fullpath}")
       session[:previous_url] = request.fullpath
     end
   end
@@ -84,6 +87,7 @@ class ApplicationController < ActionController::Base
       end
       session.delete("omniauth_data")
     end
+    Rails.logger.debug("URL after sign in: #{session[:previous_url] || redirect_back_path}")
     session[:previous_url] || redirect_back_path
   end
 
@@ -294,7 +298,7 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_back_path
-    Rails.logger.error "BACK: #{session[:user_return_to] || '/'}"
+    Rails.logger.info "URL: back #{session[:user_return_to] || '/'}"
     session[:user_return_to] || '/' 
   end
 

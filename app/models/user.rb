@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   acts_as_set_sub_instance :table_name=>"users"
 
   devise :invitable, :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable#, :validatable
 
   include DeviseInvitable::Inviter
 
@@ -129,9 +129,12 @@ class User < ActiveRecord::Base
   
   validates_presence_of     :email
   validates_length_of       :email, :within => 3..100
-  #validates :email, :uniqueness => {:scope => :sub_instance_id}
+  validates_uniqueness_of   :email, :scope => :sub_instance_id
   validates_format_of       :email, :with => /^[-^!$#%&'*+\/=3D?`{|}~.\w]+@[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])*(\.[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])*)+$/x
   validates_uniqueness_of   :facebook_uid, :allow_nil => true, :allow_blank => true, :scope => :sub_instance_id
+
+  validates_presence_of     :password
+  validates_confirmation_of :password
 
   #validates_presence_of     :post_code, :message => tr("Please enter your postcode.", "model/user")
   #validates_presence_of     :age_group, :message => tr("Please select your age group.", "model/user")
