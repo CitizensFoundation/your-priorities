@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   acts_as_set_sub_instance :table_name=>"users"
 
   devise :invitable, :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:email, :sub_instance_id]
+         :recoverable, :rememberable, :trackable, :validatable
 
   include DeviseInvitable::Inviter
 
