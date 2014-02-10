@@ -133,8 +133,8 @@ class User < ActiveRecord::Base
   validates_format_of       :email, :with => /^[-^!$#%&'*+\/=3D?`{|}~.\w]+@[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])*(\.[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])*)+$/x
   validates_uniqueness_of   :facebook_uid, :allow_nil => true, :allow_blank => true, :scope => :sub_instance_id
 
-  validates_presence_of     :password
-  validates_confirmation_of :password
+  validates_presence_of     :password, :if => :should_validate_password?
+  validates_confirmation_of :password, :if => :should_validate_password?
 
   #validates_presence_of     :post_code, :message => tr("Please enter your postcode.", "model/user")
   #validates_presence_of     :age_group, :message => tr("Please select your age group.", "model/user")
@@ -198,6 +198,10 @@ class User < ActiveRecord::Base
     self.email.downcase! if self.email
   end
 
+  def should_validate_password?
+    !self.facebook_uid
+  end
+  
   def next_idea
     Idea.joins("LEFT OUTER JOIN viewed_ideas vi on vi.idea_id = ideas.id AND vi.user_id=#{self.id}").where("vi.user_id is null AND ideas.status='published'").order("random()").first
   end
