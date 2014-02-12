@@ -54,7 +54,7 @@ module ApplicationHelper
       end
     end
     all_locales.uniq.each do |locale|
-      next if locale.translations.count<130 and locale.name!=SubInstance.current.default_locale
+      next if locale.translations.count<210 and locale.name!=SubInstance.current.default_locale
       language_name = Tolk::Config.mapping[locale.name]
       #out += link_to("#{language_name}#{calc_language_completion(locale.translations.count)}", "#{url_for(:locale => locale.name)}")
       out += "<li>"
