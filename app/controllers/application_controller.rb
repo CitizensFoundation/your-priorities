@@ -189,7 +189,9 @@ class ApplicationController < ActionController::Base
   end
 
   def setup_about_pages
-    @about_pages = Page.order("title").all
+    default_pages =Page.unscoped.where(:sub_instance_id=>SubInstance.find_by_short_name("default").id).order("title").all
+    my_pages = Page.unscoped.where(:sub_instance_id=>SubInstance.current.id).order("weight").all  
+    @about_pages = my_pages + default_pages
   end
 
   def authenticate_http_if_locked
