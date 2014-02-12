@@ -73,6 +73,7 @@ class ApplicationController < ActionController::Base
         request.fullpath != "/users" &&
         !request.fullpath.include?("/users/password") &&
         !request.fullpath.include?("/users/invitation") &&
+        !request.fullpath.include?("/flag") &&
         !request.xhr?) # don't store ajax calls
       Rails.logger.debug("URL storing: #{request.fullpath}")
       session[:previous_url] = request.fullpath
