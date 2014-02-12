@@ -1,5 +1,5 @@
 %p
-  = tr("You have violated the site rules. This is your {warning_number}. warning out of three. Your content was deleted. You will be banned from the website if you break the rules more than three times.", "email", ::warning_number=>1)
+  = tr("You have violated the site rules. This is your {warning_number}. warning out of three. Your content was deleted. You will be banned from the website if you break the rules more than three times.", "email", :warning_number=>1)
 %p
   = tr("Here are more details on the rules", "email")
   \: #{link_to @recipient.root_url+'about/rules',@recipient.root_url+'about/rules'}
