@@ -325,7 +325,7 @@ end
 class NotificationWarning1 < Notification
   
   def name
-    tr("This is your first warning for violating the site rules because of #{self.custom_text}", "model/notification")
+    tr("This is your first warning for violating the site rules.", "model/notification")
   end
   
   def is_recipient_subscribed?
@@ -337,7 +337,7 @@ end
 class NotificationWarning2 < Notification
   
   def name
-    tr("This is your second warning for violating the site rules because of #{self.custom_text}", "model/notification")
+    tr("This is your second warning for violating the site rules.", "model/notification")
   end
   
   def is_recipient_subscribed?
@@ -349,7 +349,7 @@ end
 class NotificationWarning3 < Notification
   
   def name
-    tr("This is your third warning. You are now on probation because of #{self.custom_text}", "model/notification")
+    tr("This is your third warning. You are now on probation.", "model/notification")
   end
   
   def is_recipient_subscribed?
@@ -361,7 +361,7 @@ end
 class NotificationWarning4 < Notification
   
   def name
-    tr("You have been banned for violating the site rules because of #{self.custom_text}", "model/notification")
+    tr("You have been banned for violating the site rules.", "model/notification")
   end
   
   def is_recipient_subscribed?
