@@ -64,9 +64,9 @@ nl:
     select:
       prompt: Selecteer
     array:
-      two_words_connector: en
-      last_word_connector: en
-      words_connector: ','
+      words_connector: ', '
+      two_words_connector: ' en '
+      last_word_connector: ' en '
   number:
     format:
       separator: ','

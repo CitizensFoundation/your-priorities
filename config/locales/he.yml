@@ -64,9 +64,9 @@ he:
     select:
       prompt: נא לבחור
     array:
-      two_words_connector: את
-      last_word_connector: ', את'
-      words_connector: ','
+      words_connector: ', '
+      two_words_connector: ' את '
+      last_word_connector: ', את '
   number:
     format:
       precision: 3
@@ -211,3 +211,5 @@ he:
         even: חייב להיות זוגי
       full_messages:
         format: '%{attribute}%{message}'
+  002d4fac39a17aaa96c1a79a1a710edb: דואל למכירות
+  0038a9e512b4678c583db11009d2c297: זהו הרעיון הכי חם

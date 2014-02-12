@@ -175,9 +175,9 @@ zh-CN:
     select:
       prompt: 请选择
     array:
-      two_words_connector: 和
-      last_word_connector: ', 和'
-      words_connector: ','
+      words_connector: ', '
+      two_words_connector: ' 和 '
+      last_word_connector: ', 和 '
   activerecord:
     errors:
       template:

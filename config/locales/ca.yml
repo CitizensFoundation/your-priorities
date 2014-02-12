@@ -1,0 +1,548 @@
+---
+ca:
+  189f63f277cd73395561651753563065: Etiquetes
+  1945e5ccc0bd89812560b30f7c48639d: Les teves notificacions
+  198584454b0ce1101ff5b50323325aa8: El teu correu electrònic
+  1a08c8ca9af355a37e4b5d4595434211: Confirma la contrasenya
+  1aa0d7cede60e59fc6b506bb987a2718: Tota l'activitat
+  2bd2b8e30995d2dfe1f43a4ea30fc3fc: Més debatudes
+  fafdcbfb83d39b7e0543fd0af58a35ac: enviar a
+  3903aab323863bd2e9b68218a7a65ebd: Seguir
+  3adbdb3ac060038aa0e6e6c138ef9873: Categoria
+  453aceb005ceaf54a47da15fee8b2a26: Pàgines
+  3d067bedfe2f4677470dd6ccf64d05ed: Públic
+  3d35e1c739ae399cc7d6923c1d8103fb: Nom de l'organització
+  3f89fa3c54a8c2bc3e677282f46ca329: Selecciona un altre pla de subscripció
+  40a2e1017d03e4ce611e8e59ffd188b4: Ara... Selecciona un pla
+  1d508341791ac8861952384d2fd9eb96: ha de tenir entre 2 i 50 caràcters
+  1dabb7608cdd6762b2f3b96905d7259f: Codi de seguretat (CVV)
+  1f12b3c7394669db79a9042fe97e9cbf: Better Reykjavik
+  1f18ecdc7eec76193a3c6e228992601c: mostra el comentari complet
+  201e7310f5fb28133f781fc856003d92: Títol de la idea
+  20db0bfeecd8fe60533206a2b5e9891a: Nom
+  2130061e02858d68bb78dbbbe921ed12: Missatge per una nova idea
+  21d104a54fc71a19a325c7305327f1d2: Processant...
+  21dbe63a91486f34b5da92b7f7457c25: Retirar el vot
+  21dd33ca6c8863865c1a145e104ac69e: El seu correu electrònic
+  221e705c06e231636fdbccfdd14f4d5c: El teu nom
+  22af645d1859cb5ca6da0c484f1f37ea: nou
+  34d3e95b7df44d62f685eaf95d823c92: Rebut
+  34e8ac1104cce23ef5971ddf76627eee: Nom de l'administrador
+  30ae8fff8898dc197acd49d9c0797d20: Amb èxit
+  31b13aa25052544f300bcaab02e09ea5: Més aquí
+  33ae5f72db5d1abde26686505230e8a1: No s'ha pogut trobar aquest usuari
+  33caa076f23f453dd4061726f3706325: 'Per:'
+  3544848f820b9d94a3f3871a382cf138: Nova contrasenya
+  52d2acef5f9e5e2d6a06c4958f774419: No hi ha resultats per la cerca
+  52f5e0bc3859bc5f5e25130b6c7e8881: Posició
+  53127d8c496db03d848a289010087409: Més votades
+  56a8a9eb05f9014da51a4f9b57322ac7: 'Categoria:'
+  ffa378ff349f2603d6c303f14a6a98e2: Últimes idees
+  ffa99d6b0c14720536fcc647c7197f17: Sí, aquest punt dóna suport a la idea
+  ffbb410a55bb31f801dea6387e2745ac: Eliminant
+  fffb47b03232ded9ecc86fa01eeaa695: Punts en contra
+  number:
+    currency:
+      format:
+        delimiter: ','
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+        format: '%u%n'
+        precision: 2
+    format:
+      delimiter: ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        units:
+          billion: Bilió
+          million: Milió
+          quadrillion: Quadrilió
+          thousand: Mil
+          trillion: Trilió
+        format: '%n %u'
+      format:
+        precision: 3
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        units:
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+        format: '%n %u'
+  errors:
+    template:
+      body: 'Hi ha problemes amb els següents camps:'
+  f093266fa9bfd1ceeb04ff8247a9729e: Edita la idea
+  f0e0f580898b26d3946589a4ccab7a3f: Nom del domini
+  f0ec3db5bcd8943d68ac34fdc4b57d73: Últim pas
+  f11b368cddfe37c47af9b9d91c6ba4f0: Nom complet
+  f1527dd1b427ae2c86da111329190087: Quan una idea és revisada
+  f1e2a549f8a0a20b572b176455dba9b9: AFEGEIX LA TEVA IDEA
+  f2a6c498fb90ee345d997f888fce3b18: Elimina
+  f2fc7490cbdb0db5cd6f1a4e7edb0da1: La teva compta
+  f4ec5f57bd4d31b803312d873be40da9: Canvi
+  f504eb1cc2305a863cc0cf23428a36f8: Idees polèmiques
+  2a3cd5946cfd317eb99c3d32e35e2d4c: Punt
+  2d180c2da693f88fe77a780e31bc07a2: Últims punts
+  2d8b22cca4d0f75b672127d908b747f7: Actualitza notificacions del correu electrònic
+  3dc20c82b3ae39860429aad3d3357397: Mostra a
+  59d7434481f250db2c48858375499a31: Últims punts
+  5a9d18bb87ff12835dc844883c5c3ebe: canvis
+  5bcae97233d5480140596e6e948ff8b0: La teva foto
+  5d50889672f6f860d14f502de3de1957: Colors
+  5df2acc8c67fdc6d6dc03791ac5f7a5e: Envia una invitació
+  5ef0c737746fae2ca90e66c39333f8f6: Errors
+  72ef2b9b6965d078e3c7f95487a82d1c: Surt
+  730956af87021c351084317bbc63eea6: VOLUM
+  97f371a56a13b63cf413464aa03d754c: Connecta amb xarxes socials
+  985a4b720f9b50ee8ed90a41488d2bb7: Normes d'ús
+  99b0a9110ebd2fa6dcd57f7daa5b5d42: Normes de servei
+  9f557ee0d5770bcce17fcc08b127f48a: Segueix el debat
+  activerecord:
+    errors:
+      messages:
+        blank: No pot estar en blanc
+        empty: No pot estar buit
+        exclusion: està reservat
+        inclusion: no està inclòs a la llista
+        invalid: és invàlid
+        not_an_integer: ha de ser parell
+        not_a_number: no és un número
+        odd: ha de ser imparell
+  ad8f256743a66f22456c85d2e3938ef1: Guarda la teva bio
+  addec426932e71323700afa1911f8f1c: més
+  873d178af8c3ae30d29577b5846695ac: per usuari
+  88183b946cc5f0e8c96b2e66e1c74a7e: Desconegut
+  9977ab924c89e6c98b1cf1595354ada3: Última activitat
+  99938282f04071859941e18f16efcf42: selecciona
+  99b4622ebe1e9894ede410500cde5915: Explica el teu punt
+  99de1173596bd03c47e19254f981429a: Fes administrador
+  9a56ce776e4dbe20a95fd6973c7569db: té un màxim de 500 caràcters
+  9b5016f406a56aa10fdc5384de2696b8: Guarda la configuració de l'email
+  9b76f33a9b47cb63e4444a718a6d9723: No convidat
+  9c37b7b6ff829e977df287900543ea54: Data de naixement
+  9d098ff02f6813055b869f6f9acd831c: Aprèn més sobre
+  ff0cfd359a1d96d597133a4341a6a7e4: Afegeix una nova idea
+  ff44bfccaadd8bdba50e227e3f4e55ba: Edita el punt
+  helpers:
+    button:
+      create: Crea %{model}
+      submit: Guarda %{model}
+      update: Actualitza %{model}
+    submit:
+      create: Crea %{model}
+      submit: Guarda %{model}
+      update: Actualitza %{model}
+    select:
+      prompt: Selecciona, si us plau.
+  support:
+    array:
+      last_word_connector: ', i'
+      two_words_connector: i
+      words_connector: ','
+    select:
+      prompt: Selecciona, si us plau
+  df352005a3f701a490b6ba068b676abb: MOVIMENTS
+  dfa592421ec2584a960f077610eb19bd: Subscriu-te ara
+  e11d937a5185a2361123ad5222df5f5f: Idees %{tag_name} aleatòries
+  e13e12a82f9dcac732bb8e342c94c0da: La imatge s'ha pujat correctament
+  e17fdb615452f440c793b5ddad90dd5e: Advertències
+  devise:
+    registrations:
+      signed_up_but_locked: T'has registrat correctament. No obstant això, no pots
+        accedir perquè el teu compte està bloquejat.
+      signed_up_but_unconfirmed: S'ha enviat un missatge de confirmació al teu correu
+        electrònic. Fes clic a l'enllaç per activar el teu compte.
+      updated: L'actualització del teu compte s'ha completat amb èxit.
+  da0a4c939d482be3177c8e0e5d630bfb: Primer cop que entres a la pàgina? Crea't el teu
+    compte
+  date:
+    abbr_day_names:
+    - Dg
+    - Dl
+    - Dt
+    - Dc
+    - Dj
+    - Dv
+    - Ds
+    order:
+    - :any
+    - :mes
+    - :dia
+    abbr_month_names:
+    - 
+    - Gener
+    - Febrer
+    - Març
+    - Abril
+    - Maig
+    - Juny
+    - Juliol
+    - Agost
+    - Setembre
+    - Octubre
+    - Novembre
+    - Desembre
+    day_names:
+    - Diumenge
+    - Dilluns
+    - Dimarts
+    - Dimecres
+    - Dijous
+    - Divendres
+    - Dissabte
+    formats:
+      default: '%Y-%m-%d'
+      long: '%B %d, %Y'
+      short: '%b %d'
+    month_names:
+    - 
+    - Gener
+    - Febrer
+    - Març
+    - Abril
+    - Maig
+    - Juny
+    - Juliol
+    - Agost
+    - Setembre
+    - Octubre
+    - Novembre
+    - Desembre
+  datetime:
+    distance_in_words:
+      half_a_minute: mig minut
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minut
+      month: Mes
+      second: Segons
+      year: Any
+  d9f28872df1a47136128b81a1a01c237: té un màxim de 60 caràcters
+  db5ca4cc88a9c0db11b47157edb70dd0: 'Següent:'
+  db7fcf41127935e5fee505fe102abf9a: Els teus debats
+  dbb6f26a0ccb75b82d641ff87b627ce3: Nous membres
+  dc1de5846dfb17d0e310d6f71334afc7: selecciona a favor o en contra
+  dc647eb65e6711e155375218212b3964: Contrasenya
+  dd1f775e443ff3b9a89270713580a51b: Anterior
+  ce8ae9da5b7cd6c3df2929543a9af92d: Correu electrònic
+  cf23ee279844016288ea1c076638f3be: Sobre nosaltres
+  d10403db63bcbde2b3038776452ad8e2: afegeix el cognom
+  d1892131fd7ae3ef8af70292a889e8b2: De moment, no hi ha activitat aquí.
+  d280d15220c6ba22dfa7cd8a5139ea67: Següent... Els teus detalls personals.
+  d334dfcea59127bedfcdbe0a3ee7f494: Gràfics
+  d35fd0fb45c54e831e6c9dc7421a6335: té un màxim de 2000 caràcters
+  d3da97e2d9aee5c8fbe03156ad051c99: Més
+  d46ef9e7211d041671cdbe6c3d884884: Idees
+  1f1fb965aa2f028d9f24acc1e600db8e: Punts dels teus seguidors
+  210b49acc96881968d55a6caf8ace1f2: Contrasenya incorrecta - Si us plau, prova-ho
+    un altre cop
+  214c85ce1555950780114abb91def844: No és útil
+  23f719bbec8794c6dbb09214a244c6da: No hi ha punts revisats recentment
+  247d0ffa4b59ddadeda7c07fcd1b56ea: El seu nom
+  24f62b680c4564b50f1d44416d5b6a46: Pla de subscripció
+  2512081b92507a3e87cdb8ba7cd6c6b7: '#1 idea:'
+  668deb1091498fc9353f5d297fd55877: caràcters que queden
+  67ffa3db6b7e4a6d61081085dd362c70: 'URL curt:'
+  68400031f36198737f197bb1bfc74bef: Suspendre aquest usuari
+  6948b45726c75fbf35d8babafa3d6a75: El teu país no ha estat detectat
+  697184ece37c024d3319f16f3e98c597: Clica aquí per acceptar l'invitació
+  6b217791ec3e71a71356fb3a03076311: Guarda la configuració
+  33f77dee4bc7aacf15e3deee9743e98e: 'Punt sobre %{idea_name}:'
+  3404c2e7a220d0c7083fe27ba3f7036e: '%{tag_name} idees que has creat'
+  34445da586d63e7bbe9fd7ca96e939c7: '%{comments_count} Comentaris'
+  35408f2e9ccf595f1765bd8e56a2f571: Millors punts en %{idea_name}
+  359f9e79e746fa9f684e5cda9e60ca2e: Com funciona?
+  3601146c4e948c32b6424d2c0a7f0118: Preu
+  3687b1daa635064075afa2b6417880d0: Més llegides
+  36abc52047c559d2a656d52192a43a93: Encara no segueixes a ningú.
+  37ec60c01236c976fa35a7f35e538d3e: té un màxim de 200 caràcters
+  37fc5aed92a40b16dafd17cee72e3154: Top idees
+  3832dee32fb5053c64441a629488b42a: Usuaris administradors
+  387726f6f97f5fec593bebf644b2efd5: Punts a favor i en contra
+  3a401dd966161f64fd3b8d1c06292f18: Eina de traducció
+  3abbd962f6751baf05a19c4ebbc8d0e7: Estic d'acord amb
+  3ae3bed8c1463fa4161540efac210724: Afegeix un punt en suport -
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Marca
+  4b33282a7eb266c62369d1f27a8c6899: Última visita %{time_ago}.
+  4c813db78fd60266b023752f65cd1b6b: Prova la demo ara
+  4d67b51a744e6c1f471d369b28e1fee5: La idea ha estat eliminada
+  4d73cb334c23df49814cefa164c87fb9: Envia una invitació via email
+  4fd766ef1dcfe3c579bd1fb1ce28738d: '%{citizens_link}'
+  52f4e192179a8449b77cc149541a5ba0: Encara no hi ha idees aquí
+  158d7558ee87d9a8caa77b59abcdd9ef: Idea
+  15bbb9d0bbf25e8d2978de1168c749dc: Web
+  162b23a6b1adeab39cb9db221d4bdb08: Embaixadors
+  16d39f7e2b0ed1ee441421cc0f86a724: Aquest punt ha estat eliminat
+  175fd8a23b58b6b7ce1958698686d284: Útil?
+  18c2870396e89027fc397f726f15a9f5: Missatge pels usuaris
+  18ef3f4348075aca1646941639d610dd: Idea %{position}
+  19d3894f53ce79c3f836f26cf8a3be3b: inactiu
+  43781db5c40ecc39fd718685594f0956: guarda
+  142b38d73ecdd12a19fe53a206e4c734: Text complet
+  254f642527b45bc260048e30704edb39: Configuració
+  26035f5354afb729c61d704ecbd14053: Nova revisió
+  2691a3939ef38c59c63c21201df6c8eb: Notes de l'autor
+  282adec2b7b3c994dfb7812a3e33280c: El final
+  286d1e51c26ec05771074db8a95adb41: '%{count} seguidors'
+  4607ccb71469675944516398e717479c: Si us plau accepta el termes i condicions
+  498f79c4c5bbde77f1bceb6c86fd0f6d: Mostrar
+  49ee3087348e8d44e1feda1917443987: Nom
+  2c55cd68468ae4d74e886c4576bbddba: Nom %{tag_name}
+  5e038f03415db5461c13d380469436cb: Número de targeta de crèdit
+  5e178542b85fb18ca3c459e9a95f4f2e: Codi Zip
+  5f8f417f97b33a00c41ad6acd0eaf2e9: Comença una discussió en aquest punt
+  5f94404bf7a236db3599df0135a590ac: Envia el comentari
+  5fe6005bf6e415c950c011fb65f12b8f: Elimina
+  6007de624f30af50629e5cb3b9db4e66: Guarda la idea
+  6058bc368cf5ce6338c25a2def495359: Pots cancel·lar la subscripció quan vulguis.
+  7376037c18274a1192f387d8507955bd: Amaga la icona del món
+  7497114df581c98e29eab1877685bb6f: No és útil?
+  75dd5f1160a3f02b6fae89c54361a1b3: Punts
+  76f0402b36ad06722396490cf8379c11: La compte s'ha creat correctament.
+  77c8b9f38491385d59ddc33d29e751fe: 'Font:'
+  780f17237b2f99a557c2490dfa9a30a4: Inicia sessió amb Gmail
+  8e52de0d4b03d5fe87dc88da09616c7f: aquí.
+  fd038fc7f319e48f3115d92bf5bdbef9: Ignorar
+  fd88b11cfde6aa5e3c7ff0553b534885: Revisions
+  fdc3bdefb79cec8eb8211d2499e04704: document
+  441f54c7f0ecef11a8a652c6ed75c52e: Pla actual
+  45a098e1ebc679f8fd971e9e60d2b445: Perquè Your Priorities?
+  8a357512436318208aca51f2db5ebf75: Guarda el punt
+  8ae5811be1a55b9b8447ad2dbdadbf6e: Imatge
+  8b5ba9ef245ba14a9d4871dbcd6a4f6f: Vota això negativament
+  8c2857a9ad1d8f31659e35e904e20fa6: Logo
+  8cf04a9734132302f96da8e113e80ce5: Inici
+  8cf04bccef1829bd7f09a1a7abc43ed6: Subscripció de correu
+  8d373379e307bba8b3d1ea4c005e5f19: 'Envia:'
+  8de16e7a08998e0e60d27d6b4d441379: Top idees de les últimes 24 hores
+  939d09ea0c18215ca9032ef913d82567: Últimes idees
+  93cba07454f06a4a960172bbd6e2a435: Sí
+  940663fd4428d2c86f9a4780b6574028: 'Missatge:'
+  94eaf7b43e9ee8089b5da00def9f9915: contacta'ns
+  9542c313a62d8640365c4cf3bb8b2b7b: Nova contrasenya
+  95689f6436d242f4ea19443c83c05ab2: Retira administrador
+  974181ed9d4530663fcad6e11dfe9182: Afegeix una idea nova
+  9791bad038cc199afcbc4de5f6abab89: Noves %{tag_name} idees
+  985f85fc6bb1d160f599f43072500d35: '%{instance_name} nom i URL'
+  a274f4d4670213a9045ce258c6c56b80: Notificacions
+  a2d5e7a9d03b49d0639ab0a75a59d2c2: Top punts
+  a4ea91cd0d1ea33d8113457644dd6157: clica aquí
+  a5d491060952aa8ad5fdee071be752de: comentaris
+  a67ce68ccac082ad54a552bdbcb6ecd7: Notificacions del correu
+  time:
+    pm: pm
+    formats:
+      default: '%a, %d %b %Y %H:%M:%S %z'
+      long: '%B %d, %Y %H:%M'
+      short: '%d %b %H:%M'
+    am: am
+  views:
+    pagination:
+      first: '&laquo; Primer'
+      last: Últim &raquo;
+      next: Següent &rsaquo;
+      previous: '&lsaquo; Anterior'
+      truncate: '&hellip;'
+  06277ee8d0fd9ef7427ca88315ba493a: L'inici de sessió des de Twitter ha fallat.
+  0a6616b25930e61ff4f56ca7b5fa733a: Respon aquí
+  0b39c5aca15b84b1ad53a94d6b3feb78: Canviar contrasenya
+  feb6aa52226e8abe5bda5ef3fc0b65f1: Perquè vas fer aquest canvi?
+  fee15ce029deb11dd1191f86c4e872c3: Això és útil
+  003e636075eed8d70232cd54e12236db: El teu %{instance_name} ha estat creat
+  0038a9e512b4678c583db11009d2c297: Aquesta és la idea que creix més ràpid
+  0077d575bfc52d2176b427189982b6a6: Guardat %{point_name}
+  00b177e080ff1c3d340997fb01c3951c: Acceptar la invitació
+  00d9e5c459f14c32aa6d6d1bb7cde76d: Revisions (%{count})
+  010818f282f6ca53d86d4f988f83744f: Guarda la teva configuració
+  019ec3132cdf8ee0f2e2a75cf5d3e459: Sexe
+  02bb5de0c787154b2cfaea82d1cfc40d: Cancel·la aquesta revisió
+  0323de4f66a1700e2173e9bcdce02715: Desconnecta't
+  03368e3c1eb4d2a9048775874301b19f: Selecciona una categoria
+  03937134cedab9078be39a77ee3a48a0: Grup
+  03fa96387303a39d8a63c153bac26958: 'Ens reservem el dret de:'
+  045516a8debaef245b177474f8ef1b12: Guarda %{tags_name}
+  0574c44ee9d51a85091b24119d5c2f69: Últimes idees
+  060a063831b943810fc29b192baa9ce9: La subscripció s'ha completat correctament.
+  06df33001c1d7187fdd81ea1f5b277aa: Accions
+  07221d868183bab87e41f0ec47440880: Discussions a les teves idees
+  07cf1f790935949c02c3289638e3ea40: Discussions on hi participen els teus seguidors
+  083f66b6e0c1c0e39ea7803620d7dd9f: Canvia el pla
+  0863f095cbdbbe6ce5a8aac979766a83: Extensió màxima del títol d'una idea
+  08bdf9d9ac0f365778d132920ea10254: Escull gènere
+  08de2fdaabcd120b8ca1388d21179921: Accés denegat
+  099af53f601532dbd31e0ea99ffdeb64: Esborrar
+  0be8406951cdfda82f00f79328cf4efc: Comentari
+  13348442cc6a27032d2b4aa28b75a5d3: Busca
+  13e7cd666950f7873a5e431fce97b916: 'Exemple: https;//'
+  002d4fac39a17aaa96c1a79a1a710edb: Correu de venda
+  006a226cb52da43e63800809bd1cb3f6: '%{user_name} ha votat negativament la idea %{position}'
+  006a4eadd1c44616ad82234981c03563: Yahoo Appid (<a href='https://developer.yahoo.com/wsregapp/'>Get
+    it here</a>)
+  016e3b623e81108aac0844988d799eff: 'Revisions: %{sentence}'
+  06e18bc07609ddece734be24aeef226a: '%{user_name} ha votat positivament la idea %{position}'
+  070625ecbc8bd373ccfb31867274eb97: Instruccions de restabliment de la contrasenya
+    per %{instance_name}
+  07e3768db2a920972da9b334cb7908de: Compta eliminada
+  086716f54c226a75ccc31834aac1e1ca: Habilitar geoblocking
+  will_paginate:
+    next_label: Següent &#8594;
+    page_gap: '&hellip;'
+    previous_label: '&#8592; Anterior'
+  06ba2bc280e5497a86716f2bac565751: Codi Google Analytics
+  021da1b20f73dc252361a54d80497ef3: Posició
+  072a47f5e0aa944cef4819332279486f: Missatge pels usuaris del servei
+  079000258fc6c97353c52fb9c7f0240e: Guarda la configuració per %{user_name}
+  e02decaebace93b27ce239a671e77453: El teus
+  e03111ef6f2e55e5960934ac2ed6018c: Declaració de la missió
+  e046b6bbd6cc6eb1e4e775ca0846b118: Disposició de les subscripcions
+  e059563a6f60c4094e3efb4a14557086: No es pot esborrar els administradors
+  e254a34f3a1001f00adc55aba5552783: 'Top:'
+  e2f69ba325c4f8bdc393ffd3cb848a51: Idees aleatòries
+  f5a7924e621e84c9280a9a27e1bcb7f6: Món
+  f7c27fe5419c0751885d8a0cc6f0e75a: Debat (%{count})
+  f9aae5fda8d810a29f12d1e61b4ab25f: Usuaris
+  f9ace95bf3d68994adde566e7ed46c8c: La teva %{instance_name} configuració
+  fa2ead697d9998cbc65c81384e6533d5: Política de privacitat
+  fa70fb36651436d8d837a869cbaf2d3c: URL per la teva política de privacitat
+  fac04aa331778ff8a7b51f08219a86a5: Afegeix a %{tags_name}
+  e3afed0047b08059d0fada10f400c1e5: Administrador
+  01374d70036cb0b48058e7e031eeb680: Necessites iniciar la sessió per accedir a aquesta
+    pàgina privada
+  01434d2ab206eb7f37324a021439b2fa: M'adreço a tu amb el teu nom real o amb el teu
+    nom d'usuari?
+  01a2f2a00851bab435bced7b0454dce2: Què estàs fent a %{sub_instance_name}?
+  026688f148cfe681359ec62731411752: Gràcies pel teu pagament %{instance_name}
+  02684cc6b6ea1811a064f475a5fd1d18: Autors
+  02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} ha publicat un butlletí'
+  0358ca3a25ad72c389989a3db811f233: '%{user_name} nombrat de nou %{idea_name}'
+  04412bb51cddee4b889c1adbf558670a: La teva informació de donació
+  04742c1a5a675be0659d83d65cb79661: Idees que creixen als rànquings
+  047fe665bd2cea51e221d371d1e4c698: Canviar ajustos per %{user_name}
+  04bc5390fd93d76fb2471f2f3a432ed5: Les teves idees finalitzades %{tag_name}
+  052d9de783ead76d6ab1eae9c35f29db: Després d'haver iniciat la teva sessió, siusplau,
+    canvia la contrasenya per una que puguis recordar
+  05548e37933024a0c44227c6c1476932: Breument, explica'ns coses sobre tu
+  0557fa923dcee4d0f86b1409f5c2167f: Tornar
+  0584e445d656b83b431227bb80ff0c30: Donació
+  05e76e0331606ce2c93ed8ab79820286: Donatiu a eDemocracy
+  06591670b8600f71493c779ff6c5e331: '%{position} la més influent'
+  0680c0f4acc215c7c75e5dafe9384e7c: Afegeix un enllaç a una pàgina web externa
+  0af762d3701c852a5371fa4ad393f9fa: Posa-li nom al teu %{instance_name}
+  0b621b41e4ddea66c74e52a1639d0fd3: Client css (no sass!)
+  0b75a01238f5516c50f167a31155bdd9: Resultat de la votació sobre les propostes d'adquisició
+  0bd5b2d797a9c6261ffcc7881c474ce7: Ja ets membre de %{instance_name}
+  07ce9b074bcd189d0b244dc7031283dd: Com funciona Idees per VNG?
+  09a1e75ab40c7bb5efb09d013aff3a53: Afegeix un punt a favor
+  0c2f027a7beda102b5e9a89fc3cf558b: Busca per '%{query}'
+  0bef7cd06cee6711378b85d90ce11527: Nom del titular de la targeta
+  0c7e91060e8afe22fb824e15473d9089: Reenviar verificació d'email a %{email}
+  0cae7f6c832ae3f6472dd3265ee16a59: Clau secreta de Facebook
+  0cb9b5729050b88ff4851d30dc734ba5: '%{tag_name} punts'
+  0cc54e3d557f73d2891235a265b06341: Activitat recent en aquest punt
+  0d80cee327875c3740c7ad5ebba57be1: Les teves notificacions d'email
+  0e0d3399b98988388e08df7e3b8e8d49: Quan una idea és revisada
+  0e7a1834a7b4fba66d0f329cfab14cbb: Última visita %{time_ago}
+  0a22ddb08392817a296d4658a25f7e61: Eliminat %{point_name}
+  0e8ba838aee0d474055ed46c30996665: Idees finalitzades
+  1586f0c8ea9ebe79830cdd5d06008065: 12 anys i menys de 12 anys
+  1791c7f2e04cf5663bc1555b57ff7a4d: Clica en aquest botó per connectar-te amb Facebook
+    i trobar les teves amistats
+  17e2b5e6811fbd4bde460f1a68516b6b: Socialitza innovació a la teva organització amb
+    BrainStorm
+  01441c80c744e05983f0681cacfcf047: Vota a favor %{new_idea_name} en comptes de %{idea_name}
+  034cb9b595f45003845f5ebed51a0a39: Secret Consumidor Twitter
+  05bd4146a6d042d2c8033ff38973f8f1: La importació de contactes ha fallat.
+  06361b68360387ac93330f64ed06411c: Número total d'aprovacions/oposicions de cada
+    dia.
+  06b7a24d07dbd8b83852521589d430c2: Vota negativamet %{idea_name} degut a <a href='%{ad_url}'>%{ad_user}
+    ad</a>
+  082b6c1bc7641b77288ceed8cf5ab47b: Els teus punts d'activitat a %{sub_instance_name}
+  08806e0d2760b567d5bda615e71083bd: '%{count} prioritats acabades'
+  0c0d218418852e444a95f10f2fbe3060: '%{user_name} ha guanyat  %{count}%{currency_short_name}
+    per %{count} nous seguidors'
+  0e8acd0f94e568a817e2772cfbf3b565: Solicitar el permís a cada nou membre per ser
+    afegit a la teva llista d'email.
+  0ef9a6968cfe92f7bde817483fb5d0cf: Oposar-se
+  0f11300c331c06b47e76d8a0623d1bcd: '%{idea_name} l''estat s''ha actualitzat'
+  0f370b47675e86479ae247510cb17107: Els teus seguidors %{currency_name}
+  0f471a2597c99d0f4c81db859b0205f3: Idees que has creat al %{sub_instance_name}
+  0f5d49facdd47101ec961e13882f3543: Ep, hi ha hagut un problema
+  0f9b5eff8d1d07e6ce3a8fe2697a76f7: Es va afegir %{time_ago}
+  0fdac3f6997da05ec94c6abfffcdd5f4: 'El teu missatge perquè vagi sota del link de
+    la idea:'
+  10a39ec6d217c694ccd2c9d618598505: Nation info
+  1179f1af3b7e1bd52b573c880b720a08: Clau secreta de Windows
+  11921a98f45c8c536c185d5167be6f96: Revisa-ho, siusplau
+  1192d7b5c357203a331761417698b02c: Debat
+  119617cf1f2f8ba533b52175037f8eec: Posa discussions a la teva web
+  11d7b4cc53a359652d0dc4bfed42edf0: '%{count} %{sentence}'
+  122a05774113cd494d44a50e17914937: Lema
+  128c8d90de95fd94a3fed4dc82665677: Encara no hi ha membres, convida'ls.
+  11b3735d7275c5ed1b56b99245b35aa5: '%{sender_name} marcat %{idea_name} per revisió'
+  11ee56b3d9c99494994e5e0e4b6ae733: Originat en
+  121180d98b4e249fcc3bcc8e0255acec: <a href='%{comment_url}'>%{count} comentaris</a>
+  12688e5a3daec29ca87decc8337d4d24: '%{user_name} està en proves durant una setmana
+    degut a les seves repetides violacions de les normes de la web'
+  055bd145314ad389bff923830d31fcb4: Ha votat a favor %{idea_name}  degut a <a href='%{ad_url}'>%{ad_user}
+    ad</a>
+  0621a3e0b702b53eaaec9d776d5e8713: '%{percentage} aprova %{idea_name}'
+  06281fabeb7303f8e7d344b3631cb17e: Pots afegir %{sender_name} a la teva xarxa i seguir
+    la seva activitat aquí
+  0c082c9ad303a70be82598499aaa1f6e: '%{user_name} ha revisat %{idea_name}'
+  13af6b983fc9bbd55699881a1023a539: Oposar-se
+  13b5bfe96f3e2fe411c9f66f4a582adf: en
+  13befac9c101c610f1c929b4a96debb2: <li>No pots crear una nova compta amb el mateix
+    nom d'usuari o adreça electrònica.</li>
+  13f93708319026b073a9182a1fdd584e: Deixar de seguir %{other_user_name}
+  041092eb300332772e2d58af61c2865e: '%{user_name} ha votat a favor %{new_idea_name}
+    en comptes de %{idea_name}'
+  0998de4cdac200ef6be4ed56c592a2f1: Revisa la font del link per %{point_name}
+  0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} ha comentat a %{comment_name}'
+  14ebb9f1b4c7c2c610758dee2d1484cd: Missatge pels punts
+  15c9367c3506280cfaf98cb065799bf4: Actualitzacions periòdiques a les teves idees
+  16765596b57782e7012aee0ac86ff5ff: '%{count} aprovacions'
+  144a03a4986fc27f5303530e3cf59324: '%{user_name} comentaris en %{instance_name}'
+  15530cca2c7146223827b0057723ee84: També podràs veure les idees aquí
+  1747df8919f292530bf55fe439bf159a: '%{count} avís'
+  17af9982dae3af74a4c89fd5b20b1969: 'Aquest és el teu tercer avís. Ara estàs en prova
+    perquè #{self.custom_text}'
+  1809e18e24e352c936a7bed29fe56398: Nou estat del subjecte
+  031df46270da6ac98aa87d54760b1be7: El %{yrpri_link} software running Brainstorm és
+    de codi obert i producte de la cooperació entre %{idea_synergy_link} i l'organtizació
+    sense ànim de lucre %{citizens_foundation_link} que ha estat treballant en el
+    software des de 2008. Pot fer servir el software de codi obert quan vulguis. IdeaSynergy
+    té oficines a Londres Reykjavík.
+  00f399f02ac662457af2fa6ce23adbdb: '%{user_name} ha perdut %{capital}%{currency_short_name}
+    perquè ambdues aprovacions i oposicions que s''ha trobat %{point_name} són inútils'
+  040cd458fd2ae990e1f054b26909bd7a: Ha guanyat %{count}%{currency_short_name} perquè
+    %{count} gent ha deixat d'ignorar
+  182ade87722b397df5c7223aef37df41: VES %{instance_name}
+  185ce273e89eaf2c0f7005a0d54c36bf: Link Menú Extern
+  189f07f89b3a7ffd0cee50e0ccfd0272: '%{user_name} ha votat a favor %{new_idea_name}
+    en comptes'
+  111a9b4d1f80fa21df2c2be58f5e0c04: Felicitats pel nou %{instance_name}.
+  13ac281ea44b9dd53c0d4033fc4c39cb: '%{count} nou contacte(s) s''han unit'
+  0c5569351475a65ac815ed4263a9cf83: Ha revisat %{point_name} per indicar la neutralitat
+    en %{idea_name}
+  18c3c2ec475e379bd894cdedb9e0e03f: Pots veure o deixar de seguir la discusió aquí
+  1977751add4873d130596323038adfe2: Aquí trobaràs idees organitzades per etiquetes.
+  1a13f1069e52ca6118df8501f7a7c755: '%{user_name} afegit %{point_name} a %{idea_name}'
+  162c4677d6d5763bb681548c6fd60499: <b>Notificacions:</b><br /> %{sentence}
+  1a639ba5153528fe49733b99f6b7ba16: '%{user_name} marcat %{idea_name} per revisió'
+  1a82670cbcfca4b9e1966c553da382ab: Els usuaris afegeixen idees en un sistema simple
+    però avançat.
+  062bad04a7e077f61b7dcb0ef85dbef9: Es mostren els canvis de la revisió prèvia. També
+    pots <a href='%{clean_url}'>veure la versió original</a>
+  06a63cfb91c4f6c0ceae081d23f58b35: Brainstorm ajuda a la teva organtizacó a trobar
+    ràpidament les millors idees pel que fa a diferents temes.
+  09e033099cbcd93149af93b35b9b65dd: '%{sender_name} ha marcat un comentari de %{user_name}'

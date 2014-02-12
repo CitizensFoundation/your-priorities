@@ -2,28 +2,28 @@
 fr-CA:
   number:
     human:
-      decimal_units:
-        format: '%n %u'
-        units:
-          quadrillion: Million de milliards
-          trillion: Mille milliard
-          thousand: Millier
-          million: Million
-          billion: Milliard
-      format:
-        precision: 2
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
-        format: '%n %u'
         units:
+          mb: Mo
           byte:
             one: Octet
             other: Octets
           kb: ko
-          mb: Mo
           gb: Go
           tb: To
+        format: '%n %u'
+      decimal_units:
+        units:
+          trillion: Mille milliard
+          thousand: Millier
+          million: Million
+          billion: Milliard
+          quadrillion: Million de milliards
+        format: '%n %u'
+      format:
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
     format:
       separator: ','
       precision: 3
@@ -143,12 +143,12 @@ fr-CA:
       minute: Minute
       second: Seconde
   support:
-    array:
-      two_words_connector: et
-      last_word_connector: et
-      words_connector: ','
     select:
       prompt: Veuillez sélectionner
+    array:
+      words_connector: ', '
+      two_words_connector: ' et '
+      last_word_connector: ' et '
   helpers:
     select:
       prompt: Veuillez sélectionner
@@ -206,6 +206,6 @@ fr-CA:
         header:
           one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
           other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
-        body: 'Veuillez vérifier les champs suivants :'
+        body: 'Veuillez vérifier les champs suivants : '
       full_messages:
         format: '%{attribute} %{message}'

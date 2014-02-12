@@ -1,17 +1,10 @@
 ---
 fa:
-  support:
-    array:
-      last_word_connector: ، و
-      words_connector: ،
-      two_words_connector: و
-    select:
-      prompt: لطفا انتخاب کنید
   date:
     formats:
+      long: '%e %B %Y'
       default: '%Y/%m/%d'
       short: '%m/%d'
-      long: '%e %B %Y'
     day_names:
     - یکشنبه
     - دوشنبه
@@ -60,6 +53,13 @@ fa:
     - :day
     - :month
     - :year
+  support:
+    select:
+      prompt: لطفا انتخاب کنید
+    array:
+      words_connector: '، '
+      two_words_connector: ' و '
+      last_word_connector: '، و '
   time:
     formats:
       default: '%A، %e %B %Y، ساعت %H:%M:%S (%Z)'
@@ -156,6 +156,10 @@ fa:
       create: '%{model} ایجاد'
       update: '%{model} بروز'
       submit: '%{model} ذخیره'
+    button:
+      create: ساختن %{model}
+      submit: ثبت %{model}
+      update: به روز رسانی %{model}
   errors:
     format: '%{attribute} %{message}'
     messages:
@@ -178,6 +182,8 @@ fa:
       less_than_or_equal_to: باید کمتر یا برابر %{count} باشد
       odd: باید فرد باشد
       even: باید زوج باشد
+      already_confirmed: قبلا تایید شده،‌لطفا دوباره وارد شوید
+      expired: منقضی شده، لطفا درخواست جدیدش رو بکنید
   activerecord:
     errors:
       template:
@@ -209,3 +215,82 @@ fa:
         even: باید زوج باشد
       full_messages:
         format: '%{attribute}%{message}'
+  06277ee8d0fd9ef7427ca88315ba493a: وارد شدن از طریق توییتر موفق آمیز نبود
+  002d4fac39a17aaa96c1a79a1a710edb: پست الکترونیک فروش
+  0038a9e512b4678c583db11009d2c297: این ایده سریع ترین رشد را دارد
+  00b177e080ff1c3d340997fb01c3951c: قبول دعوت
+  010818f282f6ca53d86d4f988f83744f: ثبت تنظیمات
+  01374d70036cb0b48058e7e031eeb680: برای دسترسی به این تارنمای خصوصی باید  باید وارد
+    شوید
+  01434d2ab206eb7f37324a021439b2fa: آیا باید به نام واقعی و تارنمای شما اشاره کنم؟
+  019ec3132cdf8ee0f2e2a75cf5d3e459: جنسیت
+  021da1b20f73dc252361a54d80497ef3: رتبه
+  02bb5de0c787154b2cfaea82d1cfc40d: این بازبینی را کنسل کن
+  0323de4f66a1700e2173e9bcdce02715: خارج شو
+  03368e3c1eb4d2a9048775874301b19f: انتخاب مقوله
+  03937134cedab9078be39a77ee3a48a0: گروه
+  03fa96387303a39d8a63c153bac26958: 'ما این حق را برای خود به رسمیت می شناسیم که:'
+  04742c1a5a675be0659d83d65cb79661: ایده هایی که در رتبه بندی بالا آمده اند
+  003e636075eed8d70232cd54e12236db: '%{instance_name} شما در حال ساخته شدن می باشد'
+  006a226cb52da43e63800809bd1cb3f6: کاربر %{user_name} به ایده ی %{position}  رای
+    منفی داد
+  006a4eadd1c44616ad82234981c03563: اپید یاهو (<a href='https://developer.yahoo.com/wsregapp/'>Get
+    it here</a>)
+  0077d575bfc52d2176b427189982b6a6: ثبت شد  %{point_name}
+  00d9e5c459f14c32aa6d6d1bb7cde76d: بازبینی ها (%{count})
+  016e3b623e81108aac0844988d799eff: بازبینی ها:‌ %{sentence}
+  01a2f2a00851bab435bced7b0454dce2: در %{sub_instance_name} چه کار می کنید؟
+  02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} یک بولتین فرستاد'
+  045516a8debaef245b177474f8ef1b12: ثبت %{tags_name}
+  047fe665bd2cea51e221d371d1e4c698: تغییر تنظیمات برای کاربر%{user_name}
+  04bc5390fd93d76fb2471f2f3a432ed5: شما ایده ی  %{tag_name} را تمام کردید
+  052d9de783ead76d6ab1eae9c35f29db: بعد از ورود به سامانه لطفا کلمه عبور خود را به
+    چیزی که راحت تر به یاد بیاوری تغییر بده
+  05548e37933024a0c44227c6c1476932: مختصرا در مورد خودت چیزی بگو
+  0574c44ee9d51a85091b24119d5c2f69: جدید ترین ایده ها
+  05bd4146a6d042d2c8033ff38973f8f1: وارد کردن مخاطبین از ویندوز لایو موفق آمیز نبود
+  0621a3e0b702b53eaaec9d776d5e8713: '%{percentage} درصد از %{idea_name} پشتیبانی می
+    کنند'
+  ec53a8c4f07baed5d8825072c89799be: وضعیت
+  06361b68360387ac93330f64ed06411c: کل تعداد تاییدات/مخالف ها در هر روز
+  06591670b8600f71493c779ff6c5e331: '%{position} بالاترین تاثیر'
+  ffa378ff349f2603d6c303f14a6a98e2: ایده های جدید
+  ffa99d6b0c14720536fcc647c7197f17: بله، این امتیاز این ایده را تایید می کند
+  ffbb410a55bb31f801dea6387e2745ac: در حال پاک کردن
+  ffc83fb929d04ee7488f47e064bbbe3d: در حال اجرای تبلیغات
+  fffb47b03232ded9ecc86fa01eeaa695: امتیاز علیه
+  e61076c21cc56b54fb11ffc69ae3105b: بدون تبلیغات.
+  e614600b368b2f8ba4c104a9bfa64346: اینجا می توانید پاسخ دهید.
+  e6b744b37b3d739cb124ec2225bfbf0e: هنگام ثبت %{tags_name}مشکلی پیش آمد.
+  e70d2d5ae7f2628c94c8a0a47a2f3cf9: تبلیغات شما
+  e7470f0473463fde714f23c49c200e59: منتظر بحث
+  e7c3b88bf30f862f48fcefde6490b946: اضافه شده %{time_ago}
+  e7d888f599ef4c56e460ecf7abc2ce14: این دومین هشدار به شما برای بی توجهی به قوانین
+    این تارنما به دلیل#{self.custom_text}   است.
+  e81c4e4f2b7b93b481e13a8553c2ae1b: یا
+  e920cc973c1d99eec32fdbbcb61f3fd0: نام ایده
+  e962d6c2a803041a6d7c638acf869dcf: حداکثر ۵۰۰۰ حرف دارد
+  e9b5f99c1f41d9fd6a8e18c8fab4ab9f: با سپاس از شما به خاطر شرکت کردن تان.
+  e9bb5320b3890b6747c91b5a71ae5a01: خنثی
+  ea1944643d742bb1ffa3ebccf5162745: ایده های شما
+  eac7fd5959172d5c9e62570d216b5dba: فعالیت در قبال  %{point_name}
+  eb29867cfbf6d344ac66caa7a3d3c395: برای تسهیل کار شما در رساندن این ایده به گوش همه،
+    یک پست الکترونیک از طرف شما به هر کسی که بخواهید می فرستم و ایشان را به این تارنما
+    معرفی می کنم. نگران نباشید،‌آنها به هیچ لیست ایمیل خاصی اضافه نخواهند شد و اگر
+    قبلا عضو سایت بوده باشند، با این کار،‌حساب کاربری شما بلافاصله به ایشان متصل خواهد
+    شد.
+  eb399bcaca686f8609137153307eecf1: تغییر
+  ed3792969d8e38130c6651dd447509c5: شروع بحث
+  ed601ff305a54f999a8e67e99258738e: امتیاز جدید
+  ee00d1a5a1041c3579c36ec1dffdcb99: هیچ ایده ای اخیرا بازبینی نشده است
+  ee5ebd05906cdf6ae230483207dd4f89: گروه سنی
+  ee70f3ca5d66eac5f6fc8616da483f4d: بحثی وجود ندارد.
+  ebb061953c0454b2c8ee7b0ac615ebcd: اختیاری
+  ee710d46f1e36118e1c4aea9cc51305e: من از قوانین کشورم اطاعت می کنم.
+  eed1d7e8237b8656aff7c66bb5999f96: لطفا نامی که در این سایت شناخته شود انتخاب کنید
+  devise:
+    failure:
+      already_authenticated: شما قبلا وارد شده اید
+      inactive: حساب کاربری شما هنوز فعال نشده است
+      invalid: ایمیل یا رمز عبور صحیح نیست
+      locked: حساب شده قفل شده است

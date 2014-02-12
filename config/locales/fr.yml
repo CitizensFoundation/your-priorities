@@ -146,9 +146,9 @@ fr:
     select:
       prompt: Veuillez sélectionner
     array:
-      two_words_connector: et
-      last_word_connector: et
-      words_connector: ','
+      words_connector: ', '
+      two_words_connector: ' et '
+      last_word_connector: ' et '
   helpers:
     select:
       prompt: Veuillez sélectionner
@@ -182,7 +182,7 @@ fr:
       header:
         one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
         other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
-      body: 'Veuillez vérifier les champs suivants :'
+      body: 'Veuillez vérifier les champs suivants : '
   activerecord:
     errors:
       messages:
@@ -211,7 +211,7 @@ fr:
         header:
           one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
           other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
-        body: 'Veuillez vérifier les champs suivants :'
+        body: 'Veuillez vérifier les champs suivants : '
       full_messages:
         format: '%{attribute} %{message}'
   9ffd04e5001b2551d685667a380b1660: Ce commentaire a été éffacé
@@ -412,6 +412,9 @@ fr:
   8b65f7e6ff8c02457a07d0cfb1860c01: '%{currency_name} dans votre réseaux'
   c9dc159b90491961d253b2d98e3f7a97: Derniers commentaires sur %{user_name} discussions
   f5684dc597af6b4e21cb599d6d26665a: '%{user_name} révision à %{point_name}'
+  2d31841ff75aeb20f2c6d4d96411129f: Je serai responsable des contenus que je crée
+    et personnes d'autres n'utilisera mon compte.
+  99b4622ebe1e9894ede410500cde5915: Expliquer votre point
   2f1de29583288df67e5b7e8a9d626146: Réviser %{point_name}
   f5a6180d840015cce9f3dbdcac525e2a: Révisé %{point_name}
   9c5d7952632390609b7590dcfa19013b: Révision éffacé de %{point_name}
@@ -439,20 +442,6 @@ fr:
   fb00406d232c6c2e02cdd9560bd27b68: 'POint supportant %{idea_name}:'
   92d562cddce4a845439e302189e00192: Changer logo à %{instance_name}
   8df9c04d95e71c0bb899ac7a5af8cdfb: Ajouter une idée%{idea_name}
-  2d31841ff75aeb20f2c6d4d96411129f: Je serai responsable des contenus que je crée
-    et personnes d'autres n'utilisera mon compte.
-  b357a942b0558db7d42891322b9bb729: Je serai sur le site.
-  4bb709d8718626d39a5dbf2e2589528e: J'informerai les administrateurs si je remarque
-    des contenus ne respectant pas les Régles en cliquant sur l'icon de notification.
-  94386c683395a8c1a30a6f405a3a7116: Je créerai et utiliserai seulement un profile
-    sur le site.
-  6c3b5928436080f8aba591af541dd5f0: Faire de notre mieux afin que le site reste ouvert
-    et functionnel.
-  388e31e2da00cdad1159f0fecb186fff: Nous ne devoilerons pas les données des utilisateurs,qui
-    ne sont pas publiques sur le site,à des tierces sans une injonction de la court.
-  ccb170b7563ba9e94e021fabfef45771: De changer les régles sans notice préalable.Nous
-    vous préviendrons par email si vous êtes membre
-  99b4622ebe1e9894ede410500cde5915: Expliquer votre point
   e171941d65123784391f9a42568f41ca: Activitée pour %{idea_name}
   ac717bd14c68bc426139b20f01d941ea: '%{user_name} a été le/la premièr(e) %{idea_name}'
   a9d26e16b2440413a48053b4c357d540: Paramètres %{instance_name}
@@ -476,7 +465,18 @@ fr:
   c3829f98b9d811ef102006ff00a83881: '%{count} révisions'
   a4b522102353672b9f0d5582e8386348: Les informations me concerant sont correctes et
     je peux recevoir lire les emails envoyés à l'adresse donnée.
+  b357a942b0558db7d42891322b9bb729: Je serai sur le site.
   6231033110be3e0b22eeda6b6b336835: Je n'utiliserai pas le site pour intimider de
     quelques façon que ce soit les autres utilisateurs ni publier des contenus mensongés
     ou calomnieux.
+  4bb709d8718626d39a5dbf2e2589528e: J'informerai les administrateurs si je remarque
+    des contenus ne respectant pas les Régles en cliquant sur l'icon de notification.
+  94386c683395a8c1a30a6f405a3a7116: Je créerai et utiliserai seulement un profile
+    sur le site.
   8070ff490b986cbbe5908dba6688b882: Nous promettons de
+  6c3b5928436080f8aba591af541dd5f0: Faire de notre mieux afin que le site reste ouvert
+    et functionnel.
+  388e31e2da00cdad1159f0fecb186fff: Nous ne devoilerons pas les données des utilisateurs,qui
+    ne sont pas publiques sur le site,à des tierces sans une injonction de la court.
+  ccb170b7563ba9e94e021fabfef45771: De changer les régles sans notice préalable.Nous
+    vous préviendrons par email si vous êtes membre

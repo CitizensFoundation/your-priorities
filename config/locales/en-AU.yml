@@ -64,9 +64,9 @@ en-AU:
     select:
       prompt: Please select
     array:
-      two_words_connector: and
-      words_connector: ','
-      last_word_connector: ', and'
+      words_connector: ', '
+      two_words_connector: ' and '
+      last_word_connector: ', and '
   number:
     format:
       separator: .

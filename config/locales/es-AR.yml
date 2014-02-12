@@ -1,5 +1,28 @@
 ---
 es-AR:
+  002d4fac39a17aaa96c1a79a1a710edb: Email de ventas
+  0038a9e512b4678c583db11009d2c297: Esta es la idea que más rápido crece
+  00b177e080ff1c3d340997fb01c3951c: Aceptar invitación
+  010818f282f6ca53d86d4f988f83744f: Guarda tu configuración
+  01374d70036cb0b48058e7e031eeb680: Necesitas registrarte para acceder a este sitio
+    privado
+  01434d2ab206eb7f37324a021439b2fa: ¿Debería referenciar tu nombre o tu website ?
+  021da1b20f73dc252361a54d80497ef3: Orden
+  02684cc6b6ea1811a064f475a5fd1d18: Autores
+  02bb5de0c787154b2cfaea82d1cfc40d: Cancelar esta versión
+  0323de4f66a1700e2173e9bcdce02715: Salir
+  03368e3c1eb4d2a9048775874301b19f: Seleccionar categoría
+  03937134cedab9078be39a77ee3a48a0: Grupo
+  03fa96387303a39d8a63c153bac26958: 'Nos reservamos el derecho a:'
+  019ec3132cdf8ee0f2e2a75cf5d3e459: Género
+  045516a8debaef245b177474f8ef1b12: Guardar %{tags_name}
+  support:
+    select:
+      prompt: Por favor selecciona
+    array:
+      words_connector: ', '
+      two_words_connector: ' y '
+      last_word_connector: ' y '
   number:
     percentage:
       format:
@@ -106,13 +129,6 @@ es-AR:
       long: '%A, %d de %B de %Y a las %I:%M %p'
     am: am
     pm: pm
-  support:
-    select:
-      prompt: Por favor selecciona
-    array:
-      two_words_connector: y
-      last_word_connector: y
-      words_connector: ','
   datetime:
     distance_in_words:
       half_a_minute: medio minuto
@@ -210,3 +226,12 @@ es-AR:
         odd: debe ser un número non
       full_messages:
         format: '%{attribute}%{message}'
+  04742c1a5a675be0659d83d65cb79661: Ideas subiendo en el ranking
+  047fe665bd2cea51e221d371d1e4c698: Cambiando ajustes para %{user_name}
+  04bc5390fd93d76fb2471f2f3a432ed5: Tus ideas de %{tag_name} terminadas
+  052d9de783ead76d6ab1eae9c35f29db: Luego de registrarte , por favor cambiá tu password
+    a alguno que vayas a recordar
+  05548e37933024a0c44227c6c1476932: Vrebemente , cuéntanos sobre ti
+  0557fa923dcee4d0f86b1409f5c2167f: De vuelta
+  0574c44ee9d51a85091b24119d5c2f69: Las ideas más recientes
+  0584e445d656b83b431227bb80ff0c30: Donar

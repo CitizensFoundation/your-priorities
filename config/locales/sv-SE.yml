@@ -1,33 +1,121 @@
 ---
 sv-SE:
+  date:
+    formats:
+      default: '%Y-%m-%d'
+      short: '%e %b'
+      long: '%e %B %Y'
+    day_names:
+    - söndag
+    - måndag
+    - tisdag
+    - onsdag
+    - torsdag
+    - fredag
+    - lördag
+    abbr_day_names:
+    - sön
+    - mån
+    - tis
+    - ons
+    - tor
+    - fre
+    - lör
+    month_names:
+    - 
+    - januari
+    - februari
+    - mars
+    - april
+    - maj
+    - juni
+    - juli
+    - augusti
+    - september
+    - oktober
+    - november
+    - december
+    abbr_month_names:
+    - 
+    - jan
+    - feb
+    - mar
+    - apr
+    - maj
+    - jun
+    - jul
+    - aug
+    - sep
+    - okt
+    - nov
+    - dec
+    order:
+    - :day
+    - :month
+    - :year
+  time:
+    formats:
+      default: '%a, %e %b %Y %H:%M:%S %z'
+      short: '%e %b %H:%M'
+      long: '%e %B %Y %H:%M'
+  support:
+    select:
+      prompt: Välj
+    array:
+      words_connector: ', '
+      two_words_connector: ' och '
+      last_word_connector: ' och '
+  errors:
+    format: '%{attribute} %{message}'
+    messages:
+      inclusion: finns inte i listan
+      exclusion: är reserverat
+      invalid: är ogiltigt
+      confirmation: stämmer inte överens
+      accepted: måste vara accepterad
+      empty: får ej vara tom
+      blank: måste anges
+      too_long: är för lång (maximum är %{count} tecken)
+      too_short: är för kort (minimum är %{count} tecken)
+      wrong_length: har fel längd (ska vara %{count} tecken)
+      not_a_number: är inte ett nummer
+      not_an_integer: måste vara ett heltal
+      greater_than: måste vara större än %{count}
+      greater_than_or_equal_to: måste vara större än eller lika med %{count}
+      less_than: måste vara mindre än %{count}
+      less_than_or_equal_to: måste vara mindre än eller lika med %{count}
+      odd: måste vara udda
+      even: måste vara jämnt
+      record_invalid: 'Ett fel uppstod: %{errors}'
+      taken: har redan tagits
   activerecord:
     errors:
       messages:
-        exclusion: är reserverat
         taken: har redan tagits
         record_invalid: 'Ett fel uppstod: %{errors}'
+        accepted: måste vara accepterad
+        blank: måste anges
+        confirmation: stämmer inte överens
+        empty: får ej vara tom
+        even: måste vara jämnt
+        exclusion: är reserverat
+        greater_than: måste vara större än %{count}
+        greater_than_or_equal_to: måste vara större än eller lika med %{count}
         inclusion: finns inte i listan
         invalid: är ogiltigt
-        confirmation: stämmer inte överens
-        accepted: måste vara accepterad
-        empty: får ej vara tom
-        blank: måste anges
+        less_than: måste vara mindre än %{count}
+        less_than_or_equal_to: måste vara mindre än eller lika med %{count}
+        not_a_number: är inte ett nummer
+        not_an_integer: måste vara ett heltal
+        odd: måste vara udda
         too_long: är för lång (maximum är %{count} tecken)
         too_short: är för kort (minimum är %{count} tecken)
         wrong_length: har fel längd (ska vara %{count} tecken)
-        not_a_number: är inte ett nummer
-        not_an_integer: måste vara ett heltal
-        greater_than: måste vara större än %{count}
-        greater_than_or_equal_to: måste vara större än eller lika med %{count}
-        less_than: måste vara mindre än %{count}
-        less_than_or_equal_to: måste vara mindre än eller lika med %{count}
-        odd: måste vara udda
-        even: måste vara jämnt
       template:
+        body: 'Det var problem med följande fält:'
         header:
           one: Ett fel förhindrade denna %{model} från att sparas
           other: '%{count} fel förhindrade denna %{model} från att sparas'
-        body: 'Det var problem med följande fält:'
       full_messages:
         format: '%{attribute} %{message}'
   number:
@@ -117,91 +205,3 @@ sv-SE:
       create: Skapa %{model}
       update: Ändra %{model}
       submit: Spara %{model}
-  errors:
-    format: '%{attribute} %{message}'
-    messages:
-      inclusion: finns inte i listan
-      exclusion: är reserverat
-      invalid: är ogiltigt
-      confirmation: stämmer inte överens
-      accepted: måste vara accepterad
-      empty: får ej vara tom
-      blank: måste anges
-      too_long: är för lång (maximum är %{count} tecken)
-      too_short: är för kort (minimum är %{count} tecken)
-      wrong_length: har fel längd (ska vara %{count} tecken)
-      taken: har redan tagits
-      not_a_number: är inte ett nummer
-      not_an_integer: måste vara ett heltal
-      greater_than: måste vara större än %{count}
-      greater_than_or_equal_to: måste vara större än eller lika med %{count}
-      less_than: måste vara mindre än %{count}
-      less_than_or_equal_to: måste vara mindre än eller lika med %{count}
-      odd: måste vara udda
-      even: måste vara jämnt
-      record_invalid: 'Ett fel uppstod: %{errors}'
-  date:
-    formats:
-      default: '%Y-%m-%d'
-      short: '%e %b'
-      long: '%e %B %Y'
-    day_names:
-    - söndag
-    - måndag
-    - tisdag
-    - onsdag
-    - torsdag
-    - fredag
-    - lördag
-    abbr_day_names:
-    - sön
-    - mån
-    - tis
-    - ons
-    - tor
-    - fre
-    - lör
-    month_names:
-    - 
-    - januari
-    - februari
-    - mars
-    - april
-    - maj
-    - juni
-    - juli
-    - augusti
-    - september
-    - oktober
-    - november
-    - december
-    abbr_month_names:
-    - 
-    - jan
-    - feb
-    - mar
-    - apr
-    - maj
-    - jun
-    - jul
-    - aug
-    - sep
-    - okt
-    - nov
-    - dec
-    order:
-    - :day
-    - :month
-    - :year
-  time:
-    formats:
-      default: '%a, %e %b %Y %H:%M:%S %z'
-      short: '%e %b %H:%M'
-      long: '%e %B %Y %H:%M'
-  support:
-    select:
-      prompt: Välj
-    array:
-      two_words_connector: och
-      last_word_connector: och
-      words_connector: ','

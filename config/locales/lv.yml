@@ -146,9 +146,9 @@ lv:
     select:
       prompt: Lūdzu izvēlies
     array:
-      two_words_connector: un
-      last_word_connector: un
-      words_connector: ','
+      words_connector: ', '
+      two_words_connector: ' un '
+      last_word_connector: ' un '
   helpers:
     select:
       prompt: Lūdzu izvēlies
