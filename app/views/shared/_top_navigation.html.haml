@@ -2,11 +2,14 @@
   %ul.title-area
     / Title Area
     %li.name
-      / Hmm
-    %li.toggle-topbar.menu-icon
-      %a{href: "#"}
-        %span
-          = tr("Menu","here")
+    %li.toggle-topbar.menu-icon{:style=>"width:100%;"}
+      %div{:style=>"float:left;padding-top:5px"}
+        = SubInstance.current.name.truncate(25)
+        = "<div class='fb-like' data-href='#{Instance.current.homepage_url}' data-send='false' data-layout='button_count' data-width='200' data-show-faces='false'></div>".html_safe
+      %div{:style=>"float:right;"}
+        %a{href: "#"}
+          %span
+            = tr("Menu","here")
   / The Section wrap
   %section.top-bar-section
     / Left Nav Section

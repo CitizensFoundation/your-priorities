@@ -24,7 +24,7 @@
                 %span.left
                   = tr("GET {instance_name}","view/ideas/_nav", :instance_name=>Instance.current.name)
                 %span.icn.icn-add
-        %center
+        %center.hide-for-medium-down
           = "<div class='fb-like' data-href='#{Instance.current.homepage_url}' data-send='false' data-layout='button_count' data-width='200' data-show-faces='false'></div>".html_safe
     .large-4.columns
       %div

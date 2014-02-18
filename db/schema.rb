@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140123194748) do
+ActiveRecord::Schema.define(:version => 20140218153639) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -616,11 +616,13 @@ ActiveRecord::Schema.define(:version => 20140123194748) do
   create_table "pages", :force => true do |t|
     t.text     "title"
     t.text     "content"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.integer  "weight",          :default => 0
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.integer  "weight",                      :default => 0
     t.integer  "sub_instance_id"
     t.string   "name"
+    t.boolean  "hide_from_menu",              :default => false
+    t.boolean  "hide_from_menu_unless_admin", :default => false
   end
 
   add_index "pages", ["name"], :name => "index_pages_on_name"
