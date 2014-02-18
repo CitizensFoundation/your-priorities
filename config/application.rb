@@ -73,7 +73,6 @@ module YourPriorities
 
   require 'open-uri'
   require 'validates_uri_existence_of'
-
   require 'timeout'
   require 'load_windows_contacts'
   require 'load_yahoo_contacts'

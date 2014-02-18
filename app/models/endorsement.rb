@@ -37,7 +37,7 @@ class Endorsement < ActiveRecord::Base
   # docs: http://noobonrails.blogspot.com/2007/02/actsaslist-makes-lists-drop-dead-easy.html
   #acts_as_list :scope => "endorsements.user_id = #{user_id} AND status = 'active'"
 
-  acts_as_list #:scope => "endorsements.status = 'active'"
+  acts_as_list :scope => :sub_instance_id #:scope => "endorsements.status = 'active'"
 
   after_create :on_active_entry
 

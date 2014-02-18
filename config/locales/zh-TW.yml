@@ -146,9 +146,9 @@ zh-TW:
     select:
       prompt: 請選擇
     array:
-      words_connector: ','
-      last_word_connector: ', 和'
-      two_words_connector: 和
+      words_connector: ', '
+      two_words_connector: ' 和 '
+      last_word_connector: ', 和 '
   activerecord:
     errors:
       template:
@@ -216,3 +216,59 @@ zh-TW:
       create: 新增%{model}
       update: 更新%{model}
       submit: 儲存%{model}
+  08bdf9d9ac0f365778d132920ea10254: "I feel that is among the most vital information
+    \r\nfor me. And i'm satisfied studying your article. However should statement
+    on few general issues, The website style is ideal, the articles is truly great
+    : D. Excellent task, cheers"
+  08de2fdaabcd120b8ca1388d21179921: "I feel that is among the most vital information
+    for me.\r\nAnd i'm satisfied studying your article. However should statement on
+    few general issues, The website style is ideal, the articles is truly great :
+    D. Excellent task, cheers"
+  099af53f601532dbd31e0ea99ffdeb64: 'I feel that is among the most vital information
+    for me. And i''m satisfied studying your article. However should statement on
+    few general issues, The website style is ideal, the articles is truly great :
+    D. Excellent task, cheers'
+  09a1e75ab40c7bb5efb09d013aff3a53: "I feel that is among the most vital information
+    for me.\r\nAnd i'm satisfied studying your article. However should statement on
+    few general issues, The website style is ideal, the articles is truly great :
+    D. Excellent task, cheers"
+  0a6616b25930e61ff4f56ca7b5fa733a: "I feel that is among the most vital information
+    for me.\r\nAnd i'm satisfied studying your article. However should statement on
+    few general issues, The website style is ideal, the articles is truly great :
+    D. Excellent task, cheers"
+  0b39c5aca15b84b1ad53a94d6b3feb78: "I feel that is among the most vital information
+    for \r\nme. And i'm satisfied studying your article. However should statement
+    on few general issues, The website style is ideal, the articles is truly great
+    : D. Excellent task, cheers"
+  0b621b41e4ddea66c74e52a1639d0fd3: "I feel that is among the most vital information
+    for me.\r\nAnd i'm satisfied studying your article. However should statement on
+    few general issues, The website style is ideal, the articles is truly great :
+    D. Excellent task, cheers"
+  0b75a01238f5516c50f167a31155bdd9: "I feel that is among the most vital information
+    for me.\r\n\r\nAnd i'm satisfied studying your article. However should statement
+    on few general issues, The website style is ideal, the articles is truly great
+    : D. Excellent task, cheers"
+  0bd13187db5df39f2a3a8115c103bee5: "I feel that is among the most vital information
+    for me.\r\nAnd i'm satisfied studying your article. However should statement on
+    few general issues, The website style is ideal, the articles is truly great :
+    D. Excellent task, cheers"
+  0be8406951cdfda82f00f79328cf4efc: "I feel that is among the most vital information
+    for me. And \r\ni'm satisfied studying your article. However should statement
+    on few general issues, The website style is ideal, the articles is truly great
+    : D. Excellent task, cheers"
+  0cae7f6c832ae3f6472dd3265ee16a59: "I feel that is among the most vital information
+    for me.\r\n\r\nAnd i'm satisfied studying your article. However should statement
+    on few general issues, The website style is ideal, the articles is truly great
+    : D. Excellent task, cheers"
+  0cc54e3d557f73d2891235a265b06341: 'I feel that is among the most vital information
+    for me. And i''m satisfied studying your article. However should statement on
+    few general issues, The website style is ideal, the articles is truly great :
+    D. Excellent task, cheers'
+  0d80cee327875c3740c7ad5ebba57be1: "I feel that is among the most vital information
+    for me.\r\nAnd i'm satisfied studying your article. However should statement on
+    few general issues, The website style is ideal, the articles is truly great :
+    D. Excellent task, cheers"
+  0e0d3399b98988388e08df7e3b8e8d49: 'I feel that is among the most vital information
+    for me. And i''m satisfied studying your article. However should statement on
+    few general issues, The website style is ideal, the articles is truly great :
+    D. Excellent task, cheers'

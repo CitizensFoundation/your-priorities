@@ -1,20 +1,20 @@
 ---
 it:
   number:
-    currency:
-      format:
-        significant: false
-        format: '%n %u'
-        unit: €
-        separator: .
-        delimiter: ','
-        precision: 2
-        strip_insignificant_zeros: false
     format:
       precision: 2
       significant: false
       strip_insignificant_zeros: false
       separator: .
+    currency:
+      format:
+        format: '%n %u'
+        unit: €
+        separator: .
+        delimiter: ','
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
     human:
       format:
         precision: 1
@@ -145,9 +145,9 @@ it:
     select:
       prompt: Per favore, seleziona
     array:
-      two_words_connector: e
-      last_word_connector: ', e'
-      words_connector: ','
+      words_connector: ', '
+      two_words_connector: ' e '
+      last_word_connector: ', e '
   helpers:
     select:
       prompt: Per favore, seleziona

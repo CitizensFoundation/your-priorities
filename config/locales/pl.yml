@@ -64,9 +64,9 @@ pl:
     select:
       prompt: Proszę wybrać
     array:
-      words_connector: ','
-      last_word_connector: oraz
-      two_words_connector: i
+      words_connector: ', '
+      two_words_connector: ' i '
+      last_word_connector: ' oraz '
   number:
     format:
       separator: ','

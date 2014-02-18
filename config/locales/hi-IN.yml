@@ -64,9 +64,9 @@ hi-IN:
     select:
       prompt: कृपया चुनें
     array:
-      two_words_connector: और
-      last_word_connector: ', और'
-      words_connector: ','
+      words_connector: ', '
+      two_words_connector: ' और '
+      last_word_connector: ', और '
   number:
     format:
       separator: .

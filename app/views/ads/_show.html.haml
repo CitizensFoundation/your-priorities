@@ -4,7 +4,8 @@
       = render :partial => "users/pic_50", :locals => {:user => ad.user}
   .large-9.columns
     %div.encouragement_content{:valign => "top"}
-      = tr("{user_name} asks you to consider {idea_name}", "view/ads/_show", :user_name => link_to(ad.user.name, ad.user), :idea_name => link_to(ad.idea.name, ad.idea))
+      %p
+        = tr("{user_name} asks you to consider {idea_name}", "view/ads/_show", :user_name => link_to(ad.user.name, ad.user), :idea_name => link_to(ad.idea.name, ad.idea))
       - if ad.has_content?
         %p.notification_show_message
           "#{h(ad.content)}"

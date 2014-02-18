@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @page = Page.find(params[:id])
+    @page = Page.unscoped.find(params[:id])
     @page_title = @page.title.from_localized_yaml
 
     respond_to do |format|

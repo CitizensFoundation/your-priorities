@@ -1,11 +1,10 @@
 %p
-  = tr("You have been banned from the website after breaking the rules four times with three warnings already \ |
-        sent to you by email.", "email")                                                                            |
+  = tr("You have been banned from the website after breaking the rules four times with three warnings already.", "email")
 %p
   = tr("Here are more details on the rules", "email")
   \: #{link_to @recipient.root_url+'about/rules',@recipient.root_url+'about/rules'}
 %p
-  = tr("Here is the offending comment. If you have any questions, you can contact", "email")
+  = tr("Here is the offending content. If you have any questions can contact", "email")
   = @instance.admin_email
   \.
 %p

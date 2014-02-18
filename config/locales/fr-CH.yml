@@ -148,9 +148,9 @@ fr-CH:
     select:
       prompt: Veuillez sélectionner
     array:
-      words_connector: ','
-      two_words_connector: et
-      last_word_connector: et
+      words_connector: ', '
+      two_words_connector: ' et '
+      last_word_connector: ' et '
   helpers:
     select:
       prompt: Veuillez sélectionner
@@ -208,6 +208,6 @@ fr-CH:
         header:
           one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
           other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
-        body: 'Veuillez vérifier les champs suivants :'
+        body: 'Veuillez vérifier les champs suivants : '
       full_messages:
         format: '%{attribute} %{message}'

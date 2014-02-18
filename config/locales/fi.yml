@@ -64,9 +64,9 @@ fi:
     select:
       prompt: Valitse
     array:
-      two_words_connector: ja
-      last_word_connector: ja
-      words_connector: ','
+      words_connector: ', '
+      two_words_connector: ' ja '
+      last_word_connector: ' ja '
   number:
     format:
       separator: .

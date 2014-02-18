@@ -1,5 +1,41 @@
 ---
 ko:
+  number:
+    human:
+      decimal_units:
+        units:
+          trillion: 조
+          thousand: 천
+          million: 백만
+          billion: 십억
+          quadrillion: 경
+        format: '%n%u'
+      format:
+        strip_insignificant_zeros: true
+        precision: 3
+        significant: true
+      storage_units:
+        format: '%n%u'
+        units:
+          kb: 킬로바이트
+          mb: 메가바이트
+          gb: 기가바이트
+          tb: 테라바이트
+    format:
+      separator: .
+      delimiter: ','
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        format: '%n%u'
+        unit: 원
+        separator: .
+        delimiter: ','
+        precision: 0
+        significant: false
+        strip_insignificant_zeros: false
   datetime:
     distance_in_words:
       less_than_x_seconds:
@@ -107,45 +143,9 @@ ko:
     select:
       prompt: 선택해 주세요
     array:
-      two_words_connector: 와(과)
-      last_word_connector: ','
-      words_connector: ','
-  number:
-    format:
-      separator: .
-      delimiter: ','
-      precision: 3
-      significant: false
-      strip_insignificant_zeros: false
-    currency:
-      format:
-        format: '%n%u'
-        unit: 원
-        separator: .
-        delimiter: ','
-        precision: 0
-        significant: false
-        strip_insignificant_zeros: false
-    human:
-      format:
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: '%n%u'
-        units:
-          kb: 킬로바이트
-          mb: 메가바이트
-          gb: 기가바이트
-          tb: 테라바이트
-      decimal_units:
-        format: '%n%u'
-        units:
-          thousand: 천
-          million: 백만
-          billion: 십억
-          trillion: 조
-          quadrillion: 경
+      words_connector: ', '
+      two_words_connector: '와(과) '
+      last_word_connector: ', '
   helpers:
     select:
       prompt: 선택해주세요

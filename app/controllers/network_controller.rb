@@ -12,7 +12,7 @@ class NetworkController < ApplicationController
   before_filter :setup_filter_dropdown
 
   def index
-    redirect_to :action=>"influential"
+    redirect_to :action=>"newest"
   end
 
   def influential
@@ -167,13 +167,13 @@ class NetworkController < ApplicationController
 
   def setup_menu_items
      @items = Hash.new
-     @items[1]=[tr("Influential", "view/network/_nav"), url_for(:controller => "network", :action => "influential")]
-     @items[2]=[tr("Talkative", "view/network/_nav"), url_for(:controller => "network", :action => "talkative")]
-     @items[3]=[tr("New members", "view/network/_nav"), url_for(:controller => "network", :action => "newest")]
+     #@items[1]=[tr("Influential", "view/network/_nav"), url_for(:controller => "network", :action => "influential")]
+     #@items[2]=[tr("Talkative", "view/network/_nav"), url_for(:controller => "network", :action => "talkative")]
+     @items[1]=[tr("New members", "view/network/_nav"), url_for(:controller => "network", :action => "newest")]
      if user_signed_in?
-       @items[5]=[tr("Your network", "view/user_contacts/_nav"), url_for(controller: "network", action: "following")]
+       @items[2]=[tr("Your network", "view/user_contacts/_nav"), url_for(controller: "network", action: "following")]
        if current_instance.has_twitter_enabled?
-         @items[6]=[tr("Twitterers", "view/network/_nav"), url_for(:controller => "network", :action => "twitterers")]
+         @items[3]=[tr("Twitterers", "view/network/_nav"), url_for(:controller => "network", :action => "twitterers")]
        end
      end
      @items
