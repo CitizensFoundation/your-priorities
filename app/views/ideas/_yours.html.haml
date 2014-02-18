@@ -50,7 +50,7 @@
                                                                                     :next_label=>tr("Next","ajax pagination"),
                                                                                     :class => "ajax_pagination", :inner_window => 2)
   %p
-    = tr("Vote ideas up or down to add an idea to your priorities list. Then drag and drop to change the order.", "view/ideas/_yours")
+    = tr("Vote ideas up or down to add them to your priorities list. You can drag and drop items in your list to change the order.", "view/ideas/_yours")
   - if current_user.endorsements_count > 0
     = #tr("The big numbers you see next to each idea is the overall rank across all members.", "view/ideas/_yours")
   - if current_user.endorsements_count > 4

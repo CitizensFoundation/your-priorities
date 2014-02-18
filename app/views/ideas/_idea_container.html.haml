@@ -28,7 +28,7 @@
           %h5
             %a{:link=>idea.new_point_url, :class => "idea_add_link_old"}
               %span{:id => "idea_debate_text_#{idea.id.to_s}"}
-                = tr("Show debate","here")
+                = tr("Join debate","here")
       = render :partial => "ideas/debate_button_javascript", :locals => { :idea => idea }
     = render :partial => "ideas/idea_detail" if ["show","top_points"].include?(action_name) and controller_name=="ideas"
 
