@@ -5,7 +5,7 @@
     %li.toggle-topbar.menu-icon{:style=>"width:100%;"}
       %div{:style=>"float:left;padding-left:32px !important"}
         = link_to SubInstance.current.name.truncate(25), "/"
-      %div{:style=>"float:left;padding-left:15px !important"}
+      %div{:style=>"float:left;padding-top:5px;padding-left:20px !important"}
         = "<div class='fb-like' data-href='#{Instance.current.homepage_url}' data-send='false' data-layout='button_count' data-width='200' data-show-faces='false'></div>".html_safe
       %div{:style=>"float:right;"}
         %a{href: "#"}
