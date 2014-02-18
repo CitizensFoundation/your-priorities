@@ -1,3 +1,4 @@
 - if page = Page.where(:name=>"right_nav_help").first or page = Page.unscoped.where(:name=>"right_nav_help").first
-  %a{:href => "/pages/#{page.id}", :target => '_blank'}
-    = tr("Instructions", "view/users/_form")
+  %h5
+    %a{:href => "/pages/#{page.id}", :target => '_blank'}
+      = tr("Instructions", "view/users/_form")
