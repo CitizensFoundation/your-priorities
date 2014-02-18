@@ -9,6 +9,12 @@
     = f.label :weight
     = f.text_field :weight
   .field
+    = f.label :hide_from_menu
+    = f.check_box :hide_from_menu
+  .field
+    = f.label :hide_from_menu_unless_admin
+    = f.check_box :hide_from_menu_unless_admin
+  .field
     = f.label :name
     = f.text_field :name
   .field
@@ -16,6 +22,6 @@
     = f.text_area :title
   .field
     = f.label :content
-    = f.text_area :content, :size => "159x30"
+    = f.text_area :content, :size => "159x90"
   .actions
     = f.submit 'Save'

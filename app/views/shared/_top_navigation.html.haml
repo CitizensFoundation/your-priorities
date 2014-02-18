@@ -64,5 +64,6 @@
           = tr("About","here")
         %ul.dropdown
           - @about_pages.each do |page|
-            %li
-              #{link_to page.title.from_localized_yaml, :controller => "pages", :action => "show", :id=>page.id}
+            - unless page.hide_from_menu or (page.hide_from_menu_unless_admin and (!current_user or (current_user and !current_user.is_admin?)))
+              %li
+                #{link_to page.title.from_localized_yaml, :controller => "pages", :action => "show", :id=>page.id}

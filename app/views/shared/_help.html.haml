@@ -1,0 +1,2 @@
+- if page = Page.where(:name=>"right_nav_help").first or page = Page.unscoped.where(:name=>"right_nav_help").first
+  = simple_format(page.content.from_localized_yaml)

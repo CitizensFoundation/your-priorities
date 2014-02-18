@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-  attr_accessible :content, :title, :name
+  attr_accessible :content, :title, :name, :hide_from_menu, :hide_from_menu_unless_admin
 
   after_initialize :default_values
 
