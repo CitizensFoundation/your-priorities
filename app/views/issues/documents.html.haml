@@ -1,10 +1,13 @@
-#hp_intro= @page_title
-- if @documents.empty?
-  = tr("No documents yet.", "view/issues/documents")
-- else
-  = foundation_paginate(@documents)
-  %p
-    - for document in @documents
-      = render :partial => "documents/show_full", :locals => {:document => document, :revision => nil}
-  %p
-    = foundation_paginate(@documents)
+.row
+  .large-12.columns
+    #hp_intro
+      = @page_title
+    - if @documents.empty?
+      = tr("No documents yet.", "view/issues/documents")
+    - else
+      = foundation_paginate(@documents)
+      %p
+        - for document in @documents
+          = render :partial => "documents/show_full", :locals => {:document => document, :revision => nil}
+      %p
+        = foundation_paginate(@documents)

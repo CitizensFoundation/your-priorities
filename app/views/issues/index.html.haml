@@ -1,18 +1,12 @@
 - if Instance.current.message_for_issues and Instance.current.message_for_issues!=""
   = render :partial=>"/shared/top_message_box", :locals=> {:message_text => Instance.current.message_for_issues.html_safe }
-%div{:style => "width:auto;"}
-  %ul
-    %li.list_left
-      #hp_intro{:style => "border-bottom:none;"}= @page_title
-    %li.list_right
-      - image_tag("feed-icon-14x14.png", :alt => "rss-icon")
-.clear
-.white_line
-.col-group
-  .col-half
-    .col-content
-      %h4= tr("Here,you can find ideas organized by categories,and add your own.", "view/issues/index")
-      = render partial: 'issue_listing', locals: { issues: @categories }
+
+.row
+  .large-12.columns
+    %h4
+      = tr("Ideas organized by categories", "view/issues/index")
+    = render partial: 'issue_listing', locals: { issues: @categories }
+
 -#  - if current_sub_instance.required_tags
 -#    - if not @sub_instance_tags.empty?
 -#      .col-half

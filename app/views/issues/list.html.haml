@@ -12,4 +12,4 @@
         = render :partial => "ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
       %p= foundation_paginate @ideas
     - else
-      = tr("No ideas for {tag_name} yet", "view/issues/list", :tag_name => tr(@category.name, "model/category").titleize)
+      = tr("No ideas yet", "view/issues/list")

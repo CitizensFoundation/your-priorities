@@ -3,7 +3,8 @@ class Category < ActiveRecord::Base
   has_many :blog_posts
 
   has_attached_file :icon, :styles => { :icon_32 => "32x32#", :icon_200 => "200x200#", :icon_25 => "25x25#",
-                                        :icon_40  => "40x40#", :icon_50  => "50x50#", :icon_100 => "100x100#" },
+                                        :icon_40  => "40x40#", :icon_50  => "50x50#", :icon_100 => "100x100#",
+                                        :icon_200 => "200x200#"},
                     :storage => PAPERCLIP_STORAGE_MECHANISM,
                     :s3_credentials => S3_CREDENTIALS
 
