@@ -19,6 +19,7 @@
         %li.top-bar-world
           = link_to :controller => "home", :action=> "world" do
             = image_tag "icons/globe.png", :size=>"34x34"
+        %li.divider
         %li.top-bar-flag{:class=>controller_name=="home" ? "active" : ""}
           = link_to SubInstance.current.show_url do
             .sprite_clip_flag
@@ -28,15 +29,19 @@
           = link_to :controller => "home", :action=> "index" do
             .sprite_clip_flag
               = image_tag SubInstance.current.logo_url(:icon_50), :border => 0, :size=>"45x45"
-      %li{:class=>controller_name=="home" ? "active" : ""}
-        %a{href: "/"}
-          = tr("Home","here")
+        %li.divider
+        %li{:class=>controller_name=="home" ? "active" : ""}
+          %a{href: "/"}
+            = tr("Home","here")
+      %li.divider
       %li{:class=>controller_name=="ideas" ? "active" : ""}
         %a{href: "/ideas"}
           = tr("Ideas","here")
+      %li.divider
       %li{:class=>["users","network"].include?(controller_name) ? "active" : ""}
         %a{href: "/network"}
           = tr("People","here")
+      %li.divider
     %ul.right
       %li.top-bar-new-idea
         %a.button{:href => "/ideas/new"}

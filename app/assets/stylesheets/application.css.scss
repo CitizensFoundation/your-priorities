@@ -1267,9 +1267,10 @@ $topbar-link-bg-active: #c3c6c9;
 
 // Divider Styles
 
-// $topbar-divider-border-bottom: solid 1px lighten($topbar-bg, 10%);
-// $topbar-divider-border-top: solid 1px darken($topbar-bg, 10%);
-
+$topbar-divider-border-bottom: solid 1px lighten($topbar-bg, 10%);
+$topbar-divider-border-top: solid 1px lighten($topbar-bg, 10%);
+$topbar-divider-border-right: solid 1px lighten($topbar-bg, 10%);
+$topbar-divider-border-left: solid 1px lighten($topbar-bg, 10%);
 // Sticky Class
 
 // $topbar-sticky-class: ".sticky";
