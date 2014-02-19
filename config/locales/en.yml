@@ -943,6 +943,7 @@ en:
   19cbf955b33cbcb561c962261a36a016: "These are our members' %{tag_name} ideas that %{official_user_name} opposes"
   2d39a06c50a6c1ad4871b8e8551bdda2: "No ideas yet"
   a99708ea75c0cbbd2d4e14170d9ba0db: "%{count} ideas"
+  1a93d30b23722eece4aa04edfcfef57b: "No ideas yet. Add the first idea now."
   9f04ae7a43e13485e9b6de9aed6b2a61: "Ideas organized by categories"
   1977751add4873d130596323038adfe2: "Here,you can find ideas organized by tags."
   f4efbaf96bbdfb76a55234a133aabfd8: "By neighborhood"

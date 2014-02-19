@@ -12,13 +12,17 @@
         = h(issue.description)
       %p
         .idea_action
-          %a{:href => "#{issue.to_url}"}
-            = tr("{count} ideas", "view/issues/index", :count => issue.ideas.published.count)
-          - if issue.points_count > 0
+          - if issue.ideas.published.count > 0
+            %a{:href => "#{issue.to_url}"}
+              = tr("{count} ideas", "view/issues/index", :count => issue.ideas.published.count)
+          - else
+            %a{:href => "/ideas/new"}
+              = tr("No ideas yet. Add the first idea now.","Here",)
+          - if false and issue.points_count > 0
             \&middot;
             %a{:href => "#{issue.to_url}/points"}
               = tr("{count} points", "view/issues/index", :count => issue.points_count)
-          - if issue.discussions_count > 0
+          - if false and issue.discussions_count > 0
             \&middot;
             %a{:href => "#{issue.to_url}/discussions"}
               = tr("{count} discussions", "view/issues/index", :count => issue.discussions_count)
