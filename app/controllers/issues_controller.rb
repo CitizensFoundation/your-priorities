@@ -34,7 +34,7 @@ class IssuesController < ApplicationController
     #  redirect_to "/" and return
     #end
     @category = Category.find(params[:id])
-    @page_title = tr("{tag_name} ideas", "controller/issues", :tag_name => tr(@category.name, "model/category").titleize)
+    @page_title = @category.name
     @ideas = Idea.where(category_id: @category.id).published.top_rank.paginate(:page => params[:page], :per_page => params[:per_page])
     get_endorsements
     respond_to do |format|
