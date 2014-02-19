@@ -38,10 +38,6 @@
         %a{href: "/ideas"}
           = tr("Ideas","here")
       %li.divider
-      %li{:class=>controller_name=="issues" ? "active" : ""}
-        %a{href: "/issues"}
-          = tr("Categories","here")
-      %li.divider
       %li{:class=>["users","network"].include?(controller_name) ? "active" : ""}
         %a{href: "/network"}
           = tr("People","here")
