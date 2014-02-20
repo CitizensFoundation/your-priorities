@@ -7,6 +7,7 @@
       .panel-mine
         %center
           - unless SubInstance.current.short_name=="default"
+            %br
             %h3
               = SubInstance.current.name
             - if false
