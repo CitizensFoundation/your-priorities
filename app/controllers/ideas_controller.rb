@@ -421,7 +421,7 @@ class IdeasController < ApplicationController
     @position_in_idea_name = false
     @page_title = tr("Newest #{IDEA_TOKEN_PLURAL}", "controller/ideas")
     @rss_url = newest_ideas_url(:format => 'rss')
-    @ideas = Idea.published.newest.paginate :page => params[:page], :per_page => params[:per_page]
+    @ideas = Idea.published.category_filter.newest.paginate :page => params[:page], :per_page => params[:per_page]
     get_endorsements
     respond_to do |format|
       format.html { render :action => "list" }

@@ -94,7 +94,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_category_filter
-    Thread.current[:category_id_filter]=session[:category_id_filter]
+    Thread.current[:category_id_filter]=session["category_id_filter_#{SubInstance.current.id}"]
   end
 
   def set_last_locale
@@ -258,7 +258,7 @@ class ApplicationController < ActionController::Base
     params.merge({:geoblocked=>@geoblocked, :host=>request.host, :country_code=>@country_code,
                   :locale=>session[:locale], :google_translate=>session[:enable_google_translate],
                   :have_shown_welcome=>session[:have_shown_welcome],
-                  :category_id_filter=>session[:category_id_filter],
+                  :category_id_filter=>session["category_id_filter_#{SubInstance.current.id}"],
                   :last_selected_language=>cookies[:last_selected_language],
                   :flash=>flash.map {|k,v| "#{v}" }.join.parameterize})
   end
