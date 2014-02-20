@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
+gem 'rails', '3.2.17'
 ruby '2.0.0'
 gem 'paymill', :git=>"git://github.com/dkd/paymill-ruby.git"
 gem 'soap4r-spox'#, :git => 'git://github.com/swalterd/soap4r.git'
 gem 'ruby-saml', :git => 'git://github.com/rbjarnason/ruby-saml.git', :ref => "6be3170ba2a5c7eac12d5255e32a62e6fadd1cc2"
-gem 'tolk'#, :git=>"git://github.com/rbjarnason/tolk"
+#gem 'tolk', :path => '/home/robert/RubymineProjects/tolk' #, :git=>"git://github.com/rbjarnason/tolk"
+gem 'tolk', :git=>"git://github.com/rbjarnason/tolk"
 gem 'ruby_parser'
 gem 'aws-s3'
 gem 'aws-sdk', require: false
-gem 'rails', '3.2.14'
 gem 'safe_yaml', '0.9.3'
 gem 'airbrake'
 gem 'memcachier'

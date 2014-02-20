@@ -10,7 +10,8 @@ def tolk_locale_url(something=nil)
 end
 
 Tolk.config do |config|
-
+    config.disable_apply_changes_with = "Translations not active right away. We export regularly. citizens@citizens.is"
+    config.master_translation_locale = "is"
   # If you need to add a mapping do it like this :
   # May we suggest you use http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
     config.mapping['fr-ES']   = 'Frañol !'
