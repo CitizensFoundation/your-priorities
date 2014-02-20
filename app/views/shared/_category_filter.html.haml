@@ -1,6 +1,6 @@
 #cat_sib_sub_nav
   %div#cat_section_title
-    %h3
+    %h4
       %a.cat_sub_nav.pulldown_trigger{:href => "#"}
         %span
           - if Thread.current[:category_id_filter] and Category.exists?(Thread.current[:category_id_filter])
