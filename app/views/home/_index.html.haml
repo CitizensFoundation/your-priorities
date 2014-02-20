@@ -56,7 +56,7 @@
     %h2.home_h2
       &nbsp;
     %h2.home_h1
-      = link_to tr("Top #{IDEA_TOKEN_PLURAL} past 7 days", "controller/ideas"),"/ideas/top_7days"
+      = link_to tr("Trending #{IDEA_TOKEN_PLURAL}", "controller/ideas"),"/ideas/top_7days"
     - @top_ideas.each do |idea|
       = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
       %div

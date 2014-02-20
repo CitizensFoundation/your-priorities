@@ -87,6 +87,11 @@ cd /var/log/supervisor
 tail -f *
 ````
 
+Default admin user and password
+````bash
+admin@admin.is
+admin
+````
 
 Setup the project locally
 =========================

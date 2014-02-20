@@ -850,12 +850,12 @@ $button-border-color: darken($primary-color, $button-function-factor);
 //
 
 // Background and border styles
-$panel-bg: #eee;
+$panel-bg: #fff;
 $panel-border-style: solid;
-$panel-border-size: 0px;
+$panel-border-size: 1px;
 $panel-bg-1: #FFF;
 $panel-bg-2: #FFF;
-$panel-bg-3: #eee;
+$panel-bg-3: #fff;
 $panel-bg-4: #fff;
 
 // Control how much we darken things on hover
@@ -1362,11 +1362,19 @@ a {
 }
 
 .odd-idea-container {
-  background-color: #f7F7F7;
+  //background-color: #f7F7F7;
+  background-color: #f8f8f8;
+  border: solid 1px;
+  border-color: #bbb;
+  -webkit-border-radius: 5px;
 }
 
 .even-idea-container {
-  background-color: #efefef;
+  //background-color: #efefef;
+  background-color: #f8f8f8;
+  border: solid 1px;
+  border-color: #bbb;
+  -webkit-border-radius: 5px;
 }
 
 .top_level_idea_listing {
