@@ -22,7 +22,7 @@ class BasicTest < Test::Unit::TestCase
   def test_basic
     @driver.get(@base_url + "/?sub_instance_short_name=default&locale=en")
     @driver.find_element(:link, "Sign in with email").click
-    @driver.find_element(:link, "New user registration").click
+    @driver.find_element(:link, "Create new email user").click
     @driver.find_element(:id, "user_login").clear
     @driver.find_element(:id, "user_login").send_keys "Test User 93874"
     @driver.find_element(:id, "user_email").clear
