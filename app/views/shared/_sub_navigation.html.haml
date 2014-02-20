@@ -1,7 +1,7 @@
 #sib_sub_nav
   %div#section_title
     - if controller_name == "issues"
-      %h4
+      %h3
       - if action_name == "index"
         %a.subnav.pulldown_trigger{:href => "#"}
           %span= tr('All', "view/issues")
@@ -9,7 +9,7 @@
         %a.subnav.pulldown_trigger{:href => "#"}
           %span= @category.name.titleize
     - elsif @selected_sub_nav_name
-      %h4
+      %h3
         %a.subnav.pulldown_trigger{:href => "#"}
           %span
             = @selected_sub_nav_name
