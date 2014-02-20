@@ -25,11 +25,6 @@
             .sprite_clip_flag
               = image_tag SubInstance.current.iso_country.large_flag_image, :size=>"45x45"
       - else
-        %li.top-bar-flag{:class=>controller_name=="home" ? "active" : ""}
-          = link_to :controller => "home", :action=> "index" do
-            .sprite_clip_flag
-              = image_tag SubInstance.current.logo_url(:icon_50), :border => 0, :size=>"45x45"
-        %li.divider
         %li{:class=>controller_name=="home" ? "active" : ""}
           %a{href: "/"}
             = tr("Home","here")
