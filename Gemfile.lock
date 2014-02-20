@@ -245,9 +245,9 @@ GEM
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
-    omniauth (1.1.4)
+    omniauth (1.2.1)
       hashie (>= 1.2, < 3)
-      rack
+      rack (~> 1.0)
     omniauth-facebook (1.5.1)
       omniauth-oauth2 (~> 1.1.0)
     omniauth-oauth2 (1.1.1)
