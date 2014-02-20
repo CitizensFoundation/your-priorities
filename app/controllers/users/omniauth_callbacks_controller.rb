@@ -21,6 +21,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def failure
     Rails.logger.error "-------------------------------------------- FACEBOOK LOGIN FAILURE ---------------------------------------------"
+    Rails.logger.error params.inspect
     Rails.logger.error request.inspect
 
     #flash[:error] = tr("Error signing in - please try again","here")
