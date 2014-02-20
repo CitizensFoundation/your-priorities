@@ -2,14 +2,13 @@
   .large-1.columns
     .ad_user_image
       = render :partial => "users/pic_50", :locals => {:user => ad.user}
-  .large-9.columns
+  .large-6.columns
     %div.encouragement_content{:valign => "top"}
-      %p
-        = tr("{user_name} asks you to consider {idea_name}", "view/ads/_show", :user_name => link_to(ad.user.name, ad.user), :idea_name => link_to(ad.idea.name, ad.idea))
-      - if ad.has_content?
-        %p.notification_show_message
-          "#{h(ad.content)}"
-          %span.show_all_encouragements
+      = tr("{user_name} asks you to consider {idea_name}", "view/ads/_show", :user_name => link_to(ad.user.name, ad.user), :idea_name => link_to(ad.idea.name, ad.idea))
+    - if ad.has_content?
+      %p.notification_show_message
+        "#{h(ad.content)}"
+        %span.show_all_encouragements
   .large-2.columns
     %div.encouragement_debate
       %span{:id => "idea_#{ad.idea.id}_button_small"}
@@ -39,4 +38,5 @@
                   'data-disable-with' => '<span class="tag_scale idea_add_working"><img src="#{asset_path "/ajax/horizontal_small.gif"}" /></span>', |
                   'data-loader-name' => "no_loader",                                                                                                                      |
                   :class => "idea_add_link_small", :title => tr("Skip this I'm not interested'", "view/ads/_show")
-
+  .large-3.columns
+    = ""
