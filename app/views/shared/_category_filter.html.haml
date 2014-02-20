@@ -14,11 +14,11 @@
           %a{:href => "/categories/set_filter/clear"}
             = tr("No category filter","here")
         - Category.unscoped.where(:sub_instance_id=>Category.where(:sub_instance_id=>SubInstance.current.id).count>0 ? SubInstance.current.id : SubInstance.find_by_short_name("default").id).all.each do |category|
-          - next unless category.ideas.count>0
+          - next unless category.ideas.published.count>0
           %li.active
             %a{:href => "/categories/set_filter/#{category.id}"}
               = category.name
-              = "(#{category.ideas.count})"
+              = "(#{category.ideas.published.count})"
 
 :javascript
   $(document).ready(function() {
