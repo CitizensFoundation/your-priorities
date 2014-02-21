@@ -16,9 +16,9 @@ module ApplicationHelper
     if currency=="USD"
       number_to_currency amount, :unit=>"$", :precision=>0, :locale=>"en"
     elsif currency=="EUR"
-      number_to_currency amount, :unit=>"&euro;", :precision=>0, :locale=>"en"
+      number_to_currency amount, :unit=>"EUR", :precision=>0, :locale=>"en"
     elsif currency=="GBP"
-      number_to_currency amount, :unit=>"&pound;", :precision=>0, :locale=>"en"
+      number_to_currency amount, :unit=>"GBP", :precision=>0, :locale=>"en"
     elsif currency=="ISK"
       number_to_currency amount, :unit=>"kr.", :precision=>0, format: "%n %u", :locale=>"en"
     end

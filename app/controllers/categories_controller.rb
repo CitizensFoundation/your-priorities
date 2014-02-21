@@ -7,9 +7,13 @@ class CategoriesController < ApplicationController
     else
       Thread.current[:category_id_filter]=params[:id]
     end
-    session[:category_id_filter]=Thread.current[:category_id_filter]
-    Rails.logger.debug("Setting category id filter to #{params[:id]} #{Thread.current[:category_id_filter]} #{session[:category_id_filter]}")
-    redirect_to :back
+    session["category_id_filter_#{SubInstance.current.id}"]=Thread.current[:category_id_filter]
+    Rails.logger.debug("Setting category id filter to #{params[:id]} #{Thread.current[:category_id_filter]} #{session["category_id_filter_#{SubInstance.current.id}"]}")
+    if request.referer
+      redirect_to request.referer.split("?")[0]
+    else
+      redirect_to "/ideas"
+    end
   end
 
   # GET /categories
