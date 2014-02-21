@@ -156,7 +156,6 @@ YourPriorities::Application.routes.draw do
       get :endorsed_top_points
       get :comments
       get :documents
-      get :idea_detail
       get :update_status
   	end
   	collection do

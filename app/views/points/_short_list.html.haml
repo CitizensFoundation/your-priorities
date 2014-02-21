@@ -7,7 +7,8 @@
     %h5
       - numbering = false
       = numbering ? "#{i+1}. " : ""
-      = link_to h(point.name), "#"
+      %a{:id=>"point_anchor_#{point.id}"}
+        = link_to h(point.name), "#"
     %p
       = tg(point.content)
     - if point.has_website?
