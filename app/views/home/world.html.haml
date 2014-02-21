@@ -215,6 +215,23 @@
                 %p
                   = tr("Those true stories will inspire books - comics - TV series and films set in the EVE Universe.","here")
 .row
+  .large-6.columns
+    .panel.panel-bg-2
+      %h2
+        = tr("Our tweets","here")
+      %a.twitter-timeline{"data-widget-id" => "436832555602436096", href: "https://twitter.com/CitizensFNDN"}
+        Tweets by @CitizensFNDN
+      :plain
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  .large-6.columns
+    .panel.panel-bg-2
+      %h2
+        = tr("Our favorites","here")
+      %a.twitter-timeline{"data-widget-id" => "436834078638100480", href: "https://twitter.com/CitizensFNDN/favorites"}
+        Favorite Tweets by @CitizensFNDN
+      :plain
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+.row
   .large-12.columns
     .panel.radius
       %h2

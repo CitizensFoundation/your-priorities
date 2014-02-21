@@ -449,12 +449,12 @@ class ApplicationController < ActionController::Base
       if cookies[:last_selected_language]
         session[:locale] = cookies[:last_selected_language]
         Rails.logger.info("Set language from cookie")
-      elsif @iso_country and @iso_country.default_locale
-        session[:locale] = @iso_country.default_locale
-        Rails.logger.info("Set language from geoip")
       elsif SubInstance.current and SubInstance.current.default_locale and SubInstance.current.default_locale!=""
         session[:locale] = SubInstance.current.default_locale
         Rails.logger.info("Set language from sub_instance")
+      elsif @iso_country and @iso_country.default_locale
+        session[:locale] = @iso_country.default_locale
+        Rails.logger.info("Set language from geoip")
       elsif Instance.current and Instance.current.default_locale
         session[:locale] = Instance.current.default_locale
         Rails.logger.info("Set language from instance")
