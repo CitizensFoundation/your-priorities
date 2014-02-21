@@ -31,7 +31,7 @@ $default-float: left;
 
 // $body-bg: #fff;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Open Sans",Helvetica,Arial,sans-serif;;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -1541,19 +1541,15 @@ a {
 }
 
 #message_to_users {
-  padding-left: 10px;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border: 1px dotted #ddd;
   border-radius: 2px;
   -moz-border-radius: 2px ;
   -webkit-border-radius: 2px;
 }
 
-body, h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans",Helvetica,Arial,sans-serif;
-}
-
-#section_title a, #cat_section_title a {
-  font-size: 0.8em !important;
-}
 
 .button {
   font-size: 1em;
@@ -1596,4 +1592,13 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .top-bar-new-idea {
   padding-left: 10px;
+}
+
+.center {
+  text-align: center;
+
+}
+
+.top_margin{
+  margin-top: 20px;
 }

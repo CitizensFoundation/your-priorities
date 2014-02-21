@@ -1,11 +1,9 @@
 .row
   .large-12.columns
-    %center
+    %div.left
       = link_to "/users/additional_information" do
         = render :partial => "users/pic_50", :locals => {:user => current_user}
-.row
-  .large-12.columns
-    %center
+    %div.right
       %h5
         = current_user.name
 
@@ -13,7 +11,7 @@
   = render partial: "shared/activated"
 .row
   .large-12.columns
-    %center
+    %div.center
       %h6
         = tr("{sp} social points","here",:sp=>current_user.capitals_count)
     %p.small
