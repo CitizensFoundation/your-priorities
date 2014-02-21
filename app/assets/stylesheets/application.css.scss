@@ -1225,7 +1225,7 @@ $topbar-bg: #ddd !default;
 
 // Style the top bar dropdown elements
 
-$topbar-dropdown-bg: #c3c6c9;
+$topbar-dropdown-bg: #c3c609;
 $topbar-dropdown-link-color: #111;
 $topbar-dropdown-link-bg: #ddd;
 
@@ -1504,4 +1504,96 @@ a {
 }
 
 .sprite_clip_flag {
+}
+
+.dd .ddTitle {
+  margin-bottom: 13px;
+  height: 33px;
+}
+
+.ddChild {height: auto !important}
+
+.panel-mine h3 {display:none;}
+
+.panel-mine{
+  top: 64px;
+  margin-left: -110px !important;
+  position: relative;
+  background: none;
+}
+
+.top-banner-custom {
+  background-size: 974 100;
+}
+
+.ad-text {
+  font-size:14px;
+  padding-top: 3px;
+}
+
+
+.ad-img {
+  float:left;
+}
+
+.top-bar-flag {
+  display: none;
+}
+
+#message_to_users {
+  padding-left: 10px;
+  border-radius: 2px;
+  -moz-border-radius: 2px ;
+  -webkit-border-radius: 2px;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans",Helvetica,Arial,sans-serif;
+}
+
+#section_title a, #cat_section_title a {
+  font-size: 0.8em !important;
+}
+
+.button {
+  font-size: 1em;
+  border-radius: 15px;
+}
+
+#login {	border:1px solid #ccc; border-radius:15px; padding:15px; margin-top:35px; }
+
+.debate_button { padding: 10px 0 0 0px;}
+
+.gplus{margin-bottom: 5px !important;}
+
+#login {
+  border-radius: 2px !important;
+}
+
+.top-bar input, .top-bar .button {
+  height: 30px !important;
+}
+
+.top-bar-section ul li>a.button {
+  padding-top: 2px;
+}
+
+.new-idea {
+  font-size: 22px;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  font-size:22px;
+  font-weight: bold;
+  padding-top: 3px;
+}
+
+.partners
+{
+  float: right;
+  padding-right: 10px;
+}
+
+.top-bar-new-idea {
+  padding-left: 10px;
 }
