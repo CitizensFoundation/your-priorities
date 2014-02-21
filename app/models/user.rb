@@ -439,7 +439,11 @@ class User < ActiveRecord::Base
   end
 
   def to_param
-    "#{id}-#{login.parameterize_full}"
+    if login
+      "#{id}-#{login.parameterize_full}"
+    else
+      "#{id}"
+    end
   end  
   
   cattr_reader :per_page
