@@ -75,8 +75,10 @@ class ApplicationController < ActionController::Base
         !request.fullpath.include?("/users/invitation") &&
         !request.fullpath.include?("/flag") &&
         !request.xhr?) # don't store ajax calls
-      Rails.logger.debug("URL storing: #{request.fullpath}")
+      Rails.logger.info("Store location: #{request.fullpath}")
       session[:previous_url] = request.fullpath
+    else
+      Rails.logger.info("Not storing location: #{request.fullpath}")
     end
   end
 
