@@ -447,6 +447,7 @@ DEPENDENCIES
   monologue (= 0.2.0)
   mysql2
   newrelic_rpm
+  oauth2
   omniauth-facebook
   paperclip
   paymill!

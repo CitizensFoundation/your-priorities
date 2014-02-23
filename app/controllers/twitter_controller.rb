@@ -3,12 +3,12 @@ require 'load_twitter_followers'
 class TwitterController < ApplicationController
   
   def oauth_callback_url
-    "http://#{Instance.current.base_url_w_sub_instance}/twitter/callback"
+    "https://#{Instance.current.base_url_w_sub_instance}/twitter/callback"
   end
 
   def prepare_access_token(oauth_token, oauth_token_secret,oauth_verifier)
     consumer = OAuth::Consumer.new(Instance.first.twitter_key, Instance.first.twitter_secret_key,
-      { :site => "http://api.twitter.com",
+      { :site => "https://api.twitter.com",
         :scheme => :header
       })
     # now create the access token object from passed values
