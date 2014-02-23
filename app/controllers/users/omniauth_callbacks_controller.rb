@@ -1,6 +1,8 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
+    Rails.logger.info "-------------------------------------------- FACEBOOK LOGIN ---------------------------------------------"
+    Rails.logger.info request.env["omniauth.auth"]
     session["omniauth_data"] = {
       email: request.env["omniauth.auth"][:info][:email],
       facebook_id: request.env["omniauth.auth"][:uid],
@@ -21,8 +23,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def failure
     Rails.logger.error "-------------------------------------------- FACEBOOK LOGIN FAILURE ---------------------------------------------"
-    Rails.logger.error params.inspect
-    Rails.logger.error request.inspect
+    Rails.logger.info request.env["omniauth.auth"]
+    Rails.logger.info params.inspect
+    Rails.logger.info request.inspect
 
     #flash[:error] = tr("Error signing in - please try again","here")
     redirect_to "/"
