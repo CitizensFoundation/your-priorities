@@ -1,5 +1,11 @@
 #login
   #login_form
+    - if current_instance.has_facebook_enabled? and (not SubInstance.current.subscription_enabled or (@current_plan and not @current_plan.private_instance))
+      #fb_login_link
+        = link_to user_omniauth_authorize_path(:facebook), class: 'fb_login_button' do
+          %span.fb_login_text
+            = tr("Sign in with {provider}", "views/_top_navigation", provider: "Facebook")
+      %br
     - if current_instance.has_twitter_enabled?
       %div{:style => "margin-bottom: 5px;"}
         = link_to image_tag("twitter_signin.png", :border => 0, :title=>tr("Sign in with Twitter","_login")), :controller => "twitter", :action => "create"
@@ -12,12 +18,6 @@
         #signup
           = link_to tr("Sign in with island.is", "view/shared/_login"), "https://innskraning.island.is/?id=#{ENV['ISLYKILL_ID']}"
           %br
-      - if current_instance.has_facebook_enabled? and (not SubInstance.current.subscription_enabled or (@current_plan and not @current_plan.private_instance))
-        #fb_login_link
-          = link_to user_omniauth_authorize_path(:facebook), class: 'fb_login_button' do
-            %span.fb_login_text
-              = tr("Sign in with {provider}", "views/_top_navigation", provider: "Facebook")
-        %br
     - unless current_instance.disable_email_login and not (@current_plan and @current_plan.private_instance)
       - unless @current_plan and @current_plan.private_instance
         %br
