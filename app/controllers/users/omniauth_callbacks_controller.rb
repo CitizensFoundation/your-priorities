@@ -25,9 +25,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     Rails.logger.error "-------------------------------------------- FACEBOOK LOGIN FAILURE ---------------------------------------------"
     Rails.logger.info request.env["omniauth.auth"]
     Rails.logger.info params.inspect
-    Rails.logger.info request.inspect
-
-    #flash[:error] = tr("Error signing in - please try again","here")
+    flash[:error] = tr("Error signing in - please try again","here")
     redirect_to "/"
   end
 end

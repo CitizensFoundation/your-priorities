@@ -70,6 +70,7 @@ class ApplicationController < ActionController::Base
         request.fullpath != "/users/sign_up" &&
         request.fullpath != "/users/sign_out" &&
         !request.fullpath.include?("idea_detail") &&
+        !request.fullpath.include?("/users/auth") &&
         request.fullpath != "/users" &&
         !request.fullpath.include?("/users/password") &&
         !request.fullpath.include?("/users/invitation") &&
