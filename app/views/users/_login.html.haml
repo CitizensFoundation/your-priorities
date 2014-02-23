@@ -9,7 +9,7 @@
     - if current_instance.has_twitter_enabled?
       %div{:style => "margin-bottom: 5px;"}
         = link_to user_omniauth_authorize_path(:twitter), class: 'twitter_login_button' do
-          = image_tag("twitter_signin.png", :border => gi0, :title=>tr("Sign in with Twitter","_login"))
+          = image_tag("twitter_signin.png", :border => 0, :title=>tr("Sign in with Twitter","_login"))
     - if current_instance.google_login_enabled
       %div{:style => "margin-bottom: 5px;margin-top: 5px;"}
         = link_to image_tag("logos/Gmail_logo.png", :border => 0, :title=>tr("Sign in with Gmail","_login")), :controller => "open_ids", :action => "new"
