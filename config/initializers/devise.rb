@@ -241,5 +241,6 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
 
-  config.omniauth :facebook, ENV["FACEBOOKER2_APP_ID"], ENV["FACEBOOKER2_API_KEY"], {:provider_ignores_state => true}
+  config.omniauth :facebook, ENV["FACEBOOKER2_APP_ID"], ENV["FACEBOOKER2_API_KEY"]
+  config.omniauth :twitter, ENV["TWITTER_KEY"], ENV["TWITTER_SECRET"]
 end
