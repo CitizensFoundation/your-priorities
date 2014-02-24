@@ -4,6 +4,7 @@
       = render :partial => "users/pic_50", :locals => {:user => @user}
       %br
       = render :partial => "users/profile_info"
+      = #render :partial => "users/button_small", :locals => {:user => @user, :following => @following}
 .row
   .large-12.columns
     - if @ideas.any?
