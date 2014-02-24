@@ -253,6 +253,29 @@ class User < ActiveRecord::Base
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20])
       user.save(:validate=>false)
+    else
+      user.login = auth.extra.raw_info.name
+      user.email = auth.info.email
+      user.save(:validate=>false)
+    end
+    user
+  end
+
+  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+    user = User.where(:twitter_id => auth.uid).first
+    unless user
+      user = User.create(login:auth.extra.raw_info.name,
+                         #provider:auth.provider,
+                         twitter_id:auth.uid,
+                         twitter_token:auth.credentials.token,
+                         twitter_secret:auth.credentials.secret,
+                         twitter_profile_image_url:auth.raw_info.profile_image_url_https,
+                         password:Devise.friendly_token[0,20])
+      user.save(:validate=>false)
+    else
+      user.login = auth.extra.raw_info.name
+      user.twitter_profile_image_url = auth.raw_info.profile_image_url_https
+      user.save(:validate=>false)
     end
     user
   end
