@@ -1,11 +1,15 @@
 class PagesController < ApplicationController
-  #before_filter :authenticate_admin!, :except => [:show]
-  before_filter :authenticate_root!, :except => [:show] #, :if => Proc.new { SubInstance.current.short_name=="default" }
+  before_filter :authenticate_admin!, :except => [:show]
+  #before_filter :authenticate_root!, :except => [:show] #, :if => Proc.new { SubInstance.current.short_name=="default" }
 
   # GET /pages
   # GET /pages.json
   def index
     @pages = Page.all
+
+    if current_user.is_root?
+      @pages = (@pages + Page.unscoped.all).uniq
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -38,7 +42,11 @@ class PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
-    @page = Page.find(params[:id])
+    if current_user.is_root?
+      @page = Page.unscoped.find(params[:id])
+    else
+      @page = Page.find(params[:id])
+    end
   end
 
   # POST /pages
@@ -60,7 +68,11 @@ class PagesController < ApplicationController
   # PUT /pages/1
   # PUT /pages/1.json
   def update
-    @page = Page.find(params[:id])
+    if current_user.is_root?
+      @page = Page.unscoped.find(params[:id])
+    else
+      @page = Page.find(params[:id])
+    end
 
     if @page.sub_instance.short_name=="default" and not current_user.is_root?
       redirect_to :back
