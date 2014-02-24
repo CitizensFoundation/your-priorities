@@ -26,7 +26,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     Rails.logger.info request.env["omniauth.auth"]
     session["omniauth_data"] = {
         email: request.env["omniauth.auth"][:info][:email],
-        facebook_id: request.env["omniauth.auth"][:uid],
+        twitter_id: request.env["omniauth.auth"][:uid],
         provider: "Twitter",
     }
 
