@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
   
   before_filter :authenticate_admin!
-  before_filter :authenticate_root!, :only=>[:master_statistics, :picture_save, :picture, :buddy_icon_save, :buddy_icon]
+  before_filter :authenticate_root!, :only=>[:sub_instances, :master_statistics, :picture_save, :picture, :buddy_icon_save, :buddy_icon]
 
 
   def statistics
@@ -17,6 +17,11 @@ class AdminController < ApplicationController
     @users_counts_per_day = User.unscoped.count(:order => 'DATE(created_at) DESC', :group => ["DATE(created_at)"])
     @comments_counts_per_day = Comment.unscoped.count(:order => 'DATE(created_at) DESC', :group => ["DATE(created_at)"])
     @sub_instance_count_per_day = SubInstance.unscoped.count(:order => 'DATE(created_at) DESC', :group => ["DATE(created_at)"])
+  end
+
+  def sub_instances
+    @sub_instances = SubInstance.all
+    @sub_instances = @sub_instances.sort_by {|i| i.ideas.count}.reverse
   end
 
   def all_flagged

@@ -55,7 +55,7 @@ class SubInstance < ActiveRecord::Base
   has_many :activities
   has_many :ideas
   belongs_to :subscription
-  
+  has_many :points
   has_one :iso_country, :class_name => 'IsoCountry'
 
   include Workflow

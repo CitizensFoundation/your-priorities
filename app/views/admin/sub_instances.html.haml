@@ -1,0 +1,7 @@
+- @sub_instances.each do |sub_instance|
+  .sub_instance_listing
+    %h5
+      = sub_instance.short_name
+    %p
+      = "#{sub_instance.name} (#{sub_instance.ideas.count}) (#{sub_instance.points.count})"
+      = link_to "go",sub_instance.show_url
