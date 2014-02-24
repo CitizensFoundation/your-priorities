@@ -269,12 +269,12 @@ class User < ActiveRecord::Base
                          twitter_id:auth.uid,
                          twitter_token:auth.credentials.token,
                          twitter_secret:auth.credentials.secret,
-                         twitter_profile_image_url:auth.raw_info.profile_image_url_https,
+                         twitter_profile_image_url:auth.extra.raw_info.profile_image_url_https,
                          password:Devise.friendly_token[0,20])
       user.save(:validate=>false)
     else
       user.login = auth.extra.raw_info.name
-      user.twitter_profile_image_url = auth.raw_info.profile_image_url_https
+      user.twitter_profile_image_url = auth.extra.raw_info.profile_image_url_https
       user.save(:validate=>false)
     end
     user
