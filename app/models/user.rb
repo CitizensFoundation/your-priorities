@@ -200,9 +200,10 @@ class User < ActiveRecord::Base
   end
 
   def should_validate_password?
-    !self.facebook_uid
+    !self.facebook_uid and !self.twitter_id
   end
   
+
   def next_idea
     Idea.joins("LEFT OUTER JOIN viewed_ideas vi on vi.idea_id = ideas.id AND vi.user_id=#{self.id}").where("vi.user_id is null AND ideas.status='published'").order("random()").first
   end
