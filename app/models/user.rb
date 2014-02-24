@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
                   :my_gender, :buddy_icon, :terms, :status, :name, :facebook_uid,
                   :report_frequency, :is_comments_subscribed, :is_point_changes_subscribed,
                   :is_followers_subscribed, :is_finished_subscribed, :is_idea_changes_subscribed,
-                  :is_messages_subscribed, :is_capital_subscribed
+                  :is_messages_subscribed, :is_capital_subscribed, :twitter_id, :twitter_token,
+                  :twitter_secret, :twitter_profile_image_url
 
   scope :active, :conditions => "users.status in ('pending','active')"
   scope :at_least_one_endorsement, :conditions => "users.endorsements_count > 0"
@@ -199,9 +200,10 @@ class User < ActiveRecord::Base
   end
 
   def should_validate_password?
-    !self.facebook_uid
+    !self.facebook_uid and !self.twitter_id
   end
   
+
   def next_idea
     Idea.joins("LEFT OUTER JOIN viewed_ideas vi on vi.idea_id = ideas.id AND vi.user_id=#{self.id}").where("vi.user_id is null AND ideas.status='published'").order("random()").first
   end
@@ -253,8 +255,36 @@ class User < ActiveRecord::Base
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20])
       user.save(:validate=>false)
+    else
+      user.login = auth.extra.raw_info.name
+      user.email = auth.info.email
+      user.save(:validate=>false)
     end
     user
+  end
+
+  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+    if auth.uid and auth.uid!=""
+      Rails.logger.info("Logging in with twitter uid #{auth.uid} #{auth.credentials.token} #{auth.credentials.secret} #{auth.extra.raw_info.profile_image_url_https}")
+      user = User.where(:twitter_id => auth.uid).first
+      unless user
+        Rails.logger.info("Creating new twitter user #{auth.extra.raw_info.name}")
+        user = User.create(:login=>auth.extra.raw_info.name,
+                           :twitter_id=>auth.uid,
+                           :twitter_token=>auth.credentials.token,
+                           :twitter_secret=>auth.credentials.secret,
+                           :twitter_profile_image_url=>auth.extra.raw_info.profile_image_url_https,
+                           :password=>Devise.friendly_token[0,20])
+        user.save(:validate=>false)
+      else
+        user.login = auth.extra.raw_info.name
+        user.twitter_profile_image_url = auth.extra.raw_info.profile_image_url_https
+        user.save(:validate=>false)
+      end
+      user
+    else
+      raise "No auth.uid from Twitter"
+    end
   end
 
   def accepted_eula!
@@ -439,7 +469,11 @@ class User < ActiveRecord::Base
   end
 
   def to_param
-    "#{id}-#{login.parameterize_full}"
+    if login
+      "#{id}-#{login.parameterize_full}"
+    else
+      "#{id}"
+    end
   end  
   
   cattr_reader :per_page
@@ -624,9 +658,13 @@ class User < ActiveRecord::Base
   end
   
   def real_name
-    return login if not attribute_present?("first_name") or not attribute_present?("last_name")
-    n = first_name + ' ' + last_name
-    n
+    if attribute_present?("first_name") and attribute_present?("last_name")
+      first_name + ' ' + last_name
+    elsif login
+      login
+    else
+      "Unknown"
+    end
   end
   
   def is_sub_instance?

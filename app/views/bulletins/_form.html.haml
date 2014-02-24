@@ -1,6 +1,6 @@
 - if @point or @idea or @user
   .row
-    .large-3.columns
+    .large-2.columns
       &nbsp;
     .large-6.columns
       = form_for comment, :remote=>true,                |
@@ -19,6 +19,6 @@
           %input{:name => "activity[point_id]", :type => "hidden", :value => @point.id}/
         - if @user and @user != current_user
           %input{:name => "activity[other_user_id]", :type => "hidden", :value => @user.id}/
-    .large-3.columns
+    .large-4.columns
       &nbsp;
 

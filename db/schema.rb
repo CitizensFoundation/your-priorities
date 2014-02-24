@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140218153639) do
+ActiveRecord::Schema.define(:version => 20140223230823) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -1544,6 +1544,7 @@ ActiveRecord::Schema.define(:version => 20140218153639) do
     t.string   "invited_by_type"
     t.string   "last_locale"
     t.string   "paymill_id"
+    t.string   "twitter_profile_image_url"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

@@ -3,12 +3,12 @@ require 'load_twitter_followers'
 class TwitterController < ApplicationController
   
   def oauth_callback_url
-    "http://#{Instance.current.base_url_w_sub_instance}/twitter/callback"
+    "https://#{Instance.current.base_url_w_sub_instance}/twitter/callback"
   end
 
   def prepare_access_token(oauth_token, oauth_token_secret,oauth_verifier)
     consumer = OAuth::Consumer.new(Instance.first.twitter_key, Instance.first.twitter_secret_key,
-      { :site => "http://api.twitter.com",
+      { :site => "https://api.twitter.com",
         :scheme => :header
       })
     # now create the access token object from passed values
@@ -54,7 +54,7 @@ class TwitterController < ApplicationController
         if user_signed_in? # they are already logged in, need to sync this account to twitter
           u = User.find(current_user.id)
           u.update_with_twitter(user_info, @access_token.token, @access_token.secret, request)
-          Delayed::Job.enqueue LoadTwitterFollowers.new(u.id), 1
+         # Delayed::Job.enqueue LoadTwitterFollowers.new(u.id), 1
           redirect_to Instance.current.homepage_url + "twitter/connected"
           return          
         else # they aren't logged in, so we'll log them in to twitter
@@ -66,7 +66,7 @@ class TwitterController < ApplicationController
           # if we haven't found their account, let's create it...
           if not u
             u = User.create_from_twitter(user_info, @access_token.token, @access_token.secret, request) 
-            Delayed::Job.enqueue LoadTwitterFollowers.new(u.id), 1
+            #Delayed::Job.enqueue LoadTwitterFollowers.new(u.id), 1
           end
           if u # now it's time to update memcached (or their cookie if in single govt mode) that we've got their acct
             sign_in = u

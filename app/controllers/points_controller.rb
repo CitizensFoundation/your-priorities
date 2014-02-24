@@ -117,31 +117,35 @@ class PointsController < ApplicationController
   # GET /points/1
   def show
     @point = Point.find(params[:id])
-    if @point.is_removed?
-      flash[:error] = tr("That point was deleted", "controller/points")
-      redirect_to @point.idea
-      return
-    end    
-    @page_title = @point.name
-    @idea = @point.idea
-    if user_signed_in? 
-      @quality = @point.point_qualities.find_by_user_id(current_user.id) 
-    else
-      @quality = nil
-    end
-    @points = nil
-    if @idea.down_points_count > 1 and @point.is_down?
-      @points = @idea.points.published.down.by_recently_created.find(:all, :conditions => "points.id <> #{@point.id}", :include => :idea, :limit => 3)
-    elsif @idea.up_points_count > 1 and @point.is_up?
-      @points = @idea.points.published.up.by_recently_created.find(:all, :conditions => "points.id <> #{@point.id}", :include => :idea, :limit => 3)
-    elsif @idea.neutral_points_count > 1 and @point.is_neutral?
-      @points = @idea.points.published.neutral.by_recently_created.find(:all, :conditions => "points.id <> #{@point.id}", :include => :idea, :limit => 3)
-    end
-    get_qualities if @points and @points.any?
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml { render :xml => @point.to_xml(:include => [:idea, :other_idea], :except => NB_CONFIG['api_exclude_fields']) }
-      format.json { render :json => @point.to_json(:include => [:idea, :other_idea], :except => NB_CONFIG['api_exclude_fields']) }
+    redirect_to @point.idea.show_url+"#point_anchor_#{@point.id}"
+
+    if false
+      if @point.is_removed?
+        flash[:error] = tr("That point was deleted", "controller/points")
+        redirect_to @point.idea
+        return
+      end
+      @page_title = @point.name
+      @idea = @point.idea
+      if user_signed_in?
+        @quality = @point.point_qualities.find_by_user_id(current_user.id)
+      else
+        @quality = nil
+      end
+      @points = nil
+      if @idea.down_points_count > 1 and @point.is_down?
+        @points = @idea.points.published.down.by_recently_created.find(:all, :conditions => "points.id <> #{@point.id}", :include => :idea, :limit => 3)
+      elsif @idea.up_points_count > 1 and @point.is_up?
+        @points = @idea.points.published.up.by_recently_created.find(:all, :conditions => "points.id <> #{@point.id}", :include => :idea, :limit => 3)
+      elsif @idea.neutral_points_count > 1 and @point.is_neutral?
+        @points = @idea.points.published.neutral.by_recently_created.find(:all, :conditions => "points.id <> #{@point.id}", :include => :idea, :limit => 3)
+      end
+      get_qualities if @points and @points.any?
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml { render :xml => @point.to_xml(:include => [:idea, :other_idea], :except => NB_CONFIG['api_exclude_fields']) }
+        format.json { render :json => @point.to_json(:include => [:idea, :other_idea], :except => NB_CONFIG['api_exclude_fields']) }
+      end
     end
   end
 

@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.17'
 ruby '2.0.0'
 gem 'paymill', :git=>"git://github.com/dkd/paymill-ruby.git"
+gem 'faraday', '~> 0.8.0'
 gem 'soap4r-spox'#, :git => 'git://github.com/swalterd/soap4r.git'
 gem 'ruby-saml', :git => 'git://github.com/rbjarnason/ruby-saml.git', :ref => "6be3170ba2a5c7eac12d5255e32a62e6fadd1cc2"
 #gem 'tolk', :path => '/home/robert/RubymineProjects/tolk' #, :git=>"git://github.com/rbjarnason/tolk"
@@ -60,11 +61,11 @@ gem 'mogli', github: 'mmangino/mogli'
 gem 'facebooker2', github: 'mmangino/facebooker2'
 gem 'dalli'
 #gem 'thinking-sphinx', '3.0.5'
-##gem 'flying-sphinx',   '1.0.0'
-gem 'flying-sphinx', '~> 1.0.0',
-     git: 'git://github.com/flying-sphinx/flying-sphinx.git',
-     branch: 'master',
-     ref: '707dd60675'
+gem 'flying-sphinx'
+#gem 'flying-sphinx', '~> 1.0.0',
+#     git: 'git://github.com/flying-sphinx/flying-sphinx.git',
+#     branch: 'master',
+#     ref: '707dd60675'
 #gem "flying-sphinx","0.8.5"
 gem 'thinking-sphinx'
 #gem 'thinking-sphinx',
@@ -88,6 +89,7 @@ gem 'devise-i18n'
 gem 'devise-async'
 gem 'devise_invitable'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 group :development do
 #  ruby '2.0.0'
