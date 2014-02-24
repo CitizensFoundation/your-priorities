@@ -421,7 +421,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_geoblocking
-    Rails.logger.info("#{controller_name}/#{action_name} - #{@country_code} - locale #{current_locale} - #{current_sub_instance.short_name} - #{current_user ? (current_user.email ? current_user.email : current_user.login) : "Anonymous"}")
+    Rails.logger.info("#{controller_name}/#{action_name} - #{@country_code} - locale #{current_locale} - #{current_sub_instance.short_name} - #{current_user ? (current_user.email ? current_user.email : current_user.login) : "Anonymous"} - (#{current_user ? current_user.id : "-1"})")
     Rails.logger.info(request.user_agent)
     if SubInstance.current and SubInstance.current.geoblocking_enabled
       logged_in_user = current_user
