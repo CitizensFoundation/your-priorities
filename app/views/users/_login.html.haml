@@ -22,6 +22,7 @@
           %br
     - unless current_instance.disable_email_login and not (@current_plan and @current_plan.private_instance)
       %br
+      %br
       %a.show_hide{href: "#"}
         = tr("Sign in with email","here")
       %br
