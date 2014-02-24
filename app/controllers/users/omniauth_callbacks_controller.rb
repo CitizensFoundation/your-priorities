@@ -2,7 +2,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
     Rails.logger.info "-------------------------------------------- FACEBOOK LOGIN ---------------------------------------------"
-    Rails.logger.info request.env["omniauth.auth"]
+    Rails.logger.info JSON.pretty_generate(request.env["omniauth.auth"])
     session["omniauth_data"] = {
       email: request.env["omniauth.auth"][:info][:email],
       facebook_id: request.env["omniauth.auth"][:uid],
@@ -23,9 +23,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def twitter
     Rails.logger.info "-------------------------------------------- TWITTER LOGIN ---------------------------------------------"
-    Rails.logger.info request.env["omniauth.auth"]
+    Rails.logger.info JSON.pretty_generate(request.env["omniauth.auth"])
     session["omniauth_data"] = {
-        email: request.env["omniauth.auth"][:info][:email],
         twitter_id: request.env["omniauth.auth"][:uid],
         provider: "Twitter",
     }
