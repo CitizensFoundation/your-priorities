@@ -658,9 +658,13 @@ class User < ActiveRecord::Base
   end
   
   def real_name
-    return login if not attribute_present?("first_name") or not attribute_present?("last_name")
-    n = first_name + ' ' + last_name
-    n
+    if attribute_present?("first_name") and attribute_present?("last_name")
+      first_name + ' ' + last_name
+    elsif login
+      login
+    else
+      "Unknown"
+    end
   end
   
   def is_sub_instance?
