@@ -17,11 +17,11 @@
         .field_box
           = f.text_field :login, :maxlength => 40, :size => 30
           = tr("(Can be your name or a pseudonym)", "view/users/edit")
+      %P
       .field
-        %br
-        %p
-          = tr("(Optional)", "view/users/edit")
-          .label
-            = tr("Upload your picture", "view/settings/picture")
+        .label
+          = tr("Upload your picture", "view/settings/picture")
+        .field_box
           = f.file_field :buddy_icon
+          = tr("(Optional)", "view/users/edit")
       = f.submit tr("Save settings", "view/users/edit"), :class => "yellow_button"
