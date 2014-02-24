@@ -1,15 +1,15 @@
 .row
   .large-12.columns
-    %div.left
+    %div.right
       = link_to "/users/additional_information" do
         = render :partial => "users/pic_50", :locals => {:user => current_user}
-    %div.right
+    %div.left
       %h5
         = current_user.name
-    %div.right
+    %div.left
       %h6
         = tr("{sp} social points","here",:sp=>current_user.capitals_count)
-    %p.left
+    %p.right
       = tr("Earn social points with constructive debate.","here")
       = tr("Spend social points on promotions for ideas you like at the top of the page.","here")
 
