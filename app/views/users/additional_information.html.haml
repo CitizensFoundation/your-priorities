@@ -20,8 +20,8 @@
       %P
       .field
         .label
-          = tr("Upload your picture", "view/settings/picture")
+          = tr("Upload your picture (optional)", "view/settings/picture")
         .field_box
           = f.file_field :buddy_icon
-          = tr("(Optional)", "view/users/edit")
+      %p
       = f.submit tr("Save settings", "view/users/edit"), :class => "yellow_button"
