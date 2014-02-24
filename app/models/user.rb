@@ -263,17 +263,16 @@ class User < ActiveRecord::Base
 
   def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
     if auth.uid and auth.uid!=""
-      Rails.logger.info("Logging in with twitter uid #{auth.uid}")
+      Rails.logger.info("Logging in with twitter uid #{auth.uid} #{auth.credentials.token} #{auth.credentials.secret} #{auth.extra.raw_info.profile_image_url_https}")
       user = User.where(:twitter_id => auth.uid).first
       unless user
         Rails.logger.info("Creating new twitter user #{auth.extra.raw_info.name}")
-        user = User.create(login:auth.extra.raw_info.name,
-                           #provider:auth.provider,
-                           twitter_id:auth.info.uid,
-                           twitter_token:auth.credentials.token,
-                           twitter_secret:auth.credentials.secret,
-                           twitter_profile_image_url:auth.extra.raw_info.profile_image_url_https,
-                           password:Devise.friendly_token[0,20])
+        user = User.create(:login=>auth.extra.raw_info.name,
+                           :twitter_id=>auth.uid,
+                           :twitter_token=>auth.credentials.token,
+                           :twitter_secret=>auth.credentials.secret,
+                           :twitter_profile_image_url=>auth.extra.raw_info.profile_image_url_https,
+                           :password=>Devise.friendly_token[0,20])
         user.save(:validate=>false)
       else
         user.login = auth.extra.raw_info.name
