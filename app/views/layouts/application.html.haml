@@ -15,7 +15,8 @@
     = render :partial => "shared/description"
     = render :partial => "shared/head"
     = render :partial => "shared/javascripts"
-    = javascript_include_tag "https://bridge.paymill.com/"
+    - if controller_name=="donations"
+      = javascript_include_tag "https://bridge.paymill.com/"
     = render :partial => "shared/css"
     - if true or Rails.env.production?
       = render :partial => "shared/analytics"
