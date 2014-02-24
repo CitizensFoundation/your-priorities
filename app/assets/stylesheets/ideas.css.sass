@@ -57,7 +57,6 @@ li.gplus
   width: 140px
   text-transform: uppercase
   .idea_add
-    float: none
     text-align: left
   a
     margin-top: 1px
@@ -85,11 +84,10 @@ span.count
 
 .idea_add,.idea_add_follow,.idea_add_ignore
   font-weight: normal
-  float: left
-  margin: 0px 0px 0px 0px
+  //float: right
+  margin: 0px 0px 0px 22px
   border-radius: 3px
   behavior: url(asset_path("/assets/PIE.htc", image))
-  text-align: center
 
 .idea_remove
   font-weight: bold
@@ -118,7 +116,6 @@ span.count
   float: left
   font-weight: normal
   text-decoration: none
-  margin-left: 15px
   margin-top: 3px
 
 .sib_debate_buttons .idea_add a, .sib_debate_buttons .idea_add a:hover
@@ -128,12 +125,11 @@ span.count
   background: url(asset_path("/assets/buttons/endorse_green_square.png", image))
   background-repeat: no-repeat
   background-position: left top
-  width: 115px
+  width: 75%
   height: 20px
-  text-align: center
   color: #fff
   margin: 0px 0px 7px 0px
-  padding: 0px 10px 0px 10px
+  padding: 0px 10px 0px 2px
   border: 1px solid #ccc
   -moz-border-radius: 3px
   -webkit-border-radius: 3px
@@ -153,23 +149,24 @@ span.count
   cursor: pointer
 
 .endorse_button .idea_debate_spinner
-  float: right
-  padding-top: 1px
-  padding-right: 0px
-  margin-right: 0px
+  float: left !important
+  padding: 0px !important
+  margin: 0px !important
   img
-    padding: 2px 0px 0px 0px
+    padding: 0px !important
+    padding-top: 1px !important
+    margin: 0px !important
 
 .oppose_button
   background: url(asset_path("/assets/buttons/oppose_red_square.png", image))
   background-repeat: no-repeat
   background-position: left top
-  width: 115px
+  width: 75%
   height: 20px
   text-align: center
   color: #fff
   margin: 0px 0px 7px 0px
-  padding: 0px 10px 0px 10px
+  padding: 0px 10px 0px 2px
   border: 1px solid #ccc
   -moz-border-radius: 3px
   -webkit-border-radius: 3px
@@ -188,15 +185,14 @@ span.count
   a
     color: #999 !important
 
-.idea_debate_spinner img
-
 .oppose_button .idea_debate_spinner
-  float: right
-  padding-top: 1px
-  padding-right: 0px
-  margin-right: 0px
+  float: left !important
+  padding: 0px !important
+  margin: 0px !important
   img
-    padding: 2px 0px 0px 0px
+    padding: 0px !important
+    padding-top: 1px !important
+    margin: 0px !important
 
 .oppose_grey
   @extend .oppose_button
@@ -280,7 +276,8 @@ span.count
     color: #dddddd
   padding: 0px 0px 0px 0px
   color: #fff
-  display: block
+  //display: block
+  float: left
   height: 22px
   margin-bottom: 0px
   margin-top: -3px
