@@ -6,14 +6,12 @@
     %div.right
       %h5
         = current_user.name
+    %div.right
+      %h6
+        = tr("{sp} social points","here",:sp=>current_user.capitals_count)
+    %p.left
+      = tr("Earn social points with constructive debate.","here")
+      = tr("Spend social points on promotions for ideas you like at the top of the page.","here")
 
 - if user_signed_in? && !current_user.confirmed?
   = render partial: "shared/activated"
-.row
-  .large-12.columns
-    %div.center
-      %h6
-        = tr("{sp} social points","here",:sp=>current_user.capitals_count)
-    %p.small
-      = tr("Earn social points with constructive debate.","here")
-      = tr("Spend social points on promotions for ideas you like at the top of the page.","here")
