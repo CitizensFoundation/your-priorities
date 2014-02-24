@@ -262,9 +262,11 @@ class User < ActiveRecord::Base
   end
 
   def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
-    if auth.info.uid and auth.info.uid!=""
-      user = User.where(:twitter_id => auth.info.uid).first
+    if auth.uid and auth.uid!=""
+      Rails.logger.info("Logging in with twitter uid #{auth.uid}")
+      user = User.where(:twitter_id => auth.uid).first
       unless user
+        Rails.logger.info("Creating new twitter user #{auth.extra.raw_info.name}")
         user = User.create(login:auth.extra.raw_info.name,
                            #provider:auth.provider,
                            twitter_id:auth.info.uid,
@@ -280,7 +282,7 @@ class User < ActiveRecord::Base
       end
       user
     else
-      raise "No auth.info.uid from Twitter"
+      raise "No auth.uid from Twitter"
     end
   end
 
