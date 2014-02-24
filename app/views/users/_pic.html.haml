@@ -3,7 +3,7 @@
   %a{:href => url_for(user)}
     = image_tag user.buddy_icon.url(:icon_48), :border => 0, :alt => "", :size => "50x50"
 - elsif user.facebook_uid
-  = raw "https://graph.facebook.com/#{user.facebook_uid}/picture"
+  = "https://graph.facebook.com/#{user.facebook_uid}/picture".html_safe
   = #fb_profile_pic user.facebook_uid, :facebook_logo=>false, :linked=>false, :size=>"square", :height=>"50",:width=>"50"
 - elsif user.twitter_id and user.twitter_profile_image_url
   = user.twitter_profile_image_url

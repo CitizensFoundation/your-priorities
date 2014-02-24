@@ -2,7 +2,7 @@
   - if user and user.has_picture?
     = link_to image_tag(user.buddy_icon.url(:icon_50), :size => "50x50", :width=>"50", :border => 0, :title=>user.login, :alt => user.login), user
   - elsif user and user.facebook_uid
-    = raw "https://graph.facebook.com/#{user.facebook_uid}/picture"
+    = "https://graph.facebook.com/#{user.facebook_uid}/picture".html_safe
     = #link_to fb_profile_pic(user.facebook_uid, :facebook_logo=>false, :linked=>false, :size=>"square", :height=>"50", :width=>"50"), user
   - elsif user.twitter_id and user.twitter_profile_image_url
     = user.twitter_profile_image_url
