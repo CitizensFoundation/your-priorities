@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
                   :my_gender, :buddy_icon, :terms, :status, :name, :facebook_uid,
                   :report_frequency, :is_comments_subscribed, :is_point_changes_subscribed,
                   :is_followers_subscribed, :is_finished_subscribed, :is_idea_changes_subscribed,
-                  :is_messages_subscribed, :is_capital_subscribed
+                  :is_messages_subscribed, :is_capital_subscribed, :twitter_id, :twitter_token,
+                  :twitter_secret, :twitter_profile_image_url
 
   scope :active, :conditions => "users.status in ('pending','active')"
   scope :at_least_one_endorsement, :conditions => "users.endorsements_count > 0"
