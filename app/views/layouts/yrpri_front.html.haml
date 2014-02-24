@@ -26,7 +26,6 @@
       = javascript_include_tag "subscriptions"
     :javascript
       var PAYMILL_PUBLIC_KEY = '#{ENV['PAYMILL_PUBLIC_KEY']}';
-    = javascript_include_tag "https://bridge.paymill.com/"
   %body
     .row
       .large-12.columns
@@ -43,7 +42,8 @@
         %center
           %img{:alt => "Your Priorities", :height => "136", :size=>"312x136", :src => "https://s3.amazonaws.com/yrpri-direct-asset/YP_FinalLogo_light_grey.png", :width => "312"}/
     = yield
-
+    - if ["donations","subscriptions","subscription_accounts"].include?(controller_name)
+      = javascript_include_tag "https://bridge.paymill.com/"
     :javascript
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', '#{Instance.first.google_analytics_code}']);
