@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225213710) do
+ActiveRecord::Schema.define(:version => 20140225214921) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -1536,7 +1536,7 @@ ActiveRecord::Schema.define(:version => 20140225213710) do
     t.string   "company"
     t.boolean  "is_root",                                                                    :default => false
     t.integer  "account_id"
-    t.string   "invitation_token",             :limit => 60
+    t.string   "invitation_token"
     t.datetime "invitation_sent_at"
     t.datetime "invitation_accepted_at"
     t.integer  "invitation_limit"
