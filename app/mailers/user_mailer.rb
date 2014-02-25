@@ -33,7 +33,8 @@ class UserMailer < Devise::Mailer
     end
   end
 
-  def invitation_instructions(user, args)
+  def invitation_instructions(user, token, args)
+    @token = token
     @recipient = @resource = @sender = @recipient = @user = user
     @instance = Instance.last
     invited_by = User.where(:id=>user.invited_by_id).first
@@ -84,7 +85,8 @@ class UserMailer < Devise::Mailer
     end 
   end
 
-  def reset_password_instructions(user, opts={})
+  def reset_password_instructions(user, token, opts={})
+    @token = token
     @recipient = @user = user
     setup_locale
     @instance = Instance.last
