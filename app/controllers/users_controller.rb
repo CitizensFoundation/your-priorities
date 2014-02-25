@@ -16,12 +16,18 @@ class UsersController < ApplicationController
                 :cache_path => proc {|c| c.action_cache_path},
                 :expires_in => 30.seconds
 
+=begin
+
+=end
+
   def additional_information
     @page_title = tr("Additional needed information", "controller/users")
     @user = current_user
     if request.put?
       respond_to do |format|
-        @user.email = params[:user][:email] if params[:user][:email]
+        unless User.where(:email=>params[:user][:email]).first
+          @user.email = params[:user][:email] if params[:user][:email]
+        end
         @user.login = params[:user][:login] if params[:user][:login]
         @user.buddy_icon = params[:user][:buddy_icon] if params[:user][:buddy_icon]
         if @user.save(:validate=>false)

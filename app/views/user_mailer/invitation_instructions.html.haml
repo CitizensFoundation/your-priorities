@@ -4,5 +4,5 @@
 %p
   = tr("Click here to accept invitation:","here")
   %br
-  = link_to "https://#{@instance.base_url_w_sub_instance}/users/invitation/accept?invitation_token=#{@resource.invitation_token}", "https://#{@instance.base_url_w_sub_instance}/users/invitation/accept?invitation_token=#{@resource.invitation_token}"
+  = link_to "https://#{@instance.base_url_w_sub_instance}/users/invitation/accept?invitation_token=#{@token}", "https://#{@instance.base_url_w_sub_instance}/users/invitation/accept?invitation_token=#{@token}"
 = render :partial=>"user_mailer/footer", formats: [:html]

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.17'
 ruby '2.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'paymill', :git=>"git://github.com/dkd/paymill-ruby.git"
 gem 'faraday', '~> 0.8.0'
 gem 'soap4r-spox'#, :git => 'git://github.com/swalterd/soap4r.git'
@@ -84,7 +85,7 @@ gem 'awesome_print', require: false
 gem 'htmldiff'
 gem 'acts_as_list'
 gem 'html5shiv-rails'
-gem 'devise','2.2.4'
+gem 'devise'
 gem 'devise-i18n'
 gem 'devise-async'
 gem 'devise_invitable'

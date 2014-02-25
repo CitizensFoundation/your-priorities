@@ -25,26 +25,8 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def update
-    self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
-
-    if resource.update_attributes(params[resource_name])
-      if is_navigational_format?
-        if resource.respond_to?(:pending_reconfirmation?) && resource.pending_reconfirmation?
-          flash_key = :update_needs_confirmation
-        end
-        set_flash_message :notice, flash_key || :updated
-      end
-      sign_in resource_name, resource, :bypass => true
-      respond_with resource, :location => after_update_path_for(resource)
-    else
-      clean_up_passwords resource
-      respond_with resource
-    end
-  end
-
   def create
-    build_resource
+    build_resource(sign_up_params)
 
     #if !Rails.env.test? && !verify_recaptcha
     #  flash.now[:error] = tr("There was an error with the recaptcha code below. Please re-enter the code.", 'controller/registrations')
@@ -59,6 +41,7 @@ class RegistrationsController < Devise::RegistrationsController
     #resource.sub_instance_referral = current_sub_instance
 
     if resource.save
+      yield resource if block_given?
       resource.activate!
       if resource.active_for_authentication?
         if is_navigational_format?
