@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225214921) do
+ActiveRecord::Schema.define(:version => 20140225220211) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -1546,6 +1546,7 @@ ActiveRecord::Schema.define(:version => 20140225214921) do
     t.string   "paymill_id"
     t.string   "twitter_profile_image_url"
     t.datetime "invitation_created_at"
+    t.integer  "invitations_count",                                                          :default => 0
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
@@ -1553,6 +1554,7 @@ ActiveRecord::Schema.define(:version => 20140225214921) do
   add_index "users", ["facebook_uid"], :name => "index_users_on_facebook_uid"
   add_index "users", ["identifier_url"], :name => "index_users_on_identifier_url", :unique => true
   add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token", :unique => true
+  add_index "users", ["invitations_count"], :name => "index_users_on_invitations_count"
   add_index "users", ["invited_by_id"], :name => "index_users_on_invited_by_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["rss_code"], :name => "index_users_on_rss_code"
