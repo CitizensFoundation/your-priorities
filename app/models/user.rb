@@ -134,8 +134,8 @@ class User < ActiveRecord::Base
   validates_format_of       :email, :with => /^[-^!$#%&'*+\/=3D?`{|}~.\w]+@[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])*(\.[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])*)+$/x
   validates_uniqueness_of   :facebook_uid, :allow_nil => true, :allow_blank => true, :scope => :sub_instance_id
 
-  validates_presence_of     :password, :if => :should_validate_password?, :on=>:create
-  #validates_confirmation_of :password, :if => :should_validate_password?
+  validates_presence_of     :password, :if => :should_validate_password?
+  validates_confirmation_of :password, :if => :should_validate_password?
 
   #validates_presence_of     :post_code, :message => tr("Please enter your postcode.", "model/user")
   #validates_presence_of     :age_group, :message => tr("Please select your age group.", "model/user")
