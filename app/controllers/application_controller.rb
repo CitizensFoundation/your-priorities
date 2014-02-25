@@ -110,7 +110,6 @@ class ApplicationController < ActionController::Base
   end
 
   def setup_currency_code
-
     if ENV['FORCE_CURRENCY']
       @currency_code = ENV['FORCE_CURRENCY']
     elsif Plan::GBP_COUNTRIES.include?(@country_code)
