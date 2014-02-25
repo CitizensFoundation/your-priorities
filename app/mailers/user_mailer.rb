@@ -33,7 +33,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
-  def invitation_instructions(user, token, args)
+  def invitation_instructions(user, token, opts={})
     @token = token
     @recipient = @resource = @sender = @recipient = @user = user
     @instance = Instance.last
