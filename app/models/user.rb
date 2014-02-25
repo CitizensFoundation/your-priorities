@@ -256,7 +256,6 @@ class User < ActiveRecord::Base
                          password:Devise.friendly_token[0,20])
       user.save(:validate=>false)
     else
-      user.login = auth.extra.raw_info.name
       user.email = auth.info.email
       user.save(:validate=>false)
     end
@@ -277,7 +276,6 @@ class User < ActiveRecord::Base
                            :password=>Devise.friendly_token[0,20])
         user.save(:validate=>false)
       else
-        user.login = auth.extra.raw_info.name
         user.twitter_profile_image_url = auth.extra.raw_info.profile_image_url_https
         user.save(:validate=>false)
       end
