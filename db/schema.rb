@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225220211) do
+ActiveRecord::Schema.define(:version => 20140225231828) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -1494,7 +1494,7 @@ ActiveRecord::Schema.define(:version => 20140225220211) do
     t.datetime "suspended_at"
     t.integer  "referrals_count",                                                            :default => 0
     t.boolean  "is_admin",                                                                   :default => false
-    t.integer  "twitter_id"
+    t.integer  "twitter_id",                   :limit => 8
     t.string   "twitter_token",                :limit => 64
     t.string   "twitter_secret",               :limit => 64
     t.datetime "twitter_crawled_at"
