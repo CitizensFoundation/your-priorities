@@ -40,12 +40,11 @@
           = f.password_field :password, size: 8, html: { id: :login_password }
           = f.submit tr("Sign in", "view/shared/_login"), :class => "button small", :onclick=>"$('.login_message').html('')"
           .login_message{:style=>"color: #f00;"}
-          %br
-          = tr("Not yet registered?","here")
-          %br
-          %br
           %p
-            = link_to tr("Create new email user", "view/shared/_login"), "/users/sign_in"
+            %b
+              = tr("Not yet registered?","here")
+            %br
+            = link_to tr("Create new email user", "view/shared/_login"), new_user_registration_path
           %p
             = link_to tr("I forgot my password", "view/shared/_login"), new_user_password_path
       = #render :partial => "shared/language_selection_master"

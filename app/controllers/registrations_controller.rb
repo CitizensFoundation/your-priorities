@@ -39,7 +39,7 @@ class RegistrationsController < Devise::RegistrationsController
     #resource.request = request
     #resource.referral = @referral
     #resource.sub_instance_referral = current_sub_instance
-
+    resource.sub_instance_id = SubInstance.current.id
     if resource.save
       yield resource if block_given?
       resource.activate!

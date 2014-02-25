@@ -16,10 +16,6 @@ class UsersController < ApplicationController
                 :cache_path => proc {|c| c.action_cache_path},
                 :expires_in => 30.seconds
 
-=begin
-
-=end
-
   def additional_information
     @page_title = tr("Additional needed information", "controller/users")
     @user = current_user
