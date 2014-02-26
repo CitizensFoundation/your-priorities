@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225231828) do
+ActiveRecord::Schema.define(:version => 20140226102659) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -318,7 +318,7 @@ ActiveRecord::Schema.define(:version => 20140225231828) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "ip_address"
-    t.string   "user_agent",       :limit => 150
+    t.string   "user_agent"
     t.text     "name_diff"
     t.text     "description_diff"
     t.integer  "other_idea_id"
@@ -386,7 +386,7 @@ ActiveRecord::Schema.define(:version => 20140225231828) do
     t.integer  "sub_instance_id"
     t.integer  "flags_count",                             :default => 0
     t.integer  "category_id"
-    t.string   "user_agent",               :limit => 200
+    t.string   "user_agent"
     t.integer  "position_endorsed_24hr"
     t.integer  "position_endorsed_7days"
     t.integer  "position_endorsed_30days"
@@ -694,7 +694,7 @@ ActiveRecord::Schema.define(:version => 20140225231828) do
     t.text     "content_html"
     t.integer  "sub_instance_id"
     t.integer  "flags_count",                                                            :default => 0
-    t.string   "user_agent",               :limit => 200
+    t.string   "user_agent"
     t.string   "ip_address"
   end
 
@@ -750,7 +750,7 @@ ActiveRecord::Schema.define(:version => 20140225231828) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "ip_address"
-    t.string   "user_agent",    :limit => 150
+    t.string   "user_agent"
     t.string   "website",       :limit => 100
     t.text     "content_diff"
     t.integer  "other_idea_id"
@@ -767,7 +767,7 @@ ActiveRecord::Schema.define(:version => 20140225231828) do
     t.integer  "user_id"
     t.integer  "value",                      :default => 0
     t.string   "ip_address"
-    t.string   "user_agent", :limit => 1000
+    t.string   "user_agent"
     t.string   "referrer",   :limit => 1000
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -1438,7 +1438,7 @@ ActiveRecord::Schema.define(:version => 20140225231828) do
     t.boolean  "is_mergeable",                                                               :default => true
     t.integer  "referral_id"
     t.boolean  "is_subscribed",                                                              :default => true
-    t.string   "user_agent",                   :limit => 200
+    t.string   "user_agent"
     t.string   "referrer",                     :limit => 200
     t.boolean  "is_comments_subscribed",                                                     :default => true
     t.boolean  "is_tagger",                                                                  :default => false
