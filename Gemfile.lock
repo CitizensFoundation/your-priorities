@@ -272,6 +272,7 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.17.0)
+    pie-rails (1.1.0)
     polyglot (0.3.4)
     pry (0.9.12.3)
       coderay (~> 1.0)
@@ -461,6 +462,7 @@ DEPENDENCIES
   paperclip
   paymill!
   pg
+  pie-rails
   pry-rails
   puma
   pusher-client
