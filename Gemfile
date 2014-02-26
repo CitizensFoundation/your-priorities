@@ -85,7 +85,7 @@ gem 'pry-rails', require: false
 gem 'awesome_print', require: false
 gem 'htmldiff'
 gem 'acts_as_list'
-gem 'html5shiv-rails'
+#gem 'html5shiv-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-async'
