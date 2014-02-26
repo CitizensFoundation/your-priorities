@@ -30,7 +30,7 @@ References:
 	// being loaded by non IE browsers because the developer didn't use
 	// conditional comments.
         alert("selectwiz1");
-	if (/*@cc_on!@*/true) return;
+	//if (/*@cc_on!@*/true) return;
         alert("selectwiz2");
 
 	// =========================== Init Objects ============================
@@ -42,11 +42,11 @@ References:
 	
 	// If were not in standards mode, IE is too old / new or we can't create
 	// an XMLHttpRequest object then we should get out now.
-	if (doc.compatMode != 'CSS1Compat' || ieVersion<6 || ieVersion>8 || !xhr) {
-		return;
-	}
+	//if (doc.compatMode != 'CSS1Compat' || ieVersion<6 || ieVersion>8 || !xhr) {
+	//	return;
+	//}
     alert("selectwiz3");
-	
+    alert(ieVersion);
 	// ========================= Common Objects ============================
 
 	// Compatiable selector engines in order of CSS3 support. Note: '*' is
