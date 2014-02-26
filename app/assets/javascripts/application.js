@@ -79,7 +79,7 @@ jQuery(document).ready(function() {
     if (!navigator.userAgent.match(/MSIE 8/i)) {
         $(document).foundation();
     } else {
-        //$(document).foundation("topbar");
+        $(document).foundation("topbar");
     };
 
 });
