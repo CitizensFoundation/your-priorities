@@ -5,8 +5,3 @@
 - if SubInstance.current.custom_css
   :css
     #{SubInstance.current.custom_css}
-
-/[if IE]
-  = stylesheet_link_tag "iehacks"
-/[if IE 7]
-  = stylesheet_link_tag "ie7"
