@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.17'
 ruby '2.0.0'
+gem 'pie-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'paymill', :git=>"git://github.com/dkd/paymill-ruby.git"
 gem 'faraday', '~> 0.8.0'
