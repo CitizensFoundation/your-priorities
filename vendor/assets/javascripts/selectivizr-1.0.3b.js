@@ -25,6 +25,14 @@ References:
 */
 
 (function(win) {
+
+	// If browser isn't IE, then stop execution! This handles the script
+	// being loaded by non IE browsers because the developer didn't use
+	// conditional comments.
+        alert("selectwiz1");
+	if (/*@cc_on!@*/true) return;
+        alert("selectwiz2");
+
 	// =========================== Init Objects ============================
 
 	var doc = document;
@@ -37,7 +45,7 @@ References:
 	if (doc.compatMode != 'CSS1Compat' || ieVersion<6 || ieVersion>8 || !xhr) {
 		return;
 	}
-	
+    alert("selectwiz3");
 	
 	// ========================= Common Objects ============================
 
