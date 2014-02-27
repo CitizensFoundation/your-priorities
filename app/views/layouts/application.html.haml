@@ -19,6 +19,7 @@
     - if true or Rails.env.production?
       = render :partial => "shared/analytics"
     = #tr8n_scripts_tag
+    = render :partial => "shared/ie8_foundation"
 %body{class: SubInstance.current.short_name }
   = csrf_meta_tag
   .row
@@ -43,7 +44,6 @@
       = render :partial=>"shared/right_column"
   - if ["donations","subscriptions","subscription_accounts"].include?(controller_name)
     = javascript_include_tag "https://bridge.paymill.com/"
-  = render :partial => "shared/ie8_foundation"
   = render :partial => "shared/facebook_footer"
   = render :partial => "shared/google_plus_footer"
 
