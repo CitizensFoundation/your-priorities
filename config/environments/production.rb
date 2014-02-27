@@ -18,7 +18,7 @@ YourPriorities::Application.configure do
   # Code is not reloaded between requests
   config.cache_classes = true
 
-  config.action_controller.asset_host = ENV['CF_ASSET_HOST']
+  #config.action_controller.asset_host = ENV['CF_ASSET_HOST']
 
 #  config.action_controller.asset_host = Proc.new do |source, request|
 #    method = request.ssl? ? "https" : "http"
@@ -55,7 +55,7 @@ YourPriorities::Application.configure do
   config.force_ssl = true
 
   # See everything in the log (default is :info)
-  config.log_level = :debug
+  config.log_level = :info
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
@@ -89,6 +89,15 @@ YourPriorities::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.assets.precompile += [ method(:compile_asset?).to_proc ]
+  config.assets.precompile += %w( modernizr.js respond.js respond-proxy.html respond.proxy.js )
+
+  config.action_controller.asset_host = Proc.new { |source, request|
+    if source =~ /respond\.proxy-.+(js|gif)$/
+      "#{request.protocol}#{request.host_with_port}"
+    else
+      ENV['CF_ASSET_HOST']
+    end
+  }
 
   config.cache_store = :dalli_store
 end
