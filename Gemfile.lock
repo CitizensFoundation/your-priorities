@@ -14,6 +14,12 @@ GIT
       json
 
 GIT
+  remote: git://github.com/jhubert/selectivizr-rails
+  revision: 360b2b375ca00d0dc79282d0f762d61e9ab37bf0
+  specs:
+    selectivizr-rails (1.1.2)
+
+GIT
   remote: git://github.com/lukecathie/respond-rails
   revision: 7701c4355af9e4e3fecea0b74ad20c9a47733943
   specs:
@@ -481,6 +487,7 @@ DEPENDENCIES
   safe_yaml (= 0.9.3)
   sass
   sass-rails
+  selectivizr-rails!
   sidekiq
   soap4r-spox
   spork-testunit
