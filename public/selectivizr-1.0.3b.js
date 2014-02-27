@@ -29,7 +29,7 @@ References:
 	// If browser isn't IE, then stop execution! This handles the script
 	// being loaded by non IE browsers because the developer didn't use
 	// conditional comments.
-        alert("selectwiz1");
+    //alert("selectwiz1");
 	if (/*@cc_on!@*/true) return;
 
 	// =========================== Init Objects ============================
