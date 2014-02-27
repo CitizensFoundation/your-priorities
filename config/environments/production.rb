@@ -92,8 +92,8 @@ YourPriorities::Application.configure do
   config.assets.precompile += %w( modernizr.js respond.js respond-proxy.html respond.proxy.js )
 
   config.action_controller.asset_host = Proc.new { |source, request=nil|
-    if request and source =~ /respond\.proxy-.+(js|gif)$/
-      "#{request.protocol}#{request.host_with_port}"
+    if source =~ /respond\.proxy-.+(js|gif)$/
+      "staging.yrpri.org" #"#{request.protocol}#{request.host_with_port}"
     else
       ENV['CF_ASSET_HOST']
     end

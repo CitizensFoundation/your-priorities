@@ -14,6 +14,13 @@ GIT
       json
 
 GIT
+  remote: git://github.com/lukecathie/respond-rails
+  revision: 7701c4355af9e4e3fecea0b74ad20c9a47733943
+  specs:
+    respond-rails (1.0.1)
+      railties (>= 3.1.0)
+
+GIT
   remote: git://github.com/mmangino/facebooker2.git
   revision: 6a32a36bd871dfcc4e679fe4a18dabf24e248a87
   specs:
@@ -320,8 +327,6 @@ GEM
     redis-namespace (1.3.2)
       redis (~> 3.0.4)
     ref (1.0.5)
-    respond-rails (1.0.1)
-      railties (>= 3.1.0)
     riddle (1.5.10)
     rinku (1.5.1)
     rmagick (2.13.2)
@@ -468,7 +473,7 @@ DEPENDENCIES
   rails (= 3.2.17)
   rails-dev-boost
   rails-i18n
-  respond-rails
+  respond-rails!
   rmagick
   ruby-prof
   ruby-saml!
