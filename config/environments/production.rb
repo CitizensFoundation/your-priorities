@@ -91,9 +91,10 @@ YourPriorities::Application.configure do
   config.assets.precompile += [ method(:compile_asset?).to_proc ]
   config.assets.precompile += %w( modernizr.js respond.js respond-proxy.html respond.proxy.js )
 
-  config.action_controller.asset_host = Proc.new { |source, request=nil|
-    if source =~ /respond\.proxy-.+(js|gif)$/
-      "staging.yrpri.org" #"#{request.protocol}#{request.host_with_port}"
+  # IE8 Hack to allow respond to work
+  config.action_controller.asset_host = Proc.new { |source, request|
+    if request and source =~ /respond\.proxy-.+(js|gif)$/
+      "#{request.protocol}#{request.host_with_port}"
     else
       ENV['CF_ASSET_HOST']
     end

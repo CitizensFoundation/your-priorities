@@ -18,7 +18,7 @@
     = render :partial => "shared/css"
     - if true or Rails.env.production?
       = render :partial => "shared/analytics"
-    = #tr8n_scripts_tag
+    = #IE8 Hack
     /[if IE 8]
       = render :partial => "shared/ie8_foundation"
       = javascript_include_tag 'selectivizr'
