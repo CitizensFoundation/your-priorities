@@ -62,10 +62,6 @@ module YourPriorities
     config.filter_parameters = [:password, :password_confirmation]
 
     config.assets.initialize_on_precompile = false
-
-    config.action_dispatch.default_headers = {
-        'X-XSS-Protection' => '0'
-    }
   end
 
   if defined?(PhusionPassenger)

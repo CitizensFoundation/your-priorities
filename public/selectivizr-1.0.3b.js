@@ -38,13 +38,13 @@ References:
 	var root = doc.documentElement;
 	var xhr = getXHRObject();
 	var ieVersion = /MSIE (\d+)/.exec(navigator.userAgent)[1];
-	alert(navigator.userAgent);
+	//alert(navigator.userAgent);
 	// If were not in standards mode, IE is too old / new or we can't create
 	// an XMLHttpRequest object then we should get out now.
 	if (doc.compatMode != 'CSS1Compat' || ieVersion<6 || ieVersion>8 || !xhr) {
 		return;
 	}
-    alert(ieVersion);
+    //alert(ieVersion);
 	// ========================= Common Objects ============================
 
 	// Compatiable selector engines in order of CSS3 support. Note: '*' is
