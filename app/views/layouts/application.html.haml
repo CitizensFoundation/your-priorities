@@ -19,7 +19,7 @@
     - if true or Rails.env.production?
       = render :partial => "shared/analytics"
     = #tr8n_scripts_tag
-    = #render :partial => "shared/ie8_foundation"
+    = render :partial => "shared/ie8_foundation"
     = respond_include_tags
 %body{class: SubInstance.current.short_name }
   = csrf_meta_tag
