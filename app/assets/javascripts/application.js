@@ -76,12 +76,7 @@ jQuery(document).ready(function() {
 	};
 	jQuery(".mega").hoverIntent(megaConfig);
 
-    if (!navigator.userAgent.match(/MSIE 8/i)) {
-        $(document).foundation();
-    } else {
-        $(document).foundation("topbar");
-    };
-
+    $(document).foundation();
 });
 
 function toggleAll(name)

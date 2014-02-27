@@ -14,19 +14,6 @@ GIT
       json
 
 GIT
-  remote: git://github.com/jhubert/selectivizr-rails
-  revision: 360b2b375ca00d0dc79282d0f762d61e9ab37bf0
-  specs:
-    selectivizr-rails (1.1.2)
-
-GIT
-  remote: git://github.com/lukecathie/respond-rails
-  revision: 7701c4355af9e4e3fecea0b74ad20c9a47733943
-  specs:
-    respond-rails (1.0.1)
-      railties (>= 3.1.0)
-
-GIT
   remote: git://github.com/mmangino/facebooker2.git
   revision: 6a32a36bd871dfcc4e679fe4a18dabf24e248a87
   specs:
@@ -45,6 +32,13 @@ GIT
       multi_json (~> 1.7.8)
 
 GIT
+  remote: git://github.com/rbjarnason/respond-rails
+  revision: 7701c4355af9e4e3fecea0b74ad20c9a47733943
+  specs:
+    respond-rails (1.0.1)
+      railties (>= 3.1.0)
+
+GIT
   remote: git://github.com/rbjarnason/ruby-saml.git
   revision: 6be3170ba2a5c7eac12d5255e32a62e6fadd1cc2
   ref: 6be3170ba2a5c7eac12d5255e32a62e6fadd1cc2
@@ -53,6 +47,12 @@ GIT
       canonix (= 0.1.1)
       nokogiri
       uuid (~> 2.3)
+
+GIT
+  remote: git://github.com/rbjarnason/selectivizr-rails
+  revision: 360b2b375ca00d0dc79282d0f762d61e9ab37bf0
+  specs:
+    selectivizr-rails (1.1.2)
 
 GIT
   remote: git://github.com/rbjarnason/tolk
