@@ -1,4 +1,4 @@
-%table{:width=>"100%"}
+%table.users{:width=>"100%"}
   %tr
     %th
       = tr("Login name","here")
@@ -33,6 +33,7 @@
       %td
         = link_to tr("Delete","here"),"/users/destroy_from_admin/#{user.id}"
 
-= link_to tr("Invite","here"), new_user_invitation_path
+%h3.left-margin
+  = link_to tr("Invite","here"), new_user_invitation_path
 
 = foundation_paginate(@users)
