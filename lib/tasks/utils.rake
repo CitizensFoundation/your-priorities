@@ -139,9 +139,11 @@ namespace :utils do
   end
 
   desc "Dump users csv"
-  task :dump_users_csv => :environment do
+  task :dump_users_csv => :environment
+    all_users = User.unscoped.all
+    puts "All users count #{all_users.count}"
     puts "Login,Email"
-    User.unscoped.all.each do |u|
+    all_users.each do |u|
       puts "#{u.login},#{u.email}"
     end
   end
