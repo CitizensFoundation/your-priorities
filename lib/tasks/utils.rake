@@ -139,7 +139,7 @@ namespace :utils do
   end
 
   desc "Dump users csv"
-  task :dump_users_csv => :environment
+  task :dump_users_csv => :environment do
     all_users = User.unscoped.all
     puts "All users count #{all_users.count}"
     puts "Login,Email"
