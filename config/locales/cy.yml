@@ -1,5 +1,12 @@
 ---
 cy:
+  time:
+    pm: yh
+    formats:
+      default: '%a, %d %b %Y %H:%M:%S %z'
+      short: '%d %b %H:%M'
+      long: '%B %d, %Y %H:%M'
+    am: yb
   date:
     formats:
       default: '%d-%m-%Y'
@@ -53,13 +60,6 @@ cy:
     - :year
     - :month
     - :day
-  time:
-    formats:
-      default: '%a, %d %b %Y %H:%M:%S %z'
-      short: '%d %b %H:%M'
-      long: '%B %d, %Y %H:%M'
-    am: yb
-    pm: yh
   support:
     select:
       prompt: Dewiswch

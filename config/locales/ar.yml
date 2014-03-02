@@ -1,5 +1,12 @@
 ---
 ar:
+  time:
+    formats:
+      default: '%a %b %d %H:%M:%S %Z %Y'
+      short: '%d %b %H:%M'
+      long: '%B %d, %Y %H:%M'
+    am: صباحا
+    pm: مساءا
   number:
     human:
       decimal_units:
@@ -135,13 +142,6 @@ ar:
     - :day
     - :month
     - :year
-  time:
-    formats:
-      default: '%a %b %d %H:%M:%S %Z %Y'
-      short: '%d %b %H:%M'
-      long: '%B %d, %Y %H:%M'
-    am: صباحا
-    pm: مساءا
   support:
     select:
       prompt: الرجاء اختيار

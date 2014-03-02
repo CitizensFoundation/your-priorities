@@ -2,9 +2,9 @@
 hi-IN:
   date:
     formats:
-      default: '%d-%m-%Y'
       short: '%b %d'
       long: '%B %d, %Y'
+      default: '%d-%m-%Y'
     day_names:
     - रविवार
     - सोमवार
@@ -53,6 +53,28 @@ hi-IN:
     - :day
     - :month
     - :year
+  errors:
+    messages:
+      not_a_number: कोई संख्या नहीं है
+      inclusion: सूची में शामिल नहीं है
+      exclusion: आरक्षित है
+      invalid: अवैध है
+      confirmation: पुष्टिकरण मेल नहीं खाता
+      accepted: होना स्वीकार किया जाना आवश्यक
+      empty: खाली नहीं किया जा सकता
+      blank: खाली नहीं किया जा सकता
+      too_long: बहुत लंबा है (अधिकतम %{count} अक्षरों है)
+      too_short: बहुत छोटा है (न्यूनतम %{count} अक्षरों है)
+      wrong_length: गलत लंबाई है (%{count} वर्ण वाले होने चाहिए)
+      not_an_integer: एक पूर्णांक होना चाहिए
+      greater_than: '%{count} से अधिक होना चाहिए'
+      greater_than_or_equal_to: '%{count} से बड़ा या बराबर होना आवश्यक है'
+      equal_to: '%{count} के लिए बराबर होना चाहिए'
+      less_than: '%{count} से कम होना चाहिए'
+      less_than_or_equal_to: '%{count} से कम या बराबर होना आवश्यक है'
+      odd: विषम होना चाहिए
+      even: सम होना चाहिए
+    format: '%{attribute} %{message}'
   time:
     formats:
       default: '%a, %d %b %Y %H:%M:%S %z'
@@ -156,28 +178,6 @@ hi-IN:
       create: बनाएँ %{model}
       update: अद्यतन %{model}
       submit: सहेजें %{model}
-  errors:
-    format: '%{attribute} %{message}'
-    messages:
-      inclusion: सूची में शामिल नहीं है
-      exclusion: आरक्षित है
-      invalid: अवैध है
-      confirmation: पुष्टिकरण मेल नहीं खाता
-      accepted: होना स्वीकार किया जाना आवश्यक
-      empty: खाली नहीं किया जा सकता
-      blank: खाली नहीं किया जा सकता
-      too_long: बहुत लंबा है (अधिकतम %{count} अक्षरों है)
-      too_short: बहुत छोटा है (न्यूनतम %{count} अक्षरों है)
-      wrong_length: गलत लंबाई है (%{count} वर्ण वाले होने चाहिए)
-      not_a_number: कोई संख्या नहीं है
-      not_an_integer: एक पूर्णांक होना चाहिए
-      greater_than: '%{count} से अधिक होना चाहिए'
-      greater_than_or_equal_to: '%{count} से बड़ा या बराबर होना आवश्यक है'
-      equal_to: '%{count} के लिए बराबर होना चाहिए'
-      less_than: '%{count} से कम होना चाहिए'
-      less_than_or_equal_to: '%{count} से कम या बराबर होना आवश्यक है'
-      odd: विषम होना चाहिए
-      even: सम होना चाहिए
   activerecord:
     errors:
       template:

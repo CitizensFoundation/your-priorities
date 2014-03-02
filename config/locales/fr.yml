@@ -183,6 +183,7 @@ fr:
         one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
         other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
       body: 'Veuillez vérifier les champs suivants : '
+  198584454b0ce1101ff5b50323325aa8: Votre adresse email
   activerecord:
     errors:
       messages:
@@ -243,7 +244,6 @@ fr:
   2e975f5d734cdb2fe628f44e89d1f15a: Mise à jour des contacts.
   e02decaebace93b27ce239a671e77453: Vos
   0ef9a6968cfe92f7bde817483fb5d0cf: Opposant
-  198584454b0ce1101ff5b50323325aa8: Votre adresse email
   d932a29eed2a96a90348c1cf59bfa1b4: Demamder un nouveau mot secret
   3544848f820b9d94a3f3871a382cf138: Nouveau mot secret
   c49e334a836542581aac058b2f9b372f: Réecrire mot secret
@@ -293,7 +293,6 @@ fr:
   13348442cc6a27032d2b4aa28b75a5d3: Recheche
   4b1b4dc8cf38b3c64b1d657da8f5ac8c: Reporter
   49ee3087348e8d44e1feda1917443987: Nom
-  940663fd4428d2c86f9a4780b6574028: 'Message:'
   b5a7adde1af5c87d7fd797b6245c2a39: Description
   af1b98adf7f686b84cd0b443e022b7a0: Catégories
   d64518ec4a60ae31b2b5e4074646cca1: Nos règles
@@ -304,16 +303,13 @@ fr:
   7f5fd77650bc35beaaf6fc66255e24f5: Anouter une idée sur votre liste.
   b6d4223e60986fa4c9af77ee5f7149c5: Se connecter
   d46ef9e7211d041671cdbe6c3d884884: Idées
-  1192d7b5c357203a331761417698b02c: Débat
   a80425472d94ae02c836da5b6f205b7b: Mise à jours
   8c9cfce84c2468d429ede47de426cddf: Votre réseaux
   aac1a9213d103bbd45fded4daa557c18: Paramètres de subinstance.
   4b7572b8d7d7881f2e63019e56d40eef: Compte subinstance
-  fc9add24aaa4df29c057fc80031b01e8: Moins de 20 charactères
   3d35e1c739ae399cc7d6923c1d8103fb: Titre ou nom d&#x27;Organisation
   086716f54c226a75ccc31834aac1e1ca: Autoriser le géoblocking
   2130061e02858d68bb78dbbbe921ed12: Message pour une nouvelle idée
-  18c2870396e89027fc397f726f15a9f5: Message pour les utilisateurs
   a0d7e042ee84ad945d55f3862369255f: Télécharger votre image
   668deb1091498fc9353f5d297fd55877: lettres
   03368e3c1eb4d2a9048775874301b19f: Choisir une catégorie
@@ -323,7 +319,6 @@ fr:
   709468af25e91284821d1bdbfdded24c: Tout
   b1c94ca2fbc3e78fc30069c8d0f01680: Tout
   ea1944643d742bb1ffa3ebccf5162745: Vos idées
-  282adec2b7b3c994dfb7812a3e33280c: Fin
   8de16e7a08998e0e60d27d6b4d441379: Top idées pour les dernières 24 hres.
   22af645d1859cb5ca6da0c484f1f37ea: Nouveau
   a604e73131bb1a34283a5ebcd349def4: supporté
@@ -331,10 +326,7 @@ fr:
   8e1a7d9287a48440106ef0181c5a0181: Acheter une pub.
   8a19d047012bae2f9b2e2fa63924095a: Radié
   1b92838e756182fda710cfd58819f671: Points pour
-  09a1e75ab40c7bb5efb09d013aff3a53: Ajouter un point pour
   fffb47b03232ded9ecc86fa01eeaa695: Points contre
-  42a965482d059f063d4503251a2548b8: Ajouter un point contre.
-  1959fc2b11821f9f6709816c30425e6d: Je m'oppose a ceci et veut expliquer pourquoi.
   30f30a2e0cabe6391e31a9f86bcfdbb8: Créer un URL pour Twitter
   e42d894b926c4833956b61471df18351: Idées les plus controversées.
   23f719bbec8794c6dbb09214a244c6da: Aucun points n&#x27;ont été révisées récemment.
@@ -344,7 +336,6 @@ fr:
   e3afed0047b08059d0fada10f400c1e5: Admin
   c1ef19b86849e508f32af9838a93e4c9: Connecter ceci a une autre idée&lt;span class=&#x27;small&#x27;&gt;
     Commencer a tapé le nom&lt;/span&gt;
-  6a80ac9068f0e01bc56a00ecdf9e4f9f: DEBATTRE
   a2d5e7a9d03b49d0639ab0a75a59d2c2: Top points
   f9aae5fda8d810a29f12d1e61b4ab25f: Utilisateurs
   81a35ec1dc4a194f938b211a86a57826: Description Meta
@@ -369,7 +360,6 @@ fr:
   5ab61f5911f94fe76e81db9b7e64006e: S'il vous plaît indiquer votre age.
   889bb6dcdac2e269059e0d9755a76071: S'il vous plaît indiquer votre sexe.
   4607ccb71469675944516398e717479c: S'il vous plaît accepter les termes et conditions.
-  1d508341791ac8861952384d2fd9eb96: devrait etre entre 2 et 50 caractères.
   38e6af48fcad4cfd847acad90ae913a3: est déja pris
   1fd87a910601e6833f98489b446c1293: est déja pris
   939d09ea0c18215ca9032ef913d82567: Nouvelle idées
@@ -383,14 +373,11 @@ fr:
   d3da97e2d9aee5c8fbe03156ad051c99: Plus
   3bc9cc15d02611dc4781a6ce6bf86710: Supporte
   13af6b983fc9bbd55699881a1023a539: Opposé
-  da0a4c939d482be3177c8e0e5d630bfb: Créer un compte
-  21bdc5689c12595ae14298354d5550d5: Avez-vous déja un compte?
   1ac039df21500af0072a25a2b2859dae: Cette idée n'a pas bougée dans le classement ce
     mois-ci.
   93cba07454f06a4a960172bbd6e2a435: Oui
   bafd7322c6e97d25b6299b5d6fe8920b: Non
   f4ec5f57bd4d31b803312d873be40da9: Changes
-  f5a7924e621e84c9280a9a27e1bcb7f6: Monde
   1cab6f0a48459aaac4e3116773de5781: Je ne publierai pas des publicités ou des spams
     sur le site.
   7dd982d0948637b4ae83f2804bd489ca: Pourquoi cette idée devrait être soutenue?
@@ -414,14 +401,10 @@ fr:
   f5684dc597af6b4e21cb599d6d26665a: '%{user_name} révision à %{point_name}'
   2d31841ff75aeb20f2c6d4d96411129f: Je serai responsable des contenus que je crée
     et personnes d'autres n'utilisera mon compte.
-  99b4622ebe1e9894ede410500cde5915: Expliquer votre point
   2f1de29583288df67e5b7e8a9d626146: Réviser %{point_name}
   f5a6180d840015cce9f3dbdcac525e2a: Révisé %{point_name}
   9c5d7952632390609b7590dcfa19013b: Révision éffacé de %{point_name}
   39d0ded9dda0a33dc91e2d566613ec1b: Suivant maintenant %{user_name}
-  891cfa670d02125e3b09f536debfbc75: Tout %{tags_name}
-  5174b6261ee0ccaa4423d82794705730: Editer %{tag_name}
-  a672531d6b026cfa1d26e16eefaa16c2: Sauvés %{tag_name}
   621df26b895998b50fdad2c763f695e3: Discussions sur %{point_name}
   d533bc81d129968f57a188436d3575ac: '%{user_name} à poster un bulletin %{discussion_name}'
   e917c9bc049cb92cf6702f88bd91b9ba: '%{count} averstissement'
@@ -437,7 +420,6 @@ fr:
   2f64c030f4bec3e2c21e78506cc78f63: 25 idées au top %{instance_name}
   1b67e09d932e395f8a9629cfd89776df: Bienvenue à  %{instance_name}
   fc2e12b5aff1b388bc309a96bccb3f9b: Merci d'avoir ajouté %{idea_name}
-  9f86485bb188bd3e5c78e5f3b86b90d0: '%{count} supporteurs'
   a525acf161e094893ee74072c35df616: Votre %{position} idée.
   fb00406d232c6c2e02cdd9560bd27b68: 'POint supportant %{idea_name}:'
   92d562cddce4a845439e302189e00192: Changer logo à %{instance_name}

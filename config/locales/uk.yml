@@ -1,173 +1,121 @@
 ---
 uk:
-  helpers:
-    submit:
-      update: Зберегти %{model}
-      create: Створити %{model}
-      submit: Зберегти %{model}
-    select:
-      prompt: 'Оберіть: '
   datetime:
-    prompts:
-      minute: Хвилина
-      second: Секунда
-      year: Рік
-      month: Місяць
-      day: День
-      hour: Година
     distance_in_words:
-      half_a_minute: півхвилини
-      less_than_x_seconds:
-        one: менше %{count} секунди
-        few: менше %{count} секунд
-        many: менше %{count} секунд
-        other: менше %{count} секунди
-      x_seconds:
-        one: '%{count} секунда'
-        few: '%{count} секунди'
-        many: '%{count} секунд'
-        other: '%{count} секунди'
-      less_than_x_minutes:
-        one: менше %{count} хвилини
-        few: менше %{count} хвилин
-        many: менше %{count} хвилин
-        other: менше %{count} хвилини
-      x_minutes:
-        one: '%{count} хвилина'
-        few: '%{count} хвилини'
-        many: '%{count} хвилин'
-        other: '%{count} хвилини'
-      about_x_hours:
-        one: близько %{count} година
-        few: близько %{count} години
-        many: близько %{count} годин
-        other: близько %{count} години
-      x_days:
-        one: '%{count} день'
-        few: '%{count} дні'
-        many: '%{count} днів'
-        other: '%{count} дня'
-      about_x_months:
-        one: близько %{count} місяця
-        few: близько %{count} місяців
-        many: близько %{count} місяців
-        other: близько %{count} місяця
-      x_months:
-        one: '%{count} місяць'
-        few: '%{count} місяці'
-        many: '%{count} місяців'
-        other: '%{count} місяця'
       about_x_years:
         one: близько %{count} року
         few: близько %{count} років
         many: близько %{count} років
         other: близько %{count} року
-      over_x_years:
-        one: більше %{count} року
-        few: більше %{count} років
-        many: більше %{count} років
-        other: більше %{count} року
       almost_x_years:
         one: майже %{count} роки
         few: майже %{count} років
         many: майже %{count} років
         other: майже %{count} років
-  number:
-    format:
-      separator: ','
-      precision: 3
-      significant: false
-      strip_insignificant_zeros: false
-    currency:
-      format:
-        format: '%n %u'
-        unit: грн.
-        separator: ','
-        precision: 2
-        significant: false
-        strip_insignificant_zeros: false
-    human:
-      format:
-        precision: 1
-        significant: false
-        strip_insignificant_zeros: false
-      storage_units:
-        format: '%n %u'
-        units:
-          byte:
-            one: байт
-            few: байти
-            many: байтів
-            other: байту
-          kb: кБ
-          mb: МБ
-          gb: ГБ
-          tb: ТБ
-      decimal_units:
-        format: '%n %u'
+      half_a_minute: пів хвилини
+      less_than_x_minutes:
+        one: менше %{count} хвилини
+        few: менше %{count} хвилин
+        many: менше %{count} хвилин
+        other: менше %{count} хвилини
+      less_than_x_seconds:
+        one: менше %{count} секунди
+        few: менше %{count} секунд
+        many: менше %{count} секунд
+        other: менше %{count} секунди
+      over_x_years:
+        one: більше %{count} року
+        few: більше %{count} років
+        many: більше %{count} років
+        other: більше %{count} року
+      x_days:
+        one: '%{count} день'
+        few: '%{count} дні'
+        many: '%{count} днів'
+        other: '%{count} дня'
+      x_minutes:
+        one: '%{count} хвилина'
+        few: '%{count} хвилини'
+        many: '%{count} хвилин'
+        other: '%{count} хвилини'
+      x_months:
+        one: '%{count} місяць'
+        few: '%{count} місяці'
+        many: '%{count} місяців'
+        other: '%{count} місяця'
+      x_seconds:
+        one: '%{count} секунда'
+        few: '%{count} секунди'
+        many: '%{count} секунд'
+        other: '%{count} секунди'
+      about_x_hours:
+        one: близько %{count} година
+        few: близько %{count} години
+        many: близько %{count} годин
+        other: близько %{count} години
+      about_x_months:
+        one: близько %{count} місяця
+        few: близько %{count} місяців
+        many: близько %{count} місяців
+        other: близько %{count} місяця
+    prompts:
+      day: День
+      hour: Година
+      minute: Хвилина
+      month: Місяць
+      second: Секунда
+      year: Рік
   errors:
     format: '%{attribute} %{message}'
     messages:
-      inclusion: не включено до переліку
-      exclusion: зарезервовано
-      invalid: недійсний
       confirmation: не збігається з підтвердженням
-      accepted: має бути прийнятий
       empty: не може бути порожнім
-      blank: не може бути пустим
-      taken: вже зайнятий
-      not_a_number: не число
-      not_an_integer: не э цілим числом
+      equal_to: має дорівнювати %{count}
+      even: має бути парним
+      exclusion: зарезервовано
       greater_than: має бути більше ніж %{count}
       greater_than_or_equal_to: має бути більше ніж або дорівнювати %{count}
-      equal_to: має дорівнювати %{count}
+      inclusion: не включено до переліку
+      invalid: недійсний
       less_than: має бути менше ніж %{count}
       less_than_or_equal_to: має бути менше ніж або дорівнювати %{count}
+      accepted: має бути прийнятий
+      blank: не може бути пустим
+      not_an_integer: не є цілим числом
+      not_a_number: не число
       odd: має бути непарним
-      even: має бути парним
       record_invalid: 'Виникли помилки: %{errors}'
+      taken: вже зайнятий
   activerecord:
     errors:
+      messages:
+        inclusion: не включено до переліку
+        invalid: недійсний
+        less_than: має бути менше ніж %{count}
+        less_than_or_equal_to: має бути менше ніж або дорівнювати %{count}
+        not_a_number: не число
+        odd: має бути непарним
+        record_invalid: 'Виникли помилки: %{errors}'
+        taken: вже зайнятий
+        accepted: має бути прийнятий
+        blank: не може бути пустим
+        confirmation: не збігається з підтвердженням
+        empty: не може бути порожнім
+        equal_to: має дорівнювати %{count}
+        even: має бути парним
+        exclusion: зарезервовано
+        greater_than: має бути більше ніж %{count}
+        greater_than_or_equal_to: має бути більше ніж або дорівнювати %{count}
       template:
+        body: 'Помилки виявлено в таких полях:'
         header:
           one: '%{model} не збережено через %{count} помилку'
           few: '%{model} не збережено через %{count} помилки'
           many: '%{model} не збережено через %{count} помилок'
           other: '%{model} не збережено через %{count} помилки'
-        body: 'Помилки виявлено в таких полях:'
       full_messages:
         format: '%{attribute} %{message}'
-      messages:
-        inclusion: не включено до переліку
-        exclusion: зарезервовано
-        invalid: недійсний
-        confirmation: не збігається з підтвердженням
-        accepted: має бути прийнятий
-        empty: не може бути порожнім
-        blank: не може бути пустим
-        taken: вже зайнятий
-        not_a_number: не число
-        greater_than: має бути більше ніж %{count}
-        greater_than_or_equal_to: має бути більше ніж або дорівнювати %{count}
-        equal_to: має дорівнювати %{count}
-        less_than: має бути менше ніж %{count}
-        less_than_or_equal_to: має бути менше ніж або дорівнювати %{count}
-        odd: має бути непарним
-        even: має бути парним
-        record_invalid: 'Виникли помилки: %{errors}'
   date:
-    formats:
-      default: '%d.%m.%Y'
-      short: '%d %b'
-      long: '%d %B %Y'
-    day_names:
-    - неділя
-    - понеділок
-    - вівторок
-    - середа
-    - четвер
-    - п'ятниця
-    - субота
     abbr_day_names:
     - нд.
     - пн.
@@ -176,20 +124,6 @@ uk:
     - чт.
     - пт.
     - сб.
-    month_names:
-    - 
-    - Січень
-    - Лютий
-    - Березень
-    - Квітень
-    - Травень
-    - Червень
-    - Липень
-    - Серпень
-    - Вересень
-    - Жовтень
-    - Листопад
-    - Грудень
     abbr_month_names:
     - 
     - січ.
@@ -204,21 +138,147 @@ uk:
     - жовт.
     - лист.
     - груд.
-    order:
-    - :day
-    - :month
-    - :year
-  time:
+    day_names:
+    - неділя
+    - понеділок
+    - вівторок
+    - середа
+    - четвер
+    - п'ятниця
+    - субота
     formats:
-      default: '%a, %d %b %Y, %H:%M:%S %z'
-      short: '%d %b, %H:%M'
-      long: '%d %B %Y, %H:%M'
-    am: до полудня
-    pm: по полудні
-  support:
+      default: '%d.%m.%Y'
+      long: '%d %B %Y'
+      short: '%d %b'
+    month_names:
+    - 
+    - Січень
+    - Лютий
+    - Березень
+    - Квітень
+    - Травень
+    - Червень
+    - Липень
+    - Серпень
+    - Вересень
+    - Жовтень
+    - Листопад
+    - Грудень
+    order:
+    - ':день'
+    - ':місяць'
+    - ':рік'
+  devise:
+    invitations:
+      send_instructions: Лист із запрошенням було надіслано за адресою %{email}.
+      new:
+        header: Послати запрошення
+  070625ecbc8bd373ccfb31867274eb97: Інструкція до збросус паролю для %{instance_name}
+  ab70cd88a40e7c3247bfce039ad0045d: будь-ласка, введіть більш ніж 5 символів
+  80df8e95c1fef941a4f600f0fd1b07c8: будь-ласка, введіть більш ніж 12 символів
+  5a9d18bb87ff12835dc844883c5c3ebe: зміни
+  4fb7286b0fe19a6cf2569e4115e88baa: будь-ласка, введіть більш ніж 10 символів
+  22af645d1859cb5ca6da0c484f1f37ea: новий
+  eed1d7e8237b8656aff7c66bb5999f96: Будь-ласка, введіть ім'я для відображення на сайті
+  helpers:
     select:
       prompt: 'Оберіть:'
+    submit:
+      create: Створити %{model}
+      submit: Зберегти %{model}
+      update: Зберегти %{model}
+  number:
+    currency:
+      format:
+        format: '%n %u'
+        precision: 2
+        separator: ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: грн.
+    format:
+      precision: 3
+      separator: ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: '%n %u'
+      format:
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: байт
+            few: байти
+            many: байтів
+            other: байту
+          gb: ГБ
+          kb: кБ
+          mb: МБ
+          tb: ТБ
+  support:
+    select:
+      prompt: 'Будь-ласка, оберіть:'
     array:
-      words_connector: ', '
-      two_words_connector: ' і '
-      last_word_connector: ' та '
+      words_connector: ','
+      last_word_connector: ', та'
+      two_words_connector: і
+  time:
+    am: ранку
+    formats:
+      default: '%a, %d %b %Y, %H:%M:%S %z'
+      long: '%d %B %Y, %H:%M'
+      short: '%d %b, %H:%M'
+    pm: по полудні
+  4607ccb71469675944516398e717479c: Будь-ласка, погодьтесь з умовами
+  9ee2fe857acedeff0c24765e3d2a25f9: Будь-ласка, зазначе ваше ім'я
+  91504cddd78bd6a6826026c83f554958: Будь-ласка, зазначе ім'я
+  d5f0462c74e5c7bf041d992697b7e06b: Це ім'я уже зайнято
+  0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} прокоментував(ла) %{comment_name}'
+  a00624d47e8dca3b06b23cdcd386cd62: '%{sender_name} звробив запис у вашому профілі'
+  42bd4c0819c498d1c1ab622de74d6f82: підтримано
+  83c101ec84ebd1c0e45fa1cd5b9300d6: проти
+  37fc5aed92a40b16dafd17cee72e3154: Найпопулярніші ідеї
+  833c90a077a2beda3b6cd000f3fe5c29: Випадкові ідеї
+  db7fcf41127935e5fee505fe102abf9a: Ваші обговорення
+  cd267635c8a38e2acba076b0edeeedbe: Обговорення у вашій мережі
+  fe5c45415c03bb476dc22b730aaf2590: '%{user_name} залишив %{count} коментарів щодо
+    %{discussion_name}'
+  07221d868183bab87e41f0ec47440880: Обговорення ваших ідей
+  b38f1c5b8bdb6329e8a4b2e6e456da8b: Обговорення створених вами ідей
+  8754f2b7cbd98752793ba8314bded062: Активні дискусії
+  9fd4dc340cdbdabdd25908817052b915: Ваші бали
+  2d180c2da693f88fe77a780e31bc07a2: Нові бали
+  f78be27a110705c1b183468d30077e53: '%{user_name} більше не опонує %{idea_name}'
+  ac717bd14c68bc426139b20f01d941ea: '%{user_name} перший запропонував %{idea_name}'
+  43e00d10903ec90c9f2c523a901df552: '%{user_name} заробив %{capital}%{currency_short_name}
+    тому, що і підтримувачі і опозиціонери визначили %{point_name} корисною'
+  00f399f02ac662457af2fa6ce23adbdb: '%{user_name} втратив %{capital}%{currency_short_name}
+    тому, що і підтримувачі і опозиціонери знайшли %{point_name} не корисною'
+  0c0d218418852e444a95f10f2fbe3060: '%{user_name} заробив %{count}%{currency_short_name}
+    за %{count} нових послідовників'
+  777eecd062745916881aff23d68afd46: '%{user_name} зробив запис у профілі %{other_user_name}'
+  d533bc81d129968f57a188436d3575ac: '%{user_name} зробив запис у %{discussion_name}'
+  02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} зробив запис'
+  de06be0bc4bfdf2cf0c58e9b6c2d9db9: '%{idea_name} тепер нова ідея номер1 користувача
+    %{user_name}'
+  0358ca3a25ad72c389989a3db811f233: '%{user_name} переіменував ідею %{idea_name}'
+  1a13f1069e52ca6118df8501f7a7c755: '%{user_name} додав %{point_name} до %{idea_name}'
+  0c082c9ad303a70be82598499aaa1f6e: '%{user_name} передивився %{idea_name}'
+  747705a1c07ec5d7613502a7d50bf49a: '%{user_name} передивився %{point_name}'
+  11ee56b3d9c99494994e5e0e4b6ae733: Почалася з
+  75dd5f1160a3f02b6fae89c54361a1b3: Бали
+  6d0a578ca2f2c0e792fc923002fccbe3: тому
+  c29196003ef3c4f020130aab1c63d4ea: '%{count} балів'
+  c3829f98b9d811ef102006ff00a83881: '%{count} передивлянь'
+  016e3b623e81108aac0844988d799eff: 'Передивляння: %{sentence}'
+  c474f356721291083cc2be1ef39cf658: '%{count} нових коментарів'
+  13b5bfe96f3e2fe411c9f66f4a582adf: з
+  8bf8854bebe108183caeb845c7676ae4: з
+  ae7950ddfcef416ea6840228d63eba13: немає нових балів
+  0d80cee327875c3740c7ad5ebba57be1: Ваші поштові повідомлення
+  fd43e901068a7802f554bf77ac25c8f2: Видалити ваш %{instance_name} профіль
