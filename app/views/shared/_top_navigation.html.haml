@@ -43,8 +43,9 @@
       %li.divider
     %ul.right
       %li.top-bar-new-idea
-        %a.button{:href => "/ideas/new"}
-          = tr("SUBMIT YOUR IDEA", "view/ideas/_nav")
+        - unless SubInstance.current.block_new_ideas
+          %a.button{:href => "/ideas/new"}
+            = tr("SUBMIT YOUR IDEA", "view/ideas/_nav")
       %li.top-nav-search
         = render :partial => "shared/search"
       - if user_signed_in?
