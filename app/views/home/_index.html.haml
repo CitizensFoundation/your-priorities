@@ -37,8 +37,16 @@
       %div
         %div{:id => "idea_detail_#{idea.id}"}
     = "&nbsp;".html_safe
-- if @new_ideas.any?
+- if @random_ideas.any?
   %div.home_welcome
+    %h2.home_h1
+      = link_to tr("Random #{IDEA_TOKEN_PLURAL_CAPS}","home"),"/ideas/random"
+    - @random_ideas.each do |idea|
+      = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+      %div
+        %div{:id => "idea_detail_#{idea.id}"}
+- if @new_ideas.any?
+  %div.home_welcome{:style=>"margin-top: 22px; padding-top: 22px;"}
     %h2.home_h1
       = link_to tr("New #{IDEA_TOKEN_PLURAL_CAPS}","home"), "ideas/newest"
     - @new_ideas.each do |idea|
@@ -52,22 +60,12 @@
       = tr("Welcome to your {instance_name}. Please add your first #{IDEA_TOKEN} ", "controller/sub_instances", :instance_name => current_instance.name)
       = link_to tr("here.","here"),"/ideas/new"
 - if @top_ideas and @top_ideas.any?
-  %div.home_welcome{:style=>"margin-top: 10px; padding-top: 10px;"}
+  %div.home_welcome{:style=>"margin-top: 0px; padding-top: 0px;"}
     %h2.home_h2
       &nbsp;
     %h2.home_h1
       = link_to tr("Trending #{IDEA_TOKEN_PLURAL}", "controller/ideas"),"/ideas/top_7days"
     - @top_ideas.each do |idea|
-      = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
-      %div
-        %div{:id => "idea_detail_#{idea.id}"}
-- if @random_ideas.any?
-  %div.home_welcome
-    %h2.home_h2
-      &nbsp;
-    %h2.home_h1
-      = link_to tr("Random #{IDEA_TOKEN_PLURAL_CAPS}","home"),"/ideas/random"
-    - @random_ideas.each do |idea|
       = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
       %div
         %div{:id => "idea_detail_#{idea.id}"}
