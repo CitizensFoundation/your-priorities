@@ -2,16 +2,6 @@
 fr-CA:
   number:
     human:
-      storage_units:
-        units:
-          mb: Mo
-          byte:
-            one: Octet
-            other: Octets
-          kb: ko
-          gb: Go
-          tb: To
-        format: '%n %u'
       decimal_units:
         units:
           trillion: Mille milliard
@@ -24,6 +14,16 @@ fr-CA:
         precision: 2
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: Octet
+            other: Octets
+          kb: ko
+          mb: Mo
+          gb: Go
+          tb: To
     format:
       separator: ','
       precision: 3

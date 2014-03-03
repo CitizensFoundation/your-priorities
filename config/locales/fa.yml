@@ -241,7 +241,6 @@ fa:
   016e3b623e81108aac0844988d799eff: بازبینی ها:‌ %{sentence}
   01a2f2a00851bab435bced7b0454dce2: در %{sub_instance_name} چه کار می کنید؟
   02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} یک بولتین فرستاد'
-  045516a8debaef245b177474f8ef1b12: ثبت %{tags_name}
   047fe665bd2cea51e221d371d1e4c698: تغییر تنظیمات برای کاربر%{user_name}
   04bc5390fd93d76fb2471f2f3a432ed5: شما ایده ی  %{tag_name} را تمام کردید
   052d9de783ead76d6ab1eae9c35f29db: بعد از ورود به سامانه لطفا کلمه عبور خود را به
@@ -261,12 +260,9 @@ fa:
   fffb47b03232ded9ecc86fa01eeaa695: امتیاز علیه
   e61076c21cc56b54fb11ffc69ae3105b: بدون تبلیغات.
   e614600b368b2f8ba4c104a9bfa64346: اینجا می توانید پاسخ دهید.
-  e6b744b37b3d739cb124ec2225bfbf0e: هنگام ثبت %{tags_name}مشکلی پیش آمد.
   e70d2d5ae7f2628c94c8a0a47a2f3cf9: تبلیغات شما
   e7470f0473463fde714f23c49c200e59: منتظر بحث
   e7c3b88bf30f862f48fcefde6490b946: اضافه شده %{time_ago}
-  e7d888f599ef4c56e460ecf7abc2ce14: این دومین هشدار به شما برای بی توجهی به قوانین
-    این تارنما به دلیل#{self.custom_text}   است.
   e81c4e4f2b7b93b481e13a8553c2ae1b: یا
   e920cc973c1d99eec32fdbbcb61f3fd0: نام ایده
   e962d6c2a803041a6d7c638acf869dcf: حداکثر ۵۰۰۰ حرف دارد
@@ -291,6 +287,6 @@ fa:
   devise:
     failure:
       already_authenticated: شما قبلا وارد شده اید
-      inactive: حساب کاربری شما هنوز فعال نشده است
       invalid: ایمیل یا رمز عبور صحیح نیست
       locked: حساب شده قفل شده است
+      inactive: حساب کاربری شما هنوز فعال نشده است

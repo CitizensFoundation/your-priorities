@@ -1,5 +1,48 @@
 ---
 pt-BR:
+  datetime:
+    distance_in_words:
+      over_x_years:
+        one: mais de 1 ano
+        other: mais de %{count} anos
+      about_x_years:
+        one: aproximadamente 1 ano
+        other: aproximadamente %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      x_seconds:
+        one: 1 segundo
+        other: '%{count} segundos'
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: menos de %{count} minutos
+      x_minutes:
+        one: 1 minuto
+        other: '%{count} minutos'
+      about_x_hours:
+        one: aproximadamente 1 hora
+        other: aproximadamente %{count} horas
+      x_days:
+        one: 1 dia
+        other: '%{count} dias'
+      about_x_months:
+        one: aproximadamente 1 mês
+        other: aproximadamente %{count} meses
+      x_months:
+        one: 1 mês
+        other: '%{count} meses'
+      almost_x_years:
+        one: quase 1 ano
+        other: quase %{count} anos
+    prompts:
+      year: Ano
+      month: Mês
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      second: Segundo
   date:
     formats:
       default: '%d/%m/%Y'
@@ -107,49 +150,6 @@ pt-BR:
         format: '%n %u'
         units:
           thousand: mil
-  datetime:
-    distance_in_words:
-      half_a_minute: meio minuto
-      less_than_x_seconds:
-        one: menos de 1 segundo
-        other: menos de %{count} segundos
-      x_seconds:
-        one: 1 segundo
-        other: '%{count} segundos'
-      less_than_x_minutes:
-        one: menos de um minuto
-        other: menos de %{count} minutos
-      x_minutes:
-        one: 1 minuto
-        other: '%{count} minutos'
-      about_x_hours:
-        one: aproximadamente 1 hora
-        other: aproximadamente %{count} horas
-      x_days:
-        one: 1 dia
-        other: '%{count} dias'
-      about_x_months:
-        one: aproximadamente 1 mês
-        other: aproximadamente %{count} meses
-      x_months:
-        one: 1 mês
-        other: '%{count} meses'
-      about_x_years:
-        one: aproximadamente 1 ano
-        other: aproximadamente %{count} anos
-      over_x_years:
-        one: mais de 1 ano
-        other: mais de %{count} anos
-      almost_x_years:
-        one: quase 1 ano
-        other: quase %{count} anos
-    prompts:
-      year: Ano
-      month: Mês
-      day: Dia
-      hour: Hora
-      minute: Minuto
-      second: Segundo
   helpers:
     select:
       prompt: Por favor selecione
