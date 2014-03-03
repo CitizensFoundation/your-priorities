@@ -43,7 +43,9 @@
       %li.divider
     %ul.right
       %li.top-bar-new-idea
-        - unless SubInstance.current.block_new_ideas
+        - if SubInstance.current.block_new_ideas and SubInstance.current.block_new_ideas!=""
+          - # DO NOTHING
+        - else
           %a.button{:href => "/ideas/new"}
             = tr("SUBMIT YOUR IDEA", "view/ideas/_nav")
       %li.top-nav-search
