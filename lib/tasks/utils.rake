@@ -143,8 +143,14 @@ namespace :utils do
     all_users = User.unscoped.all
     puts "All users count #{all_users.count}"
     puts "Login,Email"
-    all_users.each do |u|
-      puts "#{u.login},#{u.email}"
+    all_users.each_with_index do |u,i|
+      if u.email
+        unless u.email.include?("@ibuar.is")
+          puts "#{u.login},#{u.email}"
+        end
+      else
+       # puts "no email for #{u.id} #{u.login}"
+      end
     end
   end
 
