@@ -1,7 +1,8 @@
 - if points.empty?
-  %h5
-    %a
-      = link_to tr("No points against yet",""), @idea.new_point_url+"&value=-1"
+  .point_item
+    %h5
+      %a
+        = link_to tr("No points against yet",""), @idea.new_point_url+"&value=-1"
 - else
   - points.each_with_index do |point, i|
     - quality = nil
