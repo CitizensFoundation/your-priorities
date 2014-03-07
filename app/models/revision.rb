@@ -114,6 +114,12 @@ class Revision < ActiveRecord::Base
     end
   end
 
+  def recreate_author_sentences(point)
+    revision = self
+    point.author_sentence = link_to(point.user.login, Rails.application.routes.url_helpers.user_path(point.user))
+    point.save(:validate => false)
+  end
+
   def on_archived_entry(new_state, event)
     self.published_at = nil
     save(:validate => false)

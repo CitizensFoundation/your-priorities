@@ -120,8 +120,18 @@ namespace :utils do
     puts "Yes?"
     STDIN.gets.chomp
     puts Idea.unscoped.where(:sub_instance_id=>sub_instance.id, :user_id=>from_user.id).update_all(:user_id=>to_user.id)
-    puts Point.unscoped.where(:sub_instance_id=>sub_instance.id, :user_id=>from_user.id).update_all(:user_id=>to_user.id)
+    Point.unscoped.where(:sub_instance_id=>sub_instance.id, :user_id=>from_user.id).all.each do |p|
+      puts p.name
+      p.user_id = to_user.id
+      p.revisions.each do |r|
+        r.user_id = to_user.id
+        r.recreate_author_sentences(p)
+        r.save(:validate=>false)
+      end
+      puts p.save(:validate=>false)
+    end
     puts Activity.unscoped.where(:sub_instance_id=>sub_instance.id, :user_id=>from_user.id).update_all(:user_id=>to_user.id)
+    puts Endorsement.unscoped.where(:sub_instance_id=>sub_instance.id, :user_id=>from_user.id).update_all(:user_id=>to_user.id)
     puts "The end"
   end
 
