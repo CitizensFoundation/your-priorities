@@ -110,11 +110,27 @@ namespace :utils do
     end
   end
 
+  desc "Move ideas and points to a new user"
+  task :move_ideas_to_new_user => :environment do
+    raise 'Needs sub_instance_short_name= from_user= and to_user=' unless ENV['sub_instance_short_name'] and ENV['from_user'] and ENV['to_user']
+    sub_instance = SubInstance.where(:short_name=>ENV['sub_instance_short_name']).first
+    from_user = User.where(:email=>ENV['from_user'], :sub_instance_id=>sub_instance.id).first
+    to_user = User.where(:email=>ENV['to_user'], :sub_instance_id=>sub_instance.id).first
+    puts "Moving all ideas from #{from_user.login} to #{to_user.login} on #{sub_instance.short_name}"
+    puts "Yes?"
+    STDIN.gets.chomp
+    puts Idea.unscoped.where(:sub_instance_id=>sub_instance.id, :user_id=>from_user.id).update_all(:user_id=>to_user.id)
+    puts Point.unscoped.where(:sub_instance_id=>sub_instance.id, :user_id=>from_user.id).update_all(:user_id=>to_user.id)
+    puts Activity.unscoped.where(:sub_instance_id=>sub_instance.id, :user_id=>from_user.id).update_all(:user_id=>to_user.id)
+    puts "The end"
+  end
+
   desc "Create BR categories"
   task :delete_all_from_process_documents => :environment do
     ProcessDocumentElement.delete_all
     ProcessDocument.delete_all
   end
+
 
   desc "Create BR categories"
   task :create_br_categories => :environment do
