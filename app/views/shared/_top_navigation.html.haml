@@ -75,5 +75,9 @@
             - unless page.hide_from_menu or (page.hide_from_menu_unless_admin and (!current_user or (current_user and !current_user.is_admin?)))
               %li
                 #{link_to page.title.from_localized_yaml, :controller => "pages", :action => "show", :id=>page.id}
-          %li
-            = link_to tr("Your Priorities Spaces","here"), "https://www.yrpri.org/"
+          - if request.host.include?("yrpri.org")
+            %li
+              = link_to tr("Your Priorities Spaces","here"), "https://www.yrpri.org/"
+          - elsif request.host.include?("betraisland.is")
+            %li
+              = link_to "Betra Ísland síður", "https://www.yrpri.org/"
