@@ -3,7 +3,7 @@
     idea_name: @idea.name,                                                                                                                |
     idea_link: @idea.show_url,                                                                                                            |
     support_or_endorse_text: @support_or_endorse_text,                                                                                            |
-    instance_name: Instance.last.name).html_safe                                                                               |
+    instance_name: @idea.sub_instance.name).html_safe                                                                               |
 %p= @date.strftime("%d.%m.%Y")
 = my_simple_format(@message)
 %p
