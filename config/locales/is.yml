@@ -6,10 +6,17 @@ is:
   985f85fc6bb1d160f599f43072500d35: '%{instance_name} nafn og vefslóð'
   cf23ee279844016288ea1c076638f3be: Um okkur
   01441c80c744e05983f0681cacfcf047: Kaus upp %{new_idea_name} í stað %{idea_name}
+  5ebb3db6c8a6613f79191107b296a01c: Stöðu hugmyndar <a href='%{idea_link}'>%{idea_name}</a>
+    %{support_or_endorse_text} hefur verið breytt á %{instance_name}.
+  78649386bcd37757541e2c6d99968afd: Stöðu %{idea} hefur verið breytt
+  2a9769b98044b4676d831e21bd5fad9e: sem þú ert á móti
   28818d96a5cfa5141680c4199d301376: Nafn
   f0e0f580898b26d3946589a4ccab7a3f: Vefslóð
   13e7cd666950f7873a5e431fce97b916: 'Dæmi: https://'
   f11b368cddfe37c47af9b9d91c6ba4f0: Fullt nafn
+  69b7444b775a4eb4dc51a38619dabd0a: Hugmyndin %{idea_name}, sem þú ert á móti, er
+    í %{position}. sæti í %{category}.
+  c867451892e38db47a8cc5e7b02d5c54: sem þú styður
   ce8ae9da5b7cd6c3df2929543a9af92d: Netfang
   0af762d3701c852a5371fa4ad393f9fa: Gefðu %{instance_name} nafn
   27340dcd104975a8f470cf8956e9496a: Þín vefslóð
@@ -33,6 +40,13 @@ is:
   016e3b623e81108aac0844988d799eff: 'Útgáfa: %{sentence}'
   019ec3132cdf8ee0f2e2a75cf5d3e459: Kyn
   01a2f2a00851bab435bced7b0454dce2: Hvað er að gerast á %{sub_instance_name}?
+  2ee314288da3fc27b8fa799681876d79: Samþykkt (%{count})
+  733d3bd148e431d4a7de23f4fd6b3a7b: Í ferli (%{count})
+  c2dbe8cc5db8c81cc68981058975d0ba: Hafnað (%{count})
+  7df1f6368d01f63ab23548af8707a929: Allt í ferli (%{count})
+  d78ed35383108fb6c04c16d0a11b20fe: Flæði
+  30ae8fff8898dc197acd49d9c0797d20: Samþykkt
+  b6e0b0c90cfbddfe767f137f8066d1df: Í ferli
   034cb9b595f45003845f5ebed51a0a39: Twitter Consumer Secret
   0358ca3a25ad72c389989a3db811f233: '%{user_name} endurnefndi %{idea_name}'
   03937134cedab9078be39a77ee3a48a0: Hópur
@@ -47,6 +61,7 @@ is:
   8ac6e46f207f4d2a928523d417663553: Velkomin á %{instance_name}. Bættu við þinni fyrstu
     hugmynd
   dc647eb65e6711e155375218212b3964: Lykilorð
+  cedcf6fe65a8f2849fe11e316d6c9923: Skráðu þig núna
   f97bc2159b044b75eaf3a32172b922cd: Opin - Allir geta séð síðu og skráð sig með netfangi
     eða Facebook
   4fb7286b0fe19a6cf2569e4115e88baa: minnst 10 stafir
@@ -125,7 +140,6 @@ is:
     í hverjum mánuði.
   e9fd438d76861fab5afa6f3b2b693b08: '%{the_price} á mánuði'
   b24ce0cd392a5b0b8dedc66c25213594: Frítt
-  cedcf6fe65a8f2849fe11e316d6c9923: Skráðu þig núna
   12cc3f3e76f44bf82cfd0a05648f71d3: Ef þitt félag er ekki rekið í hagnaðarskyni bendum
     við á %{yrpri_link} sem er rekin af sjálfeignarstofnunni %{cf_link}.
   598fadf0058feef2b72dc54e835172b3: Greiðsluupplýsingar
@@ -148,6 +162,9 @@ is:
   697184ece37c024d3319f16f3e98c597: 'Smelltu hér til að þiggja boðið:'
   c1a5298f939e87e8f962a5edfc206918: Hæ
   a5998dfe5002eeab05de3cbcc98f9544: Þetta er sjálvirkur tölvupóstur %{instance_name}
+  cd951d0ddb879ce3b7af243cad30f012: Engin rök á móti ennþá
+  b05d72142020283dc6812fd3a9bc691c: Gleymt lykilorð
+  d77a0f9cd14e513bb78bccbf59402717: Staða hugmynda
   8e53b553c0d5323dadb9e738f19323d4: Þegar ég vinn eða tapa samfélagsstigum
   fafdcbfb83d39b7e0543fd0af58a35ac: sent til
   3b8a41916178a014a106fe26299e077e: Ef þú vilt ekki fá svona pósta vinsamlegast breyttu
@@ -169,13 +186,12 @@ is:
   99de1173596bd03c47e19254f981429a: Gera vefstjóra
   e3afed0047b08059d0fada10f400c1e5: Vefstjórnandi
   06df33001c1d7187fdd81ea1f5b277aa: Aðgerðir
+  0f68b904e33d9ac04605aecc958bcf52: Upplýsingar
   e3b9285916bcd1b9724349049521ac90: gerði athugasemd við
   18c3c2ec475e379bd894cdedb9e0e03f: Þú getur hætt að fylgjast með þessari umræðu hér
   6f427138338d1db0109d83cc74c00965: Þú átt %{points} samfélagsstig.
   fa5f71bf560f0e4b09f31b875de45ea7: Þú vannst þér inn %{points} samfélagsstig á %{instance_name}
   a7afee51dfb8ee250484c82a69f72c4c: Þú tapaðir %{points} samfélagsstigum á %{instance_name}
-  c25e5057bbe9d03150c1b55b9a2745f3: Hvernig virkar Your Priorities?
-  9fa58bca936c8c3209d5dba30691bbea: Hvað gerir Your Priorities?
   111a9b4d1f80fa21df2c2be58f5e0c04: Til hamingju með nýtt %{instance_name}.
   a1540685fb3fa19acb0d811d1e5ccf6a: '%{sub_instance_name} er tilbúið á %{instance_name}'
   9f9d26ab95c28a22b705d2f6d5ad8665: Boðið
@@ -187,24 +203,28 @@ is:
   e20e2f7a1cb2a5714df03568eee055c0: Opinn áskrift með upp að %{number_of_users} notendum.
   c6a00f137b92ad22c007677fb2113a9f: Bjóða
   91b61a309ee7cf95e351902083824e57: 'Þetta hefur haft áhrif á samfélagsstig á %{instance_name}:'
-  ea3e01f57414004a37f4034b92335ede: Þú ert að gerast áskrifandi að opinni síðu með
-    tölvupóst og Facebook skráningu með upp að %{number_of_users} notendum.
-  3d5a940a7ccd5b0b908cb439001d1715: Núverandi áskrift
-  93d17c7680cf26f6c56cbe895964ecf5: Dæmi - EVE Online | True Stories
-  c6da852d800f7975c28e337a2e2bd028: Dæmi - Betri Reykjavík
-  45a098e1ebc679f8fd971e9e60d2b445: Af hverju Your Priorities?
-  24e0f8f4d4442f2d51f77decfaaa0c32: Til að hætta áskrift sem borgað er fyrir veldu
-    þá eina ókeypis áskrift hér að neðan.
-  3793d68bfe956d4b8721d605fe3c486e: Næsta greiðsla er %{next_charge_date}
-  bb73e7a168c9158086404aaac16e5de5: Verðlaunavefurinn %{br_link} notar sama frjálsa
-    hugbúnað og Your Priorities vefsíðan.
-  8debe773c71b071adbd72ea2bc48186a: Við notuðum Your Priorities til að búa til sérhæfða
-    lausn fyrir %{eve_link} vef %{ccp_link}.
+  a22a31345901fab0939eb50823c23b88: Staða hugmyndar
+  6fc38a2e6ce34be4acf2a756816f7f0f: Þín forgangsmál
+  9fa58bca936c8c3209d5dba30691bbea: Hvað gerir Your Priorities?
+  c25e5057bbe9d03150c1b55b9a2745f3: Hvernig virkar Your Priorities?
   d7391c69ff4c78e653e46ce0f1004fe7: '%{yrpri_link} forritið er grunnurinn að Brainstorm
     og þetta er frjáls hugbúnaður sem er búinn til í samstarfi af %{citizens_foundation_link}
     sem hefur unnið í hugbúnaðinum síðan 2008. Þú getur hvenær sem er skipt yfir í
     frjálsa hugbúnaðinn til að keyra þinn Your Priorities frítt. Citizens Foundation
     er með skrifstofur í London og Reykjavík.'
+  a0bc24991a11d8e4dcf00ba0c337f932: Dagsettning breytingar á stöðu
+  1809e18e24e352c936a7bed29fe56398: Skilaboð um breytingu á stöðu
+  ab12c7f49bc282b332c3130adf3ad7b2: Staða uppfærð með %{status_text}
+  9b9d8a976b42e0bd66381797644943d5: Opin
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Hafnað
+  ea3e01f57414004a37f4034b92335ede: Þú ert að gerast áskrifandi að opinni síðu með
+    tölvupóst og Facebook skráningu með upp að %{number_of_users} notendum.
+  3d5a940a7ccd5b0b908cb439001d1715: Núverandi áskrift
+  93d17c7680cf26f6c56cbe895964ecf5: Dæmi - EVE Online | True Stories
+  c6da852d800f7975c28e337a2e2bd028: Dæmi - Betri Reykjavík
+  24e0f8f4d4442f2d51f77decfaaa0c32: Til að hætta áskrift sem borgað er fyrir veldu
+    þá eina ókeypis áskrift hér að neðan.
+  3793d68bfe956d4b8721d605fe3c486e: Næsta greiðsla er %{next_charge_date}
   5df2acc8c67fdc6d6dc03791ac5f7a5e: Senda
   83218ac34c1834c26781fe4bde918ee4: Velkominn
   070625ecbc8bd373ccfb31867274eb97: Endursetja lykilorð fyrir %{instance_name}
@@ -216,18 +236,23 @@ is:
   4607ccb71469675944516398e717479c: Samþykktu skilmála
   5ef0c737746fae2ca90e66c39333f8f6: Villur
   eed1d7e8237b8656aff7c66bb5999f96: Settu inn rétt nafn eða dulnefn.
-  96c3b987a5b5008df9b06d9d95092634: Your Priorities er öflug lýðræðisvefsíða hönnuð
-    af non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með
-    einni rödd.
+  026688f148cfe681359ec62731411752: Takk fyrir greiðslu á %{instance_name}
+  39a2ac1fc229d843594065531ffed4c8: Núverandi áskriftarleið
+  3277947674e9e77c91a1269374d6525e: Bestu hugmyndirnar með bestu rökum með og á móti
+    rísa á toppinn.
+  45a098e1ebc679f8fd971e9e60d2b445: Af hverju Your Priorities?
   670c30946507c1831081de9d0cd2e578: Your Priorities getur hjálpað þínu landi / borg
     / samfélagi / eða hópi sem vilja skipuleggja sig í kringum hugmyndir og tala með
     einni rödd. Hérna getur þú búið til þína eigin Your Priorities síðu. Þú getur
     skráð hana án þess að vera með kreditkort til prufu. Auðvelt er að skipta yfir
     í útgáfuna sem borgað er fyrir.
-  026688f148cfe681359ec62731411752: Takk fyrir greiðslu á %{instance_name}
-  39a2ac1fc229d843594065531ffed4c8: Núverandi áskriftarleið
-  3277947674e9e77c91a1269374d6525e: Bestu hugmyndirnar með bestu rökum með og á móti
-    rísa á toppinn.
+  8debe773c71b071adbd72ea2bc48186a: Við notuðum Your Priorities til að búa til sérhæfða
+    lausn fyrir %{eve_link} vef %{ccp_link}.
+  96c3b987a5b5008df9b06d9d95092634: Your Priorities er öflug lýðræðisvefsíða hönnuð
+    af non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með
+    einni rödd.
+  bb73e7a168c9158086404aaac16e5de5: Verðlaunavefurinn %{br_link} notar sama frjálsa
+    hugbúnað og Your Priorities vefsíðan.
   c428492f00d9e51ce05abf306d2ff59b: Fólk sendir inn hugmyndir og rökræða þær í einföldu
     en öflugu rökræðukerfi.
   2f64c030f4bec3e2c21e78506cc78f63: Efstu 25 hugmyndir á %{instance_name}
@@ -235,7 +260,6 @@ is:
   ac876a06a03e14d880f4cd06058a34ae: Efsta flæði %{sub_instance_name}
   e254a34f3a1001f00adc55aba5552783: Efst
   c4e0e4e3118472beeb2ae75827450f1f: NIÐUR
-  ae43f4cff7204d28b83fe67710e9377d: Umræður um %{tag_name}
   db7fcf41127935e5fee505fe102abf9a: Þínar umræður
   d4dccb8ca2dac4e53c01bd9954755332: Vista
   4b1b4dc8cf38b3c64b1d657da8f5ac8c: Tilkynna
@@ -286,6 +310,7 @@ is:
   1d10d0c01b3469bcb594ade393639ed0: Þessi notandi eyddi sínum aðgangi
   af1b98adf7f686b84cd0b443e022b7a0: Flokkar
   e11d937a5185a2361123ad5222df5f5f: Hugmyndir um %{tag_name} af handahófi
+  ae43f4cff7204d28b83fe67710e9377d: Umræður um %{tag_name}
   0f471a2597c99d0f4c81db859b0205f3: Hugmyndir sem þú bjóst til á %{sub_instance_name}
   2bd2b8e30995d2dfe1f43a4ea30fc3fc: Mest rætt
   04742c1a5a675be0659d83d65cb79661: Rísandi hugmyndir
@@ -331,6 +356,7 @@ is:
   586f9d3669a73e12a8caed7a7d76288e: Veldu góðan, lýsandi titil á hugmyndina þína
   cdd559fd8bda4b2bdf1cdbca181b38b9: Útskýrðu hugmyndina í nokkrum málsgreinum og reyndu
     að hafa textann hnitmiðaðan.
+  13af6b983fc9bbd55699881a1023a539: Nei
   e1e583ed208b1fbecec8b65dc272a098: Er þessi hugmynd  frá %{user_name} persónuleg
     árás eða brot á reglunum?
   a2d5e7a9d03b49d0639ab0a75a59d2c2: Gagnlegustu rökin
@@ -349,6 +375,8 @@ is:
   665255de10a45ae3e1c0e81b515b55ca: '%{count} umræður'
   0b39c5aca15b84b1ad53a94d6b3feb78: Breyta lykilorði
   198584454b0ce1101ff5b50323325aa8: Netfang
+  1c3a03e7bf74d0ee69de0311447bb613: Hugmyndin %{idea_name}, sem þú styður ,er í %{position}.
+    sæti í %{category} flokknum.
   2682beed28fc3d3709619dbf2a469dbb: Settu inn mynd
   b357b524e740bc85b9790a0712d84a30: Netfang
   ade7300e26de3e48a42cc01a4c4d74fa: Útgáfur af þínum rökum
@@ -371,8 +399,6 @@ is:
   e576c23d915755d83e2d1f47bd9f6c22: Engar niðurstður
   ed3792969d8e38130c6651dd447509c5: Hefja umræðu
   c44fb24da70dbf47aa6823cffeaecfa4: Vista nýjan umræðuþráð
-  1c3a03e7bf74d0ee69de0311447bb613: 'Hugmyndin %{idea_name}, sem þú styður ,er í %{position}.
-    sæti í %{category} flokknum. '
   b6d4223e60986fa4c9af77ee5f7149c5: Innskráning
   8f7f4c1ce7a4f933663d10543562b096: Um
   8cf04a9734132302f96da8e113e80ce5: Heim
@@ -400,7 +426,6 @@ is:
   1cab6f0a48459aaac4e3116773de5781: ég mun ekki birta auglýsingar eða senda ruslpóst
     í gegnum BÍ
   3bc9cc15d02611dc4781a6ce6bf86710: Kjósa upp
-  13af6b983fc9bbd55699881a1023a539: Nei
   1a8e4f3a313d948ac095a8d24110c1b1: '%{count} studdu'
   03fa96387303a39d8a63c153bac26958: 'Við áskiljum okkur rétt til að:'
   5e45d0479ee365f79d004b2f4ecb1f27: bætti %{point_name} við %{idea_name}

@@ -183,7 +183,6 @@ fr:
         one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
         other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
       body: 'Veuillez vérifier les champs suivants : '
-  198584454b0ce1101ff5b50323325aa8: Votre adresse email
   activerecord:
     errors:
       messages:
@@ -244,6 +243,7 @@ fr:
   2e975f5d734cdb2fe628f44e89d1f15a: Mise à jour des contacts.
   e02decaebace93b27ce239a671e77453: Vos
   0ef9a6968cfe92f7bde817483fb5d0cf: Opposant
+  198584454b0ce1101ff5b50323325aa8: Votre adresse email
   d932a29eed2a96a90348c1cf59bfa1b4: Demamder un nouveau mot secret
   3544848f820b9d94a3f3871a382cf138: Nouveau mot secret
   c49e334a836542581aac058b2f9b372f: Réecrire mot secret
@@ -373,6 +373,7 @@ fr:
   d3da97e2d9aee5c8fbe03156ad051c99: Plus
   3bc9cc15d02611dc4781a6ce6bf86710: Supporte
   13af6b983fc9bbd55699881a1023a539: Opposé
+  7b67f24364e4e88bcd95c3237d3fa318: '%{author_sentence}'
   1ac039df21500af0072a25a2b2859dae: Cette idée n'a pas bougée dans le classement ce
     mois-ci.
   93cba07454f06a4a960172bbd6e2a435: Oui
@@ -437,7 +438,6 @@ fr:
   e1e583ed208b1fbecec8b65dc272a098: Est-ce que cette idée de  %{user_name} est une
     attaque personnelle ou une violation des règles.?
   a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} idées'
-  7b67f24364e4e88bcd95c3237d3fa318: '%{author_sentence}'
   a534ed26c1d745e8e15e33c1dad34773: Points ajouté %{time_ago}
   6ba1364d96463a5bb5b064ce138e3128: '%{user_name} vous demande de considérer %{idea_name}'
   e31e799048673ff7f3699d5b5ddc9fa1: Inscris %{time_ago}.

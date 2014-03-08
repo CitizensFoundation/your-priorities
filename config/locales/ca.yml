@@ -270,6 +270,8 @@ ca:
   52f4e192179a8449b77cc149541a5ba0: Encara no hi ha idees aquí
   158d7558ee87d9a8caa77b59abcdd9ef: Idea
   15bbb9d0bbf25e8d2978de1168c749dc: Web
+  8e52de0d4b03d5fe87dc88da09616c7f: aquí.
+  fd038fc7f319e48f3115d92bf5bdbef9: Ignorar
   16d39f7e2b0ed1ee441421cc0f86a724: Aquest punt ha estat eliminat
   175fd8a23b58b6b7ce1958698686d284: Útil?
   18ef3f4348075aca1646941639d610dd: Idea %{position}
@@ -295,8 +297,6 @@ ca:
   76f0402b36ad06722396490cf8379c11: La compte s'ha creat correctament.
   77c8b9f38491385d59ddc33d29e751fe: 'Font:'
   780f17237b2f99a557c2490dfa9a30a4: Inicia sessió amb Gmail
-  8e52de0d4b03d5fe87dc88da09616c7f: aquí.
-  fd038fc7f319e48f3115d92bf5bdbef9: Ignorar
   fd88b11cfde6aa5e3c7ff0553b534885: Revisions
   fdc3bdefb79cec8eb8211d2499e04704: document
   441f54c7f0ecef11a8a652c6ed75c52e: Pla actual
@@ -319,7 +319,6 @@ ca:
   a274f4d4670213a9045ce258c6c56b80: Notificacions
   a2d5e7a9d03b49d0639ab0a75a59d2c2: Top punts
   a4ea91cd0d1ea33d8113457644dd6157: clica aquí
-  f7c27fe5419c0751885d8a0cc6f0e75a: Debat (%{count})
   a5d491060952aa8ad5fdee071be752de: comentaris
   a67ce68ccac082ad54a552bdbcb6ecd7: Notificacions del correu
   time:
@@ -340,7 +339,6 @@ ca:
   feb6aa52226e8abe5bda5ef3fc0b65f1: Perquè vas fer aquest canvi?
   fee15ce029deb11dd1191f86c4e872c3: Això és útil
   003e636075eed8d70232cd54e12236db: El teu %{instance_name} ha estat creat
-  f9aae5fda8d810a29f12d1e61b4ab25f: Usuaris
   0038a9e512b4678c583db11009d2c297: Aquesta és la idea que creix més ràpid
   0077d575bfc52d2176b427189982b6a6: Guardat %{point_name}
   00b177e080ff1c3d340997fb01c3951c: Acceptar la invitació
@@ -391,6 +389,8 @@ ca:
   e059563a6f60c4094e3efb4a14557086: No es pot esborrar els administradors
   e254a34f3a1001f00adc55aba5552783: 'Top:'
   e2f69ba325c4f8bdc393ffd3cb848a51: Idees aleatòries
+  f7c27fe5419c0751885d8a0cc6f0e75a: Debat (%{count})
+  f9aae5fda8d810a29f12d1e61b4ab25f: Usuaris
   f9ace95bf3d68994adde566e7ed46c8c: La teva %{instance_name} configuració
   fa2ead697d9998cbc65c81384e6533d5: Política de privacitat
   fa70fb36651436d8d837a869cbaf2d3c: URL per la teva política de privacitat

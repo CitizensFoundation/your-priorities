@@ -7,30 +7,6 @@ es-CO:
   01374d70036cb0b48058e7e031eeb680: Necesitas identificarte para acceder a esta web
     privada
   number:
-    human:
-      decimal_units:
-        units:
-          billion: Billón
-          trillion: Trillón
-          thousand: Mil
-          million: Millón
-          quadrillion: Cuatrillón
-        format: '%n %u'
-      format:
-        delimiter: ','
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: '%n %u'
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          kb: KB
-          mb: MB
-          gb: GB
-          tb: TB
     percentage:
       format:
         delimiter: ','
@@ -49,6 +25,30 @@ es-CO:
       significant: false
       strip_insignificant_zeros: false
       separator: .
+    human:
+      format:
+        delimiter: ','
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+      decimal_units:
+        format: '%n %u'
+        units:
+          thousand: Mil
+          million: Millón
+          billion: Billón
+          trillion: Trillón
+          quadrillion: Cuatrillón
     precision:
       format:
         delimiter: ','

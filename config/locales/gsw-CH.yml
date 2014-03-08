@@ -1,12 +1,5 @@
 ---
 gsw-CH:
-  time:
-    pm: am Namitaag
-    formats:
-      default: '%A, %d. %B %Y, %H:%M'
-      short: '%d. %B, %H:%M'
-      long: '%A, %d. %B %Y, %H:%M'
-    am: am Vormittaag
   date:
     formats:
       default: '%d.%m.%Y'
@@ -60,6 +53,13 @@ gsw-CH:
     - :day
     - :month
     - :year
+  time:
+    formats:
+      default: '%A, %d. %B %Y, %H:%M'
+      short: '%d. %B, %H:%M'
+      long: '%A, %d. %B %Y, %H:%M'
+    am: am Vormittaag
+    pm: am Namitaag
   datetime:
     distance_in_words:
       half_a_minute: ä halbi Minuutä

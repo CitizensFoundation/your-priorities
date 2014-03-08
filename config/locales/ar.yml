@@ -1,12 +1,5 @@
 ---
 ar:
-  time:
-    formats:
-      default: '%a %b %d %H:%M:%S %Z %Y'
-      short: '%d %b %H:%M'
-      long: '%B %d, %Y %H:%M'
-    am: صباحا
-    pm: مساءا
   number:
     human:
       decimal_units:
@@ -89,6 +82,13 @@ ar:
       hour: ساعة
       minute: دقيقة
       second: ثانية
+  helpers:
+    submit:
+      update: '%{model} نموذج'
+      create: '%{model} إنشاء'
+      submit: '%{model} حفظ'
+    select:
+      prompt: الرجاء اختيار
   date:
     formats:
       default: '%Y-%m-%d'
@@ -142,6 +142,13 @@ ar:
     - :day
     - :month
     - :year
+  time:
+    formats:
+      default: '%a %b %d %H:%M:%S %Z %Y'
+      short: '%d %b %H:%M'
+      long: '%B %d, %Y %H:%M'
+    am: صباحا
+    pm: مساءا
   support:
     select:
       prompt: الرجاء اختيار
@@ -149,13 +156,6 @@ ar:
       words_connector: ', '
       two_words_connector: ' و '
       last_word_connector: ', و '
-  helpers:
-    select:
-      prompt: الرجاء اختيار
-    submit:
-      create: '%{model} إنشاء'
-      update: '%{model} نموذج'
-      submit: '%{model} حفظ'
   errors:
     format: '%{attribute} %{message}'
     messages:

@@ -1,10 +1,32 @@
 ---
 es:
+  errors:
+    messages:
+      greater_than: debe ser mayor que %{count}
+      inclusion: no está incluido en la lista
+      exclusion: está reservado
+      invalid: no es válido
+      confirmation: no coincide con la confirmación
+      accepted: debe ser aceptado
+      empty: no puede estar vacío
+      blank: no puede estar en blanco
+      too_long: es demasiado largo (%{count} caracteres máximo)
+      too_short: es demasiado corto (%{count} caracteres mínimo)
+      wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
+      not_a_number: no es un número
+      not_an_integer: debe ser un entero
+      greater_than_or_equal_to: debe ser mayor que o igual a %{count}
+      equal_to: debe ser igual a %{count}
+      less_than: debe ser menor que %{count}
+      less_than_or_equal_to: debe ser menor que o igual a %{count}
+      odd: debe ser impar
+      even: debe ser par
+    format: '%{attribute} %{message}'
   number:
     currency:
       format:
-        format: '%n %u'
         strip_insignificant_zeros: false
+        format: '%n %u'
         unit: €
         separator: .
         delimiter: ','
@@ -39,28 +61,6 @@ es:
       precision: 3
       significant: false
       strip_insignificant_zeros: false
-  errors:
-    messages:
-      greater_than: debe ser mayor que %{count}
-      inclusion: no está incluido en la lista
-      exclusion: está reservado
-      invalid: no es válido
-      confirmation: no coincide con la confirmación
-      accepted: debe ser aceptado
-      empty: no puede estar vacío
-      blank: no puede estar en blanco
-      too_long: es demasiado largo (%{count} caracteres máximo)
-      too_short: es demasiado corto (%{count} caracteres mínimo)
-      wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
-      not_a_number: no es un número
-      not_an_integer: debe ser un entero
-      greater_than_or_equal_to: debe ser mayor que o igual a %{count}
-      equal_to: debe ser igual a %{count}
-      less_than: debe ser menor que %{count}
-      less_than_or_equal_to: debe ser menor que o igual a %{count}
-      odd: debe ser impar
-      even: debe ser par
-    format: '%{attribute} %{message}'
   date:
     formats:
       default: '%d/%m/%Y'
@@ -211,7 +211,6 @@ es:
       full_messages:
         format: '%{attribute}%{message}'
   fbaedde498cdead4f2780217646e9ba1: A FAVOR
-  0077d575bfc52d2176b427189982b6a6: Guardado %{point_name}
   0358ca3a25ad72c389989a3db811f233: '%{user_name} renombró %{idea_name}'
   002d4fac39a17aaa96c1a79a1a710edb: Correo electrónico de ventas
   0038a9e512b4678c583db11009d2c297: Esta es la idea que crece más rápido
@@ -219,6 +218,7 @@ es:
   006a226cb52da43e63800809bd1cb3f6: '%{user_name} votó en contra de la idea %{position}'
   006a4eadd1c44616ad82234981c03563: Yahoo Appid (<a href='https://developer.yahoo.com/wsregapp/'>Consíguelo
     aquí</a>)
+  0077d575bfc52d2176b427189982b6a6: Guardado %{point_name}
   00b177e080ff1c3d340997fb01c3951c: Aceptar invitación
   00d9e5c459f14c32aa6d6d1bb7cde76d: Revisiones (%{count})
   00f399f02ac662457af2fa6ce23adbdb: '%{user_name} ha perdido %{capital}%{currency_short_name}

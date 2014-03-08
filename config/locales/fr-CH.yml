@@ -1,52 +1,17 @@
 ---
 fr-CH:
-  datetime:
-    distance_in_words:
-      half_a_minute: une demi-minute
-      less_than_x_seconds:
-        zero: moins d'une seconde
-        one: moins d'une seconde
-        other: moins de %{count} secondes
-      x_seconds:
-        one: 1 seconde
-        other: '%{count} secondes'
-      less_than_x_minutes:
-        zero: moins d'une minute
-        one: moins d'une minute
-        other: moins de %{count} minutes
-      x_minutes:
-        one: 1 minute
-        other: '%{count} minutes'
-      about_x_hours:
-        one: environ une heure
-        other: environ %{count} heures
-      x_days:
-        one: 1 jour
-        other: '%{count} jours'
-      about_x_months:
-        one: environ un mois
-        other: environ %{count} mois
-      x_months:
-        one: 1 mois
-        other: '%{count} mois'
-      about_x_years:
-        one: environ un an
-        other: environ %{count} ans
-      over_x_years:
-        one: plus d'un an
-        other: plus de %{count} ans
-      almost_x_years:
-        one: presqu'un an
-        other: presque %{count} ans
-    prompts:
-      year: Année
-      month: Mois
-      day: Jour
-      hour: Heure
-      minute: Minute
-      second: Seconde
   number:
     human:
+      storage_units:
+        units:
+          mb: Mo
+          byte:
+            one: octet
+            other: octets
+          kb: ko
+          gb: Go
+          tb: To
+        format: '%n %u'
       decimal_units:
         units:
           million: million
@@ -59,16 +24,6 @@ fr-CH:
         precision: 2
         significant: true
         strip_insignificant_zeros: true
-      storage_units:
-        format: '%n %u'
-        units:
-          byte:
-            one: octet
-            other: octets
-          kb: ko
-          mb: Mo
-          gb: Go
-          tb: To
     format:
       separator: .
       delimiter: ''''
@@ -144,6 +99,51 @@ fr-CH:
       long: '%A, %d. %B %Y %H:%M:%S %Z'
     am: am
     pm: pm
+  datetime:
+    distance_in_words:
+      half_a_minute: une demi-minute
+      less_than_x_seconds:
+        zero: moins d'une seconde
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+      x_seconds:
+        one: 1 seconde
+        other: '%{count} secondes'
+      less_than_x_minutes:
+        zero: moins d'une minute
+        one: moins d'une minute
+        other: moins de %{count} minutes
+      x_minutes:
+        one: 1 minute
+        other: '%{count} minutes'
+      about_x_hours:
+        one: environ une heure
+        other: environ %{count} heures
+      x_days:
+        one: 1 jour
+        other: '%{count} jours'
+      about_x_months:
+        one: environ un mois
+        other: environ %{count} mois
+      x_months:
+        one: 1 mois
+        other: '%{count} mois'
+      about_x_years:
+        one: environ un an
+        other: environ %{count} ans
+      over_x_years:
+        one: plus d'un an
+        other: plus de %{count} ans
+      almost_x_years:
+        one: presqu'un an
+        other: presque %{count} ans
+    prompts:
+      year: Année
+      month: Mois
+      day: Jour
+      hour: Heure
+      minute: Minute
+      second: Seconde
   support:
     select:
       prompt: Veuillez sélectionner
