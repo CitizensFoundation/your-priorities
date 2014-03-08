@@ -48,7 +48,7 @@
               - if result.class == Idea
                 %div
                   %h5
-                    = link_to result.excerpts.name.force_encoding("UTF-8").html_safe, :controller=>"ideas", :action=>"show", :id=>result.id
+                    = link_to result.excerpts.name.html_safe, :controller=>"ideas", :action=>"show", :id=>result.id
                   #search_results_body
                     %p
                       = result.excerpts.description.html_safe
@@ -60,10 +60,10 @@
               - elsif result.class == Point
                 %div
                   %h5
-                    = link_to result.excerpts.name.force_encoding("UTF-8").html_safe, :controller=>"points", :action=>"show", :id=>result.id
+                    = link_to result.excerpts.name.html_safe, :controller=>"points", :action=>"show", :id=>result.id
                   #search_results_body
                     %p
-                      = result.excerpts.content.force_encoding("UTF-8").html_safe
+                      = result.excerpts.content.html_safe
                     %span
                       = tr("Point","search")
                       \- #{time_ago(result.excerpts.created_at)}
@@ -73,7 +73,7 @@
                 %div
                   #search_results_body
                     %p
-                      = result.excerpts.content.force_encoding("UTF-8").html_safe
+                      = result.excerpts.content.html_safe
                     %span
                       = tr("Comment","search")
                       \- #{time_ago(result.excerpts.created_at)}
