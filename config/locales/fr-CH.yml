@@ -2,16 +2,6 @@
 fr-CH:
   number:
     human:
-      storage_units:
-        units:
-          mb: Mo
-          byte:
-            one: octet
-            other: octets
-          kb: ko
-          gb: Go
-          tb: To
-        format: '%n %u'
       decimal_units:
         units:
           million: million
@@ -24,6 +14,16 @@ fr-CH:
         precision: 2
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: octet
+            other: octets
+          kb: ko
+          mb: Mo
+          gb: Go
+          tb: To
     format:
       separator: .
       delimiter: ''''

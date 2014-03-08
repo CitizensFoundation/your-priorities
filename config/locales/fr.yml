@@ -373,7 +373,6 @@ fr:
   d3da97e2d9aee5c8fbe03156ad051c99: Plus
   3bc9cc15d02611dc4781a6ce6bf86710: Supporte
   13af6b983fc9bbd55699881a1023a539: Opposé
-  7b67f24364e4e88bcd95c3237d3fa318: '%{author_sentence}'
   1ac039df21500af0072a25a2b2859dae: Cette idée n'a pas bougée dans le classement ce
     mois-ci.
   93cba07454f06a4a960172bbd6e2a435: Oui
@@ -438,6 +437,7 @@ fr:
   e1e583ed208b1fbecec8b65dc272a098: Est-ce que cette idée de  %{user_name} est une
     attaque personnelle ou une violation des règles.?
   a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} idées'
+  7b67f24364e4e88bcd95c3237d3fa318: '%{author_sentence}'
   a534ed26c1d745e8e15e33c1dad34773: Points ajouté %{time_ago}
   6ba1364d96463a5bb5b064ce138e3128: '%{user_name} vous demande de considérer %{idea_name}'
   e31e799048673ff7f3699d5b5ddc9fa1: Inscris %{time_ago}.

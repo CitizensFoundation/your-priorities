@@ -2,13 +2,19 @@
 he:
   datetime:
     prompts:
-      minute: דקה
+      day: יום
       year: שנה
       month: חודש
-      day: יום
       hour: שעה
+      minute: דקה
       second: שניות
     distance_in_words:
+      over_x_years:
+        one: מעל שנה אחת
+        other: מעל %{count} שנים
+      almost_x_years:
+        one: כמעט שנה
+        other: כמעט %{count} שנים
       half_a_minute: חצי דקה
       less_than_x_seconds:
         zero: פחות משניה אחת
@@ -39,12 +45,6 @@ he:
       about_x_years:
         one: בערך שנה אחת
         other: בערך %{count} שנים
-      over_x_years:
-        one: מעל שנה אחת
-        other: מעל %{count} שנים
-      almost_x_years:
-        one: כמעט שנה
-        other: כמעט %{count} שנים
   date:
     formats:
       default: '%Y-%m-%d'

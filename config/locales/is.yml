@@ -6,9 +6,7 @@ is:
   985f85fc6bb1d160f599f43072500d35: '%{instance_name} nafn og vefslóð'
   cf23ee279844016288ea1c076638f3be: Um okkur
   01441c80c744e05983f0681cacfcf047: Kaus upp %{new_idea_name} í stað %{idea_name}
-  5ebb3db6c8a6613f79191107b296a01c: Stöðu hugmyndar <a href='%{idea_link}'>%{idea_name}</a>
-    %{support_or_endorse_text} hefur verið breytt á %{instance_name}.
-  78649386bcd37757541e2c6d99968afd: Stöðu %{idea} hefur verið breytt
+  d0d2aef3bbda7f1ae365a9a2a9d5bb10: Nýjast (%{count})
   2a9769b98044b4676d831e21bd5fad9e: sem þú ert á móti
   28818d96a5cfa5141680c4199d301376: Nafn
   f0e0f580898b26d3946589a4ccab7a3f: Vefslóð
@@ -43,10 +41,14 @@ is:
   2ee314288da3fc27b8fa799681876d79: Samþykkt (%{count})
   733d3bd148e431d4a7de23f4fd6b3a7b: Í ferli (%{count})
   c2dbe8cc5db8c81cc68981058975d0ba: Hafnað (%{count})
+  5ebb3db6c8a6613f79191107b296a01c: Stöðu hugmyndar <a href='%{idea_link}'>%{idea_name}</a>
+    %{support_or_endorse_text} hefur verið breytt á %{instance_name}.
   7df1f6368d01f63ab23548af8707a929: Allt í ferli (%{count})
   d78ed35383108fb6c04c16d0a11b20fe: Flæði
   30ae8fff8898dc197acd49d9c0797d20: Samþykkt
   b6e0b0c90cfbddfe767f137f8066d1df: Í ferli
+  78649386bcd37757541e2c6d99968afd: Stöðu %{idea} hefur verið breytt
+  aa750dc0f9ceebb3ce86571be0dc6460: Ný staða hugmyndar
   034cb9b595f45003845f5ebed51a0a39: Twitter Consumer Secret
   0358ca3a25ad72c389989a3db811f233: '%{user_name} endurnefndi %{idea_name}'
   03937134cedab9078be39a77ee3a48a0: Hópur
@@ -61,7 +63,6 @@ is:
   8ac6e46f207f4d2a928523d417663553: Velkomin á %{instance_name}. Bættu við þinni fyrstu
     hugmynd
   dc647eb65e6711e155375218212b3964: Lykilorð
-  cedcf6fe65a8f2849fe11e316d6c9923: Skráðu þig núna
   f97bc2159b044b75eaf3a32172b922cd: Opin - Allir geta séð síðu og skráð sig með netfangi
     eða Facebook
   4fb7286b0fe19a6cf2569e4115e88baa: minnst 10 stafir
@@ -119,7 +120,6 @@ is:
   76f0402b36ad06722396490cf8379c11: Áskrift hefur verið búin til.
   9f0bd6e1402d9febebd0903b7d7cd6d5: Þátttakendur
   32938671fad54d324521ce91454ea958: Kaus upp %{idea_name} sem hugmynd nr. %{position}
-  65e1f75e1c318e9d7a0c4690e4841fd3: Þegar stöðu á hugmynd er breytt
   0e0d3399b98988388e08df7e3b8e8d49: Þegar hugmynd er endurbætt
   f1527dd1b427ae2c86da111329190087: Þegar hugmynd er endurbætt
   1bd14216408d94261ca743907c692bb1: Fyrir kerfisstjóra
@@ -140,6 +140,7 @@ is:
     í hverjum mánuði.
   e9fd438d76861fab5afa6f3b2b693b08: '%{the_price} á mánuði'
   b24ce0cd392a5b0b8dedc66c25213594: Frítt
+  cedcf6fe65a8f2849fe11e316d6c9923: Skráðu þig núna
   12cc3f3e76f44bf82cfd0a05648f71d3: Ef þitt félag er ekki rekið í hagnaðarskyni bendum
     við á %{yrpri_link} sem er rekin af sjálfeignarstofnunni %{cf_link}.
   598fadf0058feef2b72dc54e835172b3: Greiðsluupplýsingar
@@ -164,8 +165,8 @@ is:
   a5998dfe5002eeab05de3cbcc98f9544: Þetta er sjálvirkur tölvupóstur %{instance_name}
   cd951d0ddb879ce3b7af243cad30f012: Engin rök á móti ennþá
   b05d72142020283dc6812fd3a9bc691c: Gleymt lykilorð
-  d77a0f9cd14e513bb78bccbf59402717: Staða hugmynda
   8e53b553c0d5323dadb9e738f19323d4: Þegar ég vinn eða tapa samfélagsstigum
+  65e1f75e1c318e9d7a0c4690e4841fd3: Þegar stöðu á hugmynd er breytt
   fafdcbfb83d39b7e0543fd0af58a35ac: sent til
   3b8a41916178a014a106fe26299e077e: Ef þú vilt ekki fá svona pósta vinsamlegast breyttu
     póststillingum hér
@@ -212,11 +213,12 @@ is:
     sem hefur unnið í hugbúnaðinum síðan 2008. Þú getur hvenær sem er skipt yfir í
     frjálsa hugbúnaðinn til að keyra þinn Your Priorities frítt. Citizens Foundation
     er með skrifstofur í London og Reykjavík.'
-  a0bc24991a11d8e4dcf00ba0c337f932: Dagsettning breytingar á stöðu
-  1809e18e24e352c936a7bed29fe56398: Skilaboð um breytingu á stöðu
-  ab12c7f49bc282b332c3130adf3ad7b2: Staða uppfærð með %{status_text}
   9b9d8a976b42e0bd66381797644943d5: Opin
   d7c8c85bf79bbe1b7188497c32c3b0ca: Hafnað
+  1809e18e24e352c936a7bed29fe56398: Ný staða hugmyndar (fyrirsögn 60 stafir mest)
+  a0bc24991a11d8e4dcf00ba0c337f932: Dagsettning breytingar á stöðu
+  ab12c7f49bc282b332c3130adf3ad7b2: Staða uppfærð með %{status_text}
+  d77a0f9cd14e513bb78bccbf59402717: Staða hugmynda
   ea3e01f57414004a37f4034b92335ede: Þú ert að gerast áskrifandi að opinni síðu með
     tölvupóst og Facebook skráningu með upp að %{number_of_users} notendum.
   3d5a940a7ccd5b0b908cb439001d1715: Núverandi áskrift
@@ -284,6 +286,7 @@ is:
   0c082c9ad303a70be82598499aaa1f6e: ' %{user_name} breytti %{idea_name} '
   43e00d10903ec90c9f2c523a901df552: '%{user_name} vann sér inn %{capital}%{currency_short_name}
     af því bæði stuðningsmönnum og andstæðingum  %{point_name} fannst hún gagnleg'
+  586f9d3669a73e12a8caed7a7d76288e: Veldu góðan, lýsandi titil á hugmyndina þína
   0c0d218418852e444a95f10f2fbe3060: '%{user_name} vann sér inn %{count}%{currency_short_name}
     fyrir  %{count} nýja fylgjendur'
   11ee56b3d9c99494994e5e0e4b6ae733: Upprunalega frá
@@ -353,16 +356,13 @@ is:
   7dd982d0948637b4ae83f2804bd489ca: Afhverju ætti fólk að styðja þína hugmynd?
   2e6c2d96aaacc8ef06d0ea12237cfc2e: Það þarf að fylla í alla reiti
   d7241b155164fdbc560602f924393149: Skráðu hugmynd þína og rök á Betra Ísland
-  586f9d3669a73e12a8caed7a7d76288e: Veldu góðan, lýsandi titil á hugmyndina þína
   cdd559fd8bda4b2bdf1cdbca181b38b9: Útskýrðu hugmyndina í nokkrum málsgreinum og reyndu
     að hafa textann hnitmiðaðan.
-  13af6b983fc9bbd55699881a1023a539: Nei
   e1e583ed208b1fbecec8b65dc272a098: Er þessi hugmynd  frá %{user_name} persónuleg
     árás eða brot á reglunum?
   a2d5e7a9d03b49d0639ab0a75a59d2c2: Gagnlegustu rökin
   fbaedde498cdead4f2780217646e9ba1: Upp
   cde1d24d4d3427be7222dbe6a518f6da: Engin rök komin.
-  f5359d1dd07def542aa9b0577fb27068: Uppfæra stöðu
   3b878279a04dc47d60932cb294d96259: Yfirsýn
   f7c27fe5419c0751885d8a0cc6f0e75a: 'Rökræður (%{count}) '
   cbc00c310ea3af7dc35edceb12f5601f: Ný rök
@@ -421,11 +421,13 @@ is:
   d64518ec4a60ae31b2b5e4074646cca1: Reglurnar okkar
   d9d222130429eb44be0faae283593dd6: 'Með því að skrá mig á  %{instance_name} (BÍ)
     lýsi ég því yfir að:'
+  f5359d1dd07def542aa9b0577fb27068: Uppfæra stöðu
   ee710d46f1e36118e1c4aea9cc51305e: ég samþykki að mínar hugmyndir geti farið í formlega
     vinnslu og framkvæmd hjá öðrum, einungis merkt Betra Íslandi sem lýðsprottin hugmynd
   1cab6f0a48459aaac4e3116773de5781: ég mun ekki birta auglýsingar eða senda ruslpóst
     í gegnum BÍ
   3bc9cc15d02611dc4781a6ce6bf86710: Kjósa upp
+  13af6b983fc9bbd55699881a1023a539: Nei
   1a8e4f3a313d948ac095a8d24110c1b1: '%{count} studdu'
   03fa96387303a39d8a63c153bac26958: 'Við áskiljum okkur rétt til að:'
   5e45d0479ee365f79d004b2f4ecb1f27: bætti %{point_name} við %{idea_name}
