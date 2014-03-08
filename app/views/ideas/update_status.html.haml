@@ -3,25 +3,17 @@
   .large-12.column
     = form_for(@idea) do |f|
       = f.error_messages
-      .field
-        .field_label
-          = tr("Finished Status", "view/users/_form_long")
-        .field_box
-          = f.select :official_status, options_for_select_simple([[tr("Published","status_messages"),"0"],[tr("In progress","status_messages"),"-1"],[tr("Successful","status_messages"),"2"],[tr("Failed","status_messages"),"-2"]], @idea.official_status.to_s)
-      .field
-        .field_label
-          = tr("New status date", "view/ideas/status")
-        .field_box
-          = date_select("idea", "finished_status_date")
-      .field
-        .field_label
-          = tr("New status subject", "view/ideas/status")
-        .field_box
-          = f.text_field :finished_status_subject, :max_length=>60
-      .field
-        .field_label
-          = tr("New status message", "view/ideas/status")
-        .field_box
-          = f.text_area :finished_status_message, :rows => 12, :cols=>70
+      .label
+        = tr("Finished Status", "view/users/_form_long")
+      = f.select :official_status, options_for_select_simple([[tr("Published","status_messages"),"0"],[tr("In progress","status_messages"),"-1"],[tr("Successful","status_messages"),"2"],[tr("Failed","status_messages"),"-2"]], @idea.official_status.to_s)
+      .label
+        = tr("New status date", "view/ideas/status")
+      = date_select("idea", "finished_status_date")
+      .label
+        = tr("New status subject", "view/ideas/status")
+      = f.text_field :finished_status_subject, :max_length=>60
+      .label
+        = tr("New status message", "view/ideas/status")
+      = f.text_area :finished_status_message, :rows => 12, :cols=>70
       %p
-        = f.submit tr("Update status", "view/ideas/status"), :class => "yellow_button"
+        = f.submit tr("Update status", "view/ideas/status"), :class => "button"
