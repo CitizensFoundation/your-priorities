@@ -1,0 +1,56 @@
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title Betra Ísland
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    %meta{:content => "text/html; charset=iso-8859-1", "http-equiv" => "Content-Type"}/
+    %meta{:content => "en", "http-equiv" => "Content-Language"}/
+    %meta{:content => "", :name => "Description"}/
+    %meta{:content => "Betra Ísland, Innovation, Social Innovation, Crowd Sourcing", :name => "keywords"}/
+    %meta{:content => "https://www.yrpri.org/", :name => "url"}/
+    %meta{:content => "Safe For Kids", :name => "rating"}/
+    %meta{:content => "25 days", :name => "revisit-after"}/
+    %meta{:content => "all", :name => "robots"}/
+    %meta{:content => "global", :name => "distribution"}/
+    %meta{:content => "", :name => "author"}/
+    %meta{:content => "Copyright &copy; 2008-2013 Citizens Foundation, All Rights Reserved", :name => "copyright"}/
+    = render :partial=>"ideas/fb_og_tags"
+    = render :partial => "shared/description"
+    = stylesheet_link_tag "better_iceland"
+    = #render :partial => "shared/javascripts"
+    = javascript_include_tag "yrpri"
+    = javascript_include_tag "vendor/custom.modernizr"
+    = javascript_include_tag "accounts"
+    - if controller_name=="donations"
+      = javascript_include_tag "donations"
+    - else
+      = javascript_include_tag "subscriptions"
+    :javascript
+      var PAYMILL_PUBLIC_KEY = '#{ENV['PAYMILL_PUBLIC_KEY']}';
+    = javascript_include_tag "https://bridge.paymill.com/"
+  %body
+    .row
+      .large-12.columns
+        .right{:style=>"padding:4px;"}
+          = link_to tr("Home","here").downcase, Instance.current.homepage_top_url
+          = " / "
+          = link_to tr("Donate","here").downcase, "/donations/new"
+          = " / "
+          = link_to "en", params.merge(:locale => "en")
+          = " / "
+          = link_to "is", params.merge(:locale => "is")
+    .row
+      .large-12.columns
+        %center
+          %img{:alt => "Betra Ísland", :height => "100", :src => "https://s3.amazonaws.com/better-iceland-images/top_logo.png", :width => "400", :size=>"400x100"}/
+    = yield
+
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '#{Instance.first.google_analytics_code}']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

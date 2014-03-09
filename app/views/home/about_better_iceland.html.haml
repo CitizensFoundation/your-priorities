@@ -1,0 +1,223 @@
+%script{:src => "https://maps.googleapis.com/maps/api/js?sensor=false", :type => "text/javascript"}
+:javascript
+  var kmlLayer = null;
+  var map = null;
+  var infoWindow = new google.maps.InfoWindow(); // InfoWindow
+
+  function openIW(layerEvt) {
+    // infoWindow.setContent(layerEvt.infoWindowHtml);
+    // infoWindow.setPosition(layerEvt.latLng);
+    if (layerEvt.row) {
+      var content = layerEvt.row['admin'].value;
+    } else if (layerEvt.featureData) {
+      var content = layerEvt.featureData.name;
+    }
+    if (content && content!='') {
+      window.location = "/home/goto?country_name="+content;
+    }
+    //document.getElementById('info').innerHTML = "you clicked on:"+content;
+  }
+
+  $(document).ready(function() {
+      var iceland = new google.maps.LatLng(65.0000,-19.0000);
+      var myOptions = {
+        zoom: 6,
+        center: iceland,
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+      }
+
+      map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+      google.maps.event.addListener(map, "click", function() {
+        document.getElementById('info').innerHTML = "";
+      });
+
+      // 0cddff
+      kmlLayer = new google.maps.KmlLayer('https://www.betraisland.is/home/sub_instance_map?keytime=#{rand(99999999)}', {preserveViewport: true, suppressInfoWindows: true} );
+      kmlLayer.setMap(map);
+
+      google.maps.event.addListener(kmlLayer, 'click', openIW);
+  });
+.row
+  .large-12.columns
+    .panel.radius
+      .row
+        .large-8.columns
+          %h1
+            = tr("Get your own Better Iceland website today","here")
+        .large-4.columns
+          .right
+            %a.button.radius{:href => "/subscription_accounts/new"}
+              = tr("Create Better Iceland website","here")
+      .row
+        .large-4.columns
+          .fb-like{"data-href" => "https://www.betraisland.is/", "data-send" => "false", "data-layout" => 'button_count', "data-show-faces" => "false", "data-width" => "300"}
+        .large-4.columns
+          .g-plus{"data-action" => "share"}
+        .large-4.columns
+          %a.twitter-share-button{:href => "https://twitter.com/share"} Tweet
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("Why a Better Iceland website?","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-1
+            .row
+              .large-9.columns
+                %p
+                  = tr("We believe democracy is in trouble. Lack of trust and participation especially by young people is a big problem.","here")
+                  = " "
+                  = tr("Better Iceland is a powerful eDemocracy web application designed by the non profit Citizens Foundation to help groups of people speak with one voice.","here")
+                %p
+                  = tr("We won the European e-Democracy Awards 2011 and have won numerous Icelandic awards for innovation and participation. We are nominated for United Nations WSA awards in 2013.","here")
+              .large-3.columns
+                %img(src="https://s3.amazonaws.com/better-iceland-images/top_logo_200.png")
+- if false
+  .row
+    .large-12.columns
+      .panel.radius
+        .row
+          .large-4.columns
+            %h2
+              = tr("Better Iceland websites","here")
+            %p
+              - SubInstance.where("organization_type='municipality' OR organization_type='interest_group'").each do |sub_instance|
+                - if sub_instance.redirect_url
+                  = link_to sub_instance.name, sub_instance.redirect_url
+                - else
+                  = link_to sub_instance.name, sub_instance.show_url
+                %br
+          .large-8.columns
+            %p
+              = tr("Here you can see a map of the municipalities on Better Iceland.","here")
+            #map_canvas{:style => "height:372px; width:100%;"}
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("How does Better Iceland work?","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-2
+            .row
+              .large-3.columns
+                %p
+                  = tr("People submit ideas and debate them in a simple but advanced debate system.","here")
+              .large-6.columns
+                %img(src="https://s3.amazonaws.com/brainstorm-direct-assets/front_page/process2.png")
+                %center
+                  %br
+                  %a.button{:href => get_locale_demo_host(".betraisland.is/"), :target=>"_blank"}
+                    = tr("Try the free demo now","here")
+              .large-3.columns
+                %p
+                  = tr("The best ideas with the best points for and against rise to the top.","here")
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("What does Better Iceland do?","here")
+      %p
+        = tr("This video explains how the Your Priorities eDemocracy platform works. Better Iceland uses Your Priorities. ","here")
+      .panel.radius
+        .row
+          .large-12.columns
+            .panel.radius
+              .flex-video
+                %iframe{:allowfullscreen => "", :frameborder => "0", :height => "250", :src => "https://www.youtube.com/embed/t0lFd1poJfs", :width => "640"}
+      %h2
+        = tr("Sign up now","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-3
+            %p
+              = tr("Better Iceland can help your city - local community or any online community wanting to organize with ideas and speak with one voice. Here you can quickly create your own Better Iceland website. You can sign up to a limited trial without a credit card. You can upgrade to a paid plan at any time.","here")
+            %center
+              %a.button.radius{:href => "/subscription_accounts/new"}
+                = tr("Create Better Iceland website","here")
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("Case Study - Better Reykjavik","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-2
+            .row
+              .large-6.columns
+                - tr("Better Reykjavik","here")
+                %p
+                  = tr("The award winning {br_link} website is a part of the Better Iceland family.","here",:br_link=>link_to(tr("Better Reykjavik","here"),"http://www.betrireykjavik.is/",:target=>"_blank"),:cf_link=>link_to("Citizens Foundation","http://www.citizens.is/",:target=>"_blank"))
+                %p
+                  = tr("With record breaking participation the website now connects the citizens of Reykjavik with their representatives which process the top ideas every month.","here")
+                %p
+                  = tr("Everyone can view the best points for and against each idea which helps them to make up their minds on any issue.","here")
+                %p
+                  = tr("The administration gets invaluable information about citizens opinion and priorities with minimum effort.","here")
+              .large-6.columns
+                .flex-video
+                  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "215", :src => "https://www.youtube.com/embed/GoRWG6x9pvc", :width => "420"}
+      %h2
+        = tr("Case Study - EVE Online | True Stories","here")
+      .row
+        .large-12.columns
+          .panel.radius.panel-bg-2
+            .row
+              .large-6.columns
+                %img(src="https://s3.amazonaws.com/brainstorm-direct-assets/front_page/eve_2.png")
+              .large-6.columns
+                %p
+                  = tr("The same software as runs Better Iceland was used to create a customized solution for the {eve_link} website for {ccp_link}.","here",:ccp_link=>link_to("CCP Games","http://ccpgames.com/",:target=>"_blank"),:eve_link=>link_to("EVE Online True Stories","https://truestories.eveonline.com/",:target=>"_blank"))
+                %p
+                  = tr("To find the best stories from the first decade of the EVE Universe - directly from the players.","here")
+                %p
+                  = tr("The community then voted for the stories - resulting in a list of the best stories that happened over the past 10 years.","here")
+                %p
+                  = tr("Those true stories will inspire books - comics - TV series and films set in the EVE Universe.","here")
+.row
+  .large-12.columns
+    .panel.radius
+      %h2
+        = tr("About us","here")
+      .panel.radius.panel-bg-2
+        .row
+          .large-2.columns
+            %img(src="https://s3.amazonaws.com/yrpri-direct-asset/citizens-logo.png")
+          .large-10.columns
+            %p
+              = tr("The {yrpri_link} software running Better Iceland is Open Source and the product of the nonprofit {citizens_foundation_link} which has been working on the software since 2008. You can at any time switch over to running your own Better Iceland for free using the Open Source software. Citizens Foundation has offices in London and Reykjavík.","here",:yrpri_link=>link_to("Your Priorities","https://github.com/rbjarnason/your-priorities",:target=>"_blank"),:citizens_foundation_link=>link_to("Citizens Foundation","http://citizens.is/",:target=>"_blank"))
+        .row
+          .large-4.columns
+            %p
+              %a{:href => "/pages/#{Page.where(:name=>"terms_of_service").first.id}"}
+                = tr("Terms of Service","here")
+              = tr("and","here")
+              %a{:href => "/pages/#{Page.where(:name=>"privacy_policy").first.id}"}
+                = tr("Privacy Policy","here")
+            %p
+          .large-4.columns
+            %p
+            .fb-like-box{"data-header" => "false", "data-href" => "https://www.facebook.com/Citizens.is", "data-show-border" => "true", "data-show-faces" => "false", "data-stream" => "false", "data-width" => "250"}
+          .large-4.columns
+            .right
+              %p
+                = tr("{citizens_link}","here",:citizens_link=>link_to("© Citizens Foundation 2008-2013","http://www.citizens.is/"))
+#fb-root
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=133488890056240";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+:javascript
+  (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+:javascript
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
