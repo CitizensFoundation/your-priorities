@@ -60,6 +60,21 @@ CODE_TO_SHORTNAME = {"AE"=>"uae", "LY"=>"lybia", "VA"=>"vatican",
                      "PS"=>"ps", "GB"=>"uk", "SY"=>"syria", "RU"=>"russia",
                      "MD"=>"moldova", "LA"=>"lao" }
 namespace :utils do
+  desc "fix_endorsement_positions_for_better_iceland"
+  task :fix_endorsement_positions_for_better_iceland do
+    #Endorsement.all.each do |e| puts e.position end
+    #Endorsement.where("sub_instance_id IS NULL").all.each do |e| puts Idea.unscoped.find(e.idea_id).name end;get chomp
+    #Endorsement.where("sub_instance_id IS NULL").all.each do |e| puts e.created_at end;get chomp
+    Endorsement.where("sub_instance_id IS NULL").all.each do |e| e.sub_instance_id=1;e.save end
+    User.unscoped.all.each do |user|
+      SubInstance.current = SubInstance.find(user.sub_instance_id)
+      Endorsement.where(:user_id=>user.id,:sub_instance_id=>user.sub_instance_id).all.each do |e|
+        e.insert_at(1)
+        e.save
+      end
+    end
+  end
+
   desc "FixBetterNeighborhoodSubInstances"
   task :fix_bn do
     SubInstance.all.each do |sub_instance|
