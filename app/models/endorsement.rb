@@ -116,6 +116,7 @@ class Endorsement < ActiveRecord::Base
   
   # check to see if they've added a new #1 idea, and create the activity
   def check_for_top_idea
+    return
     if self.position == 1
       if self.id != user.top_endorsement_id
         user.top_endorsement = self

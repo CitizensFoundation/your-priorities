@@ -1,5 +1,4 @@
 # coding: utf-8
-require 'activity'
 
 def create_tags(row)
   tags = []
