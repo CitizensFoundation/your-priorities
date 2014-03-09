@@ -51,6 +51,7 @@ is:
   aa750dc0f9ceebb3ce86571be0dc6460: Ný staða hugmyndar
   034cb9b595f45003845f5ebed51a0a39: Twitter Consumer Secret
   0358ca3a25ad72c389989a3db811f233: '%{user_name} endurnefndi %{idea_name}'
+  90470f17c0c5b3cb0c3d2581e14aff20: Búðu til þinn eigin %{instance_name} (Mjög fljótlegt...)
   03937134cedab9078be39a77ee3a48a0: Hópur
   040cd458fd2ae990e1f054b26909bd7a: Vann sér inn %{count}%{currency_short_name} vegna
     þess að %{count} hættu að hunsa
@@ -69,7 +70,6 @@ is:
   80df8e95c1fef941a4f600f0fd1b07c8: minnst 12 stafir
   ab70cd88a40e7c3247bfce039ad0045d: minnst 5 stafir
   7a92f7d9a2363fb1ad145d302d8f1238: Lokuð - aðeins opið boðsgestum
-  90470f17c0c5b3cb0c3d2581e14aff20: Búðu til þinn eigin %{instance_name} (Mjög fljótlegt...)
   53a276a4e77491e31d12a89334a8209c: Fyrir áskriftarleið sem kostar hafðu beint samband
     við <a href='mailto:%{email}'>%{email2}</a>. Við munum fljótlega bjóða upp á áskrift
     með kreditkorti.
@@ -188,7 +188,14 @@ is:
   e3afed0047b08059d0fada10f400c1e5: Vefstjórnandi
   06df33001c1d7187fdd81ea1f5b277aa: Aðgerðir
   0f68b904e33d9ac04605aecc958bcf52: Upplýsingar
+  d7391c69ff4c78e653e46ce0f1004fe7: '%{yrpri_link} forritið er grunnurinn að Brainstorm
+    og þetta er frjáls hugbúnaður sem er búinn til í samstarfi af %{citizens_foundation_link}
+    sem hefur unnið í hugbúnaðinum síðan 2008. Þú getur hvenær sem er skipt yfir í
+    frjálsa hugbúnaðinn til að keyra þinn Your Priorities frítt. Citizens Foundation
+    er með skrifstofur í London og Reykjavík.'
+  c25e5057bbe9d03150c1b55b9a2745f3: Hvernig virkar Your Priorities?
   e3b9285916bcd1b9724349049521ac90: gerði athugasemd við
+  9fa58bca936c8c3209d5dba30691bbea: Hvað gerir Your Priorities?
   18c3c2ec475e379bd894cdedb9e0e03f: Þú getur hætt að fylgjast með þessari umræðu hér
   6f427138338d1db0109d83cc74c00965: Þú átt %{points} samfélagsstig.
   fa5f71bf560f0e4b09f31b875de45ea7: Þú vannst þér inn %{points} samfélagsstig á %{instance_name}
@@ -206,13 +213,6 @@ is:
   91b61a309ee7cf95e351902083824e57: 'Þetta hefur haft áhrif á samfélagsstig á %{instance_name}:'
   a22a31345901fab0939eb50823c23b88: Staða hugmyndar
   6fc38a2e6ce34be4acf2a756816f7f0f: Þín forgangsmál
-  9fa58bca936c8c3209d5dba30691bbea: Hvað gerir Your Priorities?
-  c25e5057bbe9d03150c1b55b9a2745f3: Hvernig virkar Your Priorities?
-  d7391c69ff4c78e653e46ce0f1004fe7: '%{yrpri_link} forritið er grunnurinn að Brainstorm
-    og þetta er frjáls hugbúnaður sem er búinn til í samstarfi af %{citizens_foundation_link}
-    sem hefur unnið í hugbúnaðinum síðan 2008. Þú getur hvenær sem er skipt yfir í
-    frjálsa hugbúnaðinn til að keyra þinn Your Priorities frítt. Citizens Foundation
-    er með skrifstofur í London og Reykjavík.'
   9b9d8a976b42e0bd66381797644943d5: Opin
   d7c8c85bf79bbe1b7188497c32c3b0ca: Hafnað
   1809e18e24e352c936a7bed29fe56398: Ný staða hugmyndar (fyrirsögn 60 stafir mest)
@@ -240,21 +240,21 @@ is:
   eed1d7e8237b8656aff7c66bb5999f96: Settu inn rétt nafn eða dulnefn.
   026688f148cfe681359ec62731411752: Takk fyrir greiðslu á %{instance_name}
   39a2ac1fc229d843594065531ffed4c8: Núverandi áskriftarleið
-  3277947674e9e77c91a1269374d6525e: Bestu hugmyndirnar með bestu rökum með og á móti
-    rísa á toppinn.
-  45a098e1ebc679f8fd971e9e60d2b445: Af hverju Your Priorities?
   670c30946507c1831081de9d0cd2e578: Your Priorities getur hjálpað þínu landi / borg
     / samfélagi / eða hópi sem vilja skipuleggja sig í kringum hugmyndir og tala með
     einni rödd. Hérna getur þú búið til þína eigin Your Priorities síðu. Þú getur
     skráð hana án þess að vera með kreditkort til prufu. Auðvelt er að skipta yfir
     í útgáfuna sem borgað er fyrir.
+  bb73e7a168c9158086404aaac16e5de5: Verðlaunavefurinn %{br_link} notar sama frjálsa
+    hugbúnað og Your Priorities vefsíðan.
+  3277947674e9e77c91a1269374d6525e: Bestu hugmyndirnar með bestu rökum með og á móti
+    rísa á toppinn.
+  45a098e1ebc679f8fd971e9e60d2b445: Af hverju Your Priorities?
   8debe773c71b071adbd72ea2bc48186a: Við notuðum Your Priorities til að búa til sérhæfða
     lausn fyrir %{eve_link} vef %{ccp_link}.
   96c3b987a5b5008df9b06d9d95092634: Your Priorities er öflug lýðræðisvefsíða hönnuð
     af non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með
     einni rödd.
-  bb73e7a168c9158086404aaac16e5de5: Verðlaunavefurinn %{br_link} notar sama frjálsa
-    hugbúnað og Your Priorities vefsíðan.
   c428492f00d9e51ce05abf306d2ff59b: Fólk sendir inn hugmyndir og rökræða þær í einföldu
     en öflugu rökræðukerfi.
   2f64c030f4bec3e2c21e78506cc78f63: Efstu 25 hugmyndir á %{instance_name}
@@ -286,7 +286,6 @@ is:
   0c082c9ad303a70be82598499aaa1f6e: ' %{user_name} breytti %{idea_name} '
   43e00d10903ec90c9f2c523a901df552: '%{user_name} vann sér inn %{capital}%{currency_short_name}
     af því bæði stuðningsmönnum og andstæðingum  %{point_name} fannst hún gagnleg'
-  586f9d3669a73e12a8caed7a7d76288e: Veldu góðan, lýsandi titil á hugmyndina þína
   0c0d218418852e444a95f10f2fbe3060: '%{user_name} vann sér inn %{count}%{currency_short_name}
     fyrir  %{count} nýja fylgjendur'
   11ee56b3d9c99494994e5e0e4b6ae733: Upprunalega frá
@@ -356,6 +355,8 @@ is:
   7dd982d0948637b4ae83f2804bd489ca: Afhverju ætti fólk að styðja þína hugmynd?
   2e6c2d96aaacc8ef06d0ea12237cfc2e: Það þarf að fylla í alla reiti
   d7241b155164fdbc560602f924393149: Skráðu hugmynd þína og rök á Betra Ísland
+  586f9d3669a73e12a8caed7a7d76288e: Veldu góðan, lýsandi titil á hugmyndina þína
+  13af6b983fc9bbd55699881a1023a539: Nei
   cdd559fd8bda4b2bdf1cdbca181b38b9: Útskýrðu hugmyndina í nokkrum málsgreinum og reyndu
     að hafa textann hnitmiðaðan.
   e1e583ed208b1fbecec8b65dc272a098: Er þessi hugmynd  frá %{user_name} persónuleg
@@ -427,7 +428,6 @@ is:
   1cab6f0a48459aaac4e3116773de5781: ég mun ekki birta auglýsingar eða senda ruslpóst
     í gegnum BÍ
   3bc9cc15d02611dc4781a6ce6bf86710: Kjósa upp
-  13af6b983fc9bbd55699881a1023a539: Nei
   1a8e4f3a313d948ac095a8d24110c1b1: '%{count} studdu'
   03fa96387303a39d8a63c153bac26958: 'Við áskiljum okkur rétt til að:'
   5e45d0479ee365f79d004b2f4ecb1f27: bætti %{point_name} við %{idea_name}
@@ -579,3 +579,22 @@ is:
     vefsíðunni eða að kæra til yfirvalda.
   ccb170b7563ba9e94e021fabfef45771: "Breyta notendaskilmálum þessum. Öllum skráðum
     notendum verður tilkynnt um slíkar breytingar með tölvupósti.\r\n"
+  7a8dd7f3470646c08ce4a384ba67f55c: Búðu til þinn eigin Betra Ísland vef
+  134c5437738d0c8ae122af946c76a4d4: Við trúum því að bætt lýðræði sé vegur að meiri
+    jöfnuði. Netið býður upp á frábæra möguleika fyrir endurbætur á lýðræði.
+  654f0ece8adfb7de29a73d5c27003f9c: Búa til nýtt Betra Ísland
+  3bcbf859ec98a71b00fb909d9e1f7ba4: Prófaðu núna
+  c7dec3041fa531ded96e45bab1e125d6: Hvað gerir Betra Ísland?
+  40136f0b052226af395bc48c98a0cdf7: Þetta myndband útskýrir hvernig Your Priorities
+    lýðræðishugbúnaðurinn virkar.  Betra Ísland notar Your Priorities.
+  42e5fabfe88d4fbdc7f0c4e60d012b25: Betra Ísland getur hjálpað þinni borg / samfélagi
+    / eða hópi sem vilja skipuleggja sig í kringum hugmyndir og tala með einni rödd.
+    Hérna getur þú búið til þína eigin Betra Ísland vef.
+  26582fa147339efa1e6fc50cc9602f65: Þú getur notað karma stig til að kaupa kynningar
+    efst á síðunni fyrir hugmyndir sem þú styður.
+  1b87a6c3fadc9180743cb5b660b76f2b: Af hverju Betra Ísland?
+  353ff40317d8e32ff7f5b42f0b398ddf: Við unnum European e-Democracy Awards 2011 og
+    mörg verðlaun á íslandi.
+  07ce9b074bcd189d0b244dc7031283dd: Hvernig virkar Betra Ísland?
+  48dade30fc1102998ceb7bab6fd0f78c: Verðlaunavefurinn %{br_link} notar sama frjálsa
+    hugbúnað og Betra Ísland vefsíðan.

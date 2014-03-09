@@ -1,5 +1,44 @@
 ---
 sw:
+  number:
+    human:
+      storage_units:
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+        format: '%n %u'
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      decimal_units:
+        format: '%n %u'
+        units:
+          thousand: Elfu
+          million: Milioni
+          billion: Bilioni
+          trillion: Trilioni
+          quadrillion: Quadrillion
+    format:
+      separator: ','
+      delimiter: .
+      precision: 2
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        format: '%n%u'
+        unit: /=
+        separator: ','
+        delimiter: .
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
   errors:
     messages:
       inclusion: haipo kwenye orodha
@@ -120,45 +159,6 @@ sw:
       words_connector: ', '
       two_words_connector: ' na '
       last_word_connector: ', na '
-  number:
-    format:
-      separator: ','
-      delimiter: .
-      precision: 2
-      significant: false
-      strip_insignificant_zeros: false
-    currency:
-      format:
-        format: '%n%u'
-        unit: /=
-        separator: ','
-        delimiter: .
-        precision: 2
-        significant: false
-        strip_insignificant_zeros: false
-    human:
-      format:
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: '%n %u'
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          kb: KB
-          mb: MB
-          gb: GB
-          tb: TB
-      decimal_units:
-        format: '%n %u'
-        units:
-          thousand: Elfu
-          million: Milioni
-          billion: Bilioni
-          trillion: Trilioni
-          quadrillion: Quadrillion
   datetime:
     distance_in_words:
       half_a_minute: nusu dakika

@@ -1,27 +1,5 @@
 ---
 gsw-CH:
-  errors:
-    messages:
-      inclusion: isch kän gültige Wert
-      exclusion: isch nöd ume
-      invalid: isch nöd gültig
-      confirmation: isch nöd gliich wie'd Beschtätigung
-      accepted: mues akzeptiert werdä
-      empty: mues uusgfüllt werdä
-      blank: mues uusgfüllt werdä
-      too_long: isch z'lang (nöd mee als %{count} Zeiche)
-      too_short: isch z'churz (nöd weniger als %{count} Zeiche)
-      wrong_length: hät di falsch Längi (mues genau %{count} Zeiche haa)
-      not_a_number: isch kä Nummerä
-      not_an_integer: isch kä Zaal
-      greater_than: mues grösser als %{count} sii
-      greater_than_or_equal_to: mues grösser oder gliich wi %{count} sii
-      equal_to: mues genau %{count} sii
-      less_than: mues chliiner als %{count} sii
-      less_than_or_equal_to: mues chliiner oder gliich %{count} sii
-      odd: mues ungraad sii
-      even: mues graad sii
-    format: '%{attribute} %{message}'
   date:
     formats:
       default: '%d.%m.%Y'
@@ -181,6 +159,28 @@ gsw-CH:
       create: '%{model} erschtele'
       update: '%{model} ändere'
       submit: '%{model} schpeichere'
+  errors:
+    format: '%{attribute} %{message}'
+    messages:
+      inclusion: isch kän gültige Wert
+      exclusion: isch nöd ume
+      invalid: isch nöd gültig
+      confirmation: isch nöd gliich wie'd Beschtätigung
+      accepted: mues akzeptiert werdä
+      empty: mues uusgfüllt werdä
+      blank: mues uusgfüllt werdä
+      too_long: isch z'lang (nöd mee als %{count} Zeiche)
+      too_short: isch z'churz (nöd weniger als %{count} Zeiche)
+      wrong_length: hät di falsch Längi (mues genau %{count} Zeiche haa)
+      not_a_number: isch kä Nummerä
+      not_an_integer: isch kä Zaal
+      greater_than: mues grösser als %{count} sii
+      greater_than_or_equal_to: mues grösser oder gliich wi %{count} sii
+      equal_to: mues genau %{count} sii
+      less_than: mues chliiner als %{count} sii
+      less_than_or_equal_to: mues chliiner oder gliich %{count} sii
+      odd: mues ungraad sii
+      even: mues graad sii
   activerecord:
     errors:
       template:
