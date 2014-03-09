@@ -61,7 +61,7 @@ CODE_TO_SHORTNAME = {"AE"=>"uae", "LY"=>"lybia", "VA"=>"vatican",
                      "MD"=>"moldova", "LA"=>"lao" }
 namespace :utils do
   desc "fix_endorsement_positions_for_better_iceland"
-  task :fix_endorsement_positions_for_better_iceland do
+  task :fix_endorsement_positions_for_better_iceland => :environment do
     #Endorsement.all.each do |e| puts e.position end
     #Endorsement.where("sub_instance_id IS NULL").all.each do |e| puts Idea.unscoped.find(e.idea_id).name end;get chomp
     #Endorsement.where("sub_instance_id IS NULL").all.each do |e| puts e.created_at end;get chomp
