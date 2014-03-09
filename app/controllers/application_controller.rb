@@ -191,8 +191,12 @@ class ApplicationController < ActionController::Base
   end
 
   def setup_about_pages
-    default_pages =Page.unscoped.where(:sub_instance_id=>SubInstance.find_by_short_name("default").id).order("title").all
-    my_pages = Page.unscoped.where(:sub_instance_id=>SubInstance.current.id).order("weight").all  
+    if SubInstance.current.short_name=="default"
+      default_pages = []
+    else
+      default_pages = Page.unscoped.where(:sub_instance_id=>SubInstance.find_by_short_name("default").id).order("title").all
+    end
+    my_pages = Page.unscoped.where(:sub_instance_id=>SubInstance.current.id).order("weight").all
     @about_pages = my_pages + default_pages
   end
 
