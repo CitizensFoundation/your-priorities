@@ -69,6 +69,7 @@ namespace :utils do
     User.unscoped.all.each do |user|
       SubInstance.current = SubInstance.find(user.sub_instance_id)
       Endorsement.where(:user_id=>user.id,:sub_instance_id=>user.sub_instance_id).all.each do |e|
+        puts SubInstance.current = SubInstance.find(user.sub_instance_id)
         e.insert_at(1)
         e.save
       end
