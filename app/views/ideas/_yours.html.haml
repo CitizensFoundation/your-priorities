@@ -44,7 +44,7 @@
                   }
           )
       });
-  - if current_user.endorsements_count > 25
+  - if current_user.endorsements_count > 7
     %p
       = will_paginate(current_user_endorsements, :renderer => 'RemoteLinkRenderer', :previous_label=>tr("Previous","ajax pagination"),
                                                                                     :next_label=>tr("Next","ajax pagination"),
