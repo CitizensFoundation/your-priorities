@@ -65,13 +65,14 @@ gem 'mogli', github: 'mmangino/mogli'
 gem 'facebooker2', github: 'mmangino/facebooker2'
 gem 'dalli'
 #gem 'thinking-sphinx', '3.0.5'
-gem 'flying-sphinx'
+#gem 'flying-sphinx'
 #gem 'flying-sphinx', '~> 1.0.0',
 #     git: 'git://github.com/flying-sphinx/flying-sphinx.git',
 #     branch: 'master',
 #     ref: '707dd60675'
 #gem "flying-sphinx","0.8.5"
-gem 'thinking-sphinx'
+gem 'thinking-sphinx', '3.0.3'
+gem 'flying-sphinx',   '1.0.0'
 #gem 'thinking-sphinx',
 #      :git => 'git://github.com/pat/thinking-sphinx.git',
 #      :ref => '55788f7b96'
