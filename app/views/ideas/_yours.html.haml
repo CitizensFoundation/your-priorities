@@ -1,6 +1,6 @@
 #right_column_ideas
   #your_ideas
-    - current_user_endorsements.each_with_index do |endorsement,index|
+    - current_user_endorsements.each do |endorsement|
       .your_idea_endorsement{:id => "endorsement_#{endorsement.id}", :style => "cursor:move;padding-bottom:15px;"}
         .row{:class=>endorsement.is_up? ? "endorsement_up" : "endorsement_down"}
           .large-1.columns{:style=>"padding-right:5px;"}
@@ -13,7 +13,7 @@
                 :title => tr("Click the number to change its position on your list. You can also drag and drop the names to sort.", "view/ideas/_yours") |
           .large-9.columns
             .if.else{:class => "endorsement_<haml:silent> endorsement.is_up? </haml:silent><haml:block>up</haml:block><haml:silent> </haml:silent><haml:block>down</haml:block>"}
-              - if index<3
+              - if endorsement.position<4
                 %b
                   = link_to_unless_current h(endorsement.idea.name), endorsement.idea if endorsement.idea
               - else
