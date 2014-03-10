@@ -222,20 +222,22 @@ class Idea < ActiveRecord::Base
   end
 
   def endorse(user,request=nil,referral=nil)
-    endorsement = self.endorsements.find_by_user_id(user.id)
-    if not endorsement
-      endorsement = Endorsement.new(:value => 1, :idea => self, :sub_instance_id => self.sub_instance_id, :user => user,:referral => referral)
-      endorsement.ip_address = request.remote_ip if request
-      endorsement.save
-      endorsement.insert_lowest_at(4)
-    elsif endorsement.is_down?
-      endorsement.flip_up
-      endorsement.save
+    if user
+      endorsement = self.endorsements.find_by_user_id(user.id)
+      if not endorsement
+        endorsement = Endorsement.new(:value => 1, :idea => self, :sub_instance_id => self.sub_instance_id, :user => user,:referral => referral)
+        endorsement.ip_address = request.remote_ip if request
+        endorsement.save
+        endorsement.insert_lowest_at(4)
+      elsif endorsement.is_down?
+        endorsement.flip_up
+        endorsement.save
+      end
+      if endorsement.is_replaced?
+        endorsement.activate!
+      end
+      return endorsement
     end
-    if endorsement.is_replaced?
-      endorsement.activate!
-    end
-    return endorsement
   end
   
   def oppose(user,request=nil,referral=nil)
