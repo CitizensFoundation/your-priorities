@@ -395,6 +395,7 @@ ca:
   fa2ead697d9998cbc65c81384e6533d5: Política de privacitat
   fa70fb36651436d8d837a869cbaf2d3c: URL per la teva política de privacitat
   e3afed0047b08059d0fada10f400c1e5: Administrador
+  047fe665bd2cea51e221d371d1e4c698: Canviar ajustos per %{user_name}
   01374d70036cb0b48058e7e031eeb680: Necessites iniciar la sessió per accedir a aquesta
     pàgina privada
   01434d2ab206eb7f37324a021439b2fa: M'adreço a tu amb el teu nom real o amb el teu
@@ -406,7 +407,6 @@ ca:
   0358ca3a25ad72c389989a3db811f233: '%{user_name} nombrat de nou %{idea_name}'
   04412bb51cddee4b889c1adbf558670a: La teva informació de donació
   04742c1a5a675be0659d83d65cb79661: Idees que creixen als rànquings
-  047fe665bd2cea51e221d371d1e4c698: Canviar ajustos per %{user_name}
   04bc5390fd93d76fb2471f2f3a432ed5: Les teves idees finalitzades %{tag_name}
   052d9de783ead76d6ab1eae9c35f29db: Després d'haver iniciat la teva sessió, siusplau,
     canvia la contrasenya per una que puguis recordar

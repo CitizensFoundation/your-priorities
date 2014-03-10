@@ -1,6 +1,5 @@
 ---
 is:
-  d280d15220c6ba22dfa7cd8a5139ea67: Næst... Upplýsingar um þig
   3b6c2b4caaf4f14f8d7feeddc4ac3f4d: Reglur
   fa2ead697d9998cbc65c81384e6533d5: Um friðhelgi
   985f85fc6bb1d160f599f43072500d35: '%{instance_name} nafn og vefslóð'
@@ -49,12 +48,14 @@ is:
   b6e0b0c90cfbddfe767f137f8066d1df: Í ferli
   78649386bcd37757541e2c6d99968afd: Stöðu %{idea} hefur verið breytt
   aa750dc0f9ceebb3ce86571be0dc6460: Ný staða hugmyndar
+  d280d15220c6ba22dfa7cd8a5139ea67: Næst... Upplýsingar um þig
   034cb9b595f45003845f5ebed51a0a39: Twitter Consumer Secret
   0358ca3a25ad72c389989a3db811f233: '%{user_name} endurnefndi %{idea_name}'
   90470f17c0c5b3cb0c3d2581e14aff20: Búðu til þinn eigin %{instance_name} (Mjög fljótlegt...)
   03937134cedab9078be39a77ee3a48a0: Hópur
   040cd458fd2ae990e1f054b26909bd7a: Vann sér inn %{count}%{currency_short_name} vegna
     þess að %{count} hættu að hunsa
+  db5ca4cc88a9c0db11b47157edb70dd0: 'Næst:'
   04bc5390fd93d76fb2471f2f3a432ed5: Þínar kláruðu %{tag_name} hugmyndir
   9ee2fe857acedeff0c24765e3d2a25f9: Þú þarft að gefa upp full nafn
   91504cddd78bd6a6826026c83f554958: Þitt eintak þarf að hafa nafn
@@ -74,7 +75,6 @@ is:
     við <a href='mailto:%{email}'>%{email2}</a>. Við munum fljótlega bjóða upp á áskrift
     með kreditkorti.
   40a2e1017d03e4ce611e8e59ffd188b4: Núna... Veldu áskriftarleið
-  db5ca4cc88a9c0db11b47157edb70dd0: 'Næst:'
   2a3cd5946cfd317eb99c3d32e35e2d4c: Rök
   75dd5f1160a3f02b6fae89c54361a1b3: Rök
   9332fc437c329ab4057b2121ba0360ed: 'Rök gegn:'
@@ -247,14 +247,14 @@ is:
     í útgáfuna sem borgað er fyrir.
   bb73e7a168c9158086404aaac16e5de5: Verðlaunavefurinn %{br_link} notar sama frjálsa
     hugbúnað og Your Priorities vefsíðan.
+  96c3b987a5b5008df9b06d9d95092634: Your Priorities er öflug lýðræðisvefsíða hönnuð
+    af non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með
+    einni rödd.
   3277947674e9e77c91a1269374d6525e: Bestu hugmyndirnar með bestu rökum með og á móti
     rísa á toppinn.
   45a098e1ebc679f8fd971e9e60d2b445: Af hverju Your Priorities?
   8debe773c71b071adbd72ea2bc48186a: Við notuðum Your Priorities til að búa til sérhæfða
     lausn fyrir %{eve_link} vef %{ccp_link}.
-  96c3b987a5b5008df9b06d9d95092634: Your Priorities er öflug lýðræðisvefsíða hönnuð
-    af non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með
-    einni rödd.
   c428492f00d9e51ce05abf306d2ff59b: Fólk sendir inn hugmyndir og rökræða þær í einföldu
     en öflugu rökræðukerfi.
   2f64c030f4bec3e2c21e78506cc78f63: Efstu 25 hugmyndir á %{instance_name}
@@ -590,11 +590,23 @@ is:
   42e5fabfe88d4fbdc7f0c4e60d012b25: Betra Ísland getur hjálpað þinni borg / samfélagi
     / eða hópi sem vilja skipuleggja sig í kringum hugmyndir og tala með einni rödd.
     Hérna getur þú búið til þína eigin Betra Ísland vef.
+  878bd7316fd2cb186f1fbd611e54684b: Fela rökræðu
   26582fa147339efa1e6fc50cc9602f65: Þú getur notað karma stig til að kaupa kynningar
     efst á síðunni fyrir hugmyndir sem þú styður.
+  10ac3d04253ef7e1ddc73e6091c0cd55: Næst
+  views:
+    pagination:
+      next: Næst &rsaquo;
+  will_paginate:
+    next_label: Næst &#8594;
+    previous_label: '&#8592; Fyrri'
+  dd1f775e443ff3b9a89270713580a51b: Fyrri
   1b87a6c3fadc9180743cb5b660b76f2b: Af hverju Betra Ísland?
   353ff40317d8e32ff7f5b42f0b398ddf: Við unnum European e-Democracy Awards 2011 og
     mörg verðlaun á íslandi.
   07ce9b074bcd189d0b244dc7031283dd: Hvernig virkar Betra Ísland?
   48dade30fc1102998ceb7bab6fd0f78c: Verðlaunavefurinn %{br_link} notar sama frjálsa
     hugbúnað og Betra Ísland vefsíðan.
+  dcab30df167c93ffafaf59a49789cefa: Betra Ísland er öflug lýðræðisvefsíða hönnuð af
+    non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með einni
+    rödd.
