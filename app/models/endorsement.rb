@@ -215,7 +215,7 @@ class Endorsement < ActiveRecord::Base
   end
 
   def insert_lowest_at(position)
-    self.insert_at([user.endorsements.where(:sub_instance_id=>self.sub_instance_id).count,1].min)
+    self.insert_at([user.endorsements.where(:sub_instance_id=>self.sub_instance_id).count,4].min)
   end
   
   def insert_at_position(position)
