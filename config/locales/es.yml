@@ -211,7 +211,9 @@ es:
       full_messages:
         format: '%{attribute}%{message}'
   fbaedde498cdead4f2780217646e9ba1: A FAVOR
+  0323de4f66a1700e2173e9bcdce02715: Cerrar sesión
   0358ca3a25ad72c389989a3db811f233: '%{user_name} renombró %{idea_name}'
+  03368e3c1eb4d2a9048775874301b19f: Seleccionar categoría
   002d4fac39a17aaa96c1a79a1a710edb: Correo electrónico de ventas
   0038a9e512b4678c583db11009d2c297: Esta es la idea que crece más rápido
   003e636075eed8d70232cd54e12236db: Se ha creado tu %{instance_name}
@@ -238,8 +240,6 @@ es:
   02684cc6b6ea1811a064f475a5fd1d18: Autores
   02bb5de0c787154b2cfaea82d1cfc40d: Cancelar esta revisión
   02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} publicó un boletín'
-  0323de4f66a1700e2173e9bcdce02715: Cerrar sesión
-  03368e3c1eb4d2a9048775874301b19f: Seleccionar categoría
   03937134cedab9078be39a77ee3a48a0: Grupo
   04412bb51cddee4b889c1adbf558670a: Información sobre tu donación
   0557fa923dcee4d0f86b1409f5c2167f: Volver
