@@ -8,8 +8,8 @@
     - description = @idea.name
   %meta{:content => description, :property => "og:description"}/
   %meta{:content => "website", :property => "og:type"}/
-  - if false and @idea.category and @idea.category.icon
-    %meta{:content => @idea.category.icon.url, :property => "og:image"}/
+  - if @idea.category and @idea.category.icon and @idea.category.icon.exists?(:icon_200)
+    %meta{:content => @idea.category.icon.url(:icon_200), :property => "og:image"}/
   - else
     %meta{:content => "#{SubInstance.current.logo_url}", :property => "og:image"}/
   %meta{:content => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", :property => "og:url"}/
