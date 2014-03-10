@@ -502,7 +502,7 @@ class ApplicationController < ActionController::Base
   end
   
   def current_user_endorsements
-		@current_user_endorsements ||= current_user.endorsements.active.by_position.paginate(:include => :idea, :page => session[:endorsement_page], :per_page => 7)
+		@current_user_endorsements ||= current_user.endorsements.where(:sub_instance_id=>SubInstance.current.id).active.by_position.paginate(:include => :idea, :page => session[:endorsement_page], :per_page => 7)
   end
   
   def current_idea_ids
