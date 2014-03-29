@@ -775,7 +775,8 @@ class Idea < ActiveRecord::Base
 
   def flag_by_user(user)
     self.increment!(:flags_count)
-    for r in User.active.admins.where(:sub_instance_id=>user.sub_instance_id)
+    default_sub_instance_id = SubInstance.where(:short_name=>"default").first.id
+    for r in User.active.admins.where("sub_instance_id = ? OR sub_instance_id = ?",default_sub_instance_id,user.sub_instance_id)
       notifications << NotificationIdeaFlagged.new(:sender => user, :recipient => r)
     end
   end  
