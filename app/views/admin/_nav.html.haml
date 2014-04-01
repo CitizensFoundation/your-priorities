@@ -16,7 +16,7 @@
           = link_to tr("Colors", "view/admin/_nav"), color_schemes_url
       %li.tab6
         %span.tab_header
-          = link_to tr("Pages", "view/admin/_nav"), pages_url
+          = link_to tr("About pages", "view/admin/_nav"), pages_url
 - if ['picture','buddy_icon','fav_icon'].include?(params[:action])
   #nav_third
     %div{:id => "nav_third_<haml:silent> if ['picture'].include?(params[:action]) </haml:silent><haml:block>1</haml:block><haml:silent> elsif ['buddy_icon'].include?(params[:action]) </haml:silent><haml:block>2</haml:block><haml:silent> elsif ['fav_icon'].include?(params[:action]) </haml:silent><haml:block>3</haml:block>"}
