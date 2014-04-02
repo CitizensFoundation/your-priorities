@@ -177,6 +177,8 @@ When ready create the database tables and seed the database:
 ````bash
 rake db:schema:load
 rake db:seed
+
+This will create an admin user with the email admin@admin.is and password admin
 ````
 
 Start the server
