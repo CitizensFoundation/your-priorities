@@ -1,5 +1,7 @@
 # coding: utf-8
 
+require 'csv'
+
 def create_tags(row)
   tags = []
   tags << row[1]
@@ -60,6 +62,95 @@ CODE_TO_SHORTNAME = {"AE"=>"uae", "LY"=>"lybia", "VA"=>"vatican",
                      "PS"=>"ps", "GB"=>"uk", "SY"=>"syria", "RU"=>"russia",
                      "MD"=>"moldova", "LA"=>"lao" }
 namespace :utils do
+
+  desc "Destroy sub_instances from csv url"
+  task :destroy_sub_instances_from_csv_url => :environment do
+    from = SubInstance.where(:short_name=>ENV['SHORT_NAME_TO_CLONE']).first # barcombe-hamsey
+    csv = CSV.parse(open(ENV['CSV_URL_TO_CLONE_FROM'])) # https://s3.amazonaws.com/yrpri-direct-asset/lewes.csv
+    a_user = nil
+    csv.each_with_index do |site,i|
+      puts site
+      next if site[1]==ENV['SHORT_NAME_TO_CLONE']
+      s = SubInstance.where(:short_name=>site[1]).first
+      s.short_name = "#{rand(432432434)}"
+      s.save
+    end
+  end
+
+  desc "Clone from sub instance"
+  task :clone_from_sub_instance_to_csv_url => :environment do
+    require_dependency "app/models/activity.rb"
+    ActivityUserNew.new
+    from = SubInstance.where(:short_name=>ENV['SHORT_NAME_TO_CLONE']).first # barcombe-hamsey
+    csv = CSV.parse(open(ENV['CSV_URL_TO_CLONE_FROM'])) # https://s3.amazonaws.com/yrpri-direct-asset/lewes.csv
+    csv.each_with_index do |site,i|
+      a_user = nil
+      a_how_to_user_category = nil
+      puts site
+      next if site[1]==ENV['SHORT_NAME_TO_CLONE']
+      new_sub_instance = from.dup
+      new_sub_instance.name = site[0]
+      new_sub_instance.short_name = site[1]
+      new_sub_instance.logo = from.logo
+      new_sub_instance.ask_for_post_code = true
+      new_sub_instance.top_banner = from.top_banner
+      new_sub_instance.save
+      SubInstance.current = new_sub_instance
+      User.unscoped.where(:sub_instance_id=>from.id).each do |item|
+        new_item = item.dup
+        new_item.sub_instance_id = new_sub_instance.id
+        new_item.save(:validate=>false)
+        a_user = new_item if a_user == nil
+      end
+      Category.unscoped.where(:sub_instance_id=>from.id).each do |item|
+        new_item = item.dup
+        new_item.sub_instance_id = new_sub_instance.id
+        new_item.icon = item.icon
+        new_item.save(:validate=>false)
+        a_how_to_user_category = new_item if new_item.name=="How to use"
+      end
+      Page.unscoped.where(:sub_instance_id=>from.id).each do |item|
+        new_item = item.dup
+        new_item.sub_instance_id = new_sub_instance.id
+        new_item.content = new_item.content.gsub("http://zeroheroesbarcombehamsey.eventbrite.co.uk/",site[2])
+        new_item.save(:validate=>false)
+      end
+      Idea.unscoped.where(:sub_instance_id=>from.id).each do |item|
+        new_item = item.dup
+        new_item.sub_instance_id = new_sub_instance.id
+        new_item.user = a_user
+        new_item.category = a_how_to_user_category
+        new_item.save(:validate=>false)
+        Point.unscoped.where(:idea_id=>item.id, :sub_instance_id=>from.id).each do |point|
+          new_point = point.dup
+          new_point.sub_instance_id = new_sub_instance.id
+          new_point.idea_id = new_item.id
+          new_point.user = a_user
+          new_point.save(:validate=>false)
+          Revision.unscoped.where(:point_id=>point.id).each do |revision|
+            new_revision = revision.dup
+            new_revision.point_id = new_point.id
+            new_revision.user = a_user
+            new_revision.save(:validate=>false)
+            new_revision.recreate_author_sentences(new_point)
+          end
+        end
+      end
+      Endorsement.unscoped.where(:sub_instance_id=>from.id).each do |item|
+        new_item = item.dup
+        new_item.sub_instance_id = new_sub_instance.id
+        new_item.user = a_user
+        new_item.save(:validate=>false)
+      end
+      Activity.unscoped.where(:sub_instance_id=>from.id).each do |item|
+        new_item = item.dup
+        new_item.sub_instance_id = new_sub_instance.id
+        new_item.user = a_user
+        new_item.save(:validate=>false)
+      end
+    end
+  end
+
   desc "fix_endorsement_positions_for_better_iceland"
   task :fix_endorsement_positions_for_better_iceland => :environment do
     #Endorsement.all.each do |e| puts e.position end

@@ -33,6 +33,12 @@
               .label
                 = tr("Email address", "view/users/_form")
               = f.text_field :email, :size => 30
+            -if SubInstance.current.ask_for_post_code==true
+              %br
+              .field
+                .label
+                  = tr("Post code", "view/users/_form")
+                = f.text_field :post_code, :size => 10
             - unless session["omniauth_data"]
               %br
               .field
