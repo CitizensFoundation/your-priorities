@@ -84,6 +84,7 @@ namespace :utils do
     from = SubInstance.where(:short_name=>ENV['SHORT_NAME_TO_CLONE']).first # barcombe-hamsey
     csv = CSV.parse(open(ENV['CSV_URL_TO_CLONE_FROM'])) # https://s3.amazonaws.com/yrpri-direct-asset/lewes.csv
     csv.each_with_index do |site,i|
+      next if site.empty?
       a_user = nil
       a_how_to_user_category = nil
       puts site
@@ -98,6 +99,7 @@ namespace :utils do
       SubInstance.current = new_sub_instance
       User.unscoped.where(:sub_instance_id=>from.id).each do |item|
         new_item = item.dup
+        new_item.invitation_token = nil
         new_item.sub_instance_id = new_sub_instance.id
         new_item.save(:validate=>false)
         a_user = new_item if a_user == nil
@@ -113,6 +115,11 @@ namespace :utils do
         new_item = item.dup
         new_item.sub_instance_id = new_sub_instance.id
         new_item.content = new_item.content.gsub("http://zeroheroesbarcombehamsey.eventbrite.co.uk/",site[2])
+        puts new_item.content
+        new_item.content = new_item.content.gsub("Barcombe and Hamsey",new_sub_instance.name)
+        new_item.content = new_item.content.gsub("Barcombe Village Hall",site[3])
+        new_item.content = new_item.content.gsub("3rd of June",site[4])
+        puts new_item.content
         new_item.save(:validate=>false)
       end
       Idea.unscoped.where(:sub_instance_id=>from.id).each do |item|
