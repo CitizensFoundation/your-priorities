@@ -352,7 +352,11 @@ class User < ActiveRecord::Base
   end
   
   def new_user_signedup
-    ActivityUserNew.create(:user => self, :sub_instance => sub_instance)
+    begin
+      ActivityUserNew.create(:user => self, :sub_instance => sub_instance)
+    rescue
+      Rails.logger.error("Couldn't create ActivityUserNew")
+    end
   end
 
   def check_contacts
