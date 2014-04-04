@@ -79,7 +79,9 @@ namespace :utils do
 
   desc "Clone from sub instance"
   task :clone_from_sub_instance_to_csv_url => :environment do
-    require_dependency "app/models/activity.rb"
+    unless Rails.env.production?
+      require_dependency "app/models/activity.rb"
+    end
     ActivityUserNew.new
     from = SubInstance.where(:short_name=>ENV['SHORT_NAME_TO_CLONE']).first # barcombe-hamsey
     csv = CSV.parse(open(ENV['CSV_URL_TO_CLONE_FROM'])) # https://s3.amazonaws.com/yrpri-direct-asset/lewes.csv
