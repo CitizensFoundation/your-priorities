@@ -1,40 +1,137 @@
 ---
 sv-SE:
+  will_paginate:
+    previous_label: Föregående
+    next_label: Nästa
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Rapportera
+  c867451892e38db47a8cc5e7b02d5c54: som du stödjer
+  devise:
+    invitations:
+      new:
+        header: Skicka inbjudan
+      send_instructions: Ett invitationsbrev har skickats till %{email}
+      updated: Ditt lösenord har bekräftats. Du är nu inloggad.
+  views:
+    pagination:
+      next: Nästa
+  b38f1c5b8bdb6329e8a4b2e6e456da8b: Diskussioner på idéer du har skapat
+  b6e0b0c90cfbddfe767f137f8066d1df: Under behandling
+  cd267635c8a38e2acba076b0edeeedbe: Diskussioner i ditt nätverk
+  d5f0462c74e5c7bf041d992697b7e06b: detta hostname är redan taget
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Misslyckades
+  db7fcf41127935e5fee505fe102abf9a: Dina diskussioner
+  eed1d7e8237b8656aff7c66bb5999f96: Vad god ange ett namn att bli identifierad med
+    på sidan
+  f504eb1cc2305a863cc0cf23428a36f8: Kontroversiella
+  d533bc81d129968f57a188436d3575ac: '%{user_name} posted a bulletin to %{discussion_name}'
+  ee710d46f1e36118e1c4aea9cc51305e: Jag följer rikets lag
+  6c3b5928436080f8aba591af541dd5f0: Göra vårt bästa för att denn webbsida ska hållas
+    öppen och fullt funktionell.
+  777eecd062745916881aff23d68afd46: '%{user_name} postade en bulletin till %{other_user_name}-profil'
+  8070ff490b986cbbe5908dba6688b882: 'Vi lovar att:'
+  94386c683395a8c1a30a6f405a3a7116: Jag kommer endast använde en enda användaridentitet
+    på denn webbplats.
+  ac717bd14c68bc426139b20f01d941ea: '%{user_name} föreslog först %{idea_name}'
+  b357a942b0558db7d42891322b9bb729: Jag finns på den här webbplatsen
+  ccb170b7563ba9e94e021fabfef45771: Ändra dessa regler utan förvarning. Vi skickar
+    ett meddelande om sådana ändringar i e-post till den e-postadress som du har registrerat
+    hos oss.
+  f78be27a110705c1b183468d30077e53: '%{user_name} motsäger sig ej längre %{idea_name}'
+  fe5c45415c03bb476dc22b730aaf2590: '%{user_name} lämnade %{count} kommentarer i %{discussion_name}'
+  80df8e95c1fef941a4f600f0fd1b07c8: var god skriv mer än 12 tecken
+  833c90a077a2beda3b6cd000f3fe5c29: Slumpmässiga idéer
+  83c101ec84ebd1c0e45fa1cd5b9300d6: motsagd
+  8754f2b7cbd98752793ba8314bded062: Aktiva diskussioner
+  91504cddd78bd6a6826026c83f554958: Var god ange ditt instansnamn
+  9b9d8a976b42e0bd66381797644943d5: Publicerad
+  9ee2fe857acedeff0c24765e3d2a25f9: Var god ange ditt namn
+  9fd4dc340cdbdabdd25908817052b915: Dina poäng
+  a00624d47e8dca3b06b23cdcd386cd62: '%{sender_name} postade ett inlägg i din profil'
+  ab70cd88a40e7c3247bfce039ad0045d: vad god skriv mer än 5 tecken
+  activerecord:
+    errors:
+      messages:
+        accepted: måste vara accepterad
+        blank: måste anges
+        confirmation: stämmer inte överens
+        empty: får ej vara tom
+        exclusion: är reserverat
+        greater_than: måste vara större än %{count}
+        greater_than_or_equal_to: måste vara större än eller lika med %{count}
+        inclusion: finns inte i listan
+        invalid: är ogiltigt
+        less_than: måste vara mindre än %{count}
+        less_than_or_equal_to: måste vara mindre än eller lika med %{count}
+        not_an_integer: måste vara ett heltal
+        not_a_number: är inte ett nummer
+        odd: måste vara udda
+        even: måste vara jämnt
+        record_invalid: 'Fel vid validering: %{errors}'
+        taken: redan upptagen
+        too_long: är för lång (maximum är %{count} tecken)
+        too_short: är för kort (minimum är %{count} tecken)
+        wrong_length: har fel längd (ska vara %{count} tecken)
+      full_messages:
+        format: '%{attribute} %{message}'
+      template:
+        body: 'Det uppstod problem i följande fält:'
+        header:
+          one: Ett fel förhindrade denna %{model} från att sparas
+          other: '%{count} fel förhindrade denna %{model} från att sparas'
+  b05d72142020283dc6812fd3a9bc691c: Jag har glömt mitt lösenord
+  019ec3132cdf8ee0f2e2a75cf5d3e459: Kön
+  a4b522102353672b9f0d5582e8386348: den information jag angettt om mej själv är korrekt
+    och jag kan mottaga och läsa email på den adress jag angivit
+  d64518ec4a60ae31b2b5e4074646cca1: Våra regelr
+  d9d222130429eb44be0faae283593dd6: Genom att ansluta till  %{instance_name} website
+    förbinder jag mej
+  5e45d0479ee365f79d004b2f4ecb1f27: lade till  %{point_name} till %{idea_name}
+  64e73aa014f92f7f5d7ca38c24cbf801: Tjänade %{capital}%{currency_short_name} eftersom
+    motståndare fann %{point_name} användbart
+  747705a1c07ec5d7613502a7d50bf49a: '%{user_name} reviderade %{point_name}'
+  a5653af764bc1619a170fcb6c315416a: Ta bort från denna sida?
+  0038a9e512b4678c583db11009d2c297: Stödet för denna idé ökar snabbast
+  02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} gjorde ett inlägg'
+  041092eb300332772e2d58af61c2865e: '%{user_name} röstade fram %{new_idea_name} istället
+    för %{idea_name}'
+  223fbee99dc0f256d7988381ed7606ec: '%{user_name}inte längre motsätter sig'
+  3ab13a4bbf0c41dbd5cf711643576730: '%{user_name} röstade ned %{idea_name}'
+  5a9d18bb87ff12835dc844883c5c3ebe: ändringar
+  5b85b9431a2d9b8db993be62ce6ddaf6: Svara på alla brott mot dessa regler eller lokala
+    lagar, på varje nödvändigt sätt, bland annat genom att ta bort innehåll och rapportera
+    till myndigheter.
+  6231033110be3e0b22eeda6b6b336835: Jag kommer inte använde denna webbplats för att
+    mobba eller hota andra på denna webbplats - ej heller publicera vilseledande eller
+    skadligt innehåll.
+  68400031f36198737f197bb1bfc74bef: Avlägsna den här medlemmen
+  00f399f02ac662457af2fa6ce23adbdb: '%{user_name} förlorade %{capital}%{currency_short_name}
+    eftersom både stöd och motstånd finns %{point_name} onyttigt'
+  0358ca3a25ad72c389989a3db811f233: '%{user_name} döpte om %{idea_name}'
+  03fa96387303a39d8a63c153bac26958: 'Vi förbehåller oss rättren att:'
+  040cd458fd2ae990e1f054b26909bd7a: Intjänade %{count}%{currency_short_name} eftersom  %{count}
+    folk slutate ignorera
+  06e18bc07609ddece734be24aeef226a: '%{user_name} röstade upp  %{position}'
+  070625ecbc8bd373ccfb31867274eb97: Instruktioner för omställning av lösenord till
+    %{instance_name}
+  07221d868183bab87e41f0ec47440880: Diskussioner om dina idéer
+  0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} kommenterade på %{comment_name}'
+  0c082c9ad303a70be82598499aaa1f6e: '%{user_name} reviderade %{idea_name}'
+  1a13f1069e52ca6118df8501f7a7c755: '%{user_name} la till %{point_name} till %{idea_name}'
+  1cab6f0a48459aaac4e3116773de5781: Jag komer inte att annonsera eller spamma användare
+    på den här webbplatsen
+  22af645d1859cb5ca6da0c484f1f37ea: ny
+  2d180c2da693f88fe77a780e31bc07a2: Nya poäng
+  2d31841ff75aeb20f2c6d4d96411129f: Jag tar ansvar helt och hållet för ineehålla jag
+    skapar och för att andra inte använder mitt konto
+  30ae8fff8898dc197acd49d9c0797d20: Lyckades
+  37fc5aed92a40b16dafd17cee72e3154: Toppidéer
+  388e31e2da00cdad1159f0fecb186fff: Vi kommer inte att avslöja uppgifter om användare
+    vilka inte är helt publika annat än genom domstolsutslag.
+  42bd4c0819c498d1c1ab622de74d6f82: understödd
+  43e00d10903ec90c9f2c523a901df552: '%{user_name} tjänade %{capital}%{currency_short_name}
+    eftersom både stöd och motstånd finns %{point_name} nyttigt'
+  4607ccb71469675944516398e717479c: Var god acceptera termer och villkor
   date:
-    formats:
-      default: '%Y-%m-%d'
-      short: '%e %b'
-      long: '%e %B %Y'
-    day_names:
-    - söndag
-    - måndag
-    - tisdag
-    - onsdag
-    - torsdag
-    - fredag
-    - lördag
-    abbr_day_names:
-    - sön
-    - mån
-    - tis
-    - ons
-    - tor
-    - fre
-    - lör
-    month_names:
-    - 
-    - januari
-    - februari
-    - mars
-    - april
-    - maj
-    - juni
-    - juli
-    - augusti
-    - september
-    - oktober
-    - november
-    - december
     abbr_month_names:
     - 
     - jan
@@ -49,90 +146,133 @@ sv-SE:
     - okt
     - nov
     - dec
+    month_names:
+    - 
+    - januari
+    - februari
+    - mars
+    - april
+    - maj
+    - juni
+    - juli
+    - augusti
+    - september
+    - oktober
+    - november
+    - december
     order:
     - :day
     - :month
     - :year
-  time:
+    abbr_day_names:
+    - sön
+    - mån
+    - tis
+    - ons
+    - tor
+    - fre
+    - lör
+    day_names:
+    - söndag
+    - måndag
+    - tisdag
+    - onsdag
+    - torsdag
+    - fredag
+    - lördag
     formats:
-      default: '%a, %e %b %Y %H:%M:%S %z'
-      short: '%e %b %H:%M'
-      long: '%e %B %Y %H:%M'
-  support:
-    select:
-      prompt: Välj
-    array:
-      words_connector: ', '
-      two_words_connector: ' och '
-      last_word_connector: ' och '
+      default: '%Y-%m-%d'
+      long: '%e %B %Y'
+      short: '%e %b'
+  datetime:
+    distance_in_words:
+      half_a_minute: en halv minut
+      about_x_hours:
+        one: ungefär en timme
+        other: ungefär %{count} timmar
+      about_x_months:
+        one: ungefär en månad
+        other: ungefär %{count} månader
+      about_x_years:
+        one: ungefär ett år
+        other: ungefär %{count} år
+      almost_x_years:
+        one: nästan ett år
+        other: nästan %{count} år
+      less_than_x_minutes:
+        one: mindre än en minut
+        other: mindre än %{count} minuter
+      less_than_x_seconds:
+        one: mindre än en sekund
+        other: mindre än %{count} sekunder
+      over_x_years:
+        one: mer än ett år
+        other: mer än %{count} år
+      x_days:
+        one: en dag
+        other: '%{count} dagar'
+      x_minutes:
+        one: en minut
+        other: '%{count} minuter'
+      x_months:
+        one: en månad
+        other: '%{count} månader'
+      x_seconds:
+        one: en sekund
+        other: '%{count} sekunder'
+    prompts:
+      day: Dag
+      hour: Timme
+      minute: Minut
+      month: Månad
+      second: Sekund
+      year: År
   errors:
     format: '%{attribute} %{message}'
     messages:
-      inclusion: finns inte i listan
-      exclusion: är reserverat
-      invalid: är ogiltigt
-      confirmation: stämmer inte överens
-      accepted: måste vara accepterad
-      empty: får ej vara tom
+      accepted: måste godkännas
       blank: måste anges
+      confirmation: överensstämmer inte
+      empty: får ej vara tom
+      even: måste vara jämnt
+      exclusion: är reserverat
+      greater_than: måste vara större än %{count}
+      greater_than_or_equal_to: måste vara större än eller lika med %{count}
+      inclusion: finns inte i listan
+      invalid: är ogiltigt
+      less_than: måste vara mindre än %{count}
+      less_than_or_equal_to: måste vara mindre än eller lika med %{count}
+      not_an_integer: måste vara ett heltal
+      not_a_number: är inte ett nummer
+      odd: måste vara udda
+      record_invalid: 'Ett fel uppstod: %{errors}'
+      taken: har redan tagits
       too_long: är för lång (maximum är %{count} tecken)
       too_short: är för kort (minimum är %{count} tecken)
       wrong_length: har fel längd (ska vara %{count} tecken)
-      not_a_number: är inte ett nummer
-      not_an_integer: måste vara ett heltal
-      greater_than: måste vara större än %{count}
-      greater_than_or_equal_to: måste vara större än eller lika med %{count}
-      less_than: måste vara mindre än %{count}
-      less_than_or_equal_to: måste vara mindre än eller lika med %{count}
-      odd: måste vara udda
-      even: måste vara jämnt
-      record_invalid: 'Ett fel uppstod: %{errors}'
-      taken: har redan tagits
-  activerecord:
-    errors:
-      messages:
-        taken: har redan tagits
-        record_invalid: 'Ett fel uppstod: %{errors}'
-        accepted: måste vara accepterad
-        blank: måste anges
-        confirmation: stämmer inte överens
-        empty: får ej vara tom
-        even: måste vara jämnt
-        exclusion: är reserverat
-        greater_than: måste vara större än %{count}
-        greater_than_or_equal_to: måste vara större än eller lika med %{count}
-        inclusion: finns inte i listan
-        invalid: är ogiltigt
-        less_than: måste vara mindre än %{count}
-        less_than_or_equal_to: måste vara mindre än eller lika med %{count}
-        not_a_number: är inte ett nummer
-        not_an_integer: måste vara ett heltal
-        odd: måste vara udda
-        too_long: är för lång (maximum är %{count} tecken)
-        too_short: är för kort (minimum är %{count} tecken)
-        wrong_length: har fel längd (ska vara %{count} tecken)
-      template:
-        body: 'Det var problem med följande fält:'
-        header:
-          one: Ett fel förhindrade denna %{model} från att sparas
-          other: '%{count} fel förhindrade denna %{model} från att sparas'
-      full_messages:
-        format: '%{attribute} %{message}'
   number:
-    format:
-      separator: ','
-      precision: 2
-      significant: false
-      strip_insignificant_zeros: false
     currency:
       format:
-        format: '%n %u'
-        unit: kr
-        separator: ','
         precision: 2
+        separator: ','
         significant: false
         strip_insignificant_zeros: false
+        unit: kr
+        format: '%n %u'
+    format:
+      precision: 2
+      separator: ','
+      significant: false
+      strip_insignificant_zeros: false
     human:
+      decimal_units:
+        format: '%n %u'
+        units:
+          billion: Miljard
+          million: Miljon
+          quadrillion: Biljard
+          thousand: Tusen
+          trillion: Biljon
       format:
         precision: 1
         significant: false
@@ -143,65 +283,306 @@ sv-SE:
           byte:
             one: Byte
             other: Bytes
+          gb: GB
           kb: KB
           mb: MB
-          gb: GB
           tb: TB
-      decimal_units:
-        format: '%n %u'
-        units:
-          thousand: Tusen
-          million: Miljon
-          billion: Miljard
-          trillion: Biljon
-          quadrillion: Biljard
-  datetime:
-    distance_in_words:
-      half_a_minute: en halv minut
-      less_than_x_seconds:
-        one: mindre än en sekund
-        other: mindre än %{count} sekunder
-      x_seconds:
-        one: en sekund
-        other: '%{count} sekunder'
-      less_than_x_minutes:
-        one: mindre än en minut
-        other: mindre än %{count} minuter
-      x_minutes:
-        one: en minut
-        other: '%{count} minuter'
-      about_x_hours:
-        one: ungefär en timme
-        other: ungefär %{count} timmar
-      x_days:
-        one: en dag
-        other: '%{count} dagar'
-      about_x_months:
-        one: ungefär en månad
-        other: ungefär %{count} månader
-      x_months:
-        one: en månad
-        other: '%{count} månader'
-      about_x_years:
-        one: ungefär ett år
-        other: ungefär %{count} år
-      over_x_years:
-        one: mer än ett år
-        other: mer än %{count} år
-      almost_x_years:
-        one: nästan ett år
-        other: nästan %{count} år
-    prompts:
-      year: År
-      month: Månad
-      day: Dag
-      hour: Timme
-      minute: Minut
-      second: Sekund
+  support:
+    select:
+      prompt: Välj
+    array:
+      words_connector: ', '
+      two_words_connector: ' och '
+      last_word_connector: ' och '
   helpers:
     select:
       prompt: Välj
     submit:
       create: Skapa %{model}
-      update: Ändra %{model}
       submit: Spara %{model}
+      update: Ändra %{model}
+  4bb709d8718626d39a5dbf2e2589528e: Jag kommer informera administratörerna om jag
+    finner innhåll som bryter mot dessa regler, genom att klicka på meddelandeikonen.
+  4d0a3fc4c46501d3b4d2257820942a5e: Logga in med %{provider}
+  4fb7286b0fe19a6cf2569e4115e88baa: var god skriv mer än 10 tecken
+  time:
+    formats:
+      default: '%a, %e %b %Y %H:%M:%S %z'
+      long: '%e %B %Y %H:%M'
+      short: '%e %b %H:%M'
+  11ee56b3d9c99494994e5e0e4b6ae733: Har sitt ursprung i
+  75dd5f1160a3f02b6fae89c54361a1b3: poäng
+  6d0a578ca2f2c0e792fc923002fccbe3: sedan
+  c29196003ef3c4f020130aab1c63d4ea: '%{count} poäng'
+  c3829f98b9d811ef102006ff00a83881: '%{count} revideringar'
+  016e3b623e81108aac0844988d799eff: 'Revideringar: %{sentence}'
+  c474f356721291083cc2be1ef39cf658: '%{count} ny(a) kommentar(er)'
+  13b5bfe96f3e2fe411c9f66f4a582adf: i
+  8bf8854bebe108183caeb845c7676ae4: ur
+  ae7950ddfcef416ea6840228d63eba13: inga nya poäng
+  0d80cee327875c3740c7ad5ebba57be1: Din mailmeddelanden
+  fd43e901068a7802f554bf77ac25c8f2: Asluta ditt %{instance_name} konto
+  de06be0bc4bfdf2cf0c58e9b6c2d9db9: '%{idea_name} är %{user_name} ny #1 idé'
+  0c0d218418852e444a95f10f2fbe3060: '%{user_name} tjänade %{count}%{currency_short_name}
+    för %{count} nya följare'
+  01374d70036cb0b48058e7e031eeb680: Du måste logg in för att kom åt denna privata
+    webbplats
+  ab1e45da9c565570d4986f268329f2d1: Senaste aktivitet för poäng vid %{instance_name}
+  ac876a06a03e14d880f4cd06058a34ae: Top-flöde på %{sub_instance_name}
+  01a2f2a00851bab435bced7b0454dce2: Vad gör du vid  %{sub_instance_name}?
+  cd8251fee54cfb894119ab71fcedde37: Diskussioner om  %{sub_instance_name}
+  400677bf70243014f360f3be283982e9: Nyckelaktiviteter
+  6fa73f77103f4bbddb6129bd0bb18de8: Alla diskussioner
+  b10e67ce0ade1bd465bedfbd005bbb9c: Diskussioner om idéer du stödjer
+  709468af25e91284821d1bdbfdded24c: Allting
+  16d39f7e2b0ed1ee441421cc0f86a724: Den punkten är borttagen
+  1945e5ccc0bd89812560b30f7c48639d: Din meddelanden
+  f6d4f577a7d6400fee113c788852a50a: Ytterligare nödvändig information
+  047fe665bd2cea51e221d371d1e4c698: Ändra inställningar för  %{user_name}
+  69711d42de93b7a39c12910b4ed48a54: '%{user_name} diskussioner om %{instance_name}'
+  e945975666947d8744dbdb80d2e5a750: '%{user_name} punkter om %{instance_name}'
+  0c7e91060e8afe22fb824e15473d9089: Återsände email för kontroll till %{email}
+  1d10d0c01b3469bcb594ade393639ed0: Den användaren her avslutat sitt konto
+  af1b98adf7f686b84cd0b443e022b7a0: Kategorier
+  04bc5390fd93d76fb2471f2f3a432ed5: Dina färdiga %{tag_name} idéer
+  e11d937a5185a2361123ad5222df5f5f: Slumpmässiga %{tag_name} idéer
+  ae43f4cff7204d28b83fe67710e9377d: Diskussioner på %{tag_name}
+  0f471a2597c99d0f4c81db859b0205f3: Idéer du har skapat vid %{sub_instance_name}
+  3687b1daa635064075afa2b6417880d0: Topp lästa
+  2bd2b8e30995d2dfe1f43a4ea30fc3fc: Mest diskuterade
+  8de16e7a08998e0e60d27d6b4d441379: Topp idéer de senaste 24 timmarna
+  6c60eec8c5809428787d3d817d389404: Topp idéer de senaste 30 dagarna
+  04742c1a5a675be0659d83d65cb79661: Idéer stigande i rankingen
+  233b006364b1fcfc3b6e2928a20e1545: Idéer fallande i rankingen
+  e42d894b926c4833956b61471df18351: Mest kontroversiella idéer
+  0574c44ee9d51a85091b24119d5c2f69: Nyaste idéer
+  dfeb460fa23011a1f3b327fa61abf8be: Poäng stöttande %{idea_name}
+  35408f2e9ccf595f1765bd8e56a2f571: Bästa poäng på %{idea_name}
+  a2d5e7a9d03b49d0639ab0a75a59d2c2: Topppoäng
+  c772367d0682d61254cebb1dcfd44c93: Diskussioner på %{idea_name}
+  49c413c7e9fbe1aee3281a29d2d0dd9c: Senaste kommentarer på %{idea_name}
+  dee5db0dd869d6d2c03539fab2c874ad: Ny idé vid %{sub_instance_name}
+  fc2e12b5aff1b388bc309a96bccb3f9b: Tack för att du lagt till %{idea_name}
+  53127d8c496db03d848a289010087409: Topp röstade
+  64663f4646781c9c0110838b905daa23: Slumpmässig
+  e02decaebace93b27ce239a671e77453: Dina
+  d984e98c3eceb8bc31b8ca398758f248: Senaste reviserade poäng
+  8df9c04d95e71c0bb899ac7a5af8cdfb: Lägg till en poäng till %{idea_name}
+  79281fb7fd5e0cbea9ca524b779e89ff: Tack för att du lagt till din poäng
+  0077d575bfc52d2176b427189982b6a6: Sparade %{point_name}
+  621df26b895998b50fdad2c763f695e3: Diskussioner på %{point_name}
+  59d7434481f250db2c48858375499a31: Nyaste Poäng
+  2ed154e6cbb75329947fe1929b784059: Dina idéers poäng
+  7454f8acc4b83d16a1bdf39b70f25be2: Mest pratsamt vid %{sub_instance_name}
+  e17fdb615452f440c793b5ddad90dd5e: Varningar
+  dbb6f26a0ccb75b82d641ff87b627ce3: Nya medlemmar
+  86e570b9bac3edce3c2cdcdf17b8cab0: Köp en annons för  %{idea_name}
+  7dce122004969d56ae2e0245cb754d35: Redigera
+  00b177e080ff1c3d340997fb01c3951c: Godkänn inbjudan
+  2512081b92507a3e87cdb8ba7cd6c6b7: '#1 idé'
+  d4dccb8ca2dac4e53c01bd9954755332: Spara inställningar
+  a0d7e042ee84ad945d55f3862369255f: Ladda upp och spara din bild
+  0863f095cbdbbe6ce5a8aac979766a83: Max längd på idénamn
+  003e636075eed8d70232cd54e12236db: Ditt %{instance_name} skapas
+  0e7a1834a7b4fba66d0f329cfab14cbb: Senast besökt %{time_ago}
+  5e038f03415db5461c13d380469436cb: kreditkortsnummer
+  03937134cedab9078be39a77ee3a48a0: Grupp
+  18ef3f4348075aca1646941639d610dd: Idé %{position}
+  52f4e192179a8449b77cc149541a5ba0: Inga indéer här ännu
+  dd1f775e443ff3b9a89270713580a51b: Föregående
+  db5ca4cc88a9c0db11b47157edb70dd0: 'Nästa:'
+  1b92838e756182fda710cfd58819f671: Poäng för
+  ff0cfd359a1d96d597133a4341a6a7e4: Skicka en nyu idé
+  201e7310f5fb28133f781fc856003d92: Idétitel
+  03368e3c1eb4d2a9048775874301b19f: Välj kategori
+  7dd982d0948637b4ae83f2804bd489ca: Varför ska folk stödja din idé?
+  668deb1091498fc9353f5d297fd55877: tecken kvar
+  b5a7adde1af5c87d7fd797b6245c2a39: Beskrivning
+  062bad04a7e077f61b7dcb0ef85dbef9: Detta visar ändringar sedan föregående revidering.
+    Du kan även <a href='%{clean_url}'>se den rean versionen</a>
+  002d4fac39a17aaa96c1a79a1a710edb: Försäljning email
+  034cb9b595f45003845f5ebed51a0a39: Twitters Konsumenthemlighet
+  021da1b20f73dc252361a54d80497ef3: Ranka
+  f4ec5f57bd4d31b803312d873be40da9: Ändra
+  0ef9a6968cfe92f7bde817483fb5d0cf: Motsatt
+  0f9b5eff8d1d07e6ce3a8fe2697a76f7: Gick med %{time_ago}
+  16765596b57782e7012aee0ac86ff5ff: '%{count} godkännanden'
+  da08b4d4be989f5276a7aab9899ab34c: '%{count} invändningar'
+  2e6c2d96aaacc8ef06d0ea12237cfc2e: All fält krävs
+  d7241b155164fdbc560602f924393149: Skicka in din idé och punkt
+  586f9d3669a73e12a8caed7a7d76288e: Skriv en bra och beskrivande titel för din idé
+  cdd559fd8bda4b2bdf1cdbca181b38b9: Förklara din idé i ett par stycken och försök
+    att fånga andemeningen tydligt.
+  e254a34f3a1001f00adc55aba5552783: 'Topp:'
+  64fe1149739a897a97c1f697ce23b063: 'Motsägelsefull:'
+  fbaedde498cdead4f2780217646e9ba1: UPP
+  c4e0e4e3118472beeb2ae75827450f1f: NED
+  8b5ba9ef245ba14a9d4871dbcd6a4f6f: Rösta mot detta
+  c17180d53c6d6ee18c3240d01ed62131: Rösta för detta
+  cde1d24d4d3427be7222dbe6a518f6da: Inga poäng ännu
+  a22a31345901fab0939eb50823c23b88: Färdig status
+  a0bc24991a11d8e4dcf00ba0c337f932: Nytt rapportdatum
+  1809e18e24e352c936a7bed29fe56398: Nytt rapportsubjekt
+  aa750dc0f9ceebb3ce86571be0dc6460: Nytt rapportmeddelande
+  f5359d1dd07def542aa9b0577fb27068: Uppdatera status
+  3b878279a04dc47d60932cb294d96259: Översikt
+  f7c27fe5419c0751885d8a0cc6f0e75a: Debatt (%{count})
+  cbc00c310ea3af7dc35edceb12f5601f: Lägg till punkt
+  e1e583ed208b1fbecec8b65dc272a098: Är denna idé från %{user_name} ett personligt
+    angrepp eller ett brott mot reglerna?
+  b4c1d65b09a6dd0d154f9680cda00843: Diskussioner (%{count})
+  00d9e5c459f14c32aa6d6d1bb7cde76d: Revisideringar (%{count})
+  26035f5354afb729c61d704ecbd14053: Nya revideringar
+  a80425472d94ae02c836da5b6f205b7b: Feed
+  8e1a7d9287a48440106ef0181c5a0181: Köp en annons
+  f2a6c498fb90ee345d997f888fce3b18: Ta bort
+  a604e73131bb1a34283a5ebcd349def4: godkändes
+  665255de10a45ae3e1c0e81b515b55ca: '%{count} diskussioner'
+  453aceb005ceaf54a47da15fee8b2a26: Sidor
+  0b39c5aca15b84b1ad53a94d6b3feb78: Byt lösenord
+  198584454b0ce1101ff5b50323325aa8: Din emailadress
+  40a2e1017d03e4ce611e8e59ffd188b4: Välj en plan...Nu
+  083f66b6e0c1c0e39ea7803620d7dd9f: Byt plan
+  d6cb6dc595d9a3a6c3e2db949a04be06: Kontakta oss på <a href='mailto:%{email}'>%{email2}</a>
+  90470f17c0c5b3cb0c3d2581e14aff20: Skap ditt eget %{instance_name} (Det går fort...)
+  3f0d611a1c160e3ffbfd172a9e163a18: '%{error_count} fel har stoppat kontot från att
+    sparas:'
+  6ae7034c0535498660d77f0201b17841: '%{error_count} fel har stoppat detta konto från
+    att sparas:'
+  0af762d3701c852a5371fa4ad393f9fa: Namnge ditt %{instance_name}
+  27340dcd104975a8f470cf8956e9496a: Din URL
+  13e7cd666950f7873a5e431fce97b916: 'Exempel: https://'
+  d280d15220c6ba22dfa7cd8a5139ea67: Nästa ... Dina personuppgifter
+  f11b368cddfe37c47af9b9d91c6ba4f0: Fullständigt namn
+  ce8ae9da5b7cd6c3df2929543a9af92d: Email
+  dc647eb65e6711e155375218212b3964: Lösenord
+  f0ec3db5bcd8943d68ac34fdc4b57d73: Det sista steget ...
+  3abbd962f6751baf05a19c4ebbc8d0e7: Jag godkänner
+  fc0d25fc5ca93bbd8def3aaf54f58f05: Är denna kommentar från %{user_name} en personlig
+    attack eller annat brott mot reglerna?
+  099af53f601532dbd31e0ea99ffdeb64: ta bort
+  8324d056b6c576dc840f4ca7231746a5: Skicka kommentar
+  7b8f95b017fbb7f217c95590de6d20ef: '%{count} fler diskussion i %{idea_name}'
+  9f0bd6e1402d9febebd0903b7d7cd6d5: Användares kommentarer
+  2682beed28fc3d3709619dbf2a469dbb: Ladda upp din bild
+  a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} idéer'
+  52d2acef5f9e5e2d6a06c4958f774419: Inga sökresultat
+  b1c94ca2fbc3e78fc30069c8d0f01680: Alla
+  498f79c4c5bbde77f1bceb6c86fd0f6d: Visa
+  2a3cd5946cfd317eb99c3d32e35e2d4c: Poäng
+  0be8406951cdfda82f00f79328cf4efc: Kommentar
+  13348442cc6a27032d2b4aa28b75a5d3: Sök
+  e576c23d915755d83e2d1f47bd9f6c22: Inga resultat funna
+  ed3792969d8e38130c6651dd447509c5: Starta en diskussion
+  c44fb24da70dbf47aa6823cffeaecfa4: Ny diskussionstråd
+  c1a5298f939e87e8f962a5edfc206918: Hej
+  a5998dfe5002eeab05de3cbcc98f9544: Detta är ett automatiskt epost from %{instance_name}
+  fafdcbfb83d39b7e0543fd0af58a35ac: skickat till
+  3b8a41916178a014a106fe26299e077e: Om du inte vill få denna sortens av email redigera
+    dina epostinställningar här
+  73695444fc4f18d308697c3da5c882d5: Detta är en inbjudan från %{sender_name} att gå
+    med i %{instance_name}.
+  1c3a03e7bf74d0ee69de0311447bb613: Idén %{idea_name}, som du stödjer, är i %{position}.
+    plats i %{category} kategorin.
+  69b7444b775a4eb4dc51a38619dabd0a: Idén %{idea_name}, som du motsätter dig, är i
+    %{position}. plats i %{category} kategorin.
+  e3b9285916bcd1b9724349049521ac90: kommenterade på
+  18c3c2ec475e379bd894cdedb9e0e03f: Du kan se eller stoppa följande diskussioner här
+  697184ece37c024d3319f16f3e98c597: Klicka för att acceptera inbjudan
+  b6d4223e60986fa4c9af77ee5f7149c5: Logga in
+  80919be0413cba91ea1c240ca12ee13a: Registrera dig
+  cce99c598cfdb9773ab041d54c3d973a: Profil
+  a274f4d4670213a9045ce258c6c56b80: Notifikation
+  3b6c2b4caaf4f14f8d7feeddc4ac3f4d: Användarvillkor
+  fa2ead697d9998cbc65c81384e6533d5: Integritetspolicy
+  2abdcbddfc76fe670e6fcff16cb0a7d1: SKAPA %{instance_name}
+  7ccf75fa7498152efe4e152833455c67: Inloggningsnamn
+  5f2b9345f9bbd74079b99d6fcf461408: Skapad på
+  9f9d26ab95c28a22b705d2f6d5ad8665: inbjuden till
+  e3afed0047b08059d0fada10f400c1e5: Admin
+  06df33001c1d7187fdd81ea1f5b277aa: Åtgärder
+  8ac6e46f207f4d2a928523d417663553: Välkommen till ditt %{instance_name} . Var vänlig
+    lägg till din första idé
+  f21c0d5d1b8f1db623e35830665eb644: Skyddstillsyn
+  5fe6005bf6e415c950c011fb65f12b8f: Borttagen
+  f1e2a549f8a0a20b572b176455dba9b9: LÄGG IN DIN IDÉ
+  20db0bfeecd8fe60533206a2b5e9891a: Tilltalsnamn
+  20b86b18475850202a63d9550071b782: (Delas aldrig utan ditt medgivande)
+  cc83a5678878f2fb8d453b555c037920: Hur ska du få identifieras på sajten?
+  d755860b6f0e4bd38d789657bfe7be0a: (Can be your name,or a pseudonym)
+  0e0d3399b98988388e08df7e3b8e8d49: När en idé revideras
+  1bd14216408d94261ca743907c692bb1: För administratörer
+  9b5016f406a56aa10fdc5384de2696b8: Spara e-postinställningar
+  06591670b8600f71493c779ff6c5e331: '%{position} mest inflytelserika'
+  e31e799048673ff7f3699d5b5ddc9fa1: Gick med %{time_ago}.
+  70d41baa21f0fef4a54de863cd259ace: Logga in med island.is
+  780f17237b2f99a557c2490dfa9a30a4: Logga in med Gmail
+  fbb1f9c2120e361e0e7b520936d57f86: Lade till %{point_name} till denna idé
+  c826ca2348d9fdb979b6d49b2eea00e1: Finner inte längre %{point_name} användbar
+  5b2b53624bb2f80eb21d312c88655ef3: Postat en bulletin till %{discussion_name}
+  32938671fad54d324521ce91454ea958: Röstat för %{idea_name} om idé %{position}
+  493443f74e1d01d5f290368b68b22007: '%{user_name} föreslog denna idé först'
+  a534ed26c1d745e8e15e33c1dad34773: Tillagda synpunkter %{time_ago}
+  fb00406d232c6c2e02cdd9560bd27b68: 'Stödjande synpunkter %{idea_name}:'
+  9332fc437c329ab4057b2121ba0360ed: 'Synpunkter emot:'
+  c3360ad168bc6d19f6d2f11088785784: 'Synpunkter för:'
+  c6a00f137b92ad22c007677fb2113a9f: Bjud in
+  b357b524e740bc85b9790a0712d84a30: Emailadress
+  15c9367c3506280cfaf98cb065799bf4: Regelbundna uppdateringar av dina idéer
+  6c25e6a6da95b3d583c6ec4c3f82ed4d: Varje vecka
+  9030e39f00132d583da4122532e509e9: Varje månad
+  6e7b34fa59e1bd229b207892956dc41c: Aldrig
+  bbf72fb222c775537e056152bf086bac: Kommentarer till dina diskussioner
+  ade7300e26de3e48a42cc01a4c4d74fa: Revidering av dina synpunkter
+  281bdea3a5c8ccd3932a66f493952011: När någon följer dig eller någon av dina kontakter
+    går med
+  65e1f75e1c318e9d7a0c4690e4841fd3: När status för en idé ändras
+  f1527dd1b427ae2c86da111329190087: När en idé revideras
+  2d8b22cca4d0f75b672127d908b747f7: Uppdatera E-postmeddelanden
+  939d09ea0c18215ca9032ef913d82567: Nya idéer
+  e2f69ba325c4f8bdc393ffd3cb848a51: Slumpmässiga idéer
+  9977ab924c89e6c98b1cf1595354ada3: Senase aktivitet
+  77c8b9f38491385d59ddc33d29e751fe: 'Källa:'
+  7fbd71fc25b275b7d095a29c72b1a821: Förklara din synpunkt
+  fa17217f817aabfc79196a3adc390442: Inkludera länk till webbplatskälla
+  8a357512436318208aca51f2db5ebf75: Spara synpunkt
+  02bb5de0c787154b2cfaea82d1cfc40d: Avskaffa denna revidering
+  0cc54e3d557f73d2891235a265b06341: Senaste aktivitet på denna punkt
+  1747df8919f292530bf55fe439bf159a: '%{count} varning'
+  0323de4f66a1700e2173e9bcdce02715: Logga ut
+  254f642527b45bc260048e30704edb39: Konfiguration
+  7c326855728927b06f5b11e92cefdae8: Hjälp oss att förbättra och utge fler översättningar
+    tack
+  3a401dd966161f64fd3b8d1c06292f18: Översättningsverktyg
+  8f7f4c1ce7a4f933663d10543562b096: Om
+  8cf04a9734132302f96da8e113e80ce5: Home
+  d46ef9e7211d041671cdbe6c3d884884: Idéer
+  a39abc0cae4f06f92f6ee2e5601dbf7f: Admin inställningar
+  24f62b680c4564b50f1d44416d5b6a46: Prenumeration
+  f9aae5fda8d810a29f12d1e61b4ab25f: Användare
+  c33e404a441c6ba9648f88af3c68a1ca: Statistik
+  2f64c030f4bec3e2c21e78506cc78f63: De viktigaste 25 idéerna för %{instance_name}
+  7cdfb0c074a8155d864d2b591b0d509b: Rapporterat innehåll
+  b513ce9261a49ab58593ca678a8a18c0: Alla nuvarande
+  8bf906833cc7aea8084f552217ed9c1d: Avstängd
+  15bbb9d0bbf25e8d2978de1168c749dc: Webbplats
+  1a08c8ca9af355a37e4b5d4595434211: Lösenordsbekräftelse
+  703fabf8db15f38533b603fd3e8099af: Följande diskussion
+  9f14919a29f0ecc5efac1de9acd8f1d0: Följ diskussionen
+  d3da97e2d9aee5c8fbe03156ad051c99: Mer
+  ee70f3ca5d66eac5f6fc8616da483f4d: Inga diskussioner
+  0f5d49facdd47101ec961e13882f3543: Oj det uppstod ett problem
+  010818f282f6ca53d86d4f988f83744f: Spara dina inställningar
+  800e4dd8dfc264160c0b52347f7f9d4c: Ta bort ditt konto
+  fffb47b03232ded9ecc86fa01eeaa695: Synpunkter emot
+  3c5db2447415c261cf024be85458ce35: Användbar
+  2a8539c576356a45c8ffea55f7f9c6d1: Inte längre användbar
+  214c85ce1555950780114abb91def844: Inte användbar
+  68e58e8d7902b8d218a96c0e6f22a683: Detta är inte Inte längre användbart
+  5b378488a7da7228e25ac9ad5ec2f248: Är detta Inte användbart?
+  93cba07454f06a4a960172bbd6e2a435: Ja
+  bafd7322c6e97d25b6299b5d6fe8920b: Nej
+  c5c0e6abe2b5ee35304928cafde9f028: '%{user_name} röstyade för'
+  01441c80c744e05983f0681cacfcf047: Röstade för  %{new_idea_name} istället för %{idea_name}
+  175fd8a23b58b6b7ce1958698686d284: Användbar
+  7497114df581c98e29eab1877685bb6f: Inte användbar?

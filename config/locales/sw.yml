@@ -1,29 +1,6 @@
 ---
 sw:
   number:
-    human:
-      storage_units:
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          kb: KB
-          mb: MB
-          gb: GB
-          tb: TB
-        format: '%n %u'
-      format:
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
-      decimal_units:
-        format: '%n %u'
-        units:
-          thousand: Elfu
-          million: Milioni
-          billion: Bilioni
-          trillion: Trilioni
-          quadrillion: Quadrillion
     format:
       separator: ','
       delimiter: .
@@ -39,6 +16,29 @@ sw:
         precision: 2
         significant: false
         strip_insignificant_zeros: false
+    human:
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+      decimal_units:
+        format: '%n %u'
+        units:
+          thousand: Elfu
+          million: Milioni
+          billion: Bilioni
+          trillion: Trilioni
+          quadrillion: Quadrillion
   errors:
     messages:
       inclusion: haipo kwenye orodha

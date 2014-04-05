@@ -211,9 +211,9 @@ es:
       full_messages:
         format: '%{attribute}%{message}'
   fbaedde498cdead4f2780217646e9ba1: A FAVOR
-  0323de4f66a1700e2173e9bcdce02715: Cerrar sesión
+  06df33001c1d7187fdd81ea1f5b277aa: Acciones
   0358ca3a25ad72c389989a3db811f233: '%{user_name} renombró %{idea_name}'
-  03368e3c1eb4d2a9048775874301b19f: Seleccionar categoría
+  07221d868183bab87e41f0ec47440880: Discusiones sobre tus ideas
   002d4fac39a17aaa96c1a79a1a710edb: Correo electrónico de ventas
   0038a9e512b4678c583db11009d2c297: Esta es la idea que crece más rápido
   003e636075eed8d70232cd54e12236db: Se ha creado tu %{instance_name}
@@ -240,6 +240,8 @@ es:
   02684cc6b6ea1811a064f475a5fd1d18: Autores
   02bb5de0c787154b2cfaea82d1cfc40d: Cancelar esta revisión
   02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} publicó un boletín'
+  0323de4f66a1700e2173e9bcdce02715: Cerrar sesión
+  03368e3c1eb4d2a9048775874301b19f: Seleccionar categoría
   03937134cedab9078be39a77ee3a48a0: Grupo
   04412bb51cddee4b889c1adbf558670a: Información sobre tu donación
   0557fa923dcee4d0f86b1409f5c2167f: Volver
@@ -247,8 +249,6 @@ es:
   03fa96387303a39d8a63c153bac26958: 'Nos reservamos el derecho a:'
   047fe665bd2cea51e221d371d1e4c698: Cambiar la configuración de %{user_name}
   06ba2bc280e5497a86716f2bac565751: Código de Google Analytics
-  06df33001c1d7187fdd81ea1f5b277aa: Acciones
-  07221d868183bab87e41f0ec47440880: Discusiones sobre tus ideas
   072a47f5e0aa944cef4819332279486f: Mensaje para los usuarios desde el servicio
   c4e0e4e3118472beeb2ae75827450f1f: EN CONTRA
   493443f74e1d01d5f290368b68b22007: '%{user_name} sugirió primero esta idea'

@@ -51,6 +51,7 @@ is:
   d280d15220c6ba22dfa7cd8a5139ea67: Næst... Upplýsingar um þig
   034cb9b595f45003845f5ebed51a0a39: Twitter Consumer Secret
   0358ca3a25ad72c389989a3db811f233: '%{user_name} endurnefndi %{idea_name}'
+  7ccf75fa7498152efe4e152833455c67: Nafn
   90470f17c0c5b3cb0c3d2581e14aff20: Búðu til þinn eigin %{instance_name} (Mjög fljótlegt...)
   03937134cedab9078be39a77ee3a48a0: Hópur
   040cd458fd2ae990e1f054b26909bd7a: Vann sér inn %{count}%{currency_short_name} vegna
@@ -128,6 +129,8 @@ is:
     10 árum EVE Online leiksins - beint frá leikmönnum.
   7e639247ce98d22860e0e3bd468d70fe: Þessar sönnu sögur munu verða að bókum, sjónvarpsþáttum
     og bíómyndum sem gerast inn í EVE heiminum.
+  5f2b9345f9bbd74079b99d6fcf461408: Búin til
+  95689f6436d242f4ea19443c83c05ab2: Taka vefstjóra af
   57ccb139c58aa95db2f3533f8dcc4716: Samfélag leikmanna kaus síðan bestu sögurnar,
     úr þessu varð til listi af bestu sögunum sem gerðust inn í leiknum.
   a39abc0cae4f06f92f6ee2e5601dbf7f: Uppsettning
@@ -181,9 +184,6 @@ is:
       send_instructions: Boðspóstur hefur verið sendur á %{email}.
       new:
         header: Senda
-  7ccf75fa7498152efe4e152833455c67: Nafn
-  5f2b9345f9bbd74079b99d6fcf461408: Búin til
-  95689f6436d242f4ea19443c83c05ab2: Taka vefstjóra af
   99de1173596bd03c47e19254f981429a: Gera vefstjóra
   e3afed0047b08059d0fada10f400c1e5: Vefstjórnandi
   06df33001c1d7187fdd81ea1f5b277aa: Aðgerðir
@@ -356,7 +356,6 @@ is:
   2e6c2d96aaacc8ef06d0ea12237cfc2e: Það þarf að fylla í alla reiti
   d7241b155164fdbc560602f924393149: Skráðu hugmynd þína og rök á Betra Ísland
   586f9d3669a73e12a8caed7a7d76288e: Veldu góðan, lýsandi titil á hugmyndina þína
-  13af6b983fc9bbd55699881a1023a539: Nei
   cdd559fd8bda4b2bdf1cdbca181b38b9: Útskýrðu hugmyndina í nokkrum málsgreinum og reyndu
     að hafa textann hnitmiðaðan.
   e1e583ed208b1fbecec8b65dc272a098: Er þessi hugmynd  frá %{user_name} persónuleg
@@ -428,7 +427,9 @@ is:
   1cab6f0a48459aaac4e3116773de5781: ég mun ekki birta auglýsingar eða senda ruslpóst
     í gegnum BÍ
   3bc9cc15d02611dc4781a6ce6bf86710: Kjósa upp
+  13af6b983fc9bbd55699881a1023a539: Nei
   1a8e4f3a313d948ac095a8d24110c1b1: '%{count} studdu'
+  7dce122004969d56ae2e0245cb754d35: Breyttu
   03fa96387303a39d8a63c153bac26958: 'Við áskiljum okkur rétt til að:'
   5e45d0479ee365f79d004b2f4ecb1f27: bætti %{point_name} við %{idea_name}
   64e73aa014f92f7f5d7ca38c24cbf801: Vann sér inn %{capital}%{currency_short_name}
@@ -490,7 +491,6 @@ is:
   f9aae5fda8d810a29f12d1e61b4ab25f: Notendur
   6ba1364d96463a5bb5b064ce138e3128: '%{user_name} biður þig að íhuga %{idea_name}'
   2f80c7ef5f482ef736da54717b3514eb: '%{count} á móti'
-  7dce122004969d56ae2e0245cb754d35: Breyttu
   77c8b9f38491385d59ddc33d29e751fe: 'Ítarefni:'
   fa17217f817aabfc79196a3adc390442: Bættu við vefslóð
   142b38d73ecdd12a19fe53a206e4c734: Allur textinn
@@ -595,6 +595,7 @@ is:
     núna.
   26582fa147339efa1e6fc50cc9602f65: Þú getur notað karma stig til að kaupa kynningar
     efst á síðunni fyrir hugmyndir sem þú styður.
+  498f79c4c5bbde77f1bceb6c86fd0f6d: Sýna
   2d39a06c50a6c1ad4871b8e8551bdda2: Engar hugmyndir ennþá.
   10ac3d04253ef7e1ddc73e6091c0cd55: Næst
   views:

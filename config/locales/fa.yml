@@ -53,13 +53,6 @@ fa:
     - :day
     - :month
     - :year
-  time:
-    formats:
-      long: '%e %B %Y، ساعت %H:%M'
-      default: '%A، %e %B %Y، ساعت %H:%M:%S (%Z)'
-      short: '%e %B، ساعت %H:%M'
-    am: قبل از ظهر
-    pm: بعد از ظهر
   support:
     select:
       prompt: لطفا انتخاب کنید
@@ -67,6 +60,13 @@ fa:
       words_connector: '، '
       two_words_connector: ' و '
       last_word_connector: '، و '
+  time:
+    formats:
+      default: '%A، %e %B %Y، ساعت %H:%M:%S (%Z)'
+      short: '%e %B، ساعت %H:%M'
+      long: '%e %B %Y، ساعت %H:%M'
+    am: قبل از ظهر
+    pm: بعد از ظهر
   number:
     format:
       separator: ٫

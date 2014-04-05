@@ -214,6 +214,7 @@ fr:
         body: 'Veuillez vérifier les champs suivants : '
       full_messages:
         format: '%{attribute} %{message}'
+  4f81a0633715f67573f3acffd54987ea: Influence
   9ffd04e5001b2551d685667a380b1660: Ce commentaire a été éffacé
   8f7613aec3ee49c1b3ccc00de8a305fd: Editer le commentaire.
   1d052afe05362d164fbe867cddc17f8a: Sauvé commentaire
@@ -284,7 +285,6 @@ fr:
   7dce122004969d56ae2e0245cb754d35: Editer
   5b378488a7da7228e25ac9ad5ec2f248: Est-ce utile?
   8f7f4c1ce7a4f933663d10543562b096: Au sujet de
-  4f81a0633715f67573f3acffd54987ea: Influence
   021da1b20f73dc252361a54d80497ef3: Rangs
   8cf04a9734132302f96da8e113e80ce5: Maison
   0be8406951cdfda82f00f79328cf4efc: Commenter

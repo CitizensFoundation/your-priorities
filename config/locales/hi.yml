@@ -1,6 +1,10 @@
 ---
 hi:
   date:
+    order:
+    - :day
+    - :month
+    - :year
     formats:
       default: '%d-%m-%Y'
       short: '%b %d'
@@ -49,10 +53,6 @@ hi:
     - अक्टू
     - नवं
     - दिस
-    order:
-    - :day
-    - :month
-    - :year
   time:
     formats:
       default: '%a, %d %b %Y %H:%M:%S %z'

@@ -339,6 +339,7 @@ ca:
   feb6aa52226e8abe5bda5ef3fc0b65f1: Perquè vas fer aquest canvi?
   fee15ce029deb11dd1191f86c4e872c3: Això és útil
   003e636075eed8d70232cd54e12236db: El teu %{instance_name} ha estat creat
+  006a226cb52da43e63800809bd1cb3f6: '%{user_name} ha votat negativament la idea %{position}'
   0038a9e512b4678c583db11009d2c297: Aquesta és la idea que creix més ràpid
   0077d575bfc52d2176b427189982b6a6: Guardat %{point_name}
   00b177e080ff1c3d340997fb01c3951c: Acceptar la invitació
@@ -366,7 +367,6 @@ ca:
   13348442cc6a27032d2b4aa28b75a5d3: Busca
   13e7cd666950f7873a5e431fce97b916: 'Exemple: https;//'
   002d4fac39a17aaa96c1a79a1a710edb: Correu de venda
-  006a226cb52da43e63800809bd1cb3f6: '%{user_name} ha votat negativament la idea %{position}'
   006a4eadd1c44616ad82234981c03563: Yahoo Appid (<a href='https://developer.yahoo.com/wsregapp/'>Get
     it here</a>)
   016e3b623e81108aac0844988d799eff: 'Revisions: %{sentence}'
