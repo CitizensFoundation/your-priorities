@@ -353,7 +353,7 @@ Tolk.config do |config|
     config.mapping['st-ZA']   = 'Southern Sotho (South Africa)'
     config.mapping['sv']      = 'Swedish'
     config.mapping['sv-FI']   = 'Swedish (Finland)'
-    config.mapping['sv-SE']   = 'Swedish (Sweden)'
+    config.mapping['sv-SE']   = 'Swedish'
     config.mapping['sw']      = 'Swahili'
     config.mapping['sw-KE']   = 'Swahili (Kenya)'
     config.mapping['sw-TZ']   = 'Swahili (Tanzania)'
