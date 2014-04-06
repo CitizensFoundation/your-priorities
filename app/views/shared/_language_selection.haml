@@ -1,4 +1,4 @@
-- cache(["language_options_",I18n.locale.to_s,current_user ? current_user.is_admin? : false], :expires_in => 5.minutes) do
+- cache(["language_options_",I18n.locale.to_s,current_user ? current_user.is_admin? : false, SubInstance.current.id], :expires_in => 5.minutes) do
   = get_locale_options
   %li{:style=>"padding:5px;"}
     = tr("Please help us improve and provide more translations","here")
