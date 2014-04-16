@@ -26,6 +26,7 @@ class PointsController < ApplicationController
   end
   
   def newest
+    return redirect_to "/"
     @page_title = tr("Newest points", "controller/points", :sub_instance_name => current_sub_instance.name)
     @points = Point.published.by_recently_created.paginate :include => :idea, :page => params[:page], :per_page => params[:per_page]
     @rss_url = url_for :only_path => false, :format => "rss"

@@ -357,7 +357,7 @@ class UsersController < ApplicationController
   # GET /users/1/followers
   def followers
     @user = User.find(params[:id])
-    redirect_to '/' and return if check_for_suspension
+    redirect_to '/' # and return if check_for_suspension
     get_following
     @page_title = tr("{count} people are following {user_name}", "controller/users", :user_name => @user.name, :count => @user.followers_count)      
     @followings = @user.followers.up.paginate :page => @page, :per_page => 50

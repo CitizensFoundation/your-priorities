@@ -534,6 +534,7 @@ class IdeasController < ApplicationController
   end  
   
   def everyone_points
+    return redirect_to_idea
     @page_title = tr("Best points on {idea_name}", "controller/ideas", :idea_name => @idea.name)
     @point_value = 0 
     @points = @idea.points.published.by_helpfulness.paginate :page => params[:page], :per_page => params[:per_page]
@@ -546,6 +547,7 @@ class IdeasController < ApplicationController
   end  
 
   def opposed_top_points
+    return redirect_to_idea
     @page_title = tr("Points opposing {idea_name}", "controller/ideas", :idea_name => @idea.name)
     @point_value = -1
     if params[:by_newest]
@@ -562,6 +564,7 @@ class IdeasController < ApplicationController
   end
   
   def endorsed_top_points
+    return redirect_to_idea
     @page_title = tr("Points supporting {idea_name}", "controller/ideas", :idea_name => @idea.name)
     @point_value = 1
     if params[:by_newest]
@@ -583,6 +586,8 @@ class IdeasController < ApplicationController
   end
 
   def top_points
+    return redirect_to_idea
+
     @page_title = tr("Top points", "controller/ideas", :idea_name => @idea.name)
     @activities = @idea.activities.active.top_discussions.for_all_users :include => :user
     setup_top_points(50000)
@@ -636,6 +641,7 @@ class IdeasController < ApplicationController
   
   # GET /ideas/1/endorsers
   def endorsers
+    return redirect_to_idea
     @page_title = tr("{number} people endorse {idea_name}", "controller/ideas", :idea_name => @idea.name, :number => @idea.up_endorsements_count)
     if request.format != 'html'
       @endorsements = @idea.endorsements.active_and_inactive.endorsing.paginate :page => params[:page], :per_page => params[:per_page], :include => :user
@@ -649,6 +655,7 @@ class IdeasController < ApplicationController
 
   # GET /ideas/1/opposers
   def opposers
+    return redirect_to_idea
     @page_title = tr("{number} people opposed {idea_name}", "controller/ideas", :idea_name => @idea.name, :number => @idea.down_endorsements_count)
     if request.format != 'html'
       @endorsements = @idea.endorsements.active_and_inactive.opposing.paginate :page => params[:page], :per_page => params[:per_page], :include => :user
@@ -1149,6 +1156,10 @@ class IdeasController < ApplicationController
         @endorsement = @idea.endorsements.active.find_by_user_id(current_user.id)
       end
     end    
+
+    def redirect_to_idea
+      redirect_to @idea.show_url, :status => :moved_permanently
+    end
 
     def get_qualities(multi_points=nil)
       if multi_points
