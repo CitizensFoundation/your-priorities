@@ -209,6 +209,27 @@ then Selenium won't have a server to test against.
 rails s -e test
 ````
 
+Installing Sphinx search
+========================
+
+Please see: 
+http://pat.github.io/thinking-sphinx/
+
+
+Cron tasks that are needed
+==========================
+
+Idea ranking calculations
+````bash
+rake schedule:idea_ranker
+````
+
+For updating the search index
+````bash
+rake fs:index
+````
+
+
 Production Deployment on Heroku
 ===============================
 
