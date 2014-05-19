@@ -20,7 +20,7 @@
                 if (index==3) {
                   $("#active_citizen_news").append('<center><h1 id="ac_more"><a href="#" onclick="$('+'\'#active_citizen_news_more\').toggle();$('+'\'#ac_more\').hide()">+</a></h1></center>');
                 }
-                $(index>=3 ? "#active_citizen_news_more" : "#active_citizen_news").append('<a target="_blank" href="'+webpage.url+'">'+webpage.title.replace("BBC News - ","")+'</a><br/><br/>')
+                $(index>=3 ? "#active_citizen_news_more" : "#active_citizen_news").append('<a target="_blank" href="'+webpage.url+'">'+webpage.title.replace("BBC News - ","").replace("| From the Observer | The Observer","")+'</a><br/><br/>')
               });
           }
       });
