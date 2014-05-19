@@ -12,7 +12,7 @@
     :javascript
       $.ajax({
           type: "GET",
-          url: "http://active-citizen.yrpri.org/experiments/match_from_url?url=#{Rails.env.development? ? 'https://nhs-citizen.yrpri.org/ideas/'+@idea.to_param : @idea.show_url}",
+          url: "https://active-citizen.yrpri.org/experiments/match_from_url?url=#{Rails.env.development? ? 'https://nhs-citizen.yrpri.org/ideas/'+@idea.to_param : @idea.show_url}",
           dataType: "json",
           success: function(data){
               $("#active_citizen_news_container").show();
