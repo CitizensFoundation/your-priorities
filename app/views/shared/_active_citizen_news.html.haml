@@ -1,0 +1,26 @@
+- if @idea and SubInstance.current.short_name.include?("nhs")
+  #active_citizen_news_container{:style=>"display:none;"}
+    .row
+      .large-12.columns
+        .panel
+          %h5
+            = tr("Relevant news stories","here")
+          #active_citizen_news
+          #active_citizen_news_more{:style=>"display:none;"}
+
+
+    :javascript
+      $.ajax({
+          type: "GET",
+          url: "http://active-citizen.yrpri.org/experiments/match_from_url?url=https://nhs-citizen.yrpri.org/ideas/529-find-my-least-busy-ae-and-whens-my-ambulance-coming",
+          dataType: "json",
+          success: function(data){
+              $("#active_citizen_news_container").show();
+              $.each(data, function( index, webpage ) {
+                if (index==3) {
+                  $("#active_citizen_news").append('<center><h1 id="ac_more"><a href="#" onclick="$('+'\'#active_citizen_news_more\').toggle();$('+'\'#ac_more\').hide()">+</a></h1></center>');
+                }
+                $(index>=3 ? "#active_citizen_news_more" : "#active_citizen_news").append('<a target="_blank" href="'+webpage.url+'">'+webpage.title.replace("BBC News - ","")+'</a><br/><br/>')
+              });
+          }
+      });
