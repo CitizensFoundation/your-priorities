@@ -62,6 +62,17 @@ CODE_TO_SHORTNAME = {"AE"=>"uae", "LY"=>"lybia", "VA"=>"vatican",
                      "PS"=>"ps", "GB"=>"uk", "SY"=>"syria", "RU"=>"russia",
                      "MD"=>"moldova", "LA"=>"lao" }
 namespace :utils do
+  desc "Export sub instance to csv"
+  task :export_sub_instance_to_csv => :environment do
+    sub_instance = SubInstance.where(:short_name=>ENV['SHORT_NAME']).first
+    puts "User email,Idea name,Idea description,Up votes,Down votes,Point name,Point description,Point value"
+    Idea.unscoped.where(:sub_instance_id=>sub_instance.id).each do |idea|
+      puts "#{idea.user.email},\"#{idea.name}\",\"#{idea.description.gsub("\"","''")}\",#{idea.up_endorsers.count},#{idea.down_endorsers.count}"
+      Point.unscoped.where(:idea_id=>idea.id).each do |point|
+        puts ",,,,,\"#{point.name}\",\"#{point.content.gsub("\"","''").gsub("\n"," ")}\",#{point.value>0 ? 'Support' : 'Opposes'}"
+      end
+    end
+  end
 
   desc "Sub instance stats"
   task :sub_instance_stats => :environment do
