@@ -1,0 +1,10 @@
+---
+ro:
+  will_paginate:
+    next_label: Next &#8594;
+    previous_label: '&#8592; Previous'
+  devise:
+    invitations:
+      send_instructions: Sendu póst á  %{email}.
+  070625ecbc8bd373ccfb31867274eb97: Password reset instructions for %{instance_name}
+  c867451892e38db47a8cc5e7b02d5c54: sem þú styður
