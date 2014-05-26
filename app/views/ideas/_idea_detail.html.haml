@@ -10,15 +10,15 @@
   .large-6.columns.point_for
     - unless @points_new_up.empty?
       #pro_new
-        = render :partial => "points/short_list", :locals => {:newest_points=>true, :id => "pro_new", :points => @points_new_up, :numbering=>false}
+        = render :partial => "points/short_list", :locals => {:points_value=>1, :newest_points=>true, :id => "pro_new", :points => @points_new_up, :numbering=>false}
     #pro_top
-      = render :partial => "points/short_list", :locals => {:id => "pro_top", :points => @points_top_up, :numbering=>false}
+      = render :partial => "points/short_list", :locals => {:points_value=>1, :id => "pro_top", :points => @points_top_up, :numbering=>false}
   .large-6.columns.point_against
     - unless @points_new_down.empty?
       #con_new
-        = render :partial => "points/short_list", :locals => {:newest_points=>true, :id => "con_new", :points => @points_new_down, :numbering=>false}
+        = render :partial => "points/short_list", :locals => {:points_value=>-1, :newest_points=>true, :id => "con_new", :points => @points_new_down, :numbering=>false}
     #con_top
-      = render :partial => "points/short_list", :locals => {:id => "con_top", :points => @points_top_down, :numbering=>false}
+      = render :partial => "points/short_list", :locals => {:points_value=>-1, :id => "con_top", :points => @points_top_down, :numbering=>false}
 - unless action_name=="show"
   .row
     .large-12.columns

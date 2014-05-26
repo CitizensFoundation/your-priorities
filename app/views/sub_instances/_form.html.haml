@@ -66,12 +66,6 @@
         %label{:for => "top_banner_image"}= tr("Top Banner Image", "view/sub_instances/_form")
       = link_to image_tag(@sub_instance.top_banner_url(:preview)), @sub_instance.top_banner_url(:icon_full), :target=>"_blank"
       = f.file_field :top_banner
-    %p
-      %b
-        %label{:for => "menu_strip_side_image"}
-        = tr("Menu Strip Side Image", "view/sub_instances/_form")
-      = link_to image_tag(@sub_instance.menu_strip_side_url(:preview)), @sub_instance.menu_strip_side_url(:icon_full), :target=>"_blank"
-      = f.file_field :menu_strip_side
   .large-4.columns
     .field
       .field_label= tr("Home page message to users", "view/instances/edit")

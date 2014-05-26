@@ -2,7 +2,10 @@
   .point_item
     %h5
       %a
-        = link_to tr("No points against yet",""), @idea.new_point_url
+        - if points_value>1
+          = link_to tr("Add point for","here"), @idea.new_point_url
+        - else
+          = link_to tr("Add point against","here"), @idea.new_point_url
 - else
   - points.each_with_index do |point, i|
     - quality = nil
