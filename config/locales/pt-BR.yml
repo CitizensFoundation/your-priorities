@@ -62,9 +62,9 @@ pt-BR:
     select:
       prompt: Por favor selecione
     array:
-      words_connector: ', '
-      two_words_connector: ' e '
-      last_word_connector: ' e '
+      last_word_connector: e
+      two_words_connector: e
+      words_connector: ','
   number:
     format:
       separator: ','
@@ -215,10 +215,43 @@ pt-BR:
         even: deve ser par
       full_messages:
         format: '%{attribute}%{message}'
+  03937134cedab9078be39a77ee3a48a0: Grupo
   019ec3132cdf8ee0f2e2a75cf5d3e459: Sexo
   0323de4f66a1700e2173e9bcdce02715: Sair
   03368e3c1eb4d2a9048775874301b19f: Seleciona a Categoria
-  03937134cedab9078be39a77ee3a48a0: Grupo
   03fa96387303a39d8a63c153bac26958: 'Reservamos o direito de:'
   0574c44ee9d51a85091b24119d5c2f69: Novas idéias
   06277ee8d0fd9ef7427ca88315ba493a: Login através do Twitter falhou.
+  will_paginate:
+    next_label: Próximo
+    previous_label: Anterior
+  devise:
+    invitations:
+      updated: Você criou sua senha. Você está logado.
+      new:
+        header: Envie um convite
+  views:
+    pagination:
+      next: Próximo
+  c867451892e38db47a8cc5e7b02d5c54: que você apoia
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Denunciar
+  ab70cd88a40e7c3247bfce039ad0045d: por favor, coloque mais de 5 caracteres
+  80df8e95c1fef941a4f600f0fd1b07c8: por favor, coloque mais de 12 caracteres
+  5a9d18bb87ff12835dc844883c5c3ebe: alterações
+  4fb7286b0fe19a6cf2569e4115e88baa: por favor, coloque mais de 10 caracteres
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Erro
+  b6e0b0c90cfbddfe767f137f8066d1df: Em andamento
+  9b9d8a976b42e0bd66381797644943d5: Publicado
+  30ae8fff8898dc197acd49d9c0797d20: Sucesso
+  22af645d1859cb5ca6da0c484f1f37ea: novo
+  eed1d7e8237b8656aff7c66bb5999f96: Por favor, especifique o nome a ser identificado
+    no site.
+  4607ccb71469675944516398e717479c: Por favor, aceite os termos e condições
+  9ee2fe857acedeff0c24765e3d2a25f9: Por favor, especifique o seu nome
+  d5f0462c74e5c7bf041d992697b7e06b: Esse nome de servidor já foi escolhido
+  0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} comentou em %{comment_name}'
+  42bd4c0819c498d1c1ab622de74d6f82: apoiado
+  83c101ec84ebd1c0e45fa1cd5b9300d6: oposto
+  37fc5aed92a40b16dafd17cee72e3154: Idéias mais comentadas
+  833c90a077a2beda3b6cd000f3fe5c29: Idéias randômicas
+  f504eb1cc2305a863cc0cf23428a36f8: Idéias controversas

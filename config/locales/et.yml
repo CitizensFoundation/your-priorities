@@ -1,5 +1,36 @@
 ---
 et:
+  activerecord:
+    errors:
+      messages:
+        equal_to: peab võrdne arvuga %{count}
+        taken: on juba võetud
+        record_invalid: 'Valideerimine ebaõnnestus: %{errors}'
+        accepted: peab olema heaks kiidetud
+        blank: on täitmata
+        confirmation: ei vasta kinnitusele
+        empty: on tühi
+        even: peab olema paarisarv
+        exclusion: on reserveeritud
+        greater_than: ei tohi olla suurem kui %{count}
+        greater_than_or_equal_to: peab olema suurem või võrdne arvuga %{count}
+        inclusion: ei leidu nimekirjas
+        invalid: ei ole korrektne
+        less_than: peab olema vähem kui %{count}
+        less_than_or_equal_to: peab olema vähem või võrdne arvuga %{count}
+        not_a_number: ei ole number
+        not_an_integer: peab olema täisarv
+        odd: peab olema paaritu arv
+        too_long: on liiga pikk (maksimum on %{count} tähemärki)
+        too_short: on liiga lühike (miinimum on %{count} tähemärki)
+        wrong_length: on vale pikkusega (peab olema %{count} tähemärki)
+      template:
+        body: 'Probleeme ilmnes järgmiste väljadega:'
+        header:
+          one: Üks viga takistas objekti %{model} salvestamist
+          other: '%{count} viga takistasid objekti %{model} salvestamist'
+      full_messages:
+        format: '%{attribute} %{message}'
   date:
     formats:
       default: '%d.%m.%Y'
@@ -89,37 +120,6 @@ et:
       less_than_or_equal_to: peab olema vähem või võrdne arvuga %{count}
       odd: peab olema paaritu arv
       even: peab olema paarisarv
-  activerecord:
-    errors:
-      messages:
-        taken: on juba võetud
-        record_invalid: 'Valideerimine ebaõnnestus: %{errors}'
-        accepted: peab olema heaks kiidetud
-        blank: on täitmata
-        confirmation: ei vasta kinnitusele
-        empty: on tühi
-        equal_to: peab võrdne arvuga %{count}
-        even: peab olema paarisarv
-        exclusion: on reserveeritud
-        greater_than: ei tohi olla suurem kui %{count}
-        greater_than_or_equal_to: peab olema suurem või võrdne arvuga %{count}
-        inclusion: ei leidu nimekirjas
-        invalid: ei ole korrektne
-        less_than: peab olema vähem kui %{count}
-        less_than_or_equal_to: peab olema vähem või võrdne arvuga %{count}
-        not_a_number: ei ole number
-        not_an_integer: peab olema täisarv
-        odd: peab olema paaritu arv
-        too_long: on liiga pikk (maksimum on %{count} tähemärki)
-        too_short: on liiga lühike (miinimum on %{count} tähemärki)
-        wrong_length: on vale pikkusega (peab olema %{count} tähemärki)
-      template:
-        body: 'Probleeme ilmnes järgmiste väljadega:'
-        header:
-          one: Üks viga takistas objekti %{model} salvestamist
-          other: '%{count} viga takistasid objekti %{model} salvestamist'
-      full_messages:
-        format: '%{attribute} %{message}'
   number:
     format:
       separator: ','

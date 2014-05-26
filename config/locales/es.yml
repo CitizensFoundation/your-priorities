@@ -1,5 +1,32 @@
 ---
 es:
+  e02decaebace93b27ce239a671e77453: Tuyas
+  dee5db0dd869d6d2c03539fab2c874ad: Nueva idea en %{sub_instance_name}
+  fc2e12b5aff1b388bc309a96bccb3f9b: Gracias por añadir %{idea_name}
+  53127d8c496db03d848a289010087409: Más votadas
+  64663f4646781c9c0110838b905daa23: Aleatorio
+  d984e98c3eceb8bc31b8ca398758f248: Puntos de vista recientemente vistos
+  8df9c04d95e71c0bb899ac7a5af8cdfb: Añadir punto de vista a %{idea_name}
+  79281fb7fd5e0cbea9ca524b779e89ff: Gracias por añadir un punto de vista
+  621df26b895998b50fdad2c763f695e3: Debates en %{point_name}
+  59d7434481f250db2c48858375499a31: Puntos de vista nuevos
+  2ed154e6cbb75329947fe1929b784059: Puntos de vista sobre tus ideas
+  e17fdb615452f440c793b5ddad90dd5e: Alertas
+  dbb6f26a0ccb75b82d641ff87b627ce3: Nuevos miembros
+  86e570b9bac3edce3c2cdcdf17b8cab0: Compra un anuncio para %{idea_name}
+  7dce122004969d56ae2e0245cb754d35: Editar
+  2512081b92507a3e87cdb8ba7cd6c6b7: 'Idea #1:'
+  d4dccb8ca2dac4e53c01bd9954755332: Guardar cambios
+  a0d7e042ee84ad945d55f3862369255f: Subir y guardar tu foto
+  0863f095cbdbbe6ce5a8aac979766a83: Tamaño máximo del nombre de idea
+  668deb1091498fc9353f5d297fd55877: caracteres restantes
+  b5a7adde1af5c87d7fd797b6245c2a39: Descripción
+  062bad04a7e077f61b7dcb0ef85dbef9: Esto muestra los cambios desde la revisión anterior.
+    También puedes <a href='%{clean_url}'>ver la versión en claro</a>
+  034cb9b595f45003845f5ebed51a0a39: Consumer Secret de Twitter
+  f4ec5f57bd4d31b803312d873be40da9: Cambiar
+  0ef9a6968cfe92f7bde817483fb5d0cf: Opositar
+  0f9b5eff8d1d07e6ce3a8fe2697a76f7: Se unió en %{time_ago}
   errors:
     messages:
       greater_than: debe ser mayor que %{count}
@@ -211,9 +238,7 @@ es:
       full_messages:
         format: '%{attribute}%{message}'
   fbaedde498cdead4f2780217646e9ba1: A FAVOR
-  06df33001c1d7187fdd81ea1f5b277aa: Acciones
   0358ca3a25ad72c389989a3db811f233: '%{user_name} renombró %{idea_name}'
-  07221d868183bab87e41f0ec47440880: Discusiones sobre tus ideas
   002d4fac39a17aaa96c1a79a1a710edb: Correo electrónico de ventas
   0038a9e512b4678c583db11009d2c297: Esta es la idea que crece más rápido
   003e636075eed8d70232cd54e12236db: Se ha creado tu %{instance_name}
@@ -249,7 +274,129 @@ es:
   03fa96387303a39d8a63c153bac26958: 'Nos reservamos el derecho a:'
   047fe665bd2cea51e221d371d1e4c698: Cambiar la configuración de %{user_name}
   06ba2bc280e5497a86716f2bac565751: Código de Google Analytics
+  06df33001c1d7187fdd81ea1f5b277aa: Acciones
+  07221d868183bab87e41f0ec47440880: Discusiones sobre tus ideas
   072a47f5e0aa944cef4819332279486f: Mensaje para los usuarios desde el servicio
   c4e0e4e3118472beeb2ae75827450f1f: EN CONTRA
   493443f74e1d01d5f290368b68b22007: '%{user_name} sugirió primero esta idea'
   ac717bd14c68bc426139b20f01d941ea: '%{user_name} sugirió primero %{idea_name}'
+  will_paginate:
+    next_label: Siguiente &#8594;
+    previous_label: '&#8592; Anterior'
+  devise:
+    invitations:
+      send_instructions: Se ha enviado una invitación por correo a %{email}.
+      updated: Se envió su contraseña. Ya está registrado.
+      new:
+        header: Enviar invitación
+  views:
+    pagination:
+      next: Siguiente &rsaquo;
+  070625ecbc8bd373ccfb31867274eb97: Instrucciones de cambio de clave para %{instance_name}
+  c867451892e38db47a8cc5e7b02d5c54: cual apoyas
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Informe
+  ab70cd88a40e7c3247bfce039ad0045d: por favor, introduzca más de 5 caracteres
+  80df8e95c1fef941a4f600f0fd1b07c8: por favor, introduzca más de 12 caracteres
+  5a9d18bb87ff12835dc844883c5c3ebe: cambios
+  4fb7286b0fe19a6cf2569e4115e88baa: por favor, introduzca más de 10 caracteres
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Falló
+  b6e0b0c90cfbddfe767f137f8066d1df: En progreso
+  9b9d8a976b42e0bd66381797644943d5: Publicado
+  30ae8fff8898dc197acd49d9c0797d20: Satisfactorio
+  22af645d1859cb5ca6da0c484f1f37ea: nuevo
+  eed1d7e8237b8656aff7c66bb5999f96: Por favor, especifique un nombre para identificar
+    a este site
+  4607ccb71469675944516398e717479c: Por favor, acepte los términos y condiciones
+  9ee2fe857acedeff0c24765e3d2a25f9: Por favor, especifique su nombre
+  91504cddd78bd6a6826026c83f554958: Por favor, especifique un nombre para su instancia
+  d5f0462c74e5c7bf041d992697b7e06b: este nombre ya fue tomado
+  0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} comentó en %{comment_name}'
+  a00624d47e8dca3b06b23cdcd386cd62: '%{sender_name} publicó una nota en tu perfil'
+  42bd4c0819c498d1c1ab622de74d6f82: apoyos
+  83c101ec84ebd1c0e45fa1cd5b9300d6: rechazos
+  37fc5aed92a40b16dafd17cee72e3154: Top ideas
+  833c90a077a2beda3b6cd000f3fe5c29: Ideas aleatorias
+  f504eb1cc2305a863cc0cf23428a36f8: Ideas controvertidas
+  db7fcf41127935e5fee505fe102abf9a: Tus discusiones
+  cd267635c8a38e2acba076b0edeeedbe: Discusiones en tu red
+  b38f1c5b8bdb6329e8a4b2e6e456da8b: Discusiones en ideas que tu has creado
+  8754f2b7cbd98752793ba8314bded062: Discusiones activas
+  9fd4dc340cdbdabdd25908817052b915: Tus puntos de vista
+  2d180c2da693f88fe77a780e31bc07a2: Nuevos puntos de vista
+  f78be27a110705c1b183468d30077e53: '%{user_name} no se opone más a %{idea_name}'
+  fe5c45415c03bb476dc22b730aaf2590: '%{user_name} dejó %{count} comentarios en %{discussion_name}'
+  777eecd062745916881aff23d68afd46: '%{user_name} publicó una nota en el perfil de
+    %{other_user_name}'
+  d533bc81d129968f57a188436d3575ac: '%{user_name} publicó una nota para %{discussion_name}'
+  de06be0bc4bfdf2cf0c58e9b6c2d9db9: '%{idea_name} es la idea #1 de %{user_name}'
+  1a13f1069e52ca6118df8501f7a7c755: '%{user_name} añadió %{point_name} a %{idea_name}'
+  0c082c9ad303a70be82598499aaa1f6e: '%{user_name} revisó %{idea_name}'
+  747705a1c07ec5d7613502a7d50bf49a: '%{user_name} revisó %{point_name}'
+  43e00d10903ec90c9f2c523a901df552: '%{user_name} ganó %{capital}%{currency_short_name}
+    porque tanto los que apoyan como rechazan %{point_name} lo encontraron útil'
+  0c0d218418852e444a95f10f2fbe3060: '%{user_name} ganó %{count}%{currency_short_name}
+    por %{count} nuevos seguidores'
+  11ee56b3d9c99494994e5e0e4b6ae733: Originado en
+  75dd5f1160a3f02b6fae89c54361a1b3: Puntos
+  6d0a578ca2f2c0e792fc923002fccbe3: hace
+  c29196003ef3c4f020130aab1c63d4ea: '%{count} puntos'
+  c3829f98b9d811ef102006ff00a83881: '%{count} revisiones'
+  c474f356721291083cc2be1ef39cf658: '%{count} nuevo(s) comentario(s)'
+  13b5bfe96f3e2fe411c9f66f4a582adf: en
+  8bf8854bebe108183caeb845c7676ae4: de
+  ae7950ddfcef416ea6840228d63eba13: sin nuevos comentarios
+  0d80cee327875c3740c7ad5ebba57be1: Tus notificaciones de email
+  fd43e901068a7802f554bf77ac25c8f2: Borra tu cuenta %{instance_name}
+  ab1e45da9c565570d4986f268329f2d1: Últimos puntos de actividad en %{instance_name}
+  cd8251fee54cfb894119ab71fcedde37: Debates en %{sub_instance_name}
+  400677bf70243014f360f3be283982e9: Actividades clave
+  6fa73f77103f4bbddb6129bd0bb18de8: Todos los debates
+  b10e67ce0ade1bd465bedfbd005bbb9c: Debates en ideas que apoyas
+  709468af25e91284821d1bdbfdded24c: Todo
+  16d39f7e2b0ed1ee441421cc0f86a724: Este punto fue eliminado
+  1945e5ccc0bd89812560b30f7c48639d: Tus notificaciones
+  f6d4f577a7d6400fee113c788852a50a: Información adicional requerida
+  69711d42de93b7a39c12910b4ed48a54: Los debates de %{user_name} en %{instance_name}
+  e945975666947d8744dbdb80d2e5a750: Puntos de %{user_name} en %{instance_name}
+  0c7e91060e8afe22fb824e15473d9089: Volver a enviar email de verificación a %{email}
+  1d10d0c01b3469bcb594ade393639ed0: La cuenta usuario fue eliminada
+  af1b98adf7f686b84cd0b443e022b7a0: Categorías
+  ae43f4cff7204d28b83fe67710e9377d: Debates en  %{tag_name}
+  0f471a2597c99d0f4c81db859b0205f3: Ideas que has creado en %{sub_instance_name}
+  3687b1daa635064075afa2b6417880d0: Más leidas
+  2bd2b8e30995d2dfe1f43a4ea30fc3fc: Más debatidas
+  8de16e7a08998e0e60d27d6b4d441379: Top ideas en últimas 24h
+  6c60eec8c5809428787d3d817d389404: Top ideas en últimos 30 días
+  04742c1a5a675be0659d83d65cb79661: Ideas ganando posiciones en el ranking
+  233b006364b1fcfc3b6e2928a20e1545: Ideas perdiendo posiciones en el ranking
+  e42d894b926c4833956b61471df18351: Ideas que generan más controversia
+  0574c44ee9d51a85091b24119d5c2f69: Ideas nuevas
+  dfeb460fa23011a1f3b327fa61abf8be: Puntos a favor de %{idea_name}
+  35408f2e9ccf595f1765bd8e56a2f571: Mejores puntos de vista sobre %{idea_name}
+  a2d5e7a9d03b49d0639ab0a75a59d2c2: Mejores puntos de vista
+  c772367d0682d61254cebb1dcfd44c93: Debates en %{idea_name}
+  49c413c7e9fbe1aee3281a29d2d0dd9c: Últimos comentarios en %{idea_name}
+  16765596b57782e7012aee0ac86ff5ff: '%{count} apoyos'
+  da08b4d4be989f5276a7aab9899ab34c: '%{count} oposiciones'
+  0e7a1834a7b4fba66d0f329cfab14cbb: Última visita %{time_ago}
+  5e038f03415db5461c13d380469436cb: Número de tarjeta de crédito
+  18ef3f4348075aca1646941639d610dd: Idea %{position}
+  52f4e192179a8449b77cc149541a5ba0: Sin ideas aún.
+  dd1f775e443ff3b9a89270713580a51b: Anterior
+  db5ca4cc88a9c0db11b47157edb70dd0: 'Siguiente:'
+  1b92838e756182fda710cfd58819f671: Puntos de vista para
+  ff0cfd359a1d96d597133a4341a6a7e4: Aportar idea nueva
+  201e7310f5fb28133f781fc856003d92: Título de la idea
+  7dd982d0948637b4ae83f2804bd489ca: ¿Por qué debería la gente apoyar tu idea?
+  2e6c2d96aaacc8ef06d0ea12237cfc2e: Todos los campos son requeridos
+  d7241b155164fdbc560602f924393149: Aporta tu idea y punto de vista
+  586f9d3669a73e12a8caed7a7d76288e: Pon un buen título descriptivo para tu idea
+  cdd559fd8bda4b2bdf1cdbca181b38b9: Explica tu idea en unos pocos párrafos tratando
+    de capturar su esencia de forma clara.
+  e254a34f3a1001f00adc55aba5552783: 'Mejores:'
+  64fe1149739a897a97c1f697ce23b063: 'Controvertidos:'
+  e1e583ed208b1fbecec8b65dc272a098: La idea de %{user_name} es un ataque personal
+    o violación de las reglas?
+  8b5ba9ef245ba14a9d4871dbcd6a4f6f: Votar negativo
+  c17180d53c6d6ee18c3240d01ed62131: Votar positivo
+  cde1d24d4d3427be7222dbe6a518f6da: Sin puntos de vista aún.

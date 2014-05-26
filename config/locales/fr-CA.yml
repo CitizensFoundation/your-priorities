@@ -1,6 +1,11 @@
 ---
 fr-CA:
   number:
+    format:
+      strip_insignificant_zeros: false
+      separator: ','
+      precision: 3
+      significant: false
     human:
       decimal_units:
         units:
@@ -24,11 +29,6 @@ fr-CA:
           mb: Mo
           gb: Go
           tb: To
-    format:
-      separator: ','
-      precision: 3
-      significant: false
-      strip_insignificant_zeros: false
     currency:
       format:
         format: '%n %u'

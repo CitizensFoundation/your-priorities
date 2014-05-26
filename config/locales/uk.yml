@@ -356,11 +356,11 @@ uk:
         many: близько %{count} місяців
         other: близько %{count} місяця
     prompts:
+      month: Місяць
+      second: Секунда
       day: День
       hour: Година
       minute: Хвилина
-      month: Місяць
-      second: Секунда
       year: Рік
   errors:
     format: '%{attribute} %{message}'
@@ -554,12 +554,12 @@ uk:
   0c0d218418852e444a95f10f2fbe3060: '%{user_name} заробив %{count}%{currency_short_name}
     за %{count} нових послідовників'
   777eecd062745916881aff23d68afd46: '%{user_name} зробив запис у профілі %{other_user_name}'
+  1a13f1069e52ca6118df8501f7a7c755: '%{user_name} додав %{point_name} до %{idea_name}'
   d533bc81d129968f57a188436d3575ac: '%{user_name} зробив запис у %{discussion_name}'
   02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} зробив запис'
   de06be0bc4bfdf2cf0c58e9b6c2d9db9: '%{idea_name} тепер нова ідея номер1 користувача
     %{user_name}'
   0358ca3a25ad72c389989a3db811f233: '%{user_name} переіменував ідею %{idea_name}'
-  1a13f1069e52ca6118df8501f7a7c755: '%{user_name} додав %{point_name} до %{idea_name}'
   0c082c9ad303a70be82598499aaa1f6e: '%{user_name} передивився %{idea_name}'
   747705a1c07ec5d7613502a7d50bf49a: '%{user_name} передивився %{point_name}'
   11ee56b3d9c99494994e5e0e4b6ae733: Почалася з
