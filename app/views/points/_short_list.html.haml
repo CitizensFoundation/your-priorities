@@ -2,7 +2,7 @@
   .point_item
     %h5
       %a
-        - if points_value>1
+        - if points_value>0
           = link_to tr("Add point for","here"), @idea.new_point_url
         - else
           = link_to tr("Add point against","here"), @idea.new_point_url
