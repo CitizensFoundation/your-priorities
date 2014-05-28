@@ -7,3 +7,5 @@
         = render :partial => "notifications/show", :locals => {:notification => notification}
     %p
       = foundation_paginate(@notifications)
+  - else
+    = tr("You have no notifications","here")

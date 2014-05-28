@@ -590,6 +590,7 @@ en:
   062bad04a7e077f61b7dcb0ef85dbef9: "This shows the changes from the previous revision. You can also <a href='%{clean_url}'>see the clean version</a>"
   5cbcfe441206d692a5338414b4aa317c: "Normally,you would see the changes made here,but there was some kind of processing error,so please check out the <a href='%{clean_url}'>clean version</a>"
   956dc475cb9a4dafc9c53404c7cc80bd: "Recent activity on this idea"
+  f478d19b8f322ebaf7f826c353200af8: "You have no notifications"
   5926f8c1e6ec7b97b3d79043ebb03261: "Donate to the Balkan eDemocracy Startup Project"
   6b4773ffde9668ce5b864386cee01831: "The Citizens Foundation is a non-profit foundation in Iceland. It's Icelandic name is Íbúar - Samráðslýðræði."
   1e640b7173d9b246f28bbdd1a36bfd3f: "Our Icelandic tax number is 6012101260. Here is a link to the Icelandic company register: "
