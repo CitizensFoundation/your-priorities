@@ -213,3 +213,17 @@ de:
         not_an_integer: muss ganzzahlig sein
       full_messages:
         format: '%{attribute}%{message}'
+  devise:
+    invitations:
+      new:
+        header: Einladung versenden
+      send_instructions: Eine Einladung wurde an %{email} gesendet.
+  9b9d8a976b42e0bd66381797644943d5: Veröffentlicht
+  30ae8fff8898dc197acd49d9c0797d20: Erfolgreich
+  22af645d1859cb5ca6da0c484f1f37ea: neu
+  9ee2fe857acedeff0c24765e3d2a25f9: Bitte gib deinen Namen ein
+  42bd4c0819c498d1c1ab622de74d6f82: unterstützt
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Gescheitert
+  b6e0b0c90cfbddfe767f137f8066d1df: In Bearbeitung
+  4fb7286b0fe19a6cf2569e4115e88baa: bitte mehr als 10 Zeichen eingeben
+  4607ccb71469675944516398e717479c: Bitte die Nutzungsbedingungen akkzeptieren

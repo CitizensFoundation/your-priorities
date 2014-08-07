@@ -1,2 +1,39 @@
 ---
-hu: {}
+hu:
+  will_paginate:
+    next_label: Következő &#8594;
+    previous_label: '&#8592; Előző'
+  devise:
+    invitations:
+      send_instructions: A meghívó elküldve a %{email} címre.
+      updated: A jelszó sikeresen beállítva. Most már bejelentkezett.
+      new:
+        header: Meghívó küldése
+  views:
+    pagination:
+      next: Következő &rsaquo;
+  070625ecbc8bd373ccfb31867274eb97: Jelszóvisszaállítási útmutató a %{instance_name}
+    számára
+  c867451892e38db47a8cc5e7b02d5c54: amit ön támogat
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Jelentés
+  ab70cd88a40e7c3247bfce039ad0045d: kérjük 5 karakternél többet írjon
+  80df8e95c1fef941a4f600f0fd1b07c8: kérjük 12 karakternél többet írjon
+  5a9d18bb87ff12835dc844883c5c3ebe: változások
+  4fb7286b0fe19a6cf2569e4115e88baa: kérjük 10 karakternél többet írjon
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Sikertelen
+  b6e0b0c90cfbddfe767f137f8066d1df: Folyamatban
+  9b9d8a976b42e0bd66381797644943d5: Közzétéve
+  30ae8fff8898dc197acd49d9c0797d20: Sikeres
+  22af645d1859cb5ca6da0c484f1f37ea: új
+  eed1d7e8237b8656aff7c66bb5999f96: Kérjük adjon meg egy az oldalon azonosítónevet.
+  4607ccb71469675944516398e717479c: Kérjük fogadja el a felhasználási feltételeket
+  9ee2fe857acedeff0c24765e3d2a25f9: Kérjük adja meg nevét
+  91504cddd78bd6a6826026c83f554958: Kérjük adja meg
+  d5f0462c74e5c7bf041d992697b7e06b: ez a cím már foglalt
+  0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} megjegyzést fűzött ide: %{comment_name}'
+  a00624d47e8dca3b06b23cdcd386cd62: '%{sender_name} közleményt posztolt az ön profilján'
+  42bd4c0819c498d1c1ab622de74d6f82: támogatva
+  83c101ec84ebd1c0e45fa1cd5b9300d6: ellenezve
+  37fc5aed92a40b16dafd17cee72e3154: Legjobb ötletek
+  833c90a077a2beda3b6cd000f3fe5c29: Véletlenszerű ötletek
+  f504eb1cc2305a863cc0cf23428a36f8: Megosztó ötletek

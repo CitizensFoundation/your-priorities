@@ -396,6 +396,7 @@ sv-SE:
   201e7310f5fb28133f781fc856003d92: Idétitel
   03368e3c1eb4d2a9048775874301b19f: Välj kategori
   7dd982d0948637b4ae83f2804bd489ca: Varför ska folk stödja din idé?
+  b513ce9261a49ab58593ca678a8a18c0: Alla nuvarande
   668deb1091498fc9353f5d297fd55877: tecken kvar
   b5a7adde1af5c87d7fd797b6245c2a39: Beskrivning
   062bad04a7e077f61b7dcb0ef85dbef9: Detta visar ändringar sedan föregående revidering.
@@ -434,6 +435,7 @@ sv-SE:
   00d9e5c459f14c32aa6d6d1bb7cde76d: Revisideringar (%{count})
   26035f5354afb729c61d704ecbd14053: Nya revideringar
   a80425472d94ae02c836da5b6f205b7b: Feed
+  8bf906833cc7aea8084f552217ed9c1d: Avstängd
   8e1a7d9287a48440106ef0181c5a0181: Köp en annons
   f2a6c498fb90ee345d997f888fce3b18: Ta bort
   a604e73131bb1a34283a5ebcd349def4: godkändes
@@ -563,8 +565,6 @@ sv-SE:
   c33e404a441c6ba9648f88af3c68a1ca: Statistik
   2f64c030f4bec3e2c21e78506cc78f63: De viktigaste 25 idéerna för %{instance_name}
   7cdfb0c074a8155d864d2b591b0d509b: Rapporterat innehåll
-  b513ce9261a49ab58593ca678a8a18c0: Alla nuvarande
-  8bf906833cc7aea8084f552217ed9c1d: Avstängd
   15bbb9d0bbf25e8d2978de1168c749dc: Webbplats
   1a08c8ca9af355a37e4b5d4595434211: Lösenordsbekräftelse
   703fabf8db15f38533b603fd3e8099af: Följande diskussion
@@ -605,7 +605,6 @@ sv-SE:
   a7761bd5cba69c6727e64f3df1f2d680: En styrka är viktigt att övertyga andra människor
     att stödja eller motsätta sig din idé. Förklara varför man ska rösta på denna
     idé, vad gör det viktigt eller inte.
-  6ba1364d96463a5bb5b064ce138e3128: '%{user_name} ber dej tänka över %{idea_name}'
   81419da2582f8c15ad1e3d2d732e1fb2: Varför ska folk stödja den här idéen?
   28316f611efd0ad924f6a9db26bf884c: En styrka är viktigt att övertyga andra människor
     att stödja eller motsätta sig denna idé. Förklara varför man ska rösta på denna
@@ -619,6 +618,7 @@ sv-SE:
   4938ac136fbb96f4b7dc5dbc9f22b3d8: '%{count} opponenter fann detta <i>icke</i> användbart.'
   b59b8af25c9a82643008ca5defb21a2f: '%{count} opponenter fann detta användbart,%{other_count}
     gjorde det inte.'
+  6ba1364d96463a5bb5b064ce138e3128: '%{user_name} ber dej tänka över %{idea_name}'
   3bc9cc15d02611dc4781a6ce6bf86710: Stöd
   13af6b983fc9bbd55699881a1023a539: Opponera
   1a8e4f3a313d948ac095a8d24110c1b1: '%{count} stödde'
