@@ -80,7 +80,7 @@ namespace :utils do
     puts "Space,Users,Ideas,Points,Comments"
     ["barcombe-hamsey","chailey-wivelsfield","ditchling-westmeston","kingston",
      "lewes","newhaven","newick","ousevalley-ringmer","peacehaven","plumpton",
-     "saltdean-telscombe-cliffs","seaford.yrpri.org"].each do |short_name|
+     "saltdean-telscombe-cliffs","seaford"].each do |short_name|
       SubInstance.where(:short_name=>short_name).each do |from|
         puts "#{from.short_name},#{User.unscoped.where(:sub_instance_id=>from.id).count},#{Idea.unscoped.where(:sub_instance_id=>from.id).count},"+
               "#{Point.unscoped.where(:sub_instance_id=>from.id).count},#{Comment.unscoped.where(:sub_instance_id=>from.id).count}"
@@ -95,7 +95,7 @@ namespace :utils do
     puts "Space,Name,Email,Sign in count"
     ["barcombe-hamsey","chailey-wivelsfield","ditchling-westmeston","kingston",
     "lewes","newhaven","newick","ousevalley-ringmer","peacehaven","plumpton",
-    "saltdean-telscombe-cliffs","seaford.yrpri.org"].each do |short_name|
+    "saltdean-telscombe-cliffs","seaford"].each do |short_name|
       SubInstance.where(:short_name=>short_name).each do |from|
         User.unscoped.where(:sub_instance_id=>from.id).each do |user|
           puts "#{from.short_name},#{user.login},#{user.email},#{user.sign_in_count}"

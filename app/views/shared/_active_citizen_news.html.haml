@@ -1,4 +1,4 @@
-- if @idea and SubInstance.current.short_name.include?("nhs")
+- if @idea and @idea.name and @SubInstance.current.short_name.include?("nhs")
   #active_citizen_news_container{:style=>"display:none;"}
     .row
       .large-12.columns
