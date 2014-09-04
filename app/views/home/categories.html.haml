@@ -3,7 +3,7 @@
 - for category in @categories
   .idea_listing
     %span
-      %h4
+      %h3
         %a{:href => "#{category.to_url}"}
           = category.name
           = " (#{category.ideas.count}) -"
