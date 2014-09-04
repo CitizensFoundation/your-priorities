@@ -9,7 +9,7 @@
           = " (#{category.ideas.count}) -"
         %span.small_text{:style=>""}
           = raw "<a href='/ideas/new?category_id=#{category.id}'>"+tr("Add new idea","model/category")+"</a>"
-      - category.ideas.top_three.each do |idea|
+      - category.ideas.published.top_three.each do |idea|
         = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
 - unless @activities.blank?
   .row
