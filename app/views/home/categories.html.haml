@@ -3,7 +3,7 @@
 - for category in @categories
   .idea_listing
     %span
-      %h3
+      %h2
         %a{:href => "#{category.to_url}"}
           = category.name
           = " (#{category.ideas.count}) -"
@@ -11,6 +11,7 @@
           = raw "<a href='/ideas/new?category_id=#{category.id}'>"+tr("Add new idea","model/category")+"</a>"
       - category.ideas.published.top_three.each do |idea|
         = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
+        %br
 - unless @activities.blank?
   .row
     .large-12.columns
