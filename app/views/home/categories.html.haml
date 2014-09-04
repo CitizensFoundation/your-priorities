@@ -6,10 +6,12 @@
       %h2
         %a{:href => "#{category.to_url}"}
           = category.name
-          = " (#{category.ideas.count}) -"
-        %span.small_text{:style=>""}
-          = raw "<a href='/ideas/new?category_id=#{category.id}'>"+tr("Add new idea","model/category")+"</a>"
-      - category.ideas.published.top_three.each do |idea|
+          = " (#{category.ideas.published.count})"
+        - if not @block_new_ideas
+          = " -"
+          %span.small_text{:style=>""}
+            = raw "<a href='/ideas/new?category_id=#{category.id}'>"+tr("Add new idea","model/category")+"</a>"
+      - category.ideas.published.by_random.limit(3).each do |idea|
         = render :partial=>"ideas/top_level_listing", :locals=>{:idea=>idea, :endorsements=>@endorsements}
         %br
 - unless @activities.blank?
