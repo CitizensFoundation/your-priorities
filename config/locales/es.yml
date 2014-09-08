@@ -17,13 +17,13 @@ es:
   7dce122004969d56ae2e0245cb754d35: Editar
   2512081b92507a3e87cdb8ba7cd6c6b7: 'Idea #1:'
   d4dccb8ca2dac4e53c01bd9954755332: Guardar cambios
+  034cb9b595f45003845f5ebed51a0a39: Consumer Secret de Twitter
   a0d7e042ee84ad945d55f3862369255f: Subir y guardar tu foto
   0863f095cbdbbe6ce5a8aac979766a83: Tamaño máximo del nombre de idea
   668deb1091498fc9353f5d297fd55877: caracteres restantes
   b5a7adde1af5c87d7fd797b6245c2a39: Descripción
   062bad04a7e077f61b7dcb0ef85dbef9: Esto muestra los cambios desde la revisión anterior.
     También puedes <a href='%{clean_url}'>ver la versión en claro</a>
-  034cb9b595f45003845f5ebed51a0a39: Consumer Secret de Twitter
   f4ec5f57bd4d31b803312d873be40da9: Cambiar
   0ef9a6968cfe92f7bde817483fb5d0cf: Opositar
   0f9b5eff8d1d07e6ce3a8fe2697a76f7: Se unió en %{time_ago}
@@ -238,41 +238,8 @@ es:
       full_messages:
         format: '%{attribute}%{message}'
   fbaedde498cdead4f2780217646e9ba1: A FAVOR
-  0358ca3a25ad72c389989a3db811f233: '%{user_name} renombró %{idea_name}'
-  002d4fac39a17aaa96c1a79a1a710edb: Correo electrónico de ventas
-  0038a9e512b4678c583db11009d2c297: Esta es la idea que crece más rápido
-  003e636075eed8d70232cd54e12236db: Se ha creado tu %{instance_name}
-  006a226cb52da43e63800809bd1cb3f6: '%{user_name} votó en contra de la idea %{position}'
-  006a4eadd1c44616ad82234981c03563: Yahoo Appid (<a href='https://developer.yahoo.com/wsregapp/'>Consíguelo
-    aquí</a>)
-  0077d575bfc52d2176b427189982b6a6: Guardado %{point_name}
-  00b177e080ff1c3d340997fb01c3951c: Aceptar invitación
-  00d9e5c459f14c32aa6d6d1bb7cde76d: Revisiones (%{count})
-  00f399f02ac662457af2fa6ce23adbdb: '%{user_name} ha perdido %{capital}%{currency_short_name}
-    porque tanto sus simpatizantes como sus opositores consideraron que %{point_name}
-    no era útil'
-  010818f282f6ca53d86d4f988f83744f: Guarda los ajustes
-  01374d70036cb0b48058e7e031eeb680: Debes iniciar sesión para acceder a este sitio
-    web privado
-  01434d2ab206eb7f37324a021439b2fa: ¿Debe utilizar tu nombre real o el nombre del
-    sitio?
-  01441c80c744e05983f0681cacfcf047: Votó a favor de %{new_idea_name} en vez de a %{idea_name}
-  016e3b623e81108aac0844988d799eff: 'Revisiones: %{sentence}'
-  019ec3132cdf8ee0f2e2a75cf5d3e459: Sexo
-  01a2f2a00851bab435bced7b0454dce2: ¿Qué haces en %{sub_instance_name}?
-  021da1b20f73dc252361a54d80497ef3: Clasificación
-  026688f148cfe681359ec62731411752: Gracias por tu pago en  %{instance_name}
-  02684cc6b6ea1811a064f475a5fd1d18: Autores
-  02bb5de0c787154b2cfaea82d1cfc40d: Cancelar esta revisión
-  02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} publicó un boletín'
-  0323de4f66a1700e2173e9bcdce02715: Cerrar sesión
-  03368e3c1eb4d2a9048775874301b19f: Seleccionar categoría
-  03937134cedab9078be39a77ee3a48a0: Grupo
-  04412bb51cddee4b889c1adbf558670a: Información sobre tu donación
   0557fa923dcee4d0f86b1409f5c2167f: Volver
   0584e445d656b83b431227bb80ff0c30: Dona
-  03fa96387303a39d8a63c153bac26958: 'Nos reservamos el derecho a:'
-  047fe665bd2cea51e221d371d1e4c698: Cambiar la configuración de %{user_name}
   06ba2bc280e5497a86716f2bac565751: Código de Google Analytics
   06df33001c1d7187fdd81ea1f5b277aa: Acciones
   07221d868183bab87e41f0ec47440880: Discusiones sobre tus ideas
@@ -367,7 +334,6 @@ es:
   2bd2b8e30995d2dfe1f43a4ea30fc3fc: Más debatidas
   8de16e7a08998e0e60d27d6b4d441379: Top ideas en últimas 24h
   6c60eec8c5809428787d3d817d389404: Top ideas en últimos 30 días
-  04742c1a5a675be0659d83d65cb79661: Ideas ganando posiciones en el ranking
   233b006364b1fcfc3b6e2928a20e1545: Ideas perdiendo posiciones en el ranking
   e42d894b926c4833956b61471df18351: Ideas que generan más controversia
   0574c44ee9d51a85091b24119d5c2f69: Ideas nuevas
@@ -387,6 +353,7 @@ es:
   1b92838e756182fda710cfd58819f671: Puntos de vista para
   ff0cfd359a1d96d597133a4341a6a7e4: Aportar idea nueva
   201e7310f5fb28133f781fc856003d92: Título de la idea
+  04742c1a5a675be0659d83d65cb79661: Ideas ganando posiciones en el ranking
   7dd982d0948637b4ae83f2804bd489ca: ¿Por qué debería la gente apoyar tu idea?
   2e6c2d96aaacc8ef06d0ea12237cfc2e: Todos los campos son requeridos
   d7241b155164fdbc560602f924393149: Aporta tu idea y punto de vista
@@ -400,3 +367,66 @@ es:
   8b5ba9ef245ba14a9d4871dbcd6a4f6f: Votar negativo
   c17180d53c6d6ee18c3240d01ed62131: Votar positivo
   cde1d24d4d3427be7222dbe6a518f6da: Sin puntos de vista aún.
+  04bc5390fd93d76fb2471f2f3a432ed5: Tus ideas %{tag_name} terminadas
+  002d4fac39a17aaa96c1a79a1a710edb: Correo electrónico de ventas
+  0038a9e512b4678c583db11009d2c297: Esta es la idea que crece más rápido
+  003e636075eed8d70232cd54e12236db: Se ha creado tu %{instance_name}
+  006a226cb52da43e63800809bd1cb3f6: '%{user_name} votó en contra de la idea %{position}'
+  006a4eadd1c44616ad82234981c03563: Yahoo Appid (<a href='https://developer.yahoo.com/wsregapp/'>Consíguelo
+    aquí</a>)
+  0077d575bfc52d2176b427189982b6a6: Guardado %{point_name}
+  00b177e080ff1c3d340997fb01c3951c: Aceptar invitación
+  00d9e5c459f14c32aa6d6d1bb7cde76d: Revisiones (%{count})
+  00f399f02ac662457af2fa6ce23adbdb: '%{user_name} ha perdido %{capital}%{currency_short_name}
+    porque tanto sus simpatizantes como sus opositores consideraron que %{point_name}
+    no era útil'
+  010818f282f6ca53d86d4f988f83744f: Guardar ajustes
+  01374d70036cb0b48058e7e031eeb680: Debes iniciar sesión para acceder a este sitio
+    web privado
+  01434d2ab206eb7f37324a021439b2fa: ¿Debo utilizar tu nombre real o el nombre del
+    sitio?
+  01441c80c744e05983f0681cacfcf047: Votó a favor de %{new_idea_name} en vez de a %{idea_name}
+  016e3b623e81108aac0844988d799eff: 'Revisiones: %{sentence}'
+  019ec3132cdf8ee0f2e2a75cf5d3e459: Sexo
+  01a2f2a00851bab435bced7b0454dce2: ¿Qué haces en %{sub_instance_name}?
+  021da1b20f73dc252361a54d80497ef3: Clasificación
+  026688f148cfe681359ec62731411752: Gracias por tu pago en  %{instance_name}
+  02684cc6b6ea1811a064f475a5fd1d18: Autores
+  02bb5de0c787154b2cfaea82d1cfc40d: Cancelar esta revisión
+  02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} publicó un boletín'
+  0323de4f66a1700e2173e9bcdce02715: Cerrar sesión
+  03368e3c1eb4d2a9048775874301b19f: Seleccionar categoría
+  0358ca3a25ad72c389989a3db811f233: '%{user_name} renombró %{idea_name}'
+  03937134cedab9078be39a77ee3a48a0: Grupo
+  03fa96387303a39d8a63c153bac26958: 'Nos reservamos el derecho a:'
+  04412bb51cddee4b889c1adbf558670a: Información sobre tu donación
+  047fe665bd2cea51e221d371d1e4c698: Cambiar la configuración de %{user_name}
+  e11d937a5185a2361123ad5222df5f5f: Ideas %{tag_name} aleatorias
+  a22a31345901fab0939eb50823c23b88: Estado terminado
+  a0bc24991a11d8e4dcf00ba0c337f932: Fecha del nuevo estado
+  1809e18e24e352c936a7bed29fe56398: Tema del nuevo estado
+  aa750dc0f9ceebb3ce86571be0dc6460: Mensaje del nuevo estado
+  f5359d1dd07def542aa9b0577fb27068: Actualizar estado
+  3b878279a04dc47d60932cb294d96259: Información general
+  f7c27fe5419c0751885d8a0cc6f0e75a: Debate (%{count})
+  cbc00c310ea3af7dc35edceb12f5601f: Añadir punto
+  b4c1d65b09a6dd0d154f9680cda00843: Discusiones (%{count})
+  26035f5354afb729c61d704ecbd14053: Nueva revisión
+  a80425472d94ae02c836da5b6f205b7b: Fuente
+  8e1a7d9287a48440106ef0181c5a0181: Comprar un anuncio
+  f2a6c498fb90ee345d997f888fce3b18: Eliminar
+  a604e73131bb1a34283a5ebcd349def4: promocionado
+  665255de10a45ae3e1c0e81b515b55ca: '%{count} discusiones'
+  453aceb005ceaf54a47da15fee8b2a26: Páginas
+  0b39c5aca15b84b1ad53a94d6b3feb78: Cambiar contraseña
+  198584454b0ce1101ff5b50323325aa8: Tu dirección de correo electrónico
+  40a2e1017d03e4ce611e8e59ffd188b4: Ahora... selecciona un plan
+  083f66b6e0c1c0e39ea7803620d7dd9f: Cambiar plan
+  d6cb6dc595d9a3a6c3e2db949a04be06: Ponte en contacto con nosotros en <a href='mailto:%{email}'>%{email2}</a>
+  90470f17c0c5b3cb0c3d2581e14aff20: Crea tu propio %{instance_name} (¡Es rápido y
+    sencillo!)
+  3f0d611a1c160e3ffbfd172a9e163a18: 'Se ha producido %{error_count} error, por lo
+    que no se ha podido guardar esta cuenta:'
+  6ae7034c0535498660d77f0201b17841: 'Se han producido %{error_count} errores, por
+    lo que no se ha podido guardar esta cuenta:'
+  0af762d3701c852a5371fa4ad393f9fa: Introduce tu %{instance_name}

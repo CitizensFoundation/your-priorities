@@ -111,7 +111,6 @@ ro-RO:
   003e636075eed8d70232cd54e12236db: '%{instance_name} dvs. se creeaza'
   668deb1091498fc9353f5d297fd55877: caractere rămase
   b5a7adde1af5c87d7fd797b6245c2a39: Descriere
-  c826ca2348d9fdb979b6d49b2eea00e1: Nu mai consideră %{point_name} util
   062bad04a7e077f61b7dcb0ef85dbef9: Acesta arată modificările de la revizuirea precedentă.
     De asemenea, puteți să <a href='%{clean_url}'>see the clean version</a>
   002d4fac39a17aaa96c1a79a1a710edb: E-mail de vânzări
@@ -277,7 +276,7 @@ ro-RO:
   a5653af764bc1619a170fcb6c315416a: Ștergeți de pe această pagină?
   223fbee99dc0f256d7988381ed7606ec: '%{user_name} nu se mai opune'
   fbb1f9c2120e361e0e7b520936d57f86: A adăugat %{point_name} acestei idei
-  3a401dd966161f64fd3b8d1c06292f18: Instrument de traducere
+  c826ca2348d9fdb979b6d49b2eea00e1: Nu mai consideră %{point_name} util
   5b2b53624bb2f80eb21d312c88655ef3: A postat informații la %{discussion_name}
   32938671fad54d324521ce91454ea958: A votat pentru %{idea_name} la ideea %{position}
   fa529590e5e535db935b0dd7f91f2d9a: A fost o problemă cu cardul dvs. - Vă rugăm să
@@ -361,6 +360,7 @@ ro-RO:
   254f642527b45bc260048e30704edb39: Configurare
   7c326855728927b06f5b11e92cefdae8: Ajută-ne să ne imbunătățim prin trimiterea mai
     multor traduceri
+  3a401dd966161f64fd3b8d1c06292f18: Instrument de traducere
   8f7f4c1ce7a4f933663d10543562b096: Despre
   8cf04a9734132302f96da8e113e80ce5: Acasă
   d46ef9e7211d041671cdbe6c3d884884: Idei
@@ -529,8 +529,6 @@ ro-RO:
   441f54c7f0ecef11a8a652c6ed75c52e: Plan curent
   43f2ea9de2657b24003a0585800c6534: Mai mulți utilizatori? Consultare? Integrarea
     butonului de logare ori alte adaptari?
-  50a941dd2b0b556780498304f6b67c92: Explicați-vă punctul de vedere
-  0f68b904e33d9ac04605aecc958bcf52: Informații adiționale
   12cc3f3e76f44bf82cfd0a05648f71d3: Dacă sunteți o organizație non-profit (ONG), vă
     rugăm să luați în considerare folosirea serviciului %{yrpri_link} administrat
     de ONG parteneră %{cf_link} din Islanda.
@@ -612,6 +610,8 @@ ro-RO:
   f98632d5dbe4b62224e8d2c281ec45db: Creați un nou utilizator de email
   45d02053b56e67472d6aa112e633b2c2: Adăugați un punct de vedere pro
   3a4b8d088c304ae2af8cac88963c8926: Adăugați un punct de vedere pro sau contra
+  50a941dd2b0b556780498304f6b67c92: Explicați-vă punctul de vedere
+  0f68b904e33d9ac04605aecc958bcf52: Informații adiționale
   d1b44fa378a165b8c319fe0b0f08f231: (Necesare pentru înregistrare dar niciodată folosite
     fără permisiunea dvs.)
   034a5d0ca862fdb6a3e451adf4ae0b9a: (Poate fi numele dvs. ori un pseudonim)
