@@ -548,27 +548,17 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
   add_index "instances", ["short_name"], :name => "index_instances_on_short_name"
 
   create_table "monologue_posts", :force => true do |t|
-    t.integer  "posts_revision_id"
     t.boolean  "published"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
-
-  create_table "monologue_posts_revisions", :force => true do |t|
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
     t.string   "title"
     t.text     "content"
     t.string   "url"
-    t.integer  "user_id"
-    t.integer  "post_id"
     t.datetime "published_at"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
   end
 
-  add_index "monologue_posts_revisions", ["id"], :name => "index_monologue_posts_revisions_on_id", :unique => true
-  add_index "monologue_posts_revisions", ["post_id"], :name => "index_monologue_posts_revisions_on_post_id"
-  add_index "monologue_posts_revisions", ["published_at"], :name => "index_monologue_posts_revisions_on_published_at"
-  add_index "monologue_posts_revisions", ["url"], :name => "index_monologue_posts_revisions_on_url"
+  add_index "monologue_posts", ["url"], :name => "index_monologue_posts_on_url", :unique => true
 
   create_table "monologue_taggings", :force => true do |t|
     t.integer "post_id"
@@ -649,6 +639,7 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.float    "amount"
     t.float    "vat"
     t.string   "paymill_offer_id"
+    t.boolean  "private",          :default => false
   end
 
   create_table "point_qualities", :force => true do |t|
@@ -997,7 +988,6 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.string   "country_english_name",                   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "map_coordinates"
     t.string   "default_locale",       :default => "en"
   end
 
@@ -1217,8 +1207,6 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.boolean  "admin"
     t.string   "locale"
     t.integer  "level",             :default => 0
-    t.datetime "synced_at"
-    t.string   "type"
   end
 
   add_index "tr8n_translation_keys", ["key"], :name => "index_tr8n_translation_keys_on_key", :unique => true
@@ -1262,7 +1250,6 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.text     "rules"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "synced_at"
   end
 
   add_index "tr8n_translations", ["created_at"], :name => "tr8n_trans_created_at"
@@ -1344,7 +1331,6 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.boolean  "manager"
     t.string   "last_ip"
     t.string   "country_code"
-    t.integer  "remote_id"
   end
 
   add_index "tr8n_translators", ["created_at"], :name => "index_tr8n_translators_on_created_at"
