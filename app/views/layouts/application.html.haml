@@ -39,7 +39,7 @@
   .row
     .large-12.columns
       = render :partial => "ads/pick"
-  .row
+  .row{:class=>"main_row"}
     .large-9.columns
       = flash_div :warning, :notice, :error
       = yield :layout
