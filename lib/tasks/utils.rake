@@ -203,7 +203,7 @@ namespace :utils do
     #Endorsement.all.each do |e| puts e.position end
     #Endorsement.where("sub_instance_id IS NULL").all.each do |e| puts Idea.unscoped.find(e.idea_id).name end;get chomp
     #Endorsement.where("sub_instance_id IS NULL").all.each do |e| puts e.created_at end;get chomp
-    Endorsement.where("sub_instance_id IS NULL").all.each do |e| e.sub_instance_id=SubInstance.where(:short_name=>"default").id;e.save end
+    Endorsement.where("sub_instance_id IS NULL").all.each do |e| e.sub_instance_id=SubInstance.where(:short_name=>"default").first.id;e.save end
     User.unscoped.all.each do |user|
       SubInstance.current = SubInstance.find(user.sub_instance_id)
       Endorsement.where(:user_id=>user.id,:sub_instance_id=>user.sub_instance_id).all.each do |e|
