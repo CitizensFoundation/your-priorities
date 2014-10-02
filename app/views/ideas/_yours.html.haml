@@ -55,8 +55,3 @@
                                                                                     :class => "ajax_pagination", :inner_window => 2)
   %p
     = tr("Vote ideas up or down to add them to your priorities list. You can drag and drop items in your list to change the order.", "view/ideas/_yours")
-  - if current_user.endorsements_count > 0
-    = #tr("The big numbers you see next to each idea is the overall rank across all members.", "view/ideas/_yours")
-  - if current_user.endorsements_count > 4
-    %div
-      = tr("Drag and drop to re-order your list or click the # to change its idea.", "view/ideas/_yours")
