@@ -87,6 +87,7 @@ class SubInstancesController < ApplicationController
   def create
     @sub_instance = SubInstance.new(params[:sub_instance])
     @sub_instance.ip_address = request.remote_ip
+    @sub_instance.short_name = @sub_instance.short_name.downcase
     @page_title = tr("New {instance_name} created", "controller/sub_instances", :instance_name => current_instance.name)
     respond_to do |format|
       if @sub_instance.save
