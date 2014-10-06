@@ -1,3 +1,4 @@
+=begin
 Monologue.sidebar              = ["latest_posts", "latest_tweets"]   # this will add the latests posts and latests tweets in the right sidebar.
 Monologue.show_rss_icon        = true # will show the RSS icon (with link) in the header)
 Monologue.facebook_url         = "https://www.facebook.com/jipiboilycom" # if set, this will enable Facebook icon and link it to your Facebook page.
@@ -31,3 +32,4 @@ Monologue::User.class_eval do
     self.encrypted_password
   end
 end
+=end

@@ -54,7 +54,6 @@ gem 'auto_html'
 #gem 'resque', "~> 1.22.0"
 #gem "resque"
 gem 'rmagick', require: false
-gem 'monologue','0.2.0'
 gem 'unicorn'
 gem 'sidekiq'
 #gem "thin"

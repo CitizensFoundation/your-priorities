@@ -37,8 +37,8 @@ class HomeController < ApplicationController
   end
 
   def blog
-    @post = Monologue::Post.find(params[:id])
-    @post = @post.posts_revisions.last
+    #@post = Monologue::Post.find(params[:id])
+    #@post = @post.posts_revisions.last
   end
 
   def about
@@ -109,7 +109,7 @@ class HomeController < ApplicationController
 
       last = params[:last].blank? ? Time.now + 1.second : Time.parse(params[:last])
       @activities = Activity.active.top.for_all_users.paginate(:page => params[:page])
-      @blog_posts = Monologue::Post.published.limit(3)
+      #@blog_posts = Monologue::Post.published.limit(3)
     end
   end
 

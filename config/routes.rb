@@ -25,7 +25,7 @@ YourPriorities::Application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks",
   }
 
-  mount Monologue::Engine, at: '/blog'
+  #mount Monologue::Engine, at: '/blog'
 
   resources :categories
 
