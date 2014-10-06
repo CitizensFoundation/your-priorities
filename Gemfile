@@ -27,7 +27,7 @@ gem 'puma'
 gem 'test-unit'
 #gem 'passenger'
 #gem 'brcypt-ruby', '3.0.0'
-gem "tinymce-rails",'<= 3.5.6'
+#gem "tinymce-rails",'<= 3.5.6'
 gem 'foundation-will_paginate'
 gem 'rack-cors', :require => 'rack/cors'
 #gem "will_paginate-foundation"
