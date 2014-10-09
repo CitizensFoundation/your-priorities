@@ -332,7 +332,7 @@ namespace :utils do
     all_users.each_with_index do |u,i|
       if u.email
         unless u.email.include?("@ibuar.is")
-          puts "#{u.login},#{u.email}"
+          puts "\"#{u.login}\",#{u.email}"
         end
       else
        # puts "no email for #{u.id} #{u.login}"
