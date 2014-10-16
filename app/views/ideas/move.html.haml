@@ -1,0 +1,15 @@
+= render :partial => "ideas/header"
+.col-group
+  .col-1
+    .col-content
+  .col-11
+    .col-content
+      = form_for(@idea, :action=>"move") do |f|
+        = f.error_messages
+        .field
+          .field_label
+            = tr("Sub Instance", "view/users/_form_long")
+          .field_box
+            = f.select :sub_instance, options_for_select_simple(SubInstance.all.collect{|s|[s.short_name,s.id]}, @idea.sub_instance_id)
+        %br/
+        = f.submit tr("Move idea", "view/ideas/edit"), :class => "yellow_button"

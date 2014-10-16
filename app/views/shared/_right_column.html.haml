@@ -9,4 +9,11 @@
   = render :partial => "users/login"
   = render :partial => "shared/active_citizen_news"
   = render :partial => "shared/help"
+  %br
+#google_translate_element{:style=>"float: right;"}
+:javascript
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true, gaTrack: true, gaId: 'UA-7086040-3'}, 'google_translate_element');
+  }
+%script{:src => "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit", :type => "text/javascript"}
   = #render :partial => "shared/irc"
