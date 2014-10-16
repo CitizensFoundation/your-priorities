@@ -6,7 +6,8 @@ class LiveTest < Test::Unit::TestCase
 
   def setup
     @driver = Selenium::WebDriver.for :firefox
-    @base_url = "https://test.yrpri.org/"
+    @base_url = "https://test.betrireykjavik.is/"
+    #@base_url = "https://test.yrpri.org/"
     @test_user_id = rand(432432432)
     @accept_next_alert = true
     @driver.manage.timeouts.implicit_wait = 30
