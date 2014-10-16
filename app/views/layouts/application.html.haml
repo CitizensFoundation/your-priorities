@@ -16,6 +16,7 @@
     = render :partial => "shared/head"
     = render :partial => "shared/javascripts"
     = render :partial => "shared/css"
+    %meta{:content => "f7bd4ff2ad1c2848-aabfe1f275c1cd8b-g5ca4676a77b8b93a-15", :name => "google-translate-customization"}/
     - if true or Rails.env.production?
       = render :partial => "shared/analytics"
     = #IE8 Hack
@@ -32,6 +33,16 @@
     .large-12.columns
       .sticky.contain-to-grid
         = render :partial => "shared/top_navigation"
+  - if ENV['ENABLE_GOOGLE_TRANSLATE'] and current_user and current_user.is_root?
+    .br
+    .row
+      .large-12.columns
+        #google_translate_element{:style=>"float:right;"}
+        :javascript
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true, gaTrack: true, gaId: 'UA-7086040-3'}, 'google_translate_element');
+          }
+        %script{:src => "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit", :type => "text/javascript"}
   .br
   .row
     .large-12.columns
