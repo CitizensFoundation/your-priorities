@@ -317,7 +317,7 @@ is:
   04742c1a5a675be0659d83d65cb79661: Rísandi hugmyndir
   233b006364b1fcfc3b6e2928a20e1545: Fallandi hugmyndir
   e42d894b926c4833956b61471df18351: Umdeildar hugmyndir
-  0574c44ee9d51a85091b24119d5c2f69: Nýjust hugmyndir
+  0574c44ee9d51a85091b24119d5c2f69: Nýjustu hugmyndir
   35408f2e9ccf595f1765bd8e56a2f571: Bestu rök um %{idea_name}
   c772367d0682d61254cebb1dcfd44c93: Umræður um %{idea_name}
   49c413c7e9fbe1aee3281a29d2d0dd9c: Síðustu athugasemdir um  %{idea_name}
@@ -351,7 +351,7 @@ is:
   ff0cfd359a1d96d597133a4341a6a7e4: Settu inn nýja hugmynd
   201e7310f5fb28133f781fc856003d92: Nafn hugmyndar
   03368e3c1eb4d2a9048775874301b19f: Veldu málaflokk
-  7dd982d0948637b4ae83f2804bd489ca: Afhverju ætti fólk að styðja þína hugmynd?
+  7dd982d0948637b4ae83f2804bd489ca: Veldu góðan, lýsandi titil fyrir þín rök
   2e6c2d96aaacc8ef06d0ea12237cfc2e: Það þarf að fylla í alla reiti
   d7241b155164fdbc560602f924393149: Skráðu hugmynd þína og rök
   586f9d3669a73e12a8caed7a7d76288e: Veldu góðan, lýsandi titil á hugmyndina þína
