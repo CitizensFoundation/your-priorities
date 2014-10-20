@@ -56,7 +56,7 @@ class IdeasController < ApplicationController
 
   def move
     # This function can only be used when users are shared between sub instances
-    if request.post? #and ENV['YRPRI_ALL_DOMAIN']
+    if request.post? and ENV['YRPRI_ALL_DOMAIN']
       sub_instance = SubInstance.find(params[:idea][:sub_instance])
       current_saved = SubInstance.current
       SubInstance.current = sub_instance
@@ -89,6 +89,7 @@ class IdeasController < ApplicationController
         item.sub_instance_id = sub_instance.id
         item.save(:validate=>false)
       end
+      redirect_to @idea.show_url
     end
   end
 
