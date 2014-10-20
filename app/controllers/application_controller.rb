@@ -636,6 +636,7 @@ class ApplicationController < ActionController::Base
     @items[item_count+=1]=[tr("Activities", "view/ideas/_nav"), activities_idea_url(@idea)]
     if current_user and current_user.is_admin?
       @items[item_count+=1]=[tr("Update status", "view/ideas/_nav"), update_status_idea_url(@idea)]
+      @items[item_count+=1]=[tr("Move", "view/ideas/_nav"), move_idea_url(@idea)]
       @items[item_count+=1]=[tr("Edit", "view/ideas/_nav"), edit_idea_url(@idea)]
       #@items[item_count+=1]=[tr("Delete", "view/ideas/_nav"), destroy@idea]
     end

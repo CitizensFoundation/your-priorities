@@ -4,7 +4,7 @@
     .col-content
   .col-11
     .col-content
-      = form_for(@idea, :action=>"move") do |f|
+      = form_for(@idea, :url=>{:action=>"move"}, :method=>"POST") do |f|
         = f.error_messages
         .field
           .field_label
