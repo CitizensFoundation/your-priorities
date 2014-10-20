@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
 
   before_filter :authenticate_user!, :only => [:yours_finished, :yours_ads, :yours_top, :yours_lowest, :consider, :flag_inappropriate, :comment, :edit, :update,
                                            :tag, :tag_save, :opposed, :endorsed, :destroy, :new]
-  before_filter :authenticate_admin!, :only => [:bury, :successful, :compromised, :intheworks, :failed, :abusive, :not_abusive]
+  before_filter :authenticate_admin!, :only => [:bury, :successful, :compromised, :intheworks, :failed, :abusive, :not_abusive, :move]
   before_filter :load_endorsement, :only => [:show, :show_feed, :activities, :endorsers, :opposers, :opposer_points, :endorser_points, :neutral_points, :everyone_points,
                                              :opposed_top_points, :endorsed_top_points, :idea_detail, :top_points, :discussions, :everyone_points ]
 #  before_filter :disable_sub_nav, :only => [:show, :show_feed, :activities, :endorsers, :opposers, :opposer_points, :endorser_points, :neutral_points, :everyone_points,
@@ -52,7 +52,47 @@ class IdeasController < ApplicationController
       }
     end
   end
-  
+
+
+  def move
+    # This function can only be used when users are shared between sub instances
+    if request.post? and ENV['YRPRI_ALL_DOMAIN']
+      sub_instance = SubInstance.find(params[:idea][:sub_instance])
+      current_saved = SubInstance.current
+      SubInstance.current = sub_instance
+      to_category_id = Category.first.id
+      SubInstance.current = current_saved
+      @idea.sub_instance_id = sub_instance.id
+      @idea.category_id = to_category_id
+      @idea.save(:validate=>false)
+      Point.unscoped.where(:idea_id=>@idea.id).each do |point|
+        point.sub_instance_id = sub_instance.id
+        point.save(:validate=>false)
+      end
+      Endorsement.unscoped.where(:idea_id=>@idea.id).each do |item|
+        item.sub_instance_id = sub_instance.id
+        item.save(:validate=>false)
+      end
+      Activity.unscoped.where(:idea_id=>@idea.id).each do |item|
+        item.sub_instance_id = sub_instance.id
+        item.save(:validate=>false)
+        Comment.unscoped.where(:activity_id=>item.id).each do |item|
+          item.sub_instance_id = sub_instance.id
+          item.save(:validate=>false)
+        end
+      end
+      Ad.unscoped.where(:idea_id=>@idea.id).each do |item|
+        item.sub_instance_id = sub_instance.id
+        item.save(:validate=>false)
+      end
+      ViewedIdea.unscoped.where(:idea_id=>@idea.id).each do |item|
+        item.sub_instance_id = sub_instance.id
+        item.save(:validate=>false)
+      end
+      redirect_to @idea.show_url
+    end
+  end
+
   # GET /ideas/yours
   def yours
     @page_title = tr("Your #{IDEA_TOKEN_PLURAL} at {sub_instance_name}", "controller/ideas", :sub_instance_name => current_sub_instance.name)
@@ -1207,7 +1247,7 @@ class IdeasController < ApplicationController
 
       @idea = Idea.find(params[:id]) if not @idea and params[:id]
 
-      if [:show, :show_feed, :update_status, :activities, :endorsers, :opposers, :opposer_points, :endorser_points, :neutral_points, :everyone_points,
+      if [:show, :show_feed, :move, :update_status, :activities, :endorsers, :opposers, :opposer_points, :endorser_points, :neutral_points, :everyone_points,
           :opposed_top_points, :endorsed_top_points, :idea_detail, :top_points, :discussions, :everyone_point].include?(action_name.to_sym)
         setup_main_ideas_menu
       else

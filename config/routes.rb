@@ -157,6 +157,8 @@ YourPriorities::Application.routes.draw do
       get :comments
       get :documents
       get :update_status
+      get :move
+      post :move
   	end
   	collection do
       get :yours
