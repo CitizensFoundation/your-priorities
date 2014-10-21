@@ -1184,7 +1184,7 @@ class IdeasController < ApplicationController
     end
     
     def load_endorsement
-      @idea = Idea.unscoped.find(params[:id])
+      load_idea
       if @idea.status == 'removed' or @idea.status == 'abusive'
         flash[:notice] = tr("That #{IDEA_TOKEN} was deleted", "controller/ideas")
         redirect_to "/"
@@ -1241,11 +1241,24 @@ class IdeasController < ApplicationController
       end
     end
 
+    def load_idea
+      if not @idea and params[:id]
+        begin
+          @idea = Idea.find(params[:id])
+        rescue
+          @idea = Idea.unscoped.find(params[:id])
+          if @idea
+            redirect_to @idea.show_url, :status => :moved_permanently
+          end
+        end
+      end
+    end
+
     def setup_menu_items
       @items = Hash.new
       item_count = 0
 
-      @idea = Idea.find(params[:id]) if not @idea and params[:id]
+      load_idea
 
       if [:show, :show_feed, :move, :update_status, :activities, :endorsers, :opposers, :opposer_points, :endorser_points, :neutral_points, :everyone_points,
           :opposed_top_points, :endorsed_top_points, :idea_detail, :top_points, :discussions, :everyone_point].include?(action_name.to_sym)
