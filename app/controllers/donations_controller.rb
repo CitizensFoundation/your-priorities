@@ -44,7 +44,7 @@ class DonationsController < ApplicationController
 
     @donation = Donation.new(params[:donation])
 
-    Rails.logger.info("Donation: #{@donation.inspect} #{params[:donation]}")
+    Rails.logger.debug("Donation: #{@donation.inspect} #{params[:donation]}")
 
     begin
       if params[:donation][:estartup]

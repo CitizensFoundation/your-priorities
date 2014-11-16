@@ -245,7 +245,7 @@ class Point < ActiveRecord::Base
     self.opposer_score = 0
     self.neutral_score = 0
     for q in point_qualities.find(:all, :include => :user)
-      Rails.logger.info("point_score_debug #{q.inspect} #{self.inspect}")
+      #Rails.logger.debug("point_score_debug #{q.inspect} #{self.inspect}")
       if q.is_helpful?
         vote = q.user.quality_factor
       else

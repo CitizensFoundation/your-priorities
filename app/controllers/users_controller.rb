@@ -129,15 +129,15 @@ class UsersController < ApplicationController
           subscription.save
         end
       end
-      Rails.logger.info("Starting HASH #{params[:user].inspect}")
+      Rails.logger.debug("Starting HASH #{params[:user].inspect}")
       params[:user].each do |hash_value,x|
-        Rails.logger.info(hash_value)
+        Rails.logger.debug(hash_value)
         if hash_value.include?("to_tag_id")
-          Rails.logger.info("DELETING: #{hash_value}")
+          Rails.logger.debug("DELETING: #{hash_value}")
           params[:user].delete(hash_value)
         end
       end
-      Rails.logger.info("After HASH #{params[:user].inspect}")
+      Rails.logger.debug("After HASH #{params[:user].inspect}")
       if not current_user.reports_enabled and params[:user][:reports_enabled].to_i==1
         params[:user][:last_sent_report]=Time.now
       end
@@ -558,9 +558,9 @@ class UsersController < ApplicationController
     soap_url = "https://egov.webservice.is/sst/runtime.asvc/com.actional.soapstation.eGOVDKM_AuthConsumer.AccessPoint?WSDL"
     soap = SOAP::WSDLDriverFactory.new(soap_url).create_rpc_driver
     soap.options["protocol.http.basic_auth"] << [soap_url,ENV['ISLYKILL_USER'],ENV['ISLYKILL_PASSWORD']]
-    Rails.logger.info("BEFORE THE RESPONSE <> BEFORE THE RESPONSE")
+    Rails.logger.debug("BEFORE THE RESPONSE <> BEFORE THE RESPONSE")
     response = soap.generateSAMLFromToken(token,:token => token, :ipAddress=>request.remote_ip)
-    Rails.logger.info("THE RESPONSE < #{response} > THE RESPONSE")
+    Rails.logger.debug("THE RESPONSE < #{response} > THE RESPONSE")
     if response and response[0] and response[0].message="Success"
       elements = Nokogiri.parse(response[1])
       name = elements.root.xpath("//blarg:NameIdentifier", {'blarg' => 'urn:oasis:names:tc:SAML:1.0:assertion'}).first.text
@@ -611,7 +611,7 @@ class UsersController < ApplicationController
     else
       raise "No SSN in island.is authentication"
     end
-    Rails.logger.info("Authentication successful for #{ssn} #{response.inspect}")
+    Rails.logger.debug("Authentication successful for #{ssn} #{response.inspect}")
     return true
   end
 

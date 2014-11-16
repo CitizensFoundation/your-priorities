@@ -76,10 +76,10 @@ class ApplicationController < ActionController::Base
         !request.fullpath.include?("/users/invitation") &&
         !request.fullpath.include?("/flag") &&
         !request.xhr?) # don't store ajax calls
-      Rails.logger.info("Store location: #{request.fullpath}")
+      Rails.logger.debug("Store location: #{request.fullpath}")
       session[:previous_url] = request.fullpath
     else
-      Rails.logger.info("Not storing location: #{request.fullpath}")
+      Rails.logger.debug("Not storing location: #{request.fullpath}")
     end
   end
 
@@ -229,7 +229,7 @@ class ApplicationController < ActionController::Base
   end
 
   def action_whitelist_filter
-    Rails.logger.info("Checking whitelist for "+"#{"#{controller_name}_controller".camelize}##{action_name}")
+    Rails.logger.debug("Checking whitelist for "+"#{"#{controller_name}_controller".camelize}##{action_name}")
     unless ACTION_WHITELIST.include?("#{"#{controller_name}_controller".camelize}##{action_name}")
       flash[:error] = tr("You are not authorized to access this page.", "controller/application")
       redirect_to "/"
@@ -308,7 +308,7 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_back_path
-    Rails.logger.info "URL: back #{session[:user_return_to] || '/'}"
+    Rails.logger.debug "URL: back #{session[:user_return_to] || '/'}"
     session[:user_return_to] || '/' 
   end
 
@@ -397,7 +397,7 @@ class ApplicationController < ActionController::Base
         end
       end
       if @iso_country
-        Rails.logger.info("Setting sub instance to iso country_id #{@iso_country.id}")
+        Rails.logger.debug("Setting sub instance to iso country_id #{@iso_country.id}")
         @current_sub_instance ||= SubInstance.where(:iso_country_id=>@iso_country.id).first
       end
       @current_sub_instance ||= SubInstance.find_by_short_name(request.subdomains.first) unless request.subdomains.first=="default"
@@ -416,7 +416,7 @@ class ApplicationController < ActionController::Base
     if File.exists?(Rails.root.join("lib/geoip/GeoIP.dat"))
       @country_code = Thread.current[:country_code] = (session[:country_code] ||= GeoIP.new(Rails.root.join("lib/geoip/GeoIP.dat")).country(request.remote_ip)[3])
     else
-      Rails.logger.error "No GeoIP.dat file"
+      Rails.logger.debug "No GeoIP.dat file"
       @country_code = "--"
     end
     @iso_country = IsoCountry.find_by_code(@country_code)
@@ -424,16 +424,15 @@ class ApplicationController < ActionController::Base
   end
 
   def check_geoblocking
-    Rails.logger.info("#{controller_name}/#{action_name} - #{@country_code} - locale #{current_locale} - #{current_sub_instance.short_name} - #{current_user ? (current_user.email ? current_user.email : current_user.login) : "Anonymous"} - (#{current_user ? current_user.id : "-1"})")
-    Rails.logger.info(request.user_agent)
+    Rails.logger.info("action_log - #{request.session_options[:id]} - #{request.remote_ip} - #{controller_name}/#{action_name} - #{@country_code} - #{current_locale} - #{current_sub_instance.short_name} - #{current_user ? (current_user.email ? current_user.email : current_user.login) : "Anonymous"} - #{current_user ? current_user.id : "-1"} - #{request.user_agent}")
     if SubInstance.current and SubInstance.current.geoblocking_enabled
       logged_in_user = current_user
       unless SubInstance.current.geoblocking_disabled_for?(@country_code)
-        Rails.logger.info("Geoblocking enabled")
+        Rails.logger.debug("Geoblocking enabled")
         @geoblocked = true unless Rails.env.development? or (current_user and current_user.is_admin?)
       end
       if logged_in_user and logged_in_user.geoblocking_disabled_for?(SubInstance.current)
-        Rails.logger.info("Geoblocking disabled for user #{logged_in_user.login}")
+        Rails.logger.debug("Geoblocking disabled for user #{logged_in_user.login}")
         @geoblocked = false
       end
     end
@@ -450,26 +449,26 @@ class ApplicationController < ActionController::Base
     if params[:locale]
       session[:locale] = params[:locale]
       cookies.permanent[:last_selected_language] = session[:locale]
-      Rails.logger.info("Set language from params")
+      Rails.logger.debug("Set language from params")
     elsif not session[:locale]
       if cookies[:last_selected_language]
         session[:locale] = cookies[:last_selected_language]
-        Rails.logger.info("Set language from cookie")
+        Rails.logger.debug("Set language from cookie")
       elsif SubInstance.current and SubInstance.current.default_locale and SubInstance.current.default_locale!=""
         session[:locale] = SubInstance.current.default_locale
-        Rails.logger.info("Set language from sub_instance")
+        Rails.logger.debug("Set language from sub_instance")
       elsif @iso_country and @iso_country.default_locale
         session[:locale] = @iso_country.default_locale
-        Rails.logger.info("Set language from geoip")
+        Rails.logger.debug("Set language from geoip")
       elsif Instance.current and Instance.current.default_locale
         session[:locale] = Instance.current.default_locale
-        Rails.logger.info("Set language from instance")
+        Rails.logger.debug("Set language from instance")
       else
         session[:locale] = :en
-        Rails.logger.info("Set language to default :en")
+        Rails.logger.debug("Set language to default :en")
       end
     else
-      Rails.logger.info("Set language from session")
+      Rails.logger.debug("Set language from session")
     end
     session_locale = session[:locale]
     I18n.locale = session_locale

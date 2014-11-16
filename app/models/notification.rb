@@ -59,7 +59,7 @@ class Notification < ActiveRecord::Base
   end
 
   def on_sent_email_entry(new_state, event)
-    Rails.logger.info("In send!")
+    Rails.logger.debug("In send!")
     self.removed_at = nil
     self.processed_at = Time.now
     Rails.logger.debug("In send! #{is_recipient_subscribed?} #{recipient.has_email?} #{recipient.is_active?}")

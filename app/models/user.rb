@@ -264,10 +264,10 @@ class User < ActiveRecord::Base
 
   def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
     if auth.uid and auth.uid!=""
-      Rails.logger.info("Logging in with twitter uid #{auth.uid} #{auth.credentials.token} #{auth.credentials.secret} #{auth.extra.raw_info.profile_image_url_https}")
+      Rails.logger.debug("Logging in with twitter uid #{auth.uid} #{auth.credentials.token} #{auth.credentials.secret} #{auth.extra.raw_info.profile_image_url_https}")
       user = User.where(:twitter_id => auth.uid).first
       unless user
-        Rails.logger.info("Creating new twitter user #{auth.extra.raw_info.name}")
+        Rails.logger.debug("Creating new twitter user #{auth.extra.raw_info.name}")
         user = User.create(:login=>auth.extra.raw_info.name,
                            :twitter_id=>auth.uid,
                            :twitter_token=>auth.credentials.token,
@@ -757,7 +757,7 @@ class User < ActiveRecord::Base
 
     if capitals_difference > 0 and self.is_capital_subscribed and self.status == "active"
       #User.delay.send_capital_email(self.activities.last.id, capitals_difference)
-      Rails.logger.info("Sending capital email")
+      Rails.logger.debug("Sending capital email")
       SendCapitalEmail.perform_in(3.seconds, self.activities.last.id, capitals_difference)
     else
       Rails.logger.info("----------------> Not sending capital email #{capitals_difference} and #{!self.is_admin} and #{self.is_capital_subscribed} and #{self.status}")

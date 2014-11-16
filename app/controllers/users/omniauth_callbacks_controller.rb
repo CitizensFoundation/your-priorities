@@ -1,8 +1,8 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
-    Rails.logger.info "-------------------------------------------- FACEBOOK LOGIN ---------------------------------------------"
-    Rails.logger.info JSON.pretty_generate(request.env["omniauth.auth"])
+    Rails.logger.debug "-------------------------------------------- FACEBOOK LOGIN ---------------------------------------------"
+    Rails.logger.debug JSON.pretty_generate(request.env["omniauth.auth"])
     session["omniauth_data"] = {
       email: request.env["omniauth.auth"][:info][:email],
       facebook_id: request.env["omniauth.auth"][:uid],
@@ -22,8 +22,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def twitter
-    Rails.logger.info "-------------------------------------------- TWITTER LOGIN ---------------------------------------------"
-    Rails.logger.info JSON.pretty_generate(request.env["omniauth.auth"])
+    Rails.logger.debug "-------------------------------------------- TWITTER LOGIN ---------------------------------------------"
+    Rails.logger.debug JSON.pretty_generate(request.env["omniauth.auth"])
     session["omniauth_data"] = {
         twitter_id: request.env["omniauth.auth"][:uid],
         provider: "Twitter",
@@ -43,8 +43,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def failure
     Rails.logger.error "-------------------------------------------- FACEBOOK/TWITTER LOGIN FAILURE ---------------------------------------------"
-    Rails.logger.info request.env["omniauth.auth"]
-    Rails.logger.info params.inspect
+    Rails.logger.debug request.env["omniauth.auth"]
+    Rails.logger.debug params.inspect
     flash[:error] = tr("Error signing in - please try again","here")
     redirect_to "/"
   end

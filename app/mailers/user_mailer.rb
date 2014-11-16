@@ -241,7 +241,7 @@ class UserMailer < Devise::Mailer
     setup_locale
     @notifiable = notifiable
     subject = @notification.name
-    Rails.logger.info("Notification class: #{@n} #{@n.class.to_s}  #{@n.inspect} notifiable: #{@notifiable}")
+    Rails.logger.debug("Notification class: #{@n} #{@n.class.to_s}  #{@n.inspect} notifiable: #{@notifiable}")
     recipients  = "#{user.real_name.titleize} <#{user.email}>"
     attachments.inline['logo.png'] = get_email_banner
     mail :to => recipients,

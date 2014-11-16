@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
   
   def index
-    Rails.logger.info("Category Name #{params[:category_name]} CRC #{params[:category_name].to_crc32}") if params[:cached_issue_list]
+    Rails.logger.debug("Category Name #{params[:category_name]} CRC #{params[:category_name].to_crc32}") if params[:cached_issue_list]
     @page_title = tr("Search {instance_name} {idea_token}", "controller/searches", :instance_name => current_instance.name, :idea_token=>IDEA_TOKEN_PLURAL)
     if params[:q]
       @query = params[:q]
