@@ -46,7 +46,7 @@ class IdeaRanker
 
     # ranks all the ideas in the database with any endorsements.
 
-    sub_instances_with_nil = SubInstance.order("created_at DESC").all
+    sub_instances_with_nil = SubInstance.order("RANDOM()").all
     sub_instances_with_nil.each do |sub_instance|
       update_positions_by_sub_instance(sub_instance)
     end
@@ -122,9 +122,9 @@ class IdeaRanker
     start_date = date.year.to_s + "-" + date.month.to_s + "-" + date.day.to_s
     end_date = (date+1.day).year.to_s + "-" + (date+1.day).month.to_s + "-" + (date+1.day).day.to_s
 
-    puts "IdeaRanker.setup_endorsements_counts"
+    #puts "IdeaRanker.setup_endorsements_counts"
     setup_endorsements_counts
-    puts "IdeaRanker.perform before ranged positions... at #{Time.now} total of #{Time.now-start_time}"
+    #puts "IdeaRanker.perform before ranged positions... at #{Time.now} total of #{Time.now-start_time}"
     setup_ranged_endorsment_positions
 
     #puts "Before charts"
@@ -169,7 +169,7 @@ class IdeaRanker
   end
 
   def setup_ranged_endorsment_positions
-    sub_instances_with_nil = SubInstance.all<<nil
+    sub_instances_with_nil = SubInstance.order("RANDOM()").all<<nil
     sub_instances_with_nil.each do |sub_instance|
       setup_ranged_endorsment_position(sub_instance,Time.now-24.hours,"position_endorsed_24hr")
       setup_ranged_endorsment_position(sub_instance,Time.now-7.days,"position_endorsed_7days")
@@ -189,11 +189,11 @@ class IdeaRanker
     end
 
     ideas = Idea.where(sub_instance_sql+" and ideas.status = 'published'")
-    puts "Found #{ideas.count} total"
+    #puts "Found #{ideas.count} total"
 
     return false unless ideas.count>0
 
-    puts "Proceeding to calculate scores"
+    #puts "Proceeding to calculate scores"
 
     # make sure the scores for all the positions above the max position are set to 0
     #Endorsement.update_all("score = 0", "position > #{Endorsement.max_position}")
@@ -313,7 +313,7 @@ class IdeaRanker
         old[delete_duplicate_taggins_create_key(t)]=t
       end
     end
-    puts deleted_count
+    #puts deleted_count
   end
 
   def add_missing_tags_for_ideas
@@ -325,22 +325,22 @@ class IdeaRanker
           if tagging.tag
             the_tags << tagging.tag.name
           else
-            puts "NONONO #{tagging.tag_id}"
+            #puts "NONONO #{tagging.tag_id}"
             tagging.destroy
           end
         end
-        puts the_tags.uniq.join(",")
+        #puts the_tags.uniq.join(",")
         p.issue_list = the_tags.uniq.join(",")
-        puts "XXXX #{p.issue_list}"
+        #puts "XXXX #{p.issue_list}"
         p.save
       else
-        puts "MISSING CATEGORY: #{p.name}"
+        #puts "MISSING CATEGORY: #{p.name}"
       end
     end
   end
 
   def setup_ranged_endorsment_position(sub_instance,time_since,position_db_name)
-    puts "Processing #{position_db_name}"
+    #puts "Processing #{position_db_name}"
     if sub_instance
       SubInstance.current = sub_instance
       sub_instance_sql = "ideas.sub_instance_id = #{sub_instance.id}"
@@ -348,11 +348,11 @@ class IdeaRanker
       sub_instance_sql = "ideas.sub_instance_id IS NULL"
     end
     @@all_ideas[sub_instance_sql] = Idea.unscoped.find(:all, :conditions=>sub_instance_sql) unless @@all_ideas[sub_instance_sql]
-    puts @@all_ideas[sub_instance_sql].count
+    #puts @@all_ideas[sub_instance_sql].count
     # Note user.score was replaced with 1 in *endorsements.value)*1) as number
 
     ideas = Idea.where(sub_instance_sql+" AND ideas.status = 'published'")
-    puts "Found #{ideas.count} in range"
+    #puts "Found #{ideas.count} in range"
 
     return false unless ideas.count>0
 
@@ -360,7 +360,7 @@ class IdeaRanker
       ideas.each_with_index do |idea,index|
         score = idea.get_position_score(time_since)
         eval_cmd = "idea.#{position_db_name} = #{score}"
-        puts "#{idea.id} - #{eval_cmd}"
+        #puts "#{idea.id} - #{eval_cmd}"
         eval eval_cmd
         idea.save
       end
@@ -368,7 +368,7 @@ class IdeaRanker
 
     not_in_range_ideas = @@all_ideas[sub_instance_sql]-ideas
 
-    puts "Found #{not_in_range_ideas.count} NOT in range"
+    #puts "Found #{not_in_range_ideas.count} NOT in range"
     Idea.unscoped.transaction do
       not_in_range_ideas.each do |idea|
         idea.reload
