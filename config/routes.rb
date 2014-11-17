@@ -335,6 +335,7 @@ YourPriorities::Application.routes.draw do
   match ':controller/:action' => '#index'
   match ':controller/:action.:format' => '#index'
   match '/:controller(/:action(/:id))'
+  match ':redirect' => redirect("/404.html"), :as => :catchall , :constraints => { :redirect => /.*/i }
 end
   # The idea is based upon order of creation:
   # first created -> highest idea.
