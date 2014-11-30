@@ -1,2 +1,3 @@
 %img.notification_icon{:border => "0", :height => "16", :src => "#{asset_path "/assets/icons/error.png"}", :width => "16"}/
-= tr("{sender_name} flagged a comment by {user_name}", "view/notifications/_notificationcommentflagged", :sender_name => link_to(notification.sender.login, notification.sender), :user_name => link_to(notification.notifiable.user.name, activity_comments_url(notification.notifiable.activity) + '#' + notification.notifiable.id.to_s))
+- if notification and notification.sender and notification.notifiable
+  = tr("{sender_name} flagged a comment by {user_name}", "view/notifications/_notificationcommentflagged", :sender_name => link_to(notification.sender.login, notification.sender), :user_name => link_to(notification.notifiable.user.name, activity_comments_url(notification.notifiable.activity) + '#' + notification.notifiable.id.to_s))
