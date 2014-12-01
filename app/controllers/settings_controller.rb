@@ -13,14 +13,13 @@ class SettingsController < ApplicationController
   # PUT /settings
   def update
     respond_to do |format|
-      if @user.update_attributes(params[:user])
-        flash[:notice] = tr("Saved your settings", "controller/settings")
-        format.html { 
-          redirect_to("/") 
-        }
-      else
-        format.html { render :action => "index" }
+      params[:user].each do |attribute, value|
+        @user.update_attribute(attribute.to_sym, value)
       end
+      flash[:notice] = tr("Saved your settings", "controller/settings")
+      format.html {
+        redirect_to("/")
+      }
     end
   end
 

@@ -36,17 +36,4 @@
           = f.check_box :is_admin_subscribed
           = tr("For administrators", "view/users/signups")
           %br/
-        = hidden_field_tag "user[sub_instance_ids][]", ""
-        - for sub_instance in @sub_instances
-          = check_box_tag "user[sub_instance_ids][]", sub_instance.id, @user.sub_instances.include?(sub_instance)
-          = sub_instance.optin_text
-          .small{:style => "padding-left:2px;"}
-            from
-            - if sub_instance.has_website?
-              %a{:href => sub_instance.website_link}= sub_instance.name
-            - else
-              = h(sub_instance.name)
-            (
-            %a{:href => sub_instance.privacy_url}>= tr("privacy policy", "view/users/signups")
-            )
         = submit_tag tr("Save email settings", "view/users/signups"), :class => "yellow_button"

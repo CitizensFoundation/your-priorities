@@ -46,18 +46,6 @@
                   = tr("Password", "view/users/_form")
                 .field_box
                   = f.password_field :password, :size => 30
-            - if current_sub_instance and current_sub_instance.is_optin?
-              = check_box_tag "user[sub_instance_ids][]", current_sub_instance.id, 1
-              = current_sub_instance.optin_text
-              %span.small{:style => "padding-left:2px;"}
-                from
-                - if current_sub_instance.has_website?
-                  %a{:href => current_sub_instance.website_link}= current_sub_instance.name
-                - else
-                  = h(current_sub_instance.name)
-                (
-                %a{:href => current_sub_instance.privacy_url}>= tr("privacy policy", "view/users/_form")
-                )
             :javascript
               var RecaptchaOptions = { theme : 'clean' };
             = #recaptcha_tags
