@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140403121631) do
+ActiveRecord::Schema.define(:version => 20141201130204) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -338,44 +338,44 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
   end
 
   create_table "ideas", :force => true do |t|
-    t.integer  "position",                                :default => 0,     :null => false
+    t.integer  "position",                                 :default => 0,     :null => false
     t.integer  "user_id"
-    t.string   "name",                     :limit => 250
+    t.string   "name",                      :limit => 250
     t.text     "description"
-    t.integer  "endorsements_count",                      :default => 0,     :null => false
-    t.string   "status",                   :limit => 50
+    t.integer  "endorsements_count",                       :default => 0,     :null => false
+    t.string   "status",                    :limit => 50
     t.string   "ip_address"
     t.datetime "removed_at"
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "position_1hr",                            :default => 0,     :null => false
-    t.integer  "position_24hr",                           :default => 0,     :null => false
-    t.integer  "position_7days",                          :default => 0,     :null => false
-    t.integer  "position_30days",                         :default => 0,     :null => false
-    t.integer  "position_1hr_delta",                      :default => 0,     :null => false
-    t.integer  "position_24hr_delta",                     :default => 0,     :null => false
-    t.integer  "position_7days_delta",                    :default => 0,     :null => false
-    t.integer  "position_30days_delta",                   :default => 0,     :null => false
+    t.integer  "position_1hr",                             :default => 0,     :null => false
+    t.integer  "position_24hr",                            :default => 0,     :null => false
+    t.integer  "position_7days",                           :default => 0,     :null => false
+    t.integer  "position_30days",                          :default => 0,     :null => false
+    t.integer  "position_1hr_delta",                       :default => 0,     :null => false
+    t.integer  "position_24hr_delta",                      :default => 0,     :null => false
+    t.integer  "position_7days_delta",                     :default => 0,     :null => false
+    t.integer  "position_30days_delta",                    :default => 0,     :null => false
     t.integer  "change_id"
     t.string   "cached_issue_list"
-    t.integer  "up_endorsements_count",                   :default => 0
-    t.integer  "down_endorsements_count",                 :default => 0
-    t.integer  "points_count",                            :default => 0
-    t.integer  "up_points_count",                         :default => 0
-    t.integer  "down_points_count",                       :default => 0
-    t.integer  "neutral_points_count",                    :default => 0
-    t.integer  "discussions_count",                       :default => 0
-    t.integer  "relationships_count",                     :default => 0
-    t.integer  "changes_count",                           :default => 0
-    t.integer  "official_status",                         :default => 0
-    t.integer  "official_value",                          :default => 0
+    t.integer  "up_endorsements_count",                    :default => 0
+    t.integer  "down_endorsements_count",                  :default => 0
+    t.integer  "points_count",                             :default => 0
+    t.integer  "up_points_count",                          :default => 0
+    t.integer  "down_points_count",                        :default => 0
+    t.integer  "neutral_points_count",                     :default => 0
+    t.integer  "discussions_count",                        :default => 0
+    t.integer  "relationships_count",                      :default => 0
+    t.integer  "changes_count",                            :default => 0
+    t.integer  "official_status",                          :default => 0
+    t.integer  "official_value",                           :default => 0
     t.datetime "status_changed_at"
-    t.integer  "score",                                   :default => 0
-    t.string   "short_url",                :limit => 20
-    t.boolean  "is_controversial",                        :default => false
-    t.integer  "trending_score",                          :default => 0
-    t.integer  "controversial_score",                     :default => 0
+    t.integer  "score",                                    :default => 0
+    t.string   "short_url",                 :limit => 20
+    t.boolean  "is_controversial",                         :default => false
+    t.integer  "trending_score",                           :default => 0
+    t.integer  "controversial_score",                      :default => 0
     t.string   "external_info_1"
     t.string   "external_info_2"
     t.string   "external_info_3"
@@ -384,7 +384,7 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.string   "external_id"
     t.string   "external_name"
     t.integer  "sub_instance_id"
-    t.integer  "flags_count",                             :default => 0
+    t.integer  "flags_count",                              :default => 0
     t.integer  "category_id"
     t.string   "user_agent"
     t.integer  "position_endorsed_24hr"
@@ -397,10 +397,16 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.integer  "group_id"
     t.integer  "idea_revision_id"
     t.string   "author_sentence"
-    t.integer  "idea_revisions_count",                    :default => 0
+    t.integer  "idea_revisions_count",                     :default => 0
     t.text     "notes"
     t.integer  "impressions_count"
     t.string   "occurred_at"
+    t.integer  "counter_endorsements_up",                  :default => 0
+    t.integer  "counter_endorsements_down",                :default => 0
+    t.integer  "counter_points",                           :default => 0
+    t.integer  "counter_comments",                         :default => 0
+    t.integer  "counter_all_activities",                   :default => 0
+    t.integer  "counter_main_activities",                  :default => 0
   end
 
   add_index "ideas", ["category_id"], :name => "index_ideas_on_category_id"
@@ -548,17 +554,27 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
   add_index "instances", ["short_name"], :name => "index_instances_on_short_name"
 
   create_table "monologue_posts", :force => true do |t|
+    t.integer  "posts_revision_id"
     t.boolean  "published"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "user_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "monologue_posts_revisions", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.string   "url"
+    t.integer  "user_id"
+    t.integer  "post_id"
     t.datetime "published_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
-  add_index "monologue_posts", ["url"], :name => "index_monologue_posts_on_url", :unique => true
+  add_index "monologue_posts_revisions", ["id"], :name => "index_monologue_posts_revisions_on_id", :unique => true
+  add_index "monologue_posts_revisions", ["post_id"], :name => "index_monologue_posts_revisions_on_post_id"
+  add_index "monologue_posts_revisions", ["published_at"], :name => "index_monologue_posts_revisions_on_published_at"
+  add_index "monologue_posts_revisions", ["url"], :name => "index_monologue_posts_revisions_on_url"
 
   create_table "monologue_taggings", :force => true do |t|
     t.integer "post_id"
@@ -639,7 +655,6 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.float    "amount"
     t.float    "vat"
     t.string   "paymill_offer_id"
-    t.boolean  "private",          :default => false
   end
 
   create_table "point_qualities", :force => true do |t|
@@ -869,6 +884,12 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.boolean  "use_live_home_page",                             :default => false
     t.string   "live_stream_id"
     t.boolean  "ask_for_post_code",                              :default => false
+    t.integer  "counter_ideas",                                  :default => 0
+    t.integer  "counter_points",                                 :default => 0
+    t.integer  "counter_users",                                  :default => 0
+    t.integer  "counter_comments",                               :default => 0
+    t.integer  "counter_stars",                                  :default => 0
+    t.integer  "counter_impressions",                            :default => 0
   end
 
   add_index "sub_instances", ["short_name"], :name => "short_name"
@@ -988,6 +1009,7 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.string   "country_english_name",                   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "map_coordinates"
     t.string   "default_locale",       :default => "en"
   end
 
@@ -1207,6 +1229,8 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.boolean  "admin"
     t.string   "locale"
     t.integer  "level",             :default => 0
+    t.datetime "synced_at"
+    t.string   "type"
   end
 
   add_index "tr8n_translation_keys", ["key"], :name => "index_tr8n_translation_keys_on_key", :unique => true
@@ -1250,6 +1274,7 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.text     "rules"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "synced_at"
   end
 
   add_index "tr8n_translations", ["created_at"], :name => "tr8n_trans_created_at"
@@ -1331,6 +1356,7 @@ ActiveRecord::Schema.define(:version => 20140403121631) do
     t.boolean  "manager"
     t.string   "last_ip"
     t.string   "country_code"
+    t.integer  "remote_id"
   end
 
   add_index "tr8n_translators", ["created_at"], :name => "index_tr8n_translators_on_created_at"

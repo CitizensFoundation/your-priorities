@@ -79,8 +79,7 @@ class User < ActiveRecord::Base
   has_one :profile, :dependent => :destroy
 
   has_many :unsubscribes, :dependent => :destroy
-  has_many :signups
-  has_many :sub_instances, :through => :signups
+  #has_many :signups
     
   has_many :endorsements, :dependent => :destroy
   has_many :ideas, :conditions => "endorsements.status = 'active'", :through => :endorsements

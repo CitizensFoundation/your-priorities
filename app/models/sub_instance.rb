@@ -50,10 +50,12 @@ class SubInstance < ActiveRecord::Base
   validates_attachment_content_type :logo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
   
   has_one :owner, :class_name => "User", :foreign_key => "sub_instance_id"
-  has_many :signups
-  has_many :users, :through => :signups
+
+  has_many :users
   has_many :activities
   has_many :ideas
+  has_many :comments
+
   belongs_to :subscription
   has_many :points
   has_one :iso_country, :class_name => 'IsoCountry'

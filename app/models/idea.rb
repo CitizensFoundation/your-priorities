@@ -84,7 +84,7 @@ class Idea < ActiveRecord::Base
   has_many :endorsers, :through => :endorsements, :conditions => "endorsements.status in ('active','inactive')", :source => :user, :class_name => "User"
   has_many :up_endorsers, :through => :endorsements, :conditions => "endorsements.status in ('active','inactive') and endorsements.value=1", :source => :user, :class_name => "User"
   has_many :down_endorsers, :through => :endorsements, :conditions => "endorsements.status in ('active','inactive') and endorsements.value=-1", :source => :user, :class_name => "User"
-    
+
   has_many :points, :conditions => "points.status in ('published','draft')"
   accepts_nested_attributes_for :points
 

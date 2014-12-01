@@ -54,10 +54,6 @@ class RegistrationsController < Devise::RegistrationsController
         expire_session_data_after_sign_in!
         respond_with resource, :location => after_inactive_sign_up_path_for(resource)
       end
-
-      if current_sub_instance and params[:signup]
-        resource.signups << Signup.create(:sub_instance => current_sub_instance, :is_optin => params[:signup][:is_optin], :ip_address => resource.request.remote_ip)
-      end
     else
       clean_up_passwords resource
       respond_with resource
