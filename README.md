@@ -132,13 +132,26 @@ sudo apt-get install curl
 \curl -L https://get.rvm.io | bash -s stable
 ````
 
-Go into the application and install all gems
+Find out what dependencies are needed for Ruby (MRI) and install them:
+
+````bash
+$ rvm requirements
+````
+
+Install and use Ruby 2.0.0
+````bash
+$ rvm install 2.0.0
+$ rvm use 2.0.0
+```` 
+
+Go into the application dir and install all gems. On Ubuntu:
 ````bash
 sudo apt-get install build-essential
 sudo apt-get install libxslt-dev libxml2-dev
 sudo apt-get install libmysqlclient-dev
 sudo apt-get install libpq-dev
 sudo apt-get install libmagickwand-dev
+sudo apt-get install mysql-client libmysqlclient-dev
 bundle install
 ````
 
@@ -146,9 +159,6 @@ Install database dependencies
 ````bash
 sudo apt-get install postgresql
 sudo apt-get install mysql-server
-
-
-
 ````
 
 Then start the psql shell
