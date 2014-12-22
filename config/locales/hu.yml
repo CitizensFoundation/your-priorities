@@ -12,8 +12,6 @@ hu:
   views:
     pagination:
       next: Következő &rsaquo;
-  070625ecbc8bd373ccfb31867274eb97: Jelszóvisszaállítási útmutató a %{instance_name}
-    számára
   c867451892e38db47a8cc5e7b02d5c54: amit ön támogat
   4b1b4dc8cf38b3c64b1d657da8f5ac8c: Jelentés
   ab70cd88a40e7c3247bfce039ad0045d: kérjük 5 karakternél többet írjon
@@ -23,17 +21,219 @@ hu:
   d7c8c85bf79bbe1b7188497c32c3b0ca: Sikertelen
   b6e0b0c90cfbddfe767f137f8066d1df: Folyamatban
   9b9d8a976b42e0bd66381797644943d5: Közzétéve
-  30ae8fff8898dc197acd49d9c0797d20: Sikeres
-  22af645d1859cb5ca6da0c484f1f37ea: új
   eed1d7e8237b8656aff7c66bb5999f96: Kérjük adjon meg egy az oldalon azonosítónevet.
   4607ccb71469675944516398e717479c: Kérjük fogadja el a felhasználási feltételeket
   9ee2fe857acedeff0c24765e3d2a25f9: Kérjük adja meg nevét
   91504cddd78bd6a6826026c83f554958: Kérjük adja meg
   d5f0462c74e5c7bf041d992697b7e06b: ez a cím már foglalt
-  0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} megjegyzést fűzött ide: %{comment_name}'
   a00624d47e8dca3b06b23cdcd386cd62: '%{sender_name} közleményt posztolt az ön profilján'
   42bd4c0819c498d1c1ab622de74d6f82: támogatva
   83c101ec84ebd1c0e45fa1cd5b9300d6: ellenezve
-  37fc5aed92a40b16dafd17cee72e3154: Legjobb ötletek
   833c90a077a2beda3b6cd000f3fe5c29: Véletlenszerű ötletek
   f504eb1cc2305a863cc0cf23428a36f8: Megosztó ötletek
+  0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} megjegyzést fűzött ide: %{comment_name}'
+  37fc5aed92a40b16dafd17cee72e3154: Legjobb ötletek
+  db7fcf41127935e5fee505fe102abf9a: Viták, amikhez hozzászóltál
+  cd267635c8a38e2acba076b0edeeedbe: Viták a körödön belül
+  b38f1c5b8bdb6329e8a4b2e6e456da8b: Viták az általad megosztott ötletek mentén
+  8754f2b7cbd98752793ba8314bded062: Aktív viták
+  9fd4dc340cdbdabdd25908817052b915: A te véleményed
+  f78be27a110705c1b183468d30077e53: '%{user_name} nincs további ellenzője %{idea_name}'
+  ac717bd14c68bc426139b20f01d941ea: '%{user_name} első javaslata %{idea_name}'
+  fe5c45415c03bb476dc22b730aaf2590: '%{user_name} balra %{count} megjegyzést fűzött
+    %{discussion_name}'
+  777eecd062745916881aff23d68afd46: '%{user_name} közzétett egy közleményt %{other_user_name}
+    profil'
+  d533bc81d129968f57a188436d3575ac: '%{user_name} közzétett egy közleményt itt %{discussion_name}'
+  de06be0bc4bfdf2cf0c58e9b6c2d9db9: '%{idea_name} %{user_name} új #1 ötlete'
+  747705a1c07ec5d7613502a7d50bf49a: '%{user_name} módosította %{point_name}'
+  75dd5f1160a3f02b6fae89c54361a1b3: Vélemények
+  6d0a578ca2f2c0e792fc923002fccbe3: ezelőtt
+  c29196003ef3c4f020130aab1c63d4ea: '%{count} vélemények'
+  c3829f98b9d811ef102006ff00a83881: '%{count} áttekintések'
+  c474f356721291083cc2be1ef39cf658: '%{count} új hozzászólás(ok)'
+  ae7950ddfcef416ea6840228d63eba13: Nincsenek új vélemények
+  fd43e901068a7802f554bf77ac25c8f2: Törölve a te %{instance_name} account
+  cd8251fee54cfb894119ab71fcedde37: Viták ennek kapcsán  %{sub_instance_name}
+  400677bf70243014f360f3be283982e9: Kulcstevékenységek
+  6fa73f77103f4bbddb6129bd0bb18de8: Minden vita
+  b10e67ce0ade1bd465bedfbd005bbb9c: Viták az általad támogatott ötletek kapcsán
+  709468af25e91284821d1bdbfdded24c: Minden
+  f6d4f577a7d6400fee113c788852a50a: További szükséges információ
+  69711d42de93b7a39c12910b4ed48a54: '%{user_name} vitái %{instance_name} kapcsán'
+  e945975666947d8744dbdb80d2e5a750: '%{user_name} véleménye %{instance_name} kapcsán'
+  af1b98adf7f686b84cd0b443e022b7a0: Kategóriák
+  e11d937a5185a2361123ad5222df5f5f: Véletlenszerű %{tag_name} ötletek
+  016e3b623e81108aac0844988d799eff: 'Áttekintések: %{sentence}'
+  18ef3f4348075aca1646941639d610dd: Ötlet %{position}
+  52f4e192179a8449b77cc149541a5ba0: Nincsenek még ötletek itt.
+  dd1f775e443ff3b9a89270713580a51b: Előző
+  db5ca4cc88a9c0db11b47157edb70dd0: 'Következő:'
+  1b92838e756182fda710cfd58819f671: Vélemények
+  ff0cfd359a1d96d597133a4341a6a7e4: Tegyél közzé egy új ötletet
+  201e7310f5fb28133f781fc856003d92: Az ötlet címe
+  03368e3c1eb4d2a9048775874301b19f: Válassz kategóriát
+  7dd982d0948637b4ae83f2804bd489ca: Miért látod szükségesnek, hogy az emberek támogassák
+    az ötleted?
+  d7241b155164fdbc560602f924393149: Tedd közzé ötleted és véleményed!
+  586f9d3669a73e12a8caed7a7d76288e: Adj egy jó és leíró címet az ötletednek!
+  e254a34f3a1001f00adc55aba5552783: 'Top:'
+  cde1d24d4d3427be7222dbe6a518f6da: Nincsenek vélemények még.
+  cbc00c310ea3af7dc35edceb12f5601f: Tedd közzé véleményed!
+  b4c1d65b09a6dd0d154f9680cda00843: Viták (%{count})
+  bbf72fb222c775537e056152bf086bac: Hozzászólások a téged érintő viták kapcsán
+  8de16e7a08998e0e60d27d6b4d441379: Legnépszerűbb ötletetek az utóbbi 24 órában
+  6c60eec8c5809428787d3d817d389404: Legnépszerűbb ötletek az utóbbi 30 napban
+  e42d894b926c4833956b61471df18351: A leginkább ellentmondásos ötletek
+  dfeb460fa23011a1f3b327fa61abf8be: Vélemények támogatása %{idea_name}
+  a2d5e7a9d03b49d0639ab0a75a59d2c2: Legnépszerűbb vélemények
+  c772367d0682d61254cebb1dcfd44c93: Viták a(z) %{idea_name} kapcsán
+  49c413c7e9fbe1aee3281a29d2d0dd9c: Legutóbbi hozzászólások a(z) %{idea_name} kapcsán
+  dee5db0dd869d6d2c03539fab2c874ad: Új ötlet a(z) %{sub_instance_name} kapcsán
+  fc2e12b5aff1b388bc309a96bccb3f9b: Köszönjük, hogy megosztotta a(z) %{idea_name}
+  64663f4646781c9c0110838b905daa23: Véletlenszerű
+  e02decaebace93b27ce239a671e77453: A tiéd
+  d984e98c3eceb8bc31b8ca398758f248: A közelmúltban módosított vélemények
+  8df9c04d95e71c0bb899ac7a5af8cdfb: Oszd meg a véleményed a(z) %{idea_name} kapcsán!
+  79281fb7fd5e0cbea9ca524b779e89ff: Köszönjük, hogy hozzájárul véleményével.
+  59d7434481f250db2c48858375499a31: Legújabb vélemények
+  dbb6f26a0ccb75b82d641ff87b627ce3: Új tagok
+  7dce122004969d56ae2e0245cb754d35: Szerkesztés
+  d4dccb8ca2dac4e53c01bd9954755332: Beállítások mentése
+  a0d7e042ee84ad945d55f3862369255f: Töltsd fel és mentsd el a fényképedet
+  0077d575bfc52d2176b427189982b6a6: Mentve %{point_name}
+  00b177e080ff1c3d340997fb01c3951c: Elfogadott meghívás
+  01374d70036cb0b48058e7e031eeb680: Ahhoz, hogy ehhez a privát oldalhoz hozzáférj,
+    be kell jelentkezned
+  01a2f2a00851bab435bced7b0454dce2: Mit csinálsz %{sub_instance_name}?
+  02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} közzétett egy hírt'
+  0358ca3a25ad72c389989a3db811f233: '%{user_name} átnevezte %{idea_name}'
+  04bc5390fd93d76fb2471f2f3a432ed5: Befejezett %{tag_name} ötleteid
+  0574c44ee9d51a85091b24119d5c2f69: Legújabb ötletek
+  070625ecbc8bd373ccfb31867274eb97: Jelszóvisszaállítási útmutató a %{instance_name}
+    számára
+  07221d868183bab87e41f0ec47440880: Viták az ötleteid mentén
+  0863f095cbdbbe6ce5a8aac979766a83: Az ötlet nevének maximális hossza
+  0c082c9ad303a70be82598499aaa1f6e: '%{user_name} módosította %{idea_name}'
+  0c0d218418852e444a95f10f2fbe3060: '%{user_name} új követőket szerzett %{count}%{currency_short_name}
+    %{count} számára'
+  0d80cee327875c3740c7ad5ebba57be1: E-mail értesítéseid
+  0f471a2597c99d0f4c81db859b0205f3: Ötletek, amiket te osztottál meg %{sub_instance_name}
+  11ee56b3d9c99494994e5e0e4b6ae733: Származik
+  16d39f7e2b0ed1ee441421cc0f86a724: Ez a vélemény törölve lett
+  1945e5ccc0bd89812560b30f7c48639d: Megjegyzéseid
+  1a13f1069e52ca6118df8501f7a7c755: '%{user_name} hozzáadta %{point_name} %{idea_name}hoz'
+  22af645d1859cb5ca6da0c484f1f37ea: új
+  2512081b92507a3e87cdb8ba7cd6c6b7: '#1 ötlet:'
+  2bd2b8e30995d2dfe1f43a4ea30fc3fc: Leginkább vitatott
+  2d180c2da693f88fe77a780e31bc07a2: Legújabb vélemények
+  2ed154e6cbb75329947fe1929b784059: Vélemények az ötleted mentén
+  30ae8fff8898dc197acd49d9c0797d20: Sikeres
+  35408f2e9ccf595f1765bd8e56a2f571: Legjobb vélemények a(z) %{idea_name} kapcsán
+  3687b1daa635064075afa2b6417880d0: Legolvasottabbak
+  b5a7adde1af5c87d7fd797b6245c2a39: Leírás
+  0e7a1834a7b4fba66d0f329cfab14cbb: Legutóbbi látogatás %{time_ago}
+  13e7cd666950f7873a5e431fce97b916: 'Példa: https://'
+  d280d15220c6ba22dfa7cd8a5139ea67: Következő... A személyes adataid
+  f11b368cddfe37c47af9b9d91c6ba4f0: Teljes név
+  ce8ae9da5b7cd6c3df2929543a9af92d: Email
+  dc647eb65e6711e155375218212b3964: Jelszó
+  f0ec3db5bcd8943d68ac34fdc4b57d73: Az utolsó lépés...
+  3abbd962f6751baf05a19c4ebbc8d0e7: Egyetértek, hogy...
+  3b6c2b4caaf4f14f8d7feeddc4ac3f4d: A szolgáltatás feltételei
+  fa2ead697d9998cbc65c81384e6533d5: Adatvédelmi irányelvek
+  2abdcbddfc76fe670e6fcff16cb0a7d1: Készíts %{instance_name}
+  7ccf75fa7498152efe4e152833455c67: Felhasználónév
+  e3afed0047b08059d0fada10f400c1e5: Admin
+  b357b524e740bc85b9790a0712d84a30: Email cím
+  6c25e6a6da95b3d583c6ec4c3f82ed4d: Hetente
+  9030e39f00132d583da4122532e509e9: Havonta
+  6e7b34fa59e1bd229b207892956dc41c: Soha
+  65e1f75e1c318e9d7a0c4690e4841fd3: Ha az ötleted állapota megváltozott
+  9977ab924c89e6c98b1cf1595354ada3: Legutóbbi aktivitások
+  77c8b9f38491385d59ddc33d29e751fe: 'Forrás:'
+  7fbd71fc25b275b7d095a29c72b1a821: Magyarázd el a véleményed, támaszd alá érvekkel!
+  8a357512436318208aca51f2db5ebf75: Vélemény elmentése
+  099af53f601532dbd31e0ea99ffdeb64: törölve
+  8324d056b6c576dc840f4ca7231746a5: Hozzászólás küldése
+  7b8f95b017fbb7f217c95590de6d20ef: '%{count} még több tanácskozás a(z) %{idea_name}
+    kapcsán'
+  2682beed28fc3d3709619dbf2a469dbb: Fénykép feltöltése
+  a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} ötletek'
+  52d2acef5f9e5e2d6a06c4958f774419: Sikertelen keresés
+  5f2b9345f9bbd74079b99d6fcf461408: Készített
+  939d09ea0c18215ca9032ef913d82567: Új ötletek
+  8ac6e46f207f4d2a928523d417663553: Köszöntünk a(z) %{instance_name}. Oszd meg az
+    első ötleted!
+  e2f69ba325c4f8bdc393ffd3cb848a51: Véletlenszerű ötletek
+  02bb5de0c787154b2cfaea82d1cfc40d: Törölve a felülírás
+  0cc54e3d557f73d2891235a265b06341: Jelenlegi aktivitások e vélemény kapcsán
+  b1c94ca2fbc3e78fc30069c8d0f01680: Összes
+  2a3cd5946cfd317eb99c3d32e35e2d4c: Vélemény
+  0be8406951cdfda82f00f79328cf4efc: Hozzászólás
+  13348442cc6a27032d2b4aa28b75a5d3: Keresés
+  e576c23d915755d83e2d1f47bd9f6c22: Nincs keresési eredmény.
+  ed3792969d8e38130c6651dd447509c5: Kezdj vitába!
+  c1a5298f939e87e8f962a5edfc206918: Szia
+  a5998dfe5002eeab05de3cbcc98f9544: Ez egy automatikusan küldött email a(z) %{instance_name}
+    által
+  18c3c2ec475e379bd894cdedb9e0e03f: Megtekintheted itt ezt a tanácskozást vagy választhatod,
+    hogy befejezed a követését.
+  697184ece37c024d3319f16f3e98c597: Kattints ide az invitálás elfogadásához
+  b6d4223e60986fa4c9af77ee5f7149c5: Bejelentkezés
+  80919be0413cba91ea1c240ca12ee13a: Regisztráció
+  cce99c598cfdb9773ab041d54c3d973a: Profil
+  a274f4d4670213a9045ce258c6c56b80: Jegyzetek
+  1747df8919f292530bf55fe439bf159a: '%{count} figyelmeztetés'
+  0323de4f66a1700e2173e9bcdce02715: Kijelentkezés
+  f9aae5fda8d810a29f12d1e61b4ab25f: Felhasználók
+  c33e404a441c6ba9648f88af3c68a1ca: Statisztikák
+  7cdfb0c074a8155d864d2b591b0d509b: Jelentett tartalom
+  b513ce9261a49ab58593ca678a8a18c0: Minden jelenlegi
+  8bf906833cc7aea8084f552217ed9c1d: Felfüggesztett
+  5fe6005bf6e415c950c011fb65f12b8f: Törölve
+  f1e2a549f8a0a20b572b176455dba9b9: TEDD KÖZZÉ AZ ÖTLETED
+  20db0bfeecd8fe60533206a2b5e9891a: Keresztnév
+  20b86b18475850202a63d9550071b782: (Soha sincs megosztva a hozzájárulásod nélkül)
+  15bbb9d0bbf25e8d2978de1168c749dc: Honlap
+  1a08c8ca9af355a37e4b5d4595434211: Jelszó megerősítése
+  453aceb005ceaf54a47da15fee8b2a26: Oldalak
+  0b39c5aca15b84b1ad53a94d6b3feb78: Jelszó megváltoztatása
+  198584454b0ce1101ff5b50323325aa8: Az email címed
+  70d41baa21f0fef4a54de863cd259ace: Bejelentkezés az island.is által
+  780f17237b2f99a557c2490dfa9a30a4: Bejelentkezés a Gmail-on keresztül
+  019ec3132cdf8ee0f2e2a75cf5d3e459: Neme
+  4d0a3fc4c46501d3b4d2257820942a5e: Bejelentkezés %{provider} által
+  b05d72142020283dc6812fd3a9bc691c: Elfelejtettem a jelszavam
+  68400031f36198737f197bb1bfc74bef: Felfüggeszti ezt a tagságot
+  d64518ec4a60ae31b2b5e4074646cca1: Szabályaink
+  d9d222130429eb44be0faae283593dd6: 'Regisztrációmmal a %{instance_name} honlapon
+    kijelentem, hogy:'
+  a4b522102353672b9f0d5582e8386348: Az általam megadott személyes információk valósak
+    és tudom fogadni és olvasni a megadott email címre érkező üzeneteket.
+  2d31841ff75aeb20f2c6d4d96411129f: Felelősséget vállalok az általam megosztott tartalmakért
+    és kijelentem, hogy mások nem használhatják a felhasználónevemet.
+  b357a942b0558db7d42891322b9bb729: Látogatom a honlapot.
+  ee710d46f1e36118e1c4aea9cc51305e: Figyelembe veszem az országom törvényeit.
+  1cab6f0a48459aaac4e3116773de5781: Nem publikálok reklámokat, spameket a honlapon.
+  6231033110be3e0b22eeda6b6b336835: Nem használom ezt a honlapot
+  4bb709d8718626d39a5dbf2e2589528e: Értesítem a honlap adminisztrátorait, amennyiben
+    olyan tartalommal  találkozom, melyek megsértik ezen szabályokat.
+  94386c683395a8c1a30a6f405a3a7116: Csak egy felhasználónévvel regisztrálok ezen a
+    honlapon.
+  8070ff490b986cbbe5908dba6688b882: 'Mi pedig ígéretet teszünk, hogy:'
+  6c3b5928436080f8aba591af541dd5f0: A tőlünk telhető legnagyobb szakértelemmel dolgozunk
+    azon, hogy ez a honlap a lehető legjobban működjön.
+  388e31e2da00cdad1159f0fecb186fff: Nem adjuk ki másoknak a felhasználóink adatait,
+    minthogy ezek nem publikusak a honlapon sem, csak bírósági kérés esetén kerülhet
+    erre sor.
+  03fa96387303a39d8a63c153bac26958: Továbbá fenntartjuk a jogot, hogy
+  5e038f03415db5461c13d380469436cb: Bankkártya száma
+  03937134cedab9078be39a77ee3a48a0: Csoport
+  7c326855728927b06f5b11e92cefdae8: Kérlek, segíts nekünk további fordításokkal vagy
+    egyéb fejlesztésekkel munkánkat.
+  3a401dd966161f64fd3b8d1c06292f18: Fordítási eszköz
+  8cf04a9734132302f96da8e113e80ce5: Főoldal
+  d46ef9e7211d041671cdbe6c3d884884: Ötletek
+  2f64c030f4bec3e2c21e78506cc78f63: Top 25 ötlet a(z) %{instance_name} kapcsán
+  a39abc0cae4f06f92f6ee2e5601dbf7f: Admin beállítások

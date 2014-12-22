@@ -234,3 +234,23 @@ pt-PT:
   06591670b8600f71493c779ff6c5e331: '%{position} mais influente'
   07cf1f790935949c02c3289638e3ea40: Debates onde os seus seguidores participam
   083f66b6e0c1c0e39ea7803620d7dd9f: Mude de plano
+  devise:
+    invitations:
+      new:
+        header: Enviar convite
+      send_instructions: Um email de convite foi enviado para %{email}.
+      updated: Senha definida com sucesso. Agora está conectado.
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Relatório
+  ab70cd88a40e7c3247bfce039ad0045d: Inserir mais que 5 carateres
+  80df8e95c1fef941a4f600f0fd1b07c8: Inserir mais que 12 carateres
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Falhou
+  9b9d8a976b42e0bd66381797644943d5: Publicado
+  22af645d1859cb5ca6da0c484f1f37ea: novo
+  4607ccb71469675944516398e717479c: Aceitar os termos e condições
+  9ee2fe857acedeff0c24765e3d2a25f9: Indicar o seu nome
+  cd267635c8a38e2acba076b0edeeedbe: Debates na tua rede
+  b38f1c5b8bdb6329e8a4b2e6e456da8b: Debates nas ideias que criaste
+  8754f2b7cbd98752793ba8314bded062: Debates ativos
+  c867451892e38db47a8cc5e7b02d5c54: Que apoia
+  5a9d18bb87ff12835dc844883c5c3ebe: alterações
+  db7fcf41127935e5fee505fe102abf9a: Seus debates
