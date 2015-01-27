@@ -115,6 +115,24 @@ class UserMailer < Devise::Mailer
          end
   end
 
+  def category_changed(user,idea,category_from,category_to)
+    @recipient = @user = user
+    @idea = idea
+    @category_from = category_from.name
+    @category_to = category_to.name
+    setup_locale(user)
+    @instance = Instance.last
+    attachments.inline['logo.png'] = get_email_banner
+    recipient = "#{user.real_name.titleize} <#{user.email}>"
+    mail to:       recipient,
+         reply_to: Instance.last.admin_email,
+         from:     "#{Instance.last.name} <#{Instance.last.admin_email}>",
+         subject:  tr("The category of your idea {idea} has been changed","email", :idea => idea.name) do |format|
+      format.text { render text: convert_to_text(render_to_string("category_changed", formats: [:html])) }
+      format.html
+    end
+  end
+
   def lost_or_gained_capital(user, activity, point_difference, sub_instance_id)
     instance_name = setup_instance_name(sub_instance_id)
     @instance = Instance.last
@@ -287,6 +305,7 @@ class UserMailer < Devise::Mailer
     else
       I18n.locale = "en"
     end
+    Rails.logger.info("email locale: #{I18n.locale} locale user: #{locale_user.id}")
     tr8n_current_locale = I18n.locale
   end
 

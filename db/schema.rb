@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141201130204) do
+ActiveRecord::Schema.define(:version => 20150127091845) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -1560,6 +1560,7 @@ ActiveRecord::Schema.define(:version => 20141201130204) do
     t.string   "twitter_profile_image_url"
     t.datetime "invitation_created_at"
     t.integer  "invitations_count",                                                          :default => 0
+    t.boolean  "is_sub_admin",                                                               :default => false
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

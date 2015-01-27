@@ -615,3 +615,7 @@ is:
     non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með einni
     rödd.
   42a965482d059f063d4503251a2548b8: Bættu við rökum á móti
+  7e48b42c2a2f584925675cc365bf8839: Breyta flokk
+  52015afb6ec8b940ef903ff73f4c4058: Nýr flokkur
+  6007de624f30af50629e5cb3b9db4e66: Vista hugmynd
+  d43686420438e917216d81506320e6f2: "Við höfum breytt flokki fyrir þína hugmynd <a href='%{idea_link}'>%{idea_name}</a> frá %{category_from} í %{category_to} á %{instance_name}."

@@ -347,6 +347,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate_sub_admin!
+    if !user_signed_in?
+      access_denied!
+    elsif !current_user.is_sub_admin? and !current_user.is_admin? and !current_user.is_root?
+      access_denied!
+    end
+  end
+
   def authenticate_root!
     if !user_signed_in?
       access_denied!
@@ -638,6 +646,9 @@ class ApplicationController < ActionController::Base
       @items[item_count+=1]=[tr("Move", "view/ideas/_nav"), move_idea_url(@idea)]
       @items[item_count+=1]=[tr("Edit", "view/ideas/_nav"), edit_idea_url(@idea)]
       #@items[item_count+=1]=[tr("Delete", "view/ideas/_nav"), destroy@idea]
+    end
+    if current_user and (current_user.is_admin? or current_user.is_sub_admin?)
+      @items[item_count+=1]=[tr("Change category", "view/ideas/_nav"), change_category_idea_url(@idea)]
     end
   end
 

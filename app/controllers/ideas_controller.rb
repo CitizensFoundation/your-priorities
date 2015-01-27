@@ -6,6 +6,7 @@ class IdeasController < ApplicationController
   before_filter :authenticate_user!, :only => [:yours_finished, :yours_ads, :yours_top, :yours_lowest, :consider, :flag_inappropriate, :comment, :edit, :update,
                                            :tag, :tag_save, :opposed, :endorsed, :destroy, :new]
   before_filter :authenticate_admin!, :only => [:bury, :successful, :compromised, :intheworks, :failed, :abusive, :not_abusive, :move]
+  before_filter :authenticate_sub_admin!, :only => [:change_category]
   before_filter :load_endorsement, :only => [:show, :show_feed, :activities, :endorsers, :opposers, :opposer_points, :endorser_points, :neutral_points, :everyone_points,
                                              :opposed_top_points, :endorsed_top_points, :idea_detail, :top_points, :discussions, :everyone_points ]
 #  before_filter :disable_sub_nav, :only => [:show, :show_feed, :activities, :endorsers, :opposers, :opposer_points, :endorser_points, :neutral_points, :everyone_points,
@@ -1171,6 +1172,36 @@ class IdeasController < ApplicationController
     respond_to do |format|
       format.html
       format.js { render_to_facebox }
+    end
+  end
+
+  def change_category
+    @idea = Idea.find(params[:id])
+    @page_name = tr("Change category for {idea_name}", "controller/ideas", :idea_name => @idea.name)
+
+    if params[:idea]
+      if params[:idea][:category]
+        old_category = @idea.category
+        new_category = Category.find(params[:idea][:category])
+      end
+    end
+    if request.put?
+      respond_to do |format|
+        if params[:idea] and old_category and new_category and old_category != new_category
+          @idea.category_id = new_category.id
+          saved = @idea.save(:validate=>false)
+          if saved
+            UserMailer.category_changed(@idea.user, @idea, old_category, new_category).deliver
+          end
+        end
+        format.html {
+          if saved
+            flash[:notice] = tr("Category changed", "controller/ideas")
+          end
+          redirect_to(@idea)
+        }
+        @idea.reload
+      end
     end
   end
 

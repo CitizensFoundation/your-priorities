@@ -1,0 +1,18 @@
+= render :partial => "ideas/header"
+.col-group
+  .col-1
+    .col-content
+  .col-11
+    .col-content
+      %br
+      = form_for(@idea, :url => {:action => "change_category" }) do |f|
+        = f.error_messages
+        .field
+          .field_label
+            = tr("New category", "view/users/_form_long")
+            %br
+            %br
+          .field_box
+            = f.select :category, options_for_select_simple(Category.all.collect{|s|[s.i18n_name,s.id]}, @idea.category.id)
+        %br/
+        = f.submit tr("Save idea", "view/ideas/edit"), :class => "yellow_button"

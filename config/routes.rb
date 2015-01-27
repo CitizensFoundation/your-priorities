@@ -159,6 +159,8 @@ YourPriorities::Application.routes.draw do
       get :update_status
       get :move
       post :move
+      get :change_category
+      put :change_category
   	end
   	collection do
       get :yours
