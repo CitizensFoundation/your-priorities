@@ -619,3 +619,5 @@ is:
   52015afb6ec8b940ef903ff73f4c4058: Nýr flokkur
   6007de624f30af50629e5cb3b9db4e66: Vista hugmynd
   d43686420438e917216d81506320e6f2: "Við höfum breytt flokki fyrir þína hugmynd <a href='%{idea_link}'>%{idea_name}</a> frá %{category_from} í %{category_to} á %{instance_name}."
+  39a3cf4c89d1ffa6eddb8a1ae6a8bae9: "Flokki hefur verið breytt fyrir þína hugmynd %{idea}"
+  4c0d946321563c8bf049de4cc6473281: "Flokki hefur verið breytt"
