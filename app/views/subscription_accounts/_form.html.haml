@@ -17,16 +17,16 @@
                       %li
                         = msg
             %h2
-              = tr("Create your own {instance_name} (It's quick...)","here",:instance_name=>Instance.last.name)
+              = tr("Create your own {instance_name} group","here",:instance_name=>Instance.last.name)
         .row
           .large-6.columns
             .panel
               %h3
                 %span.step 1
-                = tr("{instance_name} name and URL","here",:instance_name=>Instance.last.name)
+                = tr("Group name and URL","here",:instance_name=>Instance.last.name)
               .label
-                = tr("Name of your instance","here")
-              = f.text_field :instance_name, :size=>30, :class=>"idleField", :label=>false, :placeholder => tr("Name your {instance_name}","here",:instance_name=>Instance.last.name)
+                = tr("Name of your group","here")
+              = f.text_field :instance_name, :size=>30, :class=>"idleField", :label=>false, :placeholder => tr("Name your group","here",:instance_name=>Instance.last.name)
               .label
                 = tr("Domain name","here")
               .row.collapse
@@ -77,7 +77,7 @@
               %center
                 .field_submit
                   %p
-                    %input.button{:name => "commit", :type => "submit", :value => tr("CREATE {instance_name}","here",:instance_name=>Instance.last.name.upcase)}
+                    %input.button{:name => "commit", :type => "submit", :value => tr("CREATE NEW GROUP","here",:instance_name=>Instance.last.name.upcase)}
 
 :javascript
   $("#subscription_account_instance_name").keyup(function(){
