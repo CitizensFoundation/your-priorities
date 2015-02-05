@@ -445,7 +445,7 @@ class User < ActiveRecord::Base
     #for c in constituents
     #  c.destroy
     #end
-    self.facebook_uid = nil
+    #self.facebook_uid = nil
     save(:validate => false)
   end
   
