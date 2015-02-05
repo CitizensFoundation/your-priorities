@@ -94,9 +94,9 @@ GEM
       multi_json (~> 1.0)
     acts_as_list (0.3.0)
       activerecord (>= 3.0)
-    airbrake (3.1.14)
+    airbrake (4.1.0)
       builder
-      json
+      multi_json
     ansi (1.4.3)
     arel (3.0.3)
     asset_sync (1.0.0)
