@@ -87,13 +87,13 @@ class HomeController < ApplicationController
       @top_ideas = Idea.published.top_7days.limit(3).reject{|idea| @new_ideas.include?(idea)} unless @block_endorsements
       @random_ideas = Idea.published.by_random.limit(3).reject{|idea| @new_ideas.include?(idea) or (@top_ideas and @top_ideas.include?(idea))}
       if params[:successful]
-        @finished_ideas = Idea.successful.not_removed.top_rank.limit(3)
+        @finished_ideas = Idea.successful.not_removed.by_random.top_rank.limit(3)
       elsif params[:failed]
-        @finished_ideas = Idea.failed.not_removed.top_rank.limit(3)
+        @finished_ideas = Idea.failed.not_removed.by_random.top_rank.limit(3)
       elsif params[:in_progress]
-        @finished_ideas = Idea.in_progress.not_removed.top_rank.limit(3)
+        @finished_ideas = Idea.in_progress.not_removed.by_random.top_rank.limit(3)
       else
-        @finished_ideas = Idea.successful.not_removed.top_rank.limit(3)
+        @finished_ideas = Idea.successful.not_removed.by_random.top_rank.limit(3)
       end
 
       all_ideas = []

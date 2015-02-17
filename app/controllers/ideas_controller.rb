@@ -90,6 +90,7 @@ class IdeasController < ApplicationController
         item.sub_instance_id = sub_instance.id
         item.save(:validate=>false)
       end
+      UserMailer.sub_instance_changed(@idea.user, @idea, sub_instance, current_saved).deliver
       redirect_to @idea.show_url
     end
   end

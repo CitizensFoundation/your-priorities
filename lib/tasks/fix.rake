@@ -62,10 +62,6 @@ def change_to_mysql_text(text)
 end
 
 namespace :fix do
-
-  # 3756
-  # chlog id = 2399
-
   desc "Resend status msg"
   task :resend_status_msg do
     Thread.current[:skip_default_scope_globally] = true
