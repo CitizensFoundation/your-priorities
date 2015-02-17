@@ -305,7 +305,7 @@ class UserMailer < Devise::Mailer
     else
       I18n.locale = "en"
     end
-    Rails.logger.info("email locale: #{I18n.locale} locale user: #{locale_user.id}")
+    Rails.logger.info("email locale: #{I18n.locale} locale user: #{locale_user.id}") if locale_user
     tr8n_current_locale = I18n.locale
   end
 
