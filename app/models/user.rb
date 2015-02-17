@@ -1081,6 +1081,7 @@ class User < ActiveRecord::Base
     idea = Idea.unscoped.find(idea_id)
     all_endorsers_and_opposers_for_idea(idea_id).each do |user|
       next unless user.is_finished_subscribed
+      next unless user.email.include?("@")
       position = Endorsement.unscoped.where(idea_id: idea_id, user_id: user.id).first.value
       UserMailer.idea_status_update(idea, status, date, subject, message, user, position).deliver
     end
