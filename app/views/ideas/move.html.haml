@@ -9,6 +9,9 @@
         .field
           .field_label
             = tr("Sub Instance", "view/users/_form_long")
+          .field_label
+            = tr("New status message", "view/ideas/status")
+            = f.text_area :finished_status_message, :rows => 12, :cols=>70
           .field_box
             = f.select :sub_instance, options_for_select_simple(SubInstance.all.collect{|s|[s.short_name,s.id]}, @idea.sub_instance_id)
         %br/

@@ -54,43 +54,42 @@ class IdeasController < ApplicationController
     end
   end
 
-
   def move
     # This function can only be used when users are shared between sub instances
     if request.post? and ENV['YRPRI_ALL_DOMAIN']
-      sub_instance = SubInstance.find(params[:idea][:sub_instance])
-      current_saved = SubInstance.current
-      SubInstance.current = sub_instance
+      from_sub_instance = SubInstance.current
+      to_sub_instance = SubInstance.find(params[:idea][:sub_instance])
+      SubInstance.current = to_sub_instance
       to_category_id = Category.first.id
-      SubInstance.current = current_saved
-      @idea.sub_instance_id = sub_instance.id
+      SubInstance.current = from_sub_instance
+      @idea.sub_instance_id = to_sub_instance.id
       @idea.category_id = to_category_id
       @idea.save(:validate=>false)
       Point.unscoped.where(:idea_id=>@idea.id).each do |point|
-        point.sub_instance_id = sub_instance.id
+        point.sub_instance_id = to_sub_instance.id
         point.save(:validate=>false)
       end
       Endorsement.unscoped.where(:idea_id=>@idea.id).each do |item|
-        item.sub_instance_id = sub_instance.id
+        item.sub_instance_id = to_sub_instance.id
         item.save(:validate=>false)
       end
       Activity.unscoped.where(:idea_id=>@idea.id).each do |item|
-        item.sub_instance_id = sub_instance.id
+        item.sub_instance_id = to_sub_instance.id
         item.save(:validate=>false)
         Comment.unscoped.where(:activity_id=>item.id).each do |item|
-          item.sub_instance_id = sub_instance.id
+          item.sub_instance_id = to_sub_instance.id
           item.save(:validate=>false)
         end
       end
       Ad.unscoped.where(:idea_id=>@idea.id).each do |item|
-        item.sub_instance_id = sub_instance.id
+        item.sub_instance_id = to_sub_instance.id
         item.save(:validate=>false)
       end
       ViewedIdea.unscoped.where(:idea_id=>@idea.id).each do |item|
-        item.sub_instance_id = sub_instance.id
+        item.sub_instance_id = to_sub_instance.id
         item.save(:validate=>false)
       end
-     # UserMailer.sub_instance_changed(@idea.user, @idea, sub_instance, current_saved).deliver
+      UserMailer.sub_instance_changed(@idea.user, @idea, from_sub_instance, to_sub_instance, params[:idea][:finished_status_message]).deliver
       redirect_to @idea.show_url
     end
   end

@@ -133,11 +133,12 @@ class UserMailer < Devise::Mailer
     end
   end
 
-  def sub_instance_changed(user,idea,old_sub_instance,new_sub_instance)
+  def sub_instance_changed(user,idea,from_sub_instance,to_sub_instance,status_message)
     @recipient = @user = user
     @idea = idea
-    @category_from = old_sub_instance.name
-    @category_to = category_to.name
+    @from_sub_instance = from_sub_instance.name
+    @to_sub_instance = to_sub_instance.name
+    @status_message = status_message
     setup_locale(user)
     @instance = Instance.last
     attachments.inline['logo.png'] = get_email_banner
@@ -145,8 +146,8 @@ class UserMailer < Devise::Mailer
     mail to:       recipient,
          reply_to: Instance.last.admin_email,
          from:     "#{Instance.last.name} <#{Instance.last.admin_email}>",
-         subject:  tr("The category of your idea {idea} has been changed","email", :idea => idea.name) do |format|
-      format.text { render text: convert_to_text(render_to_string("category_changed", formats: [:html])) }
+         subject:  tr("Your idea {idea} has been moved","email", :idea => idea.name) do |format|
+      format.text { render text: convert_to_text(render_to_string("sub_instance_changed", formats: [:html])) }
       format.html
     end
   end

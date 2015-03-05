@@ -1,0 +1,13 @@
+= render :partial=>"header", formats: [:html]
+%p
+  = tr("Your idea <a href='{idea_link}'>{idea_name}</a> has been moved by admin from {from_sub_instance} to {to_sub_instance} on {instance_name}.", "email",                                                                                                                                      |
+    idea_name: @idea.name,                                                                                                                |
+    idea_link: @idea.show_url,                                                                                                            |
+    to_sub_instance: @to_sub_instance,                                                                                                        |
+    from_sub_instance: @from_sub_instance,                                                                                                        |
+    instance_name: @idea.sub_instance.name).html_safe                                                                                     |
+%p
+  = @status_message
+%p
+  = link_to @idea.show_url, @idea.show_url
+= render :partial=>"footer", formats: [:html]
