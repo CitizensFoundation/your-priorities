@@ -598,7 +598,7 @@ class UsersController < ApplicationController
     if ssn and ssn!=""
       if user = User.where(:ssn=>ssn).first
         sign_in user, event: :authentication
-        redirect_to "/"
+        redirect_after_island_is
       else
         user = User.new
         user.ssn = ssn
@@ -606,7 +606,7 @@ class UsersController < ApplicationController
         user.save(:validate=>false)
         user.activate! unless user.active?
         sign_in user, event: :authentication
-        redirect_to "/"
+        redirect_to redirect_after_island_is
       end
     else
       raise "No SSN in island.is authentication"
@@ -615,4 +615,11 @@ class UsersController < ApplicationController
     return true
   end
 
+  def redirect_after_island_is
+    if session[:redirectAfterIslandIs]
+      redirect_to session[:redirectAfterIslandIs]
+    else
+      redirect_to '/'
+    end
+  end
 end
