@@ -1,5 +1,6 @@
 ---
 hu:
+  2682beed28fc3d3709619dbf2a469dbb: Fénykép feltöltése
   will_paginate:
     next_label: Következő &#8594;
     previous_label: '&#8592; Előző'
@@ -142,7 +143,6 @@ hu:
   3abbd962f6751baf05a19c4ebbc8d0e7: Egyetértek, hogy...
   3b6c2b4caaf4f14f8d7feeddc4ac3f4d: A szolgáltatás feltételei
   fa2ead697d9998cbc65c81384e6533d5: Adatvédelmi irányelvek
-  2abdcbddfc76fe670e6fcff16cb0a7d1: Készíts %{instance_name}
   7ccf75fa7498152efe4e152833455c67: Felhasználónév
   e3afed0047b08059d0fada10f400c1e5: Admin
   b357b524e740bc85b9790a0712d84a30: Email cím
@@ -158,7 +158,6 @@ hu:
   8324d056b6c576dc840f4ca7231746a5: Hozzászólás küldése
   7b8f95b017fbb7f217c95590de6d20ef: '%{count} még több tanácskozás a(z) %{idea_name}
     kapcsán'
-  2682beed28fc3d3709619dbf2a469dbb: Fénykép feltöltése
   a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} ötletek'
   52d2acef5f9e5e2d6a06c4958f774419: Sikertelen keresés
   5f2b9345f9bbd74079b99d6fcf461408: Készített

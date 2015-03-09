@@ -1,5 +1,27 @@
 ---
 cy:
+  errors:
+    messages:
+      inclusion: heb fod yn y rhestr
+      exclusion: wedi cadw
+      invalid: heb fod yn nheilwng
+      confirmation: heb fod yn gyfateb
+      accepted: angen ei dderbyn
+      empty: methu bod yn wag
+      blank: methu bod yn wag
+      too_long: yn rhy hir (cewch %{count} llythyren ar y fwyaf)
+      too_short: yn rhy fyr (rhaid am o leiaf %{count} llythyren)
+      wrong_length: gyda maint anghywir o lythrennau (dylai fod yn %{count} llythyren)
+      not_a_number: heb fod yn rhif
+      not_an_integer: heb fod yn rhif llawn
+      greater_than: angen bod yn fwy na %{count}
+      greater_than_or_equal_to: angen bod yr un maint neu fwy na %{count}
+      equal_to: angen bod yn %{count}
+      less_than: angen bod yn llai na %{count}
+      less_than_or_equal_to: angen bod yr un maint neu lai na %{count}
+      odd: rhaid bod yn odrif
+      even: rhaid bod yn eilrif
+    format: '%{attribute} %{message}'
   date:
     formats:
       default: '%d-%m-%Y'
@@ -156,28 +178,6 @@ cy:
       create: Creu %{model}
       update: Diweddaru %{model}
       submit: Cadw %{model}
-  errors:
-    format: '%{attribute} %{message}'
-    messages:
-      inclusion: heb fod yn y rhestr
-      exclusion: wedi cadw
-      invalid: heb fod yn nheilwng
-      confirmation: heb fod yn gyfateb
-      accepted: angen ei dderbyn
-      empty: methu bod yn wag
-      blank: methu bod yn wag
-      too_long: yn rhy hir (cewch %{count} llythyren ar y fwyaf)
-      too_short: yn rhy fyr (rhaid am o leiaf %{count} llythyren)
-      wrong_length: gyda maint anghywir o lythrennau (dylai fod yn %{count} llythyren)
-      not_a_number: heb fod yn rhif
-      not_an_integer: heb fod yn rhif llawn
-      greater_than: angen bod yn fwy na %{count}
-      greater_than_or_equal_to: angen bod yr un maint neu fwy na %{count}
-      equal_to: angen bod yn %{count}
-      less_than: angen bod yn llai na %{count}
-      less_than_or_equal_to: angen bod yr un maint neu lai na %{count}
-      odd: rhaid bod yn odrif
-      even: rhaid bod yn eilrif
   activerecord:
     errors:
       template:

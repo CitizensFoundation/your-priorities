@@ -215,10 +215,10 @@ pt-BR:
         even: deve ser par
       full_messages:
         format: '%{attribute}%{message}'
-  03937134cedab9078be39a77ee3a48a0: Grupo
   019ec3132cdf8ee0f2e2a75cf5d3e459: Sexo
   0323de4f66a1700e2173e9bcdce02715: Sair
   03368e3c1eb4d2a9048775874301b19f: Seleciona a Categoria
+  03937134cedab9078be39a77ee3a48a0: Grupo
   03fa96387303a39d8a63c153bac26958: 'Reservamos o direito de:'
   0574c44ee9d51a85091b24119d5c2f69: Novas idéias
   06277ee8d0fd9ef7427ca88315ba493a: Login através do Twitter falhou.

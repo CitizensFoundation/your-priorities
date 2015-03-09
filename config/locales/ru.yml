@@ -217,6 +217,8 @@ ru:
     select:
       prompt: 'Выберите: '
     array:
-      words_connector: ', '
-      two_words_connector: ' и '
-      last_word_connector: ' и '
+      words_connector: ','
+      last_word_connector: ', и'
+      two_words_connector: и
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Отчет
+  5a9d18bb87ff12835dc844883c5c3ebe: изменения

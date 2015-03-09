@@ -7,11 +7,9 @@ bg:
   0574c44ee9d51a85091b24119d5c2f69: Най-нови идеи
   6c60eec8c5809428787d3d817d389404: Топ идеи за последните 30 дни
   8de16e7a08998e0e60d27d6b4d441379: Топ идеи за последните 24 часа
-  90470f17c0c5b3cb0c3d2581e14aff20: Създайте свой %{instance_name} (лесно е...)
   will_paginate:
     next_label: Следваща &#8594;
     previous_label: '&#8592; Предишна'
-  a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} идеи'
   datetime:
     prompts:
       month: Месец
@@ -129,6 +127,7 @@ bg:
   099af53f601532dbd31e0ea99ffdeb64: изтриване
   8324d056b6c576dc840f4ca7231746a5: Изпращане на коментар
   2682beed28fc3d3709619dbf2a469dbb: Качете ваша снимка
+  a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} идеи'
   b1c94ca2fbc3e78fc30069c8d0f01680: Всички
   498f79c4c5bbde77f1bceb6c86fd0f6d: Покажи
   0be8406951cdfda82f00f79328cf4efc: Коментар

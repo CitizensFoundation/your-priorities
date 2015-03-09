@@ -1,5 +1,6 @@
 ---
 ca:
+  5df2acc8c67fdc6d6dc03791ac5f7a5e: Envia una invitació
   1945e5ccc0bd89812560b30f7c48639d: Les teves notificacions
   198584454b0ce1101ff5b50323325aa8: El teu correu electrònic
   1a08c8ca9af355a37e4b5d4595434211: Confirma la contrasenya
@@ -12,7 +13,6 @@ ca:
   3d067bedfe2f4677470dd6ccf64d05ed: Públic
   3d35e1c739ae399cc7d6923c1d8103fb: Nom de l'organització
   3f89fa3c54a8c2bc3e677282f46ca329: Selecciona un altre pla de subscripció
-  40a2e1017d03e4ce611e8e59ffd188b4: Ara... Selecciona un pla
   1dabb7608cdd6762b2f3b96905d7259f: Codi de seguretat (CVV)
   1f12b3c7394669db79a9042fe97e9cbf: Better Reykjavik
   1f18ecdc7eec76193a3c6e228992601c: mostra el comentari complet
@@ -94,7 +94,6 @@ ca:
   5a9d18bb87ff12835dc844883c5c3ebe: canvis
   5bcae97233d5480140596e6e948ff8b0: La teva foto
   5d50889672f6f860d14f502de3de1957: Colors
-  5df2acc8c67fdc6d6dc03791ac5f7a5e: Envia una invitació
   5ef0c737746fae2ca90e66c39333f8f6: Errors
   72ef2b9b6965d078e3c7f95487a82d1c: Surt
   730956af87021c351084317bbc63eea6: VOLUM
@@ -117,7 +116,6 @@ ca:
   873d178af8c3ae30d29577b5846695ac: per usuari
   88183b946cc5f0e8c96b2e66e1c74a7e: Desconegut
   9977ab924c89e6c98b1cf1595354ada3: Última activitat
-  99938282f04071859941e18f16efcf42: selecciona
   99de1173596bd03c47e19254f981429a: Fes administrador
   9a56ce776e4dbe20a95fd6973c7569db: té un màxim de 500 caràcters
   9b5016f406a56aa10fdc5384de2696b8: Guarda la configuració de l'email
@@ -249,6 +247,7 @@ ca:
   6948b45726c75fbf35d8babafa3d6a75: El teu país no ha estat detectat
   697184ece37c024d3319f16f3e98c597: Clica aquí per acceptar l'invitació
   6b217791ec3e71a71356fb3a03076311: Guarda la configuració
+  18ef3f4348075aca1646941639d610dd: Idea %{position}
   33f77dee4bc7aacf15e3deee9743e98e: 'Punt sobre %{idea_name}:'
   3404c2e7a220d0c7083fe27ba3f7036e: '%{tag_name} idees que has creat'
   34445da586d63e7bbe9fd7ca96e939c7: '%{comments_count} Comentaris'
@@ -272,7 +271,6 @@ ca:
   15bbb9d0bbf25e8d2978de1168c749dc: Web
   16d39f7e2b0ed1ee441421cc0f86a724: Aquest punt ha estat eliminat
   175fd8a23b58b6b7ce1958698686d284: Útil?
-  18ef3f4348075aca1646941639d610dd: Idea %{position}
   19d3894f53ce79c3f836f26cf8a3be3b: inactiu
   43781db5c40ecc39fd718685594f0956: guarda
   142b38d73ecdd12a19fe53a206e4c734: Text complet
@@ -299,7 +297,6 @@ ca:
   fd038fc7f319e48f3115d92bf5bdbef9: Ignorar
   fd88b11cfde6aa5e3c7ff0553b534885: Revisions
   fdc3bdefb79cec8eb8211d2499e04704: document
-  441f54c7f0ecef11a8a652c6ed75c52e: Pla actual
   45a098e1ebc679f8fd971e9e60d2b445: Perquè Your Priorities?
   8a357512436318208aca51f2db5ebf75: Guarda el punt
   8ae5811be1a55b9b8447ad2dbdadbf6e: Imatge
@@ -310,12 +307,10 @@ ca:
   8de16e7a08998e0e60d27d6b4d441379: Top idees de les últimes 24 hores
   939d09ea0c18215ca9032ef913d82567: Últimes idees
   93cba07454f06a4a960172bbd6e2a435: Sí
-  94eaf7b43e9ee8089b5da00def9f9915: contacta'ns
   9542c313a62d8640365c4cf3bb8b2b7b: Nova contrasenya
   95689f6436d242f4ea19443c83c05ab2: Retira administrador
   974181ed9d4530663fcad6e11dfe9182: Afegeix una idea nova
   9791bad038cc199afcbc4de5f6abab89: Noves %{tag_name} idees
-  985f85fc6bb1d160f599f43072500d35: '%{instance_name} nom i URL'
   a274f4d4670213a9045ce258c6c56b80: Notificacions
   a2d5e7a9d03b49d0639ab0a75a59d2c2: Top punts
   a4ea91cd0d1ea33d8113457644dd6157: clica aquí
@@ -355,7 +350,6 @@ ca:
   06df33001c1d7187fdd81ea1f5b277aa: Accions
   07221d868183bab87e41f0ec47440880: Discussions a les teves idees
   07cf1f790935949c02c3289638e3ea40: Discussions on hi participen els teus seguidors
-  083f66b6e0c1c0e39ea7803620d7dd9f: Canvia el pla
   0863f095cbdbbe6ce5a8aac979766a83: Extensió màxima del títol d'una idea
   08bdf9d9ac0f365778d132920ea10254: Escull gènere
   08de2fdaabcd120b8ca1388d21179921: Accés denegat
@@ -416,7 +410,6 @@ ca:
   05e76e0331606ce2c93ed8ab79820286: Donatiu a eDemocracy
   06591670b8600f71493c779ff6c5e331: '%{position} la més influent'
   0680c0f4acc215c7c75e5dafe9384e7c: Afegeix un enllaç a una pàgina web externa
-  0af762d3701c852a5371fa4ad393f9fa: Posa-li nom al teu %{instance_name}
   0b621b41e4ddea66c74e52a1639d0fd3: Client css (no sass!)
   0b75a01238f5516c50f167a31155bdd9: Resultat de la votació sobre les propostes d'adquisició
   0bd5b2d797a9c6261ffcc7881c474ce7: Ja ets membre de %{instance_name}

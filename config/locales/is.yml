@@ -2,7 +2,6 @@
 is:
   3b6c2b4caaf4f14f8d7feeddc4ac3f4d: Reglur
   fa2ead697d9998cbc65c81384e6533d5: Um friðhelgi
-  985f85fc6bb1d160f599f43072500d35: '%{instance_name} nafn og vefslóð'
   cf23ee279844016288ea1c076638f3be: Um okkur
   01441c80c744e05983f0681cacfcf047: Kaus upp %{new_idea_name} í stað %{idea_name}
   d0d2aef3bbda7f1ae365a9a2a9d5bb10: Nýjast (%{count})
@@ -15,17 +14,11 @@ is:
     í %{position}. sæti í %{category}.
   c867451892e38db47a8cc5e7b02d5c54: sem þú styður
   ce8ae9da5b7cd6c3df2929543a9af92d: Netfang
-  0af762d3701c852a5371fa4ad393f9fa: Gefðu %{instance_name} nafn
   27340dcd104975a8f470cf8956e9496a: Þín vefslóð
-  99938282f04071859941e18f16efcf42: veldu
-  94eaf7b43e9ee8089b5da00def9f9915: hafðu samband
-  43f2ea9de2657b24003a0585800c6534: Fleiri notendur? Ráðgjöf? Tenging við þitt notendakerfi
-    fyrir innskráningu?
   d6cb6dc595d9a3a6c3e2db949a04be06: Hafðu samband <a href='mailto:%{email}'>%{email2}</a>
   f0ec3db5bcd8943d68ac34fdc4b57d73: Að lokum...
   3abbd962f6751baf05a19c4ebbc8d0e7: Ég samþykki
   79d0c6669f615687e6a265f73e989d5d: Ég samþykki
-  2abdcbddfc76fe670e6fcff16cb0a7d1: BÚA TIL %{instance_name}
   01374d70036cb0b48058e7e031eeb680: Þú þarft að innskrá þig til að fá aðgang að þessari
     lokuðu síðu
   002d4fac39a17aaa96c1a79a1a710edb: Sölunetfang
@@ -51,7 +44,6 @@ is:
   d280d15220c6ba22dfa7cd8a5139ea67: Næst... Upplýsingar um þig
   034cb9b595f45003845f5ebed51a0a39: Twitter Consumer Secret
   0358ca3a25ad72c389989a3db811f233: '%{user_name} endurnefndi %{idea_name}'
-  90470f17c0c5b3cb0c3d2581e14aff20: Búðu til þinn eigin %{instance_name} (Mjög fljótlegt...)
   03937134cedab9078be39a77ee3a48a0: Hópur
   040cd458fd2ae990e1f054b26909bd7a: Vann sér inn %{count}%{currency_short_name} vegna
     þess að %{count} hættu að hunsa
@@ -65,16 +57,9 @@ is:
   8ac6e46f207f4d2a928523d417663553: Velkomin á %{instance_name}. Bættu við þinni fyrstu
     hugmynd
   dc647eb65e6711e155375218212b3964: Lykilorð
-  f97bc2159b044b75eaf3a32172b922cd: Opin - Allir geta séð síðu og skráð sig með netfangi
-    eða Facebook
   4fb7286b0fe19a6cf2569e4115e88baa: minnst 10 stafir
   80df8e95c1fef941a4f600f0fd1b07c8: minnst 12 stafir
   ab70cd88a40e7c3247bfce039ad0045d: minnst 5 stafir
-  7a92f7d9a2363fb1ad145d302d8f1238: Lokuð - aðeins opið boðsgestum
-  53a276a4e77491e31d12a89334a8209c: Fyrir áskriftarleið sem kostar hafðu beint samband
-    við <a href='mailto:%{email}'>%{email2}</a>. Við munum fljótlega bjóða upp á áskrift
-    með kreditkorti.
-  40a2e1017d03e4ce611e8e59ffd188b4: Núna... Veldu áskriftarleið
   2a3cd5946cfd317eb99c3d32e35e2d4c: Rök
   75dd5f1160a3f02b6fae89c54361a1b3: Rök
   9332fc437c329ab4057b2121ba0360ed: 'Rök gegn:'
@@ -134,12 +119,9 @@ is:
   8e52de0d4b03d5fe87dc88da09616c7f: hér.
   27a84c42208c15f8f2a86182f2ada960: Stjórn borgarinnar fær ómetanlegar upplýsingar
     um skoðanir og forgangsröðun borgaranna með lágmarks fyrirhöfn.
-  b0757674dc2b889ee5deabc023106eed: upp að %{number_of_users} notendum
   afb69da123b38f7a39121412fc20f9be: Vefurinn tengir borgara Reykjavíkur við fulltrúa
     þeirra í stjórnum borgarinnar sem taka til umfjöllunar efstu hugmyndir af honum
     í hverjum mánuði.
-  e9fd438d76861fab5afa6f3b2b693b08: '%{the_price} á mánuði'
-  b24ce0cd392a5b0b8dedc66c25213594: Frítt
   cedcf6fe65a8f2849fe11e316d6c9923: Skráðu þig núna
   12cc3f3e76f44bf82cfd0a05648f71d3: Ef þitt félag er ekki rekið í hagnaðarskyni bendum
     við á %{yrpri_link} sem er rekin af sjálfeignarstofnunni %{cf_link}.
@@ -156,8 +138,6 @@ is:
   3f89fa3c54a8c2bc3e677282f46ca329: Veldu aðra áskriftarleið
   2447493bb9540000132e1fdeaeb202af: '%{amount} á mánuði með VSK'
   ea847c5f7a1d9e08184bf00b1722fed9: '%{amount} á mánuði'
-  083f66b6e0c1c0e39ea7803620d7dd9f: Velja áskrift
-  441f54c7f0ecef11a8a652c6ed75c52e: Núverandi áskrift
   73695444fc4f18d308697c3da5c882d5: Hérna er boð frá %{sender_name} um að skrá þig
     á %{instance_name}.
   697184ece37c024d3319f16f3e98c597: 'Smelltu hér til að þiggja boðið:'
@@ -220,12 +200,8 @@ is:
   d77a0f9cd14e513bb78bccbf59402717: Staða hugmynda
   ea3e01f57414004a37f4034b92335ede: Þú ert að gerast áskrifandi að opinni síðu með
     tölvupóst og Facebook skráningu með upp að %{number_of_users} notendum.
-  3d5a940a7ccd5b0b908cb439001d1715: Núverandi áskrift
   93d17c7680cf26f6c56cbe895964ecf5: Dæmi - EVE Online | True Stories
   c6da852d800f7975c28e337a2e2bd028: Dæmi - Betri Reykjavík
-  24e0f8f4d4442f2d51f77decfaaa0c32: Til að hætta áskrift sem borgað er fyrir veldu
-    þá eina ókeypis áskrift hér að neðan.
-  3793d68bfe956d4b8721d605fe3c486e: Næsta greiðsla er %{next_charge_date}
   5df2acc8c67fdc6d6dc03791ac5f7a5e: Senda
   83218ac34c1834c26781fe4bde918ee4: Velkominn
   070625ecbc8bd373ccfb31867274eb97: Endursetja lykilorð fyrir %{instance_name}
@@ -239,11 +215,6 @@ is:
   eed1d7e8237b8656aff7c66bb5999f96: Settu inn rétt nafn eða dulnefn.
   026688f148cfe681359ec62731411752: Takk fyrir greiðslu á %{instance_name}
   39a2ac1fc229d843594065531ffed4c8: Núverandi áskriftarleið
-  670c30946507c1831081de9d0cd2e578: Your Priorities getur hjálpað þínu landi / borg
-    / samfélagi / eða hópi sem vilja skipuleggja sig í kringum hugmyndir og tala með
-    einni rödd. Hérna getur þú búið til þína eigin Your Priorities síðu. Þú getur
-    skráð hana án þess að vera með kreditkort til prufu. Auðvelt er að skipta yfir
-    í útgáfuna sem borgað er fyrir.
   bb73e7a168c9158086404aaac16e5de5: Verðlaunavefurinn %{br_link} notar sama frjálsa
     hugbúnað og Your Priorities vefsíðan.
   96c3b987a5b5008df9b06d9d95092634: Your Priorities er öflug lýðræðisvefsíða hönnuð
@@ -256,8 +227,12 @@ is:
     lausn fyrir %{eve_link} vef %{ccp_link}.
   c428492f00d9e51ce05abf306d2ff59b: Fólk sendir inn hugmyndir og rökræða þær í einföldu
     en öflugu rökræðukerfi.
-  37fc5aed92a40b16dafd17cee72e3154: Efstu hugmyndir
+  39a3cf4c89d1ffa6eddb8a1ae6a8bae9: Flokki hefur verið breytt fyrir þína hugmynd %{idea}
+  4c0d946321563c8bf049de4cc6473281: Flokki hefur verið breytt
+  d43686420438e917216d81506320e6f2: Við höfum breytt flokki fyrir þína hugmynd <a
+    href='%{idea_link}'>%{idea_name}</a> frá %{category_from} í %{category_to} á %{instance_name}.
   2f64c030f4bec3e2c21e78506cc78f63: Efstu 25 hugmyndir á %{instance_name}
+  37fc5aed92a40b16dafd17cee72e3154: Efstu hugmyndir
   ac876a06a03e14d880f4cd06058a34ae: Efsta flæði %{sub_instance_name}
   e254a34f3a1001f00adc55aba5552783: Efst
   c4e0e4e3118472beeb2ae75827450f1f: NIÐUR
@@ -340,6 +315,7 @@ is:
   062bad04a7e077f61b7dcb0ef85dbef9: 'Hér sérðu breytingar frá eldri útgáfu. Þú getur
     líka <a href=''%{clean_url}''>skoðað hreina útgáfu</a> '
   021da1b20f73dc252361a54d80497ef3: Röð
+  d7241b155164fdbc560602f924393149: Skráðu hugmynd þína og rök
   0f9b5eff8d1d07e6ce3a8fe2697a76f7: Hóf notkun  %{time_ago}
   16765596b57782e7012aee0ac86ff5ff: '%{count} styðja'
   da08b4d4be989f5276a7aab9899ab34c: '%{count} á móti'
@@ -353,7 +329,6 @@ is:
   03368e3c1eb4d2a9048775874301b19f: Veldu málaflokk
   7dd982d0948637b4ae83f2804bd489ca: Afhverju ætti fólk að styðja þína hugmynd?
   2e6c2d96aaacc8ef06d0ea12237cfc2e: Það þarf að fylla í alla reiti
-  d7241b155164fdbc560602f924393149: Skráðu hugmynd þína og rök
   586f9d3669a73e12a8caed7a7d76288e: Veldu góðan, lýsandi titil á hugmyndina þína
   cdd559fd8bda4b2bdf1cdbca181b38b9: Útskýrðu hugmyndina í nokkrum málsgreinum og reyndu
     að hafa textann hnitmiðaðan.
@@ -614,10 +589,7 @@ is:
   dcab30df167c93ffafaf59a49789cefa: Betra Ísland er öflug lýðræðisvefsíða hönnuð af
     non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með einni
     rödd.
+  2a97751493e0cb66b7ce1d0a0c829df7: Þín hugmynd %{idea} hefur verið færð
+  365e3d8187f5212085cbd599b430974a: Þín hugmynd <a href='%{idea_link}'>%{idea_name}</a>
+    hefur verið færð frá %{from_sub_instance} til %{to_sub_instance} á %{instance_name}.
   42a965482d059f063d4503251a2548b8: Bættu við rökum á móti
-  7e48b42c2a2f584925675cc365bf8839: Breyta flokk
-  52015afb6ec8b940ef903ff73f4c4058: Nýr flokkur
-  6007de624f30af50629e5cb3b9db4e66: Vista hugmynd
-  d43686420438e917216d81506320e6f2: "Við höfum breytt flokki fyrir þína hugmynd <a href='%{idea_link}'>%{idea_name}</a> frá %{category_from} í %{category_to} á %{instance_name}."
-  39a3cf4c89d1ffa6eddb8a1ae6a8bae9: "Flokki hefur verið breytt fyrir þína hugmynd %{idea}"
-  4c0d946321563c8bf049de4cc6473281: "Flokki hefur verið breytt"

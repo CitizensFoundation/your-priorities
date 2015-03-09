@@ -130,6 +130,43 @@ sv-SE:
   42bd4c0819c498d1c1ab622de74d6f82: understödd
   43e00d10903ec90c9f2c523a901df552: '%{user_name} tjänade %{capital}%{currency_short_name}
     eftersom både stöd och motstånd finns %{point_name} nyttigt'
+  number:
+    format:
+      separator: ','
+      precision: 2
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        precision: 2
+        separator: ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: kr
+        format: '%n %u'
+    human:
+      decimal_units:
+        format: '%n %u'
+        units:
+          billion: Miljard
+          million: Miljon
+          quadrillion: Biljard
+          thousand: Tusen
+          trillion: Biljon
+      format:
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
   4607ccb71469675944516398e717479c: Var god acceptera termer och villkor
   date:
     abbr_month_names:
@@ -250,43 +287,6 @@ sv-SE:
       too_long: är för lång (maximum är %{count} tecken)
       too_short: är för kort (minimum är %{count} tecken)
       wrong_length: har fel längd (ska vara %{count} tecken)
-  number:
-    currency:
-      format:
-        precision: 2
-        separator: ','
-        significant: false
-        strip_insignificant_zeros: false
-        unit: kr
-        format: '%n %u'
-    format:
-      precision: 2
-      separator: ','
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: '%n %u'
-        units:
-          billion: Miljard
-          million: Miljon
-          quadrillion: Biljard
-          thousand: Tusen
-          trillion: Biljon
-      format:
-        precision: 1
-        significant: false
-        strip_insignificant_zeros: false
-      storage_units:
-        format: '%n %u'
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
   support:
     select:
       prompt: Välj
@@ -396,7 +396,6 @@ sv-SE:
   201e7310f5fb28133f781fc856003d92: Idétitel
   03368e3c1eb4d2a9048775874301b19f: Välj kategori
   7dd982d0948637b4ae83f2804bd489ca: Varför ska folk stödja din idé?
-  b513ce9261a49ab58593ca678a8a18c0: Alla nuvarande
   668deb1091498fc9353f5d297fd55877: tecken kvar
   b5a7adde1af5c87d7fd797b6245c2a39: Beskrivning
   062bad04a7e077f61b7dcb0ef85dbef9: Detta visar ändringar sedan föregående revidering.
@@ -427,6 +426,8 @@ sv-SE:
   aa750dc0f9ceebb3ce86571be0dc6460: Nytt rapportmeddelande
   f5359d1dd07def542aa9b0577fb27068: Uppdatera status
   3b878279a04dc47d60932cb294d96259: Översikt
+  8ac6e46f207f4d2a928523d417663553: Välkommen till ditt %{instance_name} . Var vänlig
+    lägg till din första idé
   f7c27fe5419c0751885d8a0cc6f0e75a: Debatt (%{count})
   cbc00c310ea3af7dc35edceb12f5601f: Lägg till punkt
   e1e583ed208b1fbecec8b65dc272a098: Är denna idé från %{user_name} ett personligt
@@ -435,7 +436,6 @@ sv-SE:
   00d9e5c459f14c32aa6d6d1bb7cde76d: Revisideringar (%{count})
   26035f5354afb729c61d704ecbd14053: Nya revideringar
   a80425472d94ae02c836da5b6f205b7b: Feed
-  8bf906833cc7aea8084f552217ed9c1d: Avstängd
   8e1a7d9287a48440106ef0181c5a0181: Köp en annons
   f2a6c498fb90ee345d997f888fce3b18: Ta bort
   a604e73131bb1a34283a5ebcd349def4: godkändes
@@ -443,15 +443,11 @@ sv-SE:
   453aceb005ceaf54a47da15fee8b2a26: Sidor
   0b39c5aca15b84b1ad53a94d6b3feb78: Byt lösenord
   198584454b0ce1101ff5b50323325aa8: Din emailadress
-  40a2e1017d03e4ce611e8e59ffd188b4: Välj en plan...Nu
-  083f66b6e0c1c0e39ea7803620d7dd9f: Byt plan
   d6cb6dc595d9a3a6c3e2db949a04be06: Kontakta oss på <a href='mailto:%{email}'>%{email2}</a>
-  90470f17c0c5b3cb0c3d2581e14aff20: Skap ditt eget %{instance_name} (Det går fort...)
   3f0d611a1c160e3ffbfd172a9e163a18: '%{error_count} fel har stoppat kontot från att
     sparas:'
   6ae7034c0535498660d77f0201b17841: '%{error_count} fel har stoppat detta konto från
     att sparas:'
-  0af762d3701c852a5371fa4ad393f9fa: Namnge ditt %{instance_name}
   27340dcd104975a8f470cf8956e9496a: Din URL
   13e7cd666950f7873a5e431fce97b916: 'Exempel: https://'
   d280d15220c6ba22dfa7cd8a5139ea67: Nästa ... Dina personuppgifter
@@ -497,14 +493,11 @@ sv-SE:
   a274f4d4670213a9045ce258c6c56b80: Notifikation
   3b6c2b4caaf4f14f8d7feeddc4ac3f4d: Användarvillkor
   fa2ead697d9998cbc65c81384e6533d5: Integritetspolicy
-  2abdcbddfc76fe670e6fcff16cb0a7d1: SKAPA %{instance_name}
   7ccf75fa7498152efe4e152833455c67: Inloggningsnamn
   5f2b9345f9bbd74079b99d6fcf461408: Skapad på
   9f9d26ab95c28a22b705d2f6d5ad8665: inbjuden till
   e3afed0047b08059d0fada10f400c1e5: Admin
   06df33001c1d7187fdd81ea1f5b277aa: Åtgärder
-  8ac6e46f207f4d2a928523d417663553: Välkommen till ditt %{instance_name} . Var vänlig
-    lägg till din första idé
   f21c0d5d1b8f1db623e35830665eb644: Skyddstillsyn
   5fe6005bf6e415c950c011fb65f12b8f: Borttagen
   f1e2a549f8a0a20b572b176455dba9b9: LÄGG IN DIN IDÉ
@@ -565,6 +558,8 @@ sv-SE:
   c33e404a441c6ba9648f88af3c68a1ca: Statistik
   2f64c030f4bec3e2c21e78506cc78f63: De viktigaste 25 idéerna för %{instance_name}
   7cdfb0c074a8155d864d2b591b0d509b: Rapporterat innehåll
+  b513ce9261a49ab58593ca678a8a18c0: Alla nuvarande
+  8bf906833cc7aea8084f552217ed9c1d: Avstängd
   15bbb9d0bbf25e8d2978de1168c749dc: Webbplats
   1a08c8ca9af355a37e4b5d4595434211: Lösenordsbekräftelse
   703fabf8db15f38533b603fd3e8099af: Följande diskussion
@@ -667,8 +662,6 @@ sv-SE:
   6058bc368cf5ce6338c25a2def495359: Du kan säga upp prenumertionen när som helst
   3f89fa3c54a8c2bc3e677282f46ca329: Välj en annan prenumerationsplan
   d55f77e2eefbfe2128ce3be88b4a448c: Det har ingen betydelse - Jag minns det nu
-  3d5a940a7ccd5b0b908cb439001d1715: Din aktuella plan
-  985f85fc6bb1d160f599f43072500d35: '%{instance_name} namn och URL'
   95689f6436d242f4ea19443c83c05ab2: Ta bort Admin
   99de1173596bd03c47e19254f981429a: Skapa Admin
   8e52de0d4b03d5fe87dc88da09616c7f: här.

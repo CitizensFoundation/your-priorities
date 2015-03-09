@@ -134,16 +134,11 @@ ro-RO:
   453aceb005ceaf54a47da15fee8b2a26: Pagini
   0b39c5aca15b84b1ad53a94d6b3feb78: Modifică parola
   198584454b0ce1101ff5b50323325aa8: Adresa dvs. de e-mail
-  40a2e1017d03e4ce611e8e59ffd188b4: Acum... Selectați un plan
-  083f66b6e0c1c0e39ea7803620d7dd9f: Modifică plan
   d6cb6dc595d9a3a6c3e2db949a04be06: Contactați-ne la  <a href='mailto:%{email}'>%{email2}</a>
-  90470f17c0c5b3cb0c3d2581e14aff20: Creați-vă propriul %{instance_name} ( Este rapid
-    )
   3f0d611a1c160e3ffbfd172a9e163a18: 'Acest cont nu a putut fi salvat din cauza erorii
     %{error_count} :'
   6ae7034c0535498660d77f0201b17841: 'Acest cont nu a putut fi salvat din cauza erorilor
     %{error_count} :'
-  0af762d3701c852a5371fa4ad393f9fa: Numiți-vă %{instance_name}
   27340dcd104975a8f470cf8956e9496a: URL-ul dvs.
   13e7cd666950f7873a5e431fce97b916: 'Exemplu : https://'
   d280d15220c6ba22dfa7cd8a5139ea67: Urmează... Detaliile personale
@@ -231,7 +226,6 @@ ro-RO:
   3abbd962f6751baf05a19c4ebbc8d0e7: Sunt de acord cu
   3b6c2b4caaf4f14f8d7feeddc4ac3f4d: Condiții de utilizare
   fa2ead697d9998cbc65c81384e6533d5: Politica de confidențialitate
-  2abdcbddfc76fe670e6fcff16cb0a7d1: CREEAZĂ %{instance_name}
   4d0a3fc4c46501d3b4d2257820942a5e: Loghează-te cu %{provider}
   b05d72142020283dc6812fd3a9bc691c: Am uitat parola
   68400031f36198737f197bb1bfc74bef: Suspendă acest membru
@@ -507,32 +501,13 @@ ro-RO:
   6058bc368cf5ce6338c25a2def495359: Vă puteți anula abonamentul oricând.
   3f89fa3c54a8c2bc3e677282f46ca329: Alegeți un alt plan de abonament
   d55f77e2eefbfe2128ce3be88b4a448c: Nu mai contează – îmi amintesc acum
-  3d5a940a7ccd5b0b908cb439001d1715: Planul dvs. curent
   185630615ee65215e684490b02834d5a: Plan privat în care puteți înregistra prin email
     până la %{number_of_users} utilizatori.
   e20e2f7a1cb2a5714df03568eee055c0: Plan public cu înregistrări deschise (inclusiv
     prin Facebook) până la %{number_of_users} utilizatori.
-  24e0f8f4d4442f2d51f77decfaaa0c32: Pentru a anula abonamentul dvs. cu plată, vă rugăm
-    să selectați unul dintre abonamentele gratuite de mai jos.
-  3793d68bfe956d4b8721d605fe3c486e: Plata viitoare se va face pe  %{next_charge_date}
-  53a276a4e77491e31d12a89334a8209c: Pentru abonamentele plătite vă rugăm să ne contactați
-    direct la adresa de email <a href='mailto:%{email}'>%{email2}</a>. Vom oferi în
-    curând abonamente direct cu cardul de credit.
-  7a92f7d9a2363fb1ad145d302d8f1238: Plan privat (invitați înregistrați prin email)
-  f97bc2159b044b75eaf3a32172b922cd: Plan public (înregistrare deschisă, inclusiv prin
-    Facebook)
-  b0757674dc2b889ee5deabc023106eed: până la %{number_of_users} utilizatori
-  e9fd438d76861fab5afa6f3b2b693b08: '%{the_price} pe lună'
-  b24ce0cd392a5b0b8dedc66c25213594: Gratuit
-  94eaf7b43e9ee8089b5da00def9f9915: Contactați-ne
-  99938282f04071859941e18f16efcf42: Selectați
-  441f54c7f0ecef11a8a652c6ed75c52e: Plan curent
-  43f2ea9de2657b24003a0585800c6534: Mai mulți utilizatori? Consultare? Integrarea
-    butonului de logare ori alte adaptari?
   12cc3f3e76f44bf82cfd0a05648f71d3: Dacă sunteți o organizație non-profit (ONG), vă
     rugăm să luați în considerare folosirea serviciului %{yrpri_link} administrat
     de ONG parteneră %{cf_link} din Islanda.
-  985f85fc6bb1d160f599f43072500d35: '%{instance_name} nume și URL'
   95689f6436d242f4ea19443c83c05ab2: Șterge administrator
   99de1173596bd03c47e19254f981429a: Creează administrator
   8e52de0d4b03d5fe87dc88da09616c7f: aici.
@@ -547,12 +522,6 @@ ro-RO:
     și “împotrivă” se ridică în topul discuțiilor.
   9fa58bca936c8c3209d5dba30691bbea: Ce face “Prioritățile tale”?
   cedcf6fe65a8f2849fe11e316d6c9923: Înscrieți-vă acum
-  670c30946507c1831081de9d0cd2e578: “Prioritățile tale” poate vă poate ajuta țara
-    / orașul / comunitatea locală / sau orice comunitate online care dorește să se
-    organizeze în jurul ideilor și să folosească o singură voce. Aici vă puteți crea
-    rapid propriul dvs. site “Prioritățile tale”. Vă puteți înregistra pentru o perioadă
-    limitată de probă fără a folosi un card de credit. Oricând doriți vă puteți înregistra
-    cu un plan plătit.
   c6da852d800f7975c28e337a2e2bd028: Studiu de caz - Better Reykjavik
   bb73e7a168c9158086404aaac16e5de5: Site-ul %{br_link} , care a fost deja premiat,
     folosește același soft de tip Open ca “Prioritățile tale”.

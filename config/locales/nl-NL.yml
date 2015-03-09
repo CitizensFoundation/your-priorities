@@ -1,5 +1,11 @@
 ---
 nl-NL:
+  devise:
+    invitations:
+      send_instructions: Een uitnodiging is verzonden naar %{email}.
+  will_paginate:
+    next_label: Volgende &#8594;
+    previous_label: '&#8592; Vorige'
   002d4fac39a17aaa96c1a79a1a710edb: Verkoop email
   0038a9e512b4678c583db11009d2c297: Dit is het snelst stijgende idee
   003e636075eed8d70232cd54e12236db: Je %{instance_name} wordt aangemaakt

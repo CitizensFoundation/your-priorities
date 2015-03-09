@@ -1,10 +1,10 @@
 ---
 es:
-  e02decaebace93b27ce239a671e77453: Tuyas
   dee5db0dd869d6d2c03539fab2c874ad: Nueva idea en %{sub_instance_name}
   fc2e12b5aff1b388bc309a96bccb3f9b: Gracias por añadir %{idea_name}
   53127d8c496db03d848a289010087409: Más votadas
   64663f4646781c9c0110838b905daa23: Aleatorio
+  e02decaebace93b27ce239a671e77453: Tuyas
   d984e98c3eceb8bc31b8ca398758f248: Puntos de vista recientemente vistos
   8df9c04d95e71c0bb899ac7a5af8cdfb: Añadir punto de vista a %{idea_name}
   79281fb7fd5e0cbea9ca524b779e89ff: Gracias por añadir un punto de vista
@@ -420,13 +420,8 @@ es:
   453aceb005ceaf54a47da15fee8b2a26: Páginas
   0b39c5aca15b84b1ad53a94d6b3feb78: Cambiar contraseña
   198584454b0ce1101ff5b50323325aa8: Tu dirección de correo electrónico
-  40a2e1017d03e4ce611e8e59ffd188b4: Ahora... selecciona un plan
-  083f66b6e0c1c0e39ea7803620d7dd9f: Cambiar plan
   d6cb6dc595d9a3a6c3e2db949a04be06: Ponte en contacto con nosotros en <a href='mailto:%{email}'>%{email2}</a>
-  90470f17c0c5b3cb0c3d2581e14aff20: Crea tu propio %{instance_name} (¡Es rápido y
-    sencillo!)
   3f0d611a1c160e3ffbfd172a9e163a18: 'Se ha producido %{error_count} error, por lo
     que no se ha podido guardar esta cuenta:'
   6ae7034c0535498660d77f0201b17841: 'Se han producido %{error_count} errores, por
     lo que no se ha podido guardar esta cuenta:'
-  0af762d3701c852a5371fa4ad393f9fa: Introduce tu %{instance_name}

@@ -233,7 +233,6 @@ pt-PT:
   052d9de783ead76d6ab1eae9c35f29db: Depois de entrar altere a sua password.
   06591670b8600f71493c779ff6c5e331: '%{position} mais influente'
   07cf1f790935949c02c3289638e3ea40: Debates onde os seus seguidores participam
-  083f66b6e0c1c0e39ea7803620d7dd9f: Mude de plano
   devise:
     invitations:
       new:
