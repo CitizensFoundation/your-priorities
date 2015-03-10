@@ -78,11 +78,12 @@ class ApplicationController < ActionController::Base
         !request.xhr?) # don't store ajax calls
       Rails.logger.debug("Store location: #{request.fullpath}")
       session[:previous_url] = request.fullpath
-      if !request.fullpath.include?("authenticate_from_island_is")
-        session[:redirectAfterIslandIs] = request.url
-      end
     else
       Rails.logger.debug("Not storing location: #{request.fullpath}")
+    end
+    if !request.fullpath.include?("authenticate_from_island_is")
+      session[:redirectAfterIslandIs] = request.fullpath
+      Rails.logger.info("Storing island.is redirect: #{session[:redirectAfterIslandIs]}")
     end
   end
 
