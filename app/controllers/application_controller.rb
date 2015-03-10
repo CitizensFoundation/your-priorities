@@ -82,7 +82,7 @@ class ApplicationController < ActionController::Base
       Rails.logger.debug("Not storing location: #{request.fullpath}")
     end
     if !request.fullpath.include?("authenticate_from_island_is")
-      session[:redirectAfterIslandIs] = request.fullpath
+      session[:redirectAfterIslandIs] = request.original_url
       Rails.logger.info("Storing island.is redirect: #{session[:redirectAfterIslandIs]}")
     end
   end
