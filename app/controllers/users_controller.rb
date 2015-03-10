@@ -606,7 +606,7 @@ class UsersController < ApplicationController
         user.save(:validate=>false)
         user.activate! unless user.active?
         sign_in user, event: :authentication
-        redirect_to redirect_after_saml
+        redirect_after_saml
       end
     else
       raise "No SSN in island.is authentication"
