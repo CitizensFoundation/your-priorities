@@ -465,7 +465,7 @@ class Idea < ActiveRecord::Base
     return ActivityIdeaStatusUpdate.create(idea: self, idea_status_change_log: idea_status_change_log)
   end
 
-  def reactivate!
+  def reactivate_old!
     self.status = 'published'
     self.change = nil
     self.status_changed_at = Time.now
