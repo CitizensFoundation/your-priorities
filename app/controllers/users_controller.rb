@@ -23,6 +23,8 @@ class UsersController < ApplicationController
       respond_to do |format|
         unless User.where(:email=>params[:user][:email]).first
           @user.email = params[:user][:email] if params[:user][:email]
+        else
+          flash[:notice] = tr("Email already registered {email}", "controller/users", :user_name => params[:user][:email])
         end
         @user.login = params[:user][:login] if params[:user][:login]
         @user.buddy_icon = params[:user][:buddy_icon] if params[:user][:buddy_icon]
