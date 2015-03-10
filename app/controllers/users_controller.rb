@@ -26,7 +26,7 @@ class UsersController < ApplicationController
           email_ok = true
           @user.email = params[:user][:email] if params[:user][:email]
         else
-          Rails.logger.info(flash[:notice] = tr("Email already registered {email}", "controller/users", :email => params[:user][:email]))
+          flash[:notice] = tr("Email already registered {email}", "controller/users", :email => params[:user][:email])
         end
         @user.login = params[:user][:login] if params[:user][:login]
         @user.buddy_icon = params[:user][:buddy_icon] if params[:user][:buddy_icon]

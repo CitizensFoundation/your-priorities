@@ -90,6 +90,13 @@ class IdeasController < ApplicationController
         item.save(:validate=>false)
       end
       UserMailer.sub_instance_changed(@idea.user, @idea, from_sub_instance, to_sub_instance, params[:idea][:finished_status_message]).deliver
+      @idea_status_changelog = IdeaStatusChangeLog.new(
+          idea_id: @idea.id,
+          date: DateTime.now,
+          content: params[:idea][:finished_status_message],
+          subject: "Idea moved between groups"
+      )
+      @idea_status_changelog.save
       redirect_to @idea.show_url
     end
   end
@@ -1206,7 +1213,7 @@ class IdeasController < ApplicationController
   end
 
   private
-  
+
     def get_endorsements
       @endorsements = nil
       if user_signed_in? # pull all their endorsements on the ideas shown
