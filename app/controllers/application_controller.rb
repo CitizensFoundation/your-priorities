@@ -83,6 +83,9 @@ class ApplicationController < ActionController::Base
     end
     if !request.fullpath.include?("authenticate_from_island_is")
       session[:redirectAfterIslandIs] = request.original_url
+      if SubInstance.current.short_name != "default"
+        session[:redirectAfterIslandIsSubInstanceId] = SubInstance.current.id
+      end
       Rails.logger.info("Storing island.is redirect: #{session[:redirectAfterIslandIs]}")
     end
   end

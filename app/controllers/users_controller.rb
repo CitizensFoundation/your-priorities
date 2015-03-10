@@ -595,6 +595,10 @@ class UsersController < ApplicationController
 
     #raise "Failed to verify x509 cert KNOWN #{known_x509_cert_txt} (#{known_x509_cert_txt.size}) |#{known_x509_cert_txt.encoding.name}| TEST #{test_x509_cert_txt} (#{test_x509_cert_txt.size}) |#{test_x509_cert_txt.encoding.name}|" unless known_x509_cert_txt == test_x509_cert_txt
 
+    if session[:redirectAfterIslandIsSubInstanceId]
+      SubInstance.current = SubInstance.find(session[:redirectAfterIslandIsSubInstanceId])
+    end
+
     if ssn and ssn!=""
       if user = User.where(:ssn=>ssn).first
         sign_in user, event: :authentication
