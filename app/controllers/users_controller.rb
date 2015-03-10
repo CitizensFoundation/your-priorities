@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def authenticate_from_island_is
-    perform_island_is_token_authentication(params[:token],request)
+    perform_saml_token_authentication(params[:token],request)
   end
 
   def eula
@@ -551,7 +551,7 @@ class UsersController < ApplicationController
       end
     end
 
-  def perform_island_is_token_authentication(token,request)
+  def perform_saml_token_authentication(token,request)
 
     # Call island.is authentication service to verify the authentication token
     # Setup the island.is SOAP connection
@@ -595,14 +595,10 @@ class UsersController < ApplicationController
 
     #raise "Failed to verify x509 cert KNOWN #{known_x509_cert_txt} (#{known_x509_cert_txt.size}) |#{known_x509_cert_txt.encoding.name}| TEST #{test_x509_cert_txt} (#{test_x509_cert_txt.size}) |#{test_x509_cert_txt.encoding.name}|" unless known_x509_cert_txt == test_x509_cert_txt
 
-    if session[:redirectAfterIslandIsSubInstanceId]
-      SubInstance.current = SubInstance.find(session[:redirectAfterIslandIsSubInstanceId])
-    end
-
     if ssn and ssn!=""
       if user = User.where(:ssn=>ssn).first
         sign_in user, event: :authentication
-        redirect_after_island_is
+        redirect_after_saml
       else
         user = User.new
         user.ssn = ssn
@@ -610,7 +606,7 @@ class UsersController < ApplicationController
         user.save(:validate=>false)
         user.activate! unless user.active?
         sign_in user, event: :authentication
-        redirect_to redirect_after_island_is
+        redirect_to redirect_after_saml
       end
     else
       raise "No SSN in island.is authentication"
@@ -619,9 +615,9 @@ class UsersController < ApplicationController
     return true
   end
 
-  def redirect_after_island_is
-    if session[:redirectAfterIslandIs]
-      redirect_to session[:redirectAfterIslandIs]
+  def redirect_after_saml
+    if session[:previous_url]
+      redirect_to session[:previous_url]
     else
       redirect_to '/'
     end

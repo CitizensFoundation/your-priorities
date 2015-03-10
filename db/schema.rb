@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150127091845) do
+ActiveRecord::Schema.define(:version => 20150310141350) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -890,8 +890,10 @@ ActiveRecord::Schema.define(:version => 20150127091845) do
     t.integer  "counter_comments",                               :default => 0
     t.integer  "counter_stars",                                  :default => 0
     t.integer  "counter_impressions",                            :default => 0
+    t.string   "saml_id"
   end
 
+  add_index "sub_instances", ["saml_id"], :name => "index_sub_instances_on_saml_id"
   add_index "sub_instances", ["short_name"], :name => "short_name"
 
   create_table "subscriptions", :force => true do |t|
