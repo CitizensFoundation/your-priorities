@@ -97,6 +97,7 @@ class IdeasController < ApplicationController
           subject: "Idea moved between groups"
       )
       @idea_status_changelog.save
+      @idea.change_status!(0) # Set the status to open/published
       redirect_to @idea.show_url
     end
   end
