@@ -54,7 +54,7 @@ https://github.com/rbjarnason/docker-kiwiirc.git and yrpri/kiwiirc
 
 Start database
 ````bash
-sudo docker run -i -t -d --name postgresql yrpri/postgresql
+sudo docker run -i -t -d --name postgresql -v MY_DB_FOLDER:/var/lib/postgresql yrpri/postgresql
 ````
 
 Optional IRC support
