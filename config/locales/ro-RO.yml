@@ -280,6 +280,8 @@ ro-RO:
   c2dbe8cc5db8c81cc68981058975d0ba: Cele oficial încheiate deficitar (%{count})
   733d3bd148e431d4a7de23f4fd6b3a7b: Cele oficial în desfășurare (%{count})
   d77a0f9cd14e513bb78bccbf59402717: Statusul oficial
+  8bf906833cc7aea8084f552217ed9c1d: Suspendat
+  f21c0d5d1b8f1db623e35830665eb644: Probă
   5ebb3db6c8a6613f79191107b296a01c: Statusul ideii <a href='%{idea_link}'>%{idea_name}</a>
     %{support_or_endorse_text} a fost modificat în %{instance_name}.
   d78ed35383108fb6c04c16d0a11b20fe: Activități
@@ -365,8 +367,6 @@ ro-RO:
   c33e404a441c6ba9648f88af3c68a1ca: Statistici
   7cdfb0c074a8155d864d2b591b0d509b: Conținut raportat
   b513ce9261a49ab58593ca678a8a18c0: Postări curente
-  8bf906833cc7aea8084f552217ed9c1d: Suspendat
-  f21c0d5d1b8f1db623e35830665eb644: Probă
   5fe6005bf6e415c950c011fb65f12b8f: Șters
   f1e2a549f8a0a20b572b176455dba9b9: POSTEAZĂ IDEEA TA
   20db0bfeecd8fe60533206a2b5e9891a: Prenume

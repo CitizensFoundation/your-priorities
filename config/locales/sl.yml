@@ -47,6 +47,7 @@ sl:
   0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} je komentiral/-a na %{comment_name}'
   a00624d47e8dca3b06b23cdcd386cd62: '%{sender_name} je objavil/-a obvestilo v tvoj
     profil'
+  04bc5390fd93d76fb2471f2f3a432ed5: Tvoje končne  %{tag_name} ideje
   cd267635c8a38e2acba076b0edeeedbe: Debate v tvojem omrežju
   07221d868183bab87e41f0ec47440880: Debate o tvojih idejah
   b38f1c5b8bdb6329e8a4b2e6e456da8b: Debate o idejah, ki si jih ustvaril
@@ -94,7 +95,6 @@ sl:
   0c7e91060e8afe22fb824e15473d9089: Ponovno pošlji potrditveni e-mail na  %{email}
   1d10d0c01b3469bcb594ade393639ed0: Ta uporabnik je izbrisal njegov račun
   af1b98adf7f686b84cd0b443e022b7a0: Kategorije
-  04bc5390fd93d76fb2471f2f3a432ed5: Tvoje končne  %{tag_name} ideje
   e11d937a5185a2361123ad5222df5f5f: Naključne  %{tag_name} ideje
   ae43f4cff7204d28b83fe67710e9377d: Debata na  %{tag_name}
   0f471a2597c99d0f4c81db859b0205f3: Ideje, ki si jih ustvaril na %{sub_instance_name}
@@ -133,6 +133,8 @@ sl:
     kršitve pravil?
   0e7a1834a7b4fba66d0f329cfab14cbb: Zadnji obisk %{time_ago}
   18ef3f4348075aca1646941639d610dd: Ideja  %{position}
+  6e7b34fa59e1bd229b207892956dc41c: Nikoli
+  bbf72fb222c775537e056152bf086bac: Komentarji na tvoje debate
   062bad04a7e077f61b7dcb0ef85dbef9: To kaže spremembe od prejšnje revizije. Lahko
     tudi <a href='%{clean_url}'> vidiš čisto različico </a>
   034cb9b595f45003845f5ebed51a0a39: Twitter skrivnost potrošnika
@@ -189,8 +191,6 @@ sl:
   b357b524e740bc85b9790a0712d84a30: Elektronski naslov
   6c25e6a6da95b3d583c6ec4c3f82ed4d: Tedensko
   9030e39f00132d583da4122532e509e9: Mesečno
-  6e7b34fa59e1bd229b207892956dc41c: Nikoli
-  bbf72fb222c775537e056152bf086bac: Komentarji na tvoje debate
   281bdea3a5c8ccd3932a66f493952011: Ko ti nekdo sledi ali se nekdo od tvojih kontaktov
     pridruži
   65e1f75e1c318e9d7a0c4690e4841fd3: Ko je status ideje spremenjen
@@ -344,6 +344,8 @@ sl:
   8e53b553c0d5323dadb9e738f19323d4: Obvesti, ko boste pridobili ali izgubili socialne
     točke.
   fb00406d232c6c2e02cdd9560bd27b68: 'Stališče podpira  %{idea_name}:'
+  b14dd295bfbf8acf7734ca5d37c4977c: Zasluži socialne točke s konstruktivno debato.
+  3a4b8d088c304ae2af8cac88963c8926: Dodaj stališče za ali proti
   a7761bd5cba69c6727e64f3df1f2d680: Močno stališče je pomembno za prepričati druge
     ljudi, da podprejo ali nasprotujejo tvoji ideji. Razloži, zakaj naj bi ljudje
     glasovali za to idejo, kaj jo naredi pomembno ali nepomembno.
@@ -431,8 +433,6 @@ sl:
   78386ec8f2845742c324a3d7d3e800ff: Ljudje
   08bd40c7543007ad06e4fce31618f6ec: Račun
   fe0954729ebc84a251fbfeb17a801d8b: '%{sp} socialne točke'
-  b14dd295bfbf8acf7734ca5d37c4977c: Zasluži socialne točke s konstruktivno debato.
-  3a4b8d088c304ae2af8cac88963c8926: Dodaj stališče za ali proti
   50a941dd2b0b556780498304f6b67c92: Razloži svoje izhodišče
   0f68b904e33d9ac04605aecc958bcf52: Nadaljne informacije
   034a5d0ca862fdb6a3e451adf4ae0b9a: (Lahko je tvoje ime ali psevdonim)

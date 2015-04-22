@@ -434,7 +434,7 @@ class Idea < ActiveRecord::Base
     self.status_changed_at = Time.now
     self.official_status = -1
     self.status = 'inactive'
- #   self.change = nil    
+ #   self.change = nil
     self.save(:validate => false)
     #deactivate_endorsements
   end

@@ -149,8 +149,8 @@ gsw-CH:
     select:
       prompt: 'Bitte wääle:'
     array:
-      two_words_connector: ' und '
       words_connector: ', '
+      two_words_connector: ' und '
       last_word_connector: ' und '
   helpers:
     select:

@@ -374,6 +374,7 @@ sv-SE:
   59d7434481f250db2c48858375499a31: Nyaste Poäng
   2ed154e6cbb75329947fe1929b784059: Dina idéers poäng
   7454f8acc4b83d16a1bdf39b70f25be2: Mest pratsamt vid %{sub_instance_name}
+  f21c0d5d1b8f1db623e35830665eb644: Skyddstillsyn
   e17fdb615452f440c793b5ddad90dd5e: Varningar
   dbb6f26a0ccb75b82d641ff87b627ce3: Nya medlemmar
   86e570b9bac3edce3c2cdcdf17b8cab0: Köp en annons för  %{idea_name}
@@ -426,8 +427,6 @@ sv-SE:
   aa750dc0f9ceebb3ce86571be0dc6460: Nytt rapportmeddelande
   f5359d1dd07def542aa9b0577fb27068: Uppdatera status
   3b878279a04dc47d60932cb294d96259: Översikt
-  8ac6e46f207f4d2a928523d417663553: Välkommen till ditt %{instance_name} . Var vänlig
-    lägg till din första idé
   f7c27fe5419c0751885d8a0cc6f0e75a: Debatt (%{count})
   cbc00c310ea3af7dc35edceb12f5601f: Lägg till punkt
   e1e583ed208b1fbecec8b65dc272a098: Är denna idé från %{user_name} ett personligt
@@ -498,7 +497,8 @@ sv-SE:
   9f9d26ab95c28a22b705d2f6d5ad8665: inbjuden till
   e3afed0047b08059d0fada10f400c1e5: Admin
   06df33001c1d7187fdd81ea1f5b277aa: Åtgärder
-  f21c0d5d1b8f1db623e35830665eb644: Skyddstillsyn
+  8ac6e46f207f4d2a928523d417663553: Välkommen till ditt %{instance_name} . Var vänlig
+    lägg till din första idé
   5fe6005bf6e415c950c011fb65f12b8f: Borttagen
   f1e2a549f8a0a20b572b176455dba9b9: LÄGG IN DIN IDÉ
   20db0bfeecd8fe60533206a2b5e9891a: Tilltalsnamn

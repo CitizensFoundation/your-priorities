@@ -3,6 +3,8 @@ nl-NL:
   devise:
     invitations:
       send_instructions: Een uitnodiging is verzonden naar %{email}.
+      new:
+        header: Uitnodiging versturen
   will_paginate:
     next_label: Volgende &#8594;
     previous_label: '&#8592; Vorige'
@@ -22,3 +24,13 @@ nl-NL:
   0323de4f66a1700e2173e9bcdce02715: Uitloggen
   03368e3c1eb4d2a9048775874301b19f: Selecteer categorie
   03937134cedab9078be39a77ee3a48a0: Groep
+  070625ecbc8bd373ccfb31867274eb97: Wachtwoord herstel instructies voor %{instance_name}
+  ab70cd88a40e7c3247bfce039ad0045d: voer meer dan 5 karakters in
+  80df8e95c1fef941a4f600f0fd1b07c8: voer meer dan 12 karakters in
+  5a9d18bb87ff12835dc844883c5c3ebe: wijzigingen
+  4fb7286b0fe19a6cf2569e4115e88baa: voer meer dan 10 karakters in
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Mislukt
+  b6e0b0c90cfbddfe767f137f8066d1df: In voortgang
+  9b9d8a976b42e0bd66381797644943d5: Gepubliseerd
+  30ae8fff8898dc197acd49d9c0797d20: Succesvol
+  22af645d1859cb5ca6da0c484f1f37ea: nieuw

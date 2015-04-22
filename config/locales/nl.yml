@@ -64,9 +64,9 @@ nl:
     select:
       prompt: Selecteer
     array:
-      words_connector: ', '
-      two_words_connector: ' en '
-      last_word_connector: ' en '
+      last_word_connector: ', en'
+      two_words_connector: en
+      words_connector: ','
   number:
     format:
       separator: ','
@@ -209,3 +209,30 @@ nl:
         even: moet even zijn
       full_messages:
         format: '%{attribute}%{message}'
+  will_paginate:
+    next_label: Volgende &#8594;
+    previous_label: '&#8592; Vorige'
+  devise:
+    invitations:
+      send_instructions: Een email met uitnodiging is verstuurd naar %{email}.
+      updated: Je paswoord werd met succes aangemaakt. Je bent nu aangemeld.
+      new:
+        header: Stuur uitnodiging
+  views:
+    pagination:
+      next: Volgende &rsaquo;
+  070625ecbc8bd373ccfb31867274eb97: Uitleg paswoord hernieuwen voor %{instance_name}
+  c867451892e38db47a8cc5e7b02d5c54: welke jij ondersteunt
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Rapport
+  ab70cd88a40e7c3247bfce039ad0045d: voer aub meer dan 5 lettertekens in
+  80df8e95c1fef941a4f600f0fd1b07c8: voer aub meer dan 12 lettertekens in
+  5a9d18bb87ff12835dc844883c5c3ebe: wijzigingen
+  4fb7286b0fe19a6cf2569e4115e88baa: voer aub meer dan 10 lettertekens in
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Mislukt
+  b6e0b0c90cfbddfe767f137f8066d1df: In behandeling
+  9b9d8a976b42e0bd66381797644943d5: Gepubliceerd
+  30ae8fff8898dc197acd49d9c0797d20: Geslaagd
+  22af645d1859cb5ca6da0c484f1f37ea: nieuw
+  42bd4c0819c498d1c1ab622de74d6f82: ondersteund
+  83c101ec84ebd1c0e45fa1cd5b9300d6: verworpen
+  37fc5aed92a40b16dafd17cee72e3154: Beste ideeën

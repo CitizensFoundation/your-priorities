@@ -562,6 +562,9 @@ is:
   c7dec3041fa531ded96e45bab1e125d6: Hvað gerir Betra Ísland?
   40136f0b052226af395bc48c98a0cdf7: Þetta myndband útskýrir hvernig Your Priorities
     lýðræðishugbúnaðurinn virkar.  Betra Ísland notar Your Priorities.
+  dcab30df167c93ffafaf59a49789cefa: Betra Ísland er öflug lýðræðisvefsíða hönnuð af
+    non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með einni
+    rödd.
   42e5fabfe88d4fbdc7f0c4e60d012b25: Betra Ísland getur hjálpað þinni borg / samfélagi
     / eða hópi sem vilja skipuleggja sig í kringum hugmyndir og tala með einni rödd.
     Hérna getur þú búið til þína eigin Betra Ísland vef.
@@ -586,9 +589,6 @@ is:
   07ce9b074bcd189d0b244dc7031283dd: Hvernig virkar Betra Ísland?
   48dade30fc1102998ceb7bab6fd0f78c: Verðlaunavefurinn %{br_link} notar sama frjálsa
     hugbúnað og Betra Ísland vefsíðan.
-  dcab30df167c93ffafaf59a49789cefa: Betra Ísland er öflug lýðræðisvefsíða hönnuð af
-    non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með einni
-    rödd.
   2a97751493e0cb66b7ce1d0a0c829df7: Þín hugmynd %{idea} hefur verið færð
   365e3d8187f5212085cbd599b430974a: Þín hugmynd <a href='%{idea_link}'>%{idea_name}</a>
     hefur verið færð frá %{from_sub_instance} til %{to_sub_instance} á %{instance_name}.
