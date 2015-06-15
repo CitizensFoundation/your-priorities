@@ -4,3 +4,41 @@ hr:
   d0a6b7521f4f95c2b15ab65294c3a1fe: Poruka korisnicima na početnoj stranici
   fbaedde498cdead4f2780217646e9ba1: ZA
   c4e0e4e3118472beeb2ae75827450f1f: PROTIV
+  0f471a2597c99d0f4c81db859b0205f3: Prijedlozi koje ste Vi predložili u %{sub_instance_name}
+  2d08badc985572e0bcf7456e0c6c4e08: Prijedlozi koje biste trebali razmotriti
+  939d09ea0c18215ca9032ef913d82567: Novi prijedlozi
+  9f04ae7a43e13485e9b6de9aed6b2a61: Prijedlozi po kategorijama
+  d46ef9e7211d041671cdbe6c3d884884: Prijedlozi
+  af1b98adf7f686b84cd0b443e022b7a0: Kategorije
+  d7241b155164fdbc560602f924393149: Dodaj svoj prijedlog i argument
+  878bd7316fd2cb186f1fbd611e54684b: Sakrij raspravu
+  ed543067f0d69b7fc887120bc1c66a86: Pridruži se raspravi
+  7f319b8ccad7e92033b9492ddbc4b522: Glasaj
+  devise:
+    invitations:
+      send_instructions: Pozivnica je poslana na adresu %{email}.
+      new:
+        header: Pošalji pozivnicu
+  78386ec8f2845742c324a3d7d3e800ff: Korisnici
+  9fd4dc340cdbdabdd25908817052b915: Vaši argumenti
+  a2d5e7a9d03b49d0639ab0a75a59d2c2: Najbolji argumenti
+  c0661ddef14e63a75779f9f9b63a6c2b: '%{up} argumenata za %{down} argumenata protiv'
+  5a95a425f74314a96f13a2f136992178: Podijeli
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Prijavi
+  ab70cd88a40e7c3247bfce039ad0045d: Molimo unesite više od 5 znakova.
+  80df8e95c1fef941a4f600f0fd1b07c8: Molimo unesite više od 12 znakova.
+  4fb7286b0fe19a6cf2569e4115e88baa: Molimo unesite više od 10 znakova.
+  eed1d7e8237b8656aff7c66bb5999f96: Unesite korisničko ime
+  4607ccb71469675944516398e717479c: Molimo prihvatite Uvjete korištenja
+  9ee2fe857acedeff0c24765e3d2a25f9: Molimo unesite svoje ime
+  0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} je komentirao/la %{comment_name}'
+  37fc5aed92a40b16dafd17cee72e3154: Naj prijedlozi
+  833c90a077a2beda3b6cd000f3fe5c29: Slučajni odabir prijedloga
+  f504eb1cc2305a863cc0cf23428a36f8: Kontroverzni prijedlozi
+  db7fcf41127935e5fee505fe102abf9a: Vaše rasprave
+  cd267635c8a38e2acba076b0edeeedbe: Rasprave u Vašoj mreži
+  07221d868183bab87e41f0ec47440880: Rasprave o Vašim prijedlozima
+  b38f1c5b8bdb6329e8a4b2e6e456da8b: Rasprave o prijedlozima koje ste Vi predložili
+  8754f2b7cbd98752793ba8314bded062: Aktivne rasprave
+  2d180c2da693f88fe77a780e31bc07a2: Najnoviji argumenti
+  f78be27a110705c1b183468d30077e53: '%{user_name} se više nije protiv %{idea_name}'

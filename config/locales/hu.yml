@@ -432,7 +432,6 @@ hu:
   9ee2fe857acedeff0c24765e3d2a25f9: Kérjük adja meg nevét
   a00624d47e8dca3b06b23cdcd386cd62: '%{sender_name} közleményt posztolt az ön profilján'
   d5f0462c74e5c7bf041d992697b7e06b: ez a cím már foglalt
-  780f17237b2f99a557c2490dfa9a30a4: Bejelentkezés a Gmail-on keresztül
   1b92838e756182fda710cfd58819f671: Vélemények
   201e7310f5fb28133f781fc856003d92: Az ötlet címe
   f78be27a110705c1b183468d30077e53: '%{user_name} nincs további ellenzője %{idea_name}'
@@ -579,6 +578,7 @@ hu:
   5e038f03415db5461c13d380469436cb: Bankkártya száma
   5f2b9345f9bbd74079b99d6fcf461408: Készített
   77c8b9f38491385d59ddc33d29e751fe: 'Forrás:'
+  780f17237b2f99a557c2490dfa9a30a4: Bejelentkezés a Gmail-on keresztül
   7b8f95b017fbb7f217c95590de6d20ef: '%{count} még több tanácskozás a(z) %{idea_name}
     kapcsán'
   7cdfb0c074a8155d864d2b591b0d509b: Jelentett tartalom

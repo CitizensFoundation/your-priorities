@@ -280,8 +280,6 @@ ro-RO:
   c2dbe8cc5db8c81cc68981058975d0ba: Cele oficial încheiate deficitar (%{count})
   733d3bd148e431d4a7de23f4fd6b3a7b: Cele oficial în desfășurare (%{count})
   d77a0f9cd14e513bb78bccbf59402717: Statusul oficial
-  8bf906833cc7aea8084f552217ed9c1d: Suspendat
-  f21c0d5d1b8f1db623e35830665eb644: Probă
   5ebb3db6c8a6613f79191107b296a01c: Statusul ideii <a href='%{idea_link}'>%{idea_name}</a>
     %{support_or_endorse_text} a fost modificat în %{instance_name}.
   d78ed35383108fb6c04c16d0a11b20fe: Activități
@@ -354,6 +352,7 @@ ro-RO:
   1747df8919f292530bf55fe439bf159a: '%{count} avertisment'
   0323de4f66a1700e2173e9bcdce02715: Deconectează-te
   254f642527b45bc260048e30704edb39: Configurare
+  cedcf6fe65a8f2849fe11e316d6c9923: Înscrieți-vă acum
   7c326855728927b06f5b11e92cefdae8: Ajută-ne să ne imbunătățim prin trimiterea mai
     multor traduceri
   3a401dd966161f64fd3b8d1c06292f18: Instrument de traducere
@@ -367,6 +366,8 @@ ro-RO:
   c33e404a441c6ba9648f88af3c68a1ca: Statistici
   7cdfb0c074a8155d864d2b591b0d509b: Conținut raportat
   b513ce9261a49ab58593ca678a8a18c0: Postări curente
+  8bf906833cc7aea8084f552217ed9c1d: Suspendat
+  f21c0d5d1b8f1db623e35830665eb644: Probă
   5fe6005bf6e415c950c011fb65f12b8f: Șters
   f1e2a549f8a0a20b572b176455dba9b9: POSTEAZĂ IDEEA TA
   20db0bfeecd8fe60533206a2b5e9891a: Prenume
@@ -521,7 +522,6 @@ ro-RO:
   3277947674e9e77c91a1269374d6525e: Cele mai bune idei cu cele mai multe puncte “pentru”
     și “împotrivă” se ridică în topul discuțiilor.
   9fa58bca936c8c3209d5dba30691bbea: Ce face “Prioritățile tale”?
-  cedcf6fe65a8f2849fe11e316d6c9923: Înscrieți-vă acum
   c6da852d800f7975c28e337a2e2bd028: Studiu de caz - Better Reykjavik
   bb73e7a168c9158086404aaac16e5de5: Site-ul %{br_link} , care a fost deja premiat,
     folosește același soft de tip Open ca “Prioritățile tale”.

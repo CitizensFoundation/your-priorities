@@ -367,6 +367,7 @@ es:
   8b5ba9ef245ba14a9d4871dbcd6a4f6f: Votar negativo
   c17180d53c6d6ee18c3240d01ed62131: Votar positivo
   cde1d24d4d3427be7222dbe6a518f6da: Sin puntos de vista aún.
+  03937134cedab9078be39a77ee3a48a0: Grupo
   04bc5390fd93d76fb2471f2f3a432ed5: Tus ideas %{tag_name} terminadas
   002d4fac39a17aaa96c1a79a1a710edb: Correo electrónico de ventas
   0038a9e512b4678c583db11009d2c297: Esta es la idea que crece más rápido
@@ -397,7 +398,6 @@ es:
   0323de4f66a1700e2173e9bcdce02715: Cerrar sesión
   03368e3c1eb4d2a9048775874301b19f: Seleccionar categoría
   0358ca3a25ad72c389989a3db811f233: '%{user_name} renombró %{idea_name}'
-  03937134cedab9078be39a77ee3a48a0: Grupo
   03fa96387303a39d8a63c153bac26958: 'Nos reservamos el derecho a:'
   04412bb51cddee4b889c1adbf558670a: Información sobre tu donación
   047fe665bd2cea51e221d371d1e4c698: Cambiar la configuración de %{user_name}
