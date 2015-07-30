@@ -145,8 +145,8 @@ it:
     select:
       prompt: Per favore, seleziona
     array:
-      two_words_connector: ' e '
       words_connector: ', '
+      two_words_connector: ' e '
       last_word_connector: ', e '
   helpers:
     select:

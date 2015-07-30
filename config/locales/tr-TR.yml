@@ -1,0 +1,266 @@
+---
+tr-TR:
+  233b006364b1fcfc3b6e2928a20e1545: Sıralamada düşen fikirler
+  e42d894b926c4833956b61471df18351: En tartışmalı fikirler
+  0574c44ee9d51a85091b24119d5c2f69: En yeni fikirler
+  dfeb460fa23011a1f3b327fa61abf8be: '%{idea_name} fikrini destekleyen bakış açıları'
+  35408f2e9ccf595f1765bd8e56a2f571: '%{idea_name} konusundaki en iyi bakış açıları'
+  a2d5e7a9d03b49d0639ab0a75a59d2c2: En popüler bakış açıları
+  c772367d0682d61254cebb1dcfd44c93: '%{idea_name} konusundaki tartışmalar'
+  49c413c7e9fbe1aee3281a29d2d0dd9c: '%{idea_name} konusundaki en son yorumlar'
+  dee5db0dd869d6d2c03539fab2c874ad: '%{sub_instance_name} konusundaki yeni fikir'
+  fc2e12b5aff1b388bc309a96bccb3f9b: '%{idea_name} fikrini eklediğiniz için teşekkür
+    ederiz'
+  53127d8c496db03d848a289010087409: En çok oylanan
+  64663f4646781c9c0110838b905daa23: Rassal
+  e02decaebace93b27ce239a671e77453: Sizin
+  d984e98c3eceb8bc31b8ca398758f248: En son revize edilen bakış açıları
+  8df9c04d95e71c0bb899ac7a5af8cdfb: '%{idea_name} konusunda bakış açınızı ekleyin'
+  79281fb7fd5e0cbea9ca524b779e89ff: Bakış açınızı paylaştığınız için teşekkürler
+  0077d575bfc52d2176b427189982b6a6: '%{point_name} kaydedildi'
+  621df26b895998b50fdad2c763f695e3: '%{point_name} konusundaki tartışmalar'
+  59d7434481f250db2c48858375499a31: En yeni bakış açıları
+  2ed154e6cbb75329947fe1929b784059: Fikrinizin bakış açıları
+  7454f8acc4b83d16a1bdf39b70f25be2: '%{sub_instance_name} konusunda en çok konuşan'
+  e17fdb615452f440c793b5ddad90dd5e: Uyarılar
+  dbb6f26a0ccb75b82d641ff87b627ce3: Yeni üyeler
+  86e570b9bac3edce3c2cdcdf17b8cab0: '%{idea_name} için reklam satın alın'
+  7dce122004969d56ae2e0245cb754d35: Düzenle
+  00b177e080ff1c3d340997fb01c3951c: Davetiyeyi kabul et
+  2512081b92507a3e87cdb8ba7cd6c6b7: 1 numaralı fikir
+  d4dccb8ca2dac4e53c01bd9954755332: Ayarları kaydet
+  a0d7e042ee84ad945d55f3862369255f: Fotoğrafını yükle ve kaydet
+  0863f095cbdbbe6ce5a8aac979766a83: Bir fikir ismi için maksimum uzunluk
+  d280d15220c6ba22dfa7cd8a5139ea67: Sonraki... Kişisel bilgileriniz
+  f11b368cddfe37c47af9b9d91c6ba4f0: Tam Ad
+  ce8ae9da5b7cd6c3df2929543a9af92d: Eposta
+  dc647eb65e6711e155375218212b3964: Şifre
+  003e636075eed8d70232cd54e12236db: '%{instance_name} konunuz yaratıldı'
+  668deb1091498fc9353f5d297fd55877: karakter kaldı
+  b5a7adde1af5c87d7fd797b6245c2a39: Açıklama
+  062bad04a7e077f61b7dcb0ef85dbef9: Bir önceki revizyondaki değişiklikleri gösterir.
+    Ayrı <a href='%{clean_url}'>temiz versiyonu göster</a> yapabilirsiniz.
+  002d4fac39a17aaa96c1a79a1a710edb: Satış epostaları
+  034cb9b595f45003845f5ebed51a0a39: Twitter tüketici sırrı
+  021da1b20f73dc252361a54d80497ef3: Sıralam
+  f4ec5f57bd4d31b803312d873be40da9: Değişiklik
+  0ef9a6968cfe92f7bde817483fb5d0cf: Karşı çıkanlar
+  0f9b5eff8d1d07e6ce3a8fe2697a76f7: '%{time_ago} tarihinde katıldı'
+  16765596b57782e7012aee0ac86ff5ff: '%{count} destek'
+  da08b4d4be989f5276a7aab9899ab34c: '%{count} karşı çıkış'
+  0e7a1834a7b4fba66d0f329cfab14cbb: Son ziyaret %{time_ago}
+  5e038f03415db5461c13d380469436cb: Kredi kartı numarası
+  03937134cedab9078be39a77ee3a48a0: Grup
+  18ef3f4348075aca1646941639d610dd: Fikir %{position}
+  2e6c2d96aaacc8ef06d0ea12237cfc2e: Bütün alanlara giriş yapılması zorunludur
+  e1e583ed208b1fbecec8b65dc272a098: '%{user_name} kullanıcısının bu fikri kişisel
+    bir saldırı veya kurallara aykırı mı?'
+  52f4e192179a8449b77cc149541a5ba0: Burada henüz fikir yok
+  dd1f775e443ff3b9a89270713580a51b: Önceki
+  db5ca4cc88a9c0db11b47157edb70dd0: Sonraki
+  1b92838e756182fda710cfd58819f671: için bakış açıları
+  ff0cfd359a1d96d597133a4341a6a7e4: Yeni bir fikir ekle
+  201e7310f5fb28133f781fc856003d92: Fikir Başlığı
+  03368e3c1eb4d2a9048775874301b19f: Kategori seçin
+  7dd982d0948637b4ae83f2804bd489ca: İnsanlar neden sizin fikrinizi desteklemeli?
+  d7241b155164fdbc560602f924393149: Fikrinizi ve bakış açınızı girin
+  586f9d3669a73e12a8caed7a7d76288e: Fikriniz için iyi ve tanımlayıcı bir başlık oluşturun
+  cdd559fd8bda4b2bdf1cdbca181b38b9: Fikrinizin asıl amacını ortaya koyacak şekilde
+    birkaç paragrafta açıklayınız
+  e254a34f3a1001f00adc55aba5552783: 'En çok:'
+  64fe1149739a897a97c1f697ce23b063: Tartışmalı
+  fbaedde498cdead4f2780217646e9ba1: YUKARI
+  c4e0e4e3118472beeb2ae75827450f1f: AŞAĞI
+  8b5ba9ef245ba14a9d4871dbcd6a4f6f: Aşağı oyla
+  c17180d53c6d6ee18c3240d01ed62131: Yukarı oyla
+  cde1d24d4d3427be7222dbe6a518f6da: Bir bakış açısı henüz yok
+  a22a31345901fab0939eb50823c23b88: Tamamlanan durumlar
+  a0bc24991a11d8e4dcf00ba0c337f932: Yeni durum tarihi
+  1809e18e24e352c936a7bed29fe56398: Yeni durum başlığı
+  aa750dc0f9ceebb3ce86571be0dc6460: Yeni durum mesajı
+  f5359d1dd07def542aa9b0577fb27068: Durumu güncelle
+  3b878279a04dc47d60932cb294d96259: Genel bakış
+  f7c27fe5419c0751885d8a0cc6f0e75a: Görüşme (%{count})
+  cbc00c310ea3af7dc35edceb12f5601f: Bakış açısı ekle
+  b4c1d65b09a6dd0d154f9680cda00843: Tartışmalar (%{count})
+  00d9e5c459f14c32aa6d6d1bb7cde76d: Revizyonlar (%{count})
+  26035f5354afb729c61d704ecbd14053: Yeni revizyon
+  a80425472d94ae02c836da5b6f205b7b: Besleme
+  8e1a7d9287a48440106ef0181c5a0181: Reklam satın al
+  f2a6c498fb90ee345d997f888fce3b18: Sil
+  a604e73131bb1a34283a5ebcd349def4: desteklenen
+  665255de10a45ae3e1c0e81b515b55ca: '%{count} adet tartışma'
+  453aceb005ceaf54a47da15fee8b2a26: Sayfalar
+  0b39c5aca15b84b1ad53a94d6b3feb78: Şifre değiştir
+  198584454b0ce1101ff5b50323325aa8: Eposta adresiniz
+  d6cb6dc595d9a3a6c3e2db949a04be06: Bize ulaşın <a href='mailto:%{email}'>%{email2}</a>
+  3f0d611a1c160e3ffbfd172a9e163a18: bu hesabın kaydedilmesini %{error_count} hata
+    engelledi
+  6ae7034c0535498660d77f0201b17841: '%{error_count} hata bu hesabın kaydedilmesini
+    engelledi:'
+  27340dcd104975a8f470cf8956e9496a: URL'niz
+  13e7cd666950f7873a5e431fce97b916: 'Örnek: https://'
+  f0ec3db5bcd8943d68ac34fdc4b57d73: Son adım...
+  3abbd962f6751baf05a19c4ebbc8d0e7: '''a katılıyorum'
+  3b6c2b4caaf4f14f8d7feeddc4ac3f4d: Kullanım Şartları
+  fa2ead697d9998cbc65c81384e6533d5: Gizlilik politikası
+  7ccf75fa7498152efe4e152833455c67: Giriş adı
+  5f2b9345f9bbd74079b99d6fcf461408: yaratıldı
+  9f9d26ab95c28a22b705d2f6d5ad8665: Davet edildi
+  e3afed0047b08059d0fada10f400c1e5: Admin
+  06df33001c1d7187fdd81ea1f5b277aa: Uygulamalar
+  c6a00f137b92ad22c007677fb2113a9f: Davet et
+  b357b524e740bc85b9790a0712d84a30: Eposta adresleri
+  15c9367c3506280cfaf98cb065799bf4: Fikirleriniz hakkındaki periyodik güncellemeler
+  6c25e6a6da95b3d583c6ec4c3f82ed4d: Haftalık
+  9030e39f00132d583da4122532e509e9: Aylık
+  6e7b34fa59e1bd229b207892956dc41c: Hiçbir zaman
+  7fbd71fc25b275b7d095a29c72b1a821: Bakış açınızı açıklayın
+  fa17217f817aabfc79196a3adc390442: Bir internet sitesi kaynak linki ekleyin
+  8a357512436318208aca51f2db5ebf75: Bakış açınızı kaydedin
+  bbf72fb222c775537e056152bf086bac: Tartışmalarınız üzerine yorumlar
+  ade7300e26de3e48a42cc01a4c4d74fa: Bakış açılarınızın revizyonları
+  281bdea3a5c8ccd3932a66f493952011: Biri sizi takip etmeye başladığında veya bir kontağınız
+    katıldığında
+  65e1f75e1c318e9d7a0c4690e4841fd3: Bir fikrin durumu değiştiğinde
+  f1527dd1b427ae2c86da111329190087: Bir fikir revize edildiğinde
+  2d8b22cca4d0f75b672127d908b747f7: Eposta bildirimlerini güncelle
+  939d09ea0c18215ca9032ef913d82567: Yeni fikirler
+  8ac6e46f207f4d2a928523d417663553: '%{instance_name} konusunda hoşgeldiniz. Lütfen
+    ilk fikrinizi ekleyin'
+  e2f69ba325c4f8bdc393ffd3cb848a51: Rassal fikirler
+  9977ab924c89e6c98b1cf1595354ada3: Son aktiviteler
+  77c8b9f38491385d59ddc33d29e751fe: 'Kaynak:'
+  02bb5de0c787154b2cfaea82d1cfc40d: Bu revizyonu iptal edin
+  0cc54e3d557f73d2891235a265b06341: Bu bakış açısındaki en son aktiviteler
+  fc0d25fc5ca93bbd8def3aaf54f58f05: '%{user_name} kullanıcısının bu yorumu kişisel
+    bir saldırı veya kullanım şartlarına aykırı mı?'
+  099af53f601532dbd31e0ea99ffdeb64: sil
+  8324d056b6c576dc840f4ca7231746a5: Yorumu gönder
+  7b8f95b017fbb7f217c95590de6d20ef: '%{idea_name} konusunda %{count} tartışma'
+  9f0bd6e1402d9febebd0903b7d7cd6d5: Yorum yapan insanlar
+  2682beed28fc3d3709619dbf2a469dbb: Resminizi yükleyin
+  a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} fikir'
+  52d2acef5f9e5e2d6a06c4958f774419: Arama sonucu yok
+  b1c94ca2fbc3e78fc30069c8d0f01680: Hepsi
+  498f79c4c5bbde77f1bceb6c86fd0f6d: Göster
+  2a3cd5946cfd317eb99c3d32e35e2d4c: Bakış açıları
+  0be8406951cdfda82f00f79328cf4efc: Yorum
+  13348442cc6a27032d2b4aa28b75a5d3: Ara
+  e576c23d915755d83e2d1f47bd9f6c22: Arama sonucu bulunamadı
+  ed3792969d8e38130c6651dd447509c5: Bir tartışma başlat
+  c44fb24da70dbf47aa6823cffeaecfa4: Yeni tartışma başlığı
+  c1a5298f939e87e8f962a5edfc206918: Merhaba
+  a5998dfe5002eeab05de3cbcc98f9544: Bu %{instance_name} konusunda gelen otomatik bir
+    epostadır
+  fafdcbfb83d39b7e0543fd0af58a35ac: '''e gönderildi'
+  will_paginate:
+    next_label: Sonraki
+    previous_label: Önceki
+  devise:
+    invitations:
+      send_instructions: Davetiye epostası  %{email} adresine gönderildi.
+      updated: Şifreniz başarıyla kaydedildi, giriş yaptınız.
+      new:
+        header: Davetiye gönder
+  views:
+    pagination:
+      next: Sonraki
+  070625ecbc8bd373ccfb31867274eb97: '%{instance_name} için şifre sıfırlama talimatları'
+  c867451892e38db47a8cc5e7b02d5c54: desteklediğiniz
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Rapor
+  ab70cd88a40e7c3247bfce039ad0045d: lütfen 5 karakterden fazlasını giriniz
+  80df8e95c1fef941a4f600f0fd1b07c8: lütfen 12 karakterden fazla giriniz
+  5a9d18bb87ff12835dc844883c5c3ebe: değişiklikler
+  4fb7286b0fe19a6cf2569e4115e88baa: lütfen 10 karakterden fazlasını giriniz
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Başarısız
+  b6e0b0c90cfbddfe767f137f8066d1df: Yapılmakta
+  9b9d8a976b42e0bd66381797644943d5: Yayınlandı
+  30ae8fff8898dc197acd49d9c0797d20: Başarılı
+  22af645d1859cb5ca6da0c484f1f37ea: yeni
+  eed1d7e8237b8656aff7c66bb5999f96: Lütfen sitede tanımlanacak bir isim belirtin
+  4607ccb71469675944516398e717479c: Lütfen hükümleri ve koşulları kabul edin
+  9ee2fe857acedeff0c24765e3d2a25f9: Lütfen adınızı belirtin
+  91504cddd78bd6a6826026c83f554958: Lütfen durum adınızı belirtin
+  d5f0462c74e5c7bf041d992697b7e06b: bu host adı kullanılıyor
+  0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name}  %{comment_name} konusuna yorum
+    yaptı'
+  a00624d47e8dca3b06b23cdcd386cd62: '%{sender_name} profilinize bir duyuru gönderdi'
+  42bd4c0819c498d1c1ab622de74d6f82: desteklendi
+  83c101ec84ebd1c0e45fa1cd5b9300d6: karşı çıkıldı
+  37fc5aed92a40b16dafd17cee72e3154: Zirvedeki Fikirler
+  833c90a077a2beda3b6cd000f3fe5c29: Rassal fikirler
+  f504eb1cc2305a863cc0cf23428a36f8: Tartışmalı fikirler
+  db7fcf41127935e5fee505fe102abf9a: Tartışmalarınız
+  cd267635c8a38e2acba076b0edeeedbe: Ağınızdaki tartışmalar
+  07221d868183bab87e41f0ec47440880: Fikirlerinizle ilgili tartışmalar
+  b38f1c5b8bdb6329e8a4b2e6e456da8b: Yarattığınız fikirlerle ilgili tartışmalar
+  8754f2b7cbd98752793ba8314bded062: Aktif tartışmalar
+  9fd4dc340cdbdabdd25908817052b915: Puanlarınız
+  2d180c2da693f88fe77a780e31bc07a2: Yeni puanlarınız
+  f78be27a110705c1b183468d30077e53: '%{user_name} %{idea_name} fikrine artık karşı
+    çıkmıyor'
+  ac717bd14c68bc426139b20f01d941ea: '%{idea_name} fikrini ilk %{user_name} önerdi'
+  fe5c45415c03bb476dc22b730aaf2590: '%{user_name} %{discussion_name} konusunda %{count}
+    yorum yaptı'
+  777eecd062745916881aff23d68afd46: '%{user_name} %{other_user_name} kullanıcısının
+    profiline bildiri bıraktı'
+  d533bc81d129968f57a188436d3575ac: '%{user_name} %{discussion_name} konusunda bildiri
+    bıraktı'
+  02d5a9b429fb86f3a3057e23cc9fb1aa: '%{user_name} bir bildiri yayınladı'
+  de06be0bc4bfdf2cf0c58e9b6c2d9db9: '%{idea_name} konusu  %{user_name} kullanıcısının
+    yeni Bir Numaralı fikri'
+  0358ca3a25ad72c389989a3db811f233: '%{user_name} %{idea_name} konusunun adını değiştirdi'
+  1a13f1069e52ca6118df8501f7a7c755: '%{user_name}  %{idea_name} fikrine %{point_name}
+    ekledi'
+  0c082c9ad303a70be82598499aaa1f6e: '%{user_name}  %{idea_name} fikrinin adını düzenledi'
+  ae7950ddfcef416ea6840228d63eba13: yeni puan yok
+  0d80cee327875c3740c7ad5ebba57be1: Eposta bildirimleriniz
+  747705a1c07ec5d7613502a7d50bf49a: '%{user_name} %{point_name} adını düzenledi'
+  43e00d10903ec90c9f2c523a901df552: '%{user_name}, hem destekçileri hem karşı çıkanlar
+    %{point_name} konusunu yararlı bulduğu için %{capital}%{currency_short_name} kazandı'
+  00f399f02ac662457af2fa6ce23adbdb: '%{user_name} , destekleyenler ve karşı çıkanlar
+    tarafından %{point_name} yararsız bulunduğu için  %{capital}%{currency_short_name}
+    kaybetti'
+  0c0d218418852e444a95f10f2fbe3060: '%{count} yeni takipçisi olduğu için %{user_name}
+    %{count}%{currency_short_name} kazandı'
+  11ee56b3d9c99494994e5e0e4b6ae733: Kökenli
+  75dd5f1160a3f02b6fae89c54361a1b3: Puanlar
+  6d0a578ca2f2c0e792fc923002fccbe3: Önce
+  c29196003ef3c4f020130aab1c63d4ea: '%{count} puan'
+  c3829f98b9d811ef102006ff00a83881: '%{count} revizyon'
+  016e3b623e81108aac0844988d799eff: 'Revizyonlar: %{sentence}'
+  c474f356721291083cc2be1ef39cf658: '%{count} yeni yorum(lar)'
+  13b5bfe96f3e2fe411c9f66f4a582adf: içinde
+  8bf8854bebe108183caeb845c7676ae4: ile ilgili
+  fd43e901068a7802f554bf77ac25c8f2: '%{instance_name} hesabınızı silin'
+  01374d70036cb0b48058e7e031eeb680: Özel internet sitesine erişim için giriş yapmanız
+    lazım
+  ab1e45da9c565570d4986f268329f2d1: '%{instance_name} konusunda güncel etkinlik puanları'
+  ac876a06a03e14d880f4cd06058a34ae: '%{sub_instance_name} konusundaki en üst giriş'
+  01a2f2a00851bab435bced7b0454dce2: '%{sub_instance_name} konusunda ne yapıyorsunuz?'
+  cd8251fee54cfb894119ab71fcedde37: '%{sub_instance_name} konusu hakkındaki tartışmalar'
+  400677bf70243014f360f3be283982e9: Anahtar aktiviteler
+  6fa73f77103f4bbddb6129bd0bb18de8: Bütün tartışmalar
+  b10e67ce0ade1bd465bedfbd005bbb9c: Desteklediğiniz fikirler hakkındaki tartışmalar
+  709468af25e91284821d1bdbfdded24c: Her şey
+  16d39f7e2b0ed1ee441421cc0f86a724: Bu bakış açısı silinmiştir
+  1945e5ccc0bd89812560b30f7c48639d: Bildirimleriniz
+  f6d4f577a7d6400fee113c788852a50a: Gerekli ek bilgiler
+  047fe665bd2cea51e221d371d1e4c698: '%{user_name} ayarlar değiştiriliyor'
+  69711d42de93b7a39c12910b4ed48a54: '%{user_name} %{instance_name} tartışmaları'
+  e945975666947d8744dbdb80d2e5a750: '%{user_name} %{instance_name} konusundaki bakış
+    açıları'
+  0c7e91060e8afe22fb824e15473d9089: '%{email} adresine tekrar onay epostasını gönder'
+  1d10d0c01b3469bcb594ade393639ed0: Bu kullanıcı hesabını sildi
+  af1b98adf7f686b84cd0b443e022b7a0: Kategoriler
+  04bc5390fd93d76fb2471f2f3a432ed5: Tamamlanmış %{tag_name} fikirleriniz
+  e11d937a5185a2361123ad5222df5f5f: Rassal %{tag_name} fikirleriniz
+  ae43f4cff7204d28b83fe67710e9377d: '%{tag_name} üzerine tartışmalar'
+  0f471a2597c99d0f4c81db859b0205f3: '%{sub_instance_name} konusunda sizin yarattığınız
+    fikirler'
+  3687b1daa635064075afa2b6417880d0: En çok okunanlar
+  2bd2b8e30995d2dfe1f43a4ea30fc3fc: En çok tartışılanlar
+  8de16e7a08998e0e60d27d6b4d441379: Son 24 saatteki en popüler fikirler
+  6c60eec8c5809428787d3d817d389404: Son 30 gündeki en popüler fikirler
+  04742c1a5a675be0659d83d65cb79661: Sıralamada yükselen fikirler

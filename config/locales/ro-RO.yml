@@ -1,5 +1,6 @@
 ---
 ro-RO:
+  0ef9a6968cfe92f7bde817483fb5d0cf: Se opune
   will_paginate:
     next_label: Următoarea &rsaquo;
     previous_label: '&#8592; Precedentul'
@@ -117,7 +118,6 @@ ro-RO:
   034cb9b595f45003845f5ebed51a0a39: Secretul Consumatorului Twitter
   021da1b20f73dc252361a54d80497ef3: Clasament
   f4ec5f57bd4d31b803312d873be40da9: Modificare
-  0ef9a6968cfe92f7bde817483fb5d0cf: Se opune
   0f9b5eff8d1d07e6ce3a8fe2697a76f7: S-a alăturat acum %{time_ago}
   16765596b57782e7012aee0ac86ff5ff: '%{count} aprobări'
   da08b4d4be989f5276a7aab9899ab34c: '%{count} opuneri'
@@ -352,7 +352,6 @@ ro-RO:
   1747df8919f292530bf55fe439bf159a: '%{count} avertisment'
   0323de4f66a1700e2173e9bcdce02715: Deconectează-te
   254f642527b45bc260048e30704edb39: Configurare
-  cedcf6fe65a8f2849fe11e316d6c9923: Înscrieți-vă acum
   7c326855728927b06f5b11e92cefdae8: Ajută-ne să ne imbunătățim prin trimiterea mai
     multor traduceri
   3a401dd966161f64fd3b8d1c06292f18: Instrument de traducere
@@ -522,6 +521,7 @@ ro-RO:
   3277947674e9e77c91a1269374d6525e: Cele mai bune idei cu cele mai multe puncte “pentru”
     și “împotrivă” se ridică în topul discuțiilor.
   9fa58bca936c8c3209d5dba30691bbea: Ce face “Prioritățile tale”?
+  cedcf6fe65a8f2849fe11e316d6c9923: Înscrieți-vă acum
   c6da852d800f7975c28e337a2e2bd028: Studiu de caz - Better Reykjavik
   bb73e7a168c9158086404aaac16e5de5: Site-ul %{br_link} , care a fost deja premiat,
     folosește același soft de tip Open ca “Prioritățile tale”.

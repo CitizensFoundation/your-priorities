@@ -1,27 +1,36 @@
 ---
 cy:
-  errors:
-    messages:
-      inclusion: heb fod yn y rhestr
-      exclusion: wedi cadw
-      invalid: heb fod yn nheilwng
-      confirmation: heb fod yn gyfateb
-      accepted: angen ei dderbyn
-      empty: methu bod yn wag
-      blank: methu bod yn wag
-      too_long: yn rhy hir (cewch %{count} llythyren ar y fwyaf)
-      too_short: yn rhy fyr (rhaid am o leiaf %{count} llythyren)
-      wrong_length: gyda maint anghywir o lythrennau (dylai fod yn %{count} llythyren)
-      not_a_number: heb fod yn rhif
-      not_an_integer: heb fod yn rhif llawn
-      greater_than: angen bod yn fwy na %{count}
-      greater_than_or_equal_to: angen bod yr un maint neu fwy na %{count}
-      equal_to: angen bod yn %{count}
-      less_than: angen bod yn llai na %{count}
-      less_than_or_equal_to: angen bod yr un maint neu lai na %{count}
-      odd: rhaid bod yn odrif
-      even: rhaid bod yn eilrif
-    format: '%{attribute} %{message}'
+  activerecord:
+    errors:
+      messages:
+        exclusion: wedi cadw
+        invalid: heb fod yn nheilwng
+        inclusion: heb fod yn y rhestr
+        taken: wedi'i gymryd yn barod
+        record_invalid: 'Gwirio wedi methu: %{errors}'
+        confirmation: heb fod yn gyfateb
+        accepted: angen ei dderbyn
+        empty: methu bod yn wag
+        blank: methu bod yn wag
+        too_long: yn rhy hir (cewch %{count} llythyren ar y fwyaf)
+        too_short: yn rhy fyr (rhaid am o leiaf %{count} llythyren)
+        wrong_length: gyda maint anghywir o lythrennau (dylai fod yn %{count} llythyren)
+        not_a_number: heb fod yn rhif
+        not_an_integer: heb fod yn rhif llawn
+        greater_than: angen bod yn fwy na %{count}
+        greater_than_or_equal_to: angen bod yr un maint neu fwy na %{count}
+        equal_to: angen bod yn %{count}
+        less_than: angen bod yn llai na %{count}
+        less_than_or_equal_to: angen bod yr un maint neu lai na %{count}
+        odd: rhaid bod yn odrif
+        even: rhaid bod yn eilrif
+      template:
+        header:
+          one: Atalwyd y %{model} hwn rhag ei gadw gan 1 nam
+          other: Atalwyd y %{model} hwn rhag ei gadw gan %{count} nam
+        body: 'Cafwyd broblemau gyda''r meysydd canlynol:'
+      full_messages:
+        format: '%{attribute}%{message}'
   date:
     formats:
       default: '%d-%m-%Y'
@@ -178,34 +187,25 @@ cy:
       create: Creu %{model}
       update: Diweddaru %{model}
       submit: Cadw %{model}
-  activerecord:
-    errors:
-      template:
-        header:
-          one: Atalwyd y %{model} hwn rhag ei gadw gan 1 nam
-          other: Atalwyd y %{model} hwn rhag ei gadw gan %{count} nam
-        body: 'Cafwyd broblemau gyda''r meysydd canlynol:'
-      messages:
-        taken: wedi'i gymryd yn barod
-        record_invalid: 'Gwirio wedi methu: %{errors}'
-        inclusion: heb fod yn y rhestr
-        exclusion: wedi cadw
-        invalid: heb fod yn nheilwng
-        confirmation: heb fod yn gyfateb
-        accepted: angen ei dderbyn
-        empty: methu bod yn wag
-        blank: methu bod yn wag
-        too_long: yn rhy hir (cewch %{count} llythyren ar y fwyaf)
-        too_short: yn rhy fyr (rhaid am o leiaf %{count} llythyren)
-        wrong_length: gyda maint anghywir o lythrennau (dylai fod yn %{count} llythyren)
-        not_a_number: heb fod yn rhif
-        not_an_integer: heb fod yn rhif llawn
-        greater_than: angen bod yn fwy na %{count}
-        greater_than_or_equal_to: angen bod yr un maint neu fwy na %{count}
-        equal_to: angen bod yn %{count}
-        less_than: angen bod yn llai na %{count}
-        less_than_or_equal_to: angen bod yr un maint neu lai na %{count}
-        odd: rhaid bod yn odrif
-        even: rhaid bod yn eilrif
-      full_messages:
-        format: '%{attribute}%{message}'
+  errors:
+    format: '%{attribute} %{message}'
+    messages:
+      inclusion: heb fod yn y rhestr
+      exclusion: wedi cadw
+      invalid: heb fod yn nheilwng
+      confirmation: heb fod yn gyfateb
+      accepted: angen ei dderbyn
+      empty: methu bod yn wag
+      blank: methu bod yn wag
+      too_long: yn rhy hir (cewch %{count} llythyren ar y fwyaf)
+      too_short: yn rhy fyr (rhaid am o leiaf %{count} llythyren)
+      wrong_length: gyda maint anghywir o lythrennau (dylai fod yn %{count} llythyren)
+      not_a_number: heb fod yn rhif
+      not_an_integer: heb fod yn rhif llawn
+      greater_than: angen bod yn fwy na %{count}
+      greater_than_or_equal_to: angen bod yr un maint neu fwy na %{count}
+      equal_to: angen bod yn %{count}
+      less_than: angen bod yn llai na %{count}
+      less_than_or_equal_to: angen bod yr un maint neu lai na %{count}
+      odd: rhaid bod yn odrif
+      even: rhaid bod yn eilrif

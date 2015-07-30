@@ -1,5 +1,27 @@
 ---
 eo:
+  errors:
+    messages:
+      empty: devas esti kompletigita
+      blank: devas esti kompletigita
+      inclusion: ne estas inkluzivita de la listo
+      exclusion: ne estas disponebla
+      invalid: estas nevalida
+      confirmation: ne kongruas kun la konfirmo
+      accepted: devas esti akceptita
+      too_long: estas tro longa (maksimume %{count} karekteroj)
+      too_short: estas tro mallonga (minimume %{count} karakteroj)
+      wrong_length: ne estas je ĝusta longo (devas enhavi %{count} karakterojn)
+      not_a_number: ne estas nombro
+      not_an_integer: devas esti entjero
+      greater_than: devas superi %{count}
+      greater_than_or_equal_to: devas superi aŭ egali %{count}
+      equal_to: devas egali %{count}
+      less_than: devas malsuperi %{count}
+      less_than_or_equal_to: devas malsuperi aŭ egali %{count}
+      odd: devas esti nepara
+      even: devas esti para
+    format: '%{attribute} %{message}'
   number:
     human:
       format:
@@ -156,28 +178,6 @@ eo:
       create: Krei %{model}
       update: Modifi tiun %{model}
       submit: Registri tiun %{model}
-  errors:
-    format: '%{attribute} %{message}'
-    messages:
-      inclusion: ne estas inkluzivita de la listo
-      exclusion: ne estas disponebla
-      invalid: estas nevalida
-      confirmation: ne kongruas kun la konfirmo
-      accepted: devas esti akceptita
-      empty: devas esti kompletigita
-      blank: devas esti kompletigita
-      too_long: estas tro longa (maksimume %{count} karekteroj)
-      too_short: estas tro mallonga (minimume %{count} karakteroj)
-      wrong_length: ne estas je ĝusta longo (devas enhavi %{count} karakterojn)
-      not_a_number: ne estas nombro
-      not_an_integer: devas esti entjero
-      greater_than: devas superi %{count}
-      greater_than_or_equal_to: devas superi aŭ egali %{count}
-      equal_to: devas egali %{count}
-      less_than: devas malsuperi %{count}
-      less_than_or_equal_to: devas malsuperi aŭ egali %{count}
-      odd: devas esti nepara
-      even: devas esti para
   activerecord:
     errors:
       messages:

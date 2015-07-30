@@ -47,7 +47,7 @@ sl:
   0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} je komentiral/-a na %{comment_name}'
   a00624d47e8dca3b06b23cdcd386cd62: '%{sender_name} je objavil/-a obvestilo v tvoj
     profil'
-  04bc5390fd93d76fb2471f2f3a432ed5: Tvoje končne  %{tag_name} ideje
+  77c8b9f38491385d59ddc33d29e751fe: 'Vir:'
   cd267635c8a38e2acba076b0edeeedbe: Debate v tvojem omrežju
   07221d868183bab87e41f0ec47440880: Debate o tvojih idejah
   b38f1c5b8bdb6329e8a4b2e6e456da8b: Debate o idejah, ki si jih ustvaril
@@ -95,6 +95,7 @@ sl:
   0c7e91060e8afe22fb824e15473d9089: Ponovno pošlji potrditveni e-mail na  %{email}
   1d10d0c01b3469bcb594ade393639ed0: Ta uporabnik je izbrisal njegov račun
   af1b98adf7f686b84cd0b443e022b7a0: Kategorije
+  04bc5390fd93d76fb2471f2f3a432ed5: Tvoje končne  %{tag_name} ideje
   e11d937a5185a2361123ad5222df5f5f: Naključne  %{tag_name} ideje
   ae43f4cff7204d28b83fe67710e9377d: Debata na  %{tag_name}
   0f471a2597c99d0f4c81db859b0205f3: Ideje, ki si jih ustvaril na %{sub_instance_name}
@@ -105,6 +106,7 @@ sl:
   0574c44ee9d51a85091b24119d5c2f69: Najnovejše ideje
   35408f2e9ccf595f1765bd8e56a2f571: Najboljše točke na  %{idea_name}
   c772367d0682d61254cebb1dcfd44c93: Debate na  %{idea_name}
+  7fbd71fc25b275b7d095a29c72b1a821: Razloži svoj vidik.
   49c413c7e9fbe1aee3281a29d2d0dd9c: Zadnji komentarji na  %{idea_name}
   dee5db0dd869d6d2c03539fab2c874ad: Nova ideja na  %{sub_instance_name}
   fc2e12b5aff1b388bc309a96bccb3f9b: Hvala za dodajanje  %{idea_name}
@@ -133,8 +135,6 @@ sl:
     kršitve pravil?
   0e7a1834a7b4fba66d0f329cfab14cbb: Zadnji obisk %{time_ago}
   18ef3f4348075aca1646941639d610dd: Ideja  %{position}
-  c6a00f137b92ad22c007677fb2113a9f: Povabi
-  b357b524e740bc85b9790a0712d84a30: Elektronski naslov
   062bad04a7e077f61b7dcb0ef85dbef9: To kaže spremembe od prejšnje revizije. Lahko
     tudi <a href='%{clean_url}'> vidiš čisto različico </a>
   034cb9b595f45003845f5ebed51a0a39: Twitter skrivnost potrošnika
@@ -187,6 +187,8 @@ sl:
   9f9d26ab95c28a22b705d2f6d5ad8665: Povabljen na
   e3afed0047b08059d0fada10f400c1e5: Admin
   06df33001c1d7187fdd81ea1f5b277aa: Akcije
+  c6a00f137b92ad22c007677fb2113a9f: Povabi
+  b357b524e740bc85b9790a0712d84a30: Elektronski naslov
   6c25e6a6da95b3d583c6ec4c3f82ed4d: Tedensko
   9030e39f00132d583da4122532e509e9: Mesečno
   6e7b34fa59e1bd229b207892956dc41c: Nikoli
@@ -199,8 +201,6 @@ sl:
   8ac6e46f207f4d2a928523d417663553: Dobrodošel na tvoji  %{instance_name}. Prosim,
     dodaj tvojo prvo idejo
   9977ab924c89e6c98b1cf1595354ada3: Zadnje aktivnosti
-  77c8b9f38491385d59ddc33d29e751fe: 'Vir:'
-  7fbd71fc25b275b7d095a29c72b1a821: Razloži svoj vidik.
   fa17217f817aabfc79196a3adc390442: Vključi povezavo do spletne strani
   8a357512436318208aca51f2db5ebf75: Shrani točko
   0cc54e3d557f73d2891235a265b06341: Zadnje aktivnosti na tej točki
