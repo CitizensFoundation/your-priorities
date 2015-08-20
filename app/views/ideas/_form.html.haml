@@ -39,7 +39,7 @@
             %span#ideaContentDown
             = tr("characters left", "view/ideas/_form")
           .field_box
-            = f.text_area :description, :id => 'ideaContent', :button => 'submit', :rows => 10, :class=>"col_text_area", :maxLength => SubInstance.current.idea_description_max_length+30
+            = f.text_area :description, :id => 'ideaContent', :button => 'submit', :rows => 10, :class=>"col_text_area", :maxLength => SubInstance.current.idea_description_max_length
     .large-6.columns
       %h4
         = tr("Why should people support your #{IDEA_TOKEN}?", "views/ideas/form")
