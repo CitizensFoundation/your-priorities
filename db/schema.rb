@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150310141350) do
+ActiveRecord::Schema.define(:version => 20150820190320) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -891,6 +891,8 @@ ActiveRecord::Schema.define(:version => 20150310141350) do
     t.integer  "counter_stars",                                  :default => 0
     t.integer  "counter_impressions",                            :default => 0
     t.string   "saml_id"
+    t.integer  "idea_description_max_length",                    :default => 550
+    t.text     "custom_invite_email_text"
   end
 
   add_index "sub_instances", ["saml_id"], :name => "index_sub_instances_on_saml_id"

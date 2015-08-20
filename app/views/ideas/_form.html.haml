@@ -39,7 +39,7 @@
             %span#ideaContentDown
             = tr("characters left", "view/ideas/_form")
           .field_box
-            = f.text_area :description, :id => 'ideaContent', :button => 'submit', :rows => 10, :class=>"col_text_area", :maxLength => 550
+            = f.text_area :description, :id => 'ideaContent', :button => 'submit', :rows => 10, :class=>"col_text_area", :maxLength => SubInstance.current.idea_description_max_length+30
     .large-6.columns
       %h4
         = tr("Why should people support your #{IDEA_TOKEN}?", "views/ideas/form")
@@ -62,7 +62,7 @@
   jQuery("#ideaContent").DefaultValue(ideaContentTxt);
 
   jQuery("#ideaNameContent").NobleCount('#ideaNameContentDown',{ default_txt: ideaNameContentTxt, on_negative: 'go_red', on_positive: 'go_green', max_chars: #{SubInstance.current.idea_name_max_length} });
-  jQuery("#ideaContent").NobleCount('#ideaContentDown',{ default_txt: ideaContentTxt, on_negative: 'go_red', on_positive: 'go_green', max_chars: 500 });
+  jQuery("#ideaContent").NobleCount('#ideaContentDown',{ default_txt: ideaContentTxt, on_negative: 'go_red', on_positive: 'go_green', max_chars: #{SubInstance.current.idea_description_max_length} });
 
   $(document).ready(function(e) {
     try {

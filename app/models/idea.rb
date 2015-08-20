@@ -136,7 +136,7 @@ class Idea < ActiveRecord::Base
   validates_length_of :name, :within => 5..250, :too_long => tr("has a maximum of 200 characters", "model/idea"),
                                                :too_short => tr("please enter more than 5 characters", "model/idea")
 
-  validates_length_of :description, :within => 10..550, :too_long => tr("has a maximum of 500 characters", "model/idea"),
+  validates_length_of :description, :within => 10..500550, :too_long => tr("has a maximum of 500000 characters", "model/idea"),
                                                        :too_short => tr("please enter more than 10 characters", "model/idea")
 
 
