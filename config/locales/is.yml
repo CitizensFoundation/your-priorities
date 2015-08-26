@@ -489,7 +489,6 @@ is:
   785ddd7d4a83721c9d487b47ceea9fa1: Nýskráning
   f98632d5dbe4b62224e8d2c281ec45db: Nýr notandi með tölvupósti
   80919be0413cba91ea1c240ca12ee13a: Nýskrá
-  1f40efaaf5f2214949c147fcfa3a6f54: Engin flokka sýja
   37528894f18a085f9a078496a68eaaa8: Vinsælt núna
   a7bd5cda0116d79b5b671617e51d2a3c: Vinsælar hugmyndir núna
   fe0954729ebc84a251fbfeb17a801d8b: '%{sp} karma stig'
@@ -589,6 +588,7 @@ is:
   dcab30df167c93ffafaf59a49789cefa: Betra Ísland er öflug lýðræðisvefsíða hönnuð af
     non profit Citizens Foundation til að hjálpa hópum af fólki til að tala með einni
     rödd.
+  1f40efaaf5f2214949c147fcfa3a6f54: Engin flokka sía
   2a97751493e0cb66b7ce1d0a0c829df7: Þín hugmynd %{idea} hefur verið færð
   365e3d8187f5212085cbd599b430974a: Þín hugmynd <a href='%{idea_link}'>%{idea_name}</a>
     hefur verið færð frá %{from_sub_instance} til %{to_sub_instance} á %{instance_name}.

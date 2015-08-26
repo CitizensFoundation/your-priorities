@@ -1,6 +1,5 @@
 ---
 ro-RO:
-  0ef9a6968cfe92f7bde817483fb5d0cf: Se opune
   will_paginate:
     next_label: Următoarea &rsaquo;
     previous_label: '&#8592; Precedentul'
@@ -118,6 +117,7 @@ ro-RO:
   034cb9b595f45003845f5ebed51a0a39: Secretul Consumatorului Twitter
   021da1b20f73dc252361a54d80497ef3: Clasament
   f4ec5f57bd4d31b803312d873be40da9: Modificare
+  0ef9a6968cfe92f7bde817483fb5d0cf: Se opune
   0f9b5eff8d1d07e6ce3a8fe2697a76f7: S-a alăturat acum %{time_ago}
   16765596b57782e7012aee0ac86ff5ff: '%{count} aprobări'
   da08b4d4be989f5276a7aab9899ab34c: '%{count} opuneri'

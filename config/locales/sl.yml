@@ -47,7 +47,7 @@ sl:
   0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} je komentiral/-a na %{comment_name}'
   a00624d47e8dca3b06b23cdcd386cd62: '%{sender_name} je objavil/-a obvestilo v tvoj
     profil'
-  77c8b9f38491385d59ddc33d29e751fe: 'Vir:'
+  c772367d0682d61254cebb1dcfd44c93: Debate na  %{idea_name}
   cd267635c8a38e2acba076b0edeeedbe: Debate v tvojem omrežju
   07221d868183bab87e41f0ec47440880: Debate o tvojih idejah
   b38f1c5b8bdb6329e8a4b2e6e456da8b: Debate o idejah, ki si jih ustvaril
@@ -105,8 +105,6 @@ sl:
   6c60eec8c5809428787d3d817d389404: Najboljše ideje zadnjih 30 dni
   0574c44ee9d51a85091b24119d5c2f69: Najnovejše ideje
   35408f2e9ccf595f1765bd8e56a2f571: Najboljše točke na  %{idea_name}
-  c772367d0682d61254cebb1dcfd44c93: Debate na  %{idea_name}
-  7fbd71fc25b275b7d095a29c72b1a821: Razloži svoj vidik.
   49c413c7e9fbe1aee3281a29d2d0dd9c: Zadnji komentarji na  %{idea_name}
   dee5db0dd869d6d2c03539fab2c874ad: Nova ideja na  %{sub_instance_name}
   fc2e12b5aff1b388bc309a96bccb3f9b: Hvala za dodajanje  %{idea_name}
@@ -135,6 +133,7 @@ sl:
     kršitve pravil?
   0e7a1834a7b4fba66d0f329cfab14cbb: Zadnji obisk %{time_ago}
   18ef3f4348075aca1646941639d610dd: Ideja  %{position}
+  77c8b9f38491385d59ddc33d29e751fe: 'Vir:'
   062bad04a7e077f61b7dcb0ef85dbef9: To kaže spremembe od prejšnje revizije. Lahko
     tudi <a href='%{clean_url}'> vidiš čisto različico </a>
   034cb9b595f45003845f5ebed51a0a39: Twitter skrivnost potrošnika
@@ -201,6 +200,7 @@ sl:
   8ac6e46f207f4d2a928523d417663553: Dobrodošel na tvoji  %{instance_name}. Prosim,
     dodaj tvojo prvo idejo
   9977ab924c89e6c98b1cf1595354ada3: Zadnje aktivnosti
+  7fbd71fc25b275b7d095a29c72b1a821: Razloži svoj vidik.
   fa17217f817aabfc79196a3adc390442: Vključi povezavo do spletne strani
   8a357512436318208aca51f2db5ebf75: Shrani točko
   0cc54e3d557f73d2891235a265b06341: Zadnje aktivnosti na tej točki
@@ -255,6 +255,7 @@ sl:
   5fe6005bf6e415c950c011fb65f12b8f: Izbrisano
   f1e2a549f8a0a20b572b176455dba9b9: PREDLOŽI SVOJO IDEJO
   20db0bfeecd8fe60533206a2b5e9891a: Prvo ime
+  0f68b904e33d9ac04605aecc958bcf52: Nadaljne informacije
   20b86b18475850202a63d9550071b782: (Nikoli ne deli brez tvojega dovoljenja)
   cc83a5678878f2fb8d453b555c037920: Kako bi morali biti opredeljeni na strani?
   d755860b6f0e4bd38d789657bfe7be0a: (Lahko je tvoje ime, ali psevdonim)
@@ -434,7 +435,6 @@ sl:
   b14dd295bfbf8acf7734ca5d37c4977c: Zasluži socialne točke s konstruktivno debato.
   3a4b8d088c304ae2af8cac88963c8926: Dodaj stališče za ali proti
   50a941dd2b0b556780498304f6b67c92: Razloži svoje izhodišče
-  0f68b904e33d9ac04605aecc958bcf52: Nadaljne informacije
   034a5d0ca862fdb6a3e451adf4ae0b9a: (Lahko je tvoje ime ali psevdonim)
   d72e45be5abf9104bbfd208c11e8732a: Naloži svojo sliko (neobvezno)
   2fdfd506efea08144c0794c32ca8250a: Ustvari račun

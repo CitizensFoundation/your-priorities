@@ -3,6 +3,7 @@ nl-NL:
   devise:
     invitations:
       send_instructions: Een uitnodiging is verzonden naar %{email}.
+      updated: Uw wachtwoord is opgeslagen. U bent nu ingelogd.
       new:
         header: Uitnodiging versturen
   will_paginate:
@@ -24,6 +25,9 @@ nl-NL:
   0323de4f66a1700e2173e9bcdce02715: Uitloggen
   03368e3c1eb4d2a9048775874301b19f: Selecteer categorie
   03937134cedab9078be39a77ee3a48a0: Groep
+  views:
+    pagination:
+      next: Volgende &rsaquo;
   070625ecbc8bd373ccfb31867274eb97: Wachtwoord herstel instructies voor %{instance_name}
   ab70cd88a40e7c3247bfce039ad0045d: voer meer dan 5 karakters in
   80df8e95c1fef941a4f600f0fd1b07c8: voer meer dan 12 karakters in

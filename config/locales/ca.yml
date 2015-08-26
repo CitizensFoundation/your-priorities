@@ -427,6 +427,7 @@ ca:
   1586f0c8ea9ebe79830cdd5d06008065: 12 anys i menys de 12 anys
   1791c7f2e04cf5663bc1555b57ff7a4d: Clica en aquest botó per connectar-te amb Facebook
     i trobar les teves amistats
+  122a05774113cd494d44a50e17914937: Lema
   01441c80c744e05983f0681cacfcf047: Vota a favor %{new_idea_name} en comptes de %{idea_name}
   034cb9b595f45003845f5ebed51a0a39: Secret Consumidor Twitter
   05bd4146a6d042d2c8033ff38973f8f1: La importació de contactes ha fallat.
@@ -453,7 +454,6 @@ ca:
   11921a98f45c8c536c185d5167be6f96: Revisa-ho, siusplau
   119617cf1f2f8ba533b52175037f8eec: Posa discussions a la teva web
   11d7b4cc53a359652d0dc4bfed42edf0: '%{count} %{sentence}'
-  122a05774113cd494d44a50e17914937: Lema
   128c8d90de95fd94a3fed4dc82665677: Encara no hi ha membres, convida'ls.
   11b3735d7275c5ed1b56b99245b35aa5: '%{sender_name} marcat %{idea_name} per revisió'
   11ee56b3d9c99494994e5e0e4b6ae733: Originat en

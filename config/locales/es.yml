@@ -247,7 +247,6 @@ es:
   c4e0e4e3118472beeb2ae75827450f1f: EN CONTRA
   493443f74e1d01d5f290368b68b22007: '%{user_name} sugirió primero esta idea'
   ac717bd14c68bc426139b20f01d941ea: '%{user_name} sugirió primero %{idea_name}'
-  c3829f98b9d811ef102006ff00a83881: '%{count} revisiones'
   will_paginate:
     next_label: Siguiente &#8594;
     previous_label: '&#8592; Anterior'
@@ -308,6 +307,7 @@ es:
   75dd5f1160a3f02b6fae89c54361a1b3: Puntos
   6d0a578ca2f2c0e792fc923002fccbe3: hace
   c29196003ef3c4f020130aab1c63d4ea: '%{count} puntos'
+  c3829f98b9d811ef102006ff00a83881: '%{count} revisiones'
   c474f356721291083cc2be1ef39cf658: '%{count} nuevo(s) comentario(s)'
   13b5bfe96f3e2fe411c9f66f4a582adf: en
   8bf8854bebe108183caeb845c7676ae4: de

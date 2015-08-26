@@ -222,7 +222,6 @@ pt-BR:
   03fa96387303a39d8a63c153bac26958: 'Reservamos o direito de:'
   0574c44ee9d51a85091b24119d5c2f69: Novas idéias
   06277ee8d0fd9ef7427ca88315ba493a: Login através do Twitter falhou.
-  83c101ec84ebd1c0e45fa1cd5b9300d6: oposto
   will_paginate:
     next_label: Próximo
     previous_label: Anterior
@@ -252,6 +251,7 @@ pt-BR:
   d5f0462c74e5c7bf041d992697b7e06b: Esse nome de servidor já foi escolhido
   0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} comentou em %{comment_name}'
   42bd4c0819c498d1c1ab622de74d6f82: apoiado
+  83c101ec84ebd1c0e45fa1cd5b9300d6: oposto
   37fc5aed92a40b16dafd17cee72e3154: Idéias mais comentadas
   833c90a077a2beda3b6cd000f3fe5c29: Idéias randômicas
   f504eb1cc2305a863cc0cf23428a36f8: Idéias controversas
