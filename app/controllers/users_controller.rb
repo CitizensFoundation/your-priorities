@@ -21,12 +21,14 @@ class UsersController < ApplicationController
     @user = current_user
     if request.put?
       respond_to do |format|
-        email_ok = false
-        unless User.where(:email=>params[:user][:email]).first
-          email_ok = true
-          @user.email = params[:user][:email] if params[:user][:email]
-        else
-          flash[:notice] = tr("Email already registered {email}", "controller/users", :email => params[:user][:email])
+        email_ok = true
+        if params[:user][:email] != @user.email
+          if User.where(:email=>params[:user][:email]).first
+            @user.email = params[:user][:email] if params[:user][:email]
+          else
+            flash[:notice] = tr("Email already registered {email}", "controller/users", :email => params[:user][:email])
+            email_ok = false
+          end
         end
         @user.login = params[:user][:login] if params[:user][:login]
         @user.buddy_icon = params[:user][:buddy_icon] if params[:user][:buddy_icon]
