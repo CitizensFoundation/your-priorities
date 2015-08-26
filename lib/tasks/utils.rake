@@ -62,11 +62,6 @@ CODE_TO_SHORTNAME = {"AE"=>"uae", "LY"=>"lybia", "VA"=>"vatican",
                      "PS"=>"ps", "GB"=>"uk", "SY"=>"syria", "RU"=>"russia",
                      "MD"=>"moldova", "LA"=>"lao" }
 
-# testings-teingst-stinteinsg-etininsg
-# gunnar@citizens.is
-# https://s3-eu-west-1.amazonaws.com/test991/test.csv
-
-
 namespace :utils do
 
   desc "Invite by csv"
