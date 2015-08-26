@@ -407,8 +407,10 @@ ActiveRecord::Schema.define(:version => 20150820190320) do
     t.integer  "counter_comments",                         :default => 0
     t.integer  "counter_all_activities",                   :default => 0
     t.integer  "counter_main_activities",                  :default => 0
+    t.tsvector "IdeaText"
   end
 
+  add_index "ideas", ["IdeaText"], :name => "post_search_idx"
   add_index "ideas", ["category_id"], :name => "index_ideas_on_category_id"
   add_index "ideas", ["official_status"], :name => "index_ideas_on_official_status"
   add_index "ideas", ["official_value"], :name => "index_ideas_on_official_value"
@@ -891,7 +893,7 @@ ActiveRecord::Schema.define(:version => 20150820190320) do
     t.integer  "counter_stars",                                  :default => 0
     t.integer  "counter_impressions",                            :default => 0
     t.string   "saml_id"
-    t.integer  "idea_description_max_length",                    :default => 550
+    t.integer  "idea_description_max_length",                    :default => 500
     t.text     "custom_invite_email_text"
   end
 

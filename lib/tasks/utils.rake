@@ -61,7 +61,46 @@ end
 CODE_TO_SHORTNAME = {"AE"=>"uae", "LY"=>"lybia", "VA"=>"vatican",
                      "PS"=>"ps", "GB"=>"uk", "SY"=>"syria", "RU"=>"russia",
                      "MD"=>"moldova", "LA"=>"lao" }
+
+# testings-teingst-stinteinsg-etininsg
+# gunnar@citizens.is
+# https://s3-eu-west-1.amazonaws.com/test991/test.csv
+
+
 namespace :utils do
+
+  desc "Invite by csv"
+  task :invite_by_csv => :environment do
+
+    sub_instance = SubInstance.where(:short_name=>ENV['GROUP_SHORT_NAME']).first
+    SubInstance.current = sub_instance
+
+    if ENV['HTTP_BASIC_AUTH_USER']
+      emails = CSV.parse( open(ENV['CSV_URL_TO_INVITE_FROM'],
+                               http_basic_authentication: [ENV['HTTP_BASIC_AUTH_USER'], ENV['HTTP_BASIC_AUTH_PASSWORD']]))
+    else
+      emails = CSV.parse(open(ENV['CSV_URL_TO_INVITE_FROM']))
+    end
+    invited_by = User.where(:email=>ENV['INVITE_BY_EMAIL']).first
+
+    if invited_by and emails and sub_instance
+      emails.each_with_index do |email_row,i|
+        email = email_row[0]
+
+        if email.include?("@")
+          new_user = User.invite!({:email=>email}, invited_by)
+          new_user.login = new_user.email.split("@")[0]
+          new_user.save(:validate=>false)
+          puts "#{invited_by.login} invited #{new_user.login}"
+        else
+          puts "Malformed email #{email}"
+        end
+      end
+    else
+      puts "Not all info found #{invited_by} #{emails} #{sub_instance}"
+    end
+  end
+
   desc "Export sub instance to csv"
   task :export_sub_instance_to_csv => :environment do
     ["barcombe-hamsey","chailey-wivelsfield","ditchling-westmeston","kingston",

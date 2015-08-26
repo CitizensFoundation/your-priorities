@@ -41,6 +41,7 @@ class UserMailer < Devise::Mailer
     setup_locale(invited_by)
     Rails.logger.debug("INVITED_BY USER: #{invited_by.inspect}")
     @sender_name = invited_by.login
+    @custom_message = SubInstance.current.custom_invite_email_text
     sub_instance = SubInstance.where(:id=>invited_by.sub_instance_id).first
     @instance_name = sub_instance.name
 
