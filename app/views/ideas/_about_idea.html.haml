@@ -20,13 +20,13 @@
   - if @idea and action_name=="show" and controller_name=="ideas"
     - if idea.description
       = simple_format(idea.description)
-    - elsif idea.points.first
-      = simple_format(truncate(idea.points.first.content_html,:length => 200, :omission => ' ...', :separator => ' '))
+    - elsif idea.points.up_value.first
+      = simple_format(truncate(idea.points.up_value.by_first_created.first.content_html,:length => 200, :omission => ' ...', :separator => ' '))
   - else
     - if idea.description
       = simple_format(idea.description)
-    - elsif idea.points.first
-      = simple_format(truncate(idea.points.first.content_html,:length => 200, :omission => ' ...', :separator => ' '))
+    - elsif idea.points.up_value.first
+      = simple_format(truncate(idea.points.up_value.by_first_created.first.content_html,:length => 200, :omission => ' ...', :separator => ' '))
   - if @idea and action_name=="show" and controller_name=="ideas" and @idea.notes
     %h3.author_notes
       = tr("Author notes","view/ideas")
