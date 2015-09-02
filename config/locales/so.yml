@@ -1,3 +1,82 @@
 ---
 so:
-  37fc5aed92a40b16dafd17cee72e3154: najboljša ideja
+  22af645d1859cb5ca6da0c484f1f37ea: Novo
+  30ae8fff8898dc197acd49d9c0797d20: Uspešno.
+  42bd4c0819c498d1c1ab622de74d6f82: Podpiram
+  4607ccb71469675944516398e717479c: Potrdite pogoje uporabe
+  37fc5aed92a40b16dafd17cee72e3154: Najboljši predlogi
+  4b1b4dc8cf38b3c64b1d657da8f5ac8c: Prijavite
+  4fb7286b0fe19a6cf2569e4115e88baa: prosim vnesite več kot 12 znakov
+  5a9d18bb87ff12835dc844883c5c3ebe: spremembe
+  80df8e95c1fef941a4f600f0fd1b07c8: prosim vnesite več kot 12 znakov
+  833c90a077a2beda3b6cd000f3fe5c29: Naključni predlog
+  83c101ec84ebd1c0e45fa1cd5b9300d6: Nasprotujem
+  9b9d8a976b42e0bd66381797644943d5: Oddano.
+  9ee2fe857acedeff0c24765e3d2a25f9: Navedite ime in priimek
+  ab70cd88a40e7c3247bfce039ad0045d: prosim vnesite več kot 5 znakov
+  b6e0b0c90cfbddfe767f137f8066d1df: Se izvaja.
+  c867451892e38db47a8cc5e7b02d5c54: katere podpirate.
+  d5f0462c74e5c7bf041d992697b7e06b: To ime je že v uporabi.
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Neuspešno.
+  devise:
+    invitations:
+      new:
+        header: Pošljite vabilo.
+      updated: Vaše geslo je bilo uspešno nastavljeno. Sedaj ste prijavljeni.
+  eed1d7e8237b8656aff7c66bb5999f96: Vnesite vaše ime in priimek
+  f504eb1cc2305a863cc0cf23428a36f8: Kontroverzni predlogi
+  will_paginate:
+    next_label: Naprej
+    previous_label: Nazaj
+  f98632d5dbe4b62224e8d2c281ec45db: Ustvarite novega uporabnika elektronske pošte
+  45d02053b56e67472d6aa112e633b2c2: Dodajte argument za
+  3a4b8d088c304ae2af8cac88963c8926: Dodajte argument proti
+  50a941dd2b0b556780498304f6b67c92: Obrazložite svoj argument
+  0f68b904e33d9ac04605aecc958bcf52: Dodatne informacije
+  d1b44fa378a165b8c319fe0b0f08f231: (Obvezno za registracijo. Ne bo posredovano tretjim
+    osebam brez vašega dovoljenja.)
+  034a5d0ca862fdb6a3e451adf4ae0b9a: (Vaše ime in priimek)
+  d72e45be5abf9104bbfd208c11e8732a: Naložite svojo sliko. (neobvezno)
+  85919fa9cbaa930dbf667f4454a1e887: Obvezno za registracijo. Ne bo posredovano tretjim
+    osebam brez vašega dovoljenja.
+  09a1e75ab40c7bb5efb09d013aff3a53: Dodaj argument za
+  42a965482d059f063d4503251a2548b8: Dodaj argument proti
+  39a3cf4c89d1ffa6eddb8a1ae6a8bae9: Kategorija vašega predloga %{idea} je bila spremenjena.
+  4c0d946321563c8bf049de4cc6473281: Kategorija je bila spremenjena.
+  d43686420438e917216d81506320e6f2: Kategorijo vaše ideje <a href='%{idea_link}'>%{idea_name}</a>
+    je spremenil administrator iz %{category_from} v %{category_to} na %{instance_name}.
+  2a97751493e0cb66b7ce1d0a0c829df7: Vaš predlog %{idea} je bil premaknjen.
+  365e3d8187f5212085cbd599b430974a: Vaš predlog <a href='%{idea_link}'>%{idea_name}</a>
+    je administrator premaknil iz %{from_sub_instance} v %{to_sub_instance} na %{instance_name}.
+  0ab8485b04bf31384d9953d35ecaf6e4: Uporabnik %{sender_name} je komentiral %{comment_name}
+  a00624d47e8dca3b06b23cdcd386cd62: Uporabnik %{sender_name} je pustil sporočilo na
+    vašem profilu.
+  db7fcf41127935e5fee505fe102abf9a: Vaše diskusije
+  07221d868183bab87e41f0ec47440880: Diskusije pri predlogih, ki jih spremljate.
+  b38f1c5b8bdb6329e8a4b2e6e456da8b: Diskusije pri vaših predlogih.
+  8754f2b7cbd98752793ba8314bded062: Aktivne diskusije.
+  9fd4dc340cdbdabdd25908817052b915: Vaši argumenti.
+  2d180c2da693f88fe77a780e31bc07a2: Novi argumenti.
+  f78be27a110705c1b183468d30077e53: Uporabnik %{user_name} ne nasprotuje več %{idea_name}
+  ac717bd14c68bc426139b20f01d941ea: Uporabnik %{user_name} je prvi predlagal %{idea_name}
+  fe5c45415c03bb476dc22b730aaf2590: Uporabnik %{user_name} je podal %{count} komentarje
+    v %{discussion_name}
+  777eecd062745916881aff23d68afd46: Uporabnik %{user_name} je pustil sporočilo na
+    profilu  %{other_user_name}
+  de06be0bc4bfdf2cf0c58e9b6c2d9db9: '%{idea_name} je %{user_name} nova ideja številka
+    ena.'
+  0358ca3a25ad72c389989a3db811f233: Uporabnik %{user_name} je preimenoval %{idea_name}
+  1a13f1069e52ca6118df8501f7a7c755: Uporabnik %{user_name} je dodal argument %{point_name}
+    v pri predlogu %{idea_name}
+  0c082c9ad303a70be82598499aaa1f6e: Uporabnik %{user_name} je posodobil predlog %{idea_name}
+  747705a1c07ec5d7613502a7d50bf49a: Uporabnik %{user_name} je posodobil argument %{point_name}
+  75dd5f1160a3f02b6fae89c54361a1b3: Argumenti
+  c29196003ef3c4f020130aab1c63d4ea: '%{count} argumentov'
+  c3829f98b9d811ef102006ff00a83881: '%{count} sprememb'
+  016e3b623e81108aac0844988d799eff: 'Sprememb: %{sentence}'
+  c474f356721291083cc2be1ef39cf658: '%{count} novih komentarjev'
+  ae7950ddfcef416ea6840228d63eba13: ni novih argumentov
+  0d80cee327875c3740c7ad5ebba57be1: Elektronska sporočila
+  fd43e901068a7802f554bf77ac25c8f2: Izbrišite vaš račun pri %{instance_name}
+  01374d70036cb0b48058e7e031eeb680: Za dostop do predlogov se morate prijaviti
+  ab1e45da9c565570d4986f268329f2d1: Zadnje zabeležene aktivnosti pri %{instance_name}

@@ -265,6 +265,7 @@ ca:
   4d67b51a744e6c1f471d369b28e1fee5: La idea ha estat eliminada
   4d73cb334c23df49814cefa164c87fb9: Envia una invitació via email
   4fd766ef1dcfe3c579bd1fb1ce28738d: '%{citizens_link}'
+  086716f54c226a75ccc31834aac1e1ca: Habilitar geoblocking
   52f4e192179a8449b77cc149541a5ba0: Encara no hi ha idees aquí
   158d7558ee87d9a8caa77b59abcdd9ef: Idea
   15bbb9d0bbf25e8d2978de1168c749dc: Web
@@ -368,7 +369,6 @@ ca:
   070625ecbc8bd373ccfb31867274eb97: Instruccions de restabliment de la contrasenya
     per %{instance_name}
   07e3768db2a920972da9b334cb7908de: Compta eliminada
-  086716f54c226a75ccc31834aac1e1ca: Habilitar geoblocking
   will_paginate:
     next_label: Següent &#8594;
     page_gap: '&hellip;'

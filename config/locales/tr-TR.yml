@@ -52,7 +52,6 @@ tr-TR:
   5e038f03415db5461c13d380469436cb: Kredi kartı numarası
   03937134cedab9078be39a77ee3a48a0: Grup
   18ef3f4348075aca1646941639d610dd: Fikir %{position}
-  2e6c2d96aaacc8ef06d0ea12237cfc2e: Bütün alanlara giriş yapılması zorunludur
   e1e583ed208b1fbecec8b65dc272a098: '%{user_name} kullanıcısının bu fikri kişisel
     bir saldırı veya kurallara aykırı mı?'
   52f4e192179a8449b77cc149541a5ba0: Burada henüz fikir yok
@@ -63,6 +62,7 @@ tr-TR:
   201e7310f5fb28133f781fc856003d92: Fikir Başlığı
   03368e3c1eb4d2a9048775874301b19f: Kategori seçin
   7dd982d0948637b4ae83f2804bd489ca: İnsanlar neden sizin fikrinizi desteklemeli?
+  2e6c2d96aaacc8ef06d0ea12237cfc2e: Bütün alanlara giriş yapılması zorunludur
   d7241b155164fdbc560602f924393149: Fikrinizi ve bakış açınızı girin
   586f9d3669a73e12a8caed7a7d76288e: Fikriniz için iyi ve tanımlayıcı bir başlık oluşturun
   cdd559fd8bda4b2bdf1cdbca181b38b9: Fikrinizin asıl amacını ortaya koyacak şekilde

@@ -23,6 +23,7 @@ hu:
   0ef9a6968cfe92f7bde817483fb5d0cf: Ellenvélemény
   1bd14216408d94261ca743907c692bb1: Adminisztrátoroknak
   69d5371acdea4abbaa879e7faa7e5dd2: A feliratkozás hamarosan érvénybe lép
+  665255de10a45ae3e1c0e81b515b55ca: '%{count} megbeszélés'
   1c3a03e7bf74d0ee69de0311447bb613: Az ötlet %{idea_name}, amit támogatsz, a(z) %{position}
     helyen áll a(z) %{category} kategóriában.
   1dabb7608cdd6762b2f3b96905d7259f: Biztonsági kód (CVV)
@@ -79,7 +80,6 @@ hu:
   f5359d1dd07def542aa9b0577fb27068: Státusz frissítése
   f7c27fe5419c0751885d8a0cc6f0e75a: (%{count}) vita
   f2a6c498fb90ee345d997f888fce3b18: Törlés
-  665255de10a45ae3e1c0e81b515b55ca: '%{count} megbeszélés'
   15c9367c3506280cfaf98cb065799bf4: Ötleteid periodikus frissítései
   f1527dd1b427ae2c86da111329190087: Amikor egy ötletet újragondolnak
   ee70f3ca5d66eac5f6fc8616da483f4d: Nincs megbeszélés
@@ -399,7 +399,7 @@ hu:
     ma!
   5ebb3db6c8a6613f79191107b296a01c: 'Az ötleted állapota <a href=''%{idea_link}''>%{idea_name}</a>
     %{support_or_endorse_text} megváltozott itt:  %{instance_name}.'
-  c867451892e38db47a8cc5e7b02d5c54: amit ön támogat
+  37fc5aed92a40b16dafd17cee72e3154: Legjobb ötletek
   4b1b4dc8cf38b3c64b1d657da8f5ac8c: Jelentés
   4fb7286b0fe19a6cf2569e4115e88baa: kérjük 10 karakternél többet írjon
   5a9d18bb87ff12835dc844883c5c3ebe: változások
@@ -408,6 +408,7 @@ hu:
   9b9d8a976b42e0bd66381797644943d5: Közzétéve
   ab70cd88a40e7c3247bfce039ad0045d: kérjük 5 karakternél többet írjon
   b6e0b0c90cfbddfe767f137f8066d1df: Folyamatban
+  c867451892e38db47a8cc5e7b02d5c54: amit ön támogat
   d7c8c85bf79bbe1b7188497c32c3b0ca: Sikertelen
   devise:
     invitations:
@@ -423,7 +424,6 @@ hu:
     previous_label: '&#8592; Előző'
   f504eb1cc2305a863cc0cf23428a36f8: Megosztó ötletek
   0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} megjegyzést fűzött ide: %{comment_name}'
-  37fc5aed92a40b16dafd17cee72e3154: Legjobb ötletek
   42bd4c0819c498d1c1ab622de74d6f82: támogatva
   4607ccb71469675944516398e717479c: Kérjük fogadja el a felhasználási feltételeket
   833c90a077a2beda3b6cd000f3fe5c29: Véletlenszerű ötletek
