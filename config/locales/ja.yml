@@ -1,5 +1,41 @@
 ---
 ja:
+  number:
+    format:
+      significant: false
+      separator: .
+      delimiter: ','
+      precision: 3
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        format: '%n%u'
+        unit: 円
+        separator: .
+        delimiter: ','
+        precision: 3
+        significant: false
+        strip_insignificant_zeros: false
+    human:
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: '%n%u'
+        units:
+          kb: キロバイト
+          mb: メガバイト
+          gb: ギガバイト
+          tb: テラバイト
+      decimal_units:
+        format: '%n %u'
+        units:
+          thousand: 千
+          million: 百万
+          billion: 十億
+          trillion: 兆
+          quadrillion: 千兆
   date:
     formats:
       default: '%Y/%m/%d'
@@ -121,42 +157,6 @@ ja:
           other: '%{model}に%{count}つのエラーが発生しました。'
       full_messages:
         format: '%{attribute}%{message}'
-  number:
-    format:
-      separator: .
-      delimiter: ','
-      precision: 3
-      significant: false
-      strip_insignificant_zeros: false
-    currency:
-      format:
-        format: '%n%u'
-        unit: 円
-        separator: .
-        delimiter: ','
-        precision: 3
-        significant: false
-        strip_insignificant_zeros: false
-    human:
-      format:
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: '%n%u'
-        units:
-          kb: キロバイト
-          mb: メガバイト
-          gb: ギガバイト
-          tb: テラバイト
-      decimal_units:
-        format: '%n %u'
-        units:
-          thousand: 千
-          million: 百万
-          billion: 十億
-          trillion: 兆
-          quadrillion: 千兆
   datetime:
     distance_in_words:
       half_a_minute: 30秒前後

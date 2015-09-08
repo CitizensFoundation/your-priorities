@@ -381,11 +381,11 @@ uk:
   activerecord:
     errors:
       messages:
-        not_a_number: не число
         inclusion: не включено до переліку
         invalid: недійсний
         less_than: має бути менше ніж %{count}
         less_than_or_equal_to: має бути менше ніж або дорівнювати %{count}
+        not_a_number: не число
         odd: має бути непарним
         record_invalid: 'Виникли помилки: %{errors}'
         taken: вже зайнятий
@@ -467,27 +467,7 @@ uk:
   4fb7286b0fe19a6cf2569e4115e88baa: будь-ласка, введіть більш ніж 10 символів
   22af645d1859cb5ca6da0c484f1f37ea: новий
   eed1d7e8237b8656aff7c66bb5999f96: Будь-ласка, введіть ім'я для відображення на сайті
-  helpers:
-    select:
-      prompt: 'Оберіть:'
-    submit:
-      create: Створити %{model}
-      submit: Зберегти %{model}
-      update: Зберегти %{model}
   number:
-    currency:
-      format:
-        format: '%n %u'
-        precision: 2
-        separator: ','
-        significant: false
-        strip_insignificant_zeros: false
-        unit: грн.
-    format:
-      precision: 3
-      separator: ','
-      significant: false
-      strip_insignificant_zeros: false
     human:
       decimal_units:
         format: '%n %u'
@@ -507,6 +487,26 @@ uk:
           kb: кБ
           mb: МБ
           tb: ТБ
+    currency:
+      format:
+        format: '%n %u'
+        precision: 2
+        separator: ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: грн.
+    format:
+      precision: 3
+      separator: ','
+      significant: false
+      strip_insignificant_zeros: false
+  helpers:
+    select:
+      prompt: 'Оберіть:'
+    submit:
+      create: Створити %{model}
+      submit: Зберегти %{model}
+      update: Зберегти %{model}
   support:
     select:
       prompt: 'Будь-ласка, оберіть:'

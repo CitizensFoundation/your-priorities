@@ -1,5 +1,12 @@
 ---
 en-AU:
+  time:
+    formats:
+      short: '%d %b %H:%M'
+      default: '%a, %d %b %Y %H:%M:%S %z'
+      long: '%B %d, %Y %H:%M'
+    am: am
+    pm: pm
   date:
     formats:
       default: '%d-%m-%Y'
@@ -53,13 +60,6 @@ en-AU:
     - :year
     - :month
     - :day
-  time:
-    formats:
-      default: '%a, %d %b %Y %H:%M:%S %z'
-      short: '%d %b %H:%M'
-      long: '%B %d, %Y %H:%M'
-    am: am
-    pm: pm
   support:
     select:
       prompt: Please select

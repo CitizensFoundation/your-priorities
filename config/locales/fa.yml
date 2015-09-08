@@ -53,6 +53,30 @@ fa:
     - :day
     - :month
     - :year
+  errors:
+    messages:
+      empty: نمی‌تواند خالی باشد
+      inclusion: در لیست موجود نیست
+      exclusion: رزرو است
+      invalid: نامعتبر است
+      confirmation: با تایید نمی‌خواند
+      accepted: باید پذیرفته شود
+      blank: نباید خالی باشد
+      too_long: بلند است (حداکثر %{count} کاراکتر)
+      too_short: کوتاه است (حداقل %{count} کاراکتر)
+      wrong_length: نااندازه است (باید %{count} کاراکتر باشد)
+      not_a_number: عدد نیست
+      not_an_integer: عدد صحیح نیست
+      greater_than: باید بزرگتر از %{count} باشد
+      greater_than_or_equal_to: باید بزرگتر یا برابر %{count} باشد
+      equal_to: باید برابر %{count} باشد
+      less_than: باید کمتر از %{count} باشد
+      less_than_or_equal_to: باید کمتر یا برابر %{count} باشد
+      odd: باید فرد باشد
+      even: باید زوج باشد
+      already_confirmed: قبلا تایید شده،‌لطفا دوباره وارد شوید
+      expired: منقضی شده، لطفا درخواست جدیدش رو بکنید
+    format: '%{attribute} %{message}'
   support:
     select:
       prompt: لطفا انتخاب کنید
@@ -160,30 +184,6 @@ fa:
       create: ساختن %{model}
       submit: ثبت %{model}
       update: به روز رسانی %{model}
-  errors:
-    format: '%{attribute} %{message}'
-    messages:
-      inclusion: در لیست موجود نیست
-      exclusion: رزرو است
-      invalid: نامعتبر است
-      confirmation: با تایید نمی‌خواند
-      accepted: باید پذیرفته شود
-      empty: نمی‌تواند خالی باشد
-      blank: نباید خالی باشد
-      too_long: بلند است (حداکثر %{count} کاراکتر)
-      too_short: کوتاه است (حداقل %{count} کاراکتر)
-      wrong_length: نااندازه است (باید %{count} کاراکتر باشد)
-      not_a_number: عدد نیست
-      not_an_integer: عدد صحیح نیست
-      greater_than: باید بزرگتر از %{count} باشد
-      greater_than_or_equal_to: باید بزرگتر یا برابر %{count} باشد
-      equal_to: باید برابر %{count} باشد
-      less_than: باید کمتر از %{count} باشد
-      less_than_or_equal_to: باید کمتر یا برابر %{count} باشد
-      odd: باید فرد باشد
-      even: باید زوج باشد
-      already_confirmed: قبلا تایید شده،‌لطفا دوباره وارد شوید
-      expired: منقضی شده، لطفا درخواست جدیدش رو بکنید
   activerecord:
     errors:
       template:

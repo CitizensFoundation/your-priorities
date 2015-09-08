@@ -542,6 +542,7 @@ is:
   4bb709d8718626d39a5dbf2e2589528e: ég mun tilkynna umsjónarmönnum BÍ um brot á notendaskilmálum
     þessum með því að smella á viðeigandi hnapp
   94386c683395a8c1a30a6f405a3a7116: "ég mun aðeins stofna og nota einn notanda á BÍ\r\n"
+  dd1f775e443ff3b9a89270713580a51b: Fyrri
   8070ff490b986cbbe5908dba6688b882: 'Sjálfseignarstofnunin Íbúar, sem rekur Betra
     Ísland lýsir því yfir að:'
   6c3b5928436080f8aba591af541dd5f0: Hún mun gera sitt besta til þess að BÍ sé alltaf
@@ -553,6 +554,9 @@ is:
     vefsíðunni eða að kæra til yfirvalda.
   ccb170b7563ba9e94e021fabfef45771: "Breyta notendaskilmálum þessum. Öllum skráðum
     notendum verður tilkynnt um slíkar breytingar með tölvupósti.\r\n"
+  will_paginate:
+    next_label: Næst &#8594;
+    previous_label: '&#8592; Fyrri'
   7a8dd7f3470646c08ce4a384ba67f55c: Búðu til þinn eigin Betra Ísland vef
   134c5437738d0c8ae122af946c76a4d4: Við trúum því að bætt lýðræði sé vegur að meiri
     jöfnuði. Netið býður upp á frábæra möguleika fyrir endurbætur á lýðræði.
@@ -575,10 +579,6 @@ is:
   views:
     pagination:
       next: Næst &rsaquo;
-  will_paginate:
-    next_label: Næst &#8594;
-    previous_label: '&#8592; Fyrri'
-  dd1f775e443ff3b9a89270713580a51b: Fyrri
   1b87a6c3fadc9180743cb5b660b76f2b: Af hverju Betra Ísland?
   353ff40317d8e32ff7f5b42f0b398ddf: Við unnum European e-Democracy Awards 2011 og
     mörg verðlaun á íslandi.

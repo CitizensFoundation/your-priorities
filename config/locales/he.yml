@@ -1,50 +1,5 @@
 ---
 he:
-  datetime:
-    prompts:
-      day: יום
-      hour: שעה
-      year: שנה
-      month: חודש
-      minute: דקה
-      second: שניות
-    distance_in_words:
-      half_a_minute: חצי דקה
-      less_than_x_seconds:
-        zero: פחות משניה אחת
-        one: פחות משניה אחת
-        other: פחות מ- %{count} שניות
-      x_seconds:
-        one: שניה אחת
-        other: '%{count} שניות'
-      less_than_x_minutes:
-        zero: פחות מדקה אחת
-        one: פחות מדקה אחת
-        other: פחות מ- %{count} דקות
-      x_minutes:
-        one: דקה אחת
-        other: '%{count} דקות'
-      about_x_hours:
-        one: בערך שעה אחת
-        other: בערך %{count} שעות
-      x_days:
-        one: יום אחד
-        other: '%{count} ימים'
-      about_x_months:
-        one: בערך חודש אחד
-        other: בערך %{count} חודשים
-      x_months:
-        one: חודש אחד
-        other: '%{count} חודשים'
-      about_x_years:
-        one: בערך שנה אחת
-        other: בערך %{count} שנים
-      over_x_years:
-        one: מעל שנה אחת
-        other: מעל %{count} שנים
-      almost_x_years:
-        one: כמעט שנה
-        other: כמעט %{count} שנים
   date:
     formats:
       default: '%Y-%m-%d'
@@ -151,6 +106,51 @@ he:
           billion: מיליארד
           trillion: טריליון
           quadrillion: קודריליון
+  datetime:
+    distance_in_words:
+      half_a_minute: חצי דקה
+      less_than_x_seconds:
+        zero: פחות משניה אחת
+        one: פחות משניה אחת
+        other: פחות מ- %{count} שניות
+      x_seconds:
+        one: שניה אחת
+        other: '%{count} שניות'
+      less_than_x_minutes:
+        zero: פחות מדקה אחת
+        one: פחות מדקה אחת
+        other: פחות מ- %{count} דקות
+      x_minutes:
+        one: דקה אחת
+        other: '%{count} דקות'
+      about_x_hours:
+        one: בערך שעה אחת
+        other: בערך %{count} שעות
+      x_days:
+        one: יום אחד
+        other: '%{count} ימים'
+      about_x_months:
+        one: בערך חודש אחד
+        other: בערך %{count} חודשים
+      x_months:
+        one: חודש אחד
+        other: '%{count} חודשים'
+      about_x_years:
+        one: בערך שנה אחת
+        other: בערך %{count} שנים
+      over_x_years:
+        one: מעל שנה אחת
+        other: מעל %{count} שנים
+      almost_x_years:
+        one: כמעט שנה
+        other: כמעט %{count} שנים
+    prompts:
+      year: שנה
+      month: חודש
+      day: יום
+      hour: שעה
+      minute: דקה
+      second: שניות
   helpers:
     select:
       prompt: נא לבחור

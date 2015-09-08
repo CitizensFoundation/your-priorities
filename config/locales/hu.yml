@@ -1,5 +1,6 @@
 ---
 hu:
+  002d4fac39a17aaa96c1a79a1a710edb: Kereskedelmi email
   1d10d0c01b3469bcb594ade393639ed0: Ez a felhasználói fiók törölve lett
   13b5bfe96f3e2fe411c9f66f4a582adf: -ben
   43e00d10903ec90c9f2c523a901df552: '%{user_name} ennyit keresett: %{capital}%{currency_short_name},
@@ -23,7 +24,6 @@ hu:
   0ef9a6968cfe92f7bde817483fb5d0cf: Ellenvélemény
   1bd14216408d94261ca743907c692bb1: Adminisztrátoroknak
   69d5371acdea4abbaa879e7faa7e5dd2: A feliratkozás hamarosan érvénybe lép
-  665255de10a45ae3e1c0e81b515b55ca: '%{count} megbeszélés'
   1c3a03e7bf74d0ee69de0311447bb613: Az ötlet %{idea_name}, amit támogatsz, a(z) %{position}
     helyen áll a(z) %{category} kategóriában.
   1dabb7608cdd6762b2f3b96905d7259f: Biztonsági kód (CVV)
@@ -33,7 +33,6 @@ hu:
   64e73aa014f92f7f5d7ca38c24cbf801: '%{capital}%{currency_short_name}t kerestél, mert
     az ellenzők hasznosnak találták: %{point_name}'
   cc83a5678878f2fb8d453b555c037920: 'Megszólításod ezen a site-on:'
-  002d4fac39a17aaa96c1a79a1a710edb: Kereskedelmi email
   010818f282f6ca53d86d4f988f83744f: Beállítások mentése
   021da1b20f73dc252361a54d80497ef3: Rangsorolás
   041092eb300332772e2d58af61c2865e: '%{user_name} erre az ötletre szavazott: %{new_idea_name}
@@ -80,6 +79,7 @@ hu:
   f5359d1dd07def542aa9b0577fb27068: Státusz frissítése
   f7c27fe5419c0751885d8a0cc6f0e75a: (%{count}) vita
   f2a6c498fb90ee345d997f888fce3b18: Törlés
+  665255de10a45ae3e1c0e81b515b55ca: '%{count} megbeszélés'
   15c9367c3506280cfaf98cb065799bf4: Ötleteid periodikus frissítései
   f1527dd1b427ae2c86da111329190087: Amikor egy ötletet újragondolnak
   ee70f3ca5d66eac5f6fc8616da483f4d: Nincs megbeszélés
@@ -176,6 +176,7 @@ hu:
   b59b8af25c9a82643008ca5defb21a2f: '%{count} ellenző találta hasznosnak , a többi
     %{other_count} nem.'
   bafd7322c6e97d25b6299b5d6fe8920b: Nem
+  14ebb9f1b4c7c2c610758dee2d1484cd: Üzenet érvekért
   bb73e7a168c9158086404aaac16e5de5: A díjnyertes %{br_link} website ugyanazt az Open
     Source szoftvert használja, mint amin a Your Priorities fut.
   c02f1bde8d33b74d66c9440588e83efb: '%{count} ember találta hasznosnak.'
@@ -238,7 +239,6 @@ hu:
     amiért törölted a(z) %{point_name}-t, ami mások szerint hasznos volt.'
   112d0772a6283ba7eb021fe34d30bd0f: '%{user_name} elveszített %{capital}%{currency_short_name}-t,
     mert az ellenzők a(z) %{point_name}-t haszontalannak találták.'
-  14ebb9f1b4c7c2c610758dee2d1484cd: Üzenet érvekért
   d81b16748b9d6ff6622694e818deeb18: Nem, ezzel az érvvel elvetem ezt az ötletet.
   e3b9285916bcd1b9724349049521ac90: megjegyzést fűzött
   fb00406d232c6c2e02cdd9560bd27b68: 'Támogató érv: %{idea_name}:'
@@ -399,7 +399,6 @@ hu:
     ma!
   5ebb3db6c8a6613f79191107b296a01c: 'Az ötleted állapota <a href=''%{idea_link}''>%{idea_name}</a>
     %{support_or_endorse_text} megváltozott itt:  %{instance_name}.'
-  37fc5aed92a40b16dafd17cee72e3154: Legjobb ötletek
   4b1b4dc8cf38b3c64b1d657da8f5ac8c: Jelentés
   4fb7286b0fe19a6cf2569e4115e88baa: kérjük 10 karakternél többet írjon
   5a9d18bb87ff12835dc844883c5c3ebe: változások
@@ -424,6 +423,7 @@ hu:
     previous_label: '&#8592; Előző'
   f504eb1cc2305a863cc0cf23428a36f8: Megosztó ötletek
   0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} megjegyzést fűzött ide: %{comment_name}'
+  37fc5aed92a40b16dafd17cee72e3154: Legjobb ötletek
   42bd4c0819c498d1c1ab622de74d6f82: támogatva
   4607ccb71469675944516398e717479c: Kérjük fogadja el a felhasználási feltételeket
   833c90a077a2beda3b6cd000f3fe5c29: Véletlenszerű ötletek

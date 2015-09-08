@@ -2,7 +2,6 @@
 sw:
   errors:
     messages:
-      greater_than: z/iwe zaidi ya {{count}}
       inclusion: haipo kwenye orodha
       exclusion: haiwezi kutumika
       invalid: haifai
@@ -15,6 +14,7 @@ sw:
       wrong_length: idadi ya herufi hazilingani (inatakiwa %{count})
       not_a_number: inaruhusiwa namba tu
       not_an_integer: inaruhusiwa namba tu
+      greater_than: z/iwe zaidi ya {{count}}
       greater_than_or_equal_to: z/iwe sawa ama zaidi ya {{count}}
       equal_to: z/iwe sawa na {{count}}
       less_than: z/isizidi {{count}}

@@ -1,8 +1,8 @@
 ---
 sl:
-  64663f4646781c9c0110838b905daa23: Naključno
-  53127d8c496db03d848a289010087409: Najbolje ocenjene
-  37fc5aed92a40b16dafd17cee72e3154: Najboljši predlogi
+  64663f4646781c9c0110838b905daa23: Naključni predlogi
+  53127d8c496db03d848a289010087409: Najbolj podprti predlogi
+  37fc5aed92a40b16dafd17cee72e3154: Najpopularnejši predlogi
   833c90a077a2beda3b6cd000f3fe5c29: Naključni predlogi
   f504eb1cc2305a863cc0cf23428a36f8: Kontroverzni predlogi
   99b0a9110ebd2fa6dcd57f7daa5b5d42: pogoji uporabe
@@ -35,7 +35,8 @@ sl:
   041092eb300332772e2d58af61c2865e: Uporabnik %{user_name} se je opredelil za %{new_idea_name}
     namesto %{idea_name}
   047fe665bd2cea51e221d371d1e4c698: Spreminjanje nastavitev za  %{user_name}
-  b5a7adde1af5c87d7fd797b6245c2a39: opis
+  b5a7adde1af5c87d7fd797b6245c2a39: Opis
+  0ef9a6968cfe92f7bde817483fb5d0cf: Nasprotovanja
   devise:
     invitations:
       send_instructions: Vabilo je bilo poslano na %{email}.
@@ -103,8 +104,6 @@ sl:
   1d10d0c01b3469bcb594ade393639ed0: Ta uporabnik je izbrisal njegov račun
   af1b98adf7f686b84cd0b443e022b7a0: Kategorije
   ae43f4cff7204d28b83fe67710e9377d: Debata na  %{tag_name}
-  3687b1daa635064075afa2b6417880d0: Najbolj brano
-  2bd2b8e30995d2dfe1f43a4ea30fc3fc: Najbolj debatirano
   c772367d0682d61254cebb1dcfd44c93: Debate na  %{idea_name}
   49c413c7e9fbe1aee3281a29d2d0dd9c: Zadnji komentarji na  %{idea_name}
   dee5db0dd869d6d2c03539fab2c874ad: Nova ideja na  %{sub_instance_name}
@@ -124,29 +123,27 @@ sl:
   1b92838e756182fda710cfd58819f671: Točke za
   8df9c04d95e71c0bb899ac7a5af8cdfb: Dodaj argument  %{idea_name}
   16d39f7e2b0ed1ee441421cc0f86a724: Argument je bil izbrisan
-  35408f2e9ccf595f1765bd8e56a2f571: Najboljši argumenti pri predlogu  %{idea_name}
+  2bd2b8e30995d2dfe1f43a4ea30fc3fc: Najbolj debatirano
   ab1e45da9c565570d4986f268329f2d1: Zadnje aktivnosti za točke na %{instance_name}
-  ae7950ddfcef416ea6840228d63eba13: nič novih argumentov
   c29196003ef3c4f020130aab1c63d4ea: '%{count} argument/-ov'
   e945975666947d8744dbdb80d2e5a750: '%{user_name} argumenti na  %{instance_name}'
   0863f095cbdbbe6ce5a8aac979766a83: Maksimalna dolžina naziva predloga
-  6c60eec8c5809428787d3d817d389404: Najboljši predlogi zadnjih 30 dni
-  8de16e7a08998e0e60d27d6b4d441379: Najboljši predlogi zadnjih 24 ur
+  35408f2e9ccf595f1765bd8e56a2f571: Najboljši argumenti pri predlogu  %{idea_name}
+  3687b1daa635064075afa2b6417880d0: Najbolj brani predlogi
   e11d937a5185a2361123ad5222df5f5f: Naključni  %{tag_name} predlogi
   0f471a2597c99d0f4c81db859b0205f3: Projekti, ki si jih predlagal na %{sub_instance_name}
-  7dd982d0948637b4ae83f2804bd489ca: Zakaj naj bi ljudje podprli tvojo idejo?
+  ae7950ddfcef416ea6840228d63eba13: ni novih argumentov
+  6c60eec8c5809428787d3d817d389404: Najboljši predlogi zadnjih 30 dni
+  8de16e7a08998e0e60d27d6b4d441379: Najboljši predlogi zadnjih 24 ur
   2e6c2d96aaacc8ef06d0ea12237cfc2e: Vsa polja so zahtevana
   e1e583ed208b1fbecec8b65dc272a098: Je ta ideja od %{user_name} osebnega napada ali
     kršitve pravil?
   0e7a1834a7b4fba66d0f329cfab14cbb: Zadnji obisk %{time_ago}
   18ef3f4348075aca1646941639d610dd: Ideja  %{position}
-  77c8b9f38491385d59ddc33d29e751fe: 'Vir:'
   f4ec5f57bd4d31b803312d873be40da9: Sprememba
-  0ef9a6968cfe92f7bde817483fb5d0cf: Nasprotovanja
   0f9b5eff8d1d07e6ce3a8fe2697a76f7: Pridružen  %{time_ago}
   16765596b57782e7012aee0ac86ff5ff: '%{count} zaznamki'
   da08b4d4be989f5276a7aab9899ab34c: '%{count} ugovorov'
-  586f9d3669a73e12a8caed7a7d76288e: Naredi dober in opisni naslov za tvojo idejo
   cde1d24d4d3427be7222dbe6a518f6da: Nič točk do sedaj.
   a22a31345901fab0939eb50823c23b88: Dokončan status
   a0bc24991a11d8e4dcf00ba0c337f932: Datum novega statuta
@@ -194,7 +191,7 @@ sl:
   8ac6e46f207f4d2a928523d417663553: Dobrodošel na tvoji  %{instance_name}. Prosim,
     dodaj tvojo prvo idejo
   9977ab924c89e6c98b1cf1595354ada3: Zadnje aktivnosti
-  7fbd71fc25b275b7d095a29c72b1a821: Razloži svoj vidik.
+  77c8b9f38491385d59ddc33d29e751fe: 'Vir:'
   fa17217f817aabfc79196a3adc390442: Vključi povezavo do spletne strani
   fc0d25fc5ca93bbd8def3aaf54f58f05: Je ta komentar od  %{user_name} osebni napad ali
     kršitev pravil?
@@ -219,6 +216,8 @@ sl:
   a99708ea75c0cbbd2d4e14170d9ba0db: '%{count} predlogov'
   9f0bd6e1402d9febebd0903b7d7cd6d5: Uporabniki komentirajo
   ff0cfd359a1d96d597133a4341a6a7e4: Predlagaj projekt
+  586f9d3669a73e12a8caed7a7d76288e: Naziv projekta
+  7fbd71fc25b275b7d095a29c72b1a821: Razloži svoj vidik.
   2a3cd5946cfd317eb99c3d32e35e2d4c: Točka
   0be8406951cdfda82f00f79328cf4efc: Komentar
   13348442cc6a27032d2b4aa28b75a5d3: Išči
@@ -245,8 +244,6 @@ sl:
     Postavi v %{category} kategorijo.
   59d7434481f250db2c48858375499a31: Najnovejši argumenti
   79281fb7fd5e0cbea9ca524b779e89ff: Hvala, da ste prispevali svoj argument
-  cdd559fd8bda4b2bdf1cdbca181b38b9: Razloži svoj predlog v nekaj odstavkih in poskusi
-    jasno ujeti njegovo bistvo.
   d7241b155164fdbc560602f924393149: Oddaj predlog in argument
   fa5f71bf560f0e4b09f31b875de45ea7: Pravkar si pridobil  %{points} skupnostne točke
     na %{instance_name}
@@ -262,7 +259,6 @@ sl:
   1747df8919f292530bf55fe439bf159a: '%{count} opozorilo'
   7c326855728927b06f5b11e92cefdae8: Prosim, pomagaj izboljšati in proizvesti več prevodov
   8f7f4c1ce7a4f933663d10543562b096: O
-  2f64c030f4bec3e2c21e78506cc78f63: Najboljših 25 idej na  %{instance_name}
   a39abc0cae4f06f92f6ee2e5601dbf7f: Admin nastavitve
   f9aae5fda8d810a29f12d1e61b4ab25f: Uporabniki
   c33e404a441c6ba9648f88af3c68a1ca: Statistike
@@ -271,12 +267,11 @@ sl:
   8bf906833cc7aea8084f552217ed9c1d: Prekinjen
   8cf04a9734132302f96da8e113e80ce5: Domov
   d46ef9e7211d041671cdbe6c3d884884: Projekti
+  2f64c030f4bec3e2c21e78506cc78f63: Najboljših 25 idej na  %{instance_name}
   1dabb7608cdd6762b2f3b96905d7259f: Varnostna koda (CVV)
-  e7c3b88bf30f862f48fcefde6490b946: dodan %{time_ago}
+  08bd40c7543007ad06e4fce31618f6ec: Moj profil
   ea847c5f7a1d9e08184bf00b1722fed9: '%{amount} na mesec'
-  800e4dd8dfc264160c0b52347f7f9d4c: Izbriši svoj račun
   5fe6005bf6e415c950c011fb65f12b8f: Izbrisano
-  f1e2a549f8a0a20b572b176455dba9b9: PREDLOŽI SVOJO IDEJO
   20db0bfeecd8fe60533206a2b5e9891a: Prvo ime
   20b86b18475850202a63d9550071b782: (Nikoli ne deli brez tvojega dovoljenja)
   cc83a5678878f2fb8d453b555c037920: Kako bi morali biti opredeljeni na strani?
@@ -312,6 +307,7 @@ sl:
   388e31e2da00cdad1159f0fecb186fff: Brez sodnega naloga ne bomo razkrivali drugih
     podatkov o uporabnikih, ki niso javno dostopne na tej spletni strani.
   0bef7cd06cee6711378b85d90ce11527: Ime imetnika kartice
+  f1e2a549f8a0a20b572b176455dba9b9: PREDLAGAJ PROJEKT
   5e45d0479ee365f79d004b2f4ecb1f27: dodan  %{point_name} na  %{idea_name}
   68400031f36198737f197bb1bfc74bef: Suspendiraj člana
   1cab6f0a48459aaac4e3116773de5781: Ne bom objavljal reklam ali spamov na tej spletni
@@ -325,6 +321,8 @@ sl:
   bbfeddc378c253548b2935638c612f96: '%{user_name} glasoval za  %{idea_name}'
   ee70f3ca5d66eac5f6fc8616da483f4d: Ni razprav.
   26b2c865adf221f0d43b35cb642e775a: Puščeni %{count} komentarji na %{discussion_name}
+  e7c3b88bf30f862f48fcefde6490b946: dodan %{time_ago}
+  800e4dd8dfc264160c0b52347f7f9d4c: Izbriši svoj račun
   fffb47b03232ded9ecc86fa01eeaa695: Točke proti
   c37ad8c5cf363431fbaa23a52ef949a4: s strani  %{author_sentence}
   7b67f24364e4e88bcd95c3237d3fa318: '%{author_sentence}'
@@ -340,10 +338,6 @@ sl:
   bafd7322c6e97d25b6299b5d6fe8920b: Ne
   7b2bfb819c88eb92abda770f0ebeacac: To ni koristno
   0680c0f4acc215c7c75e5dafe9384e7c: Dodaj link do zunanje strani
-  81419da2582f8c15ad1e3d2d732e1fb2: Zakaj naj bi ljudje podprli to idejo?
-  28316f611efd0ad924f6a9db26bf884c: Močno stališče je pomembno za prepričati druge
-    ljudi, da podprejo ali nasprotujejo ideji. Razloži, zakaj naj bi ljudje podprli
-    to idejo, kaj jo naredi pomembno ali kaj ne.
   40aea558a7a3abc7cd9de2d41093eb53: Je to stališče od  %{user_name} osebni napad ali
     kršitev pravil?
   175fd8a23b58b6b7ce1958698686d284: Koristno?
@@ -355,9 +349,6 @@ sl:
   c4b9c0332472140a37c9a86354398a64: Nič več nimajo  %{point_name} nekoristno.
   0f5d49facdd47101ec961e13882f3543: Oops, tukaj je problem.
   fb00406d232c6c2e02cdd9560bd27b68: 'Stališče podpira  %{idea_name}:'
-  a7761bd5cba69c6727e64f3df1f2d680: Močno stališče je pomembno za prepričati druge
-    ljudi, da podprejo ali nasprotujejo tvoji ideji. Razloži, zakaj naj bi ljudje
-    glasovali za to idejo, kaj jo naredi pomembno ali nepomembno.
   fa28923bc27f10e4b3a892e1e71fd6bb: '%{count} podporniki jo imajo za <i>ne</i> koristno.'
   f569261213434b145882360cd8b58459: '%{count} nasprotniki jo imajo za koristno.'
   4938ac136fbb96f4b7dc5dbc9f22b3d8: '%{count} nasprotniki jo imajo za <i>ne</i>  koristno.'
@@ -374,7 +365,6 @@ sl:
   a1540685fb3fa19acb0d811d1e5ccf6a: '%{sub_instance_name} je pripravljen za  %{instance_name}'
   fa529590e5e535db935b0dd7f91f2d9a: Bil je problem s tvojo kreditno kartico - Prosim,
     poskusi ponovno.
-  76f0402b36ad06722396490cf8379c11: Račun je bil uspešno ustvarjen.
   5df2acc8c67fdc6d6dc03791ac5f7a5e: Pošlji povabilo.
   a3fb1c5ccb468c7790e20790c21522da: Posodobi vpis
   887863ea1914f36a1ca48fe8e12bc153: Ustvari vpis
@@ -386,6 +376,11 @@ sl:
     na %{instance_name}
   d81b16748b9d6ff6622694e818deeb18: Ne, ta argument nasprotuje temu predlogu
   a4d3b161ce1309df1c4e25df28694b7b: Predlagaj
+  76f0402b36ad06722396490cf8379c11: Vaš profil je bil uspešno ustvarjen.
+  81419da2582f8c15ad1e3d2d732e1fb2: Zakaj naj bi ljudje podprli to idejo?
+  28316f611efd0ad924f6a9db26bf884c: Močno stališče je pomembno za prepričati druge
+    ljudi, da podprejo ali nasprotujejo ideji. Razloži, zakaj naj bi ljudje podprli
+    to idejo, kaj jo naredi pomembno ali kaj ne.
   90526e2fe4cae30fbd2260aec2377d03: Mesec izteka
   5e20d67526bbff2f9d7a350d7e00fc4d: Leto izteka
   dfa592421ec2584a960f077610eb19bd: Naroči sedaj
@@ -394,13 +389,11 @@ sl:
     sedaj.
   6058bc368cf5ce6338c25a2def495359: Naročilo lahko odpoveš kadarkoli.
   99de1173596bd03c47e19254f981429a: Naredi Admina
-  d77a0f9cd14e513bb78bccbf59402717: Uraden status
   12cc3f3e76f44bf82cfd0a05648f71d3: Če ste neprofitna organizacija prosim razmislite
     o uporabi  %{yrpri_link} storitve s strani našega neprofitnega partnerja %{cf_link}
     na Islandiji.
   95689f6436d242f4ea19443c83c05ab2: Odstrani Admina
   8e52de0d4b03d5fe87dc88da09616c7f: tukaj.
-  45a098e1ebc679f8fd971e9e60d2b445: Zakaj tvoje prioritete?
   96c3b987a5b5008df9b06d9d95092634: Tvoje Prioritete so močna spletna aplikacija eDemokracije
     s strani neprofitne Citizens Foundation z namenom pomagati skupini ljudi govoriti
     en glas.
@@ -417,9 +410,9 @@ sl:
   6f014bd180caa0bfd9d498a6621f22d2: Email registracija
   79d0c6669f615687e6a265f73e989d5d: Strinjam se
   2a9769b98044b4676d831e21bd5fad9e: kar nasprotuje
-  d0d2aef3bbda7f1ae365a9a2a9d5bb10: Nazadnje dodan  (%{count})
   2ee314288da3fc27b8fa799681876d79: Uradno uspešen (%{count})
   733d3bd148e431d4a7de23f4fd6b3a7b: Uradno v teku (%{count})
+  d77a0f9cd14e513bb78bccbf59402717: Uraden status
   d78ed35383108fb6c04c16d0a11b20fe: Aktivnosti
   41c8b4b08008d4ec0c395365d0cf6ae8: Kontroverzen
   5a95a425f74314a96f13a2f136992178: Deli
@@ -430,9 +423,7 @@ sl:
   1a93d30b23722eece4aa04edfcfef57b: Nobenih idej še. Dodaj prvo idejo sedaj.
   9f04ae7a43e13485e9b6de9aed6b2a61: Ideja organizirana s strani kategorij.
   6fc38a2e6ce34be4acf2a756816f7f0f: Tvoje Prioritete
-  08bd40c7543007ad06e4fce31618f6ec: Račun
   3a4b8d088c304ae2af8cac88963c8926: Dodaj stališče za ali proti
-  50a941dd2b0b556780498304f6b67c92: Razloži svoje izhodišče
   0f68b904e33d9ac04605aecc958bcf52: Nadaljne informacije
   d72e45be5abf9104bbfd208c11e8732a: Naloži svojo sliko (neobvezno)
   2fdfd506efea08144c0794c32ca8250a: Ustvari račun
@@ -460,12 +451,15 @@ sl:
   6f427138338d1db0109d83cc74c00965: Sedaj imaš  %{points} skupnostnih točk.
   9fd4dc340cdbdabdd25908817052b915: Tvoji argumenti
   b14dd295bfbf8acf7734ca5d37c4977c: Pridobi skupnostne točke s konstruktivno debato.
-  c0661ddef14e63a75779f9f9b63a6c2b: '%{up} argumentov za  %{down}  proti'
+  d0d2aef3bbda7f1ae365a9a2a9d5bb10: Najnovjši predlogi  (%{count})
   fe0954729ebc84a251fbfeb17a801d8b: '%{sp} skupnostne točke'
   78649386bcd37757541e2c6d99968afd: Status predloga  %{idea} je bil spremenjen
   78386ec8f2845742c324a3d7d3e800ff: Uporabniki
   c428492f00d9e51ce05abf306d2ff59b: Uporabniki predlagajo projekte in o njih diskutirajo
     v preprostem, a naprednem debatnem sistemu.
+  c0661ddef14e63a75779f9f9b63a6c2b: Argumenti za (%{up}), argumenti proti (%{down})
+  50a941dd2b0b556780498304f6b67c92: Razloži svoje izhodišče
+  45a098e1ebc679f8fd971e9e60d2b445: Zakaj tvoje prioritete?
   15c9367c3506280cfaf98cb065799bf4: Stalno posodabljanje predlogov
   ade7300e26de3e48a42cc01a4c4d74fa: Mnenje k vašemu predlogu
   f1527dd1b427ae2c86da111329190087: Podano mnenje k predlogu
@@ -514,3 +508,50 @@ sl:
     rise to the top.
   bb73e7a168c9158086404aaac16e5de5: The award winning %{br_link} website uses the
     same Open Source software that runs Your Priorities.
+  365e3d8187f5212085cbd599b430974a: Vaš predlog <a href='%{idea_link}'>%{idea_name}</a>
+    je administrator premestil iz %{from_sub_instance} v %{to_sub_instance} na %{instance_name}.
+  39a3cf4c89d1ffa6eddb8a1ae6a8bae9: Kategorija v kateri je vaš predlog %{idea} je
+    bila spremenjena.
+  4c0d946321563c8bf049de4cc6473281: Kategorija je bila spremenjena.
+  d43686420438e917216d81506320e6f2: Kategorija v kateri je vaš predlog <a href='%{idea_link}'>%{idea_name}</a>
+    je bila spremenjena s strani administratorja iz %{category_from} v %{category_to}
+    na %{instance_name}.
+  2a97751493e0cb66b7ce1d0a0c829df7: Vaš predlog %{idea} je bil premaknjen.
+  26582fa147339efa1e6fc50cc9602f65: Za skupnostno točko morajo vaš argument oceniti
+    kot koristen osebe na obeh polih debate.
+  cdd559fd8bda4b2bdf1cdbca181b38b9: Jasno in razumljivo opišite projekt, ki ga predlagate.
+  7dd982d0948637b4ae83f2804bd489ca: Zelo na kratko povzamite zakaj je projekt za četrt
+    pomemben.
+  a7761bd5cba69c6727e64f3df1f2d680: Podrobneje pojasnite, zakaj ste se odločili, da
+    boste predlagali ta projekt in kako bo doprinesel h kakovostnejšemu bivanjskemu
+    okolju v vaši četrti.
+  d24c13101629be2c79ce5628029e69aa: Opredelite se ZA ali PROTI predlogom in jih tako
+    dodajte na svojo prioritetno listo. Predloge lahko po svoji prioritetni listi
+    premikate z miško in tako spremenite zaporedje.
+  0c082c9ad303a70be82598499aaa1f6e: Uporabnik %{user_name} je dopolnil svoj predlog
+    %{idea_name}
+  747705a1c07ec5d7613502a7d50bf49a: Uporabnik %{user_name} je dopolnil svoj argument
+    %{point_name}
+  c3829f98b9d811ef102006ff00a83881: '%{count} dopolnitev'
+  016e3b623e81108aac0844988d799eff: 'Dopolnitve: %{sentence}'
+  04742c1a5a675be0659d83d65cb79661: Predlogi, ki pridobivajo podporo
+  233b006364b1fcfc3b6e2928a20e1545: Predlogi, ki izgubljajo podporo
+  dfeb460fa23011a1f3b327fa61abf8be: Argumenti, ki podpirajo predlog %{idea_name}
+  a2d5e7a9d03b49d0639ab0a75a59d2c2: Najboljši argumenti
+  d984e98c3eceb8bc31b8ca398758f248: Pred kratkim dopolnjeni argumenti
+  2ed154e6cbb75329947fe1929b784059: Argumenti pri vaših predlogiv
+  7454f8acc4b83d16a1bdf39b70f25be2: Najzgovornejši uporabnik na %{sub_instance_name}
+  86e570b9bac3edce3c2cdcdf17b8cab0: Kupite oglas za predlog %{idea_name}
+  d7391c69ff4c78e653e46ce0f1004fe7: Programska oprema %{yrpri_link}, ki poganja to
+    aplikacijo je odprtokodna in jo je izdelala neprofitna organizacija %{citizens_foundation_link},
+    katera razvija to programsko opremo od leta 2008. Citizens Foundation ime prostore
+    v Londonu in Reykjaviku.
+  91b61a309ee7cf95e351902083824e57: 'Aktivnost je vplivala na število vaših skupnostnih
+    točk %{instance_name}:'
+  ab12c7f49bc282b332c3130adf3ad7b2: Vaš status je bil posodobljen %{status_text}
+  7df1f6368d01f63ab23548af8707a929: Vsi projekti, ki so uradno izvedeni (%{count})
+  c2dbe8cc5db8c81cc68981058975d0ba: Vsi uradno neuspešni projekti (%{count})
+  5ebb3db6c8a6613f79191107b296a01c: Status projektnega predloga <a href='%{idea_link}'>%{idea_name}</a>
+    %{support_or_endorse_text} se je spremenil na %{instance_name}.
+  a7bd5cda0116d79b5b671617e51d2a3c: Predlogi, ki hitro pridobivajo podporo
+  37528894f18a085f9a078496a68eaaa8: Predlogi, ki hitro pridobivajo podporo
