@@ -1,6 +1,6 @@
 ---
 hu:
-  002d4fac39a17aaa96c1a79a1a710edb: Kereskedelmi email
+  6e1c8fa898c975c6e4160ff502915969: Szociális pontok
   1d10d0c01b3469bcb594ade393639ed0: Ez a felhasználói fiók törölve lett
   13b5bfe96f3e2fe411c9f66f4a582adf: -ben
   43e00d10903ec90c9f2c523a901df552: '%{user_name} ennyit keresett: %{capital}%{currency_short_name},
@@ -33,6 +33,7 @@ hu:
   64e73aa014f92f7f5d7ca38c24cbf801: '%{capital}%{currency_short_name}t kerestél, mert
     az ellenzők hasznosnak találták: %{point_name}'
   cc83a5678878f2fb8d453b555c037920: 'Megszólításod ezen a site-on:'
+  002d4fac39a17aaa96c1a79a1a710edb: Kereskedelmi email
   010818f282f6ca53d86d4f988f83744f: Beállítások mentése
   021da1b20f73dc252361a54d80497ef3: Rangsorolás
   041092eb300332772e2d58af61c2865e: '%{user_name} erre az ötletre szavazott: %{new_idea_name}
@@ -176,7 +177,6 @@ hu:
   b59b8af25c9a82643008ca5defb21a2f: '%{count} ellenző találta hasznosnak , a többi
     %{other_count} nem.'
   bafd7322c6e97d25b6299b5d6fe8920b: Nem
-  14ebb9f1b4c7c2c610758dee2d1484cd: Üzenet érvekért
   bb73e7a168c9158086404aaac16e5de5: A díjnyertes %{br_link} website ugyanazt az Open
     Source szoftvert használja, mint amin a Your Priorities fut.
   c02f1bde8d33b74d66c9440588e83efb: '%{count} ember találta hasznosnak.'
@@ -235,10 +235,12 @@ hu:
   5b2b53624bb2f80eb21d312c88655ef3: 'Megosztott egy közleményt, itt: %{discussion_name}'
   5e45d0479ee365f79d004b2f4ecb1f27: '%{point_name} hozzádva, ehhez: %{idea_name}'
   a534ed26c1d745e8e15e33c1dad34773: Az érv hozzáadva %{time_ago}
+  eac7fd5959172d5c9e62570d216b5dba: '%{point_name} érv körüli aktivitás'
   10d27c2105cbbf73b6cf106658751baa: '%{capital}%{currency_short_name} elveszítve,
     amiért törölted a(z) %{point_name}-t, ami mások szerint hasznos volt.'
   112d0772a6283ba7eb021fe34d30bd0f: '%{user_name} elveszített %{capital}%{currency_short_name}-t,
     mert az ellenzők a(z) %{point_name}-t haszontalannak találták.'
+  14ebb9f1b4c7c2c610758dee2d1484cd: Üzenet érvekért
   d81b16748b9d6ff6622694e818deeb18: Nem, ezzel az érvvel elvetem ezt az ötletet.
   e3b9285916bcd1b9724349049521ac90: megjegyzést fűzött
   fb00406d232c6c2e02cdd9560bd27b68: 'Támogató érv: %{idea_name}:'
@@ -282,8 +284,6 @@ hu:
   85501283f42eb84cc04b84bce8d42044: ehhez nincs elég szociális pontod.
   66a2451380176bceabb8194cd8163385: <p>Érved hozzáadásával élőbbé teheted a vitát.</p>
   6c71c67b7ce3356ddcd0010624334b0d: 'Az érv neve erre módosult: %{point_name}'
-  6e1c8fa898c975c6e4160ff502915969: Szociális pontok
-  eac7fd5959172d5c9e62570d216b5dba: '%{point_name} érv körüli aktivitás'
   eb87bea3f25ec72701b9e6e9f3d7a302: '%{capital}%{currency_short_name} elveszett, mert
     az ellenzől szerint a(z) %{point_name} haszontalan'
   ed601ff305a54f999a8e67e99258738e: Új érv

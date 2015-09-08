@@ -36,7 +36,7 @@ sl:
     namesto %{idea_name}
   047fe665bd2cea51e221d371d1e4c698: Spreminjanje nastavitev za  %{user_name}
   b5a7adde1af5c87d7fd797b6245c2a39: Opis
-  0ef9a6968cfe92f7bde817483fb5d0cf: Nasprotovanja
+  f4ec5f57bd4d31b803312d873be40da9: Sprememba
   devise:
     invitations:
       send_instructions: Vabilo je bilo poslano na %{email}.
@@ -140,7 +140,7 @@ sl:
     kršitve pravil?
   0e7a1834a7b4fba66d0f329cfab14cbb: Zadnji obisk %{time_ago}
   18ef3f4348075aca1646941639d610dd: Ideja  %{position}
-  f4ec5f57bd4d31b803312d873be40da9: Sprememba
+  0ef9a6968cfe92f7bde817483fb5d0cf: Nasprotovanja
   0f9b5eff8d1d07e6ce3a8fe2697a76f7: Pridružen  %{time_ago}
   16765596b57782e7012aee0ac86ff5ff: '%{count} zaznamki'
   da08b4d4be989f5276a7aab9899ab34c: '%{count} ugovorov'
@@ -269,7 +269,6 @@ sl:
   d46ef9e7211d041671cdbe6c3d884884: Projekti
   2f64c030f4bec3e2c21e78506cc78f63: Najboljših 25 idej na  %{instance_name}
   1dabb7608cdd6762b2f3b96905d7259f: Varnostna koda (CVV)
-  08bd40c7543007ad06e4fce31618f6ec: Moj profil
   ea847c5f7a1d9e08184bf00b1722fed9: '%{amount} na mesec'
   5fe6005bf6e415c950c011fb65f12b8f: Izbrisano
   20db0bfeecd8fe60533206a2b5e9891a: Prvo ime
@@ -457,6 +456,7 @@ sl:
   78386ec8f2845742c324a3d7d3e800ff: Uporabniki
   c428492f00d9e51ce05abf306d2ff59b: Uporabniki predlagajo projekte in o njih diskutirajo
     v preprostem, a naprednem debatnem sistemu.
+  08bd40c7543007ad06e4fce31618f6ec: Moj profil
   c0661ddef14e63a75779f9f9b63a6c2b: Argumenti za (%{up}), argumenti proti (%{down})
   50a941dd2b0b556780498304f6b67c92: Razloži svoje izhodišče
   45a098e1ebc679f8fd971e9e60d2b445: Zakaj tvoje prioritete?
@@ -508,6 +508,7 @@ sl:
     rise to the top.
   bb73e7a168c9158086404aaac16e5de5: The award winning %{br_link} website uses the
     same Open Source software that runs Your Priorities.
+  a7bd5cda0116d79b5b671617e51d2a3c: Predlogi, ki hitro pridobivajo podporo
   365e3d8187f5212085cbd599b430974a: Vaš predlog <a href='%{idea_link}'>%{idea_name}</a>
     je administrator premestil iz %{from_sub_instance} v %{to_sub_instance} na %{instance_name}.
   39a3cf4c89d1ffa6eddb8a1ae6a8bae9: Kategorija v kateri je vaš predlog %{idea} je
@@ -553,5 +554,4 @@ sl:
   c2dbe8cc5db8c81cc68981058975d0ba: Vsi uradno neuspešni projekti (%{count})
   5ebb3db6c8a6613f79191107b296a01c: Status projektnega predloga <a href='%{idea_link}'>%{idea_name}</a>
     %{support_or_endorse_text} se je spremenil na %{instance_name}.
-  a7bd5cda0116d79b5b671617e51d2a3c: Predlogi, ki hitro pridobivajo podporo
   37528894f18a085f9a078496a68eaaa8: Predlogi, ki hitro pridobivajo podporo

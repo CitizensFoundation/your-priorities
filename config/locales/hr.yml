@@ -90,9 +90,7 @@ hr:
   ffa99d6b0c14720536fcc647c7197f17: Da, ovo mišljenje podržava ovu ideju
   94b5f4e0fac5af21af60bb77dc58cb71: Podržava %{idea_name}
   c37ad8c5cf363431fbaa23a52ef949a4: autorstvo %{author_sentence}
-  e7c3b88bf30f862f48fcefde6490b946: dodano %{time_ago}
   7b67f24364e4e88bcd95c3237d3fa318: '%{author_sentence}'
-  a534ed26c1d745e8e15e33c1dad34773: Mišljenje dodano %{time_ago}
   84dbe3c76c1a252adb30e979941ec55b: 'Mišljenje podržava %{idea_name} i %{other_idea_name}:'
   fb00406d232c6c2e02cdd9560bd27b68: 'Mišljenje podržava %{idea_name}:'
   973f835f620ba29a6ebda4e5200dd799: 'Mišljenje se suprotstavlja %{idea_name}:'
@@ -111,6 +109,8 @@ hr:
   3c5db2447415c261cf024be85458ce35: Korisno je za raspravu
   45d02053b56e67472d6aa112e633b2c2: Dodaj mišljenje
   50a941dd2b0b556780498304f6b67c92: Objasni mišljenje
+  a534ed26c1d745e8e15e33c1dad34773: Mišljenje objavljeno %{time_ago}
+  e7c3b88bf30f862f48fcefde6490b946: objavljeno %{time_ago}
   will_paginate:
     previous_label: '&#8592; Prethodno'
     next_label: Sljedeće &#8594;
@@ -129,20 +129,18 @@ hr:
     za %{count} novih pratitelja'
   52d2acef5f9e5e2d6a06c4958f774419: Nema rezultata pretrage
   026688f148cfe681359ec62731411752: Hvala ti za uplatu na %{instance_name}
+  939d09ea0c18215ca9032ef913d82567: Nove ideje
   8cf04a9734132302f96da8e113e80ce5: Početna
   d0a6b7521f4f95c2b15ab65294c3a1fe: Poruka korisnicima na početnoj stranici
   fbaedde498cdead4f2780217646e9ba1: ZA
   c4e0e4e3118472beeb2ae75827450f1f: PROTIV
-  0f471a2597c99d0f4c81db859b0205f3: Prijedlozi koje ste Vi predložili u %{sub_instance_name}
-  2d08badc985572e0bcf7456e0c6c4e08: Prijedlozi koje biste trebali razmotriti
-  939d09ea0c18215ca9032ef913d82567: Novi prijedlozi
-  9f04ae7a43e13485e9b6de9aed6b2a61: Prijedlozi po kategorijama
-  d46ef9e7211d041671cdbe6c3d884884: Prijedlozi
   af1b98adf7f686b84cd0b443e022b7a0: Kategorije
-  d7241b155164fdbc560602f924393149: Dodaj svoj prijedlog i argument
   878bd7316fd2cb186f1fbd611e54684b: Sakrij raspravu
   ed543067f0d69b7fc887120bc1c66a86: Pridruži se raspravi
   7f319b8ccad7e92033b9492ddbc4b522: Glasaj
+  9f04ae7a43e13485e9b6de9aed6b2a61: Ideje organizirane prema kategorijama
+  d46ef9e7211d041671cdbe6c3d884884: Ideje
+  d7241b155164fdbc560602f924393149: Dodaj svoju ideju i mišljenje
   78386ec8f2845742c324a3d7d3e800ff: Korisnici
   5a95a425f74314a96f13a2f136992178: Podijeli
   4b1b4dc8cf38b3c64b1d657da8f5ac8c: Prijavi
@@ -153,15 +151,12 @@ hr:
   4607ccb71469675944516398e717479c: Molimo prihvatite Uvjete korištenja
   9ee2fe857acedeff0c24765e3d2a25f9: Molimo unesite svoje ime
   0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} je komentirao/la %{comment_name}'
-  37fc5aed92a40b16dafd17cee72e3154: Naj prijedlozi
-  833c90a077a2beda3b6cd000f3fe5c29: Slučajni odabir prijedloga
-  f504eb1cc2305a863cc0cf23428a36f8: Kontroverzni prijedlozi
   db7fcf41127935e5fee505fe102abf9a: Vaše rasprave
   cd267635c8a38e2acba076b0edeeedbe: Rasprave u Vašoj mreži
-  07221d868183bab87e41f0ec47440880: Rasprave o Vašim prijedlozima
-  b38f1c5b8bdb6329e8a4b2e6e456da8b: Rasprave o prijedlozima koje ste Vi predložili
   8754f2b7cbd98752793ba8314bded062: Aktivne rasprave
   f78be27a110705c1b183468d30077e53: '%{user_name} se više nije protiv %{idea_name}'
+  37fc5aed92a40b16dafd17cee72e3154: Naj ideje
+  7e48b42c2a2f584925675cc365bf8839: Promijeni kategoriju
   a1540685fb3fa19acb0d811d1e5ccf6a: '%{sub_instance_name} spremno je na %{instance_name}'
   fe66dc91a4e9216a483606e02c4110b7: Hvala ti za registraciju na %{instance_name}
   070625ecbc8bd373ccfb31867274eb97: Upute za poništenje lozinke na %{instance_name}
@@ -240,8 +235,9 @@ hr:
   9ef5364c8e5e4ab96e62779b223dbf0e: Zabranjen/a si zbog kršenja pravila ove internetske
     stranice.
   4868a034abd027935666bf9f622c42a1: Tvoja nova privremena zaporka
-  33c6a1c767f49b1d9fb97ad01e63992f: Poziv od %{sender_name} da se pridružiš %{instance_name}
   39a3cf4c89d1ffa6eddb8a1ae6a8bae9: Kategorija tvoje ideje %{idea} je izmjenjena
+  33c6a1c767f49b1d9fb97ad01e63992f: Poziv od %{sender_name} da se pridružiš stranici
+    %{instance_name}
   42bd4c0819c498d1c1ab622de74d6f82: podržano
   83c101ec84ebd1c0e45fa1cd5b9300d6: suprotstavljeno
   4d4433e7fd7e8e95458ebf7f3d74e116: Ideje s rastom
@@ -262,7 +258,6 @@ hr:
   826f0eacb9ccc59f5f949178cca85bce: '%{user_name} je podržao/la %{idea_name} kao %{position}
     ideju'
   482e07385e2440861609c3ae4992bce3: '%{user_name} podržao/la je %{idea_name}'
-  4f302d282d8ce7372f54021c8d2dac74: '%{user_name} više ne podržava %{idea_name}'
   911aaba7c551fede5d20d6ad59930a20: '%{user_name} suprotstavio/la se %{idea_name}
     kao %{position} ideji'
   348a97fb4ce2d518173fef30d2018cc6: '%{user_name} suprotstavio/la se %{idea_name}'
@@ -271,7 +266,6 @@ hr:
   fa6318e090e8bcea2336761dc6055920: '%{user_name} se suprotstavlja %{new_idea_name}
     umjesto %{idea_name}'
   9a3f20d8b328c9d964e99d1d07405ae1: '%{sub_instance_name} je nova sub_instance'
-  ac717bd14c68bc426139b20f01d941ea: '%{user_name} prvi/a je predložio/la %{idea_name}'
   1a639ba5153528fe49733b99f6b7ba16: '%{user_name} označio/la je %{idea_name} za pregled'
   fe5c45415c03bb476dc22b730aaf2590: '%{user_name} ja ostavio/la %{count} komentara
     na %{discussion_name}'
@@ -319,10 +313,10 @@ hr:
   994b5e4a5247cc2ba34d1c2f25116e2b: '%{idea_name} je u razvoju'
   bc7c79fb365b0c580dc5bff6ba7a50e4: '%{user_name} više ne smatra %{point_name} beskorisnim
     za raspravu'
-  abf67d80d88a4dffe3fdcfbdb02f90e1: '%{user_name} označio/la je %{point_name} kao
-    beskorisno za raspravu'
+  4f302d282d8ce7372f54021c8d2dac74: '%{user_name} više ne podržava ideju %{idea_name}'
   40ce3bc80d7306054d11fe6e3d537b7b: '%{user_name} je pozvao/la nekoga da se pridruži'
   282533dfc17f54458d17218f97145ff7: '%{user_name} je promijenio/la naziv ideje u %{idea_name}'
+  ac717bd14c68bc426139b20f01d941ea: '%{user_name} je prvi/a predložio/la ideju %{idea_name}'
   0f11300c331c06b47e76d8a0623d1bcd: status %{idea_name} je ažuriran
   6fdc9d91f0f0f8617fb3eaf9d8ee4ec0: '%{custom_text}'
   57234088ff673fe01233b1bbcb09f01c: Podržava
@@ -331,7 +325,6 @@ hr:
   75dd5f1160a3f02b6fae89c54361a1b3: Mišljenja
   b702dbe5591cd44ed251a6425ae122a4: ideje
   fdc3bdefb79cec8eb8211d2499e04704: dokument
-  6d0a578ca2f2c0e792fc923002fccbe3: prije
   e4ee317ba569d42f729270dc54c58d25: '%{count} dokumenata'
   c3829f98b9d811ef102006ff00a83881: '%{count} revizija'
   016e3b623e81108aac0844988d799eff: 'Revizije: %{sentence}'
@@ -366,7 +359,6 @@ hr:
   971f8c717b66e75748ff1010b76cbf94: Pozvao/la si %{number} svojih Facebook kontakata
   551018c5711e731f5f5f711d544d2473: Postavke tvojih e-mail izvješća
   cc509e6dc94309828e32336efcb7b838: '%{user_name} obavijesti za %{instance_name}'
-  c9dc159b90491961d253b2d98e3f7a97: Posljednji komentari s %{user_name} rasprava
   7fa75465ad749706b20ab978193eca21: Svi događaji u vezi ideja koje si ti kreirao/la
   f9ace95bf3d68994adde566e7ed46c8c: Tvoje %{instance_name} postavke
   cc523b45cdeb8ad04a22ca63c63db330: Tvoje postavke su spremljene
@@ -388,7 +380,6 @@ hr:
   d78ed35383108fb6c04c16d0a11b20fe: Aktivnosti
   6bc362dbf494c61ea117fe3c71ca48a5: Premjesti
   7dce122004969d56ae2e0245cb754d35: Uredi
-  7e48b42c2a2f584925675cc365bf8839: Promijeni kategoriju
   c857c89e768769cee04399fd9f1e20ad: Pronađi ljude koje poznaješ na %{instance_name}
   a7affaa308a13e9dd49e375c7dcd12a3: Ljudi koje pratiš na %{instance_name}
   98b47a92dbe7f796a76729d9d49e8780: Ljudi koje si već pozvao/la %{instance_name}
@@ -397,17 +388,16 @@ hr:
   ae7950ddfcef416ea6840228d63eba13: nema novih mišljenja
   f5359d1dd07def542aa9b0577fb27068: Ažuriraj status
   588811086d363a4a51e0d106400fe0cd: 'Prijavljenih ideja (upozorenja!): %{count}'
+  6d0a578ca2f2c0e792fc923002fccbe3: ranije
   0bd5b2d797a9c6261ffcc7881c474ce7: Već su registirani na %{instance_name}
+  c9dc159b90491961d253b2d98e3f7a97: 'Najnoviji komentari rasprava korisnika/ce: %{user_name}'
   3ddbc98252043eb4397237df93de5005: Pozovi ljude da se pridruže %{instance_name}
   861d4b86ae3872b02e3c94fe57e3386b: Već si pozvao/la %{user_name}
   8cff2242ab57dfb42f2782bedffb46bb: Pozvan/a %{user_name}
   7ffe854af962b6ac3b95f71894d2ea67: O čemu se sve raspravlja na %{instance_name}
-  c622dc5c962026ec112f0daf006ece0a: Posljednji komentari na %{instance_name}
   9af57be9d30133c2cab31efe582d4ea7: Sve što se događa na %{instance_name}
   ac876a06a03e14d880f4cd06058a34ae: Top feed na %{sub_instance_name}
   524fa81e9d39c631df12c6a3f96daacd: '%{currency_name} na %{sub_instance_name}'
-  931e83ec3137763706201b2981b46b12: Prijedlozi za usvajanje
-  0b75a01238f5516c50f167a31155bdd9: Rezultati glasovanja o prijedlozima usvajanja
   40e0133f2281fb7e5d56f244aeb9327d: Spajanja i usvajanja na %{sub_instance_name}
   01a2f2a00851bab435bced7b0454dce2: Što ti radiš na %{sub_instance_name}?
   7268803fff6c46482995e7a122be7875: Tvoje/i %{currency_name} na %{sub_instance_name}
@@ -467,6 +457,9 @@ hr:
   082b6c1bc7641b77288ceed8cf5ab47b: Aktivnosti o tvojim mišljenjima na %{sub_instance_name}
   2fec3bc791ccdfa1b96bfe29cd81e6c5: '%{user_name} ideje na %{instance_name}'
   20930e84a74461ad2eb23bb9abae2385: '%{user_name} je već registriran/a'
+  c622dc5c962026ec112f0daf006ece0a: Najnoviji komentari na %{instance_name}
+  0b75a01238f5516c50f167a31155bdd9: Rezultati glasanja o prijedlozima usvajanja
+  931e83ec3137763706201b2981b46b12: Prijedlozi za usvajanje
   432a54cb20fa8c81d8db5582157c2fb4: Što %{user_name} radi na %{instance_name}
   144a03a4986fc27f5303530e3cf59324: '%{user_name} komentari na %{instance_name}'
   69711d42de93b7a39c12910b4ed48a54: '%{user_name} diskutira na %{instance_name}'
@@ -526,7 +519,6 @@ hr:
   dfeb460fa23011a1f3b327fa61abf8be: Mišljenja koja podržavaju %{idea_name}
   d5bf8ce27f340ec15061ce35c8d9acd3: Mišljenja o %{idea_name}
   c772367d0682d61254cebb1dcfd44c93: Rasprave o %{idea_name}
-  49c413c7e9fbe1aee3281a29d2d0dd9c: Najnoviji komentari o %{idea_name}
   e171941d65123784391f9a42568f41ca: Aktivnosti o %{idea_name}
   7db7dd3e4e99e1561a33df1b9a72c7be: '%{number} ljudi podržava %{idea_name}'
   04bc5390fd93d76fb2471f2f3a432ed5: Tvoje dovršene %{tag_name} ideje
@@ -534,8 +526,10 @@ hr:
   0e8ba838aee0d474055ed46c30996665: Dovršene ideje
   f1c046f0e22b706da192d38f2365d4f2: Tvoje ideje su rangirane najniže od %{sub_instance_name}
     korisnika
+  3420321606c8fe6d939a122204ebf7c2: Quantcast kod (kao npr. p-5ftmjaPECGTTU)
   f61ed9086008293eaf80acac8f08ce81: Tvoje ideje su rangirane najviše kod %{sub_instance_name}
     korisnika
+  49c413c7e9fbe1aee3281a29d2d0dd9c: Najnoviji komentari o ideji %{idea_name}
   b2969ef7db63aeed1cc0270f179d80ba: '%{number} ljudi suprotstavlja se %{idea_name}'
   dee5db0dd869d6d2c03539fab2c874ad: Nova ideja na %{sub_instance_name}
   90572fc8e7a91cdbb3fefe08a0dd317e: Uredi %{idea_name}
@@ -561,7 +555,6 @@ hr:
   9296941b69dc7ae1d910212ccf739986: Promijeni kategoriju za %{idea_name}
   4c0d946321563c8bf049de4cc6473281: Kategorija promijenjena
   4d67b51a744e6c1f471d369b28e1fee5: Ta ideja je obrisana
-  d0d2aef3bbda7f1ae365a9a2a9d5bb10: Posljednje dodano (%{count})
   53127d8c496db03d848a289010087409: S najviše glasova
   37528894f18a085f9a078496a68eaaa8: U trendu
   41c8b4b08008d4ec0c395365d0cf6ae8: Kontroverzno
@@ -612,6 +605,7 @@ hr:
   63079bae8d035114f40bf4c9a80db31c: Nova %{instance_name} kreirana
   798283c2e8c838f515f66f016f4c7644: Hvala na registraciji!
   aac1a9213d103bbd45fded4daa557c18: Postavke podinstance
+  d0d2aef3bbda7f1ae365a9a2a9d5bb10: Posljednje objavljeno (%{count})
   2ed154e6cbb75329947fe1929b784059: Mišljenja o tvojim idejama
   dbb6f26a0ccb75b82d641ff87b627ce3: Novi korisnici
   73ae1e39504656b5f5d4a78597aebe58: Novi korisnici na %{sub_instance_name}
@@ -651,7 +645,6 @@ hr:
   5b1ffcda0d7c897c6b9afb7db4bbc252: Ažuriraj informacije o e-mail listi
   fd88b11cfde6aa5e3c7ff0553b534885: Revizije
   e920cc973c1d99eec32fdbbcb61f3fd0: Naziv ideje
-  956dc475cb9a4dafc9c53404c7cc80bd: Nedavne aktivnosti o ovoj ideji
   f478d19b8f322ebaf7f826c353200af8: Nemaš novih obavijesti
   5926f8c1e6ec7b97b3d79043ebb03261: Doniraj  Balkan eDemocracy Startup projekt
   0853944d6a11c8b6b17bd8db32a97c8a: Informacije o tvojoj donaciji (opcionalno)
@@ -690,10 +683,10 @@ hr:
   668deb1091498fc9353f5d297fd55877: znakova preostalo
   0863f095cbdbbe6ce5a8aac979766a83: Maksimalna dužina naziva ideje
   4ba2228c8bb2d4aa2f695460ea3efda7: Sakrij opis ideje
+  956dc475cb9a4dafc9c53404c7cc80bd: Nedavne aktivnosti u vezi ove ideje
   cd656bd67597584643561f2f2809de94: Omogući integraciju s Facebookom
   32b45272cb35570ae8022cfe7e9c10af: Omogući integraciju s Twitterom
   c220b996a0e9042b62a53d5af86125db: Google Analytics kod (kao npr. UA-2839551-1)
-  3420321606c8fe6d939a122204ebf7c2: Quantcast kod (kao npr. p-5ftmjaPECGTTU)
   630a18bf1330b4aedbae0cef62d3e4ed: Yahoo tajni ključ
   1179f1af3b7e1bd52b573c880b720a08: Windows Live tajni ključ
   021da1b20f73dc252361a54d80497ef3: Mjesto na rang-listi
@@ -764,12 +757,12 @@ hr:
   ee00d1a5a1041c3579c36ec1dffdcb99: Nema nedavno revidiranih ideja
   10ac3d04253ef7e1ddc73e6091c0cd55: Sljedeće
   cacec92efcc83731a5c790612e592748: Pogledaj sve <a href='%{url}'>dovršene ideje</a>
-  6e1c8fa898c975c6e4160ff502915969: Društveni bodovi
   afadd341c30ad496cc4add7903b37d18: Spremi postavke API-ja
   201e7310f5fb28133f781fc856003d92: Naslov ideje
   77c266c568c7617d774fba9333e54c83: Pozvano %{count} ljudi
   e5ebb0db30c2fdddd4676f43246b55a0: Regrutirano %{count} korisnika
   a22a31345901fab0939eb50823c23b88: Stupanj dovršenosti
+  6e1c8fa898c975c6e4160ff502915969: Društveni bodovi
   b3b4c292a2da22d63a4b4e867c2d3146: Mora biti gif, jpg ili png
   10a39ec6d217c694ccd2c9d618598505: Informacije o naciji
   d334dfcea59127bedfcdbe0a3ee7f494: Grafike
@@ -820,7 +813,6 @@ hr:
   d77a0f9cd14e513bb78bccbf59402717: U službenom statusu
   e2f69ba325c4f8bdc393ffd3cb848a51: Nasumične ideje
   8e52de0d4b03d5fe87dc88da09616c7f: ovdje.
-  9977ab924c89e6c98b1cf1595354ada3: Posljednja aktivnost
   69043cb73237dff217e84df57a0c0e30: Unaprjeđuje demokraciju danas.
   e94f58e4efb3f77e13519c199bc52d97: Kreiraj novu grupu
   45a098e1ebc679f8fd971e9e60d2b445: Zašto Your Priorities?
@@ -844,6 +836,7 @@ hr:
   14976bbae13dbb217c9d3896929f6cfa: Stream uživo
   d280d15220c6ba22dfa7cd8a5139ea67: Sljedeće... Tvoji osobni detalji
   d6cb6dc595d9a3a6c3e2db949a04be06: Kontaktiraj nas na <a href='mailto:%{email}'>%{email2}</a>
+  9977ab924c89e6c98b1cf1595354ada3: Najnovije aktivnosti
   15c9367c3506280cfaf98cb065799bf4: 'Kada želiš primati e-mail obavijesti:'
   bbf72fb222c775537e056152bf086bac: Kada netko komentira tvoju raspravu
   ade7300e26de3e48a42cc01a4c4d74fa: Kada netko dopuni tvoje mišljenje
@@ -865,13 +858,11 @@ hr:
   ed3792969d8e38130c6651dd447509c5: Započni raspravu
   c44fb24da70dbf47aa6823cffeaecfa4: Novi diskusijski niz
   d1892131fd7ae3ef8af70292a889e8b2: Ovdje još nema aktivnosti.
-  7b970d965a48c4055adbf84ef8ff3e7e: Nema prijedloga za akviziciju
   b444c2e3578afeaae34b352eaa2fbab4: Tvoja nova privremena zaporka je
   111a9b4d1f80fa21df2c2be58f5e0c04: Čestitamo na tvojoj novoj %{instance_name}.
   fffb18fcfcd332b7c24c4cf8d91b0071: Hvala ti za tvoju uplatu %{payment} na %{instance_name}.
   39a2ac1fc229d843594065531ffed4c8: Trenutni plan pretplate
   a5998dfe5002eeab05de3cbcc98f9544: Ovo je automatska e-mail poruka s %{instance_name}
-  fafdcbfb83d39b7e0543fd0af58a35ac: poslano prema
   c1a5298f939e87e8f962a5edfc206918: Hej
   685887868e5e4b5f12565290ea93cef7: 'Ovdje možeš pogledati najviše rangirane ideje
     svih korisnika:'
@@ -887,7 +878,6 @@ hr:
     kategoriji.
   e25a8f3a82984a900dede229fc7e6f41: ti je upravo poslao/la privatnu poruku.
   e614600b368b2f8ba4c104a9bfa64346: Možeš odgovoriti ovdje
-  d4fd81be72fb0ebdf8585d8cbe2d2f26: Evo više detalja o pravilima
   3fdeb6ae106741718f9e7ad0ef5a7052: Ovo je uvredljiv sadržaj. Ako imaš pitanja kontaktiraj
   e54c655931d2a7381ac630e9cd8ed55f: '%{sender_name} je upravo revidirao/la mišljenje.
     Sada glasi:'
@@ -928,6 +918,9 @@ hr:
   1a93d30b23722eece4aa04edfcfef57b: Još nema ideja. Dodaj prvu ideju!
   a99708ea75c0cbbd2d4e14170d9ba0db: 'Ideja u ovoj kategoriji: %{count}'
   cb11e24b4778c9d851295c18ce63200c: Dodaj označene korisnike u svoju mrežu
+  fafdcbfb83d39b7e0543fd0af58a35ac: poslana na adresu
+  7b970d965a48c4055adbf84ef8ff3e7e: Nema prijedloga za akviziciju
+  d4fd81be72fb0ebdf8585d8cbe2d2f26: Detaljne upute i pravila pogledajte na stranici
   36abc52047c559d2a656d52192a43a93: Još uvijek ne pratiš nikoga.
   247d0ffa4b59ddadeda7c07fcd1b56ea: Njihovo ime
   21dd33ca6c8863865c1a145e104ac69e: Njihova e-mail adresa
@@ -947,7 +940,6 @@ hr:
   254f642527b45bc260048e30704edb39: Konfiguracija
   edcc3a1bcd4715c01f747540276c5407: Glavne statistike
   f126a69cda317208d020fef5405debf1: Podinstance
-  7c326855728927b06f5b11e92cefdae8: Pomozite nam unaprijediti i pružiti još prijevoda
   3a401dd966161f64fd3b8d1c06292f18: Alat za prevođenje
   c0204772c57aef27dedc01fb9fc4e559: Molimo da verificiraš svoj korisnički račun
   3e12aa144d9db1393edf68e77bccb625: osvježi ju ovdje
@@ -985,7 +977,6 @@ hr:
   15bbb9d0bbf25e8d2978de1168c749dc: Internetska stranica
   9c37b7b6ff829e977df287900543ea54: Datum rođenja
   9542c313a62d8640365c4cf3bb8b2b7b: Nova zaporka
-  1a08c8ca9af355a37e4b5d4595434211: Potvrda zaporka
   0e0d3399b98988388e08df7e3b8e8d49: Kad je ideja revidirana
   1bd14216408d94261ca743907c692bb1: Za administratore
   10f657608d446e7b05706b926dc57e99: '%{user_name} još nije kupio/la nikakve oglase.'
@@ -1006,6 +997,8 @@ hr:
   e31e799048673ff7f3699d5b5ddc9fa1: Registriran/a %{time_ago}.
   396df99909b75b9b937129f8ec18694c: Pronađi korisnika/icu
   734cc0917e606a3e071cad01497da6ba: Već su registrirani
+  7c326855728927b06f5b11e92cefdae8: Pomozite nam unaprijediti i pružiti još prijevoda
+  1a08c8ca9af355a37e4b5d4595434211: Potvrda zaporke
   6e0c66231d9d13993af0a99cbcd01315: Ukloni ovu osobu iz svoje mreže
   9b3f2426e00fa4e1ea912f7cb0be8ce2: Ignoriram
   dc0477414c362caa15dc92f704778881: Prestani s ignoriranjem ove osobe
@@ -1048,7 +1041,6 @@ hr:
   7272dfdbea9820e332bb5270de5a9692: Ovo je nova ideja br. 1 u %{tag_name}
   76e60c0d49999ba63217a3c21b8853bc: Revidiran %{point_name} da ukaže kako podržava
     %{idea_name}
-  5e45d0479ee365f79d004b2f4ecb1f27: dodan %{point_name} za %{idea_name}
   9a91e320ff06dec61a4ca47b33eed290: Više se ne suprostavlja %{idea_name}
   adae260b61118602196cc60006ac8cfb: Više ne prati diskusiju o %{discussion_name}
   041092eb300332772e2d58af61c2865e: '%{user_name} glasao/la je za %{new_idea_name}
@@ -1069,7 +1061,6 @@ hr:
   667264e34dcf9bff273e0482dde3e8e6: Poslan je kratak izvještaj na %{other_user_name}
     profil
   b6e31a92cd95fd009fac8446f7a7dc7a: Ovo je %{user_name} nova ideja br. 1
-  992506bada5f36d0e941932b86b0994b: '%{user_name} više ne podržava'
   223fbee99dc0f256d7988381ed7606ec: '%{user_name} se više ne suprotstavlja'
   1a0c13c64d269fd1ad878582a89891f5: 'status %{idea_name} je ažuriran: %{subject}'
   99b0a9110ebd2fa6dcd57f7daa5b5d42: pravilima korištenja
@@ -1081,7 +1072,9 @@ hr:
   d72e45be5abf9104bbfd208c11e8732a: Postavi svoju fotografiju (nije obavezno)
   68400031f36198737f197bb1bfc74bef: Suspendiraj ovog korisnika
   c9153915c56754e6fedcd2abadb8c912: Prijavi se kao ovaj korisnik
-  fbb1f9c2120e361e0e7b520936d57f86: Dodao/la je %{point_name} ovoj ideji
+  5e45d0479ee365f79d004b2f4ecb1f27: objavio/la je svoje mišljenje %{point_name} o
+    ideji %{idea_name}
+  992506bada5f36d0e941932b86b0994b: '%{user_name} više ne podržava ovu ideju'
   624276134e485352d93f853c2e8387d8: Ovo je najkontroverznija ideja u %{tag_name}
   c826ca2348d9fdb979b6d49b2eea00e1: Više ne smatra da je %{point_name} od pomoći
   5b2b53624bb2f80eb21d312c88655ef3: Kratak izvještaj poslan je %{discussion_name}
@@ -1154,6 +1147,7 @@ hr:
   73229bafe6450eba3bf023795b35fb4a: Registriran/a na %{instance_name}
   8e53b553c0d5323dadb9e738f19323d4: Kada dobiješ ili izgubiš društvene bodove
   006a226cb52da43e63800809bd1cb3f6: '%{user_name} glasao/la je protiv ideje %{position}'
+  fbb1f9c2120e361e0e7b520936d57f86: Dodao/la je mišljenje %{point_name} o ovoj ideji
   81419da2582f8c15ad1e3d2d732e1fb2: Zbog čega bi ljudi trebali podržati ovu ideju?
   40aea558a7a3abc7cd9de2d41093eb53: Je li mišljenje %{user_name} osobni napad tj.
     krši li pravila?
@@ -1162,7 +1156,6 @@ hr:
   1aa0d7cede60e59fc6b506bb987a2718: Sve aktivnosti
   3832dee32fb5053c64441a629488b42a: Administratori
   4ddaf52f5d3777d3fd23a7c5d078bba7: Prikazano za
-  6ba1364d96463a5bb5b064ce138e3128: '%{user_name} te pita da razmisliš o %{idea_name}'
   3bc9cc15d02611dc4781a6ce6bf86710: Podrži
   750d3375998d669f37b18a635bcad804: Podržavam ovo, dodaj to na listu ideja koje podržavam
   13af6b983fc9bbd55699881a1023a539: Suprotstavi se
@@ -1213,12 +1206,6 @@ hr:
     - Petak
     - Subota
   99de1173596bd03c47e19254f981429a: Izradi administratora
-  28316f611efd0ad924f6a9db26bf884c: Da bi ljudi podržali ili se suprostavili tvojoj
-    ideji važno je iznijeti dobre argumente. Objasni zašto bi ljudi trebali glasati
-    o ovoj ideji, što ju to čini važnom.
-  a7761bd5cba69c6727e64f3df1f2d680: Da bi ljudi podržali ili se suprostavili tvojoj
-    ideji važno je iznijeti dobre argumente. Objasni zašto bi ljudi trebali glasati
-    o ovoj ideji, što ju to čini važnom.
   0a22ddb08392817a296d4658a25f7e61: Obrisan %{point_name}
   2c18c9c90eea256b71f02df1226d08c4: Obriši ideju i pošalji upozorenje za %{user_name}
     %{warnings_count}?
@@ -1238,8 +1225,15 @@ hr:
   586f9d3669a73e12a8caed7a7d76288e: Unesi dobar opisni naslov svoje ideje
   b594507d86c33e8665a8416c1e3b9375: NIJE KORISNO
   575930d7b28012f99fd1d2935caac0fe: korisnika i potroši
+  6ba1364d96463a5bb5b064ce138e3128: '%{user_name} te poziva da razmisliš o ideji %{idea_name}'
   12e04993707a599568f6b7641d8e89f0: '%{count} neizjašnjenih ovo <i>ne</i> smatra korisnim
     za raspravu.'
+  28316f611efd0ad924f6a9db26bf884c: Da bi ljudi podržali ili se suprostavili tvojoj
+    ideji važno je iznijeti dobre argumente. Objasni zašto bi ljudi trebali glasati
+    o ovoj ideji, što ju to čini važnom.
+  a7761bd5cba69c6727e64f3df1f2d680: Da bi ljudi podržali ili se suprostavili tvojoj
+    ideji važno je iznijeti dobre argumente. Objasni zašto bi ljudi trebali glasati
+    o ovoj ideji, što ju to čini važnom.
   84475f7b83f3df2ca63fa419edeb0a9d: Obrisana revizija %{idea_name}
   9c5d7952632390609b7590dcfa19013b: Obrisana revizija %{point_name}
   d4d747375b8e7060dfa55f9e980bf20d: Obriši komentar i izdaj upozorenje za %{user_name}
@@ -1281,6 +1275,10 @@ hr:
     popisom najboljih priča koje su se dogodile posljednjih 10 godina.
   7e639247ce98d22860e0e3bd468d70fe: Te priče inspirirat će knjige - stripove - TV
     serije i filmove EVE univerzuma.
+  71189435c560533fee63c4cfa358e4ef: '%{sender_name} poslao/la ti je <a href=''%{message_url}''>privatnu
+    poruku</a>'
+  71bd62130c341a5b63410307c8ba6c29: Twitter Consumer Key (<a href='http://twitter.com/oauth_clients'>Nabavi
+    ga ovdje</a>)
   d7391c69ff4c78e653e46ce0f1004fe7: '%{yrpri_link} softver koji pokreće ovu internetsku
     stranicu je softver otvorenog koda (Open Source), a izradila ga je neprofitna
     organizacija %{citizens_foundation_link} koja na njemu radi od 2008. godine. I
@@ -1328,8 +1326,6 @@ hr:
     iznijeti najvažnije.
   3b8a41916178a014a106fe26299e077e: Ukoliko ne želiš primati ovakve e-mail poruke
     podesi postavke svojeg e-maila ovdje
-  73695444fc4f18d308697c3da5c882d5: Ovo je poziv koji ti šalje %{sender_name} da se
-    prijaviš na %{instance_name}.
   1c3a03e7bf74d0ee69de0311447bb613: Ideja %{idea_name}, koju podržavaš, je na %{position}.
     mjestu u %{category} kategoriji.
   69b7444b775a4eb4dc51a38619dabd0a: Ideja %{idea_name}, kojoj se protiviš, je na %{position}.
@@ -1340,9 +1336,6 @@ hr:
     kreiram i drugima neću omogućavati korištenje mojeg računa.
   1cab6f0a48459aaac4e3116773de5781: Neću objavljivati oglase ili slati neželjene poruke
     (spam) korisnicima ove internetske stranice.
-  6231033110be3e0b22eeda6b6b336835: Neću koristiti ovu internetsku stranicu da druge
-    ugnjetavam niti da na bilo koji način prijetim ili ugrožavam druge objavljivanjem
-    lažnog ili zlonamjernog sadržaja.
   94386c683395a8c1a30a6f405a3a7116: Kreirat ću i koristiti samo jedan korisnički račun
     na ovoj internetskoj stranici.
   6c3b5928436080f8aba591af541dd5f0: Dat ćemo sve od sebe da ova internetska stranica
@@ -1373,10 +1366,6 @@ hr:
     kršenja <a href='/about/rules'>pravila ove stranice</a>
   6be6a3226f41cf2d4351a5d45f08b0cf: '%{user_name} je izgubio/la %{count}%{currency_short_name}
     zbog %{count} manje pratitelja/ica <a href=''http://twitter.com/%{twitter_login}''>Twitteru</a>'
-  71189435c560533fee63c4cfa358e4ef: '%{sender_name} poslao/la ti je <a href=''%{message_url}''>privatnu
-    poruku</a>'
-  71bd62130c341a5b63410307c8ba6c29: Twitter Consumer Key (<a href='http://twitter.com/oauth_clients'>Nabavi
-    ga ovdje</a>)
   75f2a0a2bcbc546353b05349f83d28bb: 'Ovo je tvoje %{warning_number} upozorenje. Prekršio/la
     si <a href=''/about/rules''>pravila internetske stranice</a> s <a href=''%{content_url}''>ovime
     %{content_type} </a> - #{notification.custom_text}'
@@ -1384,9 +1373,6 @@ hr:
     na <a href='%{ad_url}'>oglas</a> za %{idea_name}
   79024830166125ac8aae3ce49583b259: Facebook API ključ (<a href='http://www.facebook.com/developers/#/developers/createapp.php'>Nabavi
     ga ovdje</a>)
-  7bf9962da6bd9bedbe25c9ded06c71a7: Ovako je ova ideja izgledala prije %{time_ago}.
-    Možeš i <a href='%{revision_url}'>vidjeti promjene</a> ove inačice s obzirom na
-    prethodnu.
   7c6cab6788105a910eac9ea82ba475b7: <li>Sva mišljenja koje si revidirao/la <i>ostati
     će</i>, a na stranici s detaljima o tom mišljenju ostali koji su o njemu raspravljali
     vidjet će napomenu da si obrisao/la svoj korisnički račun.</li>
@@ -1399,15 +1385,22 @@ hr:
     %{content_type} - #{notification.custom_text} </a> - #{notification.custom_text}'
   9169a35cae3381f0f273cf83618263b6: Ovdje su samo tvoje ideje i <a href='%{url}'>%{count}
     osoba u tvojoj mreži</a>, ne svi iz %{instance_name}.
-  6ae7034c0535498660d77f0201b17841: '%{error_count} greške/aka spriječava snimanje
-    ovog korisničkog računa:'
+  73695444fc4f18d308697c3da5c882d5: Ovo je poziv koji ti šalje %{sender_name} da nam
+    se pridružiš na stranici %{instance_name}.
   040cd458fd2ae990e1f054b26909bd7a: Zaradio/la je %{count}%{currency_short_name} jer
     je %{count} ljudi prestalo ignorirati
+  6231033110be3e0b22eeda6b6b336835: Neću koristiti ovu internetsku stranicu da druge
+    ugnjetavam niti da na bilo koji način prijetim ili ugrožavam druge objavljivanjem
+    lažnog ili zlonamjernog sadržaja.
+  6ae7034c0535498660d77f0201b17841: '%{error_count} greške/aka spriječava snimanje
+    ovog korisničkog računa:'
+  7bf9962da6bd9bedbe25c9ded06c71a7: Ovako je ova ideja izgledala prije %{time_ago}.
+    Možeš i <a href='%{revision_url}'>vidjeti promjene</a> ove inačice s obzirom na
+    prethodnu.
   35408f2e9ccf595f1765bd8e56a2f571: Najbolja mišljenja o %{idea_name}
   6f427138338d1db0109d83cc74c00965: Ti sada imaš %{points} društvenih bodova.
   9fd4dc340cdbdabdd25908817052b915: Vaši argumenti
   a2d5e7a9d03b49d0639ab0a75a59d2c2: Najbolji argumenti
-  ab1e45da9c565570d4986f268329f2d1: Posljednje aktivnosti o mišljenjima na %{instance_name}
   c0661ddef14e63a75779f9f9b63a6c2b: '%{up} argumenata za %{down} argumenata protiv'
   c29196003ef3c4f020130aab1c63d4ea: '%{count} mišljenja'
   cde1d24d4d3427be7222dbe6a518f6da: Još nema mišljenja.
@@ -1423,8 +1416,6 @@ hr:
     koji su trenutno aktivni možeš vidjeti <a href='%{ads_url}'>ovdje</a>.
   13befac9c101c610f1c929b4a96debb2: <li>Nećeš moći kreirati novi korisnički račun
     s istom adresom internetske stranice ili e-mail adresom.</li>
-  14c7b0ccb94b7d4f69276de11ce7576d: '%{user_name} je potrošio/la %{capital}%{currency_short_name}
-    na <a href=''%{proposal_url}''>prijedlog</a> da %{new_idea_name} usvoji %{idea_name}'
   1820034641fcba27081c9393e3fb5f1d: '%{user_name} potrošio/la je %{capital}%{currency_short_name}
     na <a href=''%{ad_url}''>oglas</a> za %{idea_name}'
   3277947674e9e77c91a1269374d6525e: Najbolje ideje s najvišemišljenja za i protiv
@@ -1461,6 +1452,8 @@ hr:
   66f32a789b0f74648490032a69ced621: '%{contacts_count} tvojih kontakata je registrirano
     na %{instance_name}.<br/>Klikni na veliko žuto dugme da ih dodaš u svoju mrežu.'
   85501283f42eb84cc04b84bce8d42044: je više društvenih bodova nego što imaš.
+  14c7b0ccb94b7d4f69276de11ce7576d: '%{user_name} je potrošio/la %{capital}%{currency_short_name}
+    na <a href=''%{proposal_url}''>prijedlog</a> da %{new_idea_name} usvoji %{idea_name}'
   33c6e1ac6bad9e2903b3aa74e552ba51: Uklonjen je link ideje s %{point_name}
   3404c2e7a220d0c7083fe27ba3f7036e: '%{tag_name} ideje koje si ti kreirao/la'
   35a94f14c014fa9aa6518664386e9277: Nedavno revidirane ideje
@@ -1470,8 +1463,7 @@ hr:
   5d0739997e2305a1eaca5263f8d527ae: Tvoje ideje u razvoju na %{sub_instance_name}
   ab541d712cc52c016c2aed3304be75bb: po korisniku mora biti više od 0.01 društvenih
     bodova
-  928a992965951359323e4a30e5d8564d: '%{user_name} je potrošio/la %{capital}%{currency_short_name}
-    na <a href=''%{proposal_url}''>prijedlog</a> da ovu ideju usvoji %{new_idea_name}'
+  ab1e45da9c565570d4986f268329f2d1: Najnovije aktivnosti o mišljenjima na %{instance_name}
   934e578ecc65fa9d6c99d66e018b39d7: '%{user_name} je uložio/la %{capital}%{currency_short_name}
     na <a href=''%{ad_url}''>oglas</a> za ovu ideju'
   9739afbd1b5f3f783e2d77377802513b: <p>Ne možeš kupiti <span class="pc">društvene
@@ -1503,13 +1495,8 @@ hr:
     svojih Google, Yahoo, Windows Live ili Facebook kontakata</a>.
   c186d87af75380c268b08130fbad5efa: '%{user_name} je glasao/la za ideju zahvaljujući
     <a href=''%{ad_url}''>%{ad_user} oglasu</a>'
-  18d3153feaa6740dc44f4eda1d971a3c: <p><b>Kupi oglas za ovu ideju</b>. Možeš uložiti
-    nešto svojih društvenih bodova i ovu ideju i svoju poruku postaviti na vrh svih
-    stranica na %{instance_name}. Onaj oglas koji ima uloženo najviše <span class="pc">%{currency_short_name}</span>
-    po članu prikazat će se prvi sve dok član ne odgovori - što više uložiš - prije
-    će ga vidjeti. Oglasi se prikazuju samo prijavljenim korisnicima koji još nisu
-    podržali ili se suprotstavili ideji - pa tvoji <span class="pc">db</span> nisu
-    uzaludno potrošeni.</p>
+  928a992965951359323e4a30e5d8564d: '%{user_name} je potrošio/la %{capital}%{currency_short_name}
+    na <a href=''%{proposal_url}''>prijedlog</a> da ovu ideju usvoji %{new_idea_name}'
   c1ef19b86849e508f32af9838a93e4c9: Poveži ovo s drugom idejom <span class='small'>Samo
     počni unosom imena</span>
   5d3a53257f15f90564766575aeeccd64: Padajuće %{tag_name} ideje
@@ -1535,8 +1522,6 @@ hr:
   d0d2bd89e683bcce7b15dc1082867d2b: To mišljenje ovako je izgledalo %{time_ago}. Možeš
     i <a href='%{revision_url}'>vidjeti promjene</a> koje ova verzija donosi naspram
     prethodne.
-  d8f4c336ab8950ea24894fd78e3dea7a: Uloženo %{capital}%{currency_short_name} na <a
-    href='%{proposal_url}'>prijedlog</a> da %{new_idea_name} usvoji %{idea_name}
   dc3dd46f85e4e9ccaa9b80c49eaea73b: 'Ovo je tvoje %{warning_number} upozorenje. Prekršio/la
     si <a href=''/about/rules''>pravila internetske stranice</a> s <a href=''%{content_url}''>
     %{content_type} </a> - #{notification.custom_text}'
@@ -1562,6 +1547,8 @@ hr:
     ti eksplicitno pošalješ. Zaradit ćeš <span class="pc">5 društvenih bodova</span>
     za svakog novog korisnika kojeg dovedeš, što će povećati tvoj <a href="/network">utjecaj</a>
     na %{instance_name}.</p>
+  d8f4c336ab8950ea24894fd78e3dea7a: Uloženo %{capital}%{currency_short_name} na <a
+    href='%{proposal_url}'>prijedlog</a> da %{new_idea_name} usvoji %{idea_name}
   c90e5e487fa6de5f54fd84611d8949f7: U svoju mrežu možeš dodati ljude klikanjem na
     dugme SLIJEDI koje se nalazi na njihovoj profilnoj stranici pa će se dole prikazivati
     njihove novosti. Za početak, pogledaj popis <a href="/network">najutjecajnijih</a>
@@ -1580,12 +1567,8 @@ hr:
       more_pages:
         display_entries: Prikazuje %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b>
           od <b>%{total}</b> ukupno
-  3f0d611a1c160e3ffbfd172a9e163a18: '%{error_count} greška/aka je spriječilo snimanje
-    ovog korisničkog računa:'
-  227327b67d58985e54f13b00de1e8735: Pozvan/a si da se pridružiš %{sub_instance_name}
-    na %{instance_name}
-  c2c04c1c28c756ffa8c8ca1e804f7961: '%{user_name} označio/la je %{point_name} kao
-    korisno za raspravu'
+  c2c04c1c28c756ffa8c8ca1e804f7961: '%{user_name} označio/la je mišljenje %{point_name}
+    kao korisno za raspravu'
   281bdea3a5c8ccd3932a66f493952011: Kada se netko od tvojih kontakata registrira na
     stranici ili se netko pretplati na tvoje postove
   9077583d706884261f7d4e0e32c1c73c: Pozvao/la je nekoga da se pridruži
@@ -1601,9 +1584,9 @@ hr:
   214c85ce1555950780114abb91def844: Nije korisno za raspravu
   2a8539c576356a45c8ffea55f7f9c6d1: Ovo više nije korisno za raspravu
   5b378488a7da7228e25ac9ad5ec2f248: Je li ovo mišljenje korisno za raspravu?
-  68e58e8d7902b8d218a96c0e6f22a683: Više nije beskorisno za raspravu
   7b2bfb819c88eb92abda770f0ebeacac: Ovo mišljenje nije korisno za raspravu
   fee15ce029deb11dd1191f86c4e872c3: Ovo je mišljenje korisno za raspravu
+  68e58e8d7902b8d218a96c0e6f22a683: Više nije beskorisno za raspravu
   4938ac136fbb96f4b7dc5dbc9f22b3d8: '%{count} prigovarača ovo <i>ne</i> smatra korisnim
     za raspravu.'
   5183aa67de3e2f9e006dc7beaea7d67c: '%{count} neizjašnjenih ovo smatra korisnim za
@@ -1633,3 +1616,27 @@ hr:
   bc901749b7052194bd12e326225ee6d2: Nitko od tvojih Facebook prijatelja još nije registriran
     na %{instance_name}.
   d17f2092781d184310d211357444bae5: Rehabilitiraj ovog korisnika
+  f4d98bb16999bab9f67669855f9f0611: Trajno uklanjam ideju %{idea_name}. Ovo može potrajati
+    nekoliko minuta ovisno o tome koliko je podrški/suprotstavljanja potrebno ukloniti.
+  be16593ded98f3829626ff4f2fbfa4c1: Prekršio/la si pravila ove stranice. Ovo je tvoje
+    %{warning_number}. upozorenje od tri. Tvoj je sadržaj obrisan. Ukoliko pravila
+    prekršiš više od tri puta stranica će zabraniti tvoj korisnički račun.
+  18d3153feaa6740dc44f4eda1d971a3c: <p><b>Kupi oglas za ovu ideju</b>. Možeš uložiti
+    nešto svojih društvenih bodova i ovu ideju i svoju poruku postaviti na vrh svih
+    stranica na %{instance_name}. Onaj oglas koji ima uloženo najviše <span class="pc">%{currency_short_name}</span>
+    po članu prikazat će se prvi sve dok član ne odgovori - što više uložiš - prije
+    će ga vidjeti. Oglasi se prikazuju samo prijavljenim korisnicima koji još nisu
+    podržali ili se suprotstavili ideji - pa tvoji <span class="pc">db</span> nisu
+    uzaludno potrošeni.</p>
+  3f0d611a1c160e3ffbfd172a9e163a18: '%{error_count} greška/aka je spriječilo snimanje
+    ovog korisničkog računa:'
+  0f471a2597c99d0f4c81db859b0205f3: Ideje koje si ti predložio/la na %{sub_instance_name}
+  2d08badc985572e0bcf7456e0c6c4e08: Ideje koje biste trebali razmotriti
+  07221d868183bab87e41f0ec47440880: Rasprave o tvojim idejama
+  833c90a077a2beda3b6cd000f3fe5c29: Slučajni odabir ideja
+  b38f1c5b8bdb6329e8a4b2e6e456da8b: Rasprave o idejama koje si ti predložio/la
+  f504eb1cc2305a863cc0cf23428a36f8: Kontroverzne ideje
+  abf67d80d88a4dffe3fdcfbdb02f90e1: '%{user_name} ocijenio/la je mišljenje %{point_name}
+    kao beskorisno za raspravu'
+  227327b67d58985e54f13b00de1e8735: Pozvan/a si da se pridružiš stranici %{sub_instance_name}
+    na %{instance_name} platformi

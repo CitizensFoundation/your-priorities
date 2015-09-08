@@ -1,5 +1,6 @@
 ---
 ro-RO:
+  6fa73f77103f4bbddb6129bd0bb18de8: Toate discuțiile
   will_paginate:
     next_label: Următoarea &rsaquo;
     previous_label: '&#8592; Precedentul'
@@ -81,7 +82,6 @@ ro-RO:
   01a2f2a00851bab435bced7b0454dce2: Ce faceți la %{sub_instance_name}?
   cd8251fee54cfb894119ab71fcedde37: Discuții pe %{sub_instance_name}
   400677bf70243014f360f3be283982e9: Activități principale
-  6fa73f77103f4bbddb6129bd0bb18de8: Toate discuțiile
   b10e67ce0ade1bd465bedfbd005bbb9c: Discuții cu privire la idei pe care le susțineți
   709468af25e91284821d1bdbfdded24c: Totul
   16d39f7e2b0ed1ee441421cc0f86a724: Punctul acela a fost șters
@@ -243,6 +243,7 @@ ro-RO:
   6231033110be3e0b22eeda6b6b336835: Nu voi folosi acest site pentru a-i intimida,
     nici pentru a amenința ori persecuta pe ceilalți utilizatori și nu voi posta conținut
     care să inducă în eroare ori să fie rău intenționat.
+  13348442cc6a27032d2b4aa28b75a5d3: Căutați
   4bb709d8718626d39a5dbf2e2589528e: Îi voi informa pe administratorii acestui site
     în cazul în care observ conținut care să încalce aceste reguli prin folosirea
     butonului de notificări.
@@ -326,7 +327,6 @@ ro-RO:
   498f79c4c5bbde77f1bceb6c86fd0f6d: Arătați
   2a3cd5946cfd317eb99c3d32e35e2d4c: Indicați
   0be8406951cdfda82f00f79328cf4efc: Adăugați comentariu
-  13348442cc6a27032d2b4aa28b75a5d3: Căutați
   e576c23d915755d83e2d1f47bd9f6c22: Niciun rezultat găsit
   ed3792969d8e38130c6651dd447509c5: Începeți o discuție
   c44fb24da70dbf47aa6823cffeaecfa4: Subiect nou de discuție
