@@ -8,7 +8,7 @@
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
     %li{:style=>"height:20px"}
       :plain
-        <fb:like href="#{idea.show_url}" layout="button_count" ref="priority" show-faces="false" width="120" action="#{tr("like","facebook")}" colorscheme="light"></fb:like>
+        <fb:like href="#{idea.show_url}" layout="button_count" ref="priority" show-faces="false" width="120" action="like" colorscheme="light"></fb:like>
     - unless @ideas
       %li.gplus{:style=>"height:20px"}
         .g-plusone{"data-size" => "medium", "data-href" => "#{idea.show_url}"}
