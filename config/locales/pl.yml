@@ -1,5 +1,42 @@
 ---
 pl:
+  number:
+    currency:
+      format:
+        format: '%u %n'
+        unit: PLN
+        separator: ','
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: true
+    format:
+      separator: ','
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: bajt
+            other: bajty
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+      decimal_units:
+        format: '%n %u'
+        units:
+          thousand: Tysiąc
+          million: Milion
+          billion: Miliard
+          trillion: Trylion
+          quadrillion: Kwadrylion
   date:
     formats:
       default: '%d-%m-%Y'
@@ -67,43 +104,6 @@ pl:
       words_connector: ', '
       two_words_connector: ' i '
       last_word_connector: ' oraz '
-  number:
-    format:
-      separator: ','
-      precision: 3
-      significant: false
-      strip_insignificant_zeros: false
-    currency:
-      format:
-        format: '%u %n'
-        unit: PLN
-        separator: ','
-        precision: 2
-        significant: false
-        strip_insignificant_zeros: true
-    human:
-      format:
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: '%n %u'
-        units:
-          byte:
-            one: bajt
-            other: bajty
-          kb: KB
-          mb: MB
-          gb: GB
-          tb: TB
-      decimal_units:
-        format: '%n %u'
-        units:
-          thousand: Tysiąc
-          million: Milion
-          billion: Miliard
-          trillion: Trylion
-          quadrillion: Kwadrylion
   datetime:
     distance_in_words:
       half_a_minute: pół minuty

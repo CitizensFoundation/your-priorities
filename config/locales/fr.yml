@@ -53,37 +53,6 @@ fr:
     - :day
     - :month
     - :year
-  activerecord:
-    errors:
-      messages:
-        exclusion: n'est pas disponible
-        taken: n'est pas disponible
-        record_invalid: 'La validation a échoué : %{errors}'
-        inclusion: n'est pas inclus(e) dans la liste
-        invalid: n'est pas valide
-        confirmation: ne concorde pas avec la confirmation
-        accepted: doit être accepté(e)
-        empty: doit être rempli(e)
-        blank: doit être rempli(e)
-        too_long: est trop long (pas plus de %{count} caractères)
-        too_short: est trop court (au moins %{count} caractères)
-        wrong_length: ne fait pas la bonne longueur (doit comporter %{count} caractères)
-        not_a_number: n'est pas un nombre
-        not_an_integer: doit être un nombre entier
-        greater_than: doit être supérieur à %{count}
-        greater_than_or_equal_to: doit être supérieur ou égal à %{count}
-        equal_to: doit être égal à %{count}
-        less_than: doit être inférieur à %{count}
-        less_than_or_equal_to: doit être inférieur ou égal à %{count}
-        odd: doit être impair
-        even: doit être pair
-      template:
-        header:
-          one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
-          other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
-        body: 'Veuillez vérifier les champs suivants : '
-      full_messages:
-        format: '%{attribute} %{message}'
   time:
     formats:
       default: '%d %B %Y %H:%M:%S'
@@ -214,6 +183,37 @@ fr:
         one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
         other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
       body: 'Veuillez vérifier les champs suivants : '
+  activerecord:
+    errors:
+      messages:
+        taken: n'est pas disponible
+        record_invalid: 'La validation a échoué : %{errors}'
+        inclusion: n'est pas inclus(e) dans la liste
+        exclusion: n'est pas disponible
+        invalid: n'est pas valide
+        confirmation: ne concorde pas avec la confirmation
+        accepted: doit être accepté(e)
+        empty: doit être rempli(e)
+        blank: doit être rempli(e)
+        too_long: est trop long (pas plus de %{count} caractères)
+        too_short: est trop court (au moins %{count} caractères)
+        wrong_length: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+        not_a_number: n'est pas un nombre
+        not_an_integer: doit être un nombre entier
+        greater_than: doit être supérieur à %{count}
+        greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+        equal_to: doit être égal à %{count}
+        less_than: doit être inférieur à %{count}
+        less_than_or_equal_to: doit être inférieur ou égal à %{count}
+        odd: doit être impair
+        even: doit être pair
+      template:
+        header:
+          one: 'Impossible d''enregistrer ce %{model} : 1 erreur'
+          other: 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
+        body: 'Veuillez vérifier les champs suivants : '
+      full_messages:
+        format: '%{attribute} %{message}'
   9ffd04e5001b2551d685667a380b1660: Ce commentaire a été éffacé
   8f7613aec3ee49c1b3ccc00de8a305fd: Editer le commentaire.
   1d052afe05362d164fbe867cddc17f8a: Sauvé commentaire

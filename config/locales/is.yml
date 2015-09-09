@@ -553,9 +553,7 @@ is:
     vefsíðunni eða að kæra til yfirvalda.
   ccb170b7563ba9e94e021fabfef45771: "Breyta notendaskilmálum þessum. Öllum skráðum
     notendum verður tilkynnt um slíkar breytingar með tölvupósti.\r\n"
-  will_paginate:
-    next_label: Næst &#8594;
-    previous_label: '&#8592; Fyrri'
+  10ac3d04253ef7e1ddc73e6091c0cd55: Næst
   7a8dd7f3470646c08ce4a384ba67f55c: Búðu til þinn eigin Betra Ísland vef
   134c5437738d0c8ae122af946c76a4d4: Við trúum því að bætt lýðræði sé vegur að meiri
     jöfnuði. Netið býður upp á frábæra möguleika fyrir endurbætur á lýðræði.
@@ -574,10 +572,12 @@ is:
     efst á síðunni fyrir hugmyndir sem þú styður.
   498f79c4c5bbde77f1bceb6c86fd0f6d: Sýna
   2d39a06c50a6c1ad4871b8e8551bdda2: Engar hugmyndir ennþá.
-  10ac3d04253ef7e1ddc73e6091c0cd55: Næst
   views:
     pagination:
       next: Næst &rsaquo;
+  will_paginate:
+    next_label: Næst &#8594;
+    previous_label: '&#8592; Fyrri'
   dd1f775e443ff3b9a89270713580a51b: Fyrri
   1b87a6c3fadc9180743cb5b660b76f2b: Af hverju Betra Ísland?
   353ff40317d8e32ff7f5b42f0b398ddf: Við unnum European e-Democracy Awards 2011 og

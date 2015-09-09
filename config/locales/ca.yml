@@ -113,7 +113,6 @@ ca:
         not_a_number: no és un número
         odd: ha de ser imparell
   ad8f256743a66f22456c85d2e3938ef1: Guarda la teva bio
-  a2d5e7a9d03b49d0639ab0a75a59d2c2: Top punts
   873d178af8c3ae30d29577b5846695ac: per usuari
   88183b946cc5f0e8c96b2e66e1c74a7e: Desconegut
   9977ab924c89e6c98b1cf1595354ada3: Última activitat
@@ -248,7 +247,6 @@ ca:
   6948b45726c75fbf35d8babafa3d6a75: El teu país no ha estat detectat
   697184ece37c024d3319f16f3e98c597: Clica aquí per acceptar l'invitació
   6b217791ec3e71a71356fb3a03076311: Guarda la configuració
-  a4ea91cd0d1ea33d8113457644dd6157: clica aquí
   33f77dee4bc7aacf15e3deee9743e98e: 'Punt sobre %{idea_name}:'
   3404c2e7a220d0c7083fe27ba3f7036e: '%{tag_name} idees que has creat'
   34445da586d63e7bbe9fd7ca96e939c7: '%{comments_count} Comentaris'
@@ -314,6 +312,8 @@ ca:
   974181ed9d4530663fcad6e11dfe9182: Afegeix una idea nova
   9791bad038cc199afcbc4de5f6abab89: Noves %{tag_name} idees
   a274f4d4670213a9045ce258c6c56b80: Notificacions
+  a2d5e7a9d03b49d0639ab0a75a59d2c2: Top punts
+  a4ea91cd0d1ea33d8113457644dd6157: clica aquí
   a5d491060952aa8ad5fdee071be752de: comentaris
   a67ce68ccac082ad54a552bdbcb6ecd7: Notificacions del correu
   time:
@@ -334,6 +334,7 @@ ca:
   feb6aa52226e8abe5bda5ef3fc0b65f1: Perquè vas fer aquest canvi?
   fee15ce029deb11dd1191f86c4e872c3: Això és útil
   003e636075eed8d70232cd54e12236db: El teu %{instance_name} ha estat creat
+  08bdf9d9ac0f365778d132920ea10254: Escull gènere
   0038a9e512b4678c583db11009d2c297: Aquesta és la idea que creix més ràpid
   0077d575bfc52d2176b427189982b6a6: Guardat %{point_name}
   00b177e080ff1c3d340997fb01c3951c: Acceptar la invitació
@@ -351,7 +352,6 @@ ca:
   07221d868183bab87e41f0ec47440880: Discussions a les teves idees
   07cf1f790935949c02c3289638e3ea40: Discussions on hi participen els teus seguidors
   0863f095cbdbbe6ce5a8aac979766a83: Extensió màxima del títol d'una idea
-  08bdf9d9ac0f365778d132920ea10254: Escull gènere
   08de2fdaabcd120b8ca1388d21179921: Accés denegat
   099af53f601532dbd31e0ea99ffdeb64: Esborrar
   0a6616b25930e61ff4f56ca7b5fa733a: Respon aquí

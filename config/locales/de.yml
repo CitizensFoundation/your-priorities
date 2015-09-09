@@ -1,41 +1,5 @@
 ---
 de:
-  number:
-    format:
-      strip_insignificant_zeros: false
-      precision: 2
-      separator: ','
-      delimiter: .
-      significant: false
-    currency:
-      format:
-        unit: €
-        format: '%n%u'
-        separator: ','
-        precision: 2
-        significant: false
-        strip_insignificant_zeros: false
-    human:
-      format:
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: '%n %u'
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          kb: KB
-          mb: MB
-          gb: GB
-          tb: TB
-      decimal_units:
-        format: '%n %u'
-        units:
-          thousand: Tausend
-          million: Millionen
-          trillion: Billionen
   support:
     select:
       prompt: 'Bitte wählen:'
@@ -146,6 +110,42 @@ de:
       day: Tag
       month: Monat
       year: Jahr
+  number:
+    format:
+      precision: 2
+      separator: ','
+      delimiter: .
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        unit: €
+        format: '%n%u'
+        separator: ','
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+    human:
+      format:
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+      decimal_units:
+        format: '%n %u'
+        units:
+          thousand: Tausend
+          million: Millionen
+          trillion: Billionen
   activemodel:
     errors:
       template:

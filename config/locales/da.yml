@@ -96,6 +96,37 @@ da:
     - :day
     - :month
     - :year
+  activerecord:
+    errors:
+      messages:
+        accepted: skal accepteres
+        taken: er allerede brugt
+        record_invalid: 'Validering fejlede: %{errors}'
+        inclusion: er ikke i listen
+        exclusion: er reserveret
+        invalid: er ikke gyldig
+        confirmation: stemmer ikke overens med bekræftelse
+        empty: må ikke udelades
+        blank: skal udfyldes
+        too_long: er for lang (maksimum %{count} tegn)
+        too_short: er for kort (minimum %{count} tegn)
+        wrong_length: har forkert længde (skulle være %{count} tegn)
+        not_a_number: er ikke et tal
+        not_an_integer: er ikke et heltal
+        greater_than: skal være større end %{count}
+        greater_than_or_equal_to: skal være større end eller lig med %{count}
+        equal_to: skal være lig med %{count}
+        less_than: skal være mindre end %{count}
+        less_than_or_equal_to: skal være mindre end eller lig med %{count}
+        odd: skal være ulige
+        even: skal være lige
+      template:
+        header:
+          one: En fejl forhindrede %{model} i at blive gemt
+          other: '%{count} fejl forhindrede %{model} i at blive gemt'
+        body: 'Der var problemer med følgende felter:'
+      full_messages:
+        format: '%{attribute}%{message}'
   time:
     formats:
       default: '%e. %B %Y, %H:%M'
@@ -176,34 +207,3 @@ da:
       less_than_or_equal_to: skal være mindre end eller lig med %{count}
       odd: skal være ulige
       even: skal være lige
-  activerecord:
-    errors:
-      template:
-        header:
-          one: En fejl forhindrede %{model} i at blive gemt
-          other: '%{count} fejl forhindrede %{model} i at blive gemt'
-        body: 'Der var problemer med følgende felter:'
-      messages:
-        taken: er allerede brugt
-        record_invalid: 'Validering fejlede: %{errors}'
-        inclusion: er ikke i listen
-        exclusion: er reserveret
-        invalid: er ikke gyldig
-        confirmation: stemmer ikke overens med bekræftelse
-        accepted: skal accepteres
-        empty: må ikke udelades
-        blank: skal udfyldes
-        too_long: er for lang (maksimum %{count} tegn)
-        too_short: er for kort (minimum %{count} tegn)
-        wrong_length: har forkert længde (skulle være %{count} tegn)
-        not_a_number: er ikke et tal
-        not_an_integer: er ikke et heltal
-        greater_than: skal være større end %{count}
-        greater_than_or_equal_to: skal være større end eller lig med %{count}
-        equal_to: skal være lig med %{count}
-        less_than: skal være mindre end %{count}
-        less_than_or_equal_to: skal være mindre end eller lig med %{count}
-        odd: skal være ulige
-        even: skal være lige
-      full_messages:
-        format: '%{attribute}%{message}'

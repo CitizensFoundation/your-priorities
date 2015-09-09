@@ -367,13 +367,13 @@ es:
   8b5ba9ef245ba14a9d4871dbcd6a4f6f: Votar negativo
   c17180d53c6d6ee18c3240d01ed62131: Votar positivo
   cde1d24d4d3427be7222dbe6a518f6da: Sin puntos de vista aún.
-  f2a6c498fb90ee345d997f888fce3b18: Eliminar
+  b4c1d65b09a6dd0d154f9680cda00843: Discusiones (%{count})
   04bc5390fd93d76fb2471f2f3a432ed5: Tus ideas %{tag_name} terminadas
   002d4fac39a17aaa96c1a79a1a710edb: Correo electrónico de ventas
+  26035f5354afb729c61d704ecbd14053: Nueva revisión
   0038a9e512b4678c583db11009d2c297: Esta es la idea que crece más rápido
   003e636075eed8d70232cd54e12236db: Se ha creado tu %{instance_name}
   006a226cb52da43e63800809bd1cb3f6: '%{user_name} votó en contra de la idea %{position}'
-  a604e73131bb1a34283a5ebcd349def4: promocionado
   006a4eadd1c44616ad82234981c03563: Yahoo Appid (<a href='https://developer.yahoo.com/wsregapp/'>Consíguelo
     aquí</a>)
   0077d575bfc52d2176b427189982b6a6: Guardado %{point_name}
@@ -412,10 +412,10 @@ es:
   3b878279a04dc47d60932cb294d96259: Información general
   f7c27fe5419c0751885d8a0cc6f0e75a: Debate (%{count})
   cbc00c310ea3af7dc35edceb12f5601f: Añadir punto
-  b4c1d65b09a6dd0d154f9680cda00843: Discusiones (%{count})
-  26035f5354afb729c61d704ecbd14053: Nueva revisión
   a80425472d94ae02c836da5b6f205b7b: Fuente
   8e1a7d9287a48440106ef0181c5a0181: Comprar un anuncio
+  f2a6c498fb90ee345d997f888fce3b18: Eliminar
+  a604e73131bb1a34283a5ebcd349def4: promocionado
   665255de10a45ae3e1c0e81b515b55ca: '%{count} discusiones'
   453aceb005ceaf54a47da15fee8b2a26: Páginas
   0b39c5aca15b84b1ad53a94d6b3feb78: Cambiar contraseña

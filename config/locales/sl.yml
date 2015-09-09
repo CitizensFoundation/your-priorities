@@ -36,7 +36,7 @@ sl:
     namesto %{idea_name}
   047fe665bd2cea51e221d371d1e4c698: Spreminjanje nastavitev za  %{user_name}
   b5a7adde1af5c87d7fd797b6245c2a39: Opis
-  f4ec5f57bd4d31b803312d873be40da9: Sprememba
+  ed3792969d8e38130c6651dd447509c5: Začni debato
   devise:
     invitations:
       send_instructions: Vabilo je bilo poslano na %{email}.
@@ -140,6 +140,7 @@ sl:
     kršitve pravil?
   0e7a1834a7b4fba66d0f329cfab14cbb: Zadnji obisk %{time_ago}
   18ef3f4348075aca1646941639d610dd: Ideja  %{position}
+  f4ec5f57bd4d31b803312d873be40da9: Sprememba
   0ef9a6968cfe92f7bde817483fb5d0cf: Nasprotovanja
   0f9b5eff8d1d07e6ce3a8fe2697a76f7: Pridružen  %{time_ago}
   16765596b57782e7012aee0ac86ff5ff: '%{count} zaznamki'
@@ -222,7 +223,6 @@ sl:
   0be8406951cdfda82f00f79328cf4efc: Komentar
   13348442cc6a27032d2b4aa28b75a5d3: Išči
   e576c23d915755d83e2d1f47bd9f6c22: Ni najdenih rezultatov
-  ed3792969d8e38130c6651dd447509c5: Začni debato
   c1a5298f939e87e8f962a5edfc206918: Zdravo
   a5998dfe5002eeab05de3cbcc98f9544: To je avtomatični e-mail od  %{instance_name}
   fafdcbfb83d39b7e0543fd0af58a35ac: Pošlji
@@ -508,7 +508,6 @@ sl:
     rise to the top.
   bb73e7a168c9158086404aaac16e5de5: The award winning %{br_link} website uses the
     same Open Source software that runs Your Priorities.
-  a7bd5cda0116d79b5b671617e51d2a3c: Predlogi, ki hitro pridobivajo podporo
   365e3d8187f5212085cbd599b430974a: Vaš predlog <a href='%{idea_link}'>%{idea_name}</a>
     je administrator premestil iz %{from_sub_instance} v %{to_sub_instance} na %{instance_name}.
   39a3cf4c89d1ffa6eddb8a1ae6a8bae9: Kategorija v kateri je vaš predlog %{idea} je
@@ -554,4 +553,5 @@ sl:
   c2dbe8cc5db8c81cc68981058975d0ba: Vsi uradno neuspešni projekti (%{count})
   5ebb3db6c8a6613f79191107b296a01c: Status projektnega predloga <a href='%{idea_link}'>%{idea_name}</a>
     %{support_or_endorse_text} se je spremenil na %{instance_name}.
+  a7bd5cda0116d79b5b671617e51d2a3c: Predlogi, ki hitro pridobivajo podporo
   37528894f18a085f9a078496a68eaaa8: Predlogi, ki hitro pridobivajo podporo

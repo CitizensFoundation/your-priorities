@@ -1,5 +1,44 @@
 ---
 he:
+  number:
+    human:
+      decimal_units:
+        units:
+          trillion: טריליון
+          thousand: אלף
+          million: מיליון
+          billion: מיליארד
+          quadrillion: קודריליון
+        format: '%n %u'
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: בתים
+            other: בתים
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+    format:
+      precision: 3
+      separator: .
+      delimiter: ','
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        unit: שח
+        precision: 2
+        format: '%u %n'
+        separator: .
+        delimiter: ','
+        significant: false
+        strip_insignificant_zeros: false
   date:
     formats:
       default: '%Y-%m-%d'
@@ -67,45 +106,6 @@ he:
       words_connector: ', '
       two_words_connector: ' את '
       last_word_connector: ', את '
-  number:
-    format:
-      precision: 3
-      separator: .
-      delimiter: ','
-      significant: false
-      strip_insignificant_zeros: false
-    currency:
-      format:
-        unit: שח
-        precision: 2
-        format: '%u %n'
-        separator: .
-        delimiter: ','
-        significant: false
-        strip_insignificant_zeros: false
-    human:
-      format:
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: '%n %u'
-        units:
-          byte:
-            one: בתים
-            other: בתים
-          kb: KB
-          mb: MB
-          gb: GB
-          tb: TB
-      decimal_units:
-        format: '%n %u'
-        units:
-          thousand: אלף
-          million: מיליון
-          billion: מיליארד
-          trillion: טריליון
-          quadrillion: קודריליון
   datetime:
     distance_in_words:
       half_a_minute: חצי דקה

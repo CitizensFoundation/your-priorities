@@ -1,6 +1,5 @@
 ---
 hu:
-  6e1c8fa898c975c6e4160ff502915969: Szociális pontok
   1d10d0c01b3469bcb594ade393639ed0: Ez a felhasználói fiók törölve lett
   13b5bfe96f3e2fe411c9f66f4a582adf: -ben
   43e00d10903ec90c9f2c523a901df552: '%{user_name} ennyit keresett: %{capital}%{currency_short_name},
@@ -206,6 +205,7 @@ hu:
   93d17c7680cf26f6c56cbe895964ecf5: Esettanulmány - EVE Online | Igaz történetek
   cf23ee279844016288ea1c076638f3be: Rólunk
   f98632d5dbe4b62224e8d2c281ec45db: Új felhasználó létrehozása
+  6e1c8fa898c975c6e4160ff502915969: Szociális pontok
   654f0ece8adfb7de29a73d5c27003f9c: Élhetőbb Izland website létrehozása
   0f68b904e33d9ac04605aecc958bcf52: Egyéb információk
   034a5d0ca862fdb6a3e451adf4ae0b9a: (Neved vagy álneved)
@@ -235,7 +235,6 @@ hu:
   5b2b53624bb2f80eb21d312c88655ef3: 'Megosztott egy közleményt, itt: %{discussion_name}'
   5e45d0479ee365f79d004b2f4ecb1f27: '%{point_name} hozzádva, ehhez: %{idea_name}'
   a534ed26c1d745e8e15e33c1dad34773: Az érv hozzáadva %{time_ago}
-  eac7fd5959172d5c9e62570d216b5dba: '%{point_name} érv körüli aktivitás'
   10d27c2105cbbf73b6cf106658751baa: '%{capital}%{currency_short_name} elveszítve,
     amiért törölted a(z) %{point_name}-t, ami mások szerint hasznos volt.'
   112d0772a6283ba7eb021fe34d30bd0f: '%{user_name} elveszített %{capital}%{currency_short_name}-t,
@@ -284,6 +283,7 @@ hu:
   85501283f42eb84cc04b84bce8d42044: ehhez nincs elég szociális pontod.
   66a2451380176bceabb8194cd8163385: <p>Érved hozzáadásával élőbbé teheted a vitát.</p>
   6c71c67b7ce3356ddcd0010624334b0d: 'Az érv neve erre módosult: %{point_name}'
+  eac7fd5959172d5c9e62570d216b5dba: '%{point_name} érv körüli aktivitás'
   eb87bea3f25ec72701b9e6e9f3d7a302: '%{capital}%{currency_short_name} elveszett, mert
     az ellenzől szerint a(z) %{point_name} haszontalan'
   ed601ff305a54f999a8e67e99258738e: Új érv

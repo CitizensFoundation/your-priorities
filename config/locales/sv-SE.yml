@@ -1,5 +1,6 @@
 ---
 sv-SE:
+  d7c8c85bf79bbe1b7188497c32c3b0ca: Misslyckades
   will_paginate:
     previous_label: Föregående
     next_label: Nästa
@@ -18,7 +19,6 @@ sv-SE:
   b6e0b0c90cfbddfe767f137f8066d1df: Under behandling
   cd267635c8a38e2acba076b0edeeedbe: Diskussioner i ditt nätverk
   d5f0462c74e5c7bf041d992697b7e06b: detta hostname är redan taget
-  d7c8c85bf79bbe1b7188497c32c3b0ca: Misslyckades
   db7fcf41127935e5fee505fe102abf9a: Dina diskussioner
   eed1d7e8237b8656aff7c66bb5999f96: Vad god ange ett namn att bli identifierad med
     på sidan
@@ -374,6 +374,8 @@ sv-SE:
   59d7434481f250db2c48858375499a31: Nyaste Poäng
   2ed154e6cbb75329947fe1929b784059: Dina idéers poäng
   7454f8acc4b83d16a1bdf39b70f25be2: Mest pratsamt vid %{sub_instance_name}
+  665255de10a45ae3e1c0e81b515b55ca: '%{count} diskussioner'
+  453aceb005ceaf54a47da15fee8b2a26: Sidor
   e17fdb615452f440c793b5ddad90dd5e: Varningar
   dbb6f26a0ccb75b82d641ff87b627ce3: Nya medlemmar
   86e570b9bac3edce3c2cdcdf17b8cab0: Köp en annons för  %{idea_name}
@@ -437,8 +439,6 @@ sv-SE:
   8e1a7d9287a48440106ef0181c5a0181: Köp en annons
   f2a6c498fb90ee345d997f888fce3b18: Ta bort
   a604e73131bb1a34283a5ebcd349def4: godkändes
-  665255de10a45ae3e1c0e81b515b55ca: '%{count} diskussioner'
-  453aceb005ceaf54a47da15fee8b2a26: Sidor
   0b39c5aca15b84b1ad53a94d6b3feb78: Byt lösenord
   198584454b0ce1101ff5b50323325aa8: Din emailadress
   d6cb6dc595d9a3a6c3e2db949a04be06: Kontakta oss på <a href='mailto:%{email}'>%{email2}</a>
