@@ -33,6 +33,8 @@ YourPriorities::Application.routes.draw do
 
   match '/users/eula' => 'users#eula'
 
+  match "/about/rules" => redirect("/pages/2")
+  match "/about/faq" => redirect("/pages/2")
 
   match '/ideas/flag/:id' => 'ideas#flag'
   match '/ideas/abusive/:id' => 'ideas#abusive'
