@@ -1,5 +1,6 @@
 ---
 hu:
+  6e1c8fa898c975c6e4160ff502915969: Szociális pontok
   1d10d0c01b3469bcb594ade393639ed0: Ez a felhasználói fiók törölve lett
   13b5bfe96f3e2fe411c9f66f4a582adf: -ben
   43e00d10903ec90c9f2c523a901df552: '%{user_name} ennyit keresett: %{capital}%{currency_short_name},
@@ -205,7 +206,6 @@ hu:
   93d17c7680cf26f6c56cbe895964ecf5: Esettanulmány - EVE Online | Igaz történetek
   cf23ee279844016288ea1c076638f3be: Rólunk
   f98632d5dbe4b62224e8d2c281ec45db: Új felhasználó létrehozása
-  6e1c8fa898c975c6e4160ff502915969: Szociális pontok
   654f0ece8adfb7de29a73d5c27003f9c: Élhetőbb Izland website létrehozása
   0f68b904e33d9ac04605aecc958bcf52: Egyéb információk
   034a5d0ca862fdb6a3e451adf4ae0b9a: (Neved vagy álneved)
@@ -399,6 +399,7 @@ hu:
     ma!
   5ebb3db6c8a6613f79191107b296a01c: 'Az ötleted állapota <a href=''%{idea_link}''>%{idea_name}</a>
     %{support_or_endorse_text} megváltozott itt:  %{instance_name}.'
+  453aceb005ceaf54a47da15fee8b2a26: Oldalak
   4b1b4dc8cf38b3c64b1d657da8f5ac8c: Jelentés
   4fb7286b0fe19a6cf2569e4115e88baa: kérjük 10 karakternél többet írjon
   5a9d18bb87ff12835dc844883c5c3ebe: változások
@@ -570,7 +571,6 @@ hu:
   2a3cd5946cfd317eb99c3d32e35e2d4c: Vélemény
   2d31841ff75aeb20f2c6d4d96411129f: Felelősséget vállalok az általam megosztott tartalmakért
     és kijelentem, hogy mások nem használhatják a felhasználónevemet.
-  453aceb005ceaf54a47da15fee8b2a26: Oldalak
   4bb709d8718626d39a5dbf2e2589528e: Értesítem a honlap adminisztrátorait, amennyiben
     olyan tartalommal  találkozom, melyek megsértik ezen szabályokat.
   4d0a3fc4c46501d3b4d2257820942a5e: Bejelentkezés %{provider} által

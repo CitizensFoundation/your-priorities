@@ -139,6 +139,7 @@ hr:
   d7241b155164fdbc560602f924393149: Dodaj svoju ideju i mišljenje
   78386ec8f2845742c324a3d7d3e800ff: Korisnici
   5a95a425f74314a96f13a2f136992178: Podijeli
+  f78be27a110705c1b183468d30077e53: '%{user_name} se više nije protiv %{idea_name}'
   4b1b4dc8cf38b3c64b1d657da8f5ac8c: Prijavi
   80df8e95c1fef941a4f600f0fd1b07c8: Molimo unesite više od 12 znakova.
   4fb7286b0fe19a6cf2569e4115e88baa: Molimo unesite više od 10 znakova.
@@ -150,7 +151,6 @@ hr:
   37fc5aed92a40b16dafd17cee72e3154: Naj ideje
   8754f2b7cbd98752793ba8314bded062: Aktivne rasprave
   db7fcf41127935e5fee505fe102abf9a: Vaše rasprave
-  f78be27a110705c1b183468d30077e53: '%{user_name} se više nije protiv %{idea_name}'
   0ab8485b04bf31384d9953d35ecaf6e4: '%{sender_name} je komentirao/la %{comment_name}'
   a1540685fb3fa19acb0d811d1e5ccf6a: '%{sub_instance_name} spremno je na %{instance_name}'
   fe66dc91a4e9216a483606e02c4110b7: Hvala ti za registraciju na %{instance_name}
@@ -292,7 +292,6 @@ hr:
     za raspravu'
   4f302d282d8ce7372f54021c8d2dac74: '%{user_name} više ne podržava ideju %{idea_name}'
   40ce3bc80d7306054d11fe6e3d537b7b: '%{user_name} je pozvao/la nekoga da se pridruži'
-  b357b524e740bc85b9790a0712d84a30: E-mail adresa
   282533dfc17f54458d17218f97145ff7: '%{user_name} je promijenio/la naziv ideje u %{idea_name}'
   ac717bd14c68bc426139b20f01d941ea: '%{user_name} je prvi/a predložio/la ideju %{idea_name}'
   1a13f1069e52ca6118df8501f7a7c755: '%{user_name} dodao/la je %{point_name} u %{idea_name}'
@@ -450,6 +449,7 @@ hr:
   432a54cb20fa8c81d8db5582157c2fb4: Što %{user_name} radi na %{instance_name}
   69711d42de93b7a39c12910b4ed48a54: '%{user_name} diskutira na %{instance_name}'
   b444f5c9284d8425a76f538752ef0acb: '%{user_name} oglašava na %{instance_name}'
+  086716f54c226a75ccc31834aac1e1ca: Omogući geoblocking
   1fb1d5f921aec90130c25518e821cf48: '%{user_name} %{currency_name} na %{instance_name}'
   0c7e91060e8afe22fb824e15473d9089: Verifikacijska poruka ponovno poslana na %{email}
   2aad2087f72c539e94564cd88e86a53b: '%{count} osoba prati %{user_name}'
@@ -597,6 +597,7 @@ hr:
   96e53e67e3788bf5b22d2d4da150d639: Sav sadržaj označen zastavicom
   92d562cddce4a845439e302189e00192: Promijeni logotip za %{instance_name}
   00b177e080ff1c3d340997fb01c3951c: Prihvati pozivnicu
+  b357b524e740bc85b9790a0712d84a30: E-mail adresa
   5df2acc8c67fdc6d6dc03791ac5f7a5e: Pošalji pozivnicu
   2512081b92507a3e87cdb8ba7cd6c6b7: 'Ideja br. 1:'
   d4dccb8ca2dac4e53c01bd9954755332: Spremi postavke
@@ -607,7 +608,6 @@ hr:
   06ba2bc280e5497a86716f2bac565751: Kod Google Analyticsa
   a088bef335fab67b9a24fd8736009fba: Uobičajeni jezik (hr/it/en/...)
   4b3e9319a9c0c328221080116e0d5104: HTTP Auth Korisničkoime
-  086716f54c226a75ccc31834aac1e1ca: Omogući geoblocking
   faeeeef2cc4a1a159d2f70dbbf040b5e: Geoblocking otvorenih zemalja
   9f7bf9fb42f1982a91b522db67d7e384: Id streama uživo
   e2d0f2d075d3c6f946e0b8fc3171332a: Koristi naslovnicu kategorije
@@ -840,7 +840,6 @@ hr:
   111a9b4d1f80fa21df2c2be58f5e0c04: Čestitamo na tvojoj novoj %{instance_name}.
   fffb18fcfcd332b7c24c4cf8d91b0071: Hvala ti za tvoju uplatu %{payment} na %{instance_name}.
   39a2ac1fc229d843594065531ffed4c8: Trenutni plan pretplate
-  24f62b680c4564b50f1d44416d5b6a46: Plan pretplate
   a5998dfe5002eeab05de3cbcc98f9544: Ovo je automatska e-mail poruka s %{instance_name}
   c1a5298f939e87e8f962a5edfc206918: Hej
   685887868e5e4b5f12565290ea93cef7: 'Ovdje možeš pogledati najviše rangirane ideje
@@ -926,6 +925,7 @@ hr:
   8dfc7b07c4abc0dafe046c2ada7298f4: '%{idea_name}'
   2f64c030f4bec3e2c21e78506cc78f63: Najboljih 25 ideja o %{instance_name}
   a39abc0cae4f06f92f6ee2e5601dbf7f: Administratorske postavke
+  24f62b680c4564b50f1d44416d5b6a46: Plan pretplate
   c33e404a441c6ba9648f88af3c68a1ca: Statistika
   453aceb005ceaf54a47da15fee8b2a26: Stranice
   7cdfb0c074a8155d864d2b591b0d509b: Prijavljen sadržaj
@@ -1432,7 +1432,6 @@ hr:
     na <a href=''%{ad_url}''>oglas</a> za %{idea_name}'
   934e578ecc65fa9d6c99d66e018b39d7: '%{user_name} je uložio/la %{capital}%{currency_short_name}
     na <a href=''%{ad_url}''>oglas</a> za ovu ideju'
-  f210feb5b61ce4588b32fe3cf9f61b16: '%{sender_name} se upravo pridružio/la'
   9739afbd1b5f3f783e2d77377802513b: <p>Ne možeš kupiti <span class="pc">društvene
     bodove</span> pravim novcem, ali možeš ih zaraditi na više načina - npr. <a href="/network/find">pozivanjem
     ljudi da se pridruže</a>, ili pišući korisna <a href="../points/new">mišljenja
@@ -1440,6 +1439,10 @@ hr:
   9dc48694da8397985319a58e1e516f9b: Molimo, sačekaj da uvezemo tvoje kontakte. <br/>Trebat
     će oko 10 sekundi da krene, a tada ćeš moći vidjeti uvećavanje broja dovršenih
     uvoza.
+  c90e5e487fa6de5f54fd84611d8949f7: U svoju mrežu možeš dodati ljude klikanjem na
+    dugme SLIJEDI koje se nalazi na njihovoj profilnoj stranici pa će se dole prikazivati
+    njihove novosti. Za početak, pogledaj popis <a href="/network">najutjecajnijih</a>
+    ljudi na %{instance.name}.
   a386ddaafe06f7a3ebfdae295663cbe6: '<p>Da bi se tvoj utjecaj povećao treba nam tvoja
     pomoć s regrutiranjem, a mi ti u tome možemo pomoći.</p><p>Ovo je što mi možemo
     ponuditi. <span class="highlight">Sve je besplatno</span>. Pored logotipa tvoje
@@ -1516,10 +1519,6 @@ hr:
     se na količni %{currency_name}<span class='pc'> (%{currency_short_name})</span>
     koje korisnici mogu zaraditi. <br/>Saznaj više o <span class='pc'>%{currency_short_name}</span>
     na <a href='/about/faq#pc'>FAQ-u</a>.
-  c90e5e487fa6de5f54fd84611d8949f7: U svoju mrežu možeš dodati ljude klikanjem na
-    dugme SLIJEDI koje se nalazi na njihovoj profilnoj stranici pa će se dole prikazivati
-    njihove novosti. Za početak, pogledaj popis <a href="/network">najutjecajnijih</a>
-    ljudi na %{instance.name}.
   00f399f02ac662457af2fa6ce23adbdb: '%{user_name} izgubio/la je %{capital}%{currency_short_name}
     jer i podržavatelji i prigovarači smatraju mišljenje %{point_name} beskorisnim
     za raspravu'
@@ -1544,6 +1543,7 @@ hr:
   43e00d10903ec90c9f2c523a901df552: '%{user_name} zaradio/la je %{capital}%{currency_short_name}
     jer i podržavatelji i prigovarači smatraju mišljenje %{point_name} korisnim za
     raspravu'
+  f210feb5b61ce4588b32fe3cf9f61b16: '%{sender_name} se upravo pridružio/la'
   1977751add4873d130596323038adfe2: Ovdje možeš pronaći ideje organizirane prema tagovima
   faad91d97150a5d75ed32c2fbca7414e: <ol><li>Sve tvoje ideje bit će uklonjene[tab]s
     internetske stranice i s rang listi.</li>
