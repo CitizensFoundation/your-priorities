@@ -29,7 +29,7 @@
               %br
             .large-11.columns
               %p
-                - cache("#{activity[:type].downcase}#{suffix}-#{activity.id}-#{session[:locale]}-#{@inline_translations_enabled}-#{current_user and current_user.is_admin?}") do
+                - cache("v2-#{activity[:type].downcase}#{suffix}-#{activity.id}-#{session[:locale]}-#{@inline_translations_enabled}-#{current_user and current_user.is_admin?}") do
                   = render :partial => "activities/#{activity[:type].downcase}#{suffix}", :locals => {:activity => activity}
                 %span.small
                   %em
