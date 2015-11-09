@@ -218,6 +218,8 @@ nl:
       updated: Je paswoord werd met succes aangemaakt. Je bent nu aangemeld.
       new:
         header: Stuur uitnodiging
+  83c101ec84ebd1c0e45fa1cd5b9300d6: verworpen
+  42bd4c0819c498d1c1ab622de74d6f82: ondersteund
   views:
     pagination:
       next: Volgende &rsaquo;
@@ -233,6 +235,4 @@ nl:
   9b9d8a976b42e0bd66381797644943d5: Gepubliceerd
   30ae8fff8898dc197acd49d9c0797d20: Geslaagd
   22af645d1859cb5ca6da0c484f1f37ea: nieuw
-  42bd4c0819c498d1c1ab622de74d6f82: ondersteund
-  83c101ec84ebd1c0e45fa1cd5b9300d6: verworpen
   37fc5aed92a40b16dafd17cee72e3154: Beste ideeën

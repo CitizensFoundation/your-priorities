@@ -502,6 +502,8 @@ is:
     rökræðu.
   ed543067f0d69b7fc887120bc1c66a86: Rökræður
   3a4b8d088c304ae2af8cac88963c8926: Bættu við rökum með eða á móti
+  d24c13101629be2c79ce5628029e69aa: Þú getur kosið hugmyndir upp og niður til að bæta
+    þeim við listan. Þú getur dregið til hugmyndir til að breyta röð.
   ad687d822978137450b9ddfbdba26e57: Innskráning með tölvupósti
   7f319b8ccad7e92033b9492ddbc4b522: Kjósa
   8b5ba9ef245ba14a9d4871dbcd6a4f6f: Kjósa niður
@@ -516,8 +518,6 @@ is:
   45d02053b56e67472d6aa112e633b2c2: Bæta við rökum með
   50a941dd2b0b556780498304f6b67c92: Útskýrðu þín rök
   7fbd71fc25b275b7d095a29c72b1a821: Útskýrðu þín rök.
-  d24c13101629be2c79ce5628029e69aa: Þú getur kosið hugmyndir upp og niður til að bæta
-    þeima við listan. Þú getur dregið til hugmyndir til að breyta röð.
   453aceb005ceaf54a47da15fee8b2a26: Síður
   d72e45be5abf9104bbfd208c11e8732a: Settu inn mynd (valkvæmt)
   034a5d0ca862fdb6a3e451adf4ae0b9a: (Getur verið rétt nafn eða dulnefni)
@@ -553,7 +553,6 @@ is:
     vefsíðunni eða að kæra til yfirvalda.
   ccb170b7563ba9e94e021fabfef45771: "Breyta notendaskilmálum þessum. Öllum skráðum
     notendum verður tilkynnt um slíkar breytingar með tölvupósti.\r\n"
-  10ac3d04253ef7e1ddc73e6091c0cd55: Næst
   7a8dd7f3470646c08ce4a384ba67f55c: Búðu til þinn eigin Betra Ísland vef
   134c5437738d0c8ae122af946c76a4d4: Við trúum því að bætt lýðræði sé vegur að meiri
     jöfnuði. Netið býður upp á frábæra möguleika fyrir endurbætur á lýðræði.
@@ -572,6 +571,7 @@ is:
     efst á síðunni fyrir hugmyndir sem þú styður.
   498f79c4c5bbde77f1bceb6c86fd0f6d: Sýna
   2d39a06c50a6c1ad4871b8e8551bdda2: Engar hugmyndir ennþá.
+  10ac3d04253ef7e1ddc73e6091c0cd55: Næst
   views:
     pagination:
       next: Næst &rsaquo;

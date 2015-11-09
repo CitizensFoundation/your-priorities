@@ -154,6 +154,7 @@ tr-TR:
   a5998dfe5002eeab05de3cbcc98f9544: Bu %{instance_name} konusunda gelen otomatik bir
     epostadır
   fafdcbfb83d39b7e0543fd0af58a35ac: '''e gönderildi'
+  0d80cee327875c3740c7ad5ebba57be1: Eposta bildirimleriniz
   will_paginate:
     next_label: Sonraki
     previous_label: Önceki
@@ -215,7 +216,6 @@ tr-TR:
     ekledi'
   0c082c9ad303a70be82598499aaa1f6e: '%{user_name}  %{idea_name} fikrinin adını düzenledi'
   ae7950ddfcef416ea6840228d63eba13: yeni puan yok
-  0d80cee327875c3740c7ad5ebba57be1: Eposta bildirimleriniz
   747705a1c07ec5d7613502a7d50bf49a: '%{user_name} %{point_name} adını düzenledi'
   43e00d10903ec90c9f2c523a901df552: '%{user_name}, hem destekçileri hem karşı çıkanlar
     %{point_name} konusunu yararlı bulduğu için %{capital}%{currency_short_name} kazandı'

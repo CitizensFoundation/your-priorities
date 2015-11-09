@@ -1,6 +1,6 @@
 ---
 hu:
-  6e1c8fa898c975c6e4160ff502915969: Szociális pontok
+  0f5d49facdd47101ec961e13882f3543: Hoppá, gond van!
   1d10d0c01b3469bcb594ade393639ed0: Ez a felhasználói fiók törölve lett
   13b5bfe96f3e2fe411c9f66f4a582adf: -ben
   43e00d10903ec90c9f2c523a901df552: '%{user_name} ennyit keresett: %{capital}%{currency_short_name},
@@ -28,7 +28,6 @@ hu:
     helyen áll a(z) %{category} kategóriában.
   1dabb7608cdd6762b2f3b96905d7259f: Biztonsági kód (CVV)
   223fbee99dc0f256d7988381ed7606ec: '%{user_name} már nem ellenzi'
-  0f5d49facdd47101ec961e13882f3543: Hoppá, gond van!
   0f9b5eff8d1d07e6ce3a8fe2697a76f7: '%{time_ago}-kor csatlakozott'
   64e73aa014f92f7f5d7ca38c24cbf801: '%{capital}%{currency_short_name}t kerestél, mert
     az ellenzők hasznosnak találták: %{point_name}'
@@ -205,6 +204,7 @@ hu:
   8cf04bccef1829bd7f09a1a7abc43ed6: Email feliratkozások
   93d17c7680cf26f6c56cbe895964ecf5: Esettanulmány - EVE Online | Igaz történetek
   cf23ee279844016288ea1c076638f3be: Rólunk
+  5e45d0479ee365f79d004b2f4ecb1f27: '%{point_name} hozzádva, ehhez: %{idea_name}'
   f98632d5dbe4b62224e8d2c281ec45db: Új felhasználó létrehozása
   654f0ece8adfb7de29a73d5c27003f9c: Élhetőbb Izland website létrehozása
   0f68b904e33d9ac04605aecc958bcf52: Egyéb információk
@@ -233,7 +233,6 @@ hu:
     %{sub_instance_name}  %{instance_name}'
   23f719bbec8794c6dbb09214a244c6da: Jelenleg nincs újrafogalmazott vélemény
   5b2b53624bb2f80eb21d312c88655ef3: 'Megosztott egy közleményt, itt: %{discussion_name}'
-  5e45d0479ee365f79d004b2f4ecb1f27: '%{point_name} hozzádva, ehhez: %{idea_name}'
   a534ed26c1d745e8e15e33c1dad34773: Az érv hozzáadva %{time_ago}
   10d27c2105cbbf73b6cf106658751baa: '%{capital}%{currency_short_name} elveszítve,
     amiért törölted a(z) %{point_name}-t, ami mások szerint hasznos volt.'
@@ -283,6 +282,7 @@ hu:
   85501283f42eb84cc04b84bce8d42044: ehhez nincs elég szociális pontod.
   66a2451380176bceabb8194cd8163385: <p>Érved hozzáadásával élőbbé teheted a vitát.</p>
   6c71c67b7ce3356ddcd0010624334b0d: 'Az érv neve erre módosult: %{point_name}'
+  6e1c8fa898c975c6e4160ff502915969: Szociális pontok
   eac7fd5959172d5c9e62570d216b5dba: '%{point_name} érv körüli aktivitás'
   eb87bea3f25ec72701b9e6e9f3d7a302: '%{capital}%{currency_short_name} elveszett, mert
     az ellenzől szerint a(z) %{point_name} haszontalan'
@@ -399,7 +399,6 @@ hu:
     ma!
   5ebb3db6c8a6613f79191107b296a01c: 'Az ötleted állapota <a href=''%{idea_link}''>%{idea_name}</a>
     %{support_or_endorse_text} megváltozott itt:  %{instance_name}.'
-  453aceb005ceaf54a47da15fee8b2a26: Oldalak
   4b1b4dc8cf38b3c64b1d657da8f5ac8c: Jelentés
   4fb7286b0fe19a6cf2569e4115e88baa: kérjük 10 karakternél többet írjon
   5a9d18bb87ff12835dc844883c5c3ebe: változások
@@ -571,6 +570,7 @@ hu:
   2a3cd5946cfd317eb99c3d32e35e2d4c: Vélemény
   2d31841ff75aeb20f2c6d4d96411129f: Felelősséget vállalok az általam megosztott tartalmakért
     és kijelentem, hogy mások nem használhatják a felhasználónevemet.
+  453aceb005ceaf54a47da15fee8b2a26: Oldalak
   4bb709d8718626d39a5dbf2e2589528e: Értesítem a honlap adminisztrátorait, amennyiben
     olyan tartalommal  találkozom, melyek megsértik ezen szabályokat.
   4d0a3fc4c46501d3b4d2257820942a5e: Bejelentkezés %{provider} által
