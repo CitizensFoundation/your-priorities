@@ -1,8 +1,62 @@
 namespace :counters do
-  
+
+  desc "Export ones with most invites"
+  task :export_user_with_most_notifications => :environment do
+    users = {}
+    User.unscoped.all.each do |user|
+      if user.notifications.count>0
+        users[user.email] = 0 unless users[user.email]!=nil
+        users[user.email] += user.notifications.count
+      end
+    end
+    puts
+    puts "With regular notification"
+    puts users.count
+    puts
+    users.sort_by { |a,b| b }.each do |email,value|
+      #puts "#{email},#{value}"
+    end
+    puts
+    IdeaStatusChangeLog.all.each do |change|
+      Endorsement.unscoped.where(:idea_id => change.idea_id).all.each do |endorsement|
+        users[endorsement.user.email] = 0 unless users[endorsement.user.email]
+        users[endorsement.user.email] += 1
+      end
+    end
+    puts
+    puts "With status included"
+    puts users.count
+    puts
+    at_least_10 = []
+    users.sort_by { |a,b| b }.each do |email,value|
+      #puts "#{email},#{value}"
+      if value>9
+        at_least_10 << email
+      end
+    end
+    puts
+    puts "All with notifications"
+    puts
+    users.sort_by { |a,b| b }.each do |email,value|
+      #puts "#{email}"
+    end
+    puts
+    puts "At least 10"
+    puts at_least_10.length
+    at_least_10.each do |email|
+      #puts email
+    end
+    puts
+    puts "Less than 10"
+    puts User.unscoped.count-at_least_10.length
+    User.unscoped.all.each do |user|
+      puts user.email unless at_least_10.include?(user.email)
+    end
+  end
+
   desc "Count all"
   task :count_all => :environment do
-
+                                                          cat
     Idea.unscoped.all.each do | idea |
       puts "Processing #{idea.name}"
       Idea.unscoped do
