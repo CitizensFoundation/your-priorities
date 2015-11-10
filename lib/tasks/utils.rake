@@ -2,6 +2,26 @@
 
 require 'csv'
 
+def fix_point_from_revision(id, update=false)
+  name=Point.unscoped.find(id).revisions[0].name
+  content=Point.unscoped.find(id).revisions[0].content_html
+  p=Point.unscoped.find(id)
+  puts "Old"
+  puts p.name
+  puts p.content
+  puts p.content_html
+  puts "New"
+  puts name
+  puts content
+  puts
+  if update
+    p.content = p.content_html = content
+    p.name = name
+    puts "UPDATED!!!"
+    p.save(:validate=>false)
+  end
+end
+
 def create_tags(row)
   tags = []
   tags << row[1]

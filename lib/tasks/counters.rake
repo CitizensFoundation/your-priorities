@@ -51,12 +51,26 @@ namespace :counters do
     puts User.unscoped.count-at_least_10.length
     User.unscoped.all.each do |user|
       puts user.email unless at_least_10.include?(user.email)
+      users[user.email] = 0 unless users[user.email]
+      users[user.email] += 1
+    end
+
+
+    IdeaStatusChangeLog.all.each do |change|
+      Endorsement.unscoped.find(change.idea_id).all.each do |endorsement|
+        users[endorsement.email] = 0 unless users[endorsement.email]
+        users[user.email] += 1
+      end
+    end
+    puts users.count
+    puts
+    users.each do |email,value|
+      puts email + ": " + value
     end
   end
 
   desc "Count all"
   task :count_all => :environment do
-                                                          cat
     Idea.unscoped.all.each do | idea |
       puts "Processing #{idea.name}"
       Idea.unscoped do
