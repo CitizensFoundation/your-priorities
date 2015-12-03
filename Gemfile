@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.21'
-ruby '2.0.0'
+ruby '2.2.3'
 gem "respond-rails", :git=>"git://github.com/rbjarnason/respond-rails"
 gem 'selectivizr-rails', :git=>"git://github.com/rbjarnason/selectivizr-rails"
 gem 'pie-rails'
