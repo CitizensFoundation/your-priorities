@@ -509,6 +509,7 @@ sv-SE:
   1bd14216408d94261ca743907c692bb1: För administratörer
   9b5016f406a56aa10fdc5384de2696b8: Spara e-postinställningar
   06591670b8600f71493c779ff6c5e331: '%{position} mest inflytelserika'
+  800e4dd8dfc264160c0b52347f7f9d4c: Ta bort ditt konto
   e31e799048673ff7f3699d5b5ddc9fa1: Gick med %{time_ago}.
   70d41baa21f0fef4a54de863cd259ace: Logga in med island.is
   780f17237b2f99a557c2490dfa9a30a4: Logga in med Gmail
@@ -568,7 +569,6 @@ sv-SE:
   ee70f3ca5d66eac5f6fc8616da483f4d: Inga diskussioner
   0f5d49facdd47101ec961e13882f3543: Oj det uppstod ett problem
   010818f282f6ca53d86d4f988f83744f: Spara dina inställningar
-  800e4dd8dfc264160c0b52347f7f9d4c: Ta bort ditt konto
   fffb47b03232ded9ecc86fa01eeaa695: Synpunkter emot
   3c5db2447415c261cf024be85458ce35: Användbar
   2a8539c576356a45c8ffea55f7f9c6d1: Inte längre användbar

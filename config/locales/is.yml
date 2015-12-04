@@ -320,8 +320,8 @@ is:
   16765596b57782e7012aee0ac86ff5ff: '%{count} styðja'
   da08b4d4be989f5276a7aab9899ab34c: '%{count} á móti'
   53127d8c496db03d848a289010087409: Efstu hugmyndir
-  18ef3f4348075aca1646941639d610dd: Hugmynd %{position}
   52f4e192179a8449b77cc149541a5ba0: Engar hugmyndir komnar hingað inn.
+  18ef3f4348075aca1646941639d610dd: Hugmynd %{position}
   6c60eec8c5809428787d3d817d389404: Efstu hugmyndir síðustu 30 daga
   8de16e7a08998e0e60d27d6b4d441379: Efstu hugmyndir síðustu 24 tíma
   ff0cfd359a1d96d597133a4341a6a7e4: Settu inn nýja hugmynd
@@ -565,12 +565,12 @@ is:
     / eða hópi sem vilja skipuleggja sig í kringum hugmyndir og tala með einni rödd.
     Hérna getur þú búið til þína eigin Betra Ísland vef.
   878bd7316fd2cb186f1fbd611e54684b: Fela rökræðu
-  1a93d30b23722eece4aa04edfcfef57b: Engar hugmyndir ennþá. Bættu við þeirri fyrstu
-    núna.
+  1a93d30b23722eece4aa04edfcfef57b: Engar óafgreiddar hugmyndir eftir. Bættu við nýrri
+    hugmynd núna!
+  2d39a06c50a6c1ad4871b8e8551bdda2: Engar hugmyndir ennþá.
   26582fa147339efa1e6fc50cc9602f65: Þú getur notað karma stig til að kaupa kynningar
     efst á síðunni fyrir hugmyndir sem þú styður.
   498f79c4c5bbde77f1bceb6c86fd0f6d: Sýna
-  2d39a06c50a6c1ad4871b8e8551bdda2: Engar hugmyndir ennþá.
   10ac3d04253ef7e1ddc73e6091c0cd55: Næst
   views:
     pagination:
