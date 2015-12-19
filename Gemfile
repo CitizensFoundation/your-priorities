@@ -101,9 +101,11 @@ group :development do
   gem 'rails-dev-boost'
  # qem 'rails_view_annotator', github: "hinrik/rails_view_annotator"
   gem 'binding_of_caller'
-  gem 'better_errors'
   gem 'therubyracer'
-  gem "awesome_print"
+end
+
+group :development, :test do
+  gem 'better_errors'
 end
 
 group :production do
@@ -112,7 +114,6 @@ end
 
 group :test do
   gem 'watir-webdriver'
-  gem 'better_errors'
   gem 'spork-testunit'
   gem 'ruby-prof'
   gem 'headless'
