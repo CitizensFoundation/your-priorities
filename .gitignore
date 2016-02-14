@@ -34,3 +34,4 @@ private/*
 *.output
 *.pid
 .sass-cache/
+db/export.json
