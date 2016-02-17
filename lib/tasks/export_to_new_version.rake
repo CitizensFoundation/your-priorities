@@ -35,6 +35,10 @@ namespace :export_to_new_version do
     # GROUPS
     puts "Processing GROUPS"
     SubInstance.unscoped.all.each do |group|
+      private_instance = false
+      if group.subscription_enabled? and group.subscription
+        private_instance = group.subscription.plan.private_instance
+      end
       groups << {
           id: group.id,
           name: group.name,
@@ -44,8 +48,10 @@ namespace :export_to_new_version do
           message_for_new_idea: group.message_for_new_idea,
           message_to_users: group.message_to_users,
           google_analytics_code: group.google_analytics_code,
+          iso_country_id: group.iso_country_id,
           access: 0,
           user_id: 1,
+          private_instance: private_instance,
           created_at: group.created_at
       }
     end
@@ -224,6 +230,7 @@ namespace :export_to_new_version do
           facebook_id: user.facebook_uid,
           twitter_id: user.twitter_id,
           created_at: user.created_at,
+          encrypted_password: user.encrypted_password,
           ssn: user.ssn
       }
     end
