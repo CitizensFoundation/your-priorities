@@ -51,6 +51,8 @@ namespace :export_to_new_version do
           iso_country_id: group.iso_country_id,
           access: 0,
           user_id: 1,
+          logo_url: group.logo.url(:icon_full),
+          header_url: group.top_banner.url(:icon_full), 
           private_instance: private_instance,
           created_at: group.created_at
       }
@@ -64,6 +66,7 @@ namespace :export_to_new_version do
           name: category.name,
           description: category.description,
           group_id: category.sub_instance_id,
+          icon_url: category.icon.url(:icon_200),
           created_at: category.created_at
       }
     end
@@ -231,6 +234,7 @@ namespace :export_to_new_version do
           twitter_id: user.twitter_id,
           created_at: user.created_at,
           encrypted_password: user.encrypted_password,
+          buddy_icon: user.buddy_icon.url(:icon_96),
           ssn: user.ssn
       }
     end
