@@ -15,6 +15,7 @@ namespace :export_to_new_version do
     endorsements = []
     points = []
     point_revisions = []
+    point_qualities = []
     comments = []
     promotions = []
     pages = []
@@ -168,6 +169,18 @@ namespace :export_to_new_version do
       }
     end
 
+    # POINT QUALITY
+    puts "Processing POINT_QUALITY"
+    PointQuality.unscoped.all.each do |point_quality|
+      point_qualities << {
+          id: point_quality.id,
+          point_id: point_quality.point_id,
+          user_id: point_quality.user_id,
+          value: point_quality.value,
+          created_at: point_quality.created_at
+      }
+    end
+
     # COMMENTS
     puts "Processing COMMENTS"
     Comment.unscoped.all.each do |comment|
@@ -235,6 +248,7 @@ namespace :export_to_new_version do
           created_at: user.created_at,
           encrypted_password: user.encrypted_password,
           buddy_icon: user.buddy_icon.url(:icon_96),
+          is_admin: user.is_admin,
           ssn: user.ssn
       }
     end
@@ -265,6 +279,7 @@ namespace :export_to_new_version do
         "endorsements" => endorsements,
         "points" => points,
         "point_revisions" => point_revisions,
+        "point_qualities" => point_qualities,
         "comments" => comments,
         "promotions" => promotions,
         "pages" => pages,
