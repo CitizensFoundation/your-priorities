@@ -247,7 +247,7 @@ namespace :export_to_new_version do
           twitter_id: user.twitter_id,
           created_at: user.created_at,
           encrypted_password: user.encrypted_password,
-          buddy_icon: user.buddy_icon.url(:icon_96),
+          buddy_icon: user.buddy_icon.url(:original),
           is_admin: user.is_admin,
           ssn: user.ssn
       }
