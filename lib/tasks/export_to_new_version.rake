@@ -251,6 +251,7 @@ namespace :export_to_new_version do
           is_admin: user.is_admin,
           first_name: user.first_name,
           last_name: user.last_name,
+          social_points: user.capitals_count,
           ssn: user.ssn
       }
     end
