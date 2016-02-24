@@ -253,7 +253,10 @@ namespace :export_to_new_version do
           first_name: user.first_name,
           last_name: user.last_name,
           social_points: user.capitals_count,
-          ssn: user.ssn
+          ssn: user.ssn,
+          age_group: user.age_group,
+          post_code: user.post_code,
+          my_gender: user.my_gender
       }
     end
 
