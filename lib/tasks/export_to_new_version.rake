@@ -249,6 +249,8 @@ namespace :export_to_new_version do
           encrypted_password: user.encrypted_password,
           buddy_icon: user.buddy_icon.url(:original),
           is_admin: user.is_admin,
+          first_name: user.first_name,
+          last_name: user.last_name,
           ssn: user.ssn
       }
     end
