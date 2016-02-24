@@ -87,6 +87,7 @@ namespace :export_to_new_version do
           user_id: post.user_id,
           ip_address: post.ip_address,
           user_agent: post.user_agent,
+          category_id: post.category_id,
           created_at: post.created_at
       }
     end
