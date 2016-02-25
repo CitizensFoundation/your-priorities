@@ -271,6 +271,7 @@ namespace :export_to_new_version do
           point_id: activity.point_id,
           user_id: activity.user_id,
           promotion_id: activity.ad_id,
+          status: activity.status,
           created_at: activity.created_at
       }
     end
