@@ -80,7 +80,7 @@ namespace :export_to_new_version do
           content_type: 0,
           name: post.name,
           description: post.description,
-          status: "published",
+          status: post.status,
           official_status: post.official_status,
           counter_flags: post.flags_count,
           group_id: post.sub_instance_id,
