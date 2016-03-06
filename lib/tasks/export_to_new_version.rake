@@ -20,6 +20,7 @@ namespace :export_to_new_version do
     promotions = []
     pages = []
     activities = []
+    followings = []
 
     puts "Processing INSTANCE"
     instance = Instance.first
@@ -235,6 +236,18 @@ namespace :export_to_new_version do
       }
     end
 
+    # FOLLOWINGS
+    puts "Processing FOLLOWINGS"
+    Following.unscoped.all.each do |following|
+      followings << {
+          id: following.id,
+          user_id: following.user_id,
+          other_user_id: following.other_user_id,
+          value: following.value,
+          created_at: following.created_at
+      }
+    end
+
     # USERS
     puts "Processing USERS"
     User.unscoped.all.each do |user|
@@ -291,6 +304,7 @@ namespace :export_to_new_version do
         "comments" => comments,
         "promotions" => promotions,
         "pages" => pages,
+        "followings" => followings,
         "activities" => activities
     }
 
