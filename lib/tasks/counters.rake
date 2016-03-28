@@ -1,4 +1,6 @@
 namespace :counters do
+  # Count ideas per month
+  # Idea.unscoped.group("DATE_TRUNC('month', created_at)").count.each do |x,y| puts "#{x.to_s.gsub(" 00:00:00","")},#{y}\n" end
 
   desc "Export ones with most invites"
   task :export_user_with_most_notifications => :environment do
