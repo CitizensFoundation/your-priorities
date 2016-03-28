@@ -2,6 +2,19 @@ namespace :counters do
   # Count ideas per month
   # Idea.unscoped.group("DATE_TRUNC('month', created_at)").count.each do |x,y| puts "#{x.to_s.gsub(" 00:00:00","")},#{y}\n" end
 
+  desc "Export number of endorsers per idea"
+  task :export_number_of_endorsers_per_idea => :environment do
+    puts "Nafn,Hugmynd,Fjöldi með,Fjöldi á móti"
+    SubInstance.order("name ASC").all.each do |sub_instance|
+      puts ""
+      puts "Hópur: #{sub_instance.name}"
+      puts
+      Idea.unscoped.where(:sub_instance_id=>sub_instance.id).each do |idea|
+        puts "\"#{idea.name}\",\"#{idea.description ? idea.description.gsub("\"","") : ""}\",#{idea.up_endorsers.count},#{idea.down_endorsers.count}"
+      end
+    end
+  end
+
   desc "Export ones with most invites"
   task :export_user_with_most_notifications => :environment do
     users = {}
