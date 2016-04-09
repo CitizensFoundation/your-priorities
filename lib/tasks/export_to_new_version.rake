@@ -31,6 +31,7 @@ namespace :export_to_new_version do
         description: instance.description,
         created_at: instance.created_at,
         google_analytics_code: instance.google_analytics_code,
+        default_locale: instance.default_locale
         access: 0
     }
 

@@ -123,7 +123,8 @@ namespace :utils do
   #   "saltdean-telscombe-cliffs","seaford"].each do |short_name|
      ["pulaodlucuje","boljilosinj","boljikarlovac"].each do |name|
       sub_instance = SubInstance.where(:short_name=>name).first
-      puts "Space,"+sub_instance.name
+      puts
+      puts sub_instance.name
       puts ""
       puts "User email,Idea name,Idea description,Up votes,Down votes,Point name,Point description,Point value"
       Idea.unscoped.where(:sub_instance_id=>sub_instance.id).each do |idea|
