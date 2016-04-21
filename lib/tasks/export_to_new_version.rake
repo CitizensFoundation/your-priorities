@@ -117,6 +117,7 @@ namespace :export_to_new_version do
           id: post_status_change.id,
           content: post_status_change.content,
           subject: post_status_change.subject,
+          post_id: post_status_change.idea_id,
           published_at: post_status_change.date,
           created_at: post_status_change.created_at
       }
