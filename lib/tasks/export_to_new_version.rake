@@ -102,7 +102,7 @@ namespace :export_to_new_version do
           id: post_revision.id,
           name: post_revision.name,
           description: post_revision.description,
-          status: "published",
+          status: post_revision.status,
           user_id: post_revision.user_id,
           ip_address: post_revision.ip_address,
           user_agent: post_revision.user_agent,
