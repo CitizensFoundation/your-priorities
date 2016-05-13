@@ -1,5 +1,5 @@
 # This version is depricated
-Please use the new version at https://github.com/rbjarnason/your-priorities/
+Please use the new version at https://github.com/rbjarnason/your-priorities-app/
 
 # Old Your Priorities version
 
